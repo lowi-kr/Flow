@@ -254,7 +254,7 @@ It is distributed under the **GNU General Public License v3 (GPLv3)**.
 **Copyright © 2025-2026 A-EDev**
 
 > 🚨 **For Developers:**
-> This license requires that any project using Flow's source code (including the `FlowNeuroEngine` algorithm) must also be **Open Source** under the GPLv3 license. You may not use this code in a proprietary or closed-source application.
+> This license requires that any project using Flow's source code (including the `FlowNeuroEngine` algorithm) must also be **Open Source** under the GPLv3 license. You may not use this code in a proprietary or closed-source application..
 
 ---
 
