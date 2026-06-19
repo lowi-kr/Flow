@@ -1,20 +1,20 @@
-package io.github.aedev.flow.ui.screens.music
+package com.arubr.smsvcodes.ui.screens.music
 
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import io.github.aedev.flow.data.music.MusicCache
-import io.github.aedev.flow.data.music.DownloadManager
-import io.github.aedev.flow.data.music.YouTubeMusicService
-import io.github.aedev.flow.data.recommendation.MusicRecommendationAlgorithm
-import io.github.aedev.flow.data.recommendation.MusicSection
-import io.github.aedev.flow.innertube.models.BrowseEndpoint
-import io.github.aedev.flow.innertube.pages.ArtistItemsPage
-import io.github.aedev.flow.innertube.YouTube
-import io.github.aedev.flow.innertube.models.SongItem
-import io.github.aedev.flow.innertube.pages.MoodAndGenres
-import io.github.aedev.flow.data.newmusic.InnertubeMusicService
-import io.github.aedev.flow.utils.PerformanceDispatcher
+import com.arubr.smsvcodes.data.music.MusicCache
+import com.arubr.smsvcodes.data.music.DownloadManager
+import com.arubr.smsvcodes.data.music.YouTubeMusicService
+import com.arubr.smsvcodes.data.recommendation.MusicRecommendationAlgorithm
+import com.arubr.smsvcodes.data.recommendation.MusicSection
+import com.arubr.smsvcodes.innertube.models.BrowseEndpoint
+import com.arubr.smsvcodes.innertube.pages.ArtistItemsPage
+import com.arubr.smsvcodes.innertube.YouTube
+import com.arubr.smsvcodes.innertube.models.SongItem
+import com.arubr.smsvcodes.innertube.pages.MoodAndGenres
+import com.arubr.smsvcodes.data.newmusic.InnertubeMusicService
+import com.arubr.smsvcodes.utils.PerformanceDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -22,27 +22,27 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.firstOrNull
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
-import io.github.aedev.flow.innertube.pages.HomePage
+import com.arubr.smsvcodes.innertube.pages.HomePage
 import kotlinx.coroutines.async
 import kotlinx.coroutines.awaitAll
 import kotlinx.coroutines.supervisorScope
 import kotlinx.coroutines.withContext
 import kotlinx.coroutines.withTimeoutOrNull
-import io.github.aedev.flow.R
+import com.arubr.smsvcodes.R
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
 import android.content.Context
 import javax.inject.Inject
-import io.github.aedev.flow.data.local.LikedVideosRepository
-import io.github.aedev.flow.player.EnhancedMusicPlayerManager
+import com.arubr.smsvcodes.data.local.LikedVideosRepository
+import com.arubr.smsvcodes.player.EnhancedMusicPlayerManager
 
 @HiltViewModel
 class MusicViewModel @Inject constructor(
     @ApplicationContext private val context: Context,
     private val musicRecommendationAlgorithm: MusicRecommendationAlgorithm,
-    private val subscriptionRepository: io.github.aedev.flow.data.local.SubscriptionRepository,
-    private val playlistRepository: io.github.aedev.flow.data.music.PlaylistRepository,
-    private val localPlaylistRepository: io.github.aedev.flow.data.local.PlaylistRepository,
+    private val subscriptionRepository: com.arubr.smsvcodes.data.local.SubscriptionRepository,
+    private val playlistRepository: com.arubr.smsvcodes.data.music.PlaylistRepository,
+    private val localPlaylistRepository: com.arubr.smsvcodes.data.local.PlaylistRepository,
     private val likedVideosRepository: LikedVideosRepository,
     private val downloadManager: DownloadManager
 ) : ViewModel() {
@@ -528,7 +528,7 @@ class MusicViewModel @Inject constructor(
                              artist = playlist.author,
                              thumbnailUrl = playlist.thumbnailUrl,
                              duration = 0,
-                             itemType = io.github.aedev.flow.ui.screens.music.MusicItemType.PLAYLIST
+                             itemType = com.arubr.smsvcodes.ui.screens.music.MusicItemType.PLAYLIST
                          )
                     }
                     similarSections.add(
@@ -817,7 +817,7 @@ class MusicViewModel @Inject constructor(
                 subscriptionRepository.unsubscribe(artist.channelId)
             } else {
                 subscriptionRepository.subscribe(
-                    io.github.aedev.flow.data.local.ChannelSubscription(
+                    com.arubr.smsvcodes.data.local.ChannelSubscription(
                         channelId = artist.channelId,
                         channelName = artist.name,
                         channelThumbnail = artist.thumbnailUrl,
@@ -1041,7 +1041,7 @@ data class MusicUiState(
     val dynamicSections: List<MusicSection> = emptyList(),
     val homeChips: List<HomePage.Chip> = emptyList(),
     val selectedHomeChip: HomePage.Chip? = null,
-    val explorePage: io.github.aedev.flow.innertube.pages.ExplorePage? = null,
+    val explorePage: com.arubr.smsvcodes.innertube.pages.ExplorePage? = null,
     val moodsAndGenres: List<MoodAndGenres> = emptyList(),
     val selectedGenre: String? = null,
     val selectedFilter: String? = null,
@@ -1057,7 +1057,7 @@ data class MusicUiState(
     val isMoreLoading: Boolean = false,
     val searchResultsArtists: List<ArtistDetails> = emptyList(),
     val homeContinuation: String? = null,
-    val artistItemsPage: io.github.aedev.flow.innertube.pages.ArtistItemsPage? = null,
+    val artistItemsPage: com.arubr.smsvcodes.innertube.pages.ArtistItemsPage? = null,
     val isArtistItemsLoading: Boolean = false,
     val similarToSections: List<MusicSection> = emptyList()
 )

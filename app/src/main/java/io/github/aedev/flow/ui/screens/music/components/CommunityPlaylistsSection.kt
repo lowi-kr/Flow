@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.music.components
+package com.arubr.smsvcodes.ui.screens.music.components
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.combinedClickable
@@ -39,10 +39,10 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
-import io.github.aedev.flow.R
-import io.github.aedev.flow.ui.components.SectionTitle
-import io.github.aedev.flow.ui.screens.music.CommunityMusicPlaylist
-import io.github.aedev.flow.ui.screens.music.MusicTrack
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.ui.components.SectionTitle
+import com.arubr.smsvcodes.ui.screens.music.CommunityMusicPlaylist
+import com.arubr.smsvcodes.ui.screens.music.MusicTrack
 
 @Composable
 fun CommunityPlaylistsSection(

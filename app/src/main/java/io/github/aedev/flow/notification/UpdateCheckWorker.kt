@@ -1,12 +1,12 @@
-package io.github.aedev.flow.notification
+package com.arubr.smsvcodes.notification
 
 import android.content.Context
 import android.util.Log
 import androidx.work.*
-import io.github.aedev.flow.BuildConfig
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.data.local.LocalDataManager
-import io.github.aedev.flow.utils.UpdateManager
+import com.arubr.smsvcodes.BuildConfig
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.data.local.LocalDataManager
+import com.arubr.smsvcodes.utils.UpdateManager
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.runBlocking

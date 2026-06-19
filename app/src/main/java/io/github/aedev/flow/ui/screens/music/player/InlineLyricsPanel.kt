@@ -6,7 +6,7 @@
  * Upstream files: ui/component/ExperimentalLyrics.kt, LyricsLine.kt,
  * LyricsCommon.kt, and ui/utils/FadingEdge.kt.
  */
-package io.github.aedev.flow.ui.screens.music.player
+package com.arubr.smsvcodes.ui.screens.music.player
 
 import android.graphics.BlurMaskFilter
 import android.graphics.Typeface
@@ -100,11 +100,11 @@ import androidx.compose.ui.unit.Constraints
 import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.lyrics.LyricsEntry
-import io.github.aedev.flow.data.lyrics.WordTimestamp
-import io.github.aedev.flow.player.EnhancedMusicPlayerManager
-import io.github.aedev.flow.ui.utils.fadingEdge
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.lyrics.LyricsEntry
+import com.arubr.smsvcodes.data.lyrics.WordTimestamp
+import com.arubr.smsvcodes.player.EnhancedMusicPlayerManager
+import com.arubr.smsvcodes.ui.utils.fadingEdge
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.isActive

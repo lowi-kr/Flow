@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.personality
+package com.arubr.smsvcodes.ui.screens.personality
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background

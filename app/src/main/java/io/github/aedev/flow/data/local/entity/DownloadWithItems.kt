@@ -1,4 +1,4 @@
-package io.github.aedev.flow.data.local.entity
+package com.arubr.smsvcodes.data.local.entity
 
 import androidx.room.Embedded
 import androidx.room.Relation

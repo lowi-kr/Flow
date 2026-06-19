@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.music
+package com.arubr.smsvcodes.ui.screens.music
 
 import androidx.compose.animation.*
 import androidx.compose.foundation.background
@@ -25,10 +25,10 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.res.stringResource
-import io.github.aedev.flow.R
+import com.arubr.smsvcodes.R
 import androidx.lifecycle.viewmodel.compose.viewModel
 import coil.compose.AsyncImage
-import io.github.aedev.flow.ui.components.rememberFlowSheetState
+import com.arubr.smsvcodes.ui.components.rememberFlowSheetState
 
 /**
  * Playlist Creation Dialog
@@ -103,7 +103,7 @@ fun CreatePlaylistDialog(
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun AddToPlaylistDialog(
-    playlists: List<io.github.aedev.flow.data.music.Playlist>,
+    playlists: List<com.arubr.smsvcodes.data.music.Playlist>,
     onDismiss: () -> Unit,
     onSelectPlaylist: (String) -> Unit,
     onCreateNew: () -> Unit
@@ -202,7 +202,7 @@ fun AddToPlaylistDialog(
 
 @Composable
 private fun MusicPlaylistSheetRow(
-    playlist: io.github.aedev.flow.data.music.Playlist,
+    playlist: com.arubr.smsvcodes.data.music.Playlist,
     isAdded: Boolean = false,
     onClick: () -> Unit
 ) {

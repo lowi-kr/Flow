@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.notifications
+package com.arubr.smsvcodes.ui.screens.notifications
 
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.ExperimentalFoundationApi
@@ -31,8 +31,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import coil.compose.AsyncImage
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.local.entity.NotificationEntity
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.local.entity.NotificationEntity
 import java.text.SimpleDateFormat
 import java.util.*
 

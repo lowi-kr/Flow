@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.categories
+package com.arubr.smsvcodes.ui.screens.categories
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -31,15 +31,15 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.data.repository.YouTubeRepository.TrendingCategory
-import io.github.aedev.flow.ui.components.ContentFilterChip
-import io.github.aedev.flow.ui.components.ShimmerGridVideoCard
-import io.github.aedev.flow.ui.components.ShimmerVideoCardFullWidth
-import io.github.aedev.flow.ui.components.ShimmerVideoCardHorizontal
-import io.github.aedev.flow.ui.components.VideoCardFullWidth
-import io.github.aedev.flow.ui.components.VideoCardHorizontal
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.data.repository.YouTubeRepository.TrendingCategory
+import com.arubr.smsvcodes.ui.components.ContentFilterChip
+import com.arubr.smsvcodes.ui.components.ShimmerGridVideoCard
+import com.arubr.smsvcodes.ui.components.ShimmerVideoCardFullWidth
+import com.arubr.smsvcodes.ui.components.ShimmerVideoCardHorizontal
+import com.arubr.smsvcodes.ui.components.VideoCardFullWidth
+import com.arubr.smsvcodes.ui.components.VideoCardHorizontal
 import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.filter
 

@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components
+package com.arubr.smsvcodes.ui.components
 
 import android.content.ComponentName
 import android.content.pm.PackageManager
@@ -27,9 +27,9 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
-import io.github.aedev.flow.R
+import com.arubr.smsvcodes.R
 
-private const val SPLASH_ICON_NAMESPACE = "io.github.aedev.flow"
+private const val SPLASH_ICON_NAMESPACE = "com.arubr.smsvcodes"
 
 private data class SplashIconOption(
     val componentSuffix: String,

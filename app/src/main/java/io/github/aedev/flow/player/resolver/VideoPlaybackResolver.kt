@@ -1,4 +1,4 @@
-package io.github.aedev.flow.player.resolver
+package com.arubr.smsvcodes.player.resolver
 
 import android.net.Uri
 import android.util.Log
@@ -6,8 +6,8 @@ import androidx.media3.datasource.DataSource
 import androidx.media3.exoplayer.hls.playlist.DefaultHlsPlaylistTracker
 import androidx.media3.exoplayer.source.MediaSource
 import androidx.media3.exoplayer.source.MergingMediaSource
-import io.github.aedev.flow.player.stream.VideoCodecUtils
-import io.github.aedev.flow.player.config.PlayerConfig
+import com.arubr.smsvcodes.player.stream.VideoCodecUtils
+import com.arubr.smsvcodes.player.config.PlayerConfig
 import org.schabi.newpipe.extractor.stream.AudioStream
 import org.schabi.newpipe.extractor.stream.DeliveryMethod
 import org.schabi.newpipe.extractor.stream.Stream

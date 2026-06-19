@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.home
+package com.arubr.smsvcodes.ui.screens.home
 
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.tween
@@ -37,12 +37,12 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.graphics.vector.PathParser
 import androidx.hilt.navigation.compose.hiltViewModel
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.ui.components.*
-import io.github.aedev.flow.ui.screens.notifications.NotificationViewModel
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.ui.components.*
+import com.arubr.smsvcodes.ui.screens.notifications.NotificationViewModel
 import androidx.compose.ui.res.stringResource
-import io.github.aedev.flow.R
-import io.github.aedev.flow.player.DeepFlowManager
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.player.DeepFlowManager
 
 // Add this import for snapshotFlow
 import androidx.compose.runtime.snapshotFlow
@@ -52,7 +52,7 @@ import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.filter
 import kotlinx.coroutines.launch
 import androidx.compose.ui.unit.Dp
-import io.github.aedev.flow.ui.TabScrollEventBus
+import com.arubr.smsvcodes.ui.TabScrollEventBus
 
 private data class HomeLayoutConfig(
     val columns: Int,
@@ -102,8 +102,8 @@ fun HomeScreen(
     val uiState by viewModel.uiState.collectAsState()
     val unreadNotifications by notificationViewModel.unreadCount.collectAsState()
     
-    val preferences = remember { io.github.aedev.flow.data.local.PlayerPreferences(context) }
-    val homeViewMode by preferences.homeViewMode.collectAsState(initial = io.github.aedev.flow.data.local.HomeViewMode.GRID)
+    val preferences = remember { com.arubr.smsvcodes.data.local.PlayerPreferences(context) }
+    val homeViewMode by preferences.homeViewMode.collectAsState(initial = com.arubr.smsvcodes.data.local.HomeViewMode.GRID)
     val homeFeedEnabled by preferences.homeFeedEnabled.collectAsState(initial = true)
     val showAppLogoIcon by preferences.showAppLogoIcon.collectAsState(initial = true)
     val deepFlowActive by preferences.deepFlowActive.collectAsState(initial = false)
@@ -260,7 +260,7 @@ fun HomeScreen(
                 .background(MaterialTheme.colorScheme.background)
         ) {
         BoxWithConstraints(modifier = Modifier.fillMaxSize()) {
-            val isListView = homeViewMode == io.github.aedev.flow.data.local.HomeViewMode.LIST
+            val isListView = homeViewMode == com.arubr.smsvcodes.data.local.HomeViewMode.LIST
             val layoutConfig = rememberHomeLayoutConfig(maxWidth)
             val gridCells = if (isListView) GridCells.Fixed(1) else GridCells.Fixed(layoutConfig.columns)
 

@@ -1,4 +1,4 @@
-package io.github.aedev.flow.player.audio
+package com.arubr.smsvcodes.player.audio
 
 import android.content.Context
 import android.media.audiofx.LoudnessEnhancer
@@ -6,9 +6,9 @@ import android.util.Log
 import androidx.media3.common.PlaybackParameters
 import androidx.media3.common.util.UnstableApi
 import androidx.media3.exoplayer.ExoPlayer
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.player.state.EnhancedPlayerState
-import io.github.aedev.flow.service.Media3MusicService
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.player.state.EnhancedPlayerState
+import com.arubr.smsvcodes.service.Media3MusicService
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch

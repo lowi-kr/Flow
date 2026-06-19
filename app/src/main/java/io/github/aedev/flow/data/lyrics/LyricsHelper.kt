@@ -2,11 +2,11 @@
 //This implementation was based on metrolist's (https://github.com/MetrolistGroup/Metrolist)
 //==================================================================================================
 
-package io.github.aedev.flow.data.lyrics
+package com.arubr.smsvcodes.data.lyrics
 
 import android.content.Context
 import android.util.Log
-import io.github.aedev.flow.data.local.PlayerPreferences
+import com.arubr.smsvcodes.data.local.PlayerPreferences
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.withTimeoutOrNull

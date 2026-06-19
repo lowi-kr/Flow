@@ -1,4 +1,4 @@
-package io.github.aedev.flow.extensions
+package com.arubr.smsvcodes.extensions
 
 import androidx.media3.common.C
 import androidx.media3.common.MediaItem

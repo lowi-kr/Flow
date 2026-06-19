@@ -1,10 +1,10 @@
-package io.github.aedev.flow.ui.screens.settings
+package com.arubr.smsvcodes.ui.screens.settings
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import io.github.aedev.flow.data.local.LocalDataManager
-import io.github.aedev.flow.data.local.ViewHistory
-import io.github.aedev.flow.notification.ReminderManager
+import com.arubr.smsvcodes.data.local.LocalDataManager
+import com.arubr.smsvcodes.data.local.ViewHistory
+import com.arubr.smsvcodes.notification.ReminderManager
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
 import android.content.Context

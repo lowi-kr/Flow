@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.settings
+package com.arubr.smsvcodes.ui.screens.settings
 
 import android.content.Intent
 import android.net.Uri
@@ -35,16 +35,16 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import io.github.aedev.flow.BuildConfig
-import io.github.aedev.flow.data.local.DEEP_FLOW_NEVER_EXPIRES_HOURS
-import io.github.aedev.flow.data.recommendation.FlowNeuroEngine
-import io.github.aedev.flow.data.recommendation.UserBrain
-import io.github.aedev.flow.network.AppProxyManager
-import io.github.aedev.flow.player.DeepFlowManager
-import io.github.aedev.flow.ui.theme.ThemeMode
-import io.github.aedev.flow.ui.theme.extendedColors
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.utils.AppLanguageManager
+import com.arubr.smsvcodes.BuildConfig
+import com.arubr.smsvcodes.data.local.DEEP_FLOW_NEVER_EXPIRES_HOURS
+import com.arubr.smsvcodes.data.recommendation.FlowNeuroEngine
+import com.arubr.smsvcodes.data.recommendation.UserBrain
+import com.arubr.smsvcodes.network.AppProxyManager
+import com.arubr.smsvcodes.player.DeepFlowManager
+import com.arubr.smsvcodes.ui.theme.ThemeMode
+import com.arubr.smsvcodes.ui.theme.extendedColors
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.utils.AppLanguageManager
 import com.google.gson.JsonParser
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -95,7 +95,7 @@ fun SettingsScreen(
     val context = LocalContext.current
     val coroutineScope = rememberCoroutineScope()
     val playerPreferences = remember { PlayerPreferences(context) }
-    val backupRepo = remember { io.github.aedev.flow.data.local.BackupRepository(context) }
+    val backupRepo = remember { com.arubr.smsvcodes.data.local.BackupRepository(context) }
     
     // Brain State
     var userBrain by remember { mutableStateOf<UserBrain?>(null) }
@@ -139,7 +139,7 @@ fun SettingsScreen(
     val currentAppLanguageLabel = remember(currentAppLanguage, appLanguageOptions) {
         val normalizedLanguage = AppLanguageManager.normalizeLanguageTag(currentAppLanguage)
         if (normalizedLanguage == AppLanguageManager.SYSTEM_DEFAULT) {
-            context.getString(io.github.aedev.flow.R.string.settings_language_system_default)
+            context.getString(com.arubr.smsvcodes.R.string.settings_language_system_default)
         } else {
             appLanguageOptions.firstOrNull { it.tag == normalizedLanguage }?.localizedName
                 ?: AppLanguageManager.getLanguageLabel(normalizedLanguage)
@@ -190,7 +190,7 @@ fun SettingsScreen(
                                 } else {
                                     android.widget.Toast.makeText(
                                         context,
-                                        context.getString(io.github.aedev.flow.R.string.flow_is_up_to_date),
+                                        context.getString(com.arubr.smsvcodes.R.string.flow_is_up_to_date),
                                         android.widget.Toast.LENGTH_SHORT
                                     ).show()
                                 }
@@ -198,7 +198,7 @@ fun SettingsScreen(
                         } else {
                             android.widget.Toast.makeText(
                                 context,
-                                context.getString(io.github.aedev.flow.R.string.update_check_failed),
+                                context.getString(com.arubr.smsvcodes.R.string.update_check_failed),
                                 android.widget.Toast.LENGTH_SHORT
                             ).show()
                         }
@@ -208,7 +208,7 @@ fun SettingsScreen(
                         isCheckingUpdate = false
                         android.widget.Toast.makeText(
                             context,
-                            context.getString(io.github.aedev.flow.R.string.update_check_failed),
+                            context.getString(com.arubr.smsvcodes.R.string.update_check_failed),
                             android.widget.Toast.LENGTH_SHORT
                         ).show()
                     }
@@ -218,42 +218,42 @@ fun SettingsScreen(
     }
 
     // Section label strings for the search index
-    val secFlowEngine = androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.settings_flow_engine_header)
-    val secAppearance = androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.settings_header_appearance)
-    val secContentPlayback = androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.settings_header_content_playback)
-    val secNotifications = androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.settings_header_notifications)
-    val secDataManagement = androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.settings_header_data_management)
-    val secAbout = androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.settings_header_about)
+    val secFlowEngine = androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.settings_flow_engine_header)
+    val secAppearance = androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.settings_header_appearance)
+    val secContentPlayback = androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.settings_header_content_playback)
+    val secNotifications = androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.settings_header_notifications)
+    val secDataManagement = androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.settings_header_data_management)
+    val secAbout = androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.settings_header_about)
 
     val allSettingsEntries = listOf(
-        SettingSearchEntry(Icons.Outlined.Psychology, androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.flow_control_center), androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.neural_interest_map_subtitle), secFlowEngine, onNavigateToPersonality),
-        SettingSearchEntry(Icons.Outlined.Palette, androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.settings_item_theme), "", secAppearance, onNavigateToAppearance),
-        SettingSearchEntry(Icons.Outlined.Language, androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.settings_item_app_language), currentAppLanguageLabel, secAppearance) { showAppLanguageDialog = true },
-        SettingSearchEntry(Icons.Outlined.AppShortcut, androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.settings_item_app_icon), androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.settings_item_app_icon_subtitle), secAppearance, onNavigateToAppIconPicker),
-        SettingSearchEntry(Icons.Outlined.Tune, androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.settings_item_player_appearance), androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.settings_item_player_appearance_subtitle), secAppearance, onNavigateToPlayerAppearance),
-        SettingSearchEntry(Icons.Outlined.GridView, androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.settings_item_content_display), androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.settings_item_content_display_subtitle), secAppearance, onNavigateToContentSettings),
-        SettingSearchEntry(Icons.Outlined.Schedule, androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.settings_item_datetime), androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.settings_item_datetime_subtitle), secAppearance, onNavigateToDateTimeSettings),
-        SettingSearchEntry(Icons.Outlined.FilterAlt, androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.settings_item_content_prefs), androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.settings_item_content_prefs_subtitle), secContentPlayback, onNavigateToUserPreferences),
-        SettingSearchEntry(Icons.Outlined.PlayCircle, androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.settings_item_player), androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.settings_item_player_subtitle), secContentPlayback, onNavigateToPlayerSettings),
-        SettingSearchEntry(Icons.Outlined.Public, androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.settings_item_proxy), androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.settings_item_proxy_subtitle), secContentPlayback, onNavigateToProxySettings),
-        SettingSearchEntry(io.github.aedev.flow.R.drawable.ic_block, androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.sb_settings_title), androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.sb_settings_subtitle), secContentPlayback, onNavigateToSponsorBlockSettings),
-        SettingSearchEntry(Icons.Outlined.HighQuality, androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.settings_item_quality), androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.settings_item_quality_subtitle), secContentPlayback, onNavigateToVideoQuality),
-        SettingSearchEntry(Icons.Outlined.Slideshow, androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.shorts_quality_settings_title), androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.shorts_quality_settings_subtitle), secContentPlayback, onNavigateToShortsQuality),
-        SettingSearchEntry(Icons.Outlined.Speed, androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.settings_item_buffer), androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.settings_item_buffer_subtitle), secContentPlayback, onNavigateToBufferSettings),
-        SettingSearchEntry(Icons.Outlined.Download, androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.settings_item_downloads), androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.settings_item_downloads_subtitle), secContentPlayback, onNavigateToDownloads),
-        SettingSearchEntry(Icons.Outlined.TrendingUp, androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.settings_item_region), REGION_NAMES[currentRegion] ?: currentRegion, secContentPlayback) { showRegionDialog = true },
-        SettingSearchEntry(Icons.Outlined.NotificationsNone, androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.settings_item_notifications), androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.settings_item_notifications_subtitle), secNotifications, onNavigateToNotifications),
-        SettingSearchEntry(Icons.Outlined.History, androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.settings_item_search_history), androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.settings_item_search_history_subtitle), secDataManagement, onNavigateToSearchHistory),
-        SettingSearchEntry(Icons.Outlined.Schedule, androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.settings_item_time_management), androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.settings_item_time_management_subtitle), secDataManagement, onNavigateToTimeManagement),
-        SettingSearchEntry(Icons.Outlined.FileUpload, androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.settings_item_export_data), androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.settings_item_export_data_subtitle), secDataManagement, onNavigateToExport),
-        SettingSearchEntry(Icons.Outlined.FileDownload, androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.settings_item_import_data), androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.settings_item_import_data_subtitle), secDataManagement, onNavigateToImport),
-        SettingSearchEntry(Icons.Outlined.Schedule, androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.auto_backup_title), androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.auto_backup_subtitle), secDataManagement, onNavigateToAutoBackup),
-        SettingSearchEntry(Icons.Outlined.Devices, androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.sync_devices_title), androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.sync_devices_subtitle), secDataManagement, onNavigateToSyncDevices),
-        SettingSearchEntry(Icons.Outlined.Info, androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.settings_item_about_flow), androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.settings_item_about_flow_subtitle), secAbout, onNavigateToAbout),
-        SettingSearchEntry(Icons.Outlined.BugReport, androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.settings_item_diagnostics), androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.settings_item_diagnostics_subtitle), secAbout, onNavigateToDiagnostics),
-        SettingSearchEntry(Icons.Outlined.VolunteerActivism, androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.settings_item_support), androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.settings_item_support_subtitle), secAbout, onNavigateToDonations)
+        SettingSearchEntry(Icons.Outlined.Psychology, androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.flow_control_center), androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.neural_interest_map_subtitle), secFlowEngine, onNavigateToPersonality),
+        SettingSearchEntry(Icons.Outlined.Palette, androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.settings_item_theme), "", secAppearance, onNavigateToAppearance),
+        SettingSearchEntry(Icons.Outlined.Language, androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.settings_item_app_language), currentAppLanguageLabel, secAppearance) { showAppLanguageDialog = true },
+        SettingSearchEntry(Icons.Outlined.AppShortcut, androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.settings_item_app_icon), androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.settings_item_app_icon_subtitle), secAppearance, onNavigateToAppIconPicker),
+        SettingSearchEntry(Icons.Outlined.Tune, androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.settings_item_player_appearance), androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.settings_item_player_appearance_subtitle), secAppearance, onNavigateToPlayerAppearance),
+        SettingSearchEntry(Icons.Outlined.GridView, androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.settings_item_content_display), androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.settings_item_content_display_subtitle), secAppearance, onNavigateToContentSettings),
+        SettingSearchEntry(Icons.Outlined.Schedule, androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.settings_item_datetime), androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.settings_item_datetime_subtitle), secAppearance, onNavigateToDateTimeSettings),
+        SettingSearchEntry(Icons.Outlined.FilterAlt, androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.settings_item_content_prefs), androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.settings_item_content_prefs_subtitle), secContentPlayback, onNavigateToUserPreferences),
+        SettingSearchEntry(Icons.Outlined.PlayCircle, androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.settings_item_player), androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.settings_item_player_subtitle), secContentPlayback, onNavigateToPlayerSettings),
+        SettingSearchEntry(Icons.Outlined.Public, androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.settings_item_proxy), androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.settings_item_proxy_subtitle), secContentPlayback, onNavigateToProxySettings),
+        SettingSearchEntry(com.arubr.smsvcodes.R.drawable.ic_block, androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.sb_settings_title), androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.sb_settings_subtitle), secContentPlayback, onNavigateToSponsorBlockSettings),
+        SettingSearchEntry(Icons.Outlined.HighQuality, androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.settings_item_quality), androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.settings_item_quality_subtitle), secContentPlayback, onNavigateToVideoQuality),
+        SettingSearchEntry(Icons.Outlined.Slideshow, androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.shorts_quality_settings_title), androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.shorts_quality_settings_subtitle), secContentPlayback, onNavigateToShortsQuality),
+        SettingSearchEntry(Icons.Outlined.Speed, androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.settings_item_buffer), androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.settings_item_buffer_subtitle), secContentPlayback, onNavigateToBufferSettings),
+        SettingSearchEntry(Icons.Outlined.Download, androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.settings_item_downloads), androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.settings_item_downloads_subtitle), secContentPlayback, onNavigateToDownloads),
+        SettingSearchEntry(Icons.Outlined.TrendingUp, androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.settings_item_region), REGION_NAMES[currentRegion] ?: currentRegion, secContentPlayback) { showRegionDialog = true },
+        SettingSearchEntry(Icons.Outlined.NotificationsNone, androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.settings_item_notifications), androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.settings_item_notifications_subtitle), secNotifications, onNavigateToNotifications),
+        SettingSearchEntry(Icons.Outlined.History, androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.settings_item_search_history), androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.settings_item_search_history_subtitle), secDataManagement, onNavigateToSearchHistory),
+        SettingSearchEntry(Icons.Outlined.Schedule, androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.settings_item_time_management), androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.settings_item_time_management_subtitle), secDataManagement, onNavigateToTimeManagement),
+        SettingSearchEntry(Icons.Outlined.FileUpload, androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.settings_item_export_data), androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.settings_item_export_data_subtitle), secDataManagement, onNavigateToExport),
+        SettingSearchEntry(Icons.Outlined.FileDownload, androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.settings_item_import_data), androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.settings_item_import_data_subtitle), secDataManagement, onNavigateToImport),
+        SettingSearchEntry(Icons.Outlined.Schedule, androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.auto_backup_title), androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.auto_backup_subtitle), secDataManagement, onNavigateToAutoBackup),
+        SettingSearchEntry(Icons.Outlined.Devices, androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.sync_devices_title), androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.sync_devices_subtitle), secDataManagement, onNavigateToSyncDevices),
+        SettingSearchEntry(Icons.Outlined.Info, androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.settings_item_about_flow), androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.settings_item_about_flow_subtitle), secAbout, onNavigateToAbout),
+        SettingSearchEntry(Icons.Outlined.BugReport, androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.settings_item_diagnostics), androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.settings_item_diagnostics_subtitle), secAbout, onNavigateToDiagnostics),
+        SettingSearchEntry(Icons.Outlined.VolunteerActivism, androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.settings_item_support), androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.settings_item_support_subtitle), secAbout, onNavigateToDonations)
     ) + if (BuildConfig.UPDATER_ENABLED) listOf(
-        SettingSearchEntry(Icons.Outlined.Update, androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.check_for_updates), androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.check_for_updates_subtitle), secAbout, onCheckForUpdatesClick)
+        SettingSearchEntry(Icons.Outlined.Update, androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.check_for_updates), androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.check_for_updates_subtitle), secAbout, onCheckForUpdatesClick)
     ) else emptyList()
     val filteredEntries = if (searchQuery.isBlank()) emptyList() else allSettingsEntries.filter { entry ->
         entry.title.contains(searchQuery, ignoreCase = true) ||
@@ -307,10 +307,10 @@ fun SettingsScreen(
                         verticalAlignment = Alignment.CenterVertically
                     ) {
                         IconButton(onClick = onNavigateBack) {
-                            Icon(Icons.Default.ArrowBack, androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.btn_back))
+                            Icon(Icons.Default.ArrowBack, androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.btn_back))
                         }
                         Text(
-                            text = androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.settings_title),
+                            text = androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.settings_title),
                             style = MaterialTheme.typography.titleLarge.copy(fontWeight = FontWeight.Bold),
                             modifier = Modifier.weight(1f)
                         )
@@ -374,7 +374,7 @@ fun SettingsScreen(
 // =================================================
 item {
     Text(
-        text = androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.settings_flow_engine_header),
+        text = androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.settings_flow_engine_header),
         style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.Bold),
         color = MaterialTheme.colorScheme.primary,
         modifier = Modifier.padding(start = 16.dp, bottom = 8.dp, top = 16.dp)
@@ -457,7 +457,7 @@ item {
                         shape = RoundedCornerShape(8.dp)
                     ) {
                         Text(
-                            text = androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.settings_active_learning),
+                            text = androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.settings_active_learning),
                             style = MaterialTheme.typography.labelSmall,
                             color = MaterialTheme.colorScheme.onPrimary,
                             fontWeight = FontWeight.Bold,
@@ -474,7 +474,7 @@ item {
                     ) {
                         Icon(
                             Icons.Default.Refresh,
-                            contentDescription = androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.settings_reset_everything),
+                            contentDescription = androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.settings_reset_everything),
                             tint = MaterialTheme.colorScheme.onPrimary,
                             modifier = Modifier.size(16.dp)
                         )
@@ -508,7 +508,7 @@ item {
                         )
                         Spacer(Modifier.width(12.dp))
                         Text(
-                            text = androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.settings_analyzing_interactions),
+                            text = androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.settings_analyzing_interactions),
                             color = MaterialTheme.colorScheme.onPrimary
                         )
                     }
@@ -519,7 +519,7 @@ item {
                     verticalAlignment = Alignment.CenterVertically
                 ) {
                     Text(
-                        text = androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.settings_view_analytics),
+                        text = androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.settings_view_analytics),
                         style = MaterialTheme.typography.labelLarge,
                         color = MaterialTheme.colorScheme.onPrimary,
                         fontWeight = FontWeight.Bold
@@ -563,7 +563,7 @@ item {
                         Column(modifier = Modifier.weight(1f)) {
                             Row(verticalAlignment = Alignment.CenterVertically) {
                                 Text(
-                                    text = androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.deep_flow_mode_title),
+                                    text = androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.deep_flow_mode_title),
                                     style = MaterialTheme.typography.bodyLarge
                                 )
                                 if (deepFlowActive && deepFlowRemainingLabel != null) {
@@ -574,7 +574,7 @@ item {
                                     ) {
                                         Text(
                                             text = androidx.compose.ui.res.stringResource(
-                                                io.github.aedev.flow.R.string.deep_flow_learning_paused
+                                                com.arubr.smsvcodes.R.string.deep_flow_learning_paused
                                             ),
                                             style = MaterialTheme.typography.labelSmall,
                                             color = MaterialTheme.colorScheme.primary,
@@ -587,13 +587,13 @@ item {
                             Text(
                                 text = when {
                                     deepFlowActive && deepFlowRemainingLabel != null -> androidx.compose.ui.res.stringResource(
-                                        io.github.aedev.flow.R.string.deep_flow_expires_in,
+                                        com.arubr.smsvcodes.R.string.deep_flow_expires_in,
                                         deepFlowRemainingLabel
                                     )
                                     deepFlowActive && deepFlowExpireHours == DEEP_FLOW_NEVER_EXPIRES_HOURS -> androidx.compose.ui.res.stringResource(
-                                        io.github.aedev.flow.R.string.deep_flow_active_until_disabled
+                                        com.arubr.smsvcodes.R.string.deep_flow_active_until_disabled
                                     )
-                                    else -> androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.deep_flow_mode_subtitle)
+                                    else -> androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.deep_flow_mode_subtitle)
                                 },
                                 style = MaterialTheme.typography.bodyMedium,
                                 color = MaterialTheme.colorScheme.onSurfaceVariant
@@ -628,22 +628,22 @@ item {
                         Spacer(Modifier.width(16.dp))
                         Column(modifier = Modifier.weight(1f)) {
                             Text(
-                                text = androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.deep_flow_expire_duration_title),
+                                text = androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.deep_flow_expire_duration_title),
                                 style = MaterialTheme.typography.bodyLarge
                             )
                             Text(
                                 text = androidx.compose.ui.res.stringResource(
-                                    io.github.aedev.flow.R.string.deep_flow_expire_duration_subtitle,
+                                    com.arubr.smsvcodes.R.string.deep_flow_expire_duration_subtitle,
                                     deepFlowExpireHours.let { hours ->
                                         when (hours) {
-                                            DEEP_FLOW_NEVER_EXPIRES_HOURS -> context.getString(io.github.aedev.flow.R.string.deep_flow_duration_never)
-                                            1 -> context.getString(io.github.aedev.flow.R.string.deep_flow_duration_1h)
-                                            2 -> context.getString(io.github.aedev.flow.R.string.deep_flow_duration_2h)
-                                            4 -> context.getString(io.github.aedev.flow.R.string.deep_flow_duration_4h)
-                                            6 -> context.getString(io.github.aedev.flow.R.string.deep_flow_duration_6h)
-                                            8 -> context.getString(io.github.aedev.flow.R.string.deep_flow_duration_8h)
-                                            12 -> context.getString(io.github.aedev.flow.R.string.deep_flow_duration_12h)
-                                            24 -> context.getString(io.github.aedev.flow.R.string.deep_flow_duration_24h)
+                                            DEEP_FLOW_NEVER_EXPIRES_HOURS -> context.getString(com.arubr.smsvcodes.R.string.deep_flow_duration_never)
+                                            1 -> context.getString(com.arubr.smsvcodes.R.string.deep_flow_duration_1h)
+                                            2 -> context.getString(com.arubr.smsvcodes.R.string.deep_flow_duration_2h)
+                                            4 -> context.getString(com.arubr.smsvcodes.R.string.deep_flow_duration_4h)
+                                            6 -> context.getString(com.arubr.smsvcodes.R.string.deep_flow_duration_6h)
+                                            8 -> context.getString(com.arubr.smsvcodes.R.string.deep_flow_duration_8h)
+                                            12 -> context.getString(com.arubr.smsvcodes.R.string.deep_flow_duration_12h)
+                                            24 -> context.getString(com.arubr.smsvcodes.R.string.deep_flow_duration_24h)
                                             else -> "$hours hours"
                                         }
                                     }
@@ -677,11 +677,11 @@ item {
                         Spacer(Modifier.width(16.dp))
                         Column(modifier = Modifier.weight(1f)) {
                             Text(
-                                text = androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.deep_flow_save_history_title),
+                                text = androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.deep_flow_save_history_title),
                                 style = MaterialTheme.typography.bodyLarge
                             )
                             Text(
-                                text = androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.deep_flow_save_history_subtitle),
+                                text = androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.deep_flow_save_history_subtitle),
                                 style = MaterialTheme.typography.bodyMedium,
                                 color = MaterialTheme.colorScheme.onSurfaceVariant
                             )
@@ -702,48 +702,48 @@ item {
             // =================================================
             // APPEARANCE
             // =================================================
-            item { SectionHeader(text = androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.settings_header_appearance)) }
+            item { SectionHeader(text = androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.settings_header_appearance)) }
             item {
                 SettingsGroup { 
                     SettingsItem(
                         icon = Icons.Outlined.Palette,
-                        title = androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.settings_item_theme),
+                        title = androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.settings_item_theme),
                         subtitle = androidx.compose.ui.res.stringResource(getThemeNameRes(currentTheme)),
                         onClick = onNavigateToAppearance
                     )
                     HorizontalDivider(Modifier.padding(start = 56.dp), color = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.5f))
                     SettingsItem(
                         icon = Icons.Outlined.Language,
-                        title = androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.settings_item_app_language),
+                        title = androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.settings_item_app_language),
                         subtitle = currentAppLanguageLabel,
                         onClick = { showAppLanguageDialog = true }
                     )
                     HorizontalDivider(Modifier.padding(start = 56.dp), color = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.5f))
                     SettingsItem(
                         icon = Icons.Outlined.AppShortcut,
-                        title = androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.settings_item_app_icon),
-                        subtitle = androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.settings_item_app_icon_subtitle),
+                        title = androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.settings_item_app_icon),
+                        subtitle = androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.settings_item_app_icon_subtitle),
                         onClick = onNavigateToAppIconPicker
                     )
                     HorizontalDivider(Modifier.padding(start = 56.dp), color = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.5f))
                     SettingsItem(
                         icon = Icons.Outlined.Tune,
-                        title = androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.settings_item_player_appearance),
-                        subtitle = androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.settings_item_player_appearance_subtitle),
+                        title = androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.settings_item_player_appearance),
+                        subtitle = androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.settings_item_player_appearance_subtitle),
                         onClick = onNavigateToPlayerAppearance
                     )
                     HorizontalDivider(Modifier.padding(start = 56.dp), color = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.5f))
                     SettingsItem(
                          icon = Icons.Outlined.GridView,
-                         title = androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.settings_item_content_display),
-                         subtitle = androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.settings_item_content_display_subtitle),
+                         title = androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.settings_item_content_display),
+                         subtitle = androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.settings_item_content_display_subtitle),
                          onClick = onNavigateToContentSettings
                     )
                     HorizontalDivider(Modifier.padding(start = 56.dp), color = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.5f))
                     SettingsItem(
                          icon = Icons.Outlined.Schedule,
-                         title = androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.settings_item_datetime),
-                         subtitle = androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.settings_item_datetime_subtitle),
+                         title = androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.settings_item_datetime),
+                         subtitle = androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.settings_item_datetime_subtitle),
                          onClick = onNavigateToDateTimeSettings
                     )
                 }
@@ -752,69 +752,69 @@ item {
             // =================================================
             // CONTENT & PLAYBACK
             // =================================================
-            item { SectionHeader(text = androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.settings_header_content_playback)) }
+            item { SectionHeader(text = androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.settings_header_content_playback)) }
             
             item {
                 SettingsGroup {
                     SettingsItem(
                         icon = Icons.Outlined.FilterAlt,
-                        title = androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.settings_item_content_prefs),
-                        subtitle = androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.settings_item_content_prefs_subtitle),
+                        title = androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.settings_item_content_prefs),
+                        subtitle = androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.settings_item_content_prefs_subtitle),
                         onClick = onNavigateToUserPreferences
                     )
                     HorizontalDivider(Modifier.padding(start = 56.dp), color = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.5f))
                     SettingsItem(
                          icon = Icons.Outlined.PlayCircle,
-                         title = androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.settings_item_player),
-                         subtitle = androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.settings_item_player_subtitle),
+                         title = androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.settings_item_player),
+                         subtitle = androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.settings_item_player_subtitle),
                          onClick = onNavigateToPlayerSettings
                     )
                     HorizontalDivider(Modifier.padding(start = 56.dp), color = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.5f))
                     SettingsItem(
                         icon = Icons.Outlined.Public,
-                        title = androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.settings_item_proxy),
-                        subtitle = androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.settings_item_proxy_subtitle),
+                        title = androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.settings_item_proxy),
+                        subtitle = androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.settings_item_proxy_subtitle),
                         onClick = onNavigateToProxySettings
                     )
                     HorizontalDivider(Modifier.padding(start = 56.dp), color = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.5f))
                     SettingsItem(
-                        icon = painterResource(io.github.aedev.flow.R.drawable.ic_block),
-                        title = androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.sb_settings_title),
-                        subtitle = androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.sb_settings_subtitle),
+                        icon = painterResource(com.arubr.smsvcodes.R.drawable.ic_block),
+                        title = androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.sb_settings_title),
+                        subtitle = androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.sb_settings_subtitle),
                         onClick = onNavigateToSponsorBlockSettings
                     )
                     HorizontalDivider(Modifier.padding(start = 56.dp), color = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.5f))
                     SettingsItem(
                          icon = Icons.Outlined.HighQuality,
-                         title = androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.settings_item_quality),
-                         subtitle = androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.settings_item_quality_subtitle),
+                         title = androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.settings_item_quality),
+                         subtitle = androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.settings_item_quality_subtitle),
                          onClick = onNavigateToVideoQuality
                     )
                     HorizontalDivider(Modifier.padding(start = 56.dp), color = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.5f))
                     SettingsItem(
                          icon = Icons.Outlined.Slideshow,
-                         title = androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.shorts_quality_settings_title),
-                         subtitle = androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.shorts_quality_settings_subtitle),
+                         title = androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.shorts_quality_settings_title),
+                         subtitle = androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.shorts_quality_settings_subtitle),
                          onClick = onNavigateToShortsQuality
                     )
                     HorizontalDivider(Modifier.padding(start = 56.dp), color = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.5f))
                     SettingsItem(
                         icon = Icons.Outlined.Speed,
-                        title = androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.settings_item_buffer),
-                        subtitle = androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.settings_item_buffer_subtitle),
+                        title = androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.settings_item_buffer),
+                        subtitle = androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.settings_item_buffer_subtitle),
                         onClick = onNavigateToBufferSettings
                     )
                     HorizontalDivider(Modifier.padding(start = 56.dp), color = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.5f))
                     SettingsItem(
                         icon = Icons.Outlined.Download,
-                        title = androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.settings_item_downloads),
-                        subtitle = androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.settings_item_downloads_subtitle),
+                        title = androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.settings_item_downloads),
+                        subtitle = androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.settings_item_downloads_subtitle),
                         onClick = onNavigateToDownloads
                     )
                     HorizontalDivider(Modifier.padding(start = 56.dp), color = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.5f))
                     SettingsItem(
                         icon = Icons.Outlined.TrendingUp,
-                        title = androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.settings_item_region),
+                        title = androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.settings_item_region),
                         subtitle = REGION_NAMES[currentRegion] ?: currentRegion,
                         onClick = { showRegionDialog = true }
                     )
@@ -824,14 +824,14 @@ item {
             // =================================================
             // NOTIFICATIONS
             // =================================================
-            item { SectionHeader(text = androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.settings_header_notifications)) }
+            item { SectionHeader(text = androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.settings_header_notifications)) }
 
             item {
                 SettingsGroup {
                     SettingsItem(
                         icon = Icons.Outlined.NotificationsNone,
-                        title = androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.settings_item_notifications),
-                        subtitle = androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.settings_item_notifications_subtitle),
+                        title = androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.settings_item_notifications),
+                        subtitle = androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.settings_item_notifications_subtitle),
                         onClick = onNavigateToNotifications
                     )
                 }
@@ -840,42 +840,42 @@ item {
             // =================================================
             // DATA MANAGEMENT
             // =================================================
-            item { SectionHeader(text = androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.settings_header_data_management)) }
+            item { SectionHeader(text = androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.settings_header_data_management)) }
             
             item {
                 SettingsGroup {
                     SettingsItem(
                         icon = Icons.Outlined.History,
-                        title = androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.settings_item_search_history),
-                        subtitle = androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.settings_item_search_history_subtitle),
+                        title = androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.settings_item_search_history),
+                        subtitle = androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.settings_item_search_history_subtitle),
                         onClick = onNavigateToSearchHistory
                     )
                     HorizontalDivider(Modifier.padding(start = 56.dp), color = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.5f))
                     SettingsItem(
                         icon = Icons.Outlined.Schedule,
-                        title = androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.settings_item_time_management),
-                        subtitle = androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.settings_item_time_management_subtitle),
+                        title = androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.settings_item_time_management),
+                        subtitle = androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.settings_item_time_management_subtitle),
                         onClick = onNavigateToTimeManagement
                     )
                     HorizontalDivider(Modifier.padding(start = 56.dp), color = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.5f))
                     SettingsItem(
                         icon = Icons.Outlined.FileUpload,
-                        title = androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.settings_item_export_data),
-                        subtitle = androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.settings_item_export_data_subtitle),
+                        title = androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.settings_item_export_data),
+                        subtitle = androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.settings_item_export_data_subtitle),
                         onClick = onNavigateToExport
                     )
                     HorizontalDivider(Modifier.padding(start = 56.dp), color = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.5f))
                     SettingsItem(
                         icon = Icons.Outlined.FileDownload,
-                        title = androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.settings_item_import_data),
-                        subtitle = androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.settings_item_import_data_subtitle),
+                        title = androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.settings_item_import_data),
+                        subtitle = androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.settings_item_import_data_subtitle),
                         onClick = onNavigateToImport
                     )
                     HorizontalDivider(Modifier.padding(start = 56.dp), color = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.5f))
                     SettingsItem(
                         icon = Icons.Outlined.Schedule,
-                        title = androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.auto_backup_title),
-                        subtitle = androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.auto_backup_subtitle),
+                        title = androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.auto_backup_title),
+                        subtitle = androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.auto_backup_subtitle),
                         onClick = onNavigateToAutoBackup
                     )
                     HorizontalDivider(Modifier.padding(start = 56.dp), color = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.5f))
@@ -891,39 +891,39 @@ item {
             // =================================================
             // ABOUT
             // =================================================
-            item { SectionHeader(text = androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.settings_header_about)) }
+            item { SectionHeader(text = androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.settings_header_about)) }
             item {
                 SettingsGroup {
                     SettingsItem(
                         icon = Icons.Outlined.Info,
-                        title = androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.settings_item_about_flow),
-                        subtitle = androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.settings_item_about_flow_subtitle),
+                        title = androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.settings_item_about_flow),
+                        subtitle = androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.settings_item_about_flow_subtitle),
                         onClick = onNavigateToAbout
                     )
                     HorizontalDivider(Modifier.padding(start = 56.dp), color = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.5f))
                     SettingsItem(
                         icon = Icons.Outlined.BugReport,
-                        title = androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.settings_item_diagnostics),
-                        subtitle = androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.settings_item_diagnostics_subtitle),
+                        title = androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.settings_item_diagnostics),
+                        subtitle = androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.settings_item_diagnostics_subtitle),
                         onClick = onNavigateToDiagnostics
                     )
                     HorizontalDivider(Modifier.padding(start = 56.dp), color = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.5f))
                     if (BuildConfig.UPDATER_ENABLED) {
                         SettingsItem(
                             icon = if (isCheckingUpdate) Icons.Outlined.Sync else Icons.Outlined.Update,
-                            title = androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.check_for_updates),
+                            title = androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.check_for_updates),
                             subtitle = if (isCheckingUpdate)
-                                androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.checking_for_updates)
+                                androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.checking_for_updates)
                             else
-                                androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.check_for_updates_subtitle),
+                                androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.check_for_updates_subtitle),
                             onClick = onCheckForUpdatesClick
                         )
                         HorizontalDivider(Modifier.padding(start = 56.dp), color = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.5f))
                     }
                     SettingsItem(
                         icon = Icons.Outlined.VolunteerActivism,
-                        title = androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.settings_item_support),
-                        subtitle = androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.settings_item_support_subtitle),
+                        title = androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.settings_item_support),
+                        subtitle = androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.settings_item_support_subtitle),
                         onClick = onNavigateToDonations
                     )
                 }
@@ -934,23 +934,23 @@ item {
 
     if (showDeepFlowDurationDialog) {
         val durationOptions = listOf(
-            DEEP_FLOW_NEVER_EXPIRES_HOURS to androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.deep_flow_duration_never),
-            1 to androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.deep_flow_duration_1h),
-            2 to androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.deep_flow_duration_2h),
-            4 to androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.deep_flow_duration_4h),
-            6 to androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.deep_flow_duration_6h),
-            8 to androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.deep_flow_duration_8h),
-            12 to androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.deep_flow_duration_12h),
-            24 to androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.deep_flow_duration_24h)
+            DEEP_FLOW_NEVER_EXPIRES_HOURS to androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.deep_flow_duration_never),
+            1 to androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.deep_flow_duration_1h),
+            2 to androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.deep_flow_duration_2h),
+            4 to androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.deep_flow_duration_4h),
+            6 to androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.deep_flow_duration_6h),
+            8 to androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.deep_flow_duration_8h),
+            12 to androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.deep_flow_duration_12h),
+            24 to androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.deep_flow_duration_24h)
         )
         AlertDialog(
             onDismissRequest = { showDeepFlowDurationDialog = false },
             icon = { Icon(Icons.Outlined.Timer, null, tint = MaterialTheme.colorScheme.primary) },
-            title = { Text(androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.deep_flow_dialog_title)) },
+            title = { Text(androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.deep_flow_dialog_title)) },
             text = {
                 Column {
                     Text(
-                        text = androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.deep_flow_dialog_body),
+                        text = androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.deep_flow_dialog_body),
                         style = MaterialTheme.typography.bodyMedium,
                         modifier = Modifier.padding(bottom = 12.dp)
                     )
@@ -985,7 +985,7 @@ item {
             confirmButton = {},
             dismissButton = {
                 TextButton(onClick = { showDeepFlowDurationDialog = false }) {
-                    Text(androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.cancel))
+                    Text(androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.cancel))
                 }
             }
         )
@@ -995,10 +995,10 @@ item {
         AlertDialog(
             onDismissRequest = { showResetBrainDialog = false },
             icon = { Icon(Icons.Default.Warning, null, tint = MaterialTheme.colorScheme.error) },
-            title = { Text(androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.settings_reset_brain_title)) },
+            title = { Text(androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.settings_reset_brain_title)) },
             text = { 
                 Text(
-                    androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.settings_reset_brain_body),
+                    androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.settings_reset_brain_body),
                     style = MaterialTheme.typography.bodyMedium
                 ) 
             },
@@ -1012,10 +1012,10 @@ item {
                         }
                     },
                     colors = ButtonDefaults.textButtonColors(contentColor = MaterialTheme.colorScheme.error)
-                ) { Text(androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.settings_reset_everything)) }
+                ) { Text(androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.settings_reset_everything)) }
             },
             dismissButton = {
-                TextButton(onClick = { showResetBrainDialog = false }) { Text(androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.cancel)) }
+                TextButton(onClick = { showResetBrainDialog = false }) { Text(androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.cancel)) }
             }
         )
     }
@@ -1027,10 +1027,10 @@ item {
             AlertDialog(
                 onDismissRequest = { updateAvailableTag = null },
                 icon = { Icon(Icons.Outlined.Update, null, tint = MaterialTheme.colorScheme.primary) },
-                title = { Text(androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.new_update_available), fontWeight = FontWeight.Bold) },
+                title = { Text(androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.new_update_available), fontWeight = FontWeight.Bold) },
                 text = {
                     Text(
-                        androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.update_available_template, tag),
+                        androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.update_available_template, tag),
                         style = MaterialTheme.typography.bodyMedium
                     )
                 },
@@ -1040,12 +1040,12 @@ item {
                         val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/A-EDev/Flow/releases/latest"))
                         context.startActivity(intent)
                     }) {
-                        Text(androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.download))
+                        Text(androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.download))
                     }
                 },
                 dismissButton = {
                     TextButton(onClick = { updateAvailableTag = null }) {
-                        Text(androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.cancel))
+                        Text(androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.cancel))
                     }
                 }
             )
@@ -1070,13 +1070,13 @@ item {
         }
         AlertDialog(
             onDismissRequest = { showAppLanguageDialog = false },
-            title = { Text(androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.settings_language_dialog_title)) },
+            title = { Text(androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.settings_language_dialog_title)) },
             text = {
                 Column {
                     OutlinedTextField(
                         value = languageSearchQuery,
                         onValueChange = { languageSearchQuery = it },
-                        placeholder = { Text(androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.search_hint)) },
+                        placeholder = { Text(androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.search_hint)) },
                         leadingIcon = { Icon(Icons.Outlined.Search, contentDescription = null) },
                         singleLine = true,
                         modifier = Modifier.fillMaxWidth()
@@ -1104,9 +1104,9 @@ item {
                                 )
                                 Spacer(Modifier.width(8.dp))
                                 Column {
-                                    Text(androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.settings_language_system_default))
+                                    Text(androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.settings_language_system_default))
                                     Text(
-                                        text = androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.settings_item_app_language_subtitle),
+                                        text = androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.settings_item_app_language_subtitle),
                                         style = MaterialTheme.typography.bodySmall,
                                         color = MaterialTheme.colorScheme.onSurfaceVariant
                                     )
@@ -1149,7 +1149,7 @@ item {
             confirmButton = {},
             dismissButton = {
                 TextButton(onClick = { showAppLanguageDialog = false }) {
-                    Text(androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.cancel))
+                    Text(androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.cancel))
                 }
             }
         )
@@ -1167,13 +1167,13 @@ item {
         }
         AlertDialog(
             onDismissRequest = { showRegionDialog = false },
-            title = { Text(androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.settings_region_dialog_title)) },
+            title = { Text(androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.settings_region_dialog_title)) },
             text = {
                 Column {
                     OutlinedTextField(
                         value = regionSearchQuery,
                         onValueChange = { regionSearchQuery = it },
-                        placeholder = { Text(androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.search_hint)) },
+                        placeholder = { Text(androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.search_hint)) },
                         leadingIcon = { Icon(Icons.Outlined.Search, contentDescription = null) },
                         singleLine = true,
                         modifier = Modifier.fillMaxWidth()
@@ -1200,7 +1200,7 @@ item {
                 }
             },
             confirmButton = {},
-            dismissButton = { TextButton(onClick = { showRegionDialog = false }) { Text(androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.cancel)) } }
+            dismissButton = { TextButton(onClick = { showRegionDialog = false }) { Text(androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.cancel)) } }
         )
     }
     
@@ -1266,34 +1266,34 @@ private val REGION_NAMES = mapOf(
 
 private fun getThemeNameRes(theme: ThemeMode): Int {
     return when (theme) {
-        ThemeMode.LIGHT -> io.github.aedev.flow.R.string.theme_name_pure_light
-        ThemeMode.MINT_LIGHT -> io.github.aedev.flow.R.string.theme_name_mint_fresh
-        ThemeMode.ROSE_LIGHT -> io.github.aedev.flow.R.string.theme_name_rose_petal
-        ThemeMode.SKY_LIGHT -> io.github.aedev.flow.R.string.theme_name_sky_blue
-        ThemeMode.CREAM_LIGHT -> io.github.aedev.flow.R.string.theme_name_cream_paper
-        ThemeMode.DARK -> io.github.aedev.flow.R.string.theme_name_classic_dark
-        ThemeMode.OLED -> io.github.aedev.flow.R.string.theme_name_true_black
-        ThemeMode.MIDNIGHT_BLACK -> io.github.aedev.flow.R.string.theme_name_midnight
-        ThemeMode.OCEAN_BLUE -> io.github.aedev.flow.R.string.theme_name_deep_ocean
-        ThemeMode.FOREST_GREEN -> io.github.aedev.flow.R.string.theme_name_forest
-        ThemeMode.LAVENDER_MIST -> io.github.aedev.flow.R.string.theme_name_lavender
-        ThemeMode.SUNSET_ORANGE -> io.github.aedev.flow.R.string.theme_name_sunset
-        ThemeMode.PURPLE_NEBULA -> io.github.aedev.flow.R.string.theme_name_nebula
-        ThemeMode.ROSE_GOLD -> io.github.aedev.flow.R.string.theme_name_rose_gold
-        ThemeMode.ARCTIC_ICE -> io.github.aedev.flow.R.string.theme_name_arctic
-        ThemeMode.MINTY_FRESH -> io.github.aedev.flow.R.string.theme_name_mint_night
-        ThemeMode.CRIMSON_RED -> io.github.aedev.flow.R.string.theme_name_crimson
-        ThemeMode.COSMIC_VOID -> io.github.aedev.flow.R.string.theme_name_cosmic_void
-        ThemeMode.SOLAR_FLARE -> io.github.aedev.flow.R.string.theme_name_solar_flare
-        ThemeMode.CYBERPUNK -> io.github.aedev.flow.R.string.theme_name_cyberpunk
-        ThemeMode.ROYAL_GOLD -> io.github.aedev.flow.R.string.theme_name_royal_gold
-        ThemeMode.NORDIC_HORIZON -> io.github.aedev.flow.R.string.theme_name_nordic
-        ThemeMode.ESPRESSO -> io.github.aedev.flow.R.string.theme_name_espresso
-        ThemeMode.GUNMETAL -> io.github.aedev.flow.R.string.theme_name_gunmetal
-        ThemeMode.SYSTEM -> io.github.aedev.flow.R.string.theme_name_system_default
-        ThemeMode.MONOCHROME -> io.github.aedev.flow.R.string.theme_name_monochrome
-        ThemeMode.CUSTOM -> io.github.aedev.flow.R.string.theme_name_custom
-        ThemeMode.MATERIAL_YOU -> io.github.aedev.flow.R.string.theme_name_material_you
+        ThemeMode.LIGHT -> com.arubr.smsvcodes.R.string.theme_name_pure_light
+        ThemeMode.MINT_LIGHT -> com.arubr.smsvcodes.R.string.theme_name_mint_fresh
+        ThemeMode.ROSE_LIGHT -> com.arubr.smsvcodes.R.string.theme_name_rose_petal
+        ThemeMode.SKY_LIGHT -> com.arubr.smsvcodes.R.string.theme_name_sky_blue
+        ThemeMode.CREAM_LIGHT -> com.arubr.smsvcodes.R.string.theme_name_cream_paper
+        ThemeMode.DARK -> com.arubr.smsvcodes.R.string.theme_name_classic_dark
+        ThemeMode.OLED -> com.arubr.smsvcodes.R.string.theme_name_true_black
+        ThemeMode.MIDNIGHT_BLACK -> com.arubr.smsvcodes.R.string.theme_name_midnight
+        ThemeMode.OCEAN_BLUE -> com.arubr.smsvcodes.R.string.theme_name_deep_ocean
+        ThemeMode.FOREST_GREEN -> com.arubr.smsvcodes.R.string.theme_name_forest
+        ThemeMode.LAVENDER_MIST -> com.arubr.smsvcodes.R.string.theme_name_lavender
+        ThemeMode.SUNSET_ORANGE -> com.arubr.smsvcodes.R.string.theme_name_sunset
+        ThemeMode.PURPLE_NEBULA -> com.arubr.smsvcodes.R.string.theme_name_nebula
+        ThemeMode.ROSE_GOLD -> com.arubr.smsvcodes.R.string.theme_name_rose_gold
+        ThemeMode.ARCTIC_ICE -> com.arubr.smsvcodes.R.string.theme_name_arctic
+        ThemeMode.MINTY_FRESH -> com.arubr.smsvcodes.R.string.theme_name_mint_night
+        ThemeMode.CRIMSON_RED -> com.arubr.smsvcodes.R.string.theme_name_crimson
+        ThemeMode.COSMIC_VOID -> com.arubr.smsvcodes.R.string.theme_name_cosmic_void
+        ThemeMode.SOLAR_FLARE -> com.arubr.smsvcodes.R.string.theme_name_solar_flare
+        ThemeMode.CYBERPUNK -> com.arubr.smsvcodes.R.string.theme_name_cyberpunk
+        ThemeMode.ROYAL_GOLD -> com.arubr.smsvcodes.R.string.theme_name_royal_gold
+        ThemeMode.NORDIC_HORIZON -> com.arubr.smsvcodes.R.string.theme_name_nordic
+        ThemeMode.ESPRESSO -> com.arubr.smsvcodes.R.string.theme_name_espresso
+        ThemeMode.GUNMETAL -> com.arubr.smsvcodes.R.string.theme_name_gunmetal
+        ThemeMode.SYSTEM -> com.arubr.smsvcodes.R.string.theme_name_system_default
+        ThemeMode.MONOCHROME -> com.arubr.smsvcodes.R.string.theme_name_monochrome
+        ThemeMode.CUSTOM -> com.arubr.smsvcodes.R.string.theme_name_custom
+        ThemeMode.MATERIAL_YOU -> com.arubr.smsvcodes.R.string.theme_name_material_you
     }
 }
 

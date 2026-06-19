@@ -1,7 +1,7 @@
-package io.github.aedev.flow.data.repository
+package com.arubr.smsvcodes.data.repository
 
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.utils.PerformanceDispatcher
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.utils.PerformanceDispatcher
 import android.util.Log
 import android.util.LruCache
 import kotlinx.coroutines.Dispatchers
@@ -23,13 +23,13 @@ import org.schabi.newpipe.extractor.localization.Localization
 import org.schabi.newpipe.extractor.Page
 import org.schabi.newpipe.extractor.exceptions.ExtractionException
 import org.schabi.newpipe.extractor.stream.StreamInfo
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.innertube.YouTube
-import io.github.aedev.flow.innertube.models.SongItem
-import io.github.aedev.flow.innertube.models.response.WatchMetadataResponse
-import io.github.aedev.flow.utils.avatarImageIdentityKey
-import io.github.aedev.flow.utils.distinctBestImageUrls
-import io.github.aedev.flow.utils.ThumbnailUrlResolver
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.innertube.YouTube
+import com.arubr.smsvcodes.innertube.models.SongItem
+import com.arubr.smsvcodes.innertube.models.response.WatchMetadataResponse
+import com.arubr.smsvcodes.utils.avatarImageIdentityKey
+import com.arubr.smsvcodes.utils.distinctBestImageUrls
+import com.arubr.smsvcodes.utils.ThumbnailUrlResolver
 import kotlinx.coroutines.flow.first
 import java.util.Locale
 import javax.inject.Inject
@@ -205,7 +205,7 @@ class YouTubeRepository @Inject constructor(
         query: String,
         contentFilters: List<String> = emptyList(),
         nextPage: Page? = null
-    ): io.github.aedev.flow.data.model.SearchResult = withContext(Dispatchers.IO) {
+    ): com.arubr.smsvcodes.data.model.SearchResult = withContext(Dispatchers.IO) {
         try {
             val searchExtractor = service.getSearchExtractor(query, contentFilters, "")
             searchExtractor.fetchPage()
@@ -218,8 +218,8 @@ class YouTubeRepository @Inject constructor(
             }
             
             val videos = mutableListOf<Video>()
-            val channels = mutableListOf<io.github.aedev.flow.data.model.Channel>()
-            val playlists = mutableListOf<io.github.aedev.flow.data.model.Playlist>()
+            val channels = mutableListOf<com.arubr.smsvcodes.data.model.Channel>()
+            val playlists = mutableListOf<com.arubr.smsvcodes.data.model.Playlist>()
             
             infoItems.items.forEach { item ->
                 when (item) {
@@ -235,7 +235,7 @@ class YouTubeRepository @Inject constructor(
                 }
             }
             
-            io.github.aedev.flow.data.model.SearchResult(
+            com.arubr.smsvcodes.data.model.SearchResult(
                 videos = enrichLikelyCollabAvatarStacks(
                     enrichVideosWithSearchAvatarStacks(query, videos)
                 ),
@@ -244,7 +244,7 @@ class YouTubeRepository @Inject constructor(
             )
         } catch (e: Exception) {
             Log.w(TAG, "${e::class.simpleName}: ${e.message}")
-            io.github.aedev.flow.data.model.SearchResult()
+            com.arubr.smsvcodes.data.model.SearchResult()
         }
     }
 
@@ -734,12 +734,12 @@ class YouTubeRepository @Inject constructor(
      * Fetch the first page of comments for a video.
      * Returns the comments and a next-page token (null if no more pages).
      */
-    suspend fun getComments(videoId: String): Pair<List<io.github.aedev.flow.data.model.Comment>, org.schabi.newpipe.extractor.Page?> = withContext(Dispatchers.IO) {
+    suspend fun getComments(videoId: String): Pair<List<com.arubr.smsvcodes.data.model.Comment>, org.schabi.newpipe.extractor.Page?> = withContext(Dispatchers.IO) {
         try {
             val url = "https://www.youtube.com/watch?v=$videoId"
             val commentsInfo = org.schabi.newpipe.extractor.comments.CommentsInfo.getInfo(service, url)
             val comments = commentsInfo.relatedItems.map { item ->
-                io.github.aedev.flow.data.model.Comment(
+                com.arubr.smsvcodes.data.model.Comment(
                     id = item.commentId ?: "",
                     author = item.uploaderName ?: "Unknown",
                     authorThumbnail = item.uploaderAvatars.firstOrNull()?.url ?: "",
@@ -765,12 +765,12 @@ class YouTubeRepository @Inject constructor(
     suspend fun getMoreComments(
         videoId: String,
         nextPage: org.schabi.newpipe.extractor.Page
-    ): Pair<List<io.github.aedev.flow.data.model.Comment>, org.schabi.newpipe.extractor.Page?> = withContext(Dispatchers.IO) {
+    ): Pair<List<com.arubr.smsvcodes.data.model.Comment>, org.schabi.newpipe.extractor.Page?> = withContext(Dispatchers.IO) {
         try {
             val url = "https://www.youtube.com/watch?v=$videoId"
             val moreItems = org.schabi.newpipe.extractor.comments.CommentsInfo.getMoreItems(service, url, nextPage)
             val comments = moreItems.items.map { item ->
-                io.github.aedev.flow.data.model.Comment(
+                com.arubr.smsvcodes.data.model.Comment(
                     id = item.commentId ?: "",
                     author = item.uploaderName ?: "Unknown",
                     authorThumbnail = item.uploaderAvatars.firstOrNull()?.url ?: "",
@@ -795,11 +795,11 @@ class YouTubeRepository @Inject constructor(
     suspend fun getCommentReplies(
         url: String,
         repliesPage: Page
-    ): Pair<List<io.github.aedev.flow.data.model.Comment>, Page?> = withContext(Dispatchers.IO) {
+    ): Pair<List<com.arubr.smsvcodes.data.model.Comment>, Page?> = withContext(Dispatchers.IO) {
         try {
             val moreItems = org.schabi.newpipe.extractor.comments.CommentsInfo.getMoreItems(service, url, repliesPage)
             val replies = moreItems.items.map { item ->
-                io.github.aedev.flow.data.model.Comment(
+                com.arubr.smsvcodes.data.model.Comment(
                     id = item.commentId ?: "",
                     author = item.uploaderName ?: "Unknown",
                     authorThumbnail = item.uploaderAvatars.firstOrNull()?.url ?: "",
@@ -820,7 +820,7 @@ class YouTubeRepository @Inject constructor(
     /**
      * Fetch playlist details
      */
-    suspend fun getPlaylistDetails(playlistId: String): io.github.aedev.flow.data.model.Playlist? = withContext(Dispatchers.IO) {
+    suspend fun getPlaylistDetails(playlistId: String): com.arubr.smsvcodes.data.model.Playlist? = withContext(Dispatchers.IO) {
         try {
             val playlistUrl = "https://www.youtube.com/playlist?list=$playlistId"
             val playlistInfo = org.schabi.newpipe.extractor.playlist.PlaylistInfo.getInfo(service, playlistUrl)
@@ -852,7 +852,7 @@ class YouTubeRepository @Inject constructor(
                 .sortedByDescending { it.height }
                 .firstOrNull()?.url ?: playlistVideos.firstOrNull()?.thumbnailUrl ?: ""
 
-            io.github.aedev.flow.data.model.Playlist(
+            com.arubr.smsvcodes.data.model.Playlist(
                 id = playlistId,
                 name = playlistInfo.name ?: "Unknown Playlist",
                 thumbnailUrl = bestThumbnail,
@@ -1107,7 +1107,7 @@ class YouTubeRepository @Inject constructor(
     /**
      * Extension function to convert ChannelInfoItem to our Channel model
      */
-    private fun org.schabi.newpipe.extractor.channel.ChannelInfoItem.toChannel(): io.github.aedev.flow.data.model.Channel {
+    private fun org.schabi.newpipe.extractor.channel.ChannelInfoItem.toChannel(): com.arubr.smsvcodes.data.model.Channel {
         val bestThumbnail = thumbnails
             .sortedByDescending { it.height }
             .firstOrNull()?.url ?: ""
@@ -1121,7 +1121,7 @@ class YouTubeRepository @Inject constructor(
             else -> url.substringAfterLast("/").substringBefore("?")
         }
         
-        return io.github.aedev.flow.data.model.Channel(
+        return com.arubr.smsvcodes.data.model.Channel(
             id = channelId,
             name = name ?: "Unknown Channel",
             thumbnailUrl = bestThumbnail,
@@ -1134,7 +1134,7 @@ class YouTubeRepository @Inject constructor(
     /**
      * Extension function to convert PlaylistInfoItem to our Playlist model
      */
-    private fun org.schabi.newpipe.extractor.playlist.PlaylistInfoItem.toPlaylist(): io.github.aedev.flow.data.model.Playlist {
+    private fun org.schabi.newpipe.extractor.playlist.PlaylistInfoItem.toPlaylist(): com.arubr.smsvcodes.data.model.Playlist {
         val playlistId = url.substringAfterLast("=")
         val bestThumbnail = thumbnails
             .sortedByDescending { it.height }
@@ -1142,7 +1142,7 @@ class YouTubeRepository @Inject constructor(
             .firstOrNull()
             .let { ThumbnailUrlResolver.normalizeVideoThumbnail(playlistId, it) }
         
-        return io.github.aedev.flow.data.model.Playlist(
+        return com.arubr.smsvcodes.data.model.Playlist(
             id = playlistId,
             name = name ?: "Unknown Playlist",
             thumbnailUrl = bestThumbnail,
@@ -1228,7 +1228,7 @@ class YouTubeRepository @Inject constructor(
         @Volatile
         private var instance: YouTubeRepository? = null
 
-        fun getInstance(playerPreferences: io.github.aedev.flow.data.local.PlayerPreferences): YouTubeRepository {
+        fun getInstance(playerPreferences: com.arubr.smsvcodes.data.local.PlayerPreferences): YouTubeRepository {
             return instance ?: synchronized(this) {
                 instance ?: YouTubeRepository(playerPreferences).also { instance = it }
             }

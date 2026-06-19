@@ -1,12 +1,12 @@
-package io.github.aedev.flow.ui.screens.music
+package com.arubr.smsvcodes.ui.screens.music
 
 import android.app.Application
 
 import androidx.lifecycle.viewModelScope
-import io.github.aedev.flow.data.music.DownloadManager
-import io.github.aedev.flow.data.music.DownloadStatus
-import io.github.aedev.flow.data.music.DownloadedTrack
-import io.github.aedev.flow.data.music.PlaylistRepository
+import com.arubr.smsvcodes.data.music.DownloadManager
+import com.arubr.smsvcodes.data.music.DownloadStatus
+import com.arubr.smsvcodes.data.music.DownloadedTrack
+import com.arubr.smsvcodes.data.music.PlaylistRepository
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -44,7 +44,7 @@ class LibraryViewModel @Inject constructor(
                 downloadManager.downloadStatus
             ) { args: Array<*> ->
                 @Suppress("UNCHECKED_CAST")
-                val playlists = args[0] as List<io.github.aedev.flow.data.music.Playlist>
+                val playlists = args[0] as List<com.arubr.smsvcodes.data.music.Playlist>
                 @Suppress("UNCHECKED_CAST")
                 val favorites = args[1] as List<MusicTrack>
                 @Suppress("UNCHECKED_CAST")
@@ -103,7 +103,7 @@ class LibraryViewModel @Inject constructor(
 }
 
 data class LibraryUiState(
-    val playlists: List<io.github.aedev.flow.data.music.Playlist> = emptyList(),
+    val playlists: List<com.arubr.smsvcodes.data.music.Playlist> = emptyList(),
     val favorites: List<MusicTrack> = emptyList(),
     val history: List<MusicTrack> = emptyList(),
     val downloads: List<DownloadedTrack> = emptyList(),

@@ -1,4 +1,4 @@
-package io.github.aedev.flow.data.download
+package com.arubr.smsvcodes.data.download
 
 import android.content.Context
 import android.util.Log
@@ -14,11 +14,11 @@ import androidx.media3.datasource.okhttp.OkHttpDataSource
 import androidx.media3.exoplayer.offline.Download
 import androidx.media3.exoplayer.offline.DownloadManager
 import androidx.media3.exoplayer.offline.DownloadNotificationHelper
-import io.github.aedev.flow.service.ExoDownloadService
-import io.github.aedev.flow.di.DownloadCache
-import io.github.aedev.flow.di.PlayerCache
-import io.github.aedev.flow.network.AppProxyManager
-import io.github.aedev.flow.utils.MusicPlayerUtils
+import com.arubr.smsvcodes.service.ExoDownloadService
+import com.arubr.smsvcodes.di.DownloadCache
+import com.arubr.smsvcodes.di.PlayerCache
+import com.arubr.smsvcodes.network.AppProxyManager
+import com.arubr.smsvcodes.utils.MusicPlayerUtils
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers

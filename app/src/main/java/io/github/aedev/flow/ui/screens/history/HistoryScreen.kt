@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.history
+package com.arubr.smsvcodes.ui.screens.history
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -66,12 +66,12 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import coil.compose.AsyncImage
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.local.VideoHistoryEntry
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.ui.components.ShortsCard
-import io.github.aedev.flow.ui.screens.music.MusicTrack
-import io.github.aedev.flow.ui.screens.music.MusicTrackRow
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.local.VideoHistoryEntry
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.ui.components.ShortsCard
+import com.arubr.smsvcodes.ui.screens.music.MusicTrack
+import com.arubr.smsvcodes.ui.screens.music.MusicTrackRow
 import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Locale

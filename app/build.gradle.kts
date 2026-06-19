@@ -9,17 +9,17 @@ plugins {
 }
 
 android {
-    namespace = "io.github.aedev.flow"
+    namespace = "com.arubr.smsvcodes"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "io.github.aedev.flow"
-        minSdk = 26
+        applicationId = "com.arubr.smsvcodes"
+        minSdk = 21
         targetSdk = 34
         versionCode = 16
         versionName = "2.1.5"
 
-        testInstrumentationRunner = "io.github.aedev.flow.HiltTestRunner"
+        testInstrumentationRunner = "com.arubr.smsvcodes.HiltTestRunner"
         vectorDrawables {
             useSupportLibrary = true
         }

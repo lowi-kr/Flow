@@ -1,4 +1,4 @@
-package io.github.aedev.flow.data.local.dao
+package com.arubr.smsvcodes.data.local.dao
 
 import androidx.room.Dao
 import androidx.room.Delete
@@ -6,7 +6,7 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import androidx.room.Update
-import io.github.aedev.flow.data.local.entity.DownloadedSongEntity
+import com.arubr.smsvcodes.data.local.entity.DownloadedSongEntity
 import kotlinx.coroutines.flow.Flow
 
 @Dao

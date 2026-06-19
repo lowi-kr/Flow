@@ -2,9 +2,9 @@
 //This implementation was based on metrolist's (https://github.com/MetrolistGroup/Metrolist)
 //==================================================================================================
 
-package io.github.aedev.flow.data.lyrics
+package com.arubr.smsvcodes.data.lyrics
 
-import io.github.aedev.flow.data.lyrics.kugou.KuGou
+import com.arubr.smsvcodes.data.lyrics.kugou.KuGou
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 

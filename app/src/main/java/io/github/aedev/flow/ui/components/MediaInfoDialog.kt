@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components
+package com.arubr.smsvcodes.ui.components
 
 import android.content.ClipData
 import android.content.ClipboardManager
@@ -38,10 +38,10 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.ui.screens.music.MusicTrack
-import io.github.aedev.flow.utils.DateContext
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.ui.screens.music.MusicTrack
+import com.arubr.smsvcodes.utils.DateContext
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -51,7 +51,7 @@ fun MediaInfoDialog(
     onDismiss: () -> Unit
 ) {
     val context = LocalContext.current
-    var mediaInfo by remember { mutableStateOf<io.github.aedev.flow.innertube.models.MediaInfo?>(null) }
+    var mediaInfo by remember { mutableStateOf<com.arubr.smsvcodes.innertube.models.MediaInfo?>(null) }
     var resolvedDurationSeconds by remember { mutableStateOf<Int?>(null) }
     var isLoading by remember { mutableStateOf(true) }
 
@@ -61,10 +61,10 @@ fun MediaInfoDialog(
             ?: video?.duration?.takeIf { it > 0 }
         val videoId = track?.videoId ?: video?.id
         if (videoId != null) {
-            mediaInfo = io.github.aedev.flow.data.newmusic.InnertubeMusicService.getMediaInfo(videoId)
+            mediaInfo = com.arubr.smsvcodes.data.newmusic.InnertubeMusicService.getMediaInfo(videoId)
             resolvedDurationSeconds = mediaInfo?.durationSeconds?.takeIf { it > 0 }
                 ?: resolvedDurationSeconds
-                ?: io.github.aedev.flow.data.music.YouTubeMusicService.fetchVideoDuration(videoId).takeIf { it > 0 }
+                ?: com.arubr.smsvcodes.data.music.YouTubeMusicService.fetchVideoDuration(videoId).takeIf { it > 0 }
         }
         isLoading = false
     }

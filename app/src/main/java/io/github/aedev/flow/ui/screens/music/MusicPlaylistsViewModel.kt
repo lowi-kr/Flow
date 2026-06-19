@@ -1,17 +1,17 @@
-package io.github.aedev.flow.ui.screens.music
+package com.arubr.smsvcodes.ui.screens.music
 
 import android.content.Context
 import android.util.Log
 import android.widget.Toast
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import io.github.aedev.flow.data.local.PlaylistRepository
-import io.github.aedev.flow.data.local.entity.VideoEntity
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.data.music.DownloadManager
-import io.github.aedev.flow.data.music.YouTubeMusicService
-import io.github.aedev.flow.data.repository.YouTubeRepository
-import io.github.aedev.flow.ui.screens.playlists.PlaylistInfo
+import com.arubr.smsvcodes.data.local.PlaylistRepository
+import com.arubr.smsvcodes.data.local.entity.VideoEntity
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.data.music.DownloadManager
+import com.arubr.smsvcodes.data.music.YouTubeMusicService
+import com.arubr.smsvcodes.data.repository.YouTubeRepository
+import com.arubr.smsvcodes.ui.screens.playlists.PlaylistInfo
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.Dispatchers
@@ -61,7 +61,7 @@ class MusicPlaylistsViewModel @Inject constructor(
         if (!isEnrichingMusic.compareAndSet(false, true)) return
         viewModelScope.launch(Dispatchers.IO) {
             try {
-                val db = io.github.aedev.flow.data.local.AppDatabase.getDatabase(context)
+                val db = com.arubr.smsvcodes.data.local.AppDatabase.getDatabase(context)
                 val videoDao = db.videoDao()
                 val playlistDao = db.playlistDao()
                 val stubs = playlistDao.getMusicPlaylistStubVideos()
@@ -405,7 +405,7 @@ class MusicPlaylistsViewModel @Inject constructor(
                     thumbnailUrl = details.thumbnailUrl
                 )
                 details.tracks.forEach { track ->
-                    val video = io.github.aedev.flow.data.model.Video(
+                    val video = com.arubr.smsvcodes.data.model.Video(
                         id = track.videoId,
                         title = track.title,
                         channelName = track.artist,
@@ -467,7 +467,7 @@ class MusicPlaylistsViewModel @Inject constructor(
                     Toast.makeText(
                         context,
                         context.getString(
-                            io.github.aedev.flow.R.string.merge_playlist_success,
+                            com.arubr.smsvcodes.R.string.merge_playlist_success,
                             tracks.size,
                             targetInfo?.name ?: ""
                         ),

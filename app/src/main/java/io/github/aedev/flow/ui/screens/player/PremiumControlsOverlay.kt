@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.player
+package com.arubr.smsvcodes.ui.screens.player
 
 import android.os.SystemClock
 import androidx.compose.animation.*
@@ -29,10 +29,10 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import io.github.aedev.flow.ui.screens.player.components.LockModeTouchShield
-import io.github.aedev.flow.ui.screens.player.components.SeekbarWithPreview
-import io.github.aedev.flow.ui.screens.player.util.VideoPlayerUtils
-import io.github.aedev.flow.player.EnhancedPlayerManager
+import com.arubr.smsvcodes.ui.screens.player.components.LockModeTouchShield
+import com.arubr.smsvcodes.ui.screens.player.components.SeekbarWithPreview
+import com.arubr.smsvcodes.ui.screens.player.util.VideoPlayerUtils
+import com.arubr.smsvcodes.player.EnhancedPlayerManager
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
@@ -40,13 +40,13 @@ import kotlinx.coroutines.launch
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.zIndex
-import io.github.aedev.flow.R
-import io.github.aedev.flow.player.CastHelper
-import io.github.aedev.flow.data.local.DEFAULT_FULLSCREEN_SEEKBAR_PADDING_DP
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.data.model.SponsorBlockSegment
-import io.github.aedev.flow.player.quality.QualityManager
-import io.github.aedev.flow.ui.components.pressScale
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.player.CastHelper
+import com.arubr.smsvcodes.data.local.DEFAULT_FULLSCREEN_SEEKBAR_PADDING_DP
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.data.model.SponsorBlockSegment
+import com.arubr.smsvcodes.player.quality.QualityManager
+import com.arubr.smsvcodes.ui.components.pressScale
 import org.schabi.newpipe.extractor.stream.StreamSegment
 import kotlin.math.abs
 

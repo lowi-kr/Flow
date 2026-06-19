@@ -1,4 +1,4 @@
-package io.github.aedev.flow.player.renderer
+package com.arubr.smsvcodes.player.renderer
 
 import android.content.Context
 import android.os.Handler

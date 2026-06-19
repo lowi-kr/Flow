@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.player.components
+package com.arubr.smsvcodes.ui.screens.player.components
 
 import android.widget.Toast
 import androidx.compose.foundation.layout.Arrangement
@@ -48,14 +48,14 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
 import androidx.media3.common.util.UnstableApi
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.data.local.VideoCodec
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.innertube.models.response.PlayerResponse
-import io.github.aedev.flow.player.EnhancedPlayerManager
-import io.github.aedev.flow.player.stream.InnerTubeStreamBridge
-import io.github.aedev.flow.ui.screens.player.util.VideoPlayerUtils
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.data.local.VideoCodec
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.innertube.models.response.PlayerResponse
+import com.arubr.smsvcodes.player.EnhancedPlayerManager
+import com.arubr.smsvcodes.player.stream.InnerTubeStreamBridge
+import com.arubr.smsvcodes.ui.screens.player.util.VideoPlayerUtils
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
@@ -176,7 +176,7 @@ fun DownloadQualityDialogCompact(
             val url = stream.getContent().takeIf { it.isNotBlank() } ?: return
             val bitrate = DownloadStreamHelpers.audioBitrateKbps(stream)
             VideoPlayerUtils.promptStoragePermissionIfNeeded(context)
-            io.github.aedev.flow.data.video.downloader.FlowDownloadService.startDownload(
+            com.arubr.smsvcodes.data.video.downloader.FlowDownloadService.startDownload(
                 context = context,
                 video = taggedVideo,
                 url = url,

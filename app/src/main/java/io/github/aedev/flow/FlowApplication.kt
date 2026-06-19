@@ -1,19 +1,19 @@
-package io.github.aedev.flow
+package com.arubr.smsvcodes
 
 import android.app.Application
 import android.content.ComponentCallbacks2
 import android.content.Context
 import android.util.Log
-import io.github.aedev.flow.notification.SubscriptionCheckWorker
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.data.local.SubscriptionRepository
+import com.arubr.smsvcodes.notification.SubscriptionCheckWorker
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.data.local.SubscriptionRepository
 import kotlinx.coroutines.flow.first
-import io.github.aedev.flow.data.repository.NewPipeDownloader
-import io.github.aedev.flow.data.repository.YouTubeRepository
-import io.github.aedev.flow.notification.NotificationHelper
-import io.github.aedev.flow.network.AppProxyManager
-import io.github.aedev.flow.utils.FlowCrashHandler
-import io.github.aedev.flow.utils.PerformanceDispatcher
+import com.arubr.smsvcodes.data.repository.NewPipeDownloader
+import com.arubr.smsvcodes.data.repository.YouTubeRepository
+import com.arubr.smsvcodes.notification.NotificationHelper
+import com.arubr.smsvcodes.network.AppProxyManager
+import com.arubr.smsvcodes.utils.FlowCrashHandler
+import com.arubr.smsvcodes.utils.PerformanceDispatcher
 import org.schabi.newpipe.extractor.NewPipe
 import org.schabi.newpipe.extractor.localization.ContentCountry
 import org.schabi.newpipe.extractor.localization.Localization
@@ -25,16 +25,16 @@ import okhttp3.OkHttpClient
 import javax.inject.Inject
 import java.security.Security
 import org.conscrypt.Conscrypt
-import io.github.aedev.flow.innertube.YouTube
-import io.github.aedev.flow.innertube.pages.NewPipeExtractor
-import io.github.aedev.flow.utils.AppLanguageManager
-import io.github.aedev.flow.utils.potoken.NewPipePoTokenProvider
+import com.arubr.smsvcodes.innertube.YouTube
+import com.arubr.smsvcodes.innertube.pages.NewPipeExtractor
+import com.arubr.smsvcodes.utils.AppLanguageManager
+import com.arubr.smsvcodes.utils.potoken.NewPipePoTokenProvider
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.combine
-import io.github.aedev.flow.innertube.models.YouTubeLocale
+import com.arubr.smsvcodes.innertube.models.YouTubeLocale
 import java.util.Locale
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withTimeoutOrNull
@@ -88,7 +88,7 @@ class FlowApplication : Application(), ImageLoaderFactory {
         }
 
         try {
-            io.github.aedev.flow.utils.cipher.CipherDeobfuscator.initialize(this)
+            com.arubr.smsvcodes.utils.cipher.CipherDeobfuscator.initialize(this)
             Log.d(TAG, "CipherDeobfuscator initialized")
         } catch (e: Exception) {
             Log.e(TAG, "Failed to initialize CipherDeobfuscator", e)
@@ -119,7 +119,7 @@ class FlowApplication : Application(), ImageLoaderFactory {
         
         // Schedule periodic update checks (every 12 hours) — github flavor only
         if (BuildConfig.UPDATER_ENABLED) {
-            io.github.aedev.flow.notification.UpdateCheckWorker.schedulePeriodicCheck(this)
+            com.arubr.smsvcodes.notification.UpdateCheckWorker.schedulePeriodicCheck(this)
         }
         
         Log.d(TAG, "Workers scheduled successfully")
@@ -158,7 +158,7 @@ class FlowApplication : Application(), ImageLoaderFactory {
 
         CoroutineScope(SupervisorJob() + Dispatchers.IO).launch {
             try {
-                io.github.aedev.flow.utils.potoken.WebPoTokenSession.prewarm()
+                com.arubr.smsvcodes.utils.potoken.WebPoTokenSession.prewarm()
             } catch (e: Exception) {
                 Log.w(TAG, "WebPoTokenSession prewarm failed: ${e.message}")
             }
@@ -219,7 +219,7 @@ class FlowApplication : Application(), ImageLoaderFactory {
         }
     }
 
-    private fun applyProxyConfig(config: io.github.aedev.flow.network.AppProxyConfig) {
+    private fun applyProxyConfig(config: com.arubr.smsvcodes.network.AppProxyConfig) {
         AppProxyManager.update(config)
         YouTube.proxy = AppProxyManager.currentProxy()
         YouTube.proxyAuth = AppProxyManager.currentHttpProxyAuthorizationHeader()

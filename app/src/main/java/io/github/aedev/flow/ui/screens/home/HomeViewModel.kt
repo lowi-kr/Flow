@@ -1,29 +1,29 @@
-package io.github.aedev.flow.ui.screens.home
+package com.arubr.smsvcodes.ui.screens.home
 
 import android.content.Context
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import io.github.aedev.flow.data.recommendation.FlowNeuroEngine
-import io.github.aedev.flow.data.recommendation.FlowPersona
-import io.github.aedev.flow.data.recommendation.GraphSeedInput
-import io.github.aedev.flow.data.recommendation.GraphSeedSelector
-import io.github.aedev.flow.data.recommendation.GraphSeedSource
-import io.github.aedev.flow.data.recommendation.UserBrain
-import io.github.aedev.flow.data.local.CachedHomeVideo
-import io.github.aedev.flow.data.local.HomeFeedCacheFilters
-import io.github.aedev.flow.data.local.HomeFeedCacheRepository
-import io.github.aedev.flow.data.local.LikedVideosRepository
-import io.github.aedev.flow.data.local.PlaylistRepository
-import io.github.aedev.flow.data.local.SubscriptionRepository
-import io.github.aedev.flow.data.local.ViewHistory
-import io.github.aedev.flow.data.local.VideoHistoryEntry
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.data.model.toVideo
-import io.github.aedev.flow.data.repository.YouTubeRepository
-import io.github.aedev.flow.data.shorts.ShortsRepository
-import io.github.aedev.flow.ui.components.FeedInvalidationBus
-import io.github.aedev.flow.utils.PerformanceDispatcher
+import com.arubr.smsvcodes.data.recommendation.FlowNeuroEngine
+import com.arubr.smsvcodes.data.recommendation.FlowPersona
+import com.arubr.smsvcodes.data.recommendation.GraphSeedInput
+import com.arubr.smsvcodes.data.recommendation.GraphSeedSelector
+import com.arubr.smsvcodes.data.recommendation.GraphSeedSource
+import com.arubr.smsvcodes.data.recommendation.UserBrain
+import com.arubr.smsvcodes.data.local.CachedHomeVideo
+import com.arubr.smsvcodes.data.local.HomeFeedCacheFilters
+import com.arubr.smsvcodes.data.local.HomeFeedCacheRepository
+import com.arubr.smsvcodes.data.local.LikedVideosRepository
+import com.arubr.smsvcodes.data.local.PlaylistRepository
+import com.arubr.smsvcodes.data.local.SubscriptionRepository
+import com.arubr.smsvcodes.data.local.ViewHistory
+import com.arubr.smsvcodes.data.local.VideoHistoryEntry
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.data.model.toVideo
+import com.arubr.smsvcodes.data.repository.YouTubeRepository
+import com.arubr.smsvcodes.data.shorts.ShortsRepository
+import com.arubr.smsvcodes.ui.components.FeedInvalidationBus
+import com.arubr.smsvcodes.utils.PerformanceDispatcher
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -488,7 +488,7 @@ class HomeViewModel @Inject constructor(
     private val repository: YouTubeRepository,
     private val subscriptionRepository: SubscriptionRepository, 
     private val shortsRepository: ShortsRepository,
-    private val playerPreferences: io.github.aedev.flow.data.local.PlayerPreferences,
+    private val playerPreferences: com.arubr.smsvcodes.data.local.PlayerPreferences,
     @ApplicationContext private val appContext: Context
 ) : ViewModel() {
     companion object {
@@ -1606,7 +1606,7 @@ internal object HomeFeedCache {
 data class HomeUiState(
     val videos: List<Video> = emptyList(),
     val shorts: List<Video> = emptyList(),
-    val continueWatchingVideos: List<io.github.aedev.flow.data.local.VideoHistoryEntry> = emptyList(),
+    val continueWatchingVideos: List<com.arubr.smsvcodes.data.local.VideoHistoryEntry> = emptyList(),
     val isLoading: Boolean = false,
     val isLoadingMore: Boolean = false,
     val isRefreshing: Boolean = false,

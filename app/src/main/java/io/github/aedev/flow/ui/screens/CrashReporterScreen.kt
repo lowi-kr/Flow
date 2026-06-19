@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens
+package com.arubr.smsvcodes.ui.screens
 
 import android.content.ClipData
 import android.content.ClipboardManager

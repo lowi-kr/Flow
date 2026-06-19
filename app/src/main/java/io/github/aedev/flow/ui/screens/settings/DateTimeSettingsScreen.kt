@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.settings
+package com.arubr.smsvcodes.ui.screens.settings
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -14,14 +14,14 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.utils.DateContextMode
-import io.github.aedev.flow.utils.DateDisplayMode
-import io.github.aedev.flow.utils.DateDisplaySettings
-import io.github.aedev.flow.utils.DateFormatStyle
-import io.github.aedev.flow.utils.formatExactDate
-import io.github.aedev.flow.utils.DateContext
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.utils.DateContextMode
+import com.arubr.smsvcodes.utils.DateDisplayMode
+import com.arubr.smsvcodes.utils.DateDisplaySettings
+import com.arubr.smsvcodes.utils.DateFormatStyle
+import com.arubr.smsvcodes.utils.formatExactDate
+import com.arubr.smsvcodes.utils.DateContext
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterial3Api::class)

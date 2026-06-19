@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.channel
+package com.arubr.smsvcodes.ui.screens.channel
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.animateColorAsState
@@ -52,7 +52,7 @@ import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.layout.onSizeChanged
 import android.content.Intent
-import io.github.aedev.flow.utils.ThumbnailUrlResolver
+import com.arubr.smsvcodes.utils.ThumbnailUrlResolver
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.res.stringResource
@@ -66,12 +66,12 @@ import androidx.paging.compose.LazyPagingItems
 import androidx.paging.compose.collectAsLazyPagingItems
 import androidx.paging.compose.itemKey
 import coil.compose.AsyncImage
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.ui.components.CompactVideoCard
-import io.github.aedev.flow.ui.components.FullSizeImageDialog
-import io.github.aedev.flow.ui.components.VideoCardFullWidth
-import io.github.aedev.flow.ui.theme.extendedColors
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.ui.components.CompactVideoCard
+import com.arubr.smsvcodes.ui.components.FullSizeImageDialog
+import com.arubr.smsvcodes.ui.components.VideoCardFullWidth
+import com.arubr.smsvcodes.ui.theme.extendedColors
 import kotlinx.coroutines.launch
 import kotlin.math.roundToInt
 
@@ -208,7 +208,7 @@ private fun ChannelContent(
     isLoadingAllVideos: Boolean,
     shortsLazyPagingItems: LazyPagingItems<Video>?,
     allLiveVideos: List<Video>,
-    playlistsLazyPagingItems: LazyPagingItems<io.github.aedev.flow.data.model.Playlist>?,
+    playlistsLazyPagingItems: LazyPagingItems<com.arubr.smsvcodes.data.model.Playlist>?,
     onVideoClick: (Video) -> Unit,
     onShortClick: (String) -> Unit,
     onPlaylistClick: (String) -> Unit,
@@ -226,7 +226,7 @@ private fun ChannelContent(
     val channelInfo = uiState.channelInfo ?: return
 
     val context = androidx.compose.ui.platform.LocalContext.current
-    val preferences = remember { io.github.aedev.flow.data.local.PlayerPreferences(context) }
+    val preferences = remember { com.arubr.smsvcodes.data.local.PlayerPreferences(context) }
     val isGridView by preferences.channelIsGridView.collectAsState(initial = false)
     var selectedFilter by rememberSaveable { mutableStateOf(VideoFilter.Latest) }
     val coroutineScope = rememberCoroutineScope()
@@ -1133,7 +1133,7 @@ private fun LazyListScope.liveContent(
 }
 
 private fun LazyListScope.playlistsContent(
-    pagingItems: LazyPagingItems<io.github.aedev.flow.data.model.Playlist>?,
+    pagingItems: LazyPagingItems<com.arubr.smsvcodes.data.model.Playlist>?,
     onPlaylistClick: (String) -> Unit
 ) {
     if (pagingItems == null ||
@@ -1196,7 +1196,7 @@ private fun ShortsGridCard(
 // Playlist card
 @Composable
 private fun PlaylistCard(
-    playlist: io.github.aedev.flow.data.model.Playlist,
+    playlist: com.arubr.smsvcodes.data.model.Playlist,
     onClick: () -> Unit
 ) {
     Row(

@@ -1,4 +1,4 @@
-package io.github.aedev.flow.player.resolver
+package com.arubr.smsvcodes.player.resolver
 
 import androidx.media3.common.MediaItem
 import androidx.media3.exoplayer.source.MediaSource

@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.music.player
+package com.arubr.smsvcodes.ui.screens.music.player
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -21,8 +21,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
-import io.github.aedev.flow.R
-import io.github.aedev.flow.ui.screens.music.MusicTrack
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.ui.screens.music.MusicTrack
 
 @Composable
 fun UpNextTrackItem(
@@ -231,7 +231,7 @@ fun RelatedTrackItem(
     }
     
     if (showMoreOptions) {
-        io.github.aedev.flow.ui.components.MusicQuickActionsSheet(
+        com.arubr.smsvcodes.ui.components.MusicQuickActionsSheet(
             track = track,
             onDismiss = { showMoreOptions = false }
         )

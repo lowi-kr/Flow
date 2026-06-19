@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.music
+package com.arubr.smsvcodes.ui.screens.music
 
 import android.content.Context
 import android.content.Intent
@@ -35,7 +35,7 @@ import androidx.compose.ui.platform.ClipboardManager
 import androidx.compose.ui.platform.LocalClipboardManager
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
-import io.github.aedev.flow.R
+import com.arubr.smsvcodes.R
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.AnnotatedString
@@ -46,12 +46,12 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
-import io.github.aedev.flow.ui.components.MusicQuickActionsSheet
-import io.github.aedev.flow.ui.components.MusicCollectionActionItem
-import io.github.aedev.flow.ui.components.MusicCollectionQuickActionsSheet
-import io.github.aedev.flow.ui.components.AddToPlaylistDialog
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.ui.screens.music.components.TrackListItem
+import com.arubr.smsvcodes.ui.components.MusicQuickActionsSheet
+import com.arubr.smsvcodes.ui.components.MusicCollectionActionItem
+import com.arubr.smsvcodes.ui.components.MusicCollectionQuickActionsSheet
+import com.arubr.smsvcodes.ui.components.AddToPlaylistDialog
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.ui.screens.music.components.TrackListItem
 
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalFoundationApi::class)
 @Composable

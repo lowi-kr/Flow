@@ -1,4 +1,4 @@
-package io.github.aedev.flow.player
+package com.arubr.smsvcodes.player
 
 import android.content.ComponentName
 import android.content.Context
@@ -11,9 +11,9 @@ import androidx.media3.common.Player
 import androidx.media3.common.util.UnstableApi
 import androidx.media3.session.MediaController
 import androidx.media3.session.SessionToken
-import io.github.aedev.flow.data.local.QueuePersistence
-import io.github.aedev.flow.service.Media3MusicService
-import io.github.aedev.flow.ui.screens.music.MusicTrack
+import com.arubr.smsvcodes.data.local.QueuePersistence
+import com.arubr.smsvcodes.service.Media3MusicService
+import com.arubr.smsvcodes.ui.screens.music.MusicTrack
 import com.google.common.util.concurrent.ListenableFuture
 import com.google.common.util.concurrent.MoreExecutors
 import kotlinx.coroutines.CoroutineScope
@@ -37,7 +37,7 @@ import kotlin.math.pow
 import kotlinx.serialization.json.Json
 import android.os.Bundle
 import androidx.media3.session.SessionCommand
-import io.github.aedev.flow.data.local.AudioSettingsPersistence
+import com.arubr.smsvcodes.data.local.AudioSettingsPersistence
 import kotlinx.coroutines.flow.first
 
 @OptIn(UnstableApi::class)
@@ -159,7 +159,7 @@ object EnhancedMusicPlayerManager {
         
         // 2. Resolve (using MusicPlayerUtils)
         return try {
-             val playbackData = io.github.aedev.flow.utils.MusicPlayerUtils.playerResponseForPlayback(videoId).getOrNull()
+             val playbackData = com.arubr.smsvcodes.utils.MusicPlayerUtils.playerResponseForPlayback(videoId).getOrNull()
              val url = playbackData?.streamUrl
              
              if (url != null) {
@@ -287,7 +287,7 @@ object EnhancedMusicPlayerManager {
             override fun onPlayerError(error: androidx.media3.common.PlaybackException) {
                 Log.e("EnhancedMusicPlayer", "Player error: ${error.errorCodeName} (${error.errorCode})", error)
                 showPlaybackWarning(
-                    appContext?.getString(io.github.aedev.flow.R.string.music_playback_warning_generic)
+                    appContext?.getString(com.arubr.smsvcodes.R.string.music_playback_warning_generic)
                         ?: "Music playback failed. Try again or switch networks."
                 )
                 retryCount = 0
@@ -872,14 +872,14 @@ object EnhancedMusicPlayerManager {
         _currentEqProfile.value = profileName
         scope.launch { audioSettingsPersistence?.saveEqProfile(profileName) }
         
-        val baseProfile = io.github.aedev.flow.data.model.EqPresets.presets[profileName] 
-            ?: io.github.aedev.flow.data.model.EqPresets.presets["Flat"]
-            ?: io.github.aedev.flow.data.model.ParametricEQ.createFlat()
+        val baseProfile = com.arubr.smsvcodes.data.model.EqPresets.presets[profileName] 
+            ?: com.arubr.smsvcodes.data.model.EqPresets.presets["Flat"]
+            ?: com.arubr.smsvcodes.data.model.ParametricEQ.createFlat()
             
         val boost = _bassBoostLevel.value
         val finalProfile = if (boost > 0) {
             val existingBandIndex = baseProfile.bands.indexOfFirst { 
-                it.filterType == io.github.aedev.flow.data.model.FilterType.LSC && 
+                it.filterType == com.arubr.smsvcodes.data.model.FilterType.LSC && 
                 it.frequency in 40.0..80.0 
             }
             
@@ -889,11 +889,11 @@ object EnhancedMusicPlayerManager {
                 mutableBands[existingBandIndex] = existing.copy(gain = existing.gain + boost.toDouble())
                 mutableBands.toList()
             } else {
-                 val boostBand = io.github.aedev.flow.data.model.ParametricEQBand(
+                 val boostBand = com.arubr.smsvcodes.data.model.ParametricEQBand(
                     60.0, 
                     boost.toDouble(), 
                     0.7, 
-                    io.github.aedev.flow.data.model.FilterType.LSC
+                    com.arubr.smsvcodes.data.model.FilterType.LSC
                 )
                 listOf(boostBand) + baseProfile.bands
             }
@@ -905,9 +905,9 @@ object EnhancedMusicPlayerManager {
         applyEqProfile(finalProfile)
     }
 
-    fun applyEqProfile(profile: io.github.aedev.flow.data.model.ParametricEQ) {
+    fun applyEqProfile(profile: com.arubr.smsvcodes.data.model.ParametricEQ) {
         try {
-            val json = Json.encodeToString(io.github.aedev.flow.data.model.ParametricEQ.serializer(), profile)
+            val json = Json.encodeToString(com.arubr.smsvcodes.data.model.ParametricEQ.serializer(), profile)
             val bundle = Bundle().apply {
                 putString("EQ_PROFILE", json)
             }

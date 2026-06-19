@@ -1,4 +1,4 @@
-package io.github.aedev.flow.data.model
+package com.arubr.smsvcodes.data.model
 
 data class ShortsFeedResponse(
     val videos: List<ShortItem>,

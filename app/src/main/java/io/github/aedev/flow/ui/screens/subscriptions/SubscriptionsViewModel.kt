@@ -1,26 +1,26 @@
-package io.github.aedev.flow.ui.screens.subscriptions
+package com.arubr.smsvcodes.ui.screens.subscriptions
 
 import android.content.Context
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import io.github.aedev.flow.data.local.AppDatabase
-import io.github.aedev.flow.data.local.ChannelSubscription
-import io.github.aedev.flow.data.local.SubscriptionRepository
-import io.github.aedev.flow.data.local.VideoHistoryEntry
-import io.github.aedev.flow.data.local.ViewHistory
-import io.github.aedev.flow.data.local.dao.SubscriptionGroupDao
-import io.github.aedev.flow.data.local.entity.SubscriptionGroupEntity
-import io.github.aedev.flow.data.model.Channel
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.data.repository.YouTubeRepository
-import io.github.aedev.flow.innertube.YouTube
-import io.github.aedev.flow.innertube.models.YouTubeClient
-import io.github.aedev.flow.network.AppProxyManager
-import io.github.aedev.flow.utils.PerformanceDispatcher
-import io.github.aedev.flow.utils.ThumbnailUrlResolver
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.utils.formatYouTubeRelativeTime
+import com.arubr.smsvcodes.data.local.AppDatabase
+import com.arubr.smsvcodes.data.local.ChannelSubscription
+import com.arubr.smsvcodes.data.local.SubscriptionRepository
+import com.arubr.smsvcodes.data.local.VideoHistoryEntry
+import com.arubr.smsvcodes.data.local.ViewHistory
+import com.arubr.smsvcodes.data.local.dao.SubscriptionGroupDao
+import com.arubr.smsvcodes.data.local.entity.SubscriptionGroupEntity
+import com.arubr.smsvcodes.data.model.Channel
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.data.repository.YouTubeRepository
+import com.arubr.smsvcodes.innertube.YouTube
+import com.arubr.smsvcodes.innertube.models.YouTubeClient
+import com.arubr.smsvcodes.network.AppProxyManager
+import com.arubr.smsvcodes.utils.PerformanceDispatcher
+import com.arubr.smsvcodes.utils.ThumbnailUrlResolver
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.utils.formatYouTubeRelativeTime
 import kotlinx.coroutines.awaitAll
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.*
@@ -63,7 +63,7 @@ class SubscriptionsViewModel : ViewModel() {
     val uiState: StateFlow<SubscriptionsUiState> = _uiState.asStateFlow()
 
     private val ytRepository: YouTubeRepository = YouTubeRepository.getInstance()
-    private lateinit var cacheDao: io.github.aedev.flow.data.local.dao.CacheDao
+    private lateinit var cacheDao: com.arubr.smsvcodes.data.local.dao.CacheDao
     private lateinit var database: AppDatabase
     private lateinit var playerPreferences: PlayerPreferences
     private lateinit var subscriptionGroupDao: SubscriptionGroupDao
@@ -326,7 +326,7 @@ class SubscriptionsViewModel : ViewModel() {
             )
             val cachedVideoIds = if (replaceCache) emptySet() else cachedBeforeFetch.map { it.id }.toHashSet()
             var finalVideos: List<Video> = emptyList()
-            io.github.aedev.flow.data.innertube.RssSubscriptionService.fetchSubscriptionVideos(
+            com.arubr.smsvcodes.data.innertube.RssSubscriptionService.fetchSubscriptionVideos(
                 channelIds = channelIds,
                 maxTotal = MAX_SUBSCRIPTION_CACHE_ITEMS,
                 knownVideoIds = cachedVideoIds,
@@ -1167,7 +1167,7 @@ fun SubscriptionGroupEntity.toUiModel() = SubscriptionGroup(
     sortOrder = sortOrder
 )
 
-private fun io.github.aedev.flow.data.local.entity.SubscriptionFeedEntity.toVideo() = Video(
+private fun com.arubr.smsvcodes.data.local.entity.SubscriptionFeedEntity.toVideo() = Video(
     id = videoId,
     title = title,
     channelName = channelName,
@@ -1185,7 +1185,7 @@ private fun io.github.aedev.flow.data.local.entity.SubscriptionFeedEntity.toVide
 
 private fun Video.toSubscriptionFeedEntity(
     cachedAtMillis: Long
-) = io.github.aedev.flow.data.local.entity.SubscriptionFeedEntity(
+) = com.arubr.smsvcodes.data.local.entity.SubscriptionFeedEntity(
     videoId = id,
     title = title,
     channelName = channelName,

@@ -1,10 +1,10 @@
-package io.github.aedev.flow.data.innertube
+package com.arubr.smsvcodes.data.innertube
 
 import android.util.Log
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.utils.ThumbnailUrlResolver
-import io.github.aedev.flow.utils.formatYouTubeRelativeTime
-import io.github.aedev.flow.utils.parsePremiereTimestamp
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.utils.ThumbnailUrlResolver
+import com.arubr.smsvcodes.utils.formatYouTubeRelativeTime
+import com.arubr.smsvcodes.utils.parsePremiereTimestamp
 import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow

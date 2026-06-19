@@ -1,6 +1,6 @@
-package io.github.aedev.flow.innertube.models.response
+package com.arubr.smsvcodes.innertube.models.response
  
- import io.github.aedev.flow.innertube.models.MusicShelfRenderer
+ import com.arubr.smsvcodes.innertube.models.MusicShelfRenderer
  import kotlinx.serialization.Serializable
  
  @Serializable

@@ -2,7 +2,7 @@
 // THIS IMPLEMENTATION WAS INSPIRED BY METROLIST
 // ============================================================================
 
-package io.github.aedev.flow.data.lyrics
+package com.arubr.smsvcodes.data.lyrics
 
 /**
  * LyricsProvider implementation for the BetterLyrics service.

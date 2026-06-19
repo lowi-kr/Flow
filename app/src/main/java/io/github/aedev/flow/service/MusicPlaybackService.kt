@@ -1,4 +1,4 @@
-package io.github.aedev.flow.service
+package com.arubr.smsvcodes.service
 
 import android.app.*
 import android.content.Intent
@@ -14,11 +14,11 @@ import android.support.v4.media.session.MediaSessionCompat
 import android.support.v4.media.session.PlaybackStateCompat
 import androidx.core.app.NotificationCompat
 import androidx.media.session.MediaButtonReceiver
-import io.github.aedev.flow.MainActivity
-import io.github.aedev.flow.R
-import io.github.aedev.flow.player.EnhancedMusicPlayerManager
-import io.github.aedev.flow.player.RepeatMode
-import io.github.aedev.flow.ui.screens.music.MusicTrack
+import com.arubr.smsvcodes.MainActivity
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.player.EnhancedMusicPlayerManager
+import com.arubr.smsvcodes.player.RepeatMode
+import com.arubr.smsvcodes.ui.screens.music.MusicTrack
 import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.collectLatest
 
@@ -48,13 +48,13 @@ class MusicPlaybackService : Service() {
         private const val CHANNEL_NAME = "Music Playback"
         private const val NOTIFICATION_ART_MAX_PX = 512
         
-        const val ACTION_PLAY_PAUSE = "io.github.aedev.flow.ACTION_PLAY_PAUSE"
-        const val ACTION_NEXT = "io.github.aedev.flow.ACTION_NEXT"
-        const val ACTION_PREVIOUS = "io.github.aedev.flow.ACTION_PREVIOUS"
-        const val ACTION_STOP = "io.github.aedev.flow.ACTION_STOP"
-        const val ACTION_SHUFFLE = "io.github.aedev.flow.ACTION_SHUFFLE"
-        const val ACTION_REPEAT = "io.github.aedev.flow.ACTION_REPEAT"
-        const val ACTION_LIKE = "io.github.aedev.flow.ACTION_LIKE"
+        const val ACTION_PLAY_PAUSE = "com.arubr.smsvcodes.ACTION_PLAY_PAUSE"
+        const val ACTION_NEXT = "com.arubr.smsvcodes.ACTION_NEXT"
+        const val ACTION_PREVIOUS = "com.arubr.smsvcodes.ACTION_PREVIOUS"
+        const val ACTION_STOP = "com.arubr.smsvcodes.ACTION_STOP"
+        const val ACTION_SHUFFLE = "com.arubr.smsvcodes.ACTION_SHUFFLE"
+        const val ACTION_REPEAT = "com.arubr.smsvcodes.ACTION_REPEAT"
+        const val ACTION_LIKE = "com.arubr.smsvcodes.ACTION_LIKE"
     }
     
     override fun onCreate() {
@@ -378,7 +378,7 @@ class MusicPlaybackService : Service() {
             this,
             1001,
             Intent(this, MainActivity::class.java).apply {
-                action = "io.github.aedev.flow.action.OPEN_MUSIC_PLAYER"
+                action = "com.arubr.smsvcodes.action.OPEN_MUSIC_PLAYER"
                 flags = Intent.FLAG_ACTIVITY_SINGLE_TOP or Intent.FLAG_ACTIVITY_CLEAR_TOP
                 putExtra("open_music_player", true)
             },

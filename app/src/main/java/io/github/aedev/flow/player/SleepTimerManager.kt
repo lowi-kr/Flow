@@ -1,4 +1,4 @@
-package io.github.aedev.flow.player
+package com.arubr.smsvcodes.player
 
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableLongStateOf

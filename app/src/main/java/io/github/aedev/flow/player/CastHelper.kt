@@ -1,8 +1,8 @@
-package io.github.aedev.flow.player
+package com.arubr.smsvcodes.player
 
 import android.content.Context
-import io.github.aedev.flow.player.dlna.DlnaCastManager
-import io.github.aedev.flow.player.dlna.DlnaDevice
+import com.arubr.smsvcodes.player.dlna.DlnaCastManager
+import com.arubr.smsvcodes.player.dlna.DlnaDevice
 
 /**
  * Thin compatibility shim that redirects cast calls to the DLNA engine.

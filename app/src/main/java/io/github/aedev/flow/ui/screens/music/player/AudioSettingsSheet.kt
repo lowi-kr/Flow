@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.music.player
+package com.arubr.smsvcodes.ui.screens.music.player
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -22,13 +22,13 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.model.EqPresets
-import io.github.aedev.flow.data.model.FilterType
-import io.github.aedev.flow.data.model.ParametricEQ
-import io.github.aedev.flow.data.model.ParametricEQBand
-import io.github.aedev.flow.player.EnhancedMusicPlayerManager
-import io.github.aedev.flow.ui.components.rememberFlowSheetState
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.model.EqPresets
+import com.arubr.smsvcodes.data.model.FilterType
+import com.arubr.smsvcodes.data.model.ParametricEQ
+import com.arubr.smsvcodes.data.model.ParametricEQBand
+import com.arubr.smsvcodes.player.EnhancedMusicPlayerManager
+import com.arubr.smsvcodes.ui.components.rememberFlowSheetState
 import kotlin.math.pow
 import kotlin.math.roundToInt
 

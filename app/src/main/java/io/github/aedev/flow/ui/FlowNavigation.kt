@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui
+package com.arubr.smsvcodes.ui
 
 import androidx.compose.animation.*
 import androidx.compose.animation.core.tween
@@ -19,38 +19,38 @@ import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
 import androidx.navigation.navDeepLink
 import androidx.hilt.navigation.compose.hiltViewModel
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.data.local.PlaylistRepository
-import io.github.aedev.flow.player.EnhancedMusicPlayerManager
-import io.github.aedev.flow.player.GlobalPlayerState
-import io.github.aedev.flow.ui.components.PlayerSheetValue
-import io.github.aedev.flow.ui.components.PlayerDraggableState
-import io.github.aedev.flow.ui.components.MusicPlayerSheetState
-import io.github.aedev.flow.ui.screens.home.HomeScreen
-import io.github.aedev.flow.ui.screens.home.HomeViewModel
-import io.github.aedev.flow.ui.screens.history.HistoryScreen
-import io.github.aedev.flow.ui.screens.library.LibraryScreen
-import io.github.aedev.flow.ui.screens.likedvideos.LikesScreen
-import io.github.aedev.flow.ui.screens.playlists.PlaylistsScreen
-import io.github.aedev.flow.ui.screens.playlists.PlaylistDetailScreen
-import io.github.aedev.flow.ui.screens.notifications.NotificationScreen
-import io.github.aedev.flow.ui.screens.music.EnhancedMusicScreen
-import io.github.aedev.flow.ui.screens.music.MusicTrack
-import io.github.aedev.flow.ui.screens.music.MusicPlayerViewModel
-import io.github.aedev.flow.ui.screens.music.ArtistPage
-import io.github.aedev.flow.ui.screens.music.MusicViewModel
-import io.github.aedev.flow.ui.screens.player.VideoPlayerViewModel
-import io.github.aedev.flow.ui.screens.player.VideoPlayerUiState
-import io.github.aedev.flow.ui.screens.search.SearchScreen
-import io.github.aedev.flow.ui.screens.settings.SettingsScreen
-import io.github.aedev.flow.ui.screens.settings.ImportDataScreen
-import io.github.aedev.flow.ui.screens.personality.FlowPersonalityScreen
-import io.github.aedev.flow.ui.screens.shorts.ShortsScreen
-import io.github.aedev.flow.ui.screens.subscriptions.SubscriptionsScreen
-import io.github.aedev.flow.ui.screens.channel.ChannelScreen
-import io.github.aedev.flow.ui.screens.onboarding.OnboardingScreen
-import io.github.aedev.flow.ui.theme.CustomThemeColors
-import io.github.aedev.flow.ui.theme.ThemeMode
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.data.local.PlaylistRepository
+import com.arubr.smsvcodes.player.EnhancedMusicPlayerManager
+import com.arubr.smsvcodes.player.GlobalPlayerState
+import com.arubr.smsvcodes.ui.components.PlayerSheetValue
+import com.arubr.smsvcodes.ui.components.PlayerDraggableState
+import com.arubr.smsvcodes.ui.components.MusicPlayerSheetState
+import com.arubr.smsvcodes.ui.screens.home.HomeScreen
+import com.arubr.smsvcodes.ui.screens.home.HomeViewModel
+import com.arubr.smsvcodes.ui.screens.history.HistoryScreen
+import com.arubr.smsvcodes.ui.screens.library.LibraryScreen
+import com.arubr.smsvcodes.ui.screens.likedvideos.LikesScreen
+import com.arubr.smsvcodes.ui.screens.playlists.PlaylistsScreen
+import com.arubr.smsvcodes.ui.screens.playlists.PlaylistDetailScreen
+import com.arubr.smsvcodes.ui.screens.notifications.NotificationScreen
+import com.arubr.smsvcodes.ui.screens.music.EnhancedMusicScreen
+import com.arubr.smsvcodes.ui.screens.music.MusicTrack
+import com.arubr.smsvcodes.ui.screens.music.MusicPlayerViewModel
+import com.arubr.smsvcodes.ui.screens.music.ArtistPage
+import com.arubr.smsvcodes.ui.screens.music.MusicViewModel
+import com.arubr.smsvcodes.ui.screens.player.VideoPlayerViewModel
+import com.arubr.smsvcodes.ui.screens.player.VideoPlayerUiState
+import com.arubr.smsvcodes.ui.screens.search.SearchScreen
+import com.arubr.smsvcodes.ui.screens.settings.SettingsScreen
+import com.arubr.smsvcodes.ui.screens.settings.ImportDataScreen
+import com.arubr.smsvcodes.ui.screens.personality.FlowPersonalityScreen
+import com.arubr.smsvcodes.ui.screens.shorts.ShortsScreen
+import com.arubr.smsvcodes.ui.screens.subscriptions.SubscriptionsScreen
+import com.arubr.smsvcodes.ui.screens.channel.ChannelScreen
+import com.arubr.smsvcodes.ui.screens.onboarding.OnboardingScreen
+import com.arubr.smsvcodes.ui.theme.CustomThemeColors
+import com.arubr.smsvcodes.ui.theme.ThemeMode
 import androidx.media3.common.util.UnstableApi
 import java.net.URLEncoder
 
@@ -286,7 +286,7 @@ fun NavGraphBuilder.flowAppGraph(
         currentRoute.value = "categories"
         showBottomNav.value = true
         selectedBottomNavIndex.intValue = 6
-        io.github.aedev.flow.ui.screens.categories.CategoriesScreen(
+        com.arubr.smsvcodes.ui.screens.categories.CategoriesScreen(
             onBackClick = { navController.popBackStack() },
             onVideoClick = { video ->
                 if (video.isShort && !disableShortsPlayer) {
@@ -339,7 +339,7 @@ fun NavGraphBuilder.flowAppGraph(
     composable("settings/auto_backup") {
         currentRoute.value = "settings/auto_backup"
         showBottomNav.value = false
-        io.github.aedev.flow.ui.screens.settings.AutoBackupSettingsScreen(
+        com.arubr.smsvcodes.ui.screens.settings.AutoBackupSettingsScreen(
             onNavigateBack = { navController.popBackStack() }
         )
     }
@@ -355,7 +355,7 @@ fun NavGraphBuilder.flowAppGraph(
     composable("settings/export") {
         currentRoute.value = "settings/export"
         showBottomNav.value = false
-        io.github.aedev.flow.ui.screens.settings.ExportDataScreen(
+        com.arubr.smsvcodes.ui.screens.settings.ExportDataScreen(
             onNavigateBack = { navController.popBackStack() }
         )
     }
@@ -363,7 +363,7 @@ fun NavGraphBuilder.flowAppGraph(
     composable("settings/user_preferences") {
         currentRoute.value = "settings/user_preferences"
         showBottomNav.value = false
-        io.github.aedev.flow.ui.screens.settings.UserPreferencesScreen(
+        com.arubr.smsvcodes.ui.screens.settings.UserPreferencesScreen(
             onNavigateBack = { navController.popBackStack() }
         )
     }
@@ -371,7 +371,7 @@ fun NavGraphBuilder.flowAppGraph(
     composable("settings/player") {
         currentRoute.value = "settings/player"
         showBottomNav.value = false
-        io.github.aedev.flow.ui.screens.settings.PlayerSettingsScreen(
+        com.arubr.smsvcodes.ui.screens.settings.PlayerSettingsScreen(
             onNavigateBack = { navController.popBackStack() }
         )
     }
@@ -379,7 +379,7 @@ fun NavGraphBuilder.flowAppGraph(
     composable("settings/proxy") {
         currentRoute.value = "settings/proxy"
         showBottomNav.value = false
-        io.github.aedev.flow.ui.screens.settings.ProxySettingsScreen(
+        com.arubr.smsvcodes.ui.screens.settings.ProxySettingsScreen(
             onNavigateBack = { navController.popBackStack() }
         )
     }
@@ -387,7 +387,7 @@ fun NavGraphBuilder.flowAppGraph(
     composable("settings/sponsorblock") {
         currentRoute.value = "settings/sponsorblock"
         showBottomNav.value = false
-        io.github.aedev.flow.ui.screens.settings.SponsorBlockSettingsScreen(
+        com.arubr.smsvcodes.ui.screens.settings.SponsorBlockSettingsScreen(
             onNavigateBack = { navController.popBackStack() }
         )
     }
@@ -395,7 +395,7 @@ fun NavGraphBuilder.flowAppGraph(
     composable("settings/buffer") {
         currentRoute.value = "settings/buffer"
         showBottomNav.value = false
-        io.github.aedev.flow.ui.screens.settings.BufferSettingsScreen(
+        com.arubr.smsvcodes.ui.screens.settings.BufferSettingsScreen(
             onNavigateBack = { navController.popBackStack() }
         )
     }
@@ -403,7 +403,7 @@ fun NavGraphBuilder.flowAppGraph(
     composable("settings/search_history") {
         currentRoute.value = "settings/search_history"
         showBottomNav.value = false
-        io.github.aedev.flow.ui.screens.settings.SearchHistorySettingsScreen(
+        com.arubr.smsvcodes.ui.screens.settings.SearchHistorySettingsScreen(
             onNavigateBack = { navController.popBackStack() }
         )
     }
@@ -411,7 +411,7 @@ fun NavGraphBuilder.flowAppGraph(
     composable("settings/video_quality") {
         currentRoute.value = "settings/video_quality"
         showBottomNav.value = false
-        io.github.aedev.flow.ui.screens.settings.VideoQualitySettingsScreen(
+        com.arubr.smsvcodes.ui.screens.settings.VideoQualitySettingsScreen(
             onNavigateBack = { navController.popBackStack() }
         )
     }
@@ -419,7 +419,7 @@ fun NavGraphBuilder.flowAppGraph(
     composable("settings/shorts_quality") {
         currentRoute.value = "settings/shorts_quality"
         showBottomNav.value = false
-        io.github.aedev.flow.ui.screens.settings.ShortsVideoQualitySettingsScreen(
+        com.arubr.smsvcodes.ui.screens.settings.ShortsVideoQualitySettingsScreen(
             onNavigateBack = { navController.popBackStack() }
         )
     }
@@ -427,7 +427,7 @@ fun NavGraphBuilder.flowAppGraph(
     composable("settings/content") {
         currentRoute.value = "settings/content"
         showBottomNav.value = false
-        io.github.aedev.flow.ui.screens.settings.ContentSettingsScreen(
+        com.arubr.smsvcodes.ui.screens.settings.ContentSettingsScreen(
             onBackClick = { navController.popBackStack() }
         )
     }
@@ -435,7 +435,7 @@ fun NavGraphBuilder.flowAppGraph(
     composable("settings/datetime") {
         currentRoute.value = "settings/datetime"
         showBottomNav.value = false
-        io.github.aedev.flow.ui.screens.settings.DateTimeSettingsScreen(
+        com.arubr.smsvcodes.ui.screens.settings.DateTimeSettingsScreen(
             onNavigateBack = { navController.popBackStack() }
         )
     }
@@ -450,7 +450,7 @@ fun NavGraphBuilder.flowAppGraph(
     composable("settings/time_management") {
         currentRoute.value = "settings/time_management"
         showBottomNav.value = false
-        io.github.aedev.flow.ui.screens.settings.TimeManagementScreen(
+        com.arubr.smsvcodes.ui.screens.settings.TimeManagementScreen(
             onNavigateBack = { navController.popBackStack() }
         )
     }
@@ -458,7 +458,7 @@ fun NavGraphBuilder.flowAppGraph(
     composable("settings/about") {
         currentRoute.value = "settings/about"
         showBottomNav.value = false
-        io.github.aedev.flow.ui.screens.settings.AboutScreen(
+        com.arubr.smsvcodes.ui.screens.settings.AboutScreen(
             onNavigateBack = { navController.popBackStack() },
             onNavigateToDonations = { navController.navigate("donations") }
         )
@@ -467,7 +467,7 @@ fun NavGraphBuilder.flowAppGraph(
     composable("settings/appearance") {
         currentRoute.value = "settings/appearance"
         showBottomNav.value = false
-        io.github.aedev.flow.ui.screens.settings.AppearanceScreen(
+        com.arubr.smsvcodes.ui.screens.settings.AppearanceScreen(
             currentTheme = currentTheme,
             customThemeColors = customThemeColors,
             systemLightThemeMode = systemLightThemeMode,
@@ -483,7 +483,7 @@ fun NavGraphBuilder.flowAppGraph(
     composable("settings/player_appearance") {
         currentRoute.value = "settings/player_appearance"
         showBottomNav.value = false
-        io.github.aedev.flow.ui.screens.settings.PlayerAppearanceScreen(
+        com.arubr.smsvcodes.ui.screens.settings.PlayerAppearanceScreen(
             onNavigateBack = { navController.popBackStack() }
         )
     }
@@ -491,7 +491,7 @@ fun NavGraphBuilder.flowAppGraph(
     composable("settings/downloads") {
         currentRoute.value = "settings/downloads"
         showBottomNav.value = false
-        io.github.aedev.flow.ui.screens.settings.DownloadSettingsScreen(
+        com.arubr.smsvcodes.ui.screens.settings.DownloadSettingsScreen(
             onNavigateBack = { navController.popBackStack() }
         )
     }
@@ -499,7 +499,7 @@ fun NavGraphBuilder.flowAppGraph(
     composable("settings/notifications") {
         currentRoute.value = "settings/notifications"
         showBottomNav.value = false
-        io.github.aedev.flow.ui.screens.settings.NotificationSettingsScreen(
+        com.arubr.smsvcodes.ui.screens.settings.NotificationSettingsScreen(
             onNavigateBack = { navController.popBackStack() }
         )
     }
@@ -507,7 +507,7 @@ fun NavGraphBuilder.flowAppGraph(
     composable("settings/app_icon") {
         currentRoute.value = "settings/app_icon"
         showBottomNav.value = false
-        io.github.aedev.flow.ui.screens.settings.AppIconPickerScreen(
+        com.arubr.smsvcodes.ui.screens.settings.AppIconPickerScreen(
             onNavigateBack = { navController.popBackStack() }
         )
     }
@@ -515,7 +515,7 @@ fun NavGraphBuilder.flowAppGraph(
     composable("settings/diagnostics") {
         currentRoute.value = "settings/diagnostics"
         showBottomNav.value = false
-        io.github.aedev.flow.ui.screens.settings.DiagnosticsScreen(
+        com.arubr.smsvcodes.ui.screens.settings.DiagnosticsScreen(
             onNavigateBack = { navController.popBackStack() }
         )
     }
@@ -523,7 +523,7 @@ fun NavGraphBuilder.flowAppGraph(
     composable("donations") {
         currentRoute.value = "donations"
         showBottomNav.value = false
-        io.github.aedev.flow.ui.screens.settings.DonationsScreen(
+        com.arubr.smsvcodes.ui.screens.settings.DonationsScreen(
             onNavigateBack = { navController.popBackStack() }
         )
     }
@@ -581,7 +581,7 @@ fun NavGraphBuilder.flowAppGraph(
                     val uri = android.content.ContentUris.withAppendedId(
                         android.provider.MediaStore.Video.Media.EXTERNAL_CONTENT_URI, localId
                     ).toString()
-                    val video = io.github.aedev.flow.data.model.Video(
+                    val video = com.arubr.smsvcodes.data.model.Video(
                         id = track.videoId,
                         title = track.title,
                         channelName = track.artist,
@@ -665,7 +665,7 @@ fun NavGraphBuilder.flowAppGraph(
     composable("musicPlaylists") {
         currentRoute.value = "musicPlaylists"
         showBottomNav.value = false
-        io.github.aedev.flow.ui.screens.music.MusicPlaylistsScreen(
+        com.arubr.smsvcodes.ui.screens.music.MusicPlaylistsScreen(
             onBackClick = { navController.popBackStack() },
             onPlaylistClick = { playlist ->
                 navController.navigate("musicPlaylist/${playlist.id}")
@@ -703,7 +703,7 @@ fun NavGraphBuilder.flowAppGraph(
     composable("savedShorts") {
         currentRoute.value = "savedShorts"
         showBottomNav.value = false
-        io.github.aedev.flow.ui.screens.library.SavedShortsGridScreen(
+        com.arubr.smsvcodes.ui.screens.library.SavedShortsGridScreen(
             onBackClick = { navController.popBackStack() },
             onVideoClick = { videoId ->
                 navController.navigate("savedShortsPlayer/$videoId")
@@ -737,7 +737,7 @@ fun NavGraphBuilder.flowAppGraph(
         
         val musicPlayerViewModel: MusicPlayerViewModel = hiltViewModel()
         
-        io.github.aedev.flow.ui.screens.library.DownloadsScreen(
+        com.arubr.smsvcodes.ui.screens.library.DownloadsScreen(
             onBackClick = { navController.popBackStack() },
             onVideoClick = { videos, index ->
                 val videoList = videos.map { it.video }
@@ -768,11 +768,11 @@ fun NavGraphBuilder.flowAppGraph(
 
         val musicPlayerViewModel: MusicPlayerViewModel = hiltViewModel()
 
-        io.github.aedev.flow.ui.screens.library.LocalMediaScreen(
+        com.arubr.smsvcodes.ui.screens.library.LocalMediaScreen(
             onBackClick = { navController.popBackStack() },
             onVideoClick = { item ->
-                val video = io.github.aedev.flow.data.model.Video(
-                    id = io.github.aedev.flow.ui.screens.library.LocalMediaViewModel.localMediaId(item),
+                val video = com.arubr.smsvcodes.data.model.Video(
+                    id = com.arubr.smsvcodes.ui.screens.library.LocalMediaViewModel.localMediaId(item),
                     title = item.title,
                     channelName = item.subtitle.ifBlank { "Local video" },
                     channelId = "local",
@@ -787,8 +787,8 @@ fun NavGraphBuilder.flowAppGraph(
             },
             onMusicClick = { items, index ->
                 val tracks = items.map { item ->
-                    io.github.aedev.flow.ui.screens.music.MusicTrack(
-                        videoId = io.github.aedev.flow.ui.screens.library.LocalMediaViewModel.localMediaId(item),
+                    com.arubr.smsvcodes.ui.screens.music.MusicTrack(
+                        videoId = com.arubr.smsvcodes.ui.screens.library.LocalMediaViewModel.localMediaId(item),
                         title = item.title,
                         artist = item.subtitle.ifBlank { "Local audio" },
                         thumbnailUrl = item.artworkUri ?: "",
@@ -796,7 +796,7 @@ fun NavGraphBuilder.flowAppGraph(
                     )
                 }
                 val localUris = items.associate { item ->
-                    io.github.aedev.flow.ui.screens.library.LocalMediaViewModel.localMediaId(item) to
+                    com.arubr.smsvcodes.ui.screens.library.LocalMediaViewModel.localMediaId(item) to
                         android.net.Uri.parse(item.contentUri)
                 }
                 val selected = tracks[index]
@@ -860,7 +860,7 @@ fun NavGraphBuilder.flowAppGraph(
     composable("moodsAndGenres") {
         currentRoute.value = "moodsAndGenres"
         showBottomNav.value = false
-        io.github.aedev.flow.ui.screens.music.MoodsAndGenresScreen(
+        com.arubr.smsvcodes.ui.screens.music.MoodsAndGenresScreen(
             onBackClick = { navController.popBackStack() },
             onGenreClick = { item ->
                 val encodedParams = android.net.Uri.encode(item.endpoint.params ?: "")
@@ -886,7 +886,7 @@ fun NavGraphBuilder.flowAppGraph(
         val musicPlayerViewModel: MusicPlayerViewModel = hiltViewModel()
         val initialQuery = backStackEntry.arguments?.getString("query")
 
-        io.github.aedev.flow.ui.screens.music.MusicSearchScreen(
+        com.arubr.smsvcodes.ui.screens.music.MusicSearchScreen(
             initialQuery = initialQuery,
             onBackClick = { navController.popBackStack() },
             onTrackClick = { track, queue, source ->
@@ -987,10 +987,10 @@ fun NavGraphBuilder.flowAppGraph(
         
         val musicPlayerViewModel: MusicPlayerViewModel = hiltViewModel()
         
-        io.github.aedev.flow.ui.screens.music.YouTubeBrowseScreen(
+        com.arubr.smsvcodes.ui.screens.music.YouTubeBrowseScreen(
             onBackClick = { navController.popBackStack() },
             onSongClick = { song ->
-                val track = io.github.aedev.flow.ui.screens.music.MusicTrack(
+                val track = com.arubr.smsvcodes.ui.screens.music.MusicTrack(
                     videoId = song.id,
                     title = song.title,
                     artist = song.artists.joinToString(", ") { it.name },
@@ -1023,7 +1023,7 @@ fun NavGraphBuilder.flowAppGraph(
         
         val musicPlayerViewModel: MusicPlayerViewModel = hiltViewModel()
         
-        io.github.aedev.flow.ui.screens.music.LibraryScreen(
+        com.arubr.smsvcodes.ui.screens.music.LibraryScreen(
             onBackClick = { navController.popBackStack() },
             onTrackClick = { track, queue ->
                 musicPlayerViewModel.loadAndPlayTrack(track, queue)
@@ -1101,13 +1101,13 @@ fun NavGraphBuilder.flowAppGraph(
         val musicViewModel: MusicViewModel = hiltViewModel()
         val musicPlayerViewModel: MusicPlayerViewModel = hiltViewModel()
 
-        io.github.aedev.flow.ui.screens.music.ArtistItemsScreen(
+        com.arubr.smsvcodes.ui.screens.music.ArtistItemsScreen(
             browseId = browseId,
             params = params,
             onBackClick = { navController.popBackStack() },
             viewModel = musicViewModel,
             onTrackClick = { songItem ->
-                val track = io.github.aedev.flow.ui.screens.music.MusicTrack(
+                val track = com.arubr.smsvcodes.ui.screens.music.MusicTrack(
                     videoId = songItem.id,
                     title = songItem.title,
                     artist = songItem.artists.joinToString(", ") { it.name },
@@ -1137,7 +1137,7 @@ fun NavGraphBuilder.flowAppGraph(
         val playlistId = backStackEntry.arguments?.getString("playlistId") ?: return@composable
         val musicViewModel: MusicViewModel = hiltViewModel()
         val musicPlayerViewModel: MusicPlayerViewModel = hiltViewModel()
-        val musicPlaylistsViewModel: io.github.aedev.flow.ui.screens.music.MusicPlaylistsViewModel = hiltViewModel()
+        val musicPlaylistsViewModel: com.arubr.smsvcodes.ui.screens.music.MusicPlaylistsViewModel = hiltViewModel()
         val uiState by musicViewModel.uiState.collectAsState()
         val isSaved by musicPlaylistsViewModel.isSavedPlaylist.collectAsState()
         
@@ -1166,7 +1166,7 @@ fun NavGraphBuilder.flowAppGraph(
             }
         } else {
             uiState.playlistDetails?.let { details ->
-                io.github.aedev.flow.ui.screens.music.PlaylistPage(
+                com.arubr.smsvcodes.ui.screens.music.PlaylistPage(
                     playlistDetails = details,
                     onBackClick = { navController.popBackStack() },
                     onTrackClick = { track, queue ->

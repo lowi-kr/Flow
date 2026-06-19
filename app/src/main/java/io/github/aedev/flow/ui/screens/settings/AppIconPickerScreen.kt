@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.settings
+package com.arubr.smsvcodes.ui.screens.settings
 
 import android.content.ComponentName
 import android.content.Context
@@ -55,11 +55,11 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.local.PlayerPreferences
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.local.PlayerPreferences
 import kotlinx.coroutines.launch
 
-private const val ICON_NAMESPACE = "io.github.aedev.flow"
+private const val ICON_NAMESPACE = "com.arubr.smsvcodes"
 
 private data class AppIconOption(
     val componentSuffix: String,

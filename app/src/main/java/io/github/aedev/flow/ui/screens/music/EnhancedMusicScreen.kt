@@ -1,10 +1,10 @@
-package io.github.aedev.flow.ui.screens.music
+package com.arubr.smsvcodes.ui.screens.music
 
 import android.content.Intent
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.material3.pulltorefresh.PullToRefreshBox
 import androidx.compose.ui.res.stringResource
-import io.github.aedev.flow.R
+import com.arubr.smsvcodes.R
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
@@ -17,7 +17,7 @@ import androidx.compose.foundation.lazy.grid.rememberLazyGridState
 import androidx.compose.foundation.lazy.items
 import kotlinx.coroutines.flow.filter
 import kotlinx.coroutines.flow.collectLatest
-import io.github.aedev.flow.ui.TabScrollEventBus
+import com.arubr.smsvcodes.ui.TabScrollEventBus
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Mic
 import androidx.compose.material.icons.outlined.Search
@@ -32,11 +32,11 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
-import io.github.aedev.flow.player.EnhancedMusicPlayerManager
-import io.github.aedev.flow.ui.components.*
-import io.github.aedev.flow.ui.screens.music.components.*
-import io.github.aedev.flow.ui.screens.music.tabs.*
-import io.github.aedev.flow.ui.theme.Dimensions
+import com.arubr.smsvcodes.player.EnhancedMusicPlayerManager
+import com.arubr.smsvcodes.ui.components.*
+import com.arubr.smsvcodes.ui.screens.music.components.*
+import com.arubr.smsvcodes.ui.screens.music.tabs.*
+import com.arubr.smsvcodes.ui.theme.Dimensions
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.ui.draw.clip
 
@@ -59,7 +59,7 @@ fun EnhancedMusicScreen(
     onRecognizeClick: () -> Unit = {},
     onSettingsClick: () -> Unit = {},
     onAlbumClick: (String) -> Unit = {},
-    onMoodsClick: (io.github.aedev.flow.innertube.pages.MoodAndGenres.Item?) -> Unit = {},
+    onMoodsClick: (com.arubr.smsvcodes.innertube.pages.MoodAndGenres.Item?) -> Unit = {},
     viewModel: MusicViewModel = hiltViewModel()
 ) {
     val uiState by viewModel.uiState.collectAsState()

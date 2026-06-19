@@ -1,4 +1,4 @@
-package io.github.aedev.flow.innertube.models
+package com.arubr.smsvcodes.innertube.models
 
 data class MediaInfo(
     val videoId: String,

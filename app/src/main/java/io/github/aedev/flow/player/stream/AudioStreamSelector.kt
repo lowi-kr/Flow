@@ -1,6 +1,6 @@
-package io.github.aedev.flow.player.stream
+package com.arubr.smsvcodes.player.stream
 
-import io.github.aedev.flow.data.local.MusicAudioQuality
+import com.arubr.smsvcodes.data.local.MusicAudioQuality
 import org.schabi.newpipe.extractor.stream.AudioStream
 import org.schabi.newpipe.extractor.stream.AudioTrackType
 import kotlin.math.abs

@@ -2,9 +2,9 @@
 //This implementation was based on metrolist's (https://github.com/MetrolistGroup/Metrolist)
 //==================================================================================================
 
-package io.github.aedev.flow.data.lyrics
+package com.arubr.smsvcodes.data.lyrics
 
-import io.github.aedev.flow.data.lyrics.paxsenix.Paxsenix
+import com.arubr.smsvcodes.data.lyrics.paxsenix.Paxsenix
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
@@ -19,7 +19,7 @@ class PaxsenixLyricsProvider : LyricsProvider {
         album: String?
     ): Result<List<LyricsEntry>> = withContext(Dispatchers.IO) {
         runCatching {
-            val context = io.github.aedev.flow.FlowApplication.appContext
+            val context = com.arubr.smsvcodes.FlowApplication.appContext
             Paxsenix.init(context)
             val lrc = Paxsenix.getLyrics(title, artist, duration, album).getOrThrow()
             LyricsUtils.parseLyrics(lrc)

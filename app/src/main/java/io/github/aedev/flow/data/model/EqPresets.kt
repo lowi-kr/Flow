@@ -1,4 +1,4 @@
-package io.github.aedev.flow.data.model
+package com.arubr.smsvcodes.data.model
 
 object EqPresets {
     val presets = mapOf(

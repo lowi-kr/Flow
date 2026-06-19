@@ -1,6 +1,6 @@
-package io.github.aedev.flow.player.config
+package com.arubr.smsvcodes.player.config
 
-import io.github.aedev.flow.player.stream.VideoCodecUtils
+import com.arubr.smsvcodes.player.stream.VideoCodecUtils
 
 object PlayerConfig {
     

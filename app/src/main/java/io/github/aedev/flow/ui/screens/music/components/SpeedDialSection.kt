@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.music.components
+package com.arubr.smsvcodes.ui.screens.music.components
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
@@ -44,10 +44,10 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
-import io.github.aedev.flow.R
-import io.github.aedev.flow.ui.components.ItemThumbnail
-import io.github.aedev.flow.ui.components.SectionTitle
-import io.github.aedev.flow.ui.screens.music.MusicTrack
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.ui.components.ItemThumbnail
+import com.arubr.smsvcodes.ui.components.SectionTitle
+import com.arubr.smsvcodes.ui.screens.music.MusicTrack
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable

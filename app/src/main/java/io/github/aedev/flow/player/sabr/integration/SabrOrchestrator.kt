@@ -1,10 +1,10 @@
-package io.github.aedev.flow.player.sabr.integration
+package com.arubr.smsvcodes.player.sabr.integration
 
 import android.util.Log
-import io.github.aedev.flow.player.sabr.core.SabrEvent
-import io.github.aedev.flow.player.sabr.core.SabrStreamController
-import io.github.aedev.flow.player.sabr.proto.FormatInitializationMetadata
-import io.github.aedev.flow.utils.potoken.WebPoTokenSession
+import com.arubr.smsvcodes.player.sabr.core.SabrEvent
+import com.arubr.smsvcodes.player.sabr.core.SabrStreamController
+import com.arubr.smsvcodes.player.sabr.proto.FormatInitializationMetadata
+import com.arubr.smsvcodes.utils.potoken.WebPoTokenSession
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
@@ -236,7 +236,7 @@ class SabrOrchestrator(
         }
     }
 
-    private fun bufferedAheadMs(state: io.github.aedev.flow.player.sabr.core.SabrSessionState): Long {
+    private fun bufferedAheadMs(state: com.arubr.smsvcodes.player.sabr.core.SabrSessionState): Long {
         val audioEndMs = state.audioBufferedRanges.maxOfOrNull { it.startTimeMs + it.durationMs }
             ?: return 0L
         // Audio-only mode: video lead is frozen by design — pace by audio alone
@@ -246,7 +246,7 @@ class SabrOrchestrator(
         return minOf(audioEndMs, videoEndMs) - state.playheadPositionMs
     }
 
-    private fun targetReadaheadMs(state: io.github.aedev.flow.player.sabr.core.SabrSessionState): Long =
+    private fun targetReadaheadMs(state: com.arubr.smsvcodes.player.sabr.core.SabrSessionState): Long =
         minOf(state.targetAudioReadaheadMs, state.targetVideoReadaheadMs)
             .coerceAtLeast(MIN_TARGET_READAHEAD_MS)
 }

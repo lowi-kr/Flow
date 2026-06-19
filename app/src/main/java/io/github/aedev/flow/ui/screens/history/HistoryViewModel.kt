@@ -1,17 +1,17 @@
-package io.github.aedev.flow.ui.screens.history
+package com.arubr.smsvcodes.ui.screens.history
 
 import android.content.Context
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import io.github.aedev.flow.data.local.AppDatabase
-import io.github.aedev.flow.data.local.ViewHistory
-import io.github.aedev.flow.data.local.VideoHistoryEntry
-import io.github.aedev.flow.data.local.entity.WatchHistoryEntity
-import io.github.aedev.flow.data.local.entity.VideoEntity
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.data.repository.YouTubeRepository
-import io.github.aedev.flow.utils.ThumbnailUrlResolver
+import com.arubr.smsvcodes.data.local.AppDatabase
+import com.arubr.smsvcodes.data.local.ViewHistory
+import com.arubr.smsvcodes.data.local.VideoHistoryEntry
+import com.arubr.smsvcodes.data.local.entity.WatchHistoryEntity
+import com.arubr.smsvcodes.data.local.entity.VideoEntity
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.data.repository.YouTubeRepository
+import com.arubr.smsvcodes.utils.ThumbnailUrlResolver
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.*
@@ -104,8 +104,8 @@ class HistoryViewModel : ViewModel() {
 
     private fun enrichFromApi(
         stubs: List<VideoHistoryEntry>,
-        videoDao: io.github.aedev.flow.data.local.dao.VideoDao,
-        watchHistoryDao: io.github.aedev.flow.data.local.dao.WatchHistoryDao
+        videoDao: com.arubr.smsvcodes.data.local.dao.VideoDao,
+        watchHistoryDao: com.arubr.smsvcodes.data.local.dao.WatchHistoryDao
     ) {
         if (!isEnriching.compareAndSet(false, true)) return
         viewModelScope.launch(Dispatchers.IO) {

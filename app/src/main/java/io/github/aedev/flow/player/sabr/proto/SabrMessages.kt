@@ -1,4 +1,4 @@
-package io.github.aedev.flow.player.sabr.proto
+package com.arubr.smsvcodes.player.sabr.proto
 
 data class FormatId(
     val itag: Int = 0,

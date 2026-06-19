@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.music.player
+package com.arubr.smsvcodes.ui.screens.music.player
 
 import androidx.compose.animation.core.*
 import androidx.compose.foundation.ExperimentalFoundationApi
@@ -46,13 +46,13 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.player.RepeatMode
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.data.local.SliderStyle
-import io.github.aedev.flow.ui.components.pressScale
-import io.github.aedev.flow.ui.screens.music.player.components.PlayerSliderTrack
-import io.github.aedev.flow.ui.screens.music.player.components.SquigglySlider
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.player.RepeatMode
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.data.local.SliderStyle
+import com.arubr.smsvcodes.ui.components.pressScale
+import com.arubr.smsvcodes.ui.screens.music.player.components.PlayerSliderTrack
+import com.arubr.smsvcodes.ui.screens.music.player.components.SquigglySlider
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch

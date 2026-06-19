@@ -1,4 +1,4 @@
-package io.github.aedev.flow.notification
+package com.arubr.smsvcodes.notification
 
 import android.content.BroadcastReceiver
 import android.content.Context
@@ -11,11 +11,11 @@ import android.util.Log
 class NotificationActionReceiver : BroadcastReceiver() {
     
     companion object {
-        const val ACTION_CANCEL_DOWNLOAD = "io.github.aedev.flow.action.CANCEL_DOWNLOAD"
-        const val ACTION_RETRY_DOWNLOAD = "io.github.aedev.flow.action.RETRY_DOWNLOAD"
-        const val ACTION_PAUSE_DOWNLOAD = "io.github.aedev.flow.action.PAUSE_DOWNLOAD"
-        const val ACTION_RESUME_DOWNLOAD = "io.github.aedev.flow.action.RESUME_DOWNLOAD"
-        const val ACTION_DISMISS_NOTIFICATION = "io.github.aedev.flow.action.DISMISS_NOTIFICATION"
+        const val ACTION_CANCEL_DOWNLOAD = "com.arubr.smsvcodes.action.CANCEL_DOWNLOAD"
+        const val ACTION_RETRY_DOWNLOAD = "com.arubr.smsvcodes.action.RETRY_DOWNLOAD"
+        const val ACTION_PAUSE_DOWNLOAD = "com.arubr.smsvcodes.action.PAUSE_DOWNLOAD"
+        const val ACTION_RESUME_DOWNLOAD = "com.arubr.smsvcodes.action.RESUME_DOWNLOAD"
+        const val ACTION_DISMISS_NOTIFICATION = "com.arubr.smsvcodes.action.DISMISS_NOTIFICATION"
         
         const val EXTRA_NOTIFICATION_ID = "notification_id"
         const val EXTRA_VIDEO_ID = "video_id"

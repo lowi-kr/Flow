@@ -1,4 +1,4 @@
-package io.github.aedev.flow.innertube
+package com.arubr.smsvcodes.innertube
 
 import io.ktor.client.HttpClient
 import io.ktor.client.engine.okhttp.OkHttp

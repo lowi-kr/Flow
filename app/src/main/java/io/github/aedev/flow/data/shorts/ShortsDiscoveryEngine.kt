@@ -4,16 +4,16 @@
  * This file is part of Flow (https://github.com/A-EDev/Flow).
  */
 
-package io.github.aedev.flow.data.shorts
+package com.arubr.smsvcodes.data.shorts
 
 import android.content.Context
 import android.util.Log
-import io.github.aedev.flow.data.local.SubscriptionRepository
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.data.recommendation.FlowNeuroEngine
-import io.github.aedev.flow.data.recommendation.FlowPersona
-import io.github.aedev.flow.data.repository.YouTubeRepository
-import io.github.aedev.flow.utils.distinctBestImageUrls
+import com.arubr.smsvcodes.data.local.SubscriptionRepository
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.data.recommendation.FlowNeuroEngine
+import com.arubr.smsvcodes.data.recommendation.FlowPersona
+import com.arubr.smsvcodes.data.repository.YouTubeRepository
+import com.arubr.smsvcodes.utils.distinctBestImageUrls
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
 import kotlinx.coroutines.awaitAll
@@ -468,7 +468,7 @@ class ShortsDiscoveryEngine private constructor(private val appContext: Context)
             title = item.name ?: "",
             channelName = item.uploaderName ?: "",
             channelId = channelId,
-            thumbnailUrl = io.github.aedev.flow.utils.ThumbnailUrlResolver.normalizeVideoThumbnail(
+            thumbnailUrl = com.arubr.smsvcodes.utils.ThumbnailUrlResolver.normalizeVideoThumbnail(
                 videoId,
                 item.thumbnails?.maxByOrNull { it.height }?.url
             ),

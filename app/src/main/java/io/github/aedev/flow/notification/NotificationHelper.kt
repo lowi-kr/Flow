@@ -1,4 +1,4 @@
-package io.github.aedev.flow.notification
+package com.arubr.smsvcodes.notification
 
 import android.Manifest
 import android.app.NotificationChannel
@@ -12,16 +12,16 @@ import android.os.Build
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import androidx.core.content.ContextCompat
-import io.github.aedev.flow.data.local.AppDatabase
-import io.github.aedev.flow.data.local.entity.NotificationEntity
-import io.github.aedev.flow.MainActivity
-import io.github.aedev.flow.R
+import com.arubr.smsvcodes.data.local.AppDatabase
+import com.arubr.smsvcodes.data.local.entity.NotificationEntity
+import com.arubr.smsvcodes.MainActivity
+import com.arubr.smsvcodes.R
 import com.squareup.picasso.Picasso
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.withContext
-import io.github.aedev.flow.data.local.PlayerPreferences
+import com.arubr.smsvcodes.data.local.PlayerPreferences
 import java.net.URL
 
 /**

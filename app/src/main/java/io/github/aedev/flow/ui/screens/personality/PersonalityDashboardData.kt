@@ -1,9 +1,9 @@
-package io.github.aedev.flow.ui.screens.personality
+package com.arubr.smsvcodes.ui.screens.personality
 
-import io.github.aedev.flow.data.recommendation.ContentVector
-import io.github.aedev.flow.data.recommendation.TimeBucket
-import io.github.aedev.flow.data.recommendation.TopicEvidence
-import io.github.aedev.flow.data.recommendation.UserBrain
+import com.arubr.smsvcodes.data.recommendation.ContentVector
+import com.arubr.smsvcodes.data.recommendation.TimeBucket
+import com.arubr.smsvcodes.data.recommendation.TopicEvidence
+import com.arubr.smsvcodes.data.recommendation.UserBrain
 import java.util.Locale
 import kotlin.math.roundToInt
 

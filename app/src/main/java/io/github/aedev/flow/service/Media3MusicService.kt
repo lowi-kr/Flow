@@ -1,4 +1,4 @@
-package io.github.aedev.flow.service
+package com.arubr.smsvcodes.service
 
 import android.app.ActivityManager
 import android.app.PendingIntent
@@ -19,10 +19,10 @@ import androidx.media3.exoplayer.audio.AudioSink
 import androidx.media3.exoplayer.audio.DefaultAudioSink
 import androidx.media3.session.MediaLibraryService
 import androidx.media3.session.MediaSession
-import io.github.aedev.flow.MainActivity
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.model.ParametricEQ
-import io.github.aedev.flow.player.audio.CustomEqualizerAudioProcessor
+import com.arubr.smsvcodes.MainActivity
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.model.ParametricEQ
+import com.arubr.smsvcodes.player.audio.CustomEqualizerAudioProcessor
 import dagger.hilt.android.AndroidEntryPoint
 import androidx.media3.session.DefaultMediaNotificationProvider
 import androidx.media3.session.LibraryResult
@@ -35,10 +35,10 @@ import com.google.common.util.concurrent.Futures
 import com.google.common.util.concurrent.ListenableFuture
 import android.os.Bundle
 import androidx.media3.exoplayer.source.DefaultMediaSourceFactory
-import io.github.aedev.flow.data.download.DownloadUtil
-import io.github.aedev.flow.extensions.setOffloadEnabled
-import io.github.aedev.flow.utils.MusicPlayerUtils
-import io.github.aedev.flow.utils.NetworkConnectivityObserver
+import com.arubr.smsvcodes.data.download.DownloadUtil
+import com.arubr.smsvcodes.extensions.setOffloadEnabled
+import com.arubr.smsvcodes.utils.MusicPlayerUtils
+import com.arubr.smsvcodes.utils.NetworkConnectivityObserver
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
@@ -48,10 +48,10 @@ import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import kotlinx.serialization.json.Json
 import javax.inject.Inject
-import io.github.aedev.flow.data.music.YouTubeMusicService
-import io.github.aedev.flow.data.newmusic.InnertubeMusicService
-import io.github.aedev.flow.innertube.YouTube
-import io.github.aedev.flow.innertube.models.WatchEndpoint
+import com.arubr.smsvcodes.data.music.YouTubeMusicService
+import com.arubr.smsvcodes.data.newmusic.InnertubeMusicService
+import com.arubr.smsvcodes.innertube.YouTube
+import com.arubr.smsvcodes.innertube.models.WatchEndpoint
 import android.os.PowerManager
 import android.net.wifi.WifiManager
 import android.content.Context
@@ -155,14 +155,14 @@ class Media3MusicService : MediaLibraryService() {
         }
         
         serviceScope.launch {
-            io.github.aedev.flow.player.EnhancedMusicPlayerManager.isLiked.collectLatest {
+            com.arubr.smsvcodes.player.EnhancedMusicPlayerManager.isLiked.collectLatest {
                 updateNotification()
             }
         }
 
         serviceScope.launch {
-            val prefs = io.github.aedev.flow.data.local.PlayerPreferences(this@Media3MusicService)
-            var lastQuality: io.github.aedev.flow.data.local.MusicAudioQuality? = null
+            val prefs = com.arubr.smsvcodes.data.local.PlayerPreferences(this@Media3MusicService)
+            var lastQuality: com.arubr.smsvcodes.data.local.MusicAudioQuality? = null
             prefs.musicAudioQuality.collect { quality ->
                 val previous = lastQuality
                 lastQuality = quality
@@ -181,7 +181,7 @@ class Media3MusicService : MediaLibraryService() {
         try {
             downloadUtil.clearUrlCache()
             MusicPlayerUtils.clearPlaybackCache()
-            io.github.aedev.flow.player.EnhancedMusicPlayerManager.clearUrlCache()
+            com.arubr.smsvcodes.player.EnhancedMusicPlayerManager.clearUrlCache()
         } catch (e: Exception) {
             Log.w(TAG, "Failed to clear caches on quality change: ${e.message}")
         }
@@ -291,7 +291,7 @@ class Media3MusicService : MediaLibraryService() {
                         serviceScope.launch(Dispatchers.IO) {
                             try {
                                 Log.d(TAG, "Pre-warming lyrics cache in background for: $videoId - \"$title\"")
-                                val helper = io.github.aedev.flow.data.lyrics.LyricsHelper(this@Media3MusicService)
+                                val helper = com.arubr.smsvcodes.data.lyrics.LyricsHelper(this@Media3MusicService)
                                 helper.getLyrics(videoId, title, artist, 180, null, this@Media3MusicService)
                             } catch (e: Exception) {
                                 Log.w(TAG, "Lyrics pre-warm background task encountered error: ${e.message}")
@@ -400,7 +400,7 @@ class Media3MusicService : MediaLibraryService() {
             Log.e(TAG, "Failed to clear decryption cache for $mediaId", e)
         }
         try {
-            io.github.aedev.flow.player.EnhancedMusicPlayerManager.invalidateResolvedStream(mediaId)
+            com.arubr.smsvcodes.player.EnhancedMusicPlayerManager.invalidateResolvedStream(mediaId)
         } catch (e: Exception) {
             Log.e(TAG, "Failed to clear resolved stream cache for $mediaId", e)
         }
@@ -516,7 +516,7 @@ class Media3MusicService : MediaLibraryService() {
                     val currentPosition = player.currentPosition
                     downloadUtil.invalidateUrlCache(mediaId)
                     MusicPlayerUtils.forceRefreshForVideo(mediaId)
-                    io.github.aedev.flow.player.EnhancedMusicPlayerManager.invalidateResolvedStream(mediaId)
+                    com.arubr.smsvcodes.player.EnhancedMusicPlayerManager.invalidateResolvedStream(mediaId)
                     player.stop()
                     refreshCurrentMediaItem(mediaId, currentPosition)
                     player.prepare()
@@ -633,7 +633,7 @@ class Media3MusicService : MediaLibraryService() {
     }
 
     private fun notifyMusicWarning(message: String) {
-        io.github.aedev.flow.player.EnhancedMusicPlayerManager.showPlaybackWarning(message)
+        com.arubr.smsvcodes.player.EnhancedMusicPlayerManager.showPlaybackWarning(message)
     }
 
     private fun stopPlaybackAndService() {
@@ -644,7 +644,7 @@ class Media3MusicService : MediaLibraryService() {
             player.stop()
             player.clearMediaItems()
         }
-        io.github.aedev.flow.player.EnhancedMusicPlayerManager.clearCurrentTrack()
+        com.arubr.smsvcodes.player.EnhancedMusicPlayerManager.clearCurrentTrack()
         releaseLocks()
         stopSelf()
     }
@@ -676,7 +676,7 @@ class Media3MusicService : MediaLibraryService() {
     @OptIn(UnstableApi::class)
     private fun initializeSession() {
         val intent = Intent(this, MainActivity::class.java).apply {
-            action = "io.github.aedev.flow.action.OPEN_MUSIC_PLAYER"
+            action = "com.arubr.smsvcodes.action.OPEN_MUSIC_PLAYER"
             flags = Intent.FLAG_ACTIVITY_SINGLE_TOP or Intent.FLAG_ACTIVITY_CLEAR_TOP
             putExtra("open_music_player", true)
         }
@@ -852,7 +852,7 @@ class Media3MusicService : MediaLibraryService() {
 
                 Log.d(TAG, "Successfully resolved ${mappedTracks.size} automix tracks")
                 if (mappedTracks.isNotEmpty()) {
-                    io.github.aedev.flow.player.EnhancedMusicPlayerManager.updateAutomixItems(mappedTracks)
+                    com.arubr.smsvcodes.player.EnhancedMusicPlayerManager.updateAutomixItems(mappedTracks)
                 }
             } catch (e: Exception) {
                 Log.e(TAG, "Error resolving automix", e)
@@ -863,7 +863,7 @@ class Media3MusicService : MediaLibraryService() {
     private fun updateNotification() {
         if (!::mediaLibrarySession.isInitialized) return
         
-        val isLiked = io.github.aedev.flow.player.EnhancedMusicPlayerManager.isLiked.value
+        val isLiked = com.arubr.smsvcodes.player.EnhancedMusicPlayerManager.isLiked.value
         
         val likeButton = CommandButton.Builder()
             .setDisplayName(if (isLiked) "Unlike" else "Like")
@@ -933,9 +933,9 @@ class Media3MusicService : MediaLibraryService() {
                     browsableMediaItem(AUTO_QUEUE_ID, "Queue"),
                     browsableMediaItem(AUTO_CURRENT_ID, "Now playing")
                 )
-                AUTO_QUEUE_ID -> io.github.aedev.flow.player.EnhancedMusicPlayerManager.queue.value
+                AUTO_QUEUE_ID -> com.arubr.smsvcodes.player.EnhancedMusicPlayerManager.queue.value
                     .map { it.toAutoMediaItem() }
-                AUTO_CURRENT_ID -> io.github.aedev.flow.player.EnhancedMusicPlayerManager.currentTrack.value
+                AUTO_CURRENT_ID -> com.arubr.smsvcodes.player.EnhancedMusicPlayerManager.currentTrack.value
                     ?.let { listOf(it.toAutoMediaItem()) }
                     ?: emptyList()
                 else -> emptyList()
@@ -989,7 +989,7 @@ class Media3MusicService : MediaLibraryService() {
             args: Bundle
         ): ListenableFuture<SessionResult> {
              if (customCommand.customAction == ACTION_TOGGLE_LIKE) {
-                 io.github.aedev.flow.player.EnhancedMusicPlayerManager.emitToggleLikeEvent()
+                 com.arubr.smsvcodes.player.EnhancedMusicPlayerManager.emitToggleLikeEvent()
                  return Futures.immediateFuture(SessionResult(SessionResult.RESULT_SUCCESS))
              }
              
@@ -1043,7 +1043,7 @@ class Media3MusicService : MediaLibraryService() {
             )
             .build()
 
-    private fun io.github.aedev.flow.ui.screens.music.MusicTrack.toAutoMediaItem(): MediaItem {
+    private fun com.arubr.smsvcodes.ui.screens.music.MusicTrack.toAutoMediaItem(): MediaItem {
         val artwork = highResThumbnailUrl.ifBlank { thumbnailUrl }
             .takeIf { it.isNotBlank() }
             ?.let(Uri::parse)
@@ -1064,8 +1064,8 @@ class Media3MusicService : MediaLibraryService() {
             .build()
     }
 
-    private fun autoTrackForMediaId(mediaId: String): io.github.aedev.flow.ui.screens.music.MusicTrack? {
-        val manager = io.github.aedev.flow.player.EnhancedMusicPlayerManager
+    private fun autoTrackForMediaId(mediaId: String): com.arubr.smsvcodes.ui.screens.music.MusicTrack? {
+        val manager = com.arubr.smsvcodes.player.EnhancedMusicPlayerManager
         return manager.queue.value.firstOrNull { it.videoId == mediaId }
             ?: manager.currentTrack.value?.takeIf { it.videoId == mediaId }
     }
