@@ -1,4 +1,4 @@
-package io.github.aedev.flow.player.sabr.ump
+package com.arubr.smsvcodes.player.sabr.ump
 
 import org.junit.Assert.assertArrayEquals
 import org.junit.Assert.assertEquals

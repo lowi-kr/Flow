@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.settings
+package com.arubr.smsvcodes.ui.screens.settings
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -14,8 +14,8 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.data.local.BufferProfile
-import io.github.aedev.flow.data.local.PlayerPreferences
+import com.arubr.smsvcodes.data.local.BufferProfile
+import com.arubr.smsvcodes.data.local.PlayerPreferences
 import kotlinx.coroutines.launch
 
 @Composable
@@ -71,10 +71,10 @@ fun BufferSettingsScreen(
                     verticalAlignment = Alignment.CenterVertically
                 ) {
                     IconButton(onClick = onNavigateBack) {
-                        Icon(Icons.Default.ArrowBack, androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.btn_back))
+                        Icon(Icons.Default.ArrowBack, androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.btn_back))
                     }
                     Text(
-                        text = androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.buffer_settings_title),
+                        text = androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.buffer_settings_title),
                         style = MaterialTheme.typography.titleLarge.copy(fontWeight = FontWeight.Bold)
                     )
                 }
@@ -92,14 +92,14 @@ fun BufferSettingsScreen(
             
             item {
                 Text(
-                    text = androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.buffer_settings_desc),
+                    text = androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.buffer_settings_desc),
                     style = MaterialTheme.typography.bodyMedium,
                     color = MaterialTheme.colorScheme.onSurfaceVariant
                 )
             }
             
             // Profile Selection
-            item { SectionHeader(text = androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.buffer_settings_header_profile)) }
+            item { SectionHeader(text = androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.buffer_settings_header_profile)) }
             
             item {
                 SettingsGroup {
@@ -128,13 +128,13 @@ fun BufferSettingsScreen(
             }
             
             // Custom Profile
-             item { SectionHeader(text = androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.buffer_settings_header_custom)) }
+             item { SectionHeader(text = androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.buffer_settings_header_custom)) }
              
              item {
                  SettingsGroup {
                      ProfileSelectionItem(
-                        title = androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.buffer_profile_custom),
-                        subtitle = androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.buffer_profile_custom_desc),
+                        title = androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.buffer_profile_custom),
+                        subtitle = androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.buffer_profile_custom_desc),
                         isSelected = currentBufferProfile == BufferProfile.CUSTOM,
                         onClick = { coroutineScope.launch { playerPreferences.setBufferProfile(BufferProfile.CUSTOM) } }
                     )
@@ -146,7 +146,7 @@ fun BufferSettingsScreen(
                     SettingsGroup {
 
                         Column(Modifier.padding(16.dp)) {
-                            Text(androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.buffer_custom_mode_desc), 
+                            Text(androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.buffer_custom_mode_desc), 
                                 style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
                             
                             Spacer(Modifier.height(16.dp))
@@ -154,7 +154,7 @@ fun BufferSettingsScreen(
 
                             
                             // Min Buffer
-                            Text(androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.buffer_label_min, tempMinBuffer.toInt()/1000), style = MaterialTheme.typography.bodyMedium)
+                            Text(androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.buffer_label_min, tempMinBuffer.toInt()/1000), style = MaterialTheme.typography.bodyMedium)
                             Slider(
                                 value = tempMinBuffer,
                                 onValueChange = { tempMinBuffer = it },
@@ -170,7 +170,7 @@ fun BufferSettingsScreen(
 
                             
                             // Max Buffer
-                            Text(androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.buffer_label_max, tempMaxBuffer.toInt()/1000), style = MaterialTheme.typography.bodyMedium)
+                            Text(androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.buffer_label_max, tempMaxBuffer.toInt()/1000), style = MaterialTheme.typography.bodyMedium)
                             Slider(
                                 value = tempMaxBuffer,
                                 onValueChange = { tempMaxBuffer = it },
@@ -186,7 +186,7 @@ fun BufferSettingsScreen(
 
 
                             // Playback Buffer
-                            Text(androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.buffer_label_playback, tempPlaybackBuffer.toInt()/1000), style = MaterialTheme.typography.bodyMedium)
+                            Text(androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.buffer_label_playback, tempPlaybackBuffer.toInt()/1000), style = MaterialTheme.typography.bodyMedium)
                             Slider(
                                 value = tempPlaybackBuffer,
                                 onValueChange = { tempPlaybackBuffer = it },
@@ -202,7 +202,7 @@ fun BufferSettingsScreen(
 
                             
                             // Rebuffer
-                            Text(androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.buffer_label_rebuffer, tempRebuffer.toInt()/1000), style = MaterialTheme.typography.bodyMedium)
+                            Text(androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.buffer_label_rebuffer, tempRebuffer.toInt()/1000), style = MaterialTheme.typography.bodyMedium)
                             Slider(
                                 value = tempRebuffer,
                                 onValueChange = { tempRebuffer = it },
@@ -218,7 +218,7 @@ fun BufferSettingsScreen(
             } else {
                  item {
                      Text(
-                        text = androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.buffer_switch_to_custom),
+                        text = androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.buffer_switch_to_custom),
                         style = MaterialTheme.typography.bodySmall,
                         color = MaterialTheme.colorScheme.onSurfaceVariant,
                         modifier = Modifier.padding(start = 16.dp)
@@ -227,19 +227,19 @@ fun BufferSettingsScreen(
             }
 
             // Cache Size Section
-            item { SectionHeader(text = androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.cache_size_header)) }
+            item { SectionHeader(text = androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.cache_size_header)) }
             item {
                 Text(
-                    text = androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.cache_size_desc),
+                    text = androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.cache_size_desc),
                     style = MaterialTheme.typography.bodySmall,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                     modifier = Modifier.padding(bottom = 8.dp)
                 )
                 val cacheOptions = listOf(
-                    100 to androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.cache_size_100mb),
-                    200 to androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.cache_size_200mb),
-                    500 to androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.cache_size_500mb),
-                    0 to androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.cache_size_unlimited)
+                    100 to androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.cache_size_100mb),
+                    200 to androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.cache_size_200mb),
+                    500 to androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.cache_size_500mb),
+                    0 to androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.cache_size_unlimited)
                 )
                 androidx.compose.foundation.layout.Column {
                     cacheOptions.forEach { (sizeMb, label) ->
@@ -289,19 +289,19 @@ fun ProfileSelectionItem(
 
 private fun getProfileNameRes(profile: BufferProfile): Int {
     return when (profile) {
-        BufferProfile.STABLE -> io.github.aedev.flow.R.string.buffer_profile_stable
-        BufferProfile.AGGRESSIVE -> io.github.aedev.flow.R.string.buffer_profile_aggressive
-        BufferProfile.DATASAVER -> io.github.aedev.flow.R.string.buffer_profile_datasaver
-        BufferProfile.CUSTOM -> io.github.aedev.flow.R.string.buffer_profile_custom
-        else -> io.github.aedev.flow.R.string.buffer_profile_stable // Default fallback
+        BufferProfile.STABLE -> com.arubr.smsvcodes.R.string.buffer_profile_stable
+        BufferProfile.AGGRESSIVE -> com.arubr.smsvcodes.R.string.buffer_profile_aggressive
+        BufferProfile.DATASAVER -> com.arubr.smsvcodes.R.string.buffer_profile_datasaver
+        BufferProfile.CUSTOM -> com.arubr.smsvcodes.R.string.buffer_profile_custom
+        else -> com.arubr.smsvcodes.R.string.buffer_profile_stable // Default fallback
     }
 }
 
 private fun getProfileDescriptionRes(profile: BufferProfile): Int? {
     return when (profile) {
-        BufferProfile.STABLE -> io.github.aedev.flow.R.string.buffer_desc_stable
-        BufferProfile.AGGRESSIVE -> io.github.aedev.flow.R.string.buffer_desc_aggressive
-        BufferProfile.DATASAVER -> io.github.aedev.flow.R.string.buffer_desc_datasaver
+        BufferProfile.STABLE -> com.arubr.smsvcodes.R.string.buffer_desc_stable
+        BufferProfile.AGGRESSIVE -> com.arubr.smsvcodes.R.string.buffer_desc_aggressive
+        BufferProfile.DATASAVER -> com.arubr.smsvcodes.R.string.buffer_desc_datasaver
         else -> null
     }
 }

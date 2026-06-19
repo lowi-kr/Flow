@@ -1,29 +1,29 @@
-package io.github.aedev.flow.data.local
+package com.arubr.smsvcodes.data.local
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
 import androidx.room.migration.Migration
 import androidx.sqlite.db.SupportSQLiteDatabase
-import io.github.aedev.flow.data.local.dao.CacheDao
-import io.github.aedev.flow.data.local.dao.DownloadDao
-import io.github.aedev.flow.data.local.dao.DownloadedSongDao
-import io.github.aedev.flow.data.local.dao.NotificationDao
-import io.github.aedev.flow.data.local.dao.PlaylistDao
-import io.github.aedev.flow.data.local.dao.SubscriptionGroupDao
-import io.github.aedev.flow.data.local.dao.VideoDao
-import io.github.aedev.flow.data.local.dao.WatchHistoryDao
-import io.github.aedev.flow.data.local.entity.DownloadEntity
-import io.github.aedev.flow.data.local.entity.DownloadItemEntity
-import io.github.aedev.flow.data.local.entity.DownloadedSongEntity
-import io.github.aedev.flow.data.local.entity.MusicHomeCacheEntity
-import io.github.aedev.flow.data.local.entity.NotificationEntity
-import io.github.aedev.flow.data.local.entity.PlaylistEntity
-import io.github.aedev.flow.data.local.entity.PlaylistVideoCrossRef
-import io.github.aedev.flow.data.local.entity.MusicHomeChipEntity
-import io.github.aedev.flow.data.local.entity.SubscriptionFeedEntity
-import io.github.aedev.flow.data.local.entity.SubscriptionGroupEntity
-import io.github.aedev.flow.data.local.entity.VideoEntity
-import io.github.aedev.flow.data.local.entity.WatchHistoryEntity
+import com.arubr.smsvcodes.data.local.dao.CacheDao
+import com.arubr.smsvcodes.data.local.dao.DownloadDao
+import com.arubr.smsvcodes.data.local.dao.DownloadedSongDao
+import com.arubr.smsvcodes.data.local.dao.NotificationDao
+import com.arubr.smsvcodes.data.local.dao.PlaylistDao
+import com.arubr.smsvcodes.data.local.dao.SubscriptionGroupDao
+import com.arubr.smsvcodes.data.local.dao.VideoDao
+import com.arubr.smsvcodes.data.local.dao.WatchHistoryDao
+import com.arubr.smsvcodes.data.local.entity.DownloadEntity
+import com.arubr.smsvcodes.data.local.entity.DownloadItemEntity
+import com.arubr.smsvcodes.data.local.entity.DownloadedSongEntity
+import com.arubr.smsvcodes.data.local.entity.MusicHomeCacheEntity
+import com.arubr.smsvcodes.data.local.entity.NotificationEntity
+import com.arubr.smsvcodes.data.local.entity.PlaylistEntity
+import com.arubr.smsvcodes.data.local.entity.PlaylistVideoCrossRef
+import com.arubr.smsvcodes.data.local.entity.MusicHomeChipEntity
+import com.arubr.smsvcodes.data.local.entity.SubscriptionFeedEntity
+import com.arubr.smsvcodes.data.local.entity.SubscriptionGroupEntity
+import com.arubr.smsvcodes.data.local.entity.VideoEntity
+import com.arubr.smsvcodes.data.local.entity.WatchHistoryEntity
 
 @Database(
     entities = [

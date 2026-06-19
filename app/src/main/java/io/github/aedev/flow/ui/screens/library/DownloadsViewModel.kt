@@ -1,13 +1,13 @@
-package io.github.aedev.flow.ui.screens.library
+package com.arubr.smsvcodes.ui.screens.library
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import io.github.aedev.flow.data.music.DownloadManager as MusicDownloadManager
-import io.github.aedev.flow.data.local.entity.DownloadWithItems
-import io.github.aedev.flow.data.music.DownloadedTrack
-import io.github.aedev.flow.data.video.VideoDownloadManager
-import io.github.aedev.flow.data.video.DownloadedVideo
-import io.github.aedev.flow.data.video.downloader.FlowDownloadService
+import com.arubr.smsvcodes.data.music.DownloadManager as MusicDownloadManager
+import com.arubr.smsvcodes.data.local.entity.DownloadWithItems
+import com.arubr.smsvcodes.data.music.DownloadedTrack
+import com.arubr.smsvcodes.data.video.VideoDownloadManager
+import com.arubr.smsvcodes.data.video.DownloadedVideo
+import com.arubr.smsvcodes.data.video.downloader.FlowDownloadService
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
 import android.content.Context
@@ -66,7 +66,7 @@ class DownloadsViewModel @Inject constructor(
             ) { downloads, pending ->
                 val incomplete = downloads.filter { download ->
                     download.download.videoId !in pending &&
-                        download.overallStatus != io.github.aedev.flow.data.local.entity.DownloadItemStatus.COMPLETED
+                        download.overallStatus != com.arubr.smsvcodes.data.local.entity.DownloadItemStatus.COMPLETED
                 }
                 incomplete.filter { !it.isAudioOnly } to incomplete.size
             }.collect { (incomplete, incompleteCount) ->
@@ -103,7 +103,7 @@ class DownloadsViewModel @Inject constructor(
         _pendingDeleteIds.update { it + videoId }
         viewModelScope.launch(Dispatchers.IO) {
             val download = videoDownloadManager.getDownloadWithItems(videoId)
-            if (download?.overallStatus != io.github.aedev.flow.data.local.entity.DownloadItemStatus.COMPLETED) {
+            if (download?.overallStatus != com.arubr.smsvcodes.data.local.entity.DownloadItemStatus.COMPLETED) {
                 FlowDownloadService.cancelDownload(appContext, videoId)
                 delay(500L)
             }
@@ -131,7 +131,7 @@ class DownloadsViewModel @Inject constructor(
     fun removeIncompleteDownloads() {
         viewModelScope.launch(Dispatchers.IO) {
             val ids = videoDownloadManager.allDownloads.first()
-                .filter { it.overallStatus != io.github.aedev.flow.data.local.entity.DownloadItemStatus.COMPLETED }
+                .filter { it.overallStatus != com.arubr.smsvcodes.data.local.entity.DownloadItemStatus.COMPLETED }
                 .map { it.download.videoId }
             if (ids.isEmpty()) return@launch
 

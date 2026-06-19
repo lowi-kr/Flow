@@ -1,11 +1,11 @@
-package io.github.aedev.flow.notification
+package com.arubr.smsvcodes.notification
 
 import android.content.Context
 import android.util.Log
 import androidx.work.*
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.data.local.SubscriptionRepository
-import io.github.aedev.flow.network.AppProxyManager
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.data.local.SubscriptionRepository
+import com.arubr.smsvcodes.network.AppProxyManager
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
 import kotlinx.coroutines.awaitAll
@@ -160,7 +160,7 @@ class SubscriptionCheckWorker(
     }
 
     private suspend fun checkChannel(
-        subscription: io.github.aedev.flow.data.local.ChannelSubscription,
+        subscription: com.arubr.smsvcodes.data.local.ChannelSubscription,
         repository: SubscriptionRepository
     ): NotificationHelper.NewVideoEntry? {
         val url = String.format(RSS_URL_FORMAT, subscription.channelId)

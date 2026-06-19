@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.music.player
+package com.arubr.smsvcodes.ui.screens.music.player
 
 import androidx.compose.animation.*
 import androidx.compose.animation.core.*
@@ -33,14 +33,14 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
-import io.github.aedev.flow.R
-import io.github.aedev.flow.ui.screens.music.FILTER_ALL
-import io.github.aedev.flow.ui.screens.music.FILTER_DEEP_CUTS
-import io.github.aedev.flow.ui.screens.music.FILTER_DISCOVER
-import io.github.aedev.flow.ui.screens.music.FILTER_POPULAR
-import io.github.aedev.flow.ui.screens.music.FILTER_WORKOUT
-import io.github.aedev.flow.ui.screens.music.MusicTrack
-import io.github.aedev.flow.ui.screens.music.components.TrackListItem
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.ui.screens.music.FILTER_ALL
+import com.arubr.smsvcodes.ui.screens.music.FILTER_DEEP_CUTS
+import com.arubr.smsvcodes.ui.screens.music.FILTER_DISCOVER
+import com.arubr.smsvcodes.ui.screens.music.FILTER_POPULAR
+import com.arubr.smsvcodes.ui.screens.music.FILTER_WORKOUT
+import com.arubr.smsvcodes.ui.screens.music.MusicTrack
+import com.arubr.smsvcodes.ui.screens.music.components.TrackListItem
 import kotlinx.coroutines.launch
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.runtime.compositionLocalOf

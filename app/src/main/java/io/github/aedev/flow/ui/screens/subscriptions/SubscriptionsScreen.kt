@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.subscriptions
+package com.arubr.smsvcodes.ui.screens.subscriptions
 
 
 import androidx.compose.animation.*
@@ -47,17 +47,17 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import coil.compose.AsyncImage
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.model.Channel
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.ui.components.*
-import io.github.aedev.flow.ui.theme.extendedColors
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.model.Channel
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.ui.components.*
+import com.arubr.smsvcodes.ui.theme.extendedColors
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.flow.filter
 import kotlinx.coroutines.flow.collectLatest
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.res.pluralStringResource
-import io.github.aedev.flow.ui.TabScrollEventBus
+import com.arubr.smsvcodes.ui.TabScrollEventBus
 import kotlinx.coroutines.delay
 
 @OptIn(ExperimentalAnimationApi::class, ExperimentalMaterial3Api::class)

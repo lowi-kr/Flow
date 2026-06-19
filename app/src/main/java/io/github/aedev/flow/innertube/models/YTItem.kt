@@ -1,6 +1,6 @@
-package io.github.aedev.flow.innertube.models
+package com.arubr.smsvcodes.innertube.models
 
-import io.github.aedev.flow.innertube.models.WatchEndpoint.WatchEndpointMusicSupportedConfigs.WatchEndpointMusicConfig.Companion.MUSIC_VIDEO_TYPE_ATV
+import com.arubr.smsvcodes.innertube.models.WatchEndpoint.WatchEndpointMusicSupportedConfigs.WatchEndpointMusicConfig.Companion.MUSIC_VIDEO_TYPE_ATV
 
 sealed class YTItem {
     abstract val id: String

@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.theme
+package com.arubr.smsvcodes.ui.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle

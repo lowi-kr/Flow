@@ -1,4 +1,4 @@
-package io.github.aedev.flow.utils
+package com.arubr.smsvcodes.utils
 
 import java.util.Date
 import java.util.Locale

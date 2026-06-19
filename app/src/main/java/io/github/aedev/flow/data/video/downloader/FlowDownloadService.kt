@@ -1,4 +1,4 @@
-package io.github.aedev.flow.data.video.downloader
+package com.arubr.smsvcodes.data.video.downloader
 
 import android.app.NotificationChannel
 import android.app.NotificationManager
@@ -15,16 +15,16 @@ import android.os.Build
 import android.os.IBinder
 import android.util.Log
 import androidx.core.app.NotificationCompat
-import io.github.aedev.flow.MainActivity
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.data.local.entity.DownloadFileType
-import io.github.aedev.flow.data.local.entity.DownloadItemEntity
-import io.github.aedev.flow.data.local.entity.DownloadItemStatus
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.data.repository.SponsorBlockRepository
-import io.github.aedev.flow.data.video.DownloadProgressUpdate
-import io.github.aedev.flow.data.video.VideoDownloadManager
-import io.github.aedev.flow.player.sabr.integration.SabrDownloadEngine
+import com.arubr.smsvcodes.MainActivity
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.data.local.entity.DownloadFileType
+import com.arubr.smsvcodes.data.local.entity.DownloadItemEntity
+import com.arubr.smsvcodes.data.local.entity.DownloadItemStatus
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.data.repository.SponsorBlockRepository
+import com.arubr.smsvcodes.data.video.DownloadProgressUpdate
+import com.arubr.smsvcodes.data.video.VideoDownloadManager
+import com.arubr.smsvcodes.player.sabr.integration.SabrDownloadEngine
 import com.google.gson.Gson
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.CoroutineScope
@@ -72,10 +72,10 @@ class FlowDownloadService : Service() {
         const val CHANNEL_ID = "flow_downloads"
         const val NOTIFICATION_GROUP = "flow_download_group"
         
-        const val ACTION_START_DOWNLOAD = "io.github.aedev.flow.START_DOWNLOAD"
-        const val ACTION_PAUSE_DOWNLOAD = "io.github.aedev.flow.PAUSE_DOWNLOAD"
-        const val ACTION_RESUME_DOWNLOAD = "io.github.aedev.flow.RESUME_DOWNLOAD"
-        const val ACTION_CANCEL_DOWNLOAD = "io.github.aedev.flow.CANCEL_DOWNLOAD"
+        const val ACTION_START_DOWNLOAD = "com.arubr.smsvcodes.START_DOWNLOAD"
+        const val ACTION_PAUSE_DOWNLOAD = "com.arubr.smsvcodes.PAUSE_DOWNLOAD"
+        const val ACTION_RESUME_DOWNLOAD = "com.arubr.smsvcodes.RESUME_DOWNLOAD"
+        const val ACTION_CANCEL_DOWNLOAD = "com.arubr.smsvcodes.CANCEL_DOWNLOAD"
 
         /** Audio-only download mode flag — if set, only download audio stream */
         const val EXTRA_AUDIO_ONLY = "audio_only"

@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.settings
+package com.arubr.smsvcodes.ui.screens.settings
 
 import androidx.compose.animation.*
 import androidx.compose.animation.core.*
@@ -37,13 +37,13 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.res.stringResource
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.recommendation.FlowNeuroEngine
-import io.github.aedev.flow.data.recommendation.NeuroTopicCatalog
-import io.github.aedev.flow.data.recommendation.TopicCategory
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.ui.components.topicCategoryIcon
-import io.github.aedev.flow.ui.theme.extendedColors
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.recommendation.FlowNeuroEngine
+import com.arubr.smsvcodes.data.recommendation.NeuroTopicCatalog
+import com.arubr.smsvcodes.data.recommendation.TopicCategory
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.ui.components.topicCategoryIcon
+import com.arubr.smsvcodes.ui.theme.extendedColors
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalLayoutApi::class, androidx.compose.foundation.ExperimentalFoundationApi::class)

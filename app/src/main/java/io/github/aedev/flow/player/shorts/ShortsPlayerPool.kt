@@ -1,4 +1,4 @@
-package io.github.aedev.flow.player.shorts
+package com.arubr.smsvcodes.player.shorts
 
 import android.content.Context
 import android.util.Log
@@ -18,10 +18,10 @@ import androidx.media3.exoplayer.source.ProgressiveMediaSource
 import androidx.media3.exoplayer.trackselection.AdaptiveTrackSelection
 import androidx.media3.exoplayer.trackselection.DefaultTrackSelector
 import androidx.media3.exoplayer.upstream.DefaultAllocator
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.player.analytics.PlaybackAnalyticsLogger
-import io.github.aedev.flow.player.config.PlayerConfig
-import io.github.aedev.flow.player.datasource.YouTubeHttpDataSource
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.player.analytics.PlaybackAnalyticsLogger
+import com.arubr.smsvcodes.player.config.PlayerConfig
+import com.arubr.smsvcodes.player.datasource.YouTubeHttpDataSource
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob

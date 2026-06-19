@@ -1,13 +1,13 @@
-package io.github.aedev.flow.ui.screens.player.effects
+package com.arubr.smsvcodes.ui.screens.player.effects
 
 import android.content.Context
 import android.util.Log
 import androidx.compose.runtime.*
 import androidx.media3.common.util.UnstableApi
-import io.github.aedev.flow.player.EnhancedPlayerManager
-import io.github.aedev.flow.player.seekbarpreview.SeekbarPreviewThumbnailHelper
-import io.github.aedev.flow.ui.screens.player.VideoPlayerUiState
-import io.github.aedev.flow.ui.screens.player.state.PlayerScreenState
+import com.arubr.smsvcodes.player.EnhancedPlayerManager
+import com.arubr.smsvcodes.player.seekbarpreview.SeekbarPreviewThumbnailHelper
+import com.arubr.smsvcodes.ui.screens.player.VideoPlayerUiState
+import com.arubr.smsvcodes.ui.screens.player.state.PlayerScreenState
 import org.schabi.newpipe.extractor.stream.StreamInfo
 
 private const val TAG = "SubtitleHandler"

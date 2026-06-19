@@ -1,12 +1,12 @@
-package io.github.aedev.flow.innertube.models.response
+package com.arubr.smsvcodes.innertube.models.response
 
-import io.github.aedev.flow.innertube.models.ResponseContext
-import io.github.aedev.flow.innertube.models.Thumbnails
+import com.arubr.smsvcodes.innertube.models.ResponseContext
+import com.arubr.smsvcodes.innertube.models.Thumbnails
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 /**
- * PlayerResponse with [io.github.aedev.flow.innertube.models.YouTubeClient.WEB_REMIX] client
+ * PlayerResponse with [com.arubr.smsvcodes.innertube.models.YouTubeClient.WEB_REMIX] client
  */
 @Serializable
 data class PlayerResponse(

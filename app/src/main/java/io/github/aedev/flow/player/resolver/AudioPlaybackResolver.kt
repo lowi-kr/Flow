@@ -1,4 +1,4 @@
-package io.github.aedev.flow.player.resolver
+package com.arubr.smsvcodes.player.resolver
 
 import android.net.Uri
 import androidx.media3.common.MediaItem
@@ -7,7 +7,7 @@ import androidx.media3.exoplayer.hls.HlsMediaSource
 import androidx.media3.exoplayer.source.MediaSource
 import androidx.media3.exoplayer.source.ProgressiveMediaSource
 import androidx.media3.datasource.DataSource
-import io.github.aedev.flow.player.datasource.YouTubeHttpDataSource
+import com.arubr.smsvcodes.player.datasource.YouTubeHttpDataSource
 
 /**
  * Specialized resolver for audio-only playback.

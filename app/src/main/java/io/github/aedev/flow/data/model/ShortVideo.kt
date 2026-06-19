@@ -1,6 +1,6 @@
-package io.github.aedev.flow.data.model
+package com.arubr.smsvcodes.data.model
 
-import io.github.aedev.flow.innertube.pages.ShortsItem
+import com.arubr.smsvcodes.innertube.pages.ShortsItem
 
 /**
  * Dedicated data model for YouTube Shorts.

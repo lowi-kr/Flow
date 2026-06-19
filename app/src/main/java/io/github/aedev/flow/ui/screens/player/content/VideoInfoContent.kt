@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.player.content
+package com.arubr.smsvcodes.ui.screens.player.content
 
 import android.content.ClipData
 import android.content.ClipboardManager
@@ -29,23 +29,23 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.player.error.PlayerDiagnostics
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.data.local.PlayerRelatedCardStyle
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.data.model.DeArrowResult
-import io.github.aedev.flow.data.repository.DeArrowRepository
-import io.github.aedev.flow.player.EnhancedPlayerManager
-import io.github.aedev.flow.ui.components.CommentsPreview
-import io.github.aedev.flow.ui.components.CompactVideoCard
-import io.github.aedev.flow.ui.components.VideoCardFullWidth
-import io.github.aedev.flow.ui.screens.player.VideoPlayerUiState
-import io.github.aedev.flow.ui.screens.player.VideoPlayerViewModel
-import io.github.aedev.flow.data.model.Comment
-import io.github.aedev.flow.ui.components.AddToPlaylistDialog
-import io.github.aedev.flow.ui.components.VideoInfoSection
-import io.github.aedev.flow.ui.screens.player.state.PlayerScreenState
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.player.error.PlayerDiagnostics
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.data.local.PlayerRelatedCardStyle
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.data.model.DeArrowResult
+import com.arubr.smsvcodes.data.repository.DeArrowRepository
+import com.arubr.smsvcodes.player.EnhancedPlayerManager
+import com.arubr.smsvcodes.ui.components.CommentsPreview
+import com.arubr.smsvcodes.ui.components.CompactVideoCard
+import com.arubr.smsvcodes.ui.components.VideoCardFullWidth
+import com.arubr.smsvcodes.ui.screens.player.VideoPlayerUiState
+import com.arubr.smsvcodes.ui.screens.player.VideoPlayerViewModel
+import com.arubr.smsvcodes.data.model.Comment
+import com.arubr.smsvcodes.ui.components.AddToPlaylistDialog
+import com.arubr.smsvcodes.ui.components.VideoInfoSection
+import com.arubr.smsvcodes.ui.screens.player.state.PlayerScreenState
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 import org.schabi.newpipe.extractor.stream.StreamType
@@ -341,7 +341,7 @@ fun VideoInfoContent(
     )
 
     if (uiState.isLiveChatAvailable) {
-        io.github.aedev.flow.ui.components.LiveChatPreview(
+        com.arubr.smsvcodes.ui.components.LiveChatPreview(
             onClick = { screenState.showLiveChatSheet = true }
         )
     }

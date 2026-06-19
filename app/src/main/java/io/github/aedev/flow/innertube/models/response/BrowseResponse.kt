@@ -1,18 +1,18 @@
-package io.github.aedev.flow.innertube.models.response
+package com.arubr.smsvcodes.innertube.models.response
 
-import io.github.aedev.flow.innertube.models.Button
-import io.github.aedev.flow.innertube.models.Continuation
-import io.github.aedev.flow.innertube.models.GridRenderer
-import io.github.aedev.flow.innertube.models.Menu
-import io.github.aedev.flow.innertube.models.MusicDetailHeaderRenderer
-import io.github.aedev.flow.innertube.models.MusicEditablePlaylistDetailHeaderRenderer
-import io.github.aedev.flow.innertube.models.MusicShelfRenderer
-import io.github.aedev.flow.innertube.models.ResponseContext
-import io.github.aedev.flow.innertube.models.Runs
-import io.github.aedev.flow.innertube.models.SectionListRenderer
-import io.github.aedev.flow.innertube.models.SubscriptionButton
-import io.github.aedev.flow.innertube.models.Tabs
-import io.github.aedev.flow.innertube.models.ThumbnailRenderer
+import com.arubr.smsvcodes.innertube.models.Button
+import com.arubr.smsvcodes.innertube.models.Continuation
+import com.arubr.smsvcodes.innertube.models.GridRenderer
+import com.arubr.smsvcodes.innertube.models.Menu
+import com.arubr.smsvcodes.innertube.models.MusicDetailHeaderRenderer
+import com.arubr.smsvcodes.innertube.models.MusicEditablePlaylistDetailHeaderRenderer
+import com.arubr.smsvcodes.innertube.models.MusicShelfRenderer
+import com.arubr.smsvcodes.innertube.models.ResponseContext
+import com.arubr.smsvcodes.innertube.models.Runs
+import com.arubr.smsvcodes.innertube.models.SectionListRenderer
+import com.arubr.smsvcodes.innertube.models.SubscriptionButton
+import com.arubr.smsvcodes.innertube.models.Tabs
+import com.arubr.smsvcodes.innertube.models.ThumbnailRenderer
 import kotlinx.serialization.Serializable
 
 @Serializable

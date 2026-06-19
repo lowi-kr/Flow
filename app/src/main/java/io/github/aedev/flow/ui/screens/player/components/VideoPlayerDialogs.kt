@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.player.components
+package com.arubr.smsvcodes.ui.screens.player.components
 
 import android.content.Context
 import android.widget.Toast
@@ -36,36 +36,36 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
-import io.github.aedev.flow.data.local.VideoQuality
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.player.*
-import io.github.aedev.flow.ui.components.SubtitleCustomizer
-import io.github.aedev.flow.ui.components.SubtitleStyle
-import io.github.aedev.flow.ui.components.rememberFlowSheetState
-import io.github.aedev.flow.ui.screens.player.VideoPlayerUiState
-import io.github.aedev.flow.ui.screens.player.util.VideoPlayerUtils
+import com.arubr.smsvcodes.data.local.VideoQuality
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.player.*
+import com.arubr.smsvcodes.ui.components.SubtitleCustomizer
+import com.arubr.smsvcodes.ui.components.SubtitleStyle
+import com.arubr.smsvcodes.ui.components.rememberFlowSheetState
+import com.arubr.smsvcodes.ui.screens.player.VideoPlayerUiState
+import com.arubr.smsvcodes.ui.screens.player.util.VideoPlayerUtils
 import androidx.compose.ui.res.stringResource
-import io.github.aedev.flow.R
+import com.arubr.smsvcodes.R
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import kotlinx.coroutines.withTimeoutOrNull
-import io.github.aedev.flow.innertube.YouTube
-import io.github.aedev.flow.innertube.models.YouTubeClient
-import io.github.aedev.flow.player.sabr.integration.SabrUrlResolver
+import com.arubr.smsvcodes.innertube.YouTube
+import com.arubr.smsvcodes.innertube.models.YouTubeClient
+import com.arubr.smsvcodes.player.sabr.integration.SabrUrlResolver
 import org.schabi.newpipe.extractor.stream.VideoStream
 
 @Composable
 fun DownloadQualityDialog(
     streamInfo: org.schabi.newpipe.extractor.stream.StreamInfo?,
     streamSizes: Map<String, Long>,
-    innerTubeVideoFormats: List<io.github.aedev.flow.innertube.models.response.PlayerResponse.StreamingData.Format> = emptyList(),
-    innerTubeAudioFormats: List<io.github.aedev.flow.innertube.models.response.PlayerResponse.StreamingData.Format> = emptyList(),
+    innerTubeVideoFormats: List<com.arubr.smsvcodes.innertube.models.response.PlayerResponse.StreamingData.Format> = emptyList(),
+    innerTubeAudioFormats: List<com.arubr.smsvcodes.innertube.models.response.PlayerResponse.StreamingData.Format> = emptyList(),
     video: Video,
     onDismiss: () -> Unit
 ) {
     val context = LocalContext.current
-    val audioLangPref = remember(context) { io.github.aedev.flow.data.local.PlayerPreferences(context) }
+    val audioLangPref = remember(context) { com.arubr.smsvcodes.data.local.PlayerPreferences(context) }
     val preferredLang by audioLangPref.preferredAudioLanguage.collectAsState(initial = "")
     
     Dialog(onDismissRequest = onDismiss) {
@@ -97,10 +97,10 @@ fun DownloadQualityDialog(
                 Spacer(modifier = Modifier.height(16.dp))
 
                 val innerTubeVideoStreams = remember(innerTubeVideoFormats) {
-                    io.github.aedev.flow.player.stream.InnerTubeStreamBridge.convertVideoFormats(innerTubeVideoFormats)
+                    com.arubr.smsvcodes.player.stream.InnerTubeStreamBridge.convertVideoFormats(innerTubeVideoFormats)
                 }
                 val innerTubeAudioStreams = remember(innerTubeAudioFormats) {
-                    io.github.aedev.flow.player.stream.InnerTubeStreamBridge.convertAudioFormats(innerTubeAudioFormats)
+                    com.arubr.smsvcodes.player.stream.InnerTubeStreamBridge.convertAudioFormats(innerTubeAudioFormats)
                 }
 
                 val extractedVideoOnlyStreams = streamInfo?.videoOnlyStreams?.filterIsInstance<VideoStream>() ?: emptyList()
@@ -320,7 +320,7 @@ fun DownloadQualityDialog(
                                 onClick = {
                                     onDismiss()
                                     if (audioUrl != null) {
-                                        io.github.aedev.flow.data.video.downloader.FlowDownloadService.startDownload(
+                                        com.arubr.smsvcodes.data.video.downloader.FlowDownloadService.startDownload(
                                             context = context,
                                             video = video,
                                             url = audioUrl,
@@ -1172,7 +1172,7 @@ private fun PlayerSettingsSpeedPage(
     onSpeedSelected: (Float) -> Unit
 ) {
     val context = LocalContext.current
-    val playerPrefs = remember { io.github.aedev.flow.data.local.PlayerPreferences(context) }
+    val playerPrefs = remember { com.arubr.smsvcodes.data.local.PlayerPreferences(context) }
     val customSpeedsEnabled by playerPrefs.customSpeedsEnabled.collectAsState(initial = false)
     val customSpeedPresetsRaw by playerPrefs.customSpeedPresets.collectAsState(initial = "")
     val speedSliderEnabled by playerPrefs.speedSliderEnabled.collectAsState(initial = false)
@@ -1407,7 +1407,7 @@ fun PlaybackSpeedSelectorDialog(
     onBack: (() -> Unit)? = null
 ) {
     val context = LocalContext.current
-    val playerPrefs = remember { io.github.aedev.flow.data.local.PlayerPreferences(context) }
+    val playerPrefs = remember { com.arubr.smsvcodes.data.local.PlayerPreferences(context) }
     val customSpeedsEnabled by playerPrefs.customSpeedsEnabled.collectAsState(initial = false)
     val customSpeedPresetsRaw by playerPrefs.customSpeedPresets.collectAsState(initial = "")
     val speedSliderEnabled by playerPrefs.speedSliderEnabled.collectAsState(initial = false)
@@ -1726,7 +1726,7 @@ private suspend fun trySabrDownloadFromDialog(context: Context, video: Video) {
         }
         if (sabrInfo != null) {
             val codecHint = if (sabrInfo.videoItag in listOf(313, 271, 308, 248, 303, 247, 302, 244, 243, 242)) "vp9" else null
-            io.github.aedev.flow.data.video.downloader.FlowDownloadService.startSabrDownload(
+            com.arubr.smsvcodes.data.video.downloader.FlowDownloadService.startSabrDownload(
                 context = context,
                 video = video,
                 quality = "best",

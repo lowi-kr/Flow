@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.library
+package com.arubr.smsvcodes.ui.screens.library
 
 import android.Manifest
 import android.content.Intent
@@ -52,8 +52,8 @@ import androidx.core.content.ContextCompat
 import androidx.hilt.navigation.compose.hiltViewModel
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
-import io.github.aedev.flow.R
-import io.github.aedev.flow.utils.formatDuration
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.utils.formatDuration
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

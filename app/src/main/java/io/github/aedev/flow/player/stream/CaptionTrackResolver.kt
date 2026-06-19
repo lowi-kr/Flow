@@ -1,8 +1,8 @@
-package io.github.aedev.flow.player.stream
+package com.arubr.smsvcodes.player.stream
 
 import android.net.Uri
 import android.util.Log
-import io.github.aedev.flow.innertube.models.response.PlayerResponse
+import com.arubr.smsvcodes.innertube.models.response.PlayerResponse
 import org.schabi.newpipe.extractor.MediaFormat
 import org.schabi.newpipe.extractor.stream.SubtitlesStream
 

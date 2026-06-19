@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.onboarding
+package com.arubr.smsvcodes.ui.screens.onboarding
 
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
@@ -57,12 +57,12 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.local.ChannelSubscription
-import io.github.aedev.flow.data.local.SubscriptionRepository
-import io.github.aedev.flow.data.recommendation.FlowNeuroEngine
-import io.github.aedev.flow.data.recommendation.NeuroTopicCatalog
-import io.github.aedev.flow.data.recommendation.TopicCategory
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.local.ChannelSubscription
+import com.arubr.smsvcodes.data.local.SubscriptionRepository
+import com.arubr.smsvcodes.data.recommendation.FlowNeuroEngine
+import com.arubr.smsvcodes.data.recommendation.NeuroTopicCatalog
+import com.arubr.smsvcodes.data.recommendation.TopicCategory
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
@@ -73,10 +73,10 @@ import org.schabi.newpipe.extractor.channel.ChannelInfoItem
 import androidx.activity.ComponentActivity
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import io.github.aedev.flow.ui.components.topicCategoryIcon
-import io.github.aedev.flow.ui.screens.settings.ImportViewModel
-import io.github.aedev.flow.ui.screens.settings.ImportProgressBanner
-import io.github.aedev.flow.data.local.BackupRepository
+import com.arubr.smsvcodes.ui.components.topicCategoryIcon
+import com.arubr.smsvcodes.ui.screens.settings.ImportViewModel
+import com.arubr.smsvcodes.ui.screens.settings.ImportProgressBanner
+import com.arubr.smsvcodes.data.local.BackupRepository
 
 // ─────────────────────────────────────────────────────────────
 // Constants & types

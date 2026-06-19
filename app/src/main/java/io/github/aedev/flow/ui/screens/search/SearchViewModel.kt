@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.search
+package com.arubr.smsvcodes.ui.screens.search
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -6,11 +6,11 @@ import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.PagingData
 import androidx.paging.cachedIn
-import io.github.aedev.flow.data.local.ContentType
-import io.github.aedev.flow.data.local.SearchFilter
-import io.github.aedev.flow.data.paging.SearchPagingSource
-import io.github.aedev.flow.data.paging.SearchResultItem
-import io.github.aedev.flow.data.repository.YouTubeRepository
+import com.arubr.smsvcodes.data.local.ContentType
+import com.arubr.smsvcodes.data.local.SearchFilter
+import com.arubr.smsvcodes.data.paging.SearchPagingSource
+import com.arubr.smsvcodes.data.paging.SearchResultItem
+import com.arubr.smsvcodes.data.repository.YouTubeRepository
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.*
 
@@ -86,9 +86,9 @@ class SearchViewModel(
     fun hasActiveFilters(filters: SearchFilter?): Boolean {
         if (filters == null) return false
         return filters.contentType != ContentType.ALL
-                || filters.duration != io.github.aedev.flow.data.local.Duration.ANY
-                || filters.uploadDate != io.github.aedev.flow.data.local.UploadDate.ANY
-                || filters.sortType != io.github.aedev.flow.data.local.SortType.RELEVANCE
+                || filters.duration != com.arubr.smsvcodes.data.local.Duration.ANY
+                || filters.uploadDate != com.arubr.smsvcodes.data.local.UploadDate.ANY
+                || filters.sortType != com.arubr.smsvcodes.data.local.SortType.RELEVANCE
     }
 
     suspend fun getSearchSuggestions(query: String): List<String> {

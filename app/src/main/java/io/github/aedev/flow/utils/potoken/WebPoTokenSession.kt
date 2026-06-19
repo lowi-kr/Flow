@@ -1,7 +1,7 @@
-package io.github.aedev.flow.utils.potoken
+package com.arubr.smsvcodes.utils.potoken
 
 import android.util.Log
-import io.github.aedev.flow.innertube.YouTube
+import com.arubr.smsvcodes.innertube.YouTube
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock

@@ -1,16 +1,16 @@
-package io.github.aedev.flow.data.paging
+package com.arubr.smsvcodes.data.paging
 
 import android.util.Log
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
-import io.github.aedev.flow.data.local.Duration
-import io.github.aedev.flow.data.local.UploadDate
-import io.github.aedev.flow.data.local.SearchFilter
-import io.github.aedev.flow.data.local.SortType
-import io.github.aedev.flow.data.model.Channel
-import io.github.aedev.flow.data.model.Playlist
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.utils.ThumbnailUrlResolver
+import com.arubr.smsvcodes.data.local.Duration
+import com.arubr.smsvcodes.data.local.UploadDate
+import com.arubr.smsvcodes.data.local.SearchFilter
+import com.arubr.smsvcodes.data.local.SortType
+import com.arubr.smsvcodes.data.model.Channel
+import com.arubr.smsvcodes.data.model.Playlist
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.utils.ThumbnailUrlResolver
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import org.schabi.newpipe.extractor.Page
@@ -71,7 +71,7 @@ class SearchPagingSource(
                         is StreamInfoItem -> {
                             val isLiveStream = item.streamType == StreamType.LIVE_STREAM ||
                                 item.streamType == StreamType.AUDIO_LIVE_STREAM
-                            if (searchFilter?.contentType == io.github.aedev.flow.data.local.ContentType.LIVE &&
+                            if (searchFilter?.contentType == com.arubr.smsvcodes.data.local.ContentType.LIVE &&
                                 !isLiveStream
                             ) {
                                 return@mapNotNull null

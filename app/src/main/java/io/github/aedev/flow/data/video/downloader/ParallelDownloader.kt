@@ -1,8 +1,8 @@
-package io.github.aedev.flow.data.video.downloader
+package com.arubr.smsvcodes.data.video.downloader
 
 import android.net.Uri
 import android.util.Log
-import io.github.aedev.flow.network.AppProxyManager
+import com.arubr.smsvcodes.network.AppProxyManager
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
 import kotlinx.coroutines.awaitAll

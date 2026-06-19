@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.music
+package com.arubr.smsvcodes.ui.screens.music
 
 
 import android.content.Intent
@@ -59,14 +59,14 @@ import coil.request.ImageRequest
 import coil.request.SuccessResult
 import androidx.core.graphics.drawable.toBitmap
 
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.local.MusicPlayerBackgroundStyle
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.player.EnhancedMusicPlayerManager
-import io.github.aedev.flow.player.SleepTimerManager
-import io.github.aedev.flow.ui.components.SleepTimerSheet
-import io.github.aedev.flow.ui.screens.music.player.*
-import io.github.aedev.flow.ui.components.MusicQuickActionsSheet
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.local.MusicPlayerBackgroundStyle
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.player.EnhancedMusicPlayerManager
+import com.arubr.smsvcodes.player.SleepTimerManager
+import com.arubr.smsvcodes.ui.components.SleepTimerSheet
+import com.arubr.smsvcodes.ui.screens.music.player.*
+import com.arubr.smsvcodes.ui.components.MusicQuickActionsSheet
 import androidx.compose.foundation.clickable
 
 private val PlayerHorizontalPadding = 28.dp
@@ -147,7 +147,7 @@ fun EnhancedMusicPlayerScreen(
         SleepTimerManager.attachExitCallback {
             EnhancedMusicPlayerManager.stop()
             context.stopService(
-                android.content.Intent(context, io.github.aedev.flow.service.Media3MusicService::class.java)
+                android.content.Intent(context, com.arubr.smsvcodes.service.Media3MusicService::class.java)
             )
             (context as? android.app.Activity)?.finishAndRemoveTask()
         }

@@ -1,10 +1,10 @@
-package io.github.aedev.flow.ui.screens.search
+package com.arubr.smsvcodes.ui.screens.search
 
-import io.github.aedev.flow.data.local.Duration
-import io.github.aedev.flow.data.local.SearchFilter
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.data.model.SearchResult
-import io.github.aedev.flow.data.repository.YouTubeRepository
+import com.arubr.smsvcodes.data.local.Duration
+import com.arubr.smsvcodes.data.local.SearchFilter
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.data.model.SearchResult
+import com.arubr.smsvcodes.data.repository.YouTubeRepository
 import com.google.common.truth.Truth.assertThat
 import io.mockk.coEvery
 import io.mockk.mockk

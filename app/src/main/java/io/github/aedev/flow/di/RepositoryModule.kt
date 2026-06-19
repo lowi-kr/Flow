@@ -1,8 +1,8 @@
-package io.github.aedev.flow.di
+package com.arubr.smsvcodes.di
 
 import android.content.Context
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.data.repository.YouTubeRepository
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.data.repository.YouTubeRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -22,45 +22,45 @@ object RepositoryModule {
 
     @Provides
     @Singleton
-    fun provideSubscriptionRepository(@ApplicationContext context: Context): io.github.aedev.flow.data.local.SubscriptionRepository {
-        return io.github.aedev.flow.data.local.SubscriptionRepository.getInstance(context)
+    fun provideSubscriptionRepository(@ApplicationContext context: Context): com.arubr.smsvcodes.data.local.SubscriptionRepository {
+        return com.arubr.smsvcodes.data.local.SubscriptionRepository.getInstance(context)
     }
 
     @Provides
     @Singleton
-    fun provideLikedVideosRepository(@ApplicationContext context: Context): io.github.aedev.flow.data.local.LikedVideosRepository {
-        return io.github.aedev.flow.data.local.LikedVideosRepository.getInstance(context)
+    fun provideLikedVideosRepository(@ApplicationContext context: Context): com.arubr.smsvcodes.data.local.LikedVideosRepository {
+        return com.arubr.smsvcodes.data.local.LikedVideosRepository.getInstance(context)
     }
 
     @Provides
     @Singleton
-    fun provideViewHistory(@ApplicationContext context: Context): io.github.aedev.flow.data.local.ViewHistory {
-        return io.github.aedev.flow.data.local.ViewHistory.getInstance(context)
+    fun provideViewHistory(@ApplicationContext context: Context): com.arubr.smsvcodes.data.local.ViewHistory {
+        return com.arubr.smsvcodes.data.local.ViewHistory.getInstance(context)
     }
 
     @Provides
     @Singleton
-    fun provideInterestProfile(@ApplicationContext context: Context): io.github.aedev.flow.data.recommendation.InterestProfile {
-        return io.github.aedev.flow.data.recommendation.InterestProfile.getInstance(context)
+    fun provideInterestProfile(@ApplicationContext context: Context): com.arubr.smsvcodes.data.recommendation.InterestProfile {
+        return com.arubr.smsvcodes.data.recommendation.InterestProfile.getInstance(context)
     }
 
     @Provides
     @Singleton
-    fun provideMusicPlaylistRepository(@ApplicationContext context: Context): io.github.aedev.flow.data.music.PlaylistRepository {
-        return io.github.aedev.flow.data.music.PlaylistRepository(context)
+    fun provideMusicPlaylistRepository(@ApplicationContext context: Context): com.arubr.smsvcodes.data.music.PlaylistRepository {
+        return com.arubr.smsvcodes.data.music.PlaylistRepository(context)
     }
 
 
     // VideoDownloadManager is now @Singleton @Inject — Hilt provides it automatically
     @Provides
     @Singleton
-    fun providePlayerPreferences(@ApplicationContext context: Context): io.github.aedev.flow.data.local.PlayerPreferences {
-        return io.github.aedev.flow.data.local.PlayerPreferences(context)
+    fun providePlayerPreferences(@ApplicationContext context: Context): com.arubr.smsvcodes.data.local.PlayerPreferences {
+        return com.arubr.smsvcodes.data.local.PlayerPreferences(context)
     }
 
     @Provides
     @Singleton
-    fun provideShortsRepository(@ApplicationContext context: Context): io.github.aedev.flow.data.shorts.ShortsRepository {
-        return io.github.aedev.flow.data.shorts.ShortsRepository.getInstance(context)
+    fun provideShortsRepository(@ApplicationContext context: Context): com.arubr.smsvcodes.data.shorts.ShortsRepository {
+        return com.arubr.smsvcodes.data.shorts.ShortsRepository.getInstance(context)
     }
 }

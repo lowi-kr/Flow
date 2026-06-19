@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.search
+package com.arubr.smsvcodes.ui.screens.search
 
 import androidx.compose.animation.*
 import androidx.compose.animation.core.*
@@ -40,17 +40,17 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.paging.LoadState
 import androidx.paging.compose.collectAsLazyPagingItems
 import coil.compose.AsyncImage
-import io.github.aedev.flow.data.local.*
-import io.github.aedev.flow.data.local.SearchFilter
-import io.github.aedev.flow.data.local.SearchHistoryItem
-import io.github.aedev.flow.data.local.ContentType
-import io.github.aedev.flow.data.model.*
-import io.github.aedev.flow.data.paging.SearchResultItem
-import io.github.aedev.flow.data.recommendation.InterestProfile
-import io.github.aedev.flow.data.search.SearchSuggestionsService
-import io.github.aedev.flow.ui.components.*
-import io.github.aedev.flow.utils.formatDuration
-import io.github.aedev.flow.utils.formatViewCount
+import com.arubr.smsvcodes.data.local.*
+import com.arubr.smsvcodes.data.local.SearchFilter
+import com.arubr.smsvcodes.data.local.SearchHistoryItem
+import com.arubr.smsvcodes.data.local.ContentType
+import com.arubr.smsvcodes.data.model.*
+import com.arubr.smsvcodes.data.paging.SearchResultItem
+import com.arubr.smsvcodes.data.recommendation.InterestProfile
+import com.arubr.smsvcodes.data.search.SearchSuggestionsService
+import com.arubr.smsvcodes.ui.components.*
+import com.arubr.smsvcodes.utils.formatDuration
+import com.arubr.smsvcodes.utils.formatViewCount
 import kotlinx.coroutines.FlowPreview
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -68,7 +68,7 @@ fun SearchScreen(
     val context = LocalContext.current
     val searchHistoryRepo = remember { SearchHistoryRepository(context) }
     val interestProfile = remember { InterestProfile.getInstance(context) }
-    val preferences = remember { io.github.aedev.flow.data.local.PlayerPreferences(context) }
+    val preferences = remember { com.arubr.smsvcodes.data.local.PlayerPreferences(context) }
 
     var searchQuery by remember { mutableStateOf(TextFieldValue("")) }
     var isSearchFocused by remember { mutableStateOf(false) }

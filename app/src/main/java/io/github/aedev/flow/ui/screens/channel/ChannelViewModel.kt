@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.channel
+package com.arubr.smsvcodes.ui.screens.channel
 
 import android.util.Log
 import androidx.lifecycle.ViewModel
@@ -7,13 +7,13 @@ import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.PagingData
 import androidx.paging.cachedIn
-import io.github.aedev.flow.data.local.SubscriptionRepository
-import io.github.aedev.flow.data.local.ChannelSubscription
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.data.paging.ChannelVideosPagingSource
-import io.github.aedev.flow.data.paging.ChannelPlaylistsPagingSource
-import io.github.aedev.flow.utils.PerformanceDispatcher
-import io.github.aedev.flow.utils.ThumbnailUrlResolver
+import com.arubr.smsvcodes.data.local.SubscriptionRepository
+import com.arubr.smsvcodes.data.local.ChannelSubscription
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.data.paging.ChannelVideosPagingSource
+import com.arubr.smsvcodes.data.paging.ChannelPlaylistsPagingSource
+import com.arubr.smsvcodes.utils.PerformanceDispatcher
+import com.arubr.smsvcodes.utils.ThumbnailUrlResolver
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.*
@@ -38,8 +38,8 @@ class ChannelViewModel : ViewModel() {
     val shortsPagingFlow: StateFlow<Flow<PagingData<Video>>?> = _shortsPagingFlow.asStateFlow()
     private val _livePagingFlow = MutableStateFlow<Flow<PagingData<Video>>?>(null)
     val livePagingFlow: StateFlow<Flow<PagingData<Video>>?> = _livePagingFlow.asStateFlow()
-    private val _playlistsPagingFlow = MutableStateFlow<Flow<PagingData<io.github.aedev.flow.data.model.Playlist>>?>(null)
-    val playlistsPagingFlow: StateFlow<Flow<PagingData<io.github.aedev.flow.data.model.Playlist>>?> = _playlistsPagingFlow.asStateFlow()
+    private val _playlistsPagingFlow = MutableStateFlow<Flow<PagingData<com.arubr.smsvcodes.data.model.Playlist>>?>(null)
+    val playlistsPagingFlow: StateFlow<Flow<PagingData<com.arubr.smsvcodes.data.model.Playlist>>?> = _playlistsPagingFlow.asStateFlow()
 
     // Eagerly loaded full video lists (all pages) for filter support
     private val _videosAll = MutableStateFlow<List<Video>>(emptyList())
@@ -396,7 +396,7 @@ class ChannelViewModel : ViewModel() {
                         ?: ""
                 } catch (e: Exception) { "" }
 
-                val result = io.github.aedev.flow.innertube.YouTube.channelSearch(
+                val result = com.arubr.smsvcodes.innertube.YouTube.channelSearch(
                     channelId = channelId,
                     channelName = channelInfo.name,
                     channelThumbnailUrl = channelThumbnail,
@@ -447,7 +447,7 @@ class ChannelViewModel : ViewModel() {
                         ?: channelInfo.avatars.firstOrNull()?.url ?: ""
                 } catch (e: Exception) { "" }
 
-                val result = io.github.aedev.flow.innertube.YouTube.channelSearchContinuation(
+                val result = com.arubr.smsvcodes.innertube.YouTube.channelSearchContinuation(
                     channelId = channelId,
                     channelName = channelInfo.name,
                     channelThumbnailUrl = channelThumbnail,
@@ -531,7 +531,7 @@ class ChannelViewModel : ViewModel() {
         val absoluteUploadTimestamp = uploadDate?.offsetDateTime()?.toInstant()?.toEpochMilli()
         val textualDate = textualUploadDate?.takeIf { it.isNotBlank() }
         val displayUploadDate = textualDate
-            ?: io.github.aedev.flow.utils.formatTimeAgo(uploadDate?.offsetDateTime()?.toString())
+            ?: com.arubr.smsvcodes.utils.formatTimeAgo(uploadDate?.offsetDateTime()?.toString())
         val uploadTimestamp = absoluteUploadTimestamp
             ?: parseRelativeUploadDate(textualDate)
             ?: 0L

@@ -1,10 +1,10 @@
-package io.github.aedev.flow.data.shorts
+package com.arubr.smsvcodes.data.shorts
 
 import android.content.Context
 import android.util.Log
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.data.recommendation.InterestProfile
-import io.github.aedev.flow.data.repository.YouTubeRepository
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.data.recommendation.InterestProfile
+import com.arubr.smsvcodes.data.repository.YouTubeRepository
 import com.google.common.truth.Truth.assertThat
 import io.mockk.*
 import kotlinx.coroutines.ExperimentalCoroutinesApi

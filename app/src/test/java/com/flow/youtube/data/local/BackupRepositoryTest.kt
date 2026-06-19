@@ -1,12 +1,12 @@
-package io.github.aedev.flow.data.local
+package com.arubr.smsvcodes.data.local
 
 import android.content.ContentResolver
 import android.content.Context
 import android.net.Uri
-import io.github.aedev.flow.data.local.dao.PlaylistDao
-import io.github.aedev.flow.data.local.dao.VideoDao
-import io.github.aedev.flow.data.local.entity.PlaylistEntity
-import io.github.aedev.flow.data.local.entity.VideoEntity
+import com.arubr.smsvcodes.data.local.dao.PlaylistDao
+import com.arubr.smsvcodes.data.local.dao.VideoDao
+import com.arubr.smsvcodes.data.local.entity.PlaylistEntity
+import com.arubr.smsvcodes.data.local.entity.VideoEntity
 import com.google.common.truth.Truth.assertThat
 import io.mockk.*
 import androidx.room.withTransaction

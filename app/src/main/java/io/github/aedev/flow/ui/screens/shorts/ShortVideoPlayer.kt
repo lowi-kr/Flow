@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.shorts
+package com.arubr.smsvcodes.ui.screens.shorts
 
 import android.util.Log
 import android.view.SurfaceHolder
@@ -44,17 +44,17 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.media3.ui.PlayerView
 import coil.compose.AsyncImage
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.data.model.toShortVideo
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.data.model.toShortVideo
 import android.support.v4.media.session.MediaSessionCompat
 import android.support.v4.media.session.PlaybackStateCompat
-import io.github.aedev.flow.player.EnhancedMusicPlayerManager
-import io.github.aedev.flow.player.shorts.ShortsPlayerPool
-import io.github.aedev.flow.ui.components.ChannelAvatarImage
-import io.github.aedev.flow.ui.components.rememberFlowSheetState
-import io.github.aedev.flow.ui.components.rememberDateDisplaySettings
-import io.github.aedev.flow.utils.DateContext
+import com.arubr.smsvcodes.player.EnhancedMusicPlayerManager
+import com.arubr.smsvcodes.player.shorts.ShortsPlayerPool
+import com.arubr.smsvcodes.ui.components.ChannelAvatarImage
+import com.arubr.smsvcodes.ui.components.rememberFlowSheetState
+import com.arubr.smsvcodes.ui.components.rememberDateDisplaySettings
+import com.arubr.smsvcodes.utils.DateContext
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
@@ -75,7 +75,7 @@ fun ShortVideoPage(
     modifier: Modifier = Modifier
 ) {
     val context = LocalContext.current
-    val playerPreferences = remember { io.github.aedev.flow.data.local.PlayerPreferences(context) }
+    val playerPreferences = remember { com.arubr.smsvcodes.data.local.PlayerPreferences(context) }
     val shortsPlaybackMode by playerPreferences.shortsPlaybackMode.collectAsState(initial = "loop")
     val shortsAutoScrollSeconds by playerPreferences.shortsAutoScrollSeconds.collectAsState(initial = 10)
     val haptic = LocalHapticFeedback.current
@@ -123,7 +123,7 @@ fun ShortVideoPage(
         if (isActive) playerPool.setBasePlaybackSpeed(shortsSpeed)
     }
     var availableAudioStreams by remember { mutableStateOf<List<org.schabi.newpipe.extractor.stream.AudioStream>>(emptyList()) }
-    var availableQualities by remember { mutableStateOf<List<io.github.aedev.flow.data.shorts.ShortVideoQuality>>(emptyList()) }
+    var availableQualities by remember { mutableStateOf<List<com.arubr.smsvcodes.data.shorts.ShortVideoQuality>>(emptyList()) }
     var selectedAudioIndex by remember { mutableStateOf(0) }
     var selectedQualityHeight by remember { mutableStateOf(-1) }
     var selectedQualityUrl by remember { mutableStateOf<String?>(null) }
@@ -133,9 +133,9 @@ fun ShortVideoPage(
     var showDownloadDialog by remember { mutableStateOf(false) }
     var currentStreamInfo by remember { mutableStateOf<org.schabi.newpipe.extractor.stream.StreamInfo?>(null) }
     var currentStreamSizes by remember { mutableStateOf<Map<String, Long>>(emptyMap()) }
-    var currentInnerTubeVideoFormats by remember { mutableStateOf<List<io.github.aedev.flow.innertube.models.response.PlayerResponse.StreamingData.Format>>(emptyList()) }
-    var currentInnerTubeAudioFormats by remember { mutableStateOf<List<io.github.aedev.flow.innertube.models.response.PlayerResponse.StreamingData.Format>>(emptyList()) }
-    val downloadDialogStyle by playerPreferences.downloadDialogStyle.collectAsState(initial = io.github.aedev.flow.data.local.DownloadDialogStyle.FULL)
+    var currentInnerTubeVideoFormats by remember { mutableStateOf<List<com.arubr.smsvcodes.innertube.models.response.PlayerResponse.StreamingData.Format>>(emptyList()) }
+    var currentInnerTubeAudioFormats by remember { mutableStateOf<List<com.arubr.smsvcodes.innertube.models.response.PlayerResponse.StreamingData.Format>>(emptyList()) }
+    val downloadDialogStyle by playerPreferences.downloadDialogStyle.collectAsState(initial = com.arubr.smsvcodes.data.local.DownloadDialogStyle.FULL)
 
     // ── PlayerView instance ──
     val playerView = remember {
@@ -920,8 +920,8 @@ fun ShortVideoPage(
 
     // ── Download Dialog ──
     if (showDownloadDialog && (currentStreamInfo != null || currentInnerTubeVideoFormats.isNotEmpty())) {
-        if (downloadDialogStyle == io.github.aedev.flow.data.local.DownloadDialogStyle.COMPACT) {
-            io.github.aedev.flow.ui.screens.player.components.DownloadQualityDialogCompact(
+        if (downloadDialogStyle == com.arubr.smsvcodes.data.local.DownloadDialogStyle.COMPACT) {
+            com.arubr.smsvcodes.ui.screens.player.components.DownloadQualityDialogCompact(
                 streamInfo = currentStreamInfo,
                 streamSizes = currentStreamSizes,
                 innerTubeVideoFormats = currentInnerTubeVideoFormats,
@@ -930,7 +930,7 @@ fun ShortVideoPage(
                 onDismiss = { showDownloadDialog = false }
             )
         } else {
-            io.github.aedev.flow.ui.screens.player.components.DownloadQualityDialog(
+            com.arubr.smsvcodes.ui.screens.player.components.DownloadQualityDialog(
                 streamInfo = currentStreamInfo,
                 streamSizes = currentStreamSizes,
                 innerTubeVideoFormats = currentInnerTubeVideoFormats,
@@ -1336,10 +1336,10 @@ private fun ShortsAudioTrackSheet(
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun ShortsQualitySheet(
-    qualities: List<io.github.aedev.flow.data.shorts.ShortVideoQuality>,
+    qualities: List<com.arubr.smsvcodes.data.shorts.ShortVideoQuality>,
     selectedHeight: Int?,
     selectedVideoUrl: String?,
-    onQualitySelected: (io.github.aedev.flow.data.shorts.ShortVideoQuality) -> Unit,
+    onQualitySelected: (com.arubr.smsvcodes.data.shorts.ShortVideoQuality) -> Unit,
     onDismiss: () -> Unit
 ) {
     ModalBottomSheet(onDismissRequest = onDismiss, sheetState = rememberFlowSheetState()) {

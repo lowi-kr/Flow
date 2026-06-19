@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components
+package com.arubr.smsvcodes.ui.components
 
 import android.content.ClipData
 import android.content.ClipboardManager
@@ -47,12 +47,12 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.platform.LocalDensity
-import io.github.aedev.flow.R
+import com.arubr.smsvcodes.R
 import androidx.core.text.HtmlCompat
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.utils.formatLikeCount
-import io.github.aedev.flow.utils.formatViewCount
-import io.github.aedev.flow.utils.DateContext
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.utils.formatLikeCount
+import com.arubr.smsvcodes.utils.formatViewCount
+import com.arubr.smsvcodes.utils.DateContext
 import kotlinx.coroutines.launch
 
 fun parseHtmlDescription(rawHtml: String): AnnotatedString {

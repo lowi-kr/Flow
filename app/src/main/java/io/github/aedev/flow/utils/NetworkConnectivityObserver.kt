@@ -1,4 +1,4 @@
-package io.github.aedev.flow.utils
+package com.arubr.smsvcodes.utils
 
 import android.content.Context
 import android.net.ConnectivityManager

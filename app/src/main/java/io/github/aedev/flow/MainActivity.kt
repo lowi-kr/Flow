@@ -1,4 +1,4 @@
-package io.github.aedev.flow
+package com.arubr.smsvcodes
 
 import android.content.Intent
 import android.os.Build
@@ -16,13 +16,13 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
-import io.github.aedev.flow.data.local.LocalDataManager
-import io.github.aedev.flow.player.GlobalPlayerState
-import io.github.aedev.flow.ui.FlowApp
-import io.github.aedev.flow.ui.theme.FlowTheme
-import io.github.aedev.flow.ui.theme.ThemeMode
-import io.github.aedev.flow.ui.theme.CustomThemeColors
-import io.github.aedev.flow.updater.ApkUpdateHelper
+import com.arubr.smsvcodes.data.local.LocalDataManager
+import com.arubr.smsvcodes.player.GlobalPlayerState
+import com.arubr.smsvcodes.ui.FlowApp
+import com.arubr.smsvcodes.ui.theme.FlowTheme
+import com.arubr.smsvcodes.ui.theme.ThemeMode
+import com.arubr.smsvcodes.ui.theme.CustomThemeColors
+import com.arubr.smsvcodes.updater.ApkUpdateHelper
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.*
@@ -33,19 +33,19 @@ import androidx.lifecycle.Lifecycle
 import android.util.Log
 import okhttp3.OkHttpClient
 import okhttp3.Request
-import io.github.aedev.flow.data.recommendation.FlowNeuroEngine
+import com.arubr.smsvcodes.data.recommendation.FlowNeuroEngine
 import com.google.gson.JsonParser
-import io.github.aedev.flow.ui.screens.CrashReporterScreen
-import io.github.aedev.flow.utils.FlowCrashHandler
-import io.github.aedev.flow.utils.UpdateManager
-import io.github.aedev.flow.utils.UpdateInfo
-import io.github.aedev.flow.network.AppProxyManager
-import io.github.aedev.flow.player.PictureInPictureHelper
-import io.github.aedev.flow.ui.components.UpdateDialog
-import io.github.aedev.flow.BuildConfig
+import com.arubr.smsvcodes.ui.screens.CrashReporterScreen
+import com.arubr.smsvcodes.utils.FlowCrashHandler
+import com.arubr.smsvcodes.utils.UpdateManager
+import com.arubr.smsvcodes.utils.UpdateInfo
+import com.arubr.smsvcodes.network.AppProxyManager
+import com.arubr.smsvcodes.player.PictureInPictureHelper
+import com.arubr.smsvcodes.ui.components.UpdateDialog
+import com.arubr.smsvcodes.BuildConfig
 import androidx.activity.SystemBarStyle
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
-import io.github.aedev.flow.utils.AppLanguageManager
+import com.arubr.smsvcodes.utils.AppLanguageManager
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.runBlocking
@@ -87,7 +87,7 @@ class MainActivity : ComponentActivity() {
 
     private fun lifecyclePlaybackSnapshot(): String {
         val powerManager = getSystemService(Context.POWER_SERVICE) as? PowerManager
-        val playerManager = io.github.aedev.flow.player.EnhancedPlayerManager.getInstance()
+        val playerManager = com.arubr.smsvcodes.player.EnhancedPlayerManager.getInstance()
         val playerState = playerManager.playerState.value
         val player = playerManager.getPlayer()
         return "interactive=${powerManager?.isInteractive} lifecycle=${lifecycle.currentState} " +
@@ -135,21 +135,21 @@ class MainActivity : ComponentActivity() {
 
         // Keep auto-PiP preference cached so onUserLeaveHint can read it synchronously
         lifecycleScope.launch {
-            io.github.aedev.flow.data.local.PlayerPreferences(applicationContext)
+            com.arubr.smsvcodes.data.local.PlayerPreferences(applicationContext)
                 .autoPipEnabled
                 .collect { enabled -> cachedAutoPipEnabled = enabled }
         }
 
         // Keep background-play preference cached so lifecycle callbacks can read it synchronously
         lifecycleScope.launch {
-            io.github.aedev.flow.data.local.PlayerPreferences(applicationContext)
+            com.arubr.smsvcodes.data.local.PlayerPreferences(applicationContext)
                 .backgroundPlayEnabled
                 .collect { enabled -> cachedBackgroundPlayEnabled = enabled }
         }
 
         // Keep shorts background-play preference cached so onStop can read it synchronously
         lifecycleScope.launch {
-            io.github.aedev.flow.data.local.PlayerPreferences(applicationContext)
+            com.arubr.smsvcodes.data.local.PlayerPreferences(applicationContext)
                 .shortsBackgroundPlay
                 .collect { enabled -> cachedShortsBackgroundPlay = enabled }
         }
@@ -251,7 +251,7 @@ class MainActivity : ComponentActivity() {
             
             // Initialize Flow Neuro Engine
             LaunchedEffect(Unit) {
-                io.github.aedev.flow.data.recommendation.FlowNeuroEngine.initialize(applicationContext)
+                com.arubr.smsvcodes.data.recommendation.FlowNeuroEngine.initialize(applicationContext)
             }
 
             FlowTheme(
@@ -352,7 +352,7 @@ class MainActivity : ComponentActivity() {
 
                     // 2. THE SPLASH SCREEN (Z-Index Top)
                     if (showSplash) {
-                        io.github.aedev.flow.ui.components.FlowSplashScreen(
+                        com.arubr.smsvcodes.ui.components.FlowSplashScreen(
                             onAnimationFinished = {
                                 showSplash = false
                             }
@@ -365,7 +365,7 @@ class MainActivity : ComponentActivity() {
     
     override fun onDestroy() {
         videoLifecycleLog("onDestroy")
-        val playerManager = io.github.aedev.flow.player.EnhancedPlayerManager.getInstance()
+        val playerManager = com.arubr.smsvcodes.player.EnhancedPlayerManager.getInstance()
         val playerState = playerManager.playerState.value
         val shouldKeepBackgroundPlayback =
             cachedBackgroundPlayEnabled &&
@@ -483,8 +483,8 @@ class MainActivity : ComponentActivity() {
                 val stillBackgrounded = !lifecycle.currentState.isAtLeast(Lifecycle.State.STARTED)
                 if (stillBackgrounded && !isInPictureInPictureMode) {
                     GlobalPlayerState.requestDismiss()
-                    io.github.aedev.flow.player.EnhancedPlayerManager.getInstance().stop()
-                    io.github.aedev.flow.player.EnhancedPlayerManager.getInstance().stopBackgroundService()
+                    com.arubr.smsvcodes.player.EnhancedPlayerManager.getInstance().stop()
+                    com.arubr.smsvcodes.player.EnhancedPlayerManager.getInstance().stopBackgroundService()
                 }
             }
         }
@@ -503,7 +503,7 @@ class MainActivity : ComponentActivity() {
         if (!isInPictureInPictureMode) {
             requestedOrientation = android.content.pm.ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
             if (!cachedShortsBackgroundPlay) {
-                io.github.aedev.flow.player.shorts.ShortsPlayerPool.getInstance().pauseAll()
+                com.arubr.smsvcodes.player.shorts.ShortsPlayerPool.getInstance().pauseAll()
             }
 
             if (pendingAutoPip) {
@@ -529,8 +529,8 @@ class MainActivity : ComponentActivity() {
         videoLifecycleLog("onUserLeaveHint")
         // Only enter PiP mode if video is playing and has progressed
         // We use the EnhancedPlayerManager directly to get the immediate state
-        val playerManager = io.github.aedev.flow.player.EnhancedPlayerManager.getInstance()
-        val musicManager = io.github.aedev.flow.player.EnhancedMusicPlayerManager
+        val playerManager = com.arubr.smsvcodes.player.EnhancedPlayerManager.getInstance()
+        val musicManager = com.arubr.smsvcodes.player.EnhancedMusicPlayerManager
         
         val isVideoPlaying = playerManager.playerState.value.isPlaying && 
                            playerManager.playerState.value.currentVideoId != null &&
@@ -575,7 +575,7 @@ class MainActivity : ComponentActivity() {
 
     private fun handOffVideoPlaybackToBackground() {
         videoLifecycleLog("handOffVideoPlaybackToBackground")
-        val playerManager = io.github.aedev.flow.player.EnhancedPlayerManager.getInstance()
+        val playerManager = com.arubr.smsvcodes.player.EnhancedPlayerManager.getInstance()
         val playerState = playerManager.playerState.value
         if (
             playerState.currentVideoId != null &&
@@ -594,7 +594,7 @@ class MainActivity : ComponentActivity() {
 
     private fun handleBackgroundPlaybackOnStop() {
         videoLifecycleLog("handleBackgroundPlaybackOnStop")
-        val playerManager = io.github.aedev.flow.player.EnhancedPlayerManager.getInstance()
+        val playerManager = com.arubr.smsvcodes.player.EnhancedPlayerManager.getInstance()
         val playerState = playerManager.playerState.value
         val hasActiveVideo =
             playerState.currentVideoId != null &&

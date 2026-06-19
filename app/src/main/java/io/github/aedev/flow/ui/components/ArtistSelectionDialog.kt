@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components
+package com.arubr.smsvcodes.ui.components
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -15,8 +15,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.ui.screens.music.MusicArtist
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.ui.screens.music.MusicArtist
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

@@ -1,13 +1,13 @@
-package io.github.aedev.flow.ui.screens.player
+package com.arubr.smsvcodes.ui.screens.player
 
 import android.content.Context
 import android.util.Log
-import io.github.aedev.flow.data.local.*
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.data.recommendation.FlowNeuroEngine
-import io.github.aedev.flow.data.recommendation.InterestProfile
-import io.github.aedev.flow.data.repository.YouTubeRepository
-import io.github.aedev.flow.data.video.VideoDownloadManager
+import com.arubr.smsvcodes.data.local.*
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.data.recommendation.FlowNeuroEngine
+import com.arubr.smsvcodes.data.recommendation.InterestProfile
+import com.arubr.smsvcodes.data.repository.YouTubeRepository
+import com.arubr.smsvcodes.data.video.VideoDownloadManager
 import com.google.common.truth.Truth.assertThat
 import io.mockk.*
 import kotlinx.coroutines.Dispatchers

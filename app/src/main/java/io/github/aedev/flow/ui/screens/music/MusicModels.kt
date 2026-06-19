@@ -1,6 +1,6 @@
-package io.github.aedev.flow.ui.screens.music
+package com.arubr.smsvcodes.ui.screens.music
 
-import io.github.aedev.flow.utils.ThumbnailUrlResolver
+import com.arubr.smsvcodes.utils.ThumbnailUrlResolver
 
 enum class MusicItemType { SONG, ALBUM, PLAYLIST, ARTIST }
 

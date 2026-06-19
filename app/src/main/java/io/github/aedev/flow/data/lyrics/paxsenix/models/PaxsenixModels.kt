@@ -2,7 +2,7 @@
 //This implementation was based on metrolist's (https://github.com/MetrolistGroup/Metrolist)
 //==================================================================================================
 
-package io.github.aedev.flow.data.lyrics.paxsenix.models
+package com.arubr.smsvcodes.data.lyrics.paxsenix.models
 
 import com.google.gson.annotations.SerializedName
 

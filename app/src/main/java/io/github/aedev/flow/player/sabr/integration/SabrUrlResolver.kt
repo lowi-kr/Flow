@@ -1,9 +1,9 @@
-package io.github.aedev.flow.player.sabr.integration
+package com.arubr.smsvcodes.player.sabr.integration
 
 import android.net.Uri
 import android.util.Log
-import io.github.aedev.flow.innertube.models.response.PlayerResponse
-import io.github.aedev.flow.player.stream.VideoCodecUtils
+import com.arubr.smsvcodes.innertube.models.response.PlayerResponse
+import com.arubr.smsvcodes.player.stream.VideoCodecUtils
 
 data class SabrStreamInfo(
     val streamingUrl: String,

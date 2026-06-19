@@ -1,10 +1,10 @@
-package io.github.aedev.flow.ui.screens.likedvideos
+package com.arubr.smsvcodes.ui.screens.likedvideos
 
 import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import io.github.aedev.flow.data.local.LikedVideosRepository
-import io.github.aedev.flow.data.local.LikedVideoInfo
+import com.arubr.smsvcodes.data.local.LikedVideosRepository
+import com.arubr.smsvcodes.data.local.LikedVideoInfo
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 

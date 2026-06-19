@@ -1,6 +1,6 @@
-package io.github.aedev.flow.innertube.pages
+package com.arubr.smsvcodes.innertube.pages
 
-import io.github.aedev.flow.innertube.models.*
+import com.arubr.smsvcodes.innertube.models.*
 
 data class ChartsPage(
     val sections: List<ChartSection>,

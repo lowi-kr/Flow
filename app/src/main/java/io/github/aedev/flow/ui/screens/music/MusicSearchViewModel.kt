@@ -1,14 +1,14 @@
-package io.github.aedev.flow.ui.screens.music
+package com.arubr.smsvcodes.ui.screens.music
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import io.github.aedev.flow.data.music.DownloadManager
-import io.github.aedev.flow.innertube.YouTube
-import io.github.aedev.flow.innertube.YouTube.SearchFilter
-import io.github.aedev.flow.innertube.models.SearchSuggestions
-import io.github.aedev.flow.innertube.models.YTItem
-import io.github.aedev.flow.innertube.pages.SearchSummaryPage
-import io.github.aedev.flow.utils.PerformanceDispatcher
+import com.arubr.smsvcodes.data.music.DownloadManager
+import com.arubr.smsvcodes.innertube.YouTube
+import com.arubr.smsvcodes.innertube.YouTube.SearchFilter
+import com.arubr.smsvcodes.innertube.models.SearchSuggestions
+import com.arubr.smsvcodes.innertube.models.YTItem
+import com.arubr.smsvcodes.innertube.pages.SearchSummaryPage
+import com.arubr.smsvcodes.utils.PerformanceDispatcher
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.FlowPreview
 import kotlinx.coroutines.flow.*
@@ -173,7 +173,7 @@ class MusicSearchViewModel @Inject constructor(
              result.onSuccess { searchResult ->
                  _uiState.update { state ->
                      if (state.activeFilter == null) {
-                         val newSummary = io.github.aedev.flow.innertube.pages.SearchSummary(
+                         val newSummary = com.arubr.smsvcodes.innertube.pages.SearchSummary(
                              title = "More results", 
                              items = searchResult.items
                          )

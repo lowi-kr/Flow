@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.music.components
+package com.arubr.smsvcodes.ui.screens.music.components
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.combinedClickable
@@ -30,8 +30,8 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.res.stringResource
 import coil.compose.AsyncImage
-import io.github.aedev.flow.R
-import io.github.aedev.flow.ui.screens.music.MusicTrack
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.ui.screens.music.MusicTrack
 
 @Composable
 fun MediaTrackListSection(

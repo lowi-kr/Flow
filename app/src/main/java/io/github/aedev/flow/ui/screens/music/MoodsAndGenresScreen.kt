@@ -1,9 +1,9 @@
-package io.github.aedev.flow.ui.screens.music
+package com.arubr.smsvcodes.ui.screens.music
 
 import android.content.res.Configuration
 import androidx.compose.foundation.layout.*
 import androidx.compose.ui.res.stringResource
-import io.github.aedev.flow.R
+import com.arubr.smsvcodes.R
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
@@ -17,11 +17,11 @@ import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
-import io.github.aedev.flow.innertube.pages.MoodAndGenres
-import io.github.aedev.flow.ui.components.MoodAndGenresButton
-import io.github.aedev.flow.ui.components.NavigationTitle
-import io.github.aedev.flow.ui.components.ShimmerHost
-import io.github.aedev.flow.ui.components.ShimmerMoodButton
+import com.arubr.smsvcodes.innertube.pages.MoodAndGenres
+import com.arubr.smsvcodes.ui.components.MoodAndGenresButton
+import com.arubr.smsvcodes.ui.components.NavigationTitle
+import com.arubr.smsvcodes.ui.components.ShimmerHost
+import com.arubr.smsvcodes.ui.components.ShimmerMoodButton
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

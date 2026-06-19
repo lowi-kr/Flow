@@ -168,7 +168,7 @@ Flow gives you both. The recommendation engine learns what you like by analyzing
         </a>
       </td>
       <td align="center" style="vertical-align: middle; padding: 10px;">
-        <a href="https://apt.izzysoft.de/packages/io.github.aedev.flow">
+        <a href="https://apt.izzysoft.de/packages/com.arubr.smsvcodes">
           <img src="https://gitlab.com/IzzyOnDroid/repo/-/raw/master/assets/IzzyOnDroid.png" alt="IzzyOnDroid" height="90">
         </a>
       </td>

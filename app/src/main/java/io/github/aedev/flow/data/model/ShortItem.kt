@@ -1,4 +1,4 @@
-package io.github.aedev.flow.data.model
+package com.arubr.smsvcodes.data.model
 
 // Renamed from ShortVideo to ShortItem to solve compilation cache/ghost class issues
 data class ShortItem(

@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.player.dialogs
+package com.arubr.smsvcodes.ui.screens.player.dialogs
 
 import android.content.Context
 import android.content.Intent
@@ -10,23 +10,23 @@ import androidx.compose.runtime.*
 import androidx.compose.foundation.layout.Row
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.Dp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.player.EnhancedMusicPlayerManager
-import io.github.aedev.flow.player.EnhancedPlayerManager
-import io.github.aedev.flow.player.SleepTimerManager
-import io.github.aedev.flow.ui.components.FlowChaptersBottomSheet
-import io.github.aedev.flow.ui.components.CommentSortFilter
-import io.github.aedev.flow.ui.components.FlowCommentsBottomSheet
-import io.github.aedev.flow.ui.components.FlowDescriptionBottomSheet
-import io.github.aedev.flow.ui.components.FlowLiveChatBottomSheet
-import io.github.aedev.flow.ui.components.FlowPlaylistQueueBottomSheet
-import io.github.aedev.flow.ui.components.SleepTimerSheet
-import io.github.aedev.flow.ui.components.VideoQuickActionsBottomSheet
-import io.github.aedev.flow.ui.screens.player.VideoPlayerUiState
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.player.EnhancedMusicPlayerManager
+import com.arubr.smsvcodes.player.EnhancedPlayerManager
+import com.arubr.smsvcodes.player.SleepTimerManager
+import com.arubr.smsvcodes.ui.components.FlowChaptersBottomSheet
+import com.arubr.smsvcodes.ui.components.CommentSortFilter
+import com.arubr.smsvcodes.ui.components.FlowCommentsBottomSheet
+import com.arubr.smsvcodes.ui.components.FlowDescriptionBottomSheet
+import com.arubr.smsvcodes.ui.components.FlowLiveChatBottomSheet
+import com.arubr.smsvcodes.ui.components.FlowPlaylistQueueBottomSheet
+import com.arubr.smsvcodes.ui.components.SleepTimerSheet
+import com.arubr.smsvcodes.ui.components.VideoQuickActionsBottomSheet
+import com.arubr.smsvcodes.ui.screens.player.VideoPlayerUiState
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import io.github.aedev.flow.data.model.Comment
-import io.github.aedev.flow.ui.screens.player.state.PlayerScreenState
+import com.arubr.smsvcodes.data.model.Comment
+import com.arubr.smsvcodes.ui.screens.player.state.PlayerScreenState
 
 @Composable
 fun PlayerBottomSheetsContainer(
@@ -65,7 +65,7 @@ fun PlayerBottomSheetsContainer(
         }
     }
 
-    val shareWithoutText by remember { io.github.aedev.flow.data.local.PlayerPreferences(context).shareWithoutText }
+    val shareWithoutText by remember { com.arubr.smsvcodes.data.local.PlayerPreferences(context).shareWithoutText }
         .collectAsStateWithLifecycle(initialValue = false)
 
     val sortedComments = remember(comments, screenState.commentSortFilter) {
@@ -102,10 +102,10 @@ fun PlayerBottomSheetsContainer(
             EnhancedPlayerManager.getInstance().pause()
             EnhancedMusicPlayerManager.stop()
             context.stopService(
-                android.content.Intent(context, io.github.aedev.flow.service.VideoPlayerService::class.java)
+                android.content.Intent(context, com.arubr.smsvcodes.service.VideoPlayerService::class.java)
             )
             context.stopService(
-                android.content.Intent(context, io.github.aedev.flow.service.Media3MusicService::class.java)
+                android.content.Intent(context, com.arubr.smsvcodes.service.Media3MusicService::class.java)
             )
             (context as? android.app.Activity)?.finishAndRemoveTask()
         }

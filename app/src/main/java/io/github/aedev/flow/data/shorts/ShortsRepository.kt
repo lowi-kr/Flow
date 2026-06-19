@@ -1,24 +1,24 @@
-package io.github.aedev.flow.data.shorts
+package com.arubr.smsvcodes.data.shorts
 
 import android.content.Context
 import android.util.Log
 import android.util.LruCache
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.data.local.SubscriptionRepository
-import io.github.aedev.flow.data.local.ViewHistory
-import io.github.aedev.flow.data.model.ShortVideo
-import io.github.aedev.flow.data.model.ShortsSequenceResult
-import io.github.aedev.flow.data.model.toShortVideo
-import io.github.aedev.flow.data.model.toVideo
-import io.github.aedev.flow.data.recommendation.FlowNeuroEngine
-import io.github.aedev.flow.data.repository.YouTubeRepository
-import io.github.aedev.flow.innertube.YouTube
-import io.github.aedev.flow.innertube.models.YouTubeClient
-import io.github.aedev.flow.innertube.models.response.PlayerResponse
-import io.github.aedev.flow.innertube.pages.NewPipeExtractor
-import io.github.aedev.flow.player.quality.QualityManager
-import io.github.aedev.flow.player.stream.InnerTubeVideoStreamExtractor
-import io.github.aedev.flow.player.stream.VideoCodecUtils
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.data.local.SubscriptionRepository
+import com.arubr.smsvcodes.data.local.ViewHistory
+import com.arubr.smsvcodes.data.model.ShortVideo
+import com.arubr.smsvcodes.data.model.ShortsSequenceResult
+import com.arubr.smsvcodes.data.model.toShortVideo
+import com.arubr.smsvcodes.data.model.toVideo
+import com.arubr.smsvcodes.data.recommendation.FlowNeuroEngine
+import com.arubr.smsvcodes.data.repository.YouTubeRepository
+import com.arubr.smsvcodes.innertube.YouTube
+import com.arubr.smsvcodes.innertube.models.YouTubeClient
+import com.arubr.smsvcodes.innertube.models.response.PlayerResponse
+import com.arubr.smsvcodes.innertube.pages.NewPipeExtractor
+import com.arubr.smsvcodes.player.quality.QualityManager
+import com.arubr.smsvcodes.player.stream.InnerTubeVideoStreamExtractor
+import com.arubr.smsvcodes.player.stream.VideoCodecUtils
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Deferred
 import kotlinx.coroutines.Dispatchers
@@ -224,7 +224,7 @@ class ShortsRepository private constructor(private val context: Context) {
         // InnerTube unavailable — await discovery or NewPipe fallback
         Log.w(TAG, "InnerTube failed — awaiting discovery result")
         val rawDiscovery = discJob.await()
-        val discoveryVideos: List<io.github.aedev.flow.data.model.Video> =
+        val discoveryVideos: List<com.arubr.smsvcodes.data.model.Video> =
             if (!rawDiscovery.isNullOrEmpty()) rawDiscovery else emptyList()
 
         if (discoveryVideos.isEmpty()) {
@@ -387,11 +387,11 @@ class ShortsRepository private constructor(private val context: Context) {
      * identical titles. Keeps the video with more views (likely the original).
      */
     private fun deduplicateByTitle(
-        videos: List<io.github.aedev.flow.data.model.Video>
-    ): List<io.github.aedev.flow.data.model.Video> {
+        videos: List<com.arubr.smsvcodes.data.model.Video>
+    ): List<com.arubr.smsvcodes.data.model.Video> {
         if (videos.size <= 1) return videos
 
-        val result = mutableListOf<io.github.aedev.flow.data.model.Video>()
+        val result = mutableListOf<com.arubr.smsvcodes.data.model.Video>()
         val titleTokens = videos.map { video ->
             video to video.title.lowercase()
                 .split(Regex("\\s+"))

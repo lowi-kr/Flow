@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components
+package com.arubr.smsvcodes.ui.components
 
 import android.content.res.Configuration
 import androidx.compose.animation.core.Animatable
@@ -39,7 +39,7 @@ import kotlinx.coroutines.Job
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.launch
 import kotlin.math.abs
-import io.github.aedev.flow.player.GlobalPlayerState
+import com.arubr.smsvcodes.player.GlobalPlayerState
 
 // ---------------------------------------------------------------------------
 // Helpers

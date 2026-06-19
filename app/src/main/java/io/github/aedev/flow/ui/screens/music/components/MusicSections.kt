@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.music.components
+package com.arubr.smsvcodes.ui.screens.music.components
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.*
@@ -19,8 +19,8 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.res.stringResource
-import io.github.aedev.flow.R
-import io.github.aedev.flow.ui.screens.music.MusicTrack
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.ui.screens.music.MusicTrack
 
 @Composable
 fun SectionHeader(
@@ -150,7 +150,7 @@ fun GenreSection(
             contentPadding = PaddingValues(horizontal = 16.dp)
         ) {
             items(tracks.take(10)) { track ->
-                io.github.aedev.flow.ui.screens.music.components.AlbumCard(
+                com.arubr.smsvcodes.ui.screens.music.components.AlbumCard(
                     title = track.title,
                     subtitle = track.artist,
                     thumbnailUrl = track.thumbnailUrl,

@@ -1,4 +1,4 @@
-package io.github.aedev.flow.player.gesture
+package com.arubr.smsvcodes.player.gesture
 
 import android.content.Context
 import android.view.GestureDetector

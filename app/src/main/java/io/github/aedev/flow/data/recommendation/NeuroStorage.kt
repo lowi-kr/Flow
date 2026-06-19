@@ -12,7 +12,7 @@
  * explicitly credit "Flow Android Client" and link back to the original repository.
  */
 
-package io.github.aedev.flow.data.recommendation
+package com.arubr.smsvcodes.data.recommendation
 
 import android.content.Context
 import android.util.Log

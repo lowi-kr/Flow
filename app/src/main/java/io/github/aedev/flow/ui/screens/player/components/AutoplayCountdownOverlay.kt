@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.player.components
+package com.arubr.smsvcodes.ui.screens.player.components
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.core.animateFloatAsState
@@ -54,9 +54,9 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
-import io.github.aedev.flow.R
-import io.github.aedev.flow.player.AutoplayCountdownState
-import io.github.aedev.flow.player.EnhancedPlayerManager
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.player.AutoplayCountdownState
+import com.arubr.smsvcodes.player.EnhancedPlayerManager
 
 @Composable
 fun AutoplayCountdownOverlay(modifier: Modifier = Modifier) {

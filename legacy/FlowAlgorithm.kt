@@ -1,7 +1,7 @@
-package io.github.aedev.flow.data.recommendation
+package com.arubr.smsvcodes.data.recommendation
 
 import android.util.Log
-import io.github.aedev.flow.data.model.Video
+import com.arubr.smsvcodes.data.model.Video
 import kotlin.random.Random
 
 /**

@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.player.content
+package com.arubr.smsvcodes.ui.screens.player.content
 
 import android.app.Activity
 import android.media.AudioManager
@@ -30,20 +30,20 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.media3.common.util.UnstableApi
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.data.model.DeArrowResult
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.data.repository.DeArrowRepository
-import io.github.aedev.flow.player.EnhancedPlayerManager
-import io.github.aedev.flow.player.PictureInPictureHelper
-import io.github.aedev.flow.player.state.EnhancedPlayerState
-import io.github.aedev.flow.ui.components.Media3SubtitleOverlay
-import io.github.aedev.flow.ui.screens.player.PremiumControlsOverlay
-import io.github.aedev.flow.ui.screens.player.VideoPlayerUiState
-import io.github.aedev.flow.ui.screens.player.VideoPlayerViewModel
-import io.github.aedev.flow.ui.screens.player.components.*
-import io.github.aedev.flow.ui.screens.player.state.PlayerScreenState
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.data.model.DeArrowResult
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.data.repository.DeArrowRepository
+import com.arubr.smsvcodes.player.EnhancedPlayerManager
+import com.arubr.smsvcodes.player.PictureInPictureHelper
+import com.arubr.smsvcodes.player.state.EnhancedPlayerState
+import com.arubr.smsvcodes.ui.components.Media3SubtitleOverlay
+import com.arubr.smsvcodes.ui.screens.player.PremiumControlsOverlay
+import com.arubr.smsvcodes.ui.screens.player.VideoPlayerUiState
+import com.arubr.smsvcodes.ui.screens.player.VideoPlayerViewModel
+import com.arubr.smsvcodes.ui.screens.player.components.*
+import com.arubr.smsvcodes.ui.screens.player.state.PlayerScreenState
 import kotlinx.coroutines.CoroutineScope
 import kotlin.math.max
 
@@ -349,15 +349,15 @@ fun PlayerContent(
             bufferedPercentage = playerState.bufferedPercentage,
             windowInsets = WindowInsets(0, 0, 0, 0),
             onCastClick = {
-                io.github.aedev.flow.player.CastHelper.showCastPicker(context)
+                com.arubr.smsvcodes.player.CastHelper.showCastPicker(context)
             },
-            isCasting = io.github.aedev.flow.player.CastHelper.isCasting(context),
+            isCasting = com.arubr.smsvcodes.player.CastHelper.isCasting(context),
             isLive = !uiState.hlsUrl.isNullOrEmpty(),
             onLiveClick = {
                 EnhancedPlayerManager.getInstance().seekToLiveEdge(resetSpeed = true)
             },
             onSleepTimerClick = { screenState.showSleepTimerSheet = true },
-            isSleepTimerActive = io.github.aedev.flow.player.SleepTimerManager.isActive,
+            isSleepTimerActive = com.arubr.smsvcodes.player.SleepTimerManager.isActive,
             showRemainingTime = showRemainingTime,
             onToggleRemainingTime = { showRemainingTime = !showRemainingTime },
             isTouchLocked = screenState.isTouchLocked,

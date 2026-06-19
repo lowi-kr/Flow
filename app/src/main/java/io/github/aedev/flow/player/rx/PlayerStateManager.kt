@@ -1,4 +1,4 @@
-package io.github.aedev.flow.player.rx
+package com.arubr.smsvcodes.player.rx
 
 import androidx.media3.common.PlaybackException
 import io.reactivex.rxjava3.core.Observable

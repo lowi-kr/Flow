@@ -1,4 +1,4 @@
-package io.github.aedev.flow.data.lyrics
+package com.arubr.smsvcodes.data.lyrics
 
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -18,7 +18,7 @@ class YouTubeLyricsProvider : LyricsProvider {
         album: String?
     ): Result<List<LyricsEntry>> = withContext(Dispatchers.IO) {
         try {
-            val lyrics = io.github.aedev.flow.data.newmusic.InnertubeMusicService.fetchLyrics(id)
+            val lyrics = com.arubr.smsvcodes.data.newmusic.InnertubeMusicService.fetchLyrics(id)
             if (lyrics != null) {
                 Result.success(listOf(LyricsEntry(time = 0L, text = lyrics)))
             } else {

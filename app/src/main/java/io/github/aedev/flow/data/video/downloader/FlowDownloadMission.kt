@@ -1,6 +1,6 @@
-package io.github.aedev.flow.data.video.downloader
+package com.arubr.smsvcodes.data.video.downloader
 
-import io.github.aedev.flow.data.model.Video
+import com.arubr.smsvcodes.data.model.Video
 import okhttp3.Call
 import java.util.Collections
 import java.util.UUID

@@ -1,8 +1,8 @@
-package io.github.aedev.flow.di
+package com.arubr.smsvcodes.di
 
 import android.content.Context
-import io.github.aedev.flow.BuildConfig
-import io.github.aedev.flow.innertube.YouTube
+import com.arubr.smsvcodes.BuildConfig
+import com.arubr.smsvcodes.innertube.YouTube
 import coil.ImageLoader
 import coil.decode.VideoFrameDecoder
 import coil.disk.DiskCache

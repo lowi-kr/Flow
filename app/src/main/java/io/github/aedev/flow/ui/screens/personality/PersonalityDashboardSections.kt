@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.personality
+package com.arubr.smsvcodes.ui.screens.personality
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -65,9 +65,9 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.recommendation.FlowPersona
-import io.github.aedev.flow.data.recommendation.UserBrain
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.recommendation.FlowPersona
+import com.arubr.smsvcodes.data.recommendation.UserBrain
 
 @Composable
 internal fun PersonalityOverviewSection(

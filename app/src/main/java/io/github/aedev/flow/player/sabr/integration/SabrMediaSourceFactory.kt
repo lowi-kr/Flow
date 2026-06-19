@@ -1,4 +1,4 @@
-package io.github.aedev.flow.player.sabr.integration
+package com.arubr.smsvcodes.player.sabr.integration
 
 import android.net.Uri
 import android.util.Log
@@ -8,9 +8,9 @@ import androidx.media3.common.util.UnstableApi
 import androidx.media3.exoplayer.source.MediaSource
 import androidx.media3.exoplayer.source.MergingMediaSource
 import androidx.media3.exoplayer.source.ProgressiveMediaSource
-import io.github.aedev.flow.player.sabr.core.SabrSessionState
-import io.github.aedev.flow.player.sabr.core.SabrStreamController
-import io.github.aedev.flow.player.sabr.network.SabrDataSource
+import com.arubr.smsvcodes.player.sabr.core.SabrSessionState
+import com.arubr.smsvcodes.player.sabr.core.SabrStreamController
+import com.arubr.smsvcodes.player.sabr.network.SabrDataSource
 
 @UnstableApi
 object SabrMediaSourceFactory {
@@ -37,14 +37,14 @@ object SabrMediaSourceFactory {
             this.ustreamerConfig = info.ustreamerConfig
             this.durationMs = durationMs
             this.clientNameId = WEB_CLIENT_NAME_ID
-            this.clientVersion = io.github.aedev.flow.innertube.models.YouTubeClient.WEB.clientVersion
+            this.clientVersion = com.arubr.smsvcodes.innertube.models.YouTubeClient.WEB.clientVersion
             this.osName = "Windows"
             this.osVersion = "10.0"
         }
         if (startPositionMs > 0) sessionState.lastSeekAtMs = System.currentTimeMillis()
 
         // WEB user-agent so the GVS/SABR request matches the WEB-minted PoToken
-        val userAgent = io.github.aedev.flow.innertube.models.YouTubeClient.USER_AGENT_WEB
+        val userAgent = com.arubr.smsvcodes.innertube.models.YouTubeClient.USER_AGENT_WEB
         val dataSource = SabrDataSource(userAgent, info.visitorId.ifEmpty { null })
         val controller = SabrStreamController(dataSource, sessionState)
         val orchestrator = SabrOrchestrator(controller)

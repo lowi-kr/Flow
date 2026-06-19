@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.library
+package com.arubr.smsvcodes.ui.screens.library
 
 import android.Manifest
 import android.content.pm.PackageManager
@@ -50,12 +50,12 @@ import androidx.compose.ui.unit.sp
 import androidx.core.content.ContextCompat
 import androidx.hilt.navigation.compose.hiltViewModel
 import coil.compose.AsyncImage
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.local.entity.DownloadItemStatus
-import io.github.aedev.flow.data.local.entity.DownloadWithItems
-import io.github.aedev.flow.data.music.DownloadedTrack
-import io.github.aedev.flow.data.video.DownloadedVideo
-import io.github.aedev.flow.utils.formatDuration
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.local.entity.DownloadItemStatus
+import com.arubr.smsvcodes.data.local.entity.DownloadWithItems
+import com.arubr.smsvcodes.data.music.DownloadedTrack
+import com.arubr.smsvcodes.data.video.DownloadedVideo
+import com.arubr.smsvcodes.utils.formatDuration
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

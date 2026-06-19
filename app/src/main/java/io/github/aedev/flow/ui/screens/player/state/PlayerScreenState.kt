@@ -1,11 +1,11 @@
-package io.github.aedev.flow.ui.screens.player.state
+package com.arubr.smsvcodes.ui.screens.player.state
 
 import android.content.Context
 import android.media.AudioManager
 import androidx.compose.runtime.*
-import io.github.aedev.flow.player.seekbarpreview.SeekbarPreviewThumbnailHelper
-import io.github.aedev.flow.ui.components.CommentSortFilter
-import io.github.aedev.flow.ui.components.SubtitleStyle
+import com.arubr.smsvcodes.player.seekbarpreview.SeekbarPreviewThumbnailHelper
+import com.arubr.smsvcodes.ui.components.CommentSortFilter
+import com.arubr.smsvcodes.ui.components.SubtitleStyle
 
 class PlayerScreenState {
     // UI Visibility States

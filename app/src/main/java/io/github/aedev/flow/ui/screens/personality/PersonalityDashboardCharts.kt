@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.personality
+package com.arubr.smsvcodes.ui.screens.personality
 
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
@@ -29,8 +29,8 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.recommendation.ContentVector
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.recommendation.ContentVector
 import kotlin.math.PI
 import kotlin.math.cos
 import kotlin.math.min

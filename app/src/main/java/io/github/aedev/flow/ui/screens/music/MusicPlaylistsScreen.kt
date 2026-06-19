@@ -1,8 +1,8 @@
-package io.github.aedev.flow.ui.screens.music
+package com.arubr.smsvcodes.ui.screens.music
 
 import androidx.compose.foundation.background
 import androidx.compose.ui.res.stringResource
-import io.github.aedev.flow.R
+import com.arubr.smsvcodes.R
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
@@ -22,7 +22,7 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import coil.compose.AsyncImage
-import io.github.aedev.flow.ui.screens.playlists.PlaylistInfo
+import com.arubr.smsvcodes.ui.screens.playlists.PlaylistInfo
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

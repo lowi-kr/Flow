@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.music
+package com.arubr.smsvcodes.ui.screens.music
 
 import android.content.Intent
 import androidx.compose.foundation.ExperimentalFoundationApi
@@ -27,17 +27,17 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import coil.compose.AsyncImage
-import io.github.aedev.flow.innertube.models.AlbumItem
-import io.github.aedev.flow.innertube.models.ArtistItem
-import io.github.aedev.flow.innertube.models.PlaylistItem
-import io.github.aedev.flow.innertube.models.SongItem
+import com.arubr.smsvcodes.innertube.models.AlbumItem
+import com.arubr.smsvcodes.innertube.models.ArtistItem
+import com.arubr.smsvcodes.innertube.models.PlaylistItem
+import com.arubr.smsvcodes.innertube.models.SongItem
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.platform.LocalContext
-import io.github.aedev.flow.R
-import io.github.aedev.flow.ui.components.MusicCollectionActionItem
-import io.github.aedev.flow.ui.components.MusicCollectionQuickActionsSheet
-import io.github.aedev.flow.ui.components.MusicQuickActionsSheet
-import io.github.aedev.flow.ui.screens.music.components.TrackListItem
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.ui.components.MusicCollectionActionItem
+import com.arubr.smsvcodes.ui.components.MusicCollectionQuickActionsSheet
+import com.arubr.smsvcodes.ui.components.MusicQuickActionsSheet
+import com.arubr.smsvcodes.ui.screens.music.components.TrackListItem
 
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalFoundationApi::class)
 @Composable
@@ -217,7 +217,7 @@ private fun SongItem.toMusicTrack(): MusicTrack {
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun ArtistGridItem(
-    item: io.github.aedev.flow.innertube.models.YTItem,
+    item: com.arubr.smsvcodes.innertube.models.YTItem,
     onClick: () -> Unit,
     onActionClick: (() -> Unit)? = null
 ) {
@@ -297,7 +297,7 @@ fun ArtistGridItem(
     }
 }
 
-private fun io.github.aedev.flow.innertube.models.YTItem.toCollectionActionItem(): MusicCollectionActionItem? = when (this) {
+private fun com.arubr.smsvcodes.innertube.models.YTItem.toCollectionActionItem(): MusicCollectionActionItem? = when (this) {
     is AlbumItem -> MusicCollectionActionItem(
         id = id,
         title = title,

@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.likedvideos
+package com.arubr.smsvcodes.ui.screens.likedvideos
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -54,10 +54,10 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import coil.compose.AsyncImage
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.local.LikedVideoInfo
-import io.github.aedev.flow.ui.screens.music.MusicTrack
-import io.github.aedev.flow.ui.screens.music.MusicTrackRow
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.local.LikedVideoInfo
+import com.arubr.smsvcodes.ui.screens.music.MusicTrack
+import com.arubr.smsvcodes.ui.screens.music.MusicTrackRow
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

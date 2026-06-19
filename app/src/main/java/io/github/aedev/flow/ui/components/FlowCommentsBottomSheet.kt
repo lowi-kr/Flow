@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components
+package com.arubr.smsvcodes.ui.components
 
 import androidx.activity.compose.BackHandler
 import androidx.compose.animation.animateContentSize
@@ -49,12 +49,12 @@ import androidx.compose.ui.unit.sp
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
-import io.github.aedev.flow.R
+import com.arubr.smsvcodes.R
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
-import io.github.aedev.flow.data.model.Comment
-import io.github.aedev.flow.utils.formatLikeCount
-import io.github.aedev.flow.utils.formatRichText
+import com.arubr.smsvcodes.data.model.Comment
+import com.arubr.smsvcodes.utils.formatLikeCount
+import com.arubr.smsvcodes.utils.formatRichText
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.ui.platform.LocalDensity

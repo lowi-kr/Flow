@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.player
+package com.arubr.smsvcodes.ui.screens.player
 
 import android.app.Activity
 import androidx.compose.foundation.background
@@ -16,18 +16,18 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.media3.common.util.UnstableApi
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.data.local.PlayerRelatedCardStyle
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.data.local.PlayerRelatedCardStyle
 
 // Modular components
-import io.github.aedev.flow.ui.screens.player.content.VideoInfoContent
-import io.github.aedev.flow.ui.screens.player.content.relatedVideosContent
-import io.github.aedev.flow.ui.screens.player.content.relatedVideosGridContent
-import io.github.aedev.flow.ui.screens.player.state.PlayerScreenState
-import io.github.aedev.flow.ui.screens.player.state.rememberPlayerScreenState
-import io.github.aedev.flow.player.EnhancedPlayerManager
-import io.github.aedev.flow.ui.components.PlaylistQueueDock
+import com.arubr.smsvcodes.ui.screens.player.content.VideoInfoContent
+import com.arubr.smsvcodes.ui.screens.player.content.relatedVideosContent
+import com.arubr.smsvcodes.ui.screens.player.content.relatedVideosGridContent
+import com.arubr.smsvcodes.ui.screens.player.state.PlayerScreenState
+import com.arubr.smsvcodes.ui.screens.player.state.rememberPlayerScreenState
+import com.arubr.smsvcodes.player.EnhancedPlayerManager
+import com.arubr.smsvcodes.ui.components.PlaylistQueueDock
 
 /**
  * EnhancedVideoPlayerScreen - Simplified version for DraggablePlayerLayout
@@ -115,17 +115,17 @@ fun EnhancedVideoPlayerScreen(
                                 verticalAlignment = Alignment.CenterVertically
                             ) {
                                 Text(
-                                    text = androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.live_chat),
+                                    text = androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.live_chat),
                                     style = MaterialTheme.typography.titleSmall,
                                     color = MaterialTheme.colorScheme.onSurface
                                 )
                                 Spacer(Modifier.weight(1f))
                                 TextButton(onClick = { screenState.showLiveChatPanel = false }) {
-                                    Text(androidx.compose.ui.res.stringResource(io.github.aedev.flow.R.string.live_chat_hide))
+                                    Text(androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.live_chat_hide))
                                 }
                             }
                             HorizontalDivider(color = MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.2f))
-                            io.github.aedev.flow.ui.components.LiveChatList(
+                            com.arubr.smsvcodes.ui.components.LiveChatList(
                                 messages = uiState.liveChatMessages,
                                 isLoading = uiState.isLiveChatLoading,
                                 modifier = Modifier.fillMaxWidth().weight(1f),
@@ -139,7 +139,7 @@ fun EnhancedVideoPlayerScreen(
                         ) {
                             if (uiState.isLiveChatAvailable) {
                                 item {
-                                    io.github.aedev.flow.ui.components.LiveChatPreview(
+                                    com.arubr.smsvcodes.ui.components.LiveChatPreview(
                                         onClick = { screenState.showLiveChatPanel = true }
                                     )
                                 }

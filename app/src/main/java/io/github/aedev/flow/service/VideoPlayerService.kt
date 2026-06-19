@@ -1,4 +1,4 @@
-package io.github.aedev.flow.service
+package com.arubr.smsvcodes.service
 
 import android.app.NotificationChannel
 import android.app.NotificationManager
@@ -16,10 +16,10 @@ import androidx.media3.common.util.UnstableApi
 import androidx.media3.session.DefaultMediaNotificationProvider
 import androidx.media3.session.MediaSession
 import androidx.media3.session.MediaSessionService
-import io.github.aedev.flow.R
-import io.github.aedev.flow.player.EnhancedPlayerManager
-import io.github.aedev.flow.player.GlobalPlayerState
-import io.github.aedev.flow.player.error.PlayerDiagnostics
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.player.EnhancedPlayerManager
+import com.arubr.smsvcodes.player.GlobalPlayerState
+import com.arubr.smsvcodes.player.error.PlayerDiagnostics
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job

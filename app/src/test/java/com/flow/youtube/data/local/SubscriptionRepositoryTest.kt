@@ -1,4 +1,4 @@
-package io.github.aedev.flow.data.local
+package com.arubr.smsvcodes.data.local
 
 import com.google.common.truth.Truth.assertThat
 import io.mockk.mockk

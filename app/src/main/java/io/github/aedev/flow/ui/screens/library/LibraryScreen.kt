@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.library
+package com.arubr.smsvcodes.ui.screens.library
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -22,9 +22,9 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
-import io.github.aedev.flow.ui.theme.extendedColors
+import com.arubr.smsvcodes.ui.theme.extendedColors
 import androidx.compose.ui.res.vectorResource
-import io.github.aedev.flow.R
+import com.arubr.smsvcodes.R
 import androidx.compose.ui.res.stringResource
 
 

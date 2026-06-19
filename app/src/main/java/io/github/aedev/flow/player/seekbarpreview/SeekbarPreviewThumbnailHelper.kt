@@ -1,4 +1,4 @@
-package io.github.aedev.flow.player.seekbarpreview
+package com.arubr.smsvcodes.player.seekbarpreview
 
 import android.content.Context
 import android.graphics.Bitmap

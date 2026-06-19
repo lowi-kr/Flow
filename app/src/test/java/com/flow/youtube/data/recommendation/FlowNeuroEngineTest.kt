@@ -1,6 +1,6 @@
-package io.github.aedev.flow.data.recommendation
+package com.arubr.smsvcodes.data.recommendation
 
-import io.github.aedev.flow.data.model.Video
+import com.arubr.smsvcodes.data.model.Video
 import com.google.common.truth.Truth.assertThat
 import io.mockk.mockk
 import io.mockk.unmockkAll

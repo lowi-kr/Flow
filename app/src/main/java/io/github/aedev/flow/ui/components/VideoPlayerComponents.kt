@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components
+package com.arubr.smsvcodes.ui.components
 
 import android.content.ClipData
 import android.content.ClipboardManager
@@ -31,7 +31,7 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.platform.LocalContext
-import io.github.aedev.flow.data.local.PlayerPreferences
+import com.arubr.smsvcodes.data.local.PlayerPreferences
 import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.buildAnnotatedString
@@ -44,13 +44,13 @@ import androidx.compose.ui.unit.sp
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.core.text.HtmlCompat
 import coil.compose.AsyncImage
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.ui.theme.extendedColors
-import io.github.aedev.flow.utils.formatSubscriberCount
-import io.github.aedev.flow.utils.formatViewCount
-import io.github.aedev.flow.utils.formatRichText
-import io.github.aedev.flow.utils.DateContext
-import io.github.aedev.flow.R
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.ui.theme.extendedColors
+import com.arubr.smsvcodes.utils.formatSubscriberCount
+import com.arubr.smsvcodes.utils.formatViewCount
+import com.arubr.smsvcodes.utils.formatRichText
+import com.arubr.smsvcodes.utils.DateContext
+import com.arubr.smsvcodes.R
 import androidx.compose.ui.res.stringResource
 
 @OptIn(ExperimentalFoundationApi::class)

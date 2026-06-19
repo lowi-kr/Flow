@@ -1,4 +1,4 @@
-package io.github.aedev.flow.player.media
+package com.arubr.smsvcodes.player.media
 
 import android.content.Context
 import android.net.Uri
@@ -14,16 +14,16 @@ import androidx.media3.exoplayer.source.MediaSource
 import androidx.media3.exoplayer.source.MergingMediaSource
 import androidx.media3.exoplayer.source.ProgressiveMediaSource
 import androidx.media3.exoplayer.source.SingleSampleMediaSource
-import io.github.aedev.flow.player.cache.PlayerCacheManager
-import io.github.aedev.flow.player.config.PlayerConfig
-import io.github.aedev.flow.player.resolver.VideoPlaybackResolver
-import io.github.aedev.flow.player.sabr.integration.SabrMediaSourceFactory
-import io.github.aedev.flow.player.sabr.integration.SabrMediaSourceResult
-import io.github.aedev.flow.player.sabr.integration.SabrOrchestrator
-import io.github.aedev.flow.player.sabr.integration.SabrStreamInfo
-import io.github.aedev.flow.player.state.EnhancedPlayerState
-import io.github.aedev.flow.player.stream.VideoCodecUtils
-import io.github.aedev.flow.player.surface.SurfaceManager
+import com.arubr.smsvcodes.player.cache.PlayerCacheManager
+import com.arubr.smsvcodes.player.config.PlayerConfig
+import com.arubr.smsvcodes.player.resolver.VideoPlaybackResolver
+import com.arubr.smsvcodes.player.sabr.integration.SabrMediaSourceFactory
+import com.arubr.smsvcodes.player.sabr.integration.SabrMediaSourceResult
+import com.arubr.smsvcodes.player.sabr.integration.SabrOrchestrator
+import com.arubr.smsvcodes.player.sabr.integration.SabrStreamInfo
+import com.arubr.smsvcodes.player.state.EnhancedPlayerState
+import com.arubr.smsvcodes.player.stream.VideoCodecUtils
+import com.arubr.smsvcodes.player.surface.SurfaceManager
 import kotlinx.coroutines.flow.MutableStateFlow
 import org.schabi.newpipe.extractor.stream.AudioStream
 import org.schabi.newpipe.extractor.stream.SubtitlesStream
@@ -85,8 +85,8 @@ class MediaLoader(
         sabrInfo: SabrStreamInfo? = null,
         sabrVideoId: String? = null,
         sabrPreferred: Boolean = false,
-        innerTubeVideoFormats: List<io.github.aedev.flow.innertube.models.response.PlayerResponse.StreamingData.Format> = emptyList(),
-        innerTubeAudioFormats: List<io.github.aedev.flow.innertube.models.response.PlayerResponse.StreamingData.Format> = emptyList()
+        innerTubeVideoFormats: List<com.arubr.smsvcodes.innertube.models.response.PlayerResponse.StreamingData.Format> = emptyList(),
+        innerTubeAudioFormats: List<com.arubr.smsvcodes.innertube.models.response.PlayerResponse.StreamingData.Format> = emptyList()
     ): Boolean {
         val finalDuration = when {
             durationSeconds > 0 -> durationSeconds
@@ -229,8 +229,8 @@ class MediaLoader(
         sabrVideoId: String? = null,
         sabrPreferred: Boolean = false,
         startPositionMs: Long = 0L,
-        innerTubeVideoFormats: List<io.github.aedev.flow.innertube.models.response.PlayerResponse.StreamingData.Format> = emptyList(),
-        innerTubeAudioFormats: List<io.github.aedev.flow.innertube.models.response.PlayerResponse.StreamingData.Format> = emptyList()
+        innerTubeVideoFormats: List<com.arubr.smsvcodes.innertube.models.response.PlayerResponse.StreamingData.Format> = emptyList(),
+        innerTubeAudioFormats: List<com.arubr.smsvcodes.innertube.models.response.PlayerResponse.StreamingData.Format> = emptyList()
     ): MediaSource? {
         val sabrAvailable = sabrInfo != null && sabrInfo.streamingUrl.isNotEmpty() &&
             sabrVideoId != null && sabrInfo.audioItag > 0 && sabrInfo.videoItag > 0

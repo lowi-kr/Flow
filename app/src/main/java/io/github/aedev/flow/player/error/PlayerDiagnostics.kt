@@ -1,4 +1,4 @@
-package io.github.aedev.flow.player.error
+package com.arubr.smsvcodes.player.error
 
 import android.content.ClipData
 import android.content.ClipboardManager
@@ -8,7 +8,7 @@ import android.util.Log
 import androidx.media3.common.PlaybackException
 import androidx.media3.common.Player
 import androidx.media3.common.util.UnstableApi
-import io.github.aedev.flow.player.EnhancedPlayerManager
+import com.arubr.smsvcodes.player.EnhancedPlayerManager
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale

@@ -1,10 +1,10 @@
-package io.github.aedev.flow.di
+package com.arubr.smsvcodes.di
 
 import android.content.Context
-import io.github.aedev.flow.data.local.AppDatabase
-import io.github.aedev.flow.data.local.dao.NotificationDao
-import io.github.aedev.flow.data.local.dao.PlaylistDao
-import io.github.aedev.flow.data.local.dao.VideoDao
+import com.arubr.smsvcodes.data.local.AppDatabase
+import com.arubr.smsvcodes.data.local.dao.NotificationDao
+import com.arubr.smsvcodes.data.local.dao.PlaylistDao
+import com.arubr.smsvcodes.data.local.dao.VideoDao
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -38,12 +38,12 @@ object DatabaseModule {
     }
 
     @Provides
-    fun provideCacheDao(database: AppDatabase): io.github.aedev.flow.data.local.dao.CacheDao {
+    fun provideCacheDao(database: AppDatabase): com.arubr.smsvcodes.data.local.dao.CacheDao {
         return database.cacheDao()
     }
 
     @Provides
-    fun provideDownloadDao(database: AppDatabase): io.github.aedev.flow.data.local.dao.DownloadDao {
+    fun provideDownloadDao(database: AppDatabase): com.arubr.smsvcodes.data.local.dao.DownloadDao {
         return database.downloadDao()
     }
 }

@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.settings
+package com.arubr.smsvcodes.ui.screens.settings
 
 import android.widget.Toast
 import androidx.compose.foundation.background
@@ -46,10 +46,10 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.network.AppProxyConfig
-import io.github.aedev.flow.network.AppProxyType
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.network.AppProxyConfig
+import com.arubr.smsvcodes.network.AppProxyType
 import kotlinx.coroutines.launch
 import androidx.compose.foundation.text.KeyboardOptions
 

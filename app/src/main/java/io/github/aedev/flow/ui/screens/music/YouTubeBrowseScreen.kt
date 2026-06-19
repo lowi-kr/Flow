@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.music
+package com.arubr.smsvcodes.ui.screens.music
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.clickable
@@ -15,21 +15,21 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material3.*
 import androidx.compose.ui.res.stringResource
-import io.github.aedev.flow.R
+import com.arubr.smsvcodes.R
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
-import io.github.aedev.flow.innertube.models.AlbumItem
-import io.github.aedev.flow.innertube.models.ArtistItem
-import io.github.aedev.flow.innertube.models.PlaylistItem
-import io.github.aedev.flow.innertube.models.SongItem
-import io.github.aedev.flow.innertube.models.YTItem
-import io.github.aedev.flow.player.EnhancedMusicPlayerManager
-import io.github.aedev.flow.ui.components.*
-import io.github.aedev.flow.ui.theme.Dimensions
+import com.arubr.smsvcodes.innertube.models.AlbumItem
+import com.arubr.smsvcodes.innertube.models.ArtistItem
+import com.arubr.smsvcodes.innertube.models.PlaylistItem
+import com.arubr.smsvcodes.innertube.models.SongItem
+import com.arubr.smsvcodes.innertube.models.YTItem
+import com.arubr.smsvcodes.player.EnhancedMusicPlayerManager
+import com.arubr.smsvcodes.ui.components.*
+import com.arubr.smsvcodes.ui.theme.Dimensions
 
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalFoundationApi::class)
 @Composable

@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.player.util
+package com.arubr.smsvcodes.ui.screens.player.util
 
 import android.app.Activity
 import android.content.Context
@@ -8,8 +8,8 @@ import android.os.Build
 import android.os.Environment
 import android.provider.Settings
 import android.widget.Toast
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.player.stream.VideoCodecUtils
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.player.stream.VideoCodecUtils
 import org.schabi.newpipe.extractor.stream.VideoStream
 
 object VideoPlayerUtils {
@@ -102,7 +102,7 @@ object VideoPlayerUtils {
             promptStoragePermissionIfNeeded(context)
 
             // Start the optimized parallel download service
-            io.github.aedev.flow.data.video.downloader.FlowDownloadService.startDownload(
+            com.arubr.smsvcodes.data.video.downloader.FlowDownloadService.startDownload(
                 context,
                 video,
                 url,

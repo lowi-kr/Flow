@@ -1,4 +1,4 @@
-package io.github.aedev.flow.data.local
+package com.arubr.smsvcodes.data.local
 
 import android.content.ComponentName
 import android.content.Context
@@ -6,11 +6,11 @@ import android.content.pm.PackageManager
 import android.net.Uri
 import android.provider.DocumentsContract
 import android.provider.OpenableColumns
-import io.github.aedev.flow.BuildConfig
-import io.github.aedev.flow.data.local.entity.PlaylistEntity
-import io.github.aedev.flow.data.local.entity.PlaylistVideoCrossRef
-import io.github.aedev.flow.data.local.entity.SubscriptionGroupEntity
-import io.github.aedev.flow.data.local.entity.VideoEntity
+import com.arubr.smsvcodes.BuildConfig
+import com.arubr.smsvcodes.data.local.entity.PlaylistEntity
+import com.arubr.smsvcodes.data.local.entity.PlaylistVideoCrossRef
+import com.arubr.smsvcodes.data.local.entity.SubscriptionGroupEntity
+import com.arubr.smsvcodes.data.local.entity.VideoEntity
 import com.google.gson.GsonBuilder
 import com.google.gson.Strictness
 import com.google.gson.annotations.SerializedName
@@ -40,9 +40,9 @@ import kotlin.math.roundToLong
 import java.util.concurrent.atomic.AtomicInteger
 import java.time.Instant
 import java.time.OffsetDateTime
-import io.github.aedev.flow.data.recommendation.FlowNeuroEngine
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.utils.ThumbnailUrlResolver
+import com.arubr.smsvcodes.data.recommendation.FlowNeuroEngine
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.utils.ThumbnailUrlResolver
 
 data class SettingsBackup(
     val strings: Map<String, String> = emptyMap(),
@@ -224,7 +224,7 @@ class BackupRepository(private val context: Context) {
         )
         return knownSuffixes.firstOrNull { suffix ->
             pm.getComponentEnabledSetting(
-                ComponentName(pkg, "io.github.aedev.flow$suffix")
+                ComponentName(pkg, "com.arubr.smsvcodes$suffix")
             ) == PackageManager.COMPONENT_ENABLED_STATE_ENABLED
         }
     }
@@ -1967,7 +1967,7 @@ class BackupRepository(private val context: Context) {
                         ".IconMaterialMint"
                     )
                     for (suffix in allSuffixes) {
-                        val cn = ComponentName(pkg, "io.github.aedev.flow$suffix")
+                        val cn = ComponentName(pkg, "com.arubr.smsvcodes$suffix")
                         val want = if (suffix == savedIconSuffix)
                             PackageManager.COMPONENT_ENABLED_STATE_ENABLED
                         else

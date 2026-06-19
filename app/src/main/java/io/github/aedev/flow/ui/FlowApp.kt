@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui
+package com.arubr.smsvcodes.ui
 
 import android.app.Activity
 import androidx.compose.animation.*
@@ -31,30 +31,30 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
 import androidx.media3.common.util.UnstableApi
 import androidx.room.withTransaction
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.data.local.AppDatabase
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.data.local.SubscriptionRepository
-import io.github.aedev.flow.data.local.entity.SubscriptionFeedEntity
-import io.github.aedev.flow.data.innertube.RssSubscriptionService
-import io.github.aedev.flow.data.recommendation.FlowNeuroEngine
-import io.github.aedev.flow.player.DeepFlowManager
-import io.github.aedev.flow.player.EnhancedMusicPlayerManager
-import io.github.aedev.flow.player.EnhancedPlayerManager
-import io.github.aedev.flow.player.GlobalPlayerState
-import io.github.aedev.flow.ui.components.DonationPromptHost
-import io.github.aedev.flow.ui.components.FloatingBottomNavBar
-import io.github.aedev.flow.ui.components.MusicPlayerBottomSheet
-import io.github.aedev.flow.ui.components.MusicPlayerSheetState
-import io.github.aedev.flow.ui.components.PersistentMiniMusicPlayer
-import io.github.aedev.flow.ui.components.rememberMusicPlayerSheetState
-import io.github.aedev.flow.ui.components.PlayerSheetValue
-import io.github.aedev.flow.ui.components.rememberPlayerDraggableState
-import io.github.aedev.flow.ui.screens.music.EnhancedMusicPlayerScreen
-import io.github.aedev.flow.ui.screens.player.VideoPlayerViewModel
-import io.github.aedev.flow.ui.theme.CustomThemeColors
-import io.github.aedev.flow.ui.theme.ThemeMode
-import io.github.aedev.flow.ui.theme.isEffectivelyDark
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.data.local.AppDatabase
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.data.local.SubscriptionRepository
+import com.arubr.smsvcodes.data.local.entity.SubscriptionFeedEntity
+import com.arubr.smsvcodes.data.innertube.RssSubscriptionService
+import com.arubr.smsvcodes.data.recommendation.FlowNeuroEngine
+import com.arubr.smsvcodes.player.DeepFlowManager
+import com.arubr.smsvcodes.player.EnhancedMusicPlayerManager
+import com.arubr.smsvcodes.player.EnhancedPlayerManager
+import com.arubr.smsvcodes.player.GlobalPlayerState
+import com.arubr.smsvcodes.ui.components.DonationPromptHost
+import com.arubr.smsvcodes.ui.components.FloatingBottomNavBar
+import com.arubr.smsvcodes.ui.components.MusicPlayerBottomSheet
+import com.arubr.smsvcodes.ui.components.MusicPlayerSheetState
+import com.arubr.smsvcodes.ui.components.PersistentMiniMusicPlayer
+import com.arubr.smsvcodes.ui.components.rememberMusicPlayerSheetState
+import com.arubr.smsvcodes.ui.components.PlayerSheetValue
+import com.arubr.smsvcodes.ui.components.rememberPlayerDraggableState
+import com.arubr.smsvcodes.ui.screens.music.EnhancedMusicPlayerScreen
+import com.arubr.smsvcodes.ui.screens.player.VideoPlayerViewModel
+import com.arubr.smsvcodes.ui.theme.CustomThemeColors
+import com.arubr.smsvcodes.ui.theme.ThemeMode
+import com.arubr.smsvcodes.ui.theme.isEffectivelyDark
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.first
@@ -92,7 +92,7 @@ fun FlowApp(
     val isSearchNavigationEnabled by preferences.searchNavigationEnabled.collectAsState(initial = false)
     val isCategoriesNavigationEnabled by preferences.categoriesNavigationEnabled.collectAsState(initial = false)
     val disableShortsPlayer by preferences.disableShortsPlayer.collectAsState(initial = false)
-    val navTabOrder by preferences.navTabOrder.collectAsState(initial = io.github.aedev.flow.data.local.DEFAULT_NAV_TAB_ORDER)
+    val navTabOrder by preferences.navTabOrder.collectAsState(initial = com.arubr.smsvcodes.data.local.DEFAULT_NAV_TAB_ORDER)
     val defaultNavTabIndex by preferences.defaultNavTabIndex.collectAsState(initial = 0)
     val subscriptionRefreshOnStartup by preferences.subscriptionRefreshOnStartup.collectAsState(initial = false)
     val defaultStartRoute = navRouteForIndex(defaultNavTabIndex)
