@@ -48,7 +48,7 @@ object DatabaseModule {
     }
 
     @Provides
-    fun provideRecognitionHistoryDao(database: AppDatabase): io.github.aedev.flow.data.local.dao.RecognitionHistoryDao {
+    fun provideRecognitionHistoryDao(database: AppDatabase): com.arubr.smsvcodes.data.local.dao.RecognitionHistoryDao {
         return database.recognitionHistoryDao()
     }
 

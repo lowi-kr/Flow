@@ -1,4 +1,4 @@
-package io.github.aedev.flow.data.recognition.audio
+package com.arubr.smsvcodes.data.recognition.audio
 
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ensureActive

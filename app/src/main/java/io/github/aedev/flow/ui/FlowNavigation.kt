@@ -924,8 +924,8 @@ fun NavGraphBuilder.flowAppGraph(
 
         val musicPlayerViewModel: MusicPlayerViewModel = hiltViewModel()
 
-        fun playRecognized(result: io.github.aedev.flow.data.recognition.RecognitionResult) {
-            val track = io.github.aedev.flow.ui.screens.recognition.RecognitionViewModel.toMusicTrack(result) ?: return
+        fun playRecognized(result: com.arubr.smsvcodes.data.recognition.RecognitionResult) {
+            val track = com.arubr.smsvcodes.ui.screens.recognition.RecognitionViewModel.toMusicTrack(result) ?: return
             musicPlayerViewModel.loadAndPlayTrack(track, listOf(track), "Recognized")
             val encodedUrl = android.net.Uri.encode(track.thumbnailUrl)
             val encodedTitle = android.net.Uri.encode(track.title)
@@ -934,11 +934,11 @@ fun NavGraphBuilder.flowAppGraph(
         }
 
         fun searchRecognized(title: String, artist: String) {
-            val query = io.github.aedev.flow.ui.screens.recognition.RecognitionViewModel.searchQueryFor(title, artist)
+            val query = com.arubr.smsvcodes.ui.screens.recognition.RecognitionViewModel.searchQueryFor(title, artist)
             navController.navigate("musicSearch?query=${android.net.Uri.encode(query)}")
         }
 
-        io.github.aedev.flow.ui.screens.recognition.RecognitionScreen(
+        com.arubr.smsvcodes.ui.screens.recognition.RecognitionScreen(
             onBackClick = { navController.popBackStack() },
             onHistoryClick = { navController.navigate("recognitionHistory") },
             onPlay = { result -> playRecognized(result) },
@@ -953,12 +953,12 @@ fun NavGraphBuilder.flowAppGraph(
 
         val musicPlayerViewModel: MusicPlayerViewModel = hiltViewModel()
 
-        io.github.aedev.flow.ui.screens.recognition.RecognitionHistoryScreen(
+        com.arubr.smsvcodes.ui.screens.recognition.RecognitionHistoryScreen(
             onBackClick = { navController.popBackStack() },
             onItemClick = { item ->
                 val videoId = item.youtubeVideoId
                 if (!videoId.isNullOrBlank()) {
-                    val track = io.github.aedev.flow.ui.screens.music.MusicTrack(
+                    val track = com.arubr.smsvcodes.ui.screens.music.MusicTrack(
                         videoId = videoId,
                         title = item.title,
                         artist = item.artist,
@@ -972,7 +972,7 @@ fun NavGraphBuilder.flowAppGraph(
                     val encodedArtist = android.net.Uri.encode(track.artist)
                     navController.navigate("musicPlayer/${track.videoId}?title=$encodedTitle&artist=$encodedArtist&thumbnailUrl=$encodedUrl")
                 } else {
-                    val query = io.github.aedev.flow.ui.screens.recognition.RecognitionViewModel.searchQueryFor(item.title, item.artist)
+                    val query = com.arubr.smsvcodes.ui.screens.recognition.RecognitionViewModel.searchQueryFor(item.title, item.artist)
                     navController.navigate("musicSearch?query=${android.net.Uri.encode(query)}")
                 }
             }

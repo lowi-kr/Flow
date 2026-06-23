@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.recognition
+package com.arubr.smsvcodes.ui.screens.recognition
 
 import android.text.format.DateUtils
 import androidx.compose.foundation.background
@@ -41,8 +41,8 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import coil.compose.AsyncImage
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.local.entity.RecognitionHistoryEntity
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.local.entity.RecognitionHistoryEntity
 
 @Composable
 fun RecognitionHistoryScreen(

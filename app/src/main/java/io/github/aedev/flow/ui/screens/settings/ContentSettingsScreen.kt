@@ -86,7 +86,7 @@ fun ContentSettingsScreen(
     val showAppLogoIcon by preferences.showAppLogoIcon.collectAsState(initial = true)
     val currentRelatedCardStyle by preferences.playerRelatedCardStyle.collectAsState(initial = PlayerRelatedCardStyle.COMPACT)
     val hideWatchedVideos by preferences.hideWatchedVideos.collectAsState(initial = false)
-    val watchedThreshold by preferences.watchedThreshold.collectAsState(initial = io.github.aedev.flow.data.local.WatchedThreshold.ALMOST_FINISHED)
+    val watchedThreshold by preferences.watchedThreshold.collectAsState(initial = com.arubr.smsvcodes.data.local.WatchedThreshold.ALMOST_FINISHED)
     var showWatchedThresholdDialog by remember { mutableStateOf(false) }
     val bottomNavHideOnScroll by preferences.bottomNavHideOnScroll.collectAsState(initial = true)
     val shareWithoutText by preferences.shareWithoutText.collectAsState(initial = false)

@@ -108,10 +108,10 @@
 -keep class io.ktor.** { *; }
 
 ## Shazam recognition models + kotlinx serializers
--keepclasseswithmembers class io.github.aedev.flow.data.recognition.shazam.** {
+-keepclasseswithmembers class com.arubr.smsvcodes.data.recognition.shazam.** {
     kotlinx.serialization.KSerializer serializer(...);
 }
--keepclassmembers class io.github.aedev.flow.data.recognition.shazam.** {
+-keepclassmembers class com.arubr.smsvcodes.data.recognition.shazam.** {
     *** Companion;
 }
 

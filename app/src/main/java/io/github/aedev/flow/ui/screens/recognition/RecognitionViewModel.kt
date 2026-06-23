@@ -1,14 +1,14 @@
-package io.github.aedev.flow.ui.screens.recognition
+package com.arubr.smsvcodes.ui.screens.recognition
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
-import io.github.aedev.flow.data.local.entity.RecognitionHistoryEntity
-import io.github.aedev.flow.data.recognition.MusicRecognitionRepository
-import io.github.aedev.flow.data.recognition.RecognitionHistoryRepository
-import io.github.aedev.flow.data.recognition.RecognitionResult
-import io.github.aedev.flow.data.recognition.RecognitionStatus
-import io.github.aedev.flow.ui.screens.music.MusicTrack
+import com.arubr.smsvcodes.data.local.entity.RecognitionHistoryEntity
+import com.arubr.smsvcodes.data.recognition.MusicRecognitionRepository
+import com.arubr.smsvcodes.data.recognition.RecognitionHistoryRepository
+import com.arubr.smsvcodes.data.recognition.RecognitionResult
+import com.arubr.smsvcodes.data.recognition.RecognitionStatus
+import com.arubr.smsvcodes.ui.screens.music.MusicTrack
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.MutableStateFlow

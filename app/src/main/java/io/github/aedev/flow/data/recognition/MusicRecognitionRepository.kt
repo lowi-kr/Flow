@@ -1,4 +1,4 @@
-package io.github.aedev.flow.data.recognition
+package com.arubr.smsvcodes.data.recognition
 
 import android.Manifest
 import android.content.Context
@@ -6,11 +6,11 @@ import android.content.pm.PackageManager
 import android.media.AudioFormat
 import androidx.core.content.ContextCompat
 import dagger.hilt.android.qualifiers.ApplicationContext
-import io.github.aedev.flow.data.recognition.audio.AudioRecorder
-import io.github.aedev.flow.data.recognition.audio.AudioResampler
-import io.github.aedev.flow.data.recognition.audio.DecodedAudio
-import io.github.aedev.flow.data.recognition.shazam.ShazamClient
-import io.github.aedev.flow.data.recognition.signature.VibraSignature
+import com.arubr.smsvcodes.data.recognition.audio.AudioRecorder
+import com.arubr.smsvcodes.data.recognition.audio.AudioResampler
+import com.arubr.smsvcodes.data.recognition.audio.DecodedAudio
+import com.arubr.smsvcodes.data.recognition.shazam.ShazamClient
+import com.arubr.smsvcodes.data.recognition.signature.VibraSignature
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
