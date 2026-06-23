@@ -156,6 +156,24 @@ class FlowApplication : Application(), ImageLoaderFactory {
             }
         }
 
+        // Restore a previously saved YouTube account cookie (pasted by the user
+        // in Settings > Account Login) so InnerTube requests authenticate via
+        // SAPISIDHASH from the very first request after launch, rather than
+        // starting anonymous and only picking up the cookie on first settings load.
+        CoroutineScope(SupervisorJob() + Dispatchers.IO).launch {
+            try {
+                val loginEnabled = playerPreferences.loginEnabled.first()
+                val savedCookie = playerPreferences.loginCookie.first()
+                if (loginEnabled && savedCookie.isNotBlank()) {
+                    YouTube.cookie = savedCookie
+                    YouTube.useLoginForBrowse = true
+                    Log.d(TAG, "Login cookie restored from prefs")
+                }
+            } catch (e: Exception) {
+                Log.w(TAG, "Login cookie restore error: ${e.message}")
+            }
+        }
+
         CoroutineScope(SupervisorJob() + Dispatchers.IO).launch {
             try {
                 com.arubr.smsvcodes.utils.potoken.WebPoTokenSession.prewarm()

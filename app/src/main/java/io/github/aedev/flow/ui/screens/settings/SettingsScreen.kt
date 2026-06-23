@@ -75,6 +75,7 @@ fun SettingsScreen(
     onNavigateToImport: () -> Unit,
     onNavigateToPlayerSettings: () -> Unit,
     onNavigateToProxySettings: () -> Unit,
+    onNavigateToAccountLogin: () -> Unit,
     onNavigateToVideoQuality: () -> Unit,
     onNavigateToShortsQuality: () -> Unit,
     onNavigateToContentSettings: () -> Unit,
@@ -236,6 +237,7 @@ fun SettingsScreen(
         SettingSearchEntry(Icons.Outlined.FilterAlt, androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.settings_item_content_prefs), androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.settings_item_content_prefs_subtitle), secContentPlayback, onNavigateToUserPreferences),
         SettingSearchEntry(Icons.Outlined.PlayCircle, androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.settings_item_player), androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.settings_item_player_subtitle), secContentPlayback, onNavigateToPlayerSettings),
         SettingSearchEntry(Icons.Outlined.Public, androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.settings_item_proxy), androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.settings_item_proxy_subtitle), secContentPlayback, onNavigateToProxySettings),
+        SettingSearchEntry(Icons.Outlined.Person, androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.settings_item_account_login), androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.settings_item_account_login_subtitle), secContentPlayback, onNavigateToAccountLogin),
         SettingSearchEntry(com.arubr.smsvcodes.R.drawable.ic_block, androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.sb_settings_title), androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.sb_settings_subtitle), secContentPlayback, onNavigateToSponsorBlockSettings),
         SettingSearchEntry(Icons.Outlined.HighQuality, androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.settings_item_quality), androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.settings_item_quality_subtitle), secContentPlayback, onNavigateToVideoQuality),
         SettingSearchEntry(Icons.Outlined.Slideshow, androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.shorts_quality_settings_title), androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.shorts_quality_settings_subtitle), secContentPlayback, onNavigateToShortsQuality),
@@ -775,6 +777,13 @@ item {
                         title = androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.settings_item_proxy),
                         subtitle = androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.settings_item_proxy_subtitle),
                         onClick = onNavigateToProxySettings
+                    )
+                    HorizontalDivider(Modifier.padding(start = 56.dp), color = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.5f))
+                    SettingsItem(
+                        icon = Icons.Outlined.Person,
+                        title = androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.settings_item_account_login),
+                        subtitle = androidx.compose.ui.res.stringResource(com.arubr.smsvcodes.R.string.settings_item_account_login_subtitle),
+                        onClick = onNavigateToAccountLogin
                     )
                     HorizontalDivider(Modifier.padding(start = 56.dp), color = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.5f))
                     SettingsItem(

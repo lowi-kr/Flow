@@ -83,6 +83,10 @@ class PlayerPreferences(context: Context) {
         val PROXY_USERNAME = stringPreferencesKey("proxy_username")
         val PROXY_PASSWORD = stringPreferencesKey("proxy_password")
         val SURFACE_READY_TIMEOUT_MS = longPreferencesKey("surface_ready_timeout_ms")
+
+        // YouTube account login (pasted browser cookie, used for SAPISIDHASH auth)
+        val LOGIN_COOKIE = stringPreferencesKey("login_cookie")
+        val LOGIN_ENABLED = booleanPreferencesKey("login_enabled")
         
         // Audio track preference
         val PREFERRED_AUDIO_LANGUAGE = stringPreferencesKey("preferred_audio_language")
@@ -2060,6 +2064,37 @@ class PlayerPreferences(context: Context) {
         }
     }
 
+    // YouTube account login cookie (pasted from browser dev tools).
+    // Used to authenticate InnerTube requests via SAPISIDHASH, which reduces
+    // ANDROID_VR bot-wall rejections and stream-URL 403s versus anonymous requests.
+    val loginCookie: Flow<String> = context.playerPreferencesDataStore.data
+        .map { preferences ->
+            preferences[Keys.LOGIN_COOKIE].orEmpty()
+        }
+
+    suspend fun getLoginCookie(): String = loginCookie.first()
+
+    suspend fun setLoginCookie(cookie: String) {
+        context.playerPreferencesDataStore.edit { preferences ->
+            if (cookie.isBlank()) {
+                preferences.remove(Keys.LOGIN_COOKIE)
+            } else {
+                preferences[Keys.LOGIN_COOKIE] = cookie
+            }
+        }
+    }
+
+    val loginEnabled: Flow<Boolean> = context.playerPreferencesDataStore.data
+        .map { preferences ->
+            preferences[Keys.LOGIN_ENABLED] ?: false
+        }
+
+    suspend fun setLoginEnabled(enabled: Boolean) {
+        context.playerPreferencesDataStore.edit { preferences ->
+            preferences[Keys.LOGIN_ENABLED] = enabled
+        }
+    }
+
     // Return YouTube Dislikes
     val rytdEnabled: Flow<Boolean> = context.playerPreferencesDataStore.data
         .map { preferences ->
@@ -2452,5 +2487,4 @@ enum class WatchedThreshold(val minPercent: Float, val maxRemainingMs: Long) {
         return percent >= minPercent && durationMs - positionMs <= maxRemainingMs
     }
 }
-
 

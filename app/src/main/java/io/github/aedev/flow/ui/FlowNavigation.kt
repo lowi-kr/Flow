@@ -318,6 +318,7 @@ fun NavGraphBuilder.flowAppGraph(
             onNavigateToImport = { navController.navigate("settings/import") },
             onNavigateToPlayerSettings = { navController.navigate("settings/player") },
             onNavigateToProxySettings = { navController.navigate("settings/proxy") },
+            onNavigateToAccountLogin = { navController.navigate("settings/account_login") },
             onNavigateToVideoQuality = { navController.navigate("settings/video_quality") },
             onNavigateToShortsQuality = { navController.navigate("settings/shorts_quality") },
             onNavigateToContentSettings = { navController.navigate("settings/content") },
@@ -380,6 +381,14 @@ fun NavGraphBuilder.flowAppGraph(
         currentRoute.value = "settings/proxy"
         showBottomNav.value = false
         com.arubr.smsvcodes.ui.screens.settings.ProxySettingsScreen(
+            onNavigateBack = { navController.popBackStack() }
+        )
+    }
+
+    composable("settings/account_login") {
+        currentRoute.value = "settings/account_login"
+        showBottomNav.value = false
+        com.arubr.smsvcodes.ui.screens.settings.AccountLoginScreen(
             onNavigateBack = { navController.popBackStack() }
         )
     }
