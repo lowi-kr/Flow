@@ -11,6 +11,7 @@ import com.arubr.smsvcodes.ui.components.SubtitleStyle
 import com.arubr.smsvcodes.utils.DateContextMode
 import com.arubr.smsvcodes.utils.DateDisplayMode
 import com.arubr.smsvcodes.utils.DateFormatStyle
+import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.map
@@ -313,6 +314,7 @@ class PlayerPreferences(context: Context) {
         .map { preferences ->
             preferences[Keys.GRID_ITEM_SIZE] ?: "BIG"
         }
+        .distinctUntilChanged()
     
     suspend fun setGridItemSize(size: String) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -325,6 +327,7 @@ class PlayerPreferences(context: Context) {
         .map { preferences ->
             preferences[Keys.ALLOW_VOLUME_BOOST] ?: false
         }
+        .distinctUntilChanged()
 
     suspend fun setAllowVolumeBoost(enabled: Boolean) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -337,6 +340,7 @@ class PlayerPreferences(context: Context) {
         .map { preferences ->
             preferences[Keys.SHORTS_PLAYBACK_SPEED] ?: 1.0f
         }
+        .distinctUntilChanged()
 
     suspend fun setShortsPlaybackSpeed(speed: Float) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -347,6 +351,7 @@ class PlayerPreferences(context: Context) {
     // ── Date & time display──
     val dateDisplayMode: Flow<DateDisplayMode> = context.playerPreferencesDataStore.data
         .map { preferences -> DateDisplayMode.fromString(preferences[Keys.DATE_DISPLAY_MODE]) }
+        .distinctUntilChanged()
 
     suspend fun setDateDisplayMode(mode: DateDisplayMode) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -356,6 +361,7 @@ class PlayerPreferences(context: Context) {
 
     val dateFormatStyle: Flow<DateFormatStyle> = context.playerPreferencesDataStore.data
         .map { preferences -> DateFormatStyle.fromString(preferences[Keys.DATE_FORMAT_STYLE]) }
+        .distinctUntilChanged()
 
     suspend fun setDateFormatStyle(style: DateFormatStyle) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -365,10 +371,13 @@ class PlayerPreferences(context: Context) {
 
     val dateModeLists: Flow<DateContextMode> = context.playerPreferencesDataStore.data
         .map { DateContextMode.fromString(it[Keys.DATE_MODE_LISTS]) }
+        .distinctUntilChanged()
     val dateModeWatch: Flow<DateContextMode> = context.playerPreferencesDataStore.data
         .map { DateContextMode.fromString(it[Keys.DATE_MODE_WATCH]) }
+        .distinctUntilChanged()
     val dateModeDescription: Flow<DateContextMode> = context.playerPreferencesDataStore.data
         .map { DateContextMode.fromString(it[Keys.DATE_MODE_DESCRIPTION]) }
+        .distinctUntilChanged()
 
     suspend fun setDateModeLists(mode: DateContextMode) {
         context.playerPreferencesDataStore.edit { it[Keys.DATE_MODE_LISTS] = mode.name }
@@ -385,6 +394,7 @@ class PlayerPreferences(context: Context) {
         .map { preferences ->
             preferences[Keys.SWIPE_GESTURES_ENABLED] ?: true
         }
+        .distinctUntilChanged()
 
     val brightnessSwipeGesturesEnabled: Flow<Boolean> = context.playerPreferencesDataStore.data
         .map { preferences ->
@@ -392,16 +402,19 @@ class PlayerPreferences(context: Context) {
                 ?: preferences[Keys.SWIPE_GESTURES_ENABLED]
                 ?: true
         }
+        .distinctUntilChanged()
 
     val rememberBrightnessEnabled: Flow<Boolean> = context.playerPreferencesDataStore.data
         .map { preferences ->
             preferences[Keys.REMEMBER_BRIGHTNESS_ENABLED] ?: false
         }
+        .distinctUntilChanged()
 
     val rememberedBrightnessLevel: Flow<Float> = context.playerPreferencesDataStore.data
         .map { preferences ->
             preferences[Keys.REMEMBERED_BRIGHTNESS_LEVEL] ?: -1f
         }
+        .distinctUntilChanged()
 
     val volumeSwipeGesturesEnabled: Flow<Boolean> = context.playerPreferencesDataStore.data
         .map { preferences ->
@@ -409,6 +422,7 @@ class PlayerPreferences(context: Context) {
                 ?: preferences[Keys.SWIPE_GESTURES_ENABLED]
                 ?: true
         }
+        .distinctUntilChanged()
 
     suspend fun setSwipeGesturesEnabled(enabled: Boolean) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -457,6 +471,7 @@ class PlayerPreferences(context: Context) {
         return context.playerPreferencesDataStore.data.map { preferences ->
             SponsorBlockAction.fromString(preferences[key] ?: SponsorBlockAction.SKIP.name)
         }
+        .distinctUntilChanged()
     }
 
     suspend fun setSbActionForCategory(category: String, action: SponsorBlockAction) {
@@ -492,6 +507,7 @@ class PlayerPreferences(context: Context) {
             else -> Keys.SB_COLOR_SPONSOR
         }
         return context.playerPreferencesDataStore.data.map { prefs -> prefs[key] }
+        .distinctUntilChanged()
     }
 
     suspend fun setSbColorForCategory(category: String, colorArgb: Int?) {
@@ -515,6 +531,7 @@ class PlayerPreferences(context: Context) {
     // Flow for reading the stored SB User ID (may be null)
     val sbUserId: Flow<String?> = context.playerPreferencesDataStore.data
         .map { prefs -> prefs[Keys.SB_USER_ID]?.takeIf { it.isNotBlank() } }
+        .distinctUntilChanged()
 
     suspend fun setSbUserId(id: String) {
         context.playerPreferencesDataStore.edit { prefs ->
@@ -524,6 +541,7 @@ class PlayerPreferences(context: Context) {
 
     val sbSubmitEnabled: Flow<Boolean> = context.playerPreferencesDataStore.data
         .map { preferences -> preferences[Keys.SB_SUBMIT_ENABLED] ?: false }
+        .distinctUntilChanged()
 
     suspend fun setSbSubmitEnabled(enabled: Boolean) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -546,6 +564,7 @@ class PlayerPreferences(context: Context) {
         .map { preferences ->
             SliderStyle.valueOf(preferences[Keys.SLIDER_STYLE] ?: SliderStyle.DEFAULT.name)
         }
+        .distinctUntilChanged()
 
     suspend fun setSliderStyle(style: SliderStyle) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -562,6 +581,7 @@ class PlayerPreferences(context: Context) {
                 )
             }.getOrDefault(MusicPlayerBackgroundStyle.BLUR_GRADIENT)
         }
+        .distinctUntilChanged()
 
     suspend fun setMusicPlayerBackgroundStyle(style: MusicPlayerBackgroundStyle) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -608,6 +628,7 @@ class PlayerPreferences(context: Context) {
         .map { preferences ->
             preferences[Keys.SQUIGGLY_SLIDER_ENABLED] ?: false
         }
+        .distinctUntilChanged()
 
     suspend fun setSquigglySliderEnabled(enabled: Boolean) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -620,6 +641,7 @@ class PlayerPreferences(context: Context) {
         .map { preferences ->
             preferences[Keys.SHORTS_SHELF_ENABLED] ?: true
         }
+        .distinctUntilChanged()
 
     suspend fun setShortsShelfEnabled(enabled: Boolean) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -632,6 +654,7 @@ class PlayerPreferences(context: Context) {
         .map { preferences ->
             preferences[Keys.HOME_SHORTS_SHELF_ENABLED] ?: true
         }
+        .distinctUntilChanged()
 
     suspend fun setHomeShortsShelfEnabled(enabled: Boolean) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -644,6 +667,7 @@ class PlayerPreferences(context: Context) {
         .map { preferences ->
             preferences[Keys.SHORTS_NAVIGATION_ENABLED] ?: true
         }
+        .distinctUntilChanged()
 
     suspend fun setShortsNavigationEnabled(enabled: Boolean) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -656,6 +680,7 @@ class PlayerPreferences(context: Context) {
         .map { preferences ->
             preferences[Keys.BOTTOM_NAV_HIDE_ON_SCROLL] ?: true
         }
+        .distinctUntilChanged()
 
     suspend fun setBottomNavHideOnScroll(enabled: Boolean) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -668,6 +693,7 @@ class PlayerPreferences(context: Context) {
         .map { preferences ->
             preferences[Keys.MUSIC_NAVIGATION_ENABLED] ?: true
         }
+        .distinctUntilChanged()
 
     suspend fun setMusicNavigationEnabled(enabled: Boolean) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -680,6 +706,7 @@ class PlayerPreferences(context: Context) {
         .map { preferences ->
             preferences[Keys.SEARCH_NAV_TAB_ENABLED] ?: false
         }
+        .distinctUntilChanged()
 
     suspend fun setSearchNavigationEnabled(enabled: Boolean) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -692,6 +719,7 @@ class PlayerPreferences(context: Context) {
         .map { preferences ->
             preferences[Keys.CATEGORIES_NAV_TAB_ENABLED] ?: false
         }
+        .distinctUntilChanged()
 
     suspend fun setCategoriesNavigationEnabled(enabled: Boolean) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -704,6 +732,7 @@ class PlayerPreferences(context: Context) {
         .map { preferences ->
             preferences[Keys.CONTINUE_WATCHING_ENABLED] ?: true
         }
+        .distinctUntilChanged()
 
     suspend fun setContinueWatchingEnabled(enabled: Boolean) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -716,6 +745,7 @@ class PlayerPreferences(context: Context) {
         .map { preferences ->
             preferences[Keys.SHOW_RELATED_VIDEOS] ?: true
         }
+        .distinctUntilChanged()
 
     suspend fun setShowRelatedVideos(enabled: Boolean) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -728,6 +758,7 @@ class PlayerPreferences(context: Context) {
         .map { preferences ->
             preferences[Keys.DOUBLE_TAP_SEEK_SECONDS] ?: 10
         }
+        .distinctUntilChanged()
 
     suspend fun setDoubleTapSeekSeconds(seconds: Int) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -740,6 +771,7 @@ class PlayerPreferences(context: Context) {
         .map { preferences ->
             HomeViewMode.valueOf(preferences[Keys.HOME_VIEW_MODE] ?: HomeViewMode.GRID.name)
         }
+        .distinctUntilChanged()
 
     suspend fun setHomeViewMode(mode: HomeViewMode) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -752,6 +784,7 @@ class PlayerPreferences(context: Context) {
         .map { preferences ->
             preferences[Keys.HOME_FEED_ENABLED] ?: true
         }
+        .distinctUntilChanged()
 
     suspend fun setHomeFeedEnabled(enabled: Boolean) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -764,6 +797,7 @@ class PlayerPreferences(context: Context) {
         .map { preferences ->
             preferences[Keys.HOME_SUBS_ROTATION_CURSOR] ?: 0
         }
+        .distinctUntilChanged()
 
     suspend fun setHomeSubsRotationCursor(cursor: Int) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -780,6 +814,7 @@ class PlayerPreferences(context: Context) {
                 PlayerRelatedCardStyle.FULL_WIDTH
             }
         }
+        .distinctUntilChanged()
 
     suspend fun setPlayerRelatedCardStyle(style: PlayerRelatedCardStyle) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -790,6 +825,7 @@ class PlayerPreferences(context: Context) {
         .map { preferences ->
             preferences[Keys.TRENDING_REGION] ?: "US"
         }
+        .distinctUntilChanged()
     
     suspend fun setTrendingRegion(region: String) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -801,6 +837,7 @@ class PlayerPreferences(context: Context) {
         .map { preferences ->
             preferences[Keys.APP_LANGUAGE] ?: "system"
         }
+        .distinctUntilChanged()
 
     suspend fun setAppLanguage(languageTag: String) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -813,11 +850,13 @@ class PlayerPreferences(context: Context) {
         .map { preferences ->
             VideoQuality.fromString(preferences[Keys.DEFAULT_QUALITY_WIFI] ?: "1080p")
         }
+        .distinctUntilChanged()
     
     val defaultQualityCellular: Flow<VideoQuality> = context.playerPreferencesDataStore.data
         .map { preferences ->
             VideoQuality.fromString(preferences[Keys.DEFAULT_QUALITY_CELLULAR] ?: "480p")
         }
+        .distinctUntilChanged()
     
     suspend fun setDefaultQualityWifi(quality: VideoQuality) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -835,6 +874,7 @@ class PlayerPreferences(context: Context) {
         .map { preferences ->
             VideoCodec.fromString(preferences[Keys.DEFAULT_VIDEO_CODEC] ?: VideoCodec.H264.label)
         }
+        .distinctUntilChanged()
 
     suspend fun setDefaultVideoCodec(codec: VideoCodec) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -847,11 +887,13 @@ class PlayerPreferences(context: Context) {
         .map { preferences ->
             VideoQuality.fromString(preferences[Keys.SHORTS_QUALITY_WIFI] ?: "720p")
         }
+        .distinctUntilChanged()
 
     val shortsQualityCellular: Flow<VideoQuality> = context.playerPreferencesDataStore.data
         .map { preferences ->
             VideoQuality.fromString(preferences[Keys.SHORTS_QUALITY_CELLULAR] ?: "480p")
         }
+        .distinctUntilChanged()
 
     suspend fun setShortsQualityWifi(quality: VideoQuality) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -869,6 +911,7 @@ class PlayerPreferences(context: Context) {
         .map { preferences ->
             MusicAudioQuality.fromString(preferences[Keys.MUSIC_AUDIO_QUALITY] ?: MusicAudioQuality.AUTO.label)
         }
+        .distinctUntilChanged()
 
     suspend fun setMusicAudioQuality(quality: MusicAudioQuality) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -881,6 +924,7 @@ class PlayerPreferences(context: Context) {
         .map { preferences ->
             preferences[Keys.BACKGROUND_PLAY_ENABLED] ?: false
         }
+        .distinctUntilChanged()
     
     suspend fun setBackgroundPlayEnabled(enabled: Boolean) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -893,6 +937,7 @@ class PlayerPreferences(context: Context) {
         .map { preferences ->
             preferences[Keys.AUTOPLAY_ENABLED] ?: true
         }
+        .distinctUntilChanged()
     
     suspend fun setAutoplayEnabled(enabled: Boolean) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -905,6 +950,7 @@ class PlayerPreferences(context: Context) {
         .map { preferences ->
             preferences[Keys.QUEUE_AUTOPLAY_ENABLED] ?: true
         }
+        .distinctUntilChanged()
 
     suspend fun setQueueAutoplayEnabled(enabled: Boolean) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -916,6 +962,7 @@ class PlayerPreferences(context: Context) {
         .map { preferences ->
             (preferences[Keys.AUTOPLAY_COUNTDOWN_SECONDS] ?: 0).coerceIn(0, 30)
         }
+        .distinctUntilChanged()
 
     suspend fun setAutoplayCountdownSeconds(seconds: Int) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -927,6 +974,7 @@ class PlayerPreferences(context: Context) {
         .map { preferences ->
             preferences[Keys.SHOW_CONTROLS_WHILE_LOADING] ?: false
         }
+        .distinctUntilChanged()
 
     suspend fun setShowControlsWhileLoading(enabled: Boolean) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -951,6 +999,7 @@ class PlayerPreferences(context: Context) {
         .map { preferences ->
             preferences[Keys.VIDEO_LOOP_ENABLED] ?: false
         }
+        .distinctUntilChanged()
     
     suspend fun setVideoLoopEnabled(enabled: Boolean) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -966,6 +1015,7 @@ class PlayerPreferences(context: Context) {
         .map { preferences ->
             preferences[Keys.SKIP_SILENCE_ENABLED] ?: false
         }
+        .distinctUntilChanged()
 
     suspend fun setSkipSilenceEnabled(enabled: Boolean) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -978,6 +1028,7 @@ class PlayerPreferences(context: Context) {
         .map { preferences ->
             preferences[Keys.STABLE_VOLUME_ENABLED] ?: false
         }
+        .distinctUntilChanged()
 
     suspend fun setStableVolumeEnabled(enabled: Boolean) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -990,6 +1041,7 @@ class PlayerPreferences(context: Context) {
         .map { preferences ->
             preferences[Keys.SPONSOR_BLOCK_ENABLED] ?: false
         }
+        .distinctUntilChanged()
 
     suspend fun setSponsorBlockEnabled(enabled: Boolean) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -1002,6 +1054,7 @@ class PlayerPreferences(context: Context) {
         .map { preferences ->
             preferences[Keys.DEARROW_ENABLED] ?: false
         }
+        .distinctUntilChanged()
 
     suspend fun setDeArrowEnabled(enabled: Boolean) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -1011,6 +1064,7 @@ class PlayerPreferences(context: Context) {
 
     val deArrowBadgeEnabled: Flow<Boolean> = context.playerPreferencesDataStore.data
         .map { preferences -> preferences[Keys.DEARROW_BADGE_ENABLED] ?: false }
+        .distinctUntilChanged()
 
     suspend fun setDeArrowBadgeEnabled(enabled: Boolean) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -1022,6 +1076,7 @@ class PlayerPreferences(context: Context) {
 
     val notificationsEnabled: Flow<Boolean> = context.playerPreferencesDataStore.data
         .map { preferences -> preferences[Keys.NOTIFICATIONS_ENABLED] ?: true }
+        .distinctUntilChanged()
 
     suspend fun setNotificationsEnabled(enabled: Boolean) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -1031,6 +1086,7 @@ class PlayerPreferences(context: Context) {
 
     val notifNewVideosEnabled: Flow<Boolean> = context.playerPreferencesDataStore.data
         .map { preferences -> preferences[Keys.NOTIF_NEW_VIDEOS_ENABLED] ?: true }
+        .distinctUntilChanged()
 
     suspend fun setNotifNewVideosEnabled(enabled: Boolean) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -1040,6 +1096,7 @@ class PlayerPreferences(context: Context) {
 
     val notifDownloadsEnabled: Flow<Boolean> = context.playerPreferencesDataStore.data
         .map { preferences -> preferences[Keys.NOTIF_DOWNLOADS_ENABLED] ?: true }
+        .distinctUntilChanged()
 
     suspend fun setNotifDownloadsEnabled(enabled: Boolean) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -1049,6 +1106,7 @@ class PlayerPreferences(context: Context) {
 
     val notifRemindersEnabled: Flow<Boolean> = context.playerPreferencesDataStore.data
         .map { preferences -> preferences[Keys.NOTIF_REMINDERS_ENABLED] ?: true }
+        .distinctUntilChanged()
 
     suspend fun setNotifRemindersEnabled(enabled: Boolean) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -1058,6 +1116,7 @@ class PlayerPreferences(context: Context) {
 
     val notifUpdatesEnabled: Flow<Boolean> = context.playerPreferencesDataStore.data
         .map { preferences -> preferences[Keys.NOTIF_UPDATES_ENABLED] ?: true }
+        .distinctUntilChanged()
 
     suspend fun setNotifUpdatesEnabled(enabled: Boolean) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -1067,6 +1126,7 @@ class PlayerPreferences(context: Context) {
 
     val notifGeneralEnabled: Flow<Boolean> = context.playerPreferencesDataStore.data
         .map { preferences -> preferences[Keys.NOTIF_GENERAL_ENABLED] ?: true }
+        .distinctUntilChanged()
 
     suspend fun setNotifGeneralEnabled(enabled: Boolean) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -1078,6 +1138,7 @@ class PlayerPreferences(context: Context) {
 
     val overlayCastEnabled: Flow<Boolean> = context.playerPreferencesDataStore.data
         .map { preferences -> preferences[Keys.OVERLAY_CAST_ENABLED] ?: true }
+        .distinctUntilChanged()
 
     suspend fun setOverlayCastEnabled(enabled: Boolean) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -1096,6 +1157,7 @@ class PlayerPreferences(context: Context) {
 
     val overlayCcEnabled: Flow<Boolean> = context.playerPreferencesDataStore.data
         .map { preferences -> preferences[Keys.OVERLAY_CC_ENABLED] ?: false }
+        .distinctUntilChanged()
 
     suspend fun setOverlayCcEnabled(enabled: Boolean) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -1105,6 +1167,7 @@ class PlayerPreferences(context: Context) {
     
     val overlayPipEnabled: Flow<Boolean> = context.playerPreferencesDataStore.data
         .map { preferences -> preferences[Keys.OVERLAY_PIP_ENABLED] ?: false }
+        .distinctUntilChanged()
 
     suspend fun setOverlayPipEnabled(enabled: Boolean) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -1114,6 +1177,7 @@ class PlayerPreferences(context: Context) {
 
     val overlayAutoplayEnabled: Flow<Boolean> = context.playerPreferencesDataStore.data
         .map { preferences -> preferences[Keys.OVERLAY_AUTOPLAY_ENABLED] ?: false }
+        .distinctUntilChanged()
 
     suspend fun setOverlayAutoplayEnabled(enabled: Boolean) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -1123,6 +1187,7 @@ class PlayerPreferences(context: Context) {
     
     val overlaySleepTimerEnabled: Flow<Boolean> = context.playerPreferencesDataStore.data
         .map { preferences -> preferences[Keys.OVERLAY_SLEEPTIMER_ENABLED] ?: true }
+        .distinctUntilChanged()
 
     suspend fun setOverlaySleepTimerEnabled(enabled: Boolean) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -1132,6 +1197,7 @@ class PlayerPreferences(context: Context) {
 
     val overlayLockModeEnabled: Flow<Boolean> = context.playerPreferencesDataStore.data
         .map { preferences -> preferences[Keys.OVERLAY_LOCK_MODE_ENABLED] ?: false }
+        .distinctUntilChanged()
 
     suspend fun setOverlayLockModeEnabled(enabled: Boolean) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -1141,6 +1207,7 @@ class PlayerPreferences(context: Context) {
 
     val overlaySpeedIndicatorEnabled: Flow<Boolean> = context.playerPreferencesDataStore.data
         .map { preferences -> preferences[Keys.OVERLAY_SPEED_INDICATOR_ENABLED] ?: false }
+        .distinctUntilChanged()
 
     suspend fun setOverlaySpeedIndicatorEnabled(enabled: Boolean) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -1151,6 +1218,7 @@ class PlayerPreferences(context: Context) {
     //  FULLSCREEN PLAYER PREFERENCES
     val showFullscreenTitle: Flow<Boolean> = context.playerPreferencesDataStore.data
         .map { preferences -> preferences[Keys.SHOW_FULLSCREEN_TITLE] ?: false }
+        .distinctUntilChanged()
 
     suspend fun setShowFullscreenTitle(enabled: Boolean) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -1160,6 +1228,7 @@ class PlayerPreferences(context: Context) {
 
     val adaptivePlayerSizeEnabled: Flow<Boolean> = context.playerPreferencesDataStore.data
         .map { preferences -> preferences[Keys.ADAPTIVE_PLAYER_SIZE_ENABLED] ?: true }
+        .distinctUntilChanged()
 
     suspend fun setAdaptivePlayerSizeEnabled(enabled: Boolean) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -1173,6 +1242,7 @@ class PlayerPreferences(context: Context) {
                 ?.let { storedMode -> runCatching { FullscreenSeekbarPaddingMode.valueOf(storedMode) }.getOrNull() }
                 ?: FullscreenSeekbarPaddingMode.DEFAULT
         }
+        .distinctUntilChanged()
 
     suspend fun setFullscreenSeekbarPaddingMode(mode: FullscreenSeekbarPaddingMode) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -1185,6 +1255,7 @@ class PlayerPreferences(context: Context) {
             (preferences[Keys.FULLSCREEN_SEEKBAR_CUSTOM_PADDING_DP] ?: DEFAULT_FULLSCREEN_SEEKBAR_PADDING_DP)
                 .coerceIn(0, MAX_FULLSCREEN_SEEKBAR_PADDING_DP)
         }
+        .distinctUntilChanged()
 
     suspend fun setFullscreenSeekbarCustomPaddingDp(paddingDp: Int) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -1207,12 +1278,14 @@ class PlayerPreferences(context: Context) {
                 FullscreenSeekbarPaddingMode.CUSTOM -> customPadding
             }
         }
+        .distinctUntilChanged()
     
     // Subtitles
     val subtitlesEnabled: Flow<Boolean> = context.playerPreferencesDataStore.data
         .map { preferences ->
             preferences[Keys.SUBTITLES_ENABLED] ?: false
         }
+        .distinctUntilChanged()
     
     suspend fun setSubtitlesEnabled(enabled: Boolean) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -1224,6 +1297,7 @@ class PlayerPreferences(context: Context) {
         .map { preferences ->
             preferences[Keys.PREFERRED_SUBTITLE_LANGUAGE] ?: "en"
         }
+        .distinctUntilChanged()
     
     suspend fun setPreferredSubtitleLanguage(language: String) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -1244,6 +1318,7 @@ class PlayerPreferences(context: Context) {
                 bottomPadding = preferences[Keys.SUBTITLE_BOTTOM_PADDING] ?: 48f
             )
         }
+        .distinctUntilChanged()
 
     suspend fun setSubtitleStyle(style: SubtitleStyle) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -1260,6 +1335,7 @@ class PlayerPreferences(context: Context) {
         .map { preferences ->
             preferences[Keys.PREFERRED_AUDIO_LANGUAGE] ?: "original" // Default to original/native
         }
+        .distinctUntilChanged()
     
     suspend fun setPreferredAudioLanguage(language: String) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -1272,6 +1348,7 @@ class PlayerPreferences(context: Context) {
         .map { preferences ->
             preferences[Keys.PLAYBACK_SPEED] ?: 1.0f
         }
+        .distinctUntilChanged()
     
     suspend fun setPlaybackSpeed(speed: Float) {
         kotlinx.coroutines.withContext(kotlinx.coroutines.NonCancellable) {
@@ -1286,6 +1363,7 @@ class PlayerPreferences(context: Context) {
         .map { preferences ->
             preferences[Keys.REMEMBER_PLAYBACK_SPEED] ?: false
         }
+        .distinctUntilChanged()
 
     suspend fun setRememberPlaybackSpeed(enabled: Boolean) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -1298,6 +1376,7 @@ class PlayerPreferences(context: Context) {
         .map { preferences ->
             preferences[Keys.SUBSCRIPTION_CHECK_INTERVAL_MINUTES] ?: 360
         }
+        .distinctUntilChanged()
 
     suspend fun setSubscriptionCheckIntervalMinutes(minutes: Int) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -1310,6 +1389,7 @@ class PlayerPreferences(context: Context) {
         .map { preferences ->
             preferences[Keys.CUSTOM_SPEEDS_ENABLED] ?: false
         }
+        .distinctUntilChanged()
 
     suspend fun setCustomSpeedsEnabled(enabled: Boolean) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -1321,6 +1401,7 @@ class PlayerPreferences(context: Context) {
         .map { preferences ->
             preferences[Keys.CUSTOM_SPEED_PRESETS] ?: ""
         }
+        .distinctUntilChanged()
 
     suspend fun setCustomSpeedPresets(presets: String) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -1332,6 +1413,7 @@ class PlayerPreferences(context: Context) {
         .map { preferences ->
             preferences[Keys.SPEED_SLIDER_ENABLED] ?: false
         }
+        .distinctUntilChanged()
 
     suspend fun setSpeedSliderEnabled(enabled: Boolean) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -1344,6 +1426,7 @@ class PlayerPreferences(context: Context) {
             (preferences[Keys.LONG_PRESS_PLAYBACK_SPEED] ?: 2.0f)
                 .let { if (it <= 0f) 0f else it.coerceIn(0.1f, 4.0f) }
         }
+        .distinctUntilChanged()
 
     suspend fun setLongPressPlaybackSpeed(speed: Float) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -1357,6 +1440,7 @@ class PlayerPreferences(context: Context) {
         .map { preferences ->
             preferences[Keys.SUBS_FULL_WIDTH_VIEW] ?: false
         }
+        .distinctUntilChanged()
 
     suspend fun setSubsFullWidthView(enabled: Boolean) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -1376,6 +1460,7 @@ class PlayerPreferences(context: Context) {
 
     val selectedSubscriptionGroup: Flow<String?> = context.playerPreferencesDataStore.data
         .map { preferences -> preferences[Keys.SUBS_SELECTED_GROUP]?.takeIf { it.isNotBlank() } }
+        .distinctUntilChanged()
 
     suspend fun setSelectedSubscriptionGroup(groupName: String?) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -1389,6 +1474,7 @@ class PlayerPreferences(context: Context) {
 
     val subscriptionRefreshOnStartup: Flow<Boolean> = context.playerPreferencesDataStore.data
         .map { preferences -> preferences[Keys.SUBS_REFRESH_ON_STARTUP] ?: false }
+        .distinctUntilChanged()
 
     suspend fun setSubscriptionRefreshOnStartup(enabled: Boolean) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -1398,12 +1484,15 @@ class PlayerPreferences(context: Context) {
 
     val subscriptionLastRefreshTime: Flow<Long> = context.playerPreferencesDataStore.data
         .map { preferences -> preferences[Keys.SUBS_LAST_REFRESH_TIME] ?: 0L }
+        .distinctUntilChanged()
 
     val subscriptionLastRefreshedCount: Flow<Int> = context.playerPreferencesDataStore.data
         .map { preferences -> preferences[Keys.SUBS_LAST_REFRESHED_COUNT] ?: 0 }
+        .distinctUntilChanged()
 
     val subscriptionShowCheckedVideoCount: Flow<Boolean> = context.playerPreferencesDataStore.data
         .map { preferences -> preferences[Keys.SUBS_SHOW_CHECKED_VIDEO_COUNT] ?: true }
+        .distinctUntilChanged()
 
     suspend fun setSubscriptionShowCheckedVideoCount(enabled: Boolean) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -1421,12 +1510,15 @@ class PlayerPreferences(context: Context) {
     // ── Donation / support prompt ───────────────────────────────────────────
     val donationFirstLaunchTime: Flow<Long> = context.playerPreferencesDataStore.data
         .map { preferences -> preferences[Keys.DONATION_FIRST_LAUNCH_TIME] ?: 0L }
+        .distinctUntilChanged()
 
     val donationPromptLastShownTime: Flow<Long> = context.playerPreferencesDataStore.data
         .map { preferences -> preferences[Keys.DONATION_PROMPT_LAST_SHOWN] ?: 0L }
+        .distinctUntilChanged()
 
     val donationPromptDisabled: Flow<Boolean> = context.playerPreferencesDataStore.data
         .map { preferences -> preferences[Keys.DONATION_PROMPT_DISABLED] ?: false }
+        .distinctUntilChanged()
 
     suspend fun setDonationFirstLaunchTime(timeMillis: Long) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -1454,6 +1546,7 @@ class PlayerPreferences(context: Context) {
                 ?.takeIf { it.isNotEmpty() }
                 ?: DEFAULT_NAV_TAB_ORDER
         }
+        .distinctUntilChanged()
 
     suspend fun setNavTabOrder(order: List<Int>) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -1463,6 +1556,7 @@ class PlayerPreferences(context: Context) {
 
     val defaultNavTabIndex: Flow<Int> = context.playerPreferencesDataStore.data
         .map { preferences -> preferences[Keys.DEFAULT_NAV_TAB_INDEX] ?: 0 }
+        .distinctUntilChanged()
 
     suspend fun setDefaultNavTabIndex(index: Int) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -1472,6 +1566,7 @@ class PlayerPreferences(context: Context) {
 
     val commentsPreviewEnabled: Flow<Boolean> = context.playerPreferencesDataStore.data
         .map { preferences -> preferences[Keys.COMMENTS_PREVIEW_ENABLED] ?: true }
+        .distinctUntilChanged()
 
     suspend fun setCommentsPreviewEnabled(enabled: Boolean) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -1481,6 +1576,7 @@ class PlayerPreferences(context: Context) {
 
     val commentsEnabled: Flow<Boolean> = context.playerPreferencesDataStore.data
         .map { preferences -> preferences[Keys.COMMENTS_ENABLED] ?: true }
+        .distinctUntilChanged()
 
     suspend fun setCommentsEnabled(enabled: Boolean) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -1490,6 +1586,7 @@ class PlayerPreferences(context: Context) {
 
     val subscriptionShowVideos: Flow<Boolean> = context.playerPreferencesDataStore.data
         .map { preferences -> preferences[Keys.SUBSCRIPTION_SHOW_VIDEOS] ?: true }
+        .distinctUntilChanged()
 
     suspend fun setSubscriptionShowVideos(enabled: Boolean) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -1499,6 +1596,7 @@ class PlayerPreferences(context: Context) {
 
     val subscriptionShowShorts: Flow<Boolean> = context.playerPreferencesDataStore.data
         .map { preferences -> preferences[Keys.SUBSCRIPTION_SHOW_SHORTS] ?: true }
+        .distinctUntilChanged()
 
     suspend fun setSubscriptionShowShorts(enabled: Boolean) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -1508,6 +1606,7 @@ class PlayerPreferences(context: Context) {
 
     val subscriptionShowLive: Flow<Boolean> = context.playerPreferencesDataStore.data
         .map { preferences -> preferences[Keys.SUBSCRIPTION_SHOW_LIVE] ?: true }
+        .distinctUntilChanged()
 
     suspend fun setSubscriptionShowLive(enabled: Boolean) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -1520,6 +1619,7 @@ class PlayerPreferences(context: Context) {
         .map { preferences ->
             preferences[Keys.AUTO_PIP_ENABLED] ?: false
         }
+        .distinctUntilChanged()
 
     suspend fun setAutoPipEnabled(enabled: Boolean) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -1531,6 +1631,7 @@ class PlayerPreferences(context: Context) {
         .map { preferences ->
             preferences[Keys.MANUAL_PIP_BUTTON_ENABLED] ?: true // Default ON
         }
+        .distinctUntilChanged()
 
     suspend fun setManualPipButtonEnabled(enabled: Boolean) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -1543,6 +1644,7 @@ class PlayerPreferences(context: Context) {
         .map { preferences ->
             preferences[Keys.HIDE_WATCHED_VIDEOS] ?: false
         }
+        .distinctUntilChanged()
 
     suspend fun setHideWatchedVideos(enabled: Boolean) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -1556,6 +1658,7 @@ class PlayerPreferences(context: Context) {
             runCatching { WatchedThreshold.valueOf(preferences[Keys.WATCHED_THRESHOLD] ?: WatchedThreshold.ALMOST_FINISHED.name) }
                 .getOrDefault(WatchedThreshold.ALMOST_FINISHED)
         }
+        .distinctUntilChanged()
 
     suspend fun setWatchedThreshold(threshold: WatchedThreshold) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -1568,6 +1671,7 @@ class PlayerPreferences(context: Context) {
         .map { preferences ->
             preferences[Keys.SHARE_WITHOUT_TEXT] ?: false
         }
+        .distinctUntilChanged()
 
     suspend fun setShareWithoutText(enabled: Boolean) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -1579,6 +1683,7 @@ class PlayerPreferences(context: Context) {
         .map { preferences ->
             preferences[Keys.DISABLE_SHORTS_PLAYER] ?: false
         }
+        .distinctUntilChanged()
 
     suspend fun setDisableShortsPlayer(enabled: Boolean) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -1602,6 +1707,7 @@ class PlayerPreferences(context: Context) {
         .map { preferences ->
             preferences[Keys.SHORTS_BACKGROUND_PLAY] ?: false
         }
+        .distinctUntilChanged()
 
     suspend fun setShortsBackgroundPlay(enabled: Boolean) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -1614,6 +1720,7 @@ class PlayerPreferences(context: Context) {
         .map { preferences ->
             preferences[Keys.SHORTS_PLAYBACK_MODE] ?: "loop"
         }
+        .distinctUntilChanged()
 
     suspend fun setShortsPlaybackMode(mode: String) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -1625,6 +1732,7 @@ class PlayerPreferences(context: Context) {
         .map { preferences ->
             (preferences[Keys.SHORTS_AUTO_SCROLL_SECONDS] ?: 10).coerceIn(5, 20)
         }
+        .distinctUntilChanged()
 
     suspend fun setShortsAutoScrollSeconds(seconds: Int) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -1636,6 +1744,7 @@ class PlayerPreferences(context: Context) {
         .map { preferences ->
             preferences[Keys.SUBSCRIPTION_SHORTS_EXCLUDED_CHANNELS].orEmpty()
         }
+        .distinctUntilChanged()
 
     suspend fun setSubscriptionShortsChannelExcluded(channelId: String, excluded: Boolean) {
         if (channelId.isBlank()) return
@@ -1650,6 +1759,7 @@ class PlayerPreferences(context: Context) {
         .map { preferences ->
             preferences[Keys.UPCOMING_VIDEO_REMINDER_IDS].orEmpty()
         }
+        .distinctUntilChanged()
 
     suspend fun setUpcomingVideoReminder(videoId: String, enabled: Boolean) {
         if (videoId.isBlank()) return
@@ -1665,6 +1775,7 @@ class PlayerPreferences(context: Context) {
         .map { preferences ->
             preferences[Keys.MEDIA_CACHE_SIZE_MB] ?: 500
         }
+        .distinctUntilChanged()
 
     suspend fun setMediaCacheSizeMb(sizeMb: Int) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -1677,6 +1788,7 @@ class PlayerPreferences(context: Context) {
         .map { preferences ->
             preferences[Keys.SHOW_REGION_PICKER_IN_EXPLORE] ?: true
         }
+        .distinctUntilChanged()
 
     suspend fun setShowRegionPickerInExplore(enabled: Boolean) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -1689,6 +1801,7 @@ class PlayerPreferences(context: Context) {
         .map { preferences ->
             preferences[Keys.APP_ICON_SUFFIX]
         }
+        .distinctUntilChanged()
 
     suspend fun setSelectedAppIcon(suffix: String) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -1701,6 +1814,7 @@ class PlayerPreferences(context: Context) {
         .map { preferences ->
             preferences[Keys.PLAYLIST_SORT_ORDER] ?: "manual"
         }
+        .distinctUntilChanged()
 
     suspend fun setPlaylistSortOrder(order: String) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -1712,6 +1826,7 @@ class PlayerPreferences(context: Context) {
         .map { preferences ->
             preferences[Keys.VIDEO_TITLE_MAX_LINES] ?: 1
         }
+        .distinctUntilChanged()
 
     suspend fun setVideoTitleMaxLines(lines: Int) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -1722,6 +1837,7 @@ class PlayerPreferences(context: Context) {
     // Video card inline like/dislike action buttons (default off)
     val videoCardActionsEnabled: Flow<Boolean> = context.playerPreferencesDataStore.data
         .map { preferences -> preferences[Keys.VIDEO_CARD_ACTIONS_ENABLED] ?: false }
+        .distinctUntilChanged()
 
     suspend fun setVideoCardActionsEnabled(enabled: Boolean) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -1732,6 +1848,7 @@ class PlayerPreferences(context: Context) {
     // Video card inline mark-as-watched action controls (default off)
     val videoCardMarkWatchedEnabled: Flow<Boolean> = context.playerPreferencesDataStore.data
         .map { preferences -> preferences[Keys.VIDEO_CARD_MARK_WATCHED_ENABLED] ?: false }
+        .distinctUntilChanged()
 
     suspend fun setVideoCardMarkWatchedEnabled(enabled: Boolean) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -1742,6 +1859,7 @@ class PlayerPreferences(context: Context) {
     // Show app logo icon in home screen top bar (default on)
     val showAppLogoIcon: Flow<Boolean> = context.playerPreferencesDataStore.data
         .map { preferences -> preferences[Keys.SHOW_APP_LOGO_ICON] ?: true }
+        .distinctUntilChanged()
 
     suspend fun setShowAppLogoIcon(enabled: Boolean) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -1752,6 +1870,7 @@ class PlayerPreferences(context: Context) {
     // Screen-level view mode toggles
     val searchIsGridMode: Flow<Boolean> = context.playerPreferencesDataStore.data
         .map { preferences -> preferences[Keys.SEARCH_IS_GRID_MODE] ?: false }
+        .distinctUntilChanged()
 
     suspend fun setSearchIsGridMode(isGrid: Boolean) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -1761,6 +1880,7 @@ class PlayerPreferences(context: Context) {
 
     val channelIsGridView: Flow<Boolean> = context.playerPreferencesDataStore.data
         .map { preferences -> preferences[Keys.CHANNEL_IS_GRID_VIEW] ?: false }
+        .distinctUntilChanged()
 
     suspend fun setChannelIsGridView(isGrid: Boolean) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -1770,6 +1890,7 @@ class PlayerPreferences(context: Context) {
 
     val categoriesIsListView: Flow<Boolean> = context.playerPreferencesDataStore.data
         .map { preferences -> preferences[Keys.CATEGORIES_IS_LIST_VIEW] ?: false }
+        .distinctUntilChanged()
 
     suspend fun setCategoriesIsListView(isList: Boolean) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -1783,6 +1904,7 @@ class PlayerPreferences(context: Context) {
         .map { preferences ->
             preferences[Keys.MIN_BUFFER_MS] ?: BufferProfile.STABLE.minBuffer
         }
+        .distinctUntilChanged()
 
     suspend fun setMinBufferMs(ms: Int) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -1794,6 +1916,7 @@ class PlayerPreferences(context: Context) {
         .map { preferences ->
             preferences[Keys.MAX_BUFFER_MS] ?: BufferProfile.STABLE.maxBuffer
         }
+        .distinctUntilChanged()
 
     suspend fun setMaxBufferMs(ms: Int) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -1805,6 +1928,7 @@ class PlayerPreferences(context: Context) {
         .map { preferences ->
             preferences[Keys.BUFFER_FOR_PLAYBACK_MS] ?: BufferProfile.STABLE.playbackBuffer
         }
+        .distinctUntilChanged()
 
     suspend fun setBufferForPlaybackMs(ms: Int) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -1816,6 +1940,7 @@ class PlayerPreferences(context: Context) {
         .map { preferences ->
             preferences[Keys.BUFFER_FOR_PLAYBACK_AFTER_REBUFFER_MS] ?: BufferProfile.STABLE.rebufferBuffer
         }
+        .distinctUntilChanged()
 
     suspend fun setBufferForPlaybackAfterRebufferMs(ms: Int) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -1827,6 +1952,7 @@ class PlayerPreferences(context: Context) {
         .map { preferences ->
             BufferProfile.fromString(preferences[Keys.BUFFER_PROFILE] ?: "STABLE")
         }
+        .distinctUntilChanged()
 
     suspend fun setBufferProfile(profile: BufferProfile) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -1848,6 +1974,7 @@ class PlayerPreferences(context: Context) {
         .map { preferences ->
             preferences[Keys.DOWNLOAD_THREADS] ?: 3
         }
+        .distinctUntilChanged()
 
     suspend fun setDownloadThreads(threads: Int) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -1861,6 +1988,7 @@ class PlayerPreferences(context: Context) {
             runCatching { DownloadDialogStyle.valueOf(preferences[Keys.DOWNLOAD_DIALOG_STYLE] ?: DownloadDialogStyle.FULL.name) }
                 .getOrDefault(DownloadDialogStyle.FULL)
         }
+        .distinctUntilChanged()
 
     suspend fun setDownloadDialogStyle(style: DownloadDialogStyle) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -1871,12 +1999,16 @@ class PlayerPreferences(context: Context) {
     // Remembered last-used download options (used by the compact dialog to preselect).
     val lastDownloadType: Flow<String?> = context.playerPreferencesDataStore.data
         .map { it[Keys.LAST_DOWNLOAD_TYPE] }
+        .distinctUntilChanged()
     val lastDownloadHeight: Flow<Int?> = context.playerPreferencesDataStore.data
         .map { it[Keys.LAST_DOWNLOAD_HEIGHT] }
+        .distinctUntilChanged()
     val lastDownloadCodec: Flow<String?> = context.playerPreferencesDataStore.data
         .map { it[Keys.LAST_DOWNLOAD_CODEC] }
+        .distinctUntilChanged()
     val lastDownloadAudioLabel: Flow<String?> = context.playerPreferencesDataStore.data
         .map { it[Keys.LAST_DOWNLOAD_AUDIO_LABEL] }
+        .distinctUntilChanged()
 
     suspend fun setLastDownloadVideoChoice(height: Int, codec: String) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -1897,6 +2029,7 @@ class PlayerPreferences(context: Context) {
         .map { preferences ->
             preferences[Keys.PARALLEL_DOWNLOAD_ENABLED] ?: true
         }
+        .distinctUntilChanged()
 
     suspend fun setParallelDownloadEnabled(enabled: Boolean) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -1908,6 +2041,7 @@ class PlayerPreferences(context: Context) {
         .map { preferences ->
             preferences[Keys.DOWNLOAD_OVER_WIFI_ONLY] ?: false
         }
+        .distinctUntilChanged()
 
     suspend fun setDownloadOverWifiOnly(enabled: Boolean) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -1919,6 +2053,7 @@ class PlayerPreferences(context: Context) {
         .map { preferences ->
             VideoQuality.fromString(preferences[Keys.DEFAULT_DOWNLOAD_QUALITY] ?: "720p")
         }
+        .distinctUntilChanged()
 
     suspend fun setDefaultDownloadQuality(quality: VideoQuality) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -1942,6 +2077,7 @@ class PlayerPreferences(context: Context) {
         .map { preferences ->
             preferences[Keys.DOWNLOAD_LOCATION]
         }
+        .distinctUntilChanged()
 
     suspend fun setDownloadLocation(path: String?) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -1958,6 +2094,7 @@ class PlayerPreferences(context: Context) {
         .map { preferences ->
             preferences[Keys.MUSIC_DOWNLOAD_LOCATION]
         }
+        .distinctUntilChanged()
 
     suspend fun setMusicDownloadLocation(path: String?) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -1973,6 +2110,7 @@ class PlayerPreferences(context: Context) {
         .map { preferences ->
             preferences[Keys.PROXY_ENABLED] ?: false
         }
+        .distinctUntilChanged()
 
     suspend fun setProxyEnabled(enabled: Boolean) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -1984,6 +2122,7 @@ class PlayerPreferences(context: Context) {
         .map { preferences ->
             AppProxyType.fromStorageValue(preferences[Keys.PROXY_TYPE])
         }
+        .distinctUntilChanged()
 
     suspend fun setProxyType(type: AppProxyType) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -1995,6 +2134,7 @@ class PlayerPreferences(context: Context) {
         .map { preferences ->
             preferences[Keys.PROXY_HOST].orEmpty()
         }
+        .distinctUntilChanged()
 
     suspend fun setProxyHost(host: String) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -2006,6 +2146,7 @@ class PlayerPreferences(context: Context) {
         .map { preferences ->
             preferences[Keys.PROXY_PORT] ?: 8080
         }
+        .distinctUntilChanged()
 
     suspend fun setProxyPort(port: Int) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -2017,6 +2158,7 @@ class PlayerPreferences(context: Context) {
         .map { preferences ->
             preferences[Keys.PROXY_USERNAME].orEmpty()
         }
+        .distinctUntilChanged()
 
     suspend fun setProxyUsername(username: String) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -2028,6 +2170,7 @@ class PlayerPreferences(context: Context) {
         .map { preferences ->
             preferences[Keys.PROXY_PASSWORD].orEmpty()
         }
+        .distinctUntilChanged()
 
     suspend fun setProxyPassword(password: String) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -2046,6 +2189,7 @@ class PlayerPreferences(context: Context) {
                 password = preferences[Keys.PROXY_PASSWORD].orEmpty()
             )
         }
+        .distinctUntilChanged()
 
     suspend fun getProxyConfig(): AppProxyConfig = proxyConfig.first()
 
@@ -2071,6 +2215,7 @@ class PlayerPreferences(context: Context) {
         .map { preferences ->
             preferences[Keys.LOGIN_COOKIE].orEmpty()
         }
+        .distinctUntilChanged()
 
     suspend fun getLoginCookie(): String = loginCookie.first()
 
@@ -2088,6 +2233,7 @@ class PlayerPreferences(context: Context) {
         .map { preferences ->
             preferences[Keys.LOGIN_ENABLED] ?: false
         }
+        .distinctUntilChanged()
 
     suspend fun setLoginEnabled(enabled: Boolean) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -2100,6 +2246,7 @@ class PlayerPreferences(context: Context) {
         .map { preferences ->
             preferences[Keys.RYTD_ENABLED] ?: true
         }
+        .distinctUntilChanged()
 
     suspend fun setRytdEnabled(enabled: Boolean) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -2112,6 +2259,7 @@ class PlayerPreferences(context: Context) {
         .map { preferences ->
             preferences[Keys.SURFACE_READY_TIMEOUT_MS] ?: 1500L // Default 1.5s
         }
+        .distinctUntilChanged()
 
     suspend fun setSurfaceReadyTimeoutMs(timeoutMs: Long) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -2124,6 +2272,7 @@ class PlayerPreferences(context: Context) {
         .map { preferences ->
             preferences[Keys.LYRICS_PROVIDER_ORDER] ?: ""
         }
+        .distinctUntilChanged()
 
     suspend fun setLyricsProviderOrder(order: String) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -2147,6 +2296,7 @@ class PlayerPreferences(context: Context) {
             val key = providerEnabledKeys[providerName] ?: return@map true
             preferences[key] ?: true
         }
+        .distinctUntilChanged()
 
     suspend fun setLyricsProviderEnabled(providerName: String, enabled: Boolean) {
         val key = providerEnabledKeys[providerName] ?: return
@@ -2159,6 +2309,7 @@ class PlayerPreferences(context: Context) {
         context.playerPreferencesDataStore.data.map { preferences ->
             providerEnabledKeys.mapValues { (_, key) -> preferences[key] ?: true }
         }
+        .distinctUntilChanged()
 
     // ========== MINI PLAYER PREFERENCES ==========
 
@@ -2166,6 +2317,7 @@ class PlayerPreferences(context: Context) {
         .map { preferences ->
             preferences[Keys.MINI_PLAYER_SCALE] ?: 0.45f
         }
+        .distinctUntilChanged()
 
     suspend fun setMiniPlayerScale(scale: Float) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -2178,6 +2330,7 @@ class PlayerPreferences(context: Context) {
         .map { preferences ->
             preferences[Keys.MINI_PLAYER_CONTINUE_WATCHING_ENABLED] ?: true
         }
+        .distinctUntilChanged()
 
     suspend fun setMiniPlayerContinueWatchingEnabled(enabled: Boolean) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -2189,6 +2342,7 @@ class PlayerPreferences(context: Context) {
         .map { preferences ->
             preferences[Keys.PLAY_DURING_CALLS] ?: false
         }
+        .distinctUntilChanged()
 
     suspend fun setPlayDuringCalls(enabled: Boolean) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -2200,6 +2354,7 @@ class PlayerPreferences(context: Context) {
         .map { preferences ->
             preferences[Keys.MINI_PLAYER_SHOW_SKIP_CONTROLS] ?: false
         }
+        .distinctUntilChanged()
 
     suspend fun setMiniPlayerShowSkipControls(show: Boolean) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -2211,6 +2366,7 @@ class PlayerPreferences(context: Context) {
         .map { preferences ->
             preferences[Keys.MINI_PLAYER_SHOW_NEXT_PREV_CONTROLS] ?: false
         }
+        .distinctUntilChanged()
 
     suspend fun setMiniPlayerShowNextPrevControls(show: Boolean) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -2222,15 +2378,19 @@ class PlayerPreferences(context: Context) {
 
     val deepFlowActive: Flow<Boolean> = context.playerPreferencesDataStore.data
         .map { preferences -> preferences[Keys.DEEP_FLOW_ACTIVE] ?: false }
+        .distinctUntilChanged()
 
     val deepFlowActivatedAt: Flow<Long> = context.playerPreferencesDataStore.data
         .map { preferences -> preferences[Keys.DEEP_FLOW_ACTIVATED_AT] ?: 0L }
+        .distinctUntilChanged()
 
     val deepFlowExpireHours: Flow<Int> = context.playerPreferencesDataStore.data
         .map { preferences -> preferences[Keys.DEEP_FLOW_EXPIRE_HOURS] ?: 4 }
+        .distinctUntilChanged()
 
     val deepFlowSaveToHistory: Flow<Boolean> = context.playerPreferencesDataStore.data
         .map { preferences -> preferences[Keys.DEEP_FLOW_SAVE_HISTORY] ?: false }
+        .distinctUntilChanged()
 
     suspend fun setDeepFlowSaveToHistory(enabled: Boolean) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -2267,6 +2427,7 @@ class PlayerPreferences(context: Context) {
                 )
             }.getOrDefault(LocalDataManager.AutoBackupFrequency.NONE)
         }
+        .distinctUntilChanged()
 
     suspend fun setAutoBackupFrequency(frequency: LocalDataManager.AutoBackupFrequency) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -2276,6 +2437,7 @@ class PlayerPreferences(context: Context) {
 
     val autoBackupFolderUri: Flow<String?> = context.playerPreferencesDataStore.data
         .map { preferences -> preferences[Keys.AUTO_BACKUP_FOLDER_URI]?.takeIf { it.isNotBlank() } }
+        .distinctUntilChanged()
 
     suspend fun setAutoBackupFolderUri(uri: String?) {
         context.playerPreferencesDataStore.edit { preferences ->
@@ -2292,6 +2454,7 @@ class PlayerPreferences(context: Context) {
                 )
             }.getOrDefault(LocalDataManager.AutoBackupType.APP_DATA)
         }
+        .distinctUntilChanged()
 
     suspend fun setAutoBackupType(type: LocalDataManager.AutoBackupType) {
         context.playerPreferencesDataStore.edit { preferences ->
