@@ -62,7 +62,7 @@ jobs:
       - name: Build all APKs
         run: >
           ./gradlew assembleGithubRelease assembleGithubNightly assembleFossRelease
-          --parallel --build-cache --no-daemon --stacktrace
+          --parallel --build-cache --no-daemon --stacktrace --info --scan -Dscan.acceptTos=yes
         env:
           STORE_PASSWORD: ${{ secrets.STORE_PASSWORD }}
           KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
