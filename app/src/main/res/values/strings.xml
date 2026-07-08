@@ -41,7 +41,7 @@
 <string name="local_media_permission_body">Allow access to your media so Flow can find and play local videos and music.</string>
 <string name="local_media_grant">Grant access</string>
 <string name="library_settings_data_header">
-<![CDATA[ Settings & Data ]]>
+<![CDATA[ Settings &amp; Data ]]>
 </string>
 <string name="library_manage_data_label">Manage Data</string>
 <string name="library_manage_data_subtitle">Clear cache and history</string>
@@ -176,7 +176,7 @@
 <string name="not_interested">Not interested</string>
     <string name="not_interested_toast">Got it! You\'ll see less content like this.</string>
     <string name="quick_actions_error_template">Error: %1$s</string>
-<string name="details_metadata">Details & Metadata</string>
+<string name="details_metadata">Details &amp; Metadata</string>
 <string name="mark_as_watched">Mark as watched</string>
 <string name="mark_as_watched_toast">Marked as watched — your recommendations will improve!</string>
 <string name="i_like_this">I want more like this</string>
@@ -192,7 +192,7 @@
 <string name="uploaded">Uploaded</string>
 <string name="itag">iTag</string>
 <string name="mime_type">Mime Type</string>
-<!--  Video Status & Metadata  -->
+<!--  Video Status &amp; Metadata  -->
 <string name="status_upcoming">UPCOMING</string>
 <string name="status_live">LIVE</string>
 <string name="video_metadata_template">%1$s • %2$s • %3$s</string>
@@ -421,7 +421,7 @@
 <string name="deep_flow_duration_12h">12 hours</string>
 <string name="deep_flow_duration_24h">24 hours</string>
 <string name="settings_header_appearance">Appearance</string>
-<string name="settings_header_content_playback">Content & Playback</string>
+<string name="settings_header_content_playback">Content &amp; Playback</string>
 <string name="settings_header_data_management">Data Management</string>
 <string name="settings_header_about">About</string>
 <string name="settings_header_notifications">Notifications</string>
@@ -467,7 +467,7 @@
 <string name="settings_item_proxy_subtitle">Route remote traffic through HTTP or SOCKS5</string>
 <string name="settings_item_account_login">Account Login</string>
 <string name="settings_item_account_login_subtitle">Sign in with a YouTube cookie to reduce playback errors</string>
-<string name="settings_item_quality">Video & Music Quality</string>
+<string name="settings_item_quality">Video &amp; Music Quality</string>
 <string name="settings_item_quality_subtitle">Video resolution and music audio quality</string>
 <string name="settings_item_content_display">Content Display</string>
 <string name="settings_item_content_display_subtitle">Grid size, thumbnails, layout</string>
@@ -478,7 +478,7 @@
 <string name="settings_item_downloads">Download Settings</string>
 <string name="settings_item_downloads_subtitle">Performance, Storage, Threads</string>
 <string name="settings_item_region">Trending Region</string>
-<string name="settings_item_search_history">Search & History</string>
+<string name="settings_item_search_history">Search &amp; History</string>
 <string name="settings_item_search_history_subtitle">Clear history, manage suggestions</string>
 <string name="settings_item_time_management">Time Management</string>
 <string name="settings_item_time_management_subtitle">Usage stats, Bedtime reminders</string>
@@ -488,7 +488,7 @@
 <string name="settings_item_import_data_subtitle">Restore from backup or import from other apps</string>
 <string name="settings_item_about_flow">About Flow</string>
 <string name="settings_item_about_flow_subtitle">Version, License, Contributors</string>
-<string name="settings_item_support">Support & Donations</string>
+<string name="settings_item_support">Support &amp; Donations</string>
 <string name="settings_item_support_subtitle">Help support the development of Flow</string>
 <string name="settings_region_dialog_title">Select Region</string>
 <string name="settings_language_dialog_title">Select App Language</string>
@@ -575,7 +575,7 @@
 <string name="style_squiggly">Squiggly</string>
 <string name="style_slim">Ultra Slim</string>
 <string name="player_appearance_gestures_header">Gestures</string>
-<string name="player_appearance_swipe_gestures_title">Brightness & Volume Gestures</string>
+<string name="player_appearance_swipe_gestures_title">Brightness &amp; Volume Gestures</string>
 <string name="player_appearance_swipe_gestures_subtitle">Swipe left/right edge to adjust brightness and volume in fullscreen</string>
 <string name="player_appearance_brightness_gesture_title">Brightness Gesture</string>
 <string name="player_appearance_brightness_gesture_subtitle">Swipe the left edge in fullscreen to adjust brightness</string>
@@ -615,21 +615,21 @@
 <string name="lyrics_provider_better_lyrics">Better Lyrics</string>
 <string name="lyrics_provider_simpmusic">SimpMusic</string>
 <string name="lyrics_provider_lyrics_plus">LyricsPlus</string>
-<!--  Theme Names & Descriptions  -->
+<!--  Theme Names &amp; Descriptions  -->
 <string name="theme_name_system_default">System Default</string>
 <string name="theme_desc_system_default">Synchronize with device theme</string>
 <string name="theme_name_material_you">Material You</string>
 <string name="theme_desc_material_you">Wallpaper colors on Android 12+</string>
 <string name="theme_name_pure_light">Pure Light</string>
-<string name="theme_desc_pure_light">Clean & minimal</string>
+<string name="theme_desc_pure_light">Clean &amp; minimal</string>
 <string name="theme_name_mint_fresh">Mint Fresh</string>
-<string name="theme_desc_mint_fresh">Cool & refreshing</string>
+<string name="theme_desc_mint_fresh">Cool &amp; refreshing</string>
 <string name="theme_name_rose_petal">Rose Petal</string>
-<string name="theme_desc_rose_petal">Warm & gentle</string>
+<string name="theme_desc_rose_petal">Warm &amp; gentle</string>
 <string name="theme_name_sky_blue">Sky Blue</string>
-<string name="theme_desc_sky_blue">Open & airy</string>
+<string name="theme_desc_sky_blue">Open &amp; airy</string>
 <string name="theme_name_cream_paper">Cream Paper</string>
-<string name="theme_desc_cream_paper">Warm & cozy</string>
+<string name="theme_desc_cream_paper">Warm &amp; cozy</string>
 <string name="theme_name_classic_dark">Classic Dark</string>
 <string name="theme_desc_classic_dark">Easy on the eyes</string>
 <string name="theme_name_true_black">True Black</string>
@@ -639,25 +639,25 @@
 <string name="theme_name_custom">Custom</string>
 <string name="theme_desc_custom">Create your own professional palette</string>
 <string name="theme_name_midnight">Midnight</string>
-<string name="theme_desc_midnight">Deep & focused</string>
+<string name="theme_desc_midnight">Deep &amp; focused</string>
 <string name="theme_name_deep_ocean">Deep Ocean</string>
 <string name="theme_desc_deep_ocean">Calm depths</string>
 <string name="theme_name_forest">Forest</string>
-<string name="theme_desc_forest">Natural & grounding</string>
+<string name="theme_desc_forest">Natural &amp; grounding</string>
 <string name="theme_name_lavender">Lavender</string>
-<string name="theme_desc_lavender">Soft & dreamy</string>
+<string name="theme_desc_lavender">Soft &amp; dreamy</string>
 <string name="theme_name_sunset">Sunset</string>
-<string name="theme_desc_sunset">Warm & vibrant</string>
+<string name="theme_desc_sunset">Warm &amp; vibrant</string>
 <string name="theme_name_nebula">Nebula</string>
-<string name="theme_desc_nebula">Cosmic & bold</string>
+<string name="theme_desc_nebula">Cosmic &amp; bold</string>
 <string name="theme_name_rose_gold">Rose Gold</string>
-<string name="theme_desc_rose_gold">Elegant & luxe</string>
+<string name="theme_desc_rose_gold">Elegant &amp; luxe</string>
 <string name="theme_name_arctic">Arctic</string>
 <string name="theme_desc_arctic">Frozen clarity</string>
 <string name="theme_name_mint_night">Mint Night</string>
 <string name="theme_desc_mint_night">Cool serenity</string>
 <string name="theme_name_crimson">Crimson</string>
-<string name="theme_desc_crimson">Bold & powerful</string>
+<string name="theme_desc_crimson">Bold &amp; powerful</string>
 <string name="theme_name_cosmic_void">Cosmic Void</string>
 <string name="theme_desc_cosmic_void">Infinite darkness</string>
 <string name="theme_name_solar_flare">Solar Flare</string>
@@ -665,11 +665,11 @@
 <string name="theme_name_cyberpunk">Cyberpunk</string>
 <string name="theme_desc_cyberpunk">Neon future</string>
 <string name="theme_name_royal_gold">Royal Gold</string>
-<string name="theme_desc_royal_gold">Prestigious & rich</string>
+<string name="theme_desc_royal_gold">Prestigious &amp; rich</string>
 <string name="theme_name_nordic">Nordic</string>
 <string name="theme_desc_nordic">Scandinavian calm</string>
 <string name="theme_name_espresso">Espresso</string>
-<string name="theme_desc_espresso">Rich & warm</string>
+<string name="theme_desc_espresso">Rich &amp; warm</string>
 <string name="theme_name_gunmetal">Gunmetal</string>
 <string name="theme_desc_gunmetal">Industrial edge</string>
 <!--  Content Settings  -->
@@ -713,7 +713,7 @@
 <string name="content_settings_title_lines_2">2 lines</string>
 <string name="content_settings_title_lines_3">3 lines</string>
 <string name="content_settings_title_lines_unlimited">No limit</string>
-<string name="content_settings_video_card_actions_title">Video card like & dislike buttons</string>
+<string name="content_settings_video_card_actions_title">Video card like &amp; dislike buttons</string>
 <string name="content_settings_video_card_actions_subtitle">Show thumbs up / thumbs down buttons on video cards to quickly tune your recommendations</string>
 <string name="content_settings_video_card_mark_watched_title">Video card mark as watched button</string>
 <string name="content_settings_video_card_mark_watched_subtitle">Show an eye button on full and compact video cards to quickly mark videos as watched</string>
@@ -766,7 +766,7 @@
 <string name="settings_search_nav_tab_subtitle">Show a quick-access Search tab in the bottom navigation bar.</string>
 <string name="nav_search">Search</string>
 <string name="settings_categories_nav_tab_title">Explore tab in navigation</string>
-<string name="settings_categories_nav_tab_subtitle">Show a Trending & Categories explore tab in the bottom navigation bar.</string>
+<string name="settings_categories_nav_tab_subtitle">Show a Trending &amp; Categories explore tab in the bottom navigation bar.</string>
 <string name="nav_explore">Explore</string>
 <string name="nav_more">More</string>
 <string name="categories_title">Categories</string>
@@ -1152,7 +1152,7 @@
     <string name="import_freetube_history_desc">Import your watch history from a FreeTube export JSON file.</string>
     <string name="import_newpipe_history">Import NewPipe History</string>
     <string name="import_newpipe_history_desc">Import your watch history from a NewPipe backup ZIP or newpipe.db file.</string>
-    <!-- YouTube Data Import (Watch History & Playlists) -->
+    <!-- YouTube Data Import (Watch History &amp; Playlists) -->
     <string name="import_yt_data_section_title">YouTube Data</string>
     <string name="import_yt_data_section_subtitle">Import additional data from YouTube Takeout</string>
     <string name="import_yt_watch_history">Import Watch History</string>
@@ -1266,7 +1266,7 @@
     <string name="btn_ok">OK</string>
     <string name="btn_copy">Copy</string>
     <string name="github_label">GitHub</string>
-    <!-- Playlists & Playlist Details -->
+    <!-- Playlists &amp; Playlist Details -->
     <string name="new_playlist_button">New Playlist</string>
     <string name="your_playlists_header">Your Playlists</string>
     <string name="saved_playlists_header">Saved Playlists</string>
@@ -1918,7 +1918,7 @@
 <!--  Date &amp; Time Display (#481)  -->
 <string name="settings_item_datetime">Date &amp; Time</string>
 <string name="settings_item_datetime_subtitle">Customize how upload dates are shown</string>
-<string name="datetime_title">Date & Time Display</string>
+<string name="datetime_title">Date &amp; Time Display</string>
 <string name="datetime_preview_header">Preview</string>
 <string name="datetime_mode_header">Time display</string>
 <string name="datetime_format_header">Exact date format</string>
@@ -1930,7 +1930,7 @@
 <string name="datetime_mode_both">Both</string>
 <string name="datetime_format_system">System default</string>
 <string name="datetime_format_iso_hint">ISO 8601</string>
-<string name="datetime_context_lists">Lists & cards</string>
+<string name="datetime_context_lists">Lists &amp; cards</string>
 <string name="datetime_context_watch">Watch page</string>
 <string name="datetime_context_description">Description</string>
 <string name="datetime_override_default">Default</string>
