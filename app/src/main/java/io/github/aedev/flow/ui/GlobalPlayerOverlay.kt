@@ -62,7 +62,7 @@ import com.arubr.smsvcodes.ui.screens.player.EnhancedVideoPlayerScreen
 import com.arubr.smsvcodes.ui.screens.player.VideoPlayerViewModel
 import com.arubr.smsvcodes.ui.screens.player.VideoPlayerUiState
 import com.arubr.smsvcodes.ui.screens.player.components.VideoPlayerSurface
-import com.arubr.smsvcodes.ui.uicomponents.FlowChaptersBottomSheet
+import com.arubr.smsvcodes.ui.components.FlowChaptersBottomSheet
 import com.arubr.smsvcodes.ui.components.Media3SubtitleOverlay
 import com.arubr.smsvcodes.ui.components.SubtitleStyle
 import com.arubr.smsvcodes.ui.screens.player.content.PlayerContent
@@ -88,7 +88,7 @@ import com.arubr.smsvcodes.data.model.Video
 import com.arubr.smsvcodes.player.EnhancedPlayerManager
 import com.arubr.smsvcodes.player.GlobalPlayerState
 import com.arubr.smsvcodes.player.PlayerHardwareController
-import com.arubr.smsvcodes..components.DraggablePlayerLayout
+import com.arubr.smsvcodes.ui.components.DraggablePlayerLayout
 import com.arubr.smsvcodes.ui.components.PlayerDraggableState
 import com.arubr.smsvcodes.ui.components.rememberPlayerDraggableState
 import com.arubr.smsvcodes.ui.components.PlayerSheetValue
