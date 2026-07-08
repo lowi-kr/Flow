@@ -1,11 +1,11 @@
-package io.github.aedev.flow.sync.protocol
+package com.arubr.smsvcodes.sync.protocol
 
-import io.github.aedev.flow.sync.canonical.CanonicalBrain
-import io.github.aedev.flow.sync.canonical.CanonicalLike
-import io.github.aedev.flow.sync.canonical.CanonicalPlaylist
-import io.github.aedev.flow.sync.canonical.CanonicalSetting
-import io.github.aedev.flow.sync.canonical.CanonicalSubscriptionGroup
-import io.github.aedev.flow.sync.canonical.CanonicalWatchHistory
+import com.arubr.smsvcodes.sync.canonical.CanonicalBrain
+import com.arubr.smsvcodes.sync.canonical.CanonicalLike
+import com.arubr.smsvcodes.sync.canonical.CanonicalPlaylist
+import com.arubr.smsvcodes.sync.canonical.CanonicalSetting
+import com.arubr.smsvcodes.sync.canonical.CanonicalSubscriptionGroup
+import com.arubr.smsvcodes.sync.canonical.CanonicalWatchHistory
 import kotlinx.serialization.KSerializer
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonArray

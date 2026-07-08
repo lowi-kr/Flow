@@ -4,9 +4,9 @@
  * This file is part of Flow (https://github.com/A-EDev/Flow).
  */
 
-package io.github.aedev.flow.data.shorts
+package com.arubr.smsvcodes.data.shorts
 
-import io.github.aedev.flow.data.recommendation.InteractionType
+import com.arubr.smsvcodes.data.recommendation.InteractionType
 
 /** Classified watch outcome for a Short. */
 data class ShortWatchSignal(

@@ -1,28 +1,28 @@
-package io.github.aedev.flow.sync.apply
+package com.arubr.smsvcodes.sync.apply
 
 import android.content.Context
-import io.github.aedev.flow.data.local.LikedVideosRepository
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.data.local.dao.PlaylistDao
-import io.github.aedev.flow.data.local.dao.SubscriptionGroupDao
-import io.github.aedev.flow.data.local.dao.VideoDao
-import io.github.aedev.flow.data.local.dao.WatchHistoryDao
-import io.github.aedev.flow.data.recommendation.FlowNeuroEngine
-import io.github.aedev.flow.sync.canonical.CanonicalBrain
-import io.github.aedev.flow.sync.canonical.CanonicalLike
-import io.github.aedev.flow.sync.canonical.CanonicalPlaylist
-import io.github.aedev.flow.sync.canonical.CanonicalSetting
-import io.github.aedev.flow.sync.canonical.CanonicalSubscriptionGroup
-import io.github.aedev.flow.sync.canonical.CanonicalWatchHistory
-import io.github.aedev.flow.sync.mapping.BrainMapper
-import io.github.aedev.flow.sync.mapping.LikesMapper
-import io.github.aedev.flow.sync.mapping.PlaylistMapper
-import io.github.aedev.flow.sync.mapping.SettingsMapper
-import io.github.aedev.flow.sync.mapping.SubscriptionsMapper
-import io.github.aedev.flow.sync.mapping.WatchHistoryMapper
-import io.github.aedev.flow.sync.merge.BrainCrdtState
-import io.github.aedev.flow.sync.merge.BrainCrdtStore
-import io.github.aedev.flow.sync.merge.BrainMerger
+import com.arubr.smsvcodes.data.local.LikedVideosRepository
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.data.local.dao.PlaylistDao
+import com.arubr.smsvcodes.data.local.dao.SubscriptionGroupDao
+import com.arubr.smsvcodes.data.local.dao.VideoDao
+import com.arubr.smsvcodes.data.local.dao.WatchHistoryDao
+import com.arubr.smsvcodes.data.recommendation.FlowNeuroEngine
+import com.arubr.smsvcodes.sync.canonical.CanonicalBrain
+import com.arubr.smsvcodes.sync.canonical.CanonicalLike
+import com.arubr.smsvcodes.sync.canonical.CanonicalPlaylist
+import com.arubr.smsvcodes.sync.canonical.CanonicalSetting
+import com.arubr.smsvcodes.sync.canonical.CanonicalSubscriptionGroup
+import com.arubr.smsvcodes.sync.canonical.CanonicalWatchHistory
+import com.arubr.smsvcodes.sync.mapping.BrainMapper
+import com.arubr.smsvcodes.sync.mapping.LikesMapper
+import com.arubr.smsvcodes.sync.mapping.PlaylistMapper
+import com.arubr.smsvcodes.sync.mapping.SettingsMapper
+import com.arubr.smsvcodes.sync.mapping.SubscriptionsMapper
+import com.arubr.smsvcodes.sync.mapping.WatchHistoryMapper
+import com.arubr.smsvcodes.sync.merge.BrainCrdtState
+import com.arubr.smsvcodes.sync.merge.BrainCrdtStore
+import com.arubr.smsvcodes.sync.merge.BrainMerger
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.flow.first
 import java.io.ByteArrayInputStream
@@ -142,8 +142,8 @@ class SyncDataAccess @Inject constructor(
 
     private fun resolveLocalId(
         cp: CanonicalPlaylist,
-        bySyncId: Map<String, io.github.aedev.flow.data.local.entity.PlaylistEntity>,
-        byYoutubeId: Map<String, io.github.aedev.flow.data.local.entity.PlaylistEntity>,
+        bySyncId: Map<String, com.arubr.smsvcodes.data.local.entity.PlaylistEntity>,
+        byYoutubeId: Map<String, com.arubr.smsvcodes.data.local.entity.PlaylistEntity>,
     ): String? {
         if (cp.syncId == CanonicalPlaylist.RESERVED_WATCH_LATER) return PlaylistMapper.WATCH_LATER_ID
         bySyncId[cp.syncId]?.let { return it.id }

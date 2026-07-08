@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.sync
+package com.arubr.smsvcodes.ui.screens.sync
 
 import android.Manifest
 import android.content.pm.PackageManager
@@ -48,10 +48,10 @@ import androidx.compose.ui.unit.dp
 import androidx.core.content.ContextCompat
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import io.github.aedev.flow.R
-import io.github.aedev.flow.sync.SyncState
-import io.github.aedev.flow.sync.protocol.SyncCollection
-import io.github.aedev.flow.sync.protocol.SyncRole
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.sync.SyncState
+import com.arubr.smsvcodes.sync.protocol.SyncCollection
+import com.arubr.smsvcodes.sync.protocol.SyncRole
 import kotlinx.coroutines.delay
 
 private val COLLECTION_KEYS = listOf(

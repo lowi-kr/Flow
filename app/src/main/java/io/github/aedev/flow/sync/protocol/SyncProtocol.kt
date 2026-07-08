@@ -1,9 +1,9 @@
-package io.github.aedev.flow.sync.protocol
+package com.arubr.smsvcodes.sync.protocol
 
-import io.github.aedev.flow.sync.apply.PeerInfo
-import io.github.aedev.flow.sync.apply.ReceivedCollection
-import io.github.aedev.flow.sync.crypto.DirectionalKeys
-import io.github.aedev.flow.sync.transport.SyncConnection
+import com.arubr.smsvcodes.sync.apply.PeerInfo
+import com.arubr.smsvcodes.sync.apply.ReceivedCollection
+import com.arubr.smsvcodes.sync.crypto.DirectionalKeys
+import com.arubr.smsvcodes.sync.transport.SyncConnection
 import javax.crypto.AEADBadTagException
 
 enum class SyncRole { SENDER, RECEIVER }

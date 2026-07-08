@@ -1528,7 +1528,7 @@ fun GlobalPlayerOverlay(
                             }
                             .sortedByDescending { VideoCodecUtils.qualityHeightFromStream(it) }
                             .map { stream ->
-                                io.github.aedev.flow.player.dlna.CastStreamVariant(
+                                com.arubr.smsvcodes.player.dlna.CastStreamVariant(
                                     url = stream.content ?: stream.url ?: "",
                                     width = stream.width.takeIf { it > 0 } ?: (stream.height * 16 / 9),
                                     height = stream.height,

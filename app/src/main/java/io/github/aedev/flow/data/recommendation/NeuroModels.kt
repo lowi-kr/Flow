@@ -15,7 +15,7 @@
 package com.arubr.smsvcodes.data.recommendation
 
 import androidx.annotation.StringRes
-import io.github.aedev.flow.R
+import com.arubr.smsvcodes.R
 import java.util.Calendar
 
 /**

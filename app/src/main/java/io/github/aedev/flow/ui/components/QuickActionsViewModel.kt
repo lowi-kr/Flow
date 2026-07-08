@@ -127,7 +127,7 @@ class QuickActionsViewModel @Inject constructor(
             } catch (e: Exception) {
                 Toast.makeText(
                     context,
-                    context.getString(io.github.aedev.flow.R.string.quick_actions_error_template, e.message),
+                    context.getString(com.arubr.smsvcodes.R.string.quick_actions_error_template, e.message),
                     Toast.LENGTH_SHORT
                 ).show()
             }
@@ -154,7 +154,7 @@ class QuickActionsViewModel @Inject constructor(
                 android.util.Log.e("QuickActionsViewModel", "Error toggling Watch Later", e)
                 Toast.makeText(
                     context,
-                    context.getString(io.github.aedev.flow.R.string.quick_actions_error_template, e.message),
+                    context.getString(com.arubr.smsvcodes.R.string.quick_actions_error_template, e.message),
                     Toast.LENGTH_SHORT
                 ).show()
             }
@@ -180,7 +180,7 @@ class QuickActionsViewModel @Inject constructor(
             } catch (e: Exception) {
                 Toast.makeText(
                     context,
-                    context.getString(io.github.aedev.flow.R.string.quick_actions_error_template, e.message),
+                    context.getString(com.arubr.smsvcodes.R.string.quick_actions_error_template, e.message),
                     Toast.LENGTH_SHORT
                 ).show()
             }
@@ -200,13 +200,13 @@ class QuickActionsViewModel @Inject constructor(
                 )
                 Toast.makeText(
                     context,
-                    context.getString(io.github.aedev.flow.R.string.not_interested_toast),
+                    context.getString(com.arubr.smsvcodes.R.string.not_interested_toast),
                     Toast.LENGTH_SHORT
                 ).show()
             } catch (e: Exception) {
                 Toast.makeText(
                     context,
-                    context.getString(io.github.aedev.flow.R.string.quick_actions_error_template, e.message),
+                    context.getString(com.arubr.smsvcodes.R.string.quick_actions_error_template, e.message),
                     Toast.LENGTH_SHORT
                 ).show()
             }
@@ -253,7 +253,7 @@ class QuickActionsViewModel @Inject constructor(
             } catch (e: Exception) {
                 Toast.makeText(
                     context,
-                    context.getString(io.github.aedev.flow.R.string.quick_actions_error_template, e.message),
+                    context.getString(com.arubr.smsvcodes.R.string.quick_actions_error_template, e.message),
                     Toast.LENGTH_SHORT
                 ).show()
             }
@@ -282,7 +282,7 @@ class QuickActionsViewModel @Inject constructor(
             } catch (e: Exception) {
                 Toast.makeText(
                     context,
-                    context.getString(io.github.aedev.flow.R.string.quick_actions_error_template, e.message),
+                    context.getString(com.arubr.smsvcodes.R.string.quick_actions_error_template, e.message),
                     Toast.LENGTH_SHORT
                 ).show()
             }
@@ -475,7 +475,7 @@ class QuickActionsViewModel @Inject constructor(
             } catch (e: Exception) {
                 Toast.makeText(
                     context,
-                    context.getString(io.github.aedev.flow.R.string.quick_actions_error_template, e.message),
+                    context.getString(com.arubr.smsvcodes.R.string.quick_actions_error_template, e.message),
                     Toast.LENGTH_SHORT
                 ).show()
             }

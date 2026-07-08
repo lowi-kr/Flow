@@ -26,7 +26,7 @@ import androidx.media3.ui.PlayerView
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
 import coil.size.Precision
-import io.github.aedev.flow.R
+import com.arubr.smsvcodes.R
 
 @Composable
 fun PlayerArtwork(

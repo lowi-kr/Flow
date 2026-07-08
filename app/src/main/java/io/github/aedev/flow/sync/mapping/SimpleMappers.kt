@@ -1,13 +1,13 @@
-package io.github.aedev.flow.sync.mapping
+package com.arubr.smsvcodes.sync.mapping
 
-import io.github.aedev.flow.data.local.LikedVideoInfo
-import io.github.aedev.flow.data.local.entity.SubscriptionGroupEntity
-import io.github.aedev.flow.data.local.entity.WatchHistoryEntity
-import io.github.aedev.flow.sync.canonical.CanonicalLike
-import io.github.aedev.flow.sync.canonical.CanonicalLikeMeta
-import io.github.aedev.flow.sync.canonical.CanonicalSubscriptionGroup
-import io.github.aedev.flow.sync.canonical.CanonicalWatchHistory
-import io.github.aedev.flow.sync.identity.Hlc
+import com.arubr.smsvcodes.data.local.LikedVideoInfo
+import com.arubr.smsvcodes.data.local.entity.SubscriptionGroupEntity
+import com.arubr.smsvcodes.data.local.entity.WatchHistoryEntity
+import com.arubr.smsvcodes.sync.canonical.CanonicalLike
+import com.arubr.smsvcodes.sync.canonical.CanonicalLikeMeta
+import com.arubr.smsvcodes.sync.canonical.CanonicalSubscriptionGroup
+import com.arubr.smsvcodes.sync.canonical.CanonicalWatchHistory
+import com.arubr.smsvcodes.sync.identity.Hlc
 
 /**
  * Pure entity ⇄ canonical mappers for the simpler collections.

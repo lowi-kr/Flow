@@ -1,6 +1,6 @@
-package io.github.aedev.flow.sync.merge
+package com.arubr.smsvcodes.sync.merge
 
-import io.github.aedev.flow.sync.identity.Hlc
+import com.arubr.smsvcodes.sync.identity.Hlc
 
 /**
  * Shared CRDT primitives. Every helper here is **commutative, associative, and

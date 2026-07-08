@@ -1,10 +1,10 @@
-package io.github.aedev.flow.ui.screens.sync
+package com.arubr.smsvcodes.ui.screens.sync
 
 import androidx.lifecycle.ViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
-import io.github.aedev.flow.sync.SyncManager
-import io.github.aedev.flow.sync.SyncState
-import io.github.aedev.flow.sync.protocol.SyncRole
+import com.arubr.smsvcodes.sync.SyncManager
+import com.arubr.smsvcodes.sync.SyncState
+import com.arubr.smsvcodes.sync.protocol.SyncRole
 import kotlinx.coroutines.flow.StateFlow
 import javax.inject.Inject
 

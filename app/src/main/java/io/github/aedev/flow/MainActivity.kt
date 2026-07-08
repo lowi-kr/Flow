@@ -507,7 +507,7 @@ class MainActivity : ComponentActivity() {
     override fun onKeyDown(keyCode: Int, event: KeyEvent): Boolean {
         if (
             (keyCode == KeyEvent.KEYCODE_VOLUME_UP || keyCode == KeyEvent.KEYCODE_VOLUME_DOWN) &&
-            io.github.aedev.flow.player.PlayerHardwareController.fullscreenVideoActive.value
+            com.arubr.smsvcodes.player.PlayerHardwareController.fullscreenVideoActive.value
         ) {
             val audioManager = getSystemService(Context.AUDIO_SERVICE) as? AudioManager
             if (audioManager != null) {
@@ -519,14 +519,14 @@ class MainActivity : ComponentActivity() {
                 audioManager.adjustStreamVolume(
                     AudioManager.STREAM_MUSIC,
                     direction,
-                    if (io.github.aedev.flow.player.PlayerHardwareController.inAppVolumeOverlayEnabled.value) {
+                    if (com.arubr.smsvcodes.player.PlayerHardwareController.inAppVolumeOverlayEnabled.value) {
                         0
                     } else {
                         AudioManager.FLAG_SHOW_UI
                     }
                 )
-                if (io.github.aedev.flow.player.PlayerHardwareController.inAppVolumeOverlayEnabled.value) {
-                    io.github.aedev.flow.player.PlayerHardwareController.notifyVolumeKey()
+                if (com.arubr.smsvcodes.player.PlayerHardwareController.inAppVolumeOverlayEnabled.value) {
+                    com.arubr.smsvcodes.player.PlayerHardwareController.notifyVolumeKey()
                 }
                 return true
             }
@@ -537,7 +537,7 @@ class MainActivity : ComponentActivity() {
     override fun onKeyUp(keyCode: Int, event: KeyEvent): Boolean {
         if (
             (keyCode == KeyEvent.KEYCODE_VOLUME_UP || keyCode == KeyEvent.KEYCODE_VOLUME_DOWN) &&
-            io.github.aedev.flow.player.PlayerHardwareController.fullscreenVideoActive.value
+            com.arubr.smsvcodes.player.PlayerHardwareController.fullscreenVideoActive.value
         ) {
             return true
         }
@@ -602,7 +602,7 @@ class MainActivity : ComponentActivity() {
     override fun onTrimMemory(level: Int) {
         super.onTrimMemory(level)
         if (level >= android.content.ComponentCallbacks2.TRIM_MEMORY_RUNNING_CRITICAL) {
-            io.github.aedev.flow.player.EnhancedPlayerManager.getInstance()
+            com.arubr.smsvcodes.player.EnhancedPlayerManager.getInstance()
                 .handleCriticalMemoryPressure()
         }
     }

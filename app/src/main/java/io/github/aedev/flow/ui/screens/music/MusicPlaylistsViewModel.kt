@@ -103,7 +103,7 @@ class MusicPlaylistsViewModel @Inject constructor(
 
     /** Seed a blank music playlist/album cover from its first track's thumbnail (post-enrichment). */
     private suspend fun recoverBlankAlbumCovers(
-        playlistDao: io.github.aedev.flow.data.local.dao.PlaylistDao,
+        playlistDao: com.arubr.smsvcodes.data.local.dao.PlaylistDao,
     ) {
         playlistDao.getMusicPlaylistsMissingThumbnail().forEach { id ->
             val thumb = playlistDao.getFirstVideoThumbnail(id)

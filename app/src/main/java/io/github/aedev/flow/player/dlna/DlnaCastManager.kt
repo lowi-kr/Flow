@@ -4,7 +4,7 @@ import android.content.Context
 import android.net.wifi.WifiManager
 import android.os.SystemClock
 import android.util.Log
-import io.github.aedev.flow.player.stream.VideoCodecUtils
+import com.arubr.smsvcodes.player.stream.VideoCodecUtils
 import org.schabi.newpipe.extractor.stream.StreamInfo
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers

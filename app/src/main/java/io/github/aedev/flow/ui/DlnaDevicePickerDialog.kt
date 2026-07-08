@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui
+package com.arubr.smsvcodes.ui
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
@@ -23,7 +23,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.player.dlna.DlnaDevice
+import com.arubr.smsvcodes.player.dlna.DlnaDevice
 
 /** DLNA / UPnP device-picker dialog shown when the cast button is pressed. */
 @Composable

@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.player.components
+package com.arubr.smsvcodes.ui.screens.player.components
 
 import android.graphics.Bitmap
 import android.os.Build
@@ -33,7 +33,7 @@ import androidx.compose.ui.unit.dp
 import androidx.media3.common.util.UnstableApi
 import androidx.media3.ui.PlayerView
 import androidx.palette.graphics.Palette
-import io.github.aedev.flow.player.EnhancedPlayerManager
+import com.arubr.smsvcodes.player.EnhancedPlayerManager
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.isActive

@@ -53,22 +53,22 @@ object DatabaseModule {
     }
 
     @Provides
-    fun provideSubscriptionGroupDao(database: AppDatabase): io.github.aedev.flow.data.local.dao.SubscriptionGroupDao {
+    fun provideSubscriptionGroupDao(database: AppDatabase): com.arubr.smsvcodes.data.local.dao.SubscriptionGroupDao {
         return database.subscriptionGroupDao()
     }
 
     @Provides
-    fun provideWatchHistoryDao(database: AppDatabase): io.github.aedev.flow.data.local.dao.WatchHistoryDao {
+    fun provideWatchHistoryDao(database: AppDatabase): com.arubr.smsvcodes.data.local.dao.WatchHistoryDao {
         return database.watchHistoryDao()
     }
 
     @Provides
-    fun provideSyncLogDao(database: AppDatabase): io.github.aedev.flow.data.local.dao.SyncLogDao {
+    fun provideSyncLogDao(database: AppDatabase): com.arubr.smsvcodes.data.local.dao.SyncLogDao {
         return database.syncLogDao()
     }
 
     @Provides
-    fun provideSyncPeerDao(database: AppDatabase): io.github.aedev.flow.data.local.dao.SyncPeerDao {
+    fun provideSyncPeerDao(database: AppDatabase): com.arubr.smsvcodes.data.local.dao.SyncPeerDao {
         return database.syncPeerDao()
     }
 }

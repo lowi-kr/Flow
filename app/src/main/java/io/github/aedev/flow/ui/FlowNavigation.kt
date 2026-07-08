@@ -348,7 +348,7 @@ fun NavGraphBuilder.flowAppGraph(
     composable("settings/sync_devices") {
         currentRoute.value = "settings/sync_devices"
         showBottomNav.value = false
-        io.github.aedev.flow.ui.screens.sync.SyncScreen(
+        com.arubr.smsvcodes.ui.screens.sync.SyncScreen(
             onNavigateBack = { navController.popBackStack() }
         )
     }

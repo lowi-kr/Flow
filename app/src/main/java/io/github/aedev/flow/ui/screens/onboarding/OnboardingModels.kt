@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.onboarding
+package com.arubr.smsvcodes.ui.screens.onboarding
 
 internal const val MIN_TOPICS = 3
 internal const val STAGGER_DELAY_MS = 50L

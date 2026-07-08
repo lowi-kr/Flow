@@ -675,7 +675,7 @@ object YouTube {
         )
     }
 
-    private fun io.github.aedev.flow.innertube.models.response.ChannelSearchResponse.VideoRenderer.channelAvatarUrls(
+    private fun com.arubr.smsvcodes.innertube.models.response.ChannelSearchResponse.VideoRenderer.channelAvatarUrls(
         fallback: String
     ): List<String> {
         val supported = channelThumbnailSupportedRenderers

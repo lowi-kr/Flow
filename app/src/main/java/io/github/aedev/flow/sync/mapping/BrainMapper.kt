@@ -1,12 +1,12 @@
-package io.github.aedev.flow.sync.mapping
+package com.arubr.smsvcodes.sync.mapping
 
-import io.github.aedev.flow.sync.canonical.CanonicalBrain
-import io.github.aedev.flow.sync.canonical.CanonicalBrainVectors
-import io.github.aedev.flow.sync.canonical.CanonicalFeedEntry
-import io.github.aedev.flow.sync.canonical.CanonicalRejectionSignal
-import io.github.aedev.flow.sync.canonical.CanonicalTopicEvidence
-import io.github.aedev.flow.sync.canonical.CanonicalVector
-import io.github.aedev.flow.sync.canonical.GCounter
+import com.arubr.smsvcodes.sync.canonical.CanonicalBrain
+import com.arubr.smsvcodes.sync.canonical.CanonicalBrainVectors
+import com.arubr.smsvcodes.sync.canonical.CanonicalFeedEntry
+import com.arubr.smsvcodes.sync.canonical.CanonicalRejectionSignal
+import com.arubr.smsvcodes.sync.canonical.CanonicalTopicEvidence
+import com.arubr.smsvcodes.sync.canonical.CanonicalVector
+import com.arubr.smsvcodes.sync.canonical.GCounter
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
 
@@ -14,7 +14,7 @@ import kotlinx.serialization.json.Json
  * Mirror of the app's on-disk `SerializableBrain` (NeuroStorage, schemaVersion 13)
  * Maps the brain to/from [CanonicalBrain]. Additive counters become per-device
  * G-Counters (the per-device breakdown comes from the sync sidecar); learned vectors and
- * timestamp maps are join-semilattice merges (max/union) — see [io.github.aedev.flow.sync.merge.BrainMerger].
+ * timestamp maps are join-semilattice merges (max/union) — see [com.arubr.smsvcodes.sync.merge.BrainMerger].
  */
 object BrainMapper {
 

@@ -4,17 +4,17 @@
  * This file is part of Flow (https://github.com/A-EDev/Flow).
  */
 
-package io.github.aedev.flow.data.recommendation.eval
+package com.arubr.smsvcodes.data.recommendation.eval
 
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.data.recommendation.ContentVector
-import io.github.aedev.flow.data.recommendation.FeedEntry
-import io.github.aedev.flow.data.recommendation.NeuroScoring
-import io.github.aedev.flow.data.recommendation.NeuroTokenizer
-import io.github.aedev.flow.data.recommendation.ScoredVideo
-import io.github.aedev.flow.data.recommendation.UserBrain
-import io.github.aedev.flow.data.recommendation.eval.NeuroEval.vec
-import io.github.aedev.flow.data.recommendation.eval.NeuroEval.video
+import com.arubr.smsvcodes.data.recommendation.ContentVector
+import com.arubr.smsvcodes.data.recommendation.FeedEntry
+import com.arubr.smsvcodes.data.recommendation.NeuroScoring
+import com.arubr.smsvcodes.data.recommendation.NeuroTokenizer
+import com.arubr.smsvcodes.data.recommendation.ScoredVideo
+import com.arubr.smsvcodes.data.recommendation.UserBrain
+import com.arubr.smsvcodes.data.recommendation.eval.NeuroEval.vec
+import com.arubr.smsvcodes.data.recommendation.eval.NeuroEval.video
 import org.junit.Test
 
 

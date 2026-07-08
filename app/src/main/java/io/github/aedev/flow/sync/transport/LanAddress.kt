@@ -1,4 +1,4 @@
-package io.github.aedev.flow.sync.transport
+package com.arubr.smsvcodes.sync.transport
 
 import java.net.Inet4Address
 import java.net.NetworkInterface

@@ -53,7 +53,7 @@ fun PlayerBottomSheetsContainer(
     renderChaptersSheet: Boolean = true,
     renderSleepTimerSheet: Boolean = true
 ) {
-    val shareWithoutText by remember { io.github.aedev.flow.data.local.PlayerPreferences(context).shareWithoutText }
+    val shareWithoutText by remember { com.arubr.smsvcodes.data.local.PlayerPreferences(context).shareWithoutText }
         .collectAsStateWithLifecycle(initialValue = false)
 
     val sortedComments = remember(comments, screenState.commentSortFilter) {

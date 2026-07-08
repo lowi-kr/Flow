@@ -1,11 +1,11 @@
-package io.github.aedev.flow.sync.merge
+package com.arubr.smsvcodes.sync.merge
 
-import io.github.aedev.flow.sync.canonical.CanonicalBrain
-import io.github.aedev.flow.sync.canonical.CanonicalBrainVectors
-import io.github.aedev.flow.sync.canonical.CanonicalFeedEntry
-import io.github.aedev.flow.sync.canonical.CanonicalRejectionSignal
-import io.github.aedev.flow.sync.canonical.CanonicalTopicEvidence
-import io.github.aedev.flow.sync.canonical.CanonicalVector
+import com.arubr.smsvcodes.sync.canonical.CanonicalBrain
+import com.arubr.smsvcodes.sync.canonical.CanonicalBrainVectors
+import com.arubr.smsvcodes.sync.canonical.CanonicalFeedEntry
+import com.arubr.smsvcodes.sync.canonical.CanonicalRejectionSignal
+import com.arubr.smsvcodes.sync.canonical.CanonicalTopicEvidence
+import com.arubr.smsvcodes.sync.canonical.CanonicalVector
 
 /**
  * Brain merge. Every field is a join-semilattice op so the merge is commutative,

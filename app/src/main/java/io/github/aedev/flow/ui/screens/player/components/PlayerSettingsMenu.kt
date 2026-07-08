@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.player.components
+package com.arubr.smsvcodes.ui.screens.player.components
 
 import androidx.activity.compose.BackHandler
 import androidx.compose.animation.core.Animatable
@@ -29,11 +29,11 @@ import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.player.*
-import io.github.aedev.flow.player.stream.VideoCodecUtils
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.player.*
+import com.arubr.smsvcodes.player.stream.VideoCodecUtils
 import androidx.compose.ui.res.stringResource
-import io.github.aedev.flow.R
+import com.arubr.smsvcodes.R
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -595,7 +595,7 @@ private fun PlayerSettingsSpeedPage(
     onSpeedSelected: (Float) -> Unit
 ) {
     val context = LocalContext.current
-    val playerPrefs = remember { io.github.aedev.flow.data.local.PlayerPreferences(context) }
+    val playerPrefs = remember { com.arubr.smsvcodes.data.local.PlayerPreferences(context) }
     val customSpeedsEnabled by playerPrefs.customSpeedsEnabled.collectAsState(initial = false)
     val customSpeedPresetsRaw by playerPrefs.customSpeedPresets.collectAsState(initial = "")
     val speedSliderEnabled by playerPrefs.speedSliderEnabled.collectAsState(initial = false)

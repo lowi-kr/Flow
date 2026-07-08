@@ -1388,7 +1388,7 @@ fun PlaybackSpeedSelectorDialog(
     onBack: (() -> Unit)? = null
 ) {
     val context = LocalContext.current
-    val playerPrefs = remember { io.github.aedev.flow.data.local.PlayerPreferences(context) }
+    val playerPrefs = remember { com.arubr.smsvcodes.data.local.PlayerPreferences(context) }
     val customSpeedsEnabled by playerPrefs.customSpeedsEnabled.collectAsState(initial = false)
     val customSpeedPresetsRaw by playerPrefs.customSpeedPresets.collectAsState(initial = "")
     val speedSliderEnabled by playerPrefs.speedSliderEnabled.collectAsState(initial = false)
