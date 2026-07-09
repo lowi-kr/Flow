@@ -7,6 +7,7 @@ import androidx.sqlite.db.SupportSQLiteDatabase
 import com.arubr.smsvcodes.data.local.dao.CacheDao
 import com.arubr.smsvcodes.data.local.dao.DownloadDao
 import com.arubr.smsvcodes.data.local.dao.DownloadedSongDao
+import com.arubr.smsvcodes.data.local.dao.HomeFeedCacheDao
 import com.arubr.smsvcodes.data.local.dao.NotificationDao
 import com.arubr.smsvcodes.data.local.dao.PlaylistDao
 import com.arubr.smsvcodes.data.local.dao.RecognitionHistoryDao
@@ -18,6 +19,7 @@ import com.arubr.smsvcodes.data.local.dao.WatchHistoryDao
 import com.arubr.smsvcodes.data.local.entity.DownloadEntity
 import com.arubr.smsvcodes.data.local.entity.DownloadItemEntity
 import com.arubr.smsvcodes.data.local.entity.DownloadedSongEntity
+import com.arubr.smsvcodes.data.local.entity.HomeFeedCacheEntity
 import com.arubr.smsvcodes.data.local.entity.MusicHomeCacheEntity
 import com.arubr.smsvcodes.data.local.entity.NotificationEntity
 import com.arubr.smsvcodes.data.local.entity.PlaylistEntity
