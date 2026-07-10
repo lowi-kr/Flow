@@ -13,6 +13,8 @@ import com.arubr.smsvcodes.data.model.Video
 import com.arubr.smsvcodes.data.local.ContentType
 import com.arubr.smsvcodes.innertube.YouTube
 import com.arubr.smsvcodes.utils.ThumbnailUrlResolver
+import com.arubr.smsvcodes.utils.avatarImageIdentityKey
+import com.arubr.smsvcodes.utils.distinctBestImageUrls
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import kotlinx.coroutines.withTimeoutOrNull
