@@ -21,6 +21,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
@@ -30,6 +31,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.viewmodel.compose.viewModel
 import coil3.compose.AsyncImage
 import io.github.aedev.flow.R
+import io.github.aedev.flow.ui.components.layout.topbar.FlowTopBar
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -51,23 +53,9 @@ fun LibraryScreen(
     Scaffold(
         contentWindowInsets = WindowInsets(0.dp),
         topBar = {
-            TopAppBar(
-                title = {
-                    Text(
-                        stringResource(R.string.library),
-                        style = MaterialTheme.typography.headlineMedium,
-                        fontWeight = FontWeight.Bold,
-                    )
-                },
-                navigationIcon = {
-                    IconButton(onClick = onBackClick) {
-                        Icon(Icons.Default.ArrowBack, stringResource(R.string.btn_back))
-                    }
-                },
-                colors =
-                    TopAppBarDefaults.topAppBarColors(
-                        containerColor = MaterialTheme.colorScheme.background,
-                    ),
+            FlowTopBar(
+                title = stringResource(R.string.library),
+                onBack = onBackClick,
             )
         },
     ) { padding ->
@@ -263,7 +251,7 @@ private fun FavoritesTab(
                     )
                     Spacer(Modifier.width(8.dp))
                     Text(
-                        stringResource(R.string.favorites_count_template, favorites.size),
+                        pluralStringResource(R.plurals.favorites_count_template, favorites.size, favorites.size),
                         style = MaterialTheme.typography.titleMedium,
                         fontWeight = FontWeight.SemiBold,
                     )

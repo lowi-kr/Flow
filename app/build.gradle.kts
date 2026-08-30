@@ -19,8 +19,8 @@ android {
         applicationId = "io.github.aedev.flow"
         minSdk = 26
         targetSdk = 36
-        versionCode = 17
-        versionName = "2.2.0"
+        versionCode = 18
+        versionName = "2.2.1"
 
         testInstrumentationRunner = "io.github.aedev.flow.HiltTestRunner"
         vectorDrawables {
@@ -152,7 +152,13 @@ android {
 
     packaging {
         resources {
-            excludes += "/META-INF/{AL2.0,LGPL2.1}"
+            excludes +=
+                listOf(
+                    "/META-INF/{AL2.0,LGPL2.1}",
+                    "/META-INF/INDEX.LIST",
+                    "/META-INF/DEPENDENCIES",
+                    "/META-INF/*.version",
+                )
         }
     }
 
@@ -294,7 +300,7 @@ dependencies {
     // library AARs (Compose, RecyclerView, ...) at build time; this applies them at runtime,
     // which matters for sideloaded/F-Droid installs that bypass Play's cloud profiles.
     implementation(libs.androidx.profileinstaller)
-    baselineProfile(project(":baselineprofile"))
+    baselineProfile(project(":benchmark"))
 
     // Desugaring for older Android versions
     coreLibraryDesugaring(libs.desugar.jdk.libs.nio)

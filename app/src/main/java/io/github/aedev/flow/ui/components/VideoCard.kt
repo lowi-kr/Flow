@@ -108,11 +108,12 @@ private fun VideoCollaborator.hasChannelCollaboratorSignal(): Boolean =
 internal fun List<VideoCollaborator>.displayCollaboratorChannelName(
     fallback: String,
     moreCollaboratorsText: String? = null,
+    conjunction: String,
 ): String {
     val names = map { it.name }.filter { it.isNotBlank() }
     return when {
         names.size > 2 && moreCollaboratorsText != null -> moreCollaboratorsText
-        names.size > 1 -> names.joinToString(" and ")
+        names.size > 1 -> names.joinToString(" $conjunction ")
         else -> fallback
     }
 }
@@ -129,8 +130,9 @@ internal fun rememberCollaboratorChannelDisplayName(
             firstName,
             (collaborators.size - 1).coerceAtLeast(0),
         )
-    return remember(fallback, collaborators, compactName) {
-        collaborators.displayCollaboratorChannelName(fallback, compactName)
+    val conjunction = stringResource(R.string.conjunction_and)
+    return remember(fallback, collaborators, compactName, conjunction) {
+        collaborators.displayCollaboratorChannelName(fallback, compactName, conjunction)
     }
 }
 
@@ -171,324 +173,6 @@ private fun UpcomingReminderBadge(modifier: Modifier = Modifier) {
                 Modifier
                     .size(20.dp)
                     .padding(4.dp),
-        )
-    }
-}
-
-@Composable
-fun VideoCard(
-    video: Video,
-    modifier: Modifier = Modifier,
-    onClick: () -> Unit,
-    onChannelClick: ((String) -> Unit)? = null,
-) {
-    var showQuickActions by remember { mutableStateOf(false) }
-    var showCollaborators by remember { mutableStateOf(false) }
-    val collaboratorItems = rememberCollaboratorItems(video)
-    val displayChannelName = rememberCollaboratorChannelDisplayName(video.channelName, collaboratorItems)
-    val openChannelOrCollaborators = {
-        if (collaboratorItems.size > 1) {
-            showCollaborators = true
-        } else {
-            onChannelClick?.invoke(video.channelId)
-        }
-    }
-    val dateSettings = rememberDateDisplaySettings()
-    val watchProgress = rememberWatchProgress(video.id)
-
-    val cardPreferences = LocalVideoCardPreferences.current
-    val deArrowBadgeEnabled = cardPreferences.deArrowBadgeEnabled
-    val deArrowResult = rememberDeArrowResult(video.id, cardPreferences.deArrowEnabled)
-    val displayTitle = deArrowResult?.title ?: video.title
-    val displayThumbnailUrl = deArrowResult?.thumbnailUrl ?: video.thumbnailUrl
-    val videoCardActionsEnabled = cardPreferences.actionsEnabled
-    val upcomingReminderIds = cardPreferences.upcomingReminderIds
-    val quickActionsVm: QuickActionsViewModel = hiltViewModel()
-    val interactionSource = remember { MutableInteractionSource() }
-    Column(
-        modifier =
-            modifier
-                .width(180.dp)
-                .pressScale(interactionSource)
-                .clip(RoundedCornerShape(16.dp))
-                .combinedClickable(
-                    interactionSource = interactionSource,
-                    indication = androidx.compose.material3.ripple(),
-                    onLongClick = { showQuickActions = true },
-                    onClick = onClick,
-                ).padding(4.dp),
-    ) {
-        // THUMBNAIL BOX
-        Box(
-            modifier =
-                Modifier
-                    .fillMaxWidth()
-                    .aspectRatio(16f / 9f)
-                    .clip(RoundedCornerShape(16.dp))
-                    .background(MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.5f))
-                    .thumbnailGradientOverlay(),
-        ) {
-            VideoThumbnailImage(
-                videoId = video.id,
-                model = displayThumbnailUrl,
-                contentDescription = displayTitle,
-                modifier = Modifier.fillMaxSize(),
-                contentScale = ContentScale.Crop,
-            )
-
-            if (video.isUpcoming) {
-                Surface(
-                    modifier =
-                        Modifier
-                            .align(Alignment.BottomEnd)
-                            .padding(8.dp),
-                    color = MaterialTheme.colorScheme.secondary.copy(alpha = 0.9f),
-                    shape = RoundedCornerShape(8.dp),
-                    border = BorderStroke(0.5.dp, Color.White.copy(alpha = 0.2f)),
-                ) {
-                    Text(
-                        text = stringResource(R.string.status_upcoming),
-                        style = MaterialTheme.typography.labelSmall,
-                        color = Color.White,
-                        modifier = Modifier.padding(horizontal = 6.dp, vertical = 2.dp),
-                        fontWeight = FontWeight.Bold,
-                    )
-                }
-            } else if (video.isLive || video.duration > 0) {
-                Surface(
-                    modifier =
-                        Modifier
-                            .align(Alignment.BottomEnd)
-                            .padding(8.dp),
-                    color = if (video.isLive) Color(0xFFCC0000).copy(alpha = 0.9f) else Color.Black.copy(alpha = 0.6f),
-                    shape = RoundedCornerShape(8.dp),
-                    border = BorderStroke(0.5.dp, Color.White.copy(alpha = 0.2f)),
-                ) {
-                    Text(
-                        text = if (video.isLive) stringResource(R.string.status_live) else formatDuration(video.duration),
-                        style = MaterialTheme.typography.labelSmall,
-                        color = Color.White,
-                        modifier = Modifier.padding(horizontal = 6.dp, vertical = 2.dp),
-                        fontWeight = FontWeight.Bold,
-                    )
-                }
-            }
-
-            if (video.isUpcoming && video.id in upcomingReminderIds) {
-                UpcomingReminderBadge(
-                    modifier =
-                        Modifier
-                            .align(Alignment.TopStart)
-                            .padding(8.dp),
-                )
-            }
-
-            // Watch progress bar
-            watchProgress?.let { progress ->
-                LinearProgressIndicator(
-                    progress = { progress },
-                    modifier =
-                        Modifier
-                            .align(Alignment.BottomStart)
-                            .fillMaxWidth()
-                            .height(3.dp),
-                    color = MaterialTheme.colorScheme.primary,
-                    trackColor = Color.Black.copy(alpha = 0.4f),
-                )
-            }
-
-            if (deArrowResult != null && deArrowBadgeEnabled) {
-                Surface(
-                    modifier =
-                        Modifier
-                            .align(Alignment.TopEnd)
-                            .padding(4.dp),
-                    shape = RoundedCornerShape(4.dp),
-                    color = MaterialTheme.colorScheme.primaryContainer.copy(alpha = 0.85f),
-                ) {
-                    Icon(
-                        imageVector = Icons.Outlined.AutoFixHigh,
-                        contentDescription = stringResource(R.string.dearrow_badge),
-                        tint = MaterialTheme.colorScheme.onPrimaryContainer,
-                        modifier =
-                            Modifier
-                                .size(16.dp)
-                                .padding(2.dp),
-                    )
-                }
-            }
-        }
-
-        Spacer(modifier = Modifier.height(10.dp))
-
-        // INFO ROW
-        Row(
-            modifier =
-                Modifier
-                    .fillMaxWidth()
-                    .padding(horizontal = 2.dp),
-            horizontalArrangement = Arrangement.spacedBy(10.dp),
-        ) {
-            ChannelAvatarStack(
-                urls = video.channelAvatarUrls(collaboratorItems),
-                contentDescription = displayChannelName,
-                avatarSize = 32.dp,
-                modifier =
-                    if (onChannelClick != null) {
-                        Modifier.clickable { openChannelOrCollaborators() }
-                    } else {
-                        Modifier
-                    },
-            )
-
-            Column(modifier = Modifier.weight(1f)) {
-                Text(
-                    text = displayTitle,
-                    style =
-                        MaterialTheme.typography.bodyMedium.copy(
-                            lineHeight = MaterialTheme.typography.bodyMedium.fontSize * 1.12f,
-                        ),
-                    fontWeight = FontWeight.SemiBold, // Stronger weight for readability
-                    maxLines = 2,
-                    overflow = TextOverflow.Ellipsis,
-                    color = MaterialTheme.colorScheme.onSurface,
-                )
-
-                Spacer(modifier = Modifier.height(6.dp))
-
-                // Metadata Row
-                Row(verticalAlignment = Alignment.CenterVertically) {
-                    val premiereDate = formatPremiereDate(video.uploadDate)
-                    val displayDate =
-                        remember(video.uploadDate, video.timestamp, dateSettings) {
-                            dateSettings.format(video.uploadDate, DateContext.LISTS, video.timestamp)
-                        }
-                    Text(
-                        text =
-                            if (video.isUpcoming) {
-                                premiereDate?.let { stringResource(R.string.premiere_date_prefix, it) }
-                                    ?: stringResource(R.string.premiere_soon)
-                            } else if (video.viewCount >= 0L) {
-                                stringResource(
-                                    R.string.video_metadata_short_template,
-                                    displayChannelName,
-                                    stringResource(R.string.views_template, formatViewCount(video.viewCount)),
-                                )
-                            } else {
-                                "$displayChannelName · $displayDate"
-                            },
-                        style = MaterialTheme.typography.labelSmall,
-                        color =
-                            if (video.isUpcoming) {
-                                MaterialTheme.colorScheme.primary
-                            } else {
-                                MaterialTheme.colorScheme.onSurfaceVariant
-                            },
-                        maxLines = 1,
-                        overflow = TextOverflow.Ellipsis,
-                        modifier =
-                            if (onChannelClick != null) {
-                                Modifier.clickable { openChannelOrCollaborators() }
-                            } else {
-                                Modifier
-                            },
-                    )
-                }
-            }
-
-            IconButton(
-                onClick = { showQuickActions = true },
-                modifier =
-                    Modifier
-                        .size(24.dp)
-                        .offset(x = 4.dp, y = (-4).dp), // Adjust for better alignment
-            ) {
-                Icon(
-                    imageVector = Icons.Default.MoreVert,
-                    contentDescription = stringResource(R.string.ui_options),
-                    modifier = Modifier.size(16.dp),
-                    tint = MaterialTheme.colorScheme.onSurfaceVariant,
-                )
-            }
-        }
-
-        // Like / Dislike action buttons
-        if (videoCardActionsEnabled) {
-            Spacer(modifier = Modifier.height(6.dp))
-            Row(
-                modifier =
-                    Modifier
-                        .fillMaxWidth()
-                        .padding(horizontal = 2.dp),
-                horizontalArrangement = Arrangement.spacedBy(4.dp),
-            ) {
-                Row(
-                    modifier =
-                        Modifier
-                            .weight(1f)
-                            .clip(RoundedCornerShape(8.dp))
-                            .clickable { quickActionsVm.markAsInteresting(video) }
-                            .padding(horizontal = 4.dp, vertical = 6.dp),
-                    horizontalArrangement = Arrangement.Center,
-                    verticalAlignment = Alignment.CenterVertically,
-                ) {
-                    Icon(
-                        Icons.Outlined.ThumbUp,
-                        contentDescription = stringResource(R.string.i_like_this),
-                        modifier = Modifier.size(14.dp),
-                        tint = MaterialTheme.colorScheme.onSurfaceVariant,
-                    )
-                    Spacer(modifier = Modifier.width(4.dp))
-                    Text(
-                        text = stringResource(R.string.i_like_this),
-                        style = MaterialTheme.typography.labelSmall,
-                        color = MaterialTheme.colorScheme.onSurfaceVariant,
-                        maxLines = 1,
-                        overflow = TextOverflow.Ellipsis,
-                    )
-                }
-                Row(
-                    modifier =
-                        Modifier
-                            .weight(1f)
-                            .clip(RoundedCornerShape(8.dp))
-                            .clickable { quickActionsVm.markNotInterested(video) }
-                            .padding(horizontal = 4.dp, vertical = 6.dp),
-                    horizontalArrangement = Arrangement.Center,
-                    verticalAlignment = Alignment.CenterVertically,
-                ) {
-                    Icon(
-                        Icons.Outlined.ThumbDown,
-                        contentDescription = stringResource(R.string.not_interested),
-                        modifier = Modifier.size(14.dp),
-                        tint = MaterialTheme.colorScheme.onSurfaceVariant,
-                    )
-                    Spacer(modifier = Modifier.width(4.dp))
-                    Text(
-                        text = stringResource(R.string.not_interested),
-                        style = MaterialTheme.typography.labelSmall,
-                        color = MaterialTheme.colorScheme.onSurfaceVariant,
-                        maxLines = 1,
-                        overflow = TextOverflow.Ellipsis,
-                    )
-                }
-            }
-        }
-    }
-
-    if (showQuickActions) {
-        VideoQuickActionsBottomSheet(
-            video = video,
-            onChannelClick = onChannelClick,
-            onDismiss = { showQuickActions = false },
-        )
-    }
-
-    if (showCollaborators) {
-        CollaboratorsBottomSheet(
-            collaborators = collaboratorItems,
-            onChannelClick = onChannelClick,
-            onDismiss = { showCollaborators = false },
         )
     }
 }
@@ -651,7 +335,7 @@ fun VideoCardHorizontal(
                                 displayDate,
                             )
                         } else {
-                            "$displayChannelName · $displayDate"
+                            stringResource(R.string.video_metadata_short_template, displayChannelName, displayDate)
                         },
                     style = MaterialTheme.typography.bodySmall,
                     color =
@@ -894,7 +578,7 @@ fun VideoCardFullWidth(
                                 displayDate,
                             )
                         } else {
-                            "$displayChannelName · $displayDate"
+                            stringResource(R.string.video_metadata_short_template, displayChannelName, displayDate)
                         },
                     style = MaterialTheme.typography.bodySmall,
                     color =
@@ -1633,7 +1317,8 @@ private fun formatContinueWatchingTime(ms: Long): String {
 @Composable
 fun ShortsShelf(
     shorts: List<Video>,
-    onShortClick: (Video) -> Unit,
+    onShortClick: (shelf: List<Video>, tapped: Video) -> Unit,
+    modifier: Modifier = Modifier,
     onSeeAllClick: (() -> Unit)? = null,
 ) {
     val uniqueShorts =
@@ -1642,7 +1327,7 @@ fun ShortsShelf(
         }
     if (uniqueShorts.isEmpty()) return
     val context = LocalContext.current
-    Column(modifier = Modifier.fillMaxWidth().padding(vertical = 4.dp)) {
+    Column(modifier = modifier.fillMaxWidth().padding(vertical = 4.dp)) {
         Row(
             modifier =
                 Modifier
@@ -1679,7 +1364,7 @@ fun ShortsShelf(
             horizontalArrangement = Arrangement.spacedBy(10.dp),
         ) {
             items(uniqueShorts, key = { it.id }) { short ->
-                ShortsCard(video = short, onClick = { onShortClick(short) })
+                ShortsCard(video = short, onClick = { onShortClick(uniqueShorts, short) })
             }
         }
     }
@@ -1721,6 +1406,7 @@ fun ShortsCard(
                 modifier = Modifier.fillMaxSize(),
                 contentScale = ContentScale.Crop,
             )
+            ShortWatchedIndicator(videoId = video.id)
         }
         Spacer(modifier = Modifier.height(8.dp))
         Text(

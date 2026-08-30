@@ -73,7 +73,11 @@ import io.github.aedev.flow.data.model.Video
 import io.github.aedev.flow.data.model.VideoCollaborator
 import io.github.aedev.flow.data.model.hasLikelyCollaborationByline
 import io.github.aedev.flow.data.repository.VideoCollaboratorResolver
+import io.github.aedev.flow.data.shorts.queue.ShortsQueueSource
 import io.github.aedev.flow.ui.components.ShortsCard
+import io.github.aedev.flow.ui.components.layout.topbar.FlowTopBar
+import io.github.aedev.flow.ui.components.layout.topbar.FlowTopBarMenuItem
+import io.github.aedev.flow.ui.components.layout.topbar.FlowTopBarOverflow
 import io.github.aedev.flow.ui.screens.music.MusicTrack
 import io.github.aedev.flow.ui.screens.music.MusicTrackRow
 import java.text.SimpleDateFormat
@@ -85,7 +89,7 @@ import java.util.Locale
 fun HistoryScreen(
     onVideoClick: (MusicTrack) -> Unit,
     onBackClick: () -> Unit,
-    onShortClick: (String) -> Unit = {},
+    onShortsQueue: (ShortsQueueSource) -> Unit = {},
     onMusicClick: (MusicTrack, List<MusicTrack>) -> Unit = { track, _ -> onVideoClick(track) },
     modifier: Modifier = Modifier,
     viewModel: HistoryViewModel = hiltViewModel(),
@@ -138,61 +142,33 @@ fun HistoryScreen(
     Scaffold(
         contentWindowInsets = WindowInsets(0.dp),
         topBar = {
-            Surface(
-                modifier = Modifier.fillMaxWidth(),
-                color = MaterialTheme.colorScheme.background,
-            ) {
-                Row(
-                    modifier =
-                        Modifier
-                            .fillMaxWidth()
-                            .padding(horizontal = 4.dp, vertical = 8.dp),
-                    verticalAlignment = Alignment.CenterVertically,
-                ) {
-                    IconButton(onClick = onBackClick) {
-                        Icon(
-                            imageVector = Icons.Default.ArrowBack,
-                            contentDescription = stringResource(R.string.btn_back),
-                        )
-                    }
-                    Text(
-                        text = stringResource(R.string.library_history_label),
-                        style = MaterialTheme.typography.titleLarge.copy(fontWeight = FontWeight.Bold),
-                        maxLines = 1,
-                        overflow = TextOverflow.Ellipsis,
-                        modifier = Modifier.weight(1f),
+            FlowTopBar(
+                title = stringResource(R.string.library_history_label),
+                onBack = onBackClick,
+                actions = {
+                    FlowTopBarOverflow(
+                        items =
+                            buildList {
+                                if (uiState.shortsEnabled) {
+                                    add(
+                                        FlowTopBarMenuItem(
+                                            label = stringResource(R.string.history_delete_shorts),
+                                            enabled = uiState.historyEntries.any { it.isShort },
+                                            onClick = { showClearShortsDialog = true },
+                                        ),
+                                    )
+                                }
+                                add(
+                                    FlowTopBarMenuItem(
+                                        label = stringResource(R.string.clear_all),
+                                        enabled = uiState.historyEntries.isNotEmpty(),
+                                        onClick = { showClearDialog = true },
+                                    ),
+                                )
+                            },
                     )
-                    Box {
-                        IconButton(onClick = { showMenu = true }) {
-                            Icon(
-                                imageVector = Icons.Default.MoreVert,
-                                contentDescription = stringResource(R.string.more_options),
-                            )
-                        }
-                        DropdownMenu(
-                            expanded = showMenu,
-                            onDismissRequest = { showMenu = false },
-                        ) {
-                            DropdownMenuItem(
-                                text = { Text(stringResource(R.string.history_delete_shorts)) },
-                                enabled = uiState.historyEntries.any { it.isShort },
-                                onClick = {
-                                    showMenu = false
-                                    showClearShortsDialog = true
-                                },
-                            )
-                            DropdownMenuItem(
-                                text = { Text(stringResource(R.string.clear_all)) },
-                                enabled = uiState.historyEntries.isNotEmpty(),
-                                onClick = {
-                                    showMenu = false
-                                    showClearDialog = true
-                                },
-                            )
-                        }
-                    }
-                }
-            }
+                },
+            )
         },
         containerColor = MaterialTheme.colorScheme.background,
     ) { paddingValues ->
@@ -209,7 +185,14 @@ fun HistoryScreen(
                 focusRequester = searchFocusRequester,
             )
 
+            LaunchedEffect(uiState.shortsEnabled) {
+                if (!uiState.shortsEnabled && selectedFilter == HistoryContentFilter.Shorts) {
+                    selectedFilter = HistoryContentFilter.All
+                }
+            }
+
             HistoryFilterRow(
+                shortsEnabled = uiState.shortsEnabled,
                 selectedFilter = selectedFilter,
                 onFilterSelected = { selectedFilter = it },
                 selectedSort = selectedSort,
@@ -247,7 +230,7 @@ fun HistoryScreen(
                         shortVideos = uiState.shortVideos,
                         selectedFilter = selectedFilter,
                         onVideoClick = onVideoClick,
-                        onShortClick = onShortClick,
+                        onShortClick = { row, tapped -> onShortsQueue(viewModel.shortsRowSource(row, tapped)) },
                         onMusicClick = onMusicClick,
                         onRemove = viewModel::removeFromHistory,
                     )
@@ -348,6 +331,7 @@ private fun HistorySearchField(
 
 @Composable
 private fun HistoryFilterRow(
+    shortsEnabled: Boolean,
     selectedFilter: HistoryContentFilter,
     onFilterSelected: (HistoryContentFilter) -> Unit,
     selectedSort: HistorySort,
@@ -364,7 +348,7 @@ private fun HistoryFilterRow(
         contentPadding = PaddingValues(horizontal = 16.dp, vertical = 8.dp),
         horizontalArrangement = Arrangement.spacedBy(8.dp),
     ) {
-        items(HistoryContentFilter.values().toList()) { filter ->
+        items(HistoryContentFilter.entries.filter { shortsEnabled || it != HistoryContentFilter.Shorts }) { filter ->
             FilterChip(
                 selected = selectedFilter == filter,
                 onClick = { onFilterSelected(filter) },
@@ -440,7 +424,7 @@ private fun HistoryList(
     shortVideos: Map<String, Video>,
     selectedFilter: HistoryContentFilter,
     onVideoClick: (MusicTrack) -> Unit,
-    onShortClick: (String) -> Unit,
+    onShortClick: (row: List<Video>, tapped: Video) -> Unit,
     onMusicClick: (MusicTrack, List<MusicTrack>) -> Unit,
     onRemove: (String) -> Unit,
 ) {
@@ -563,22 +547,27 @@ private fun HistoryEntryRow(
 private fun ShortsHistoryRow(
     entries: List<VideoHistoryEntry>,
     shortVideos: Map<String, Video>,
-    onShortClick: (String) -> Unit,
+    onShortClick: (row: List<Video>, tapped: Video) -> Unit,
     onRemove: (String) -> Unit,
 ) {
+    val rowVideos =
+        remember(entries, shortVideos) {
+            entries.map { shortVideos[it.videoId] ?: it.toShortVideo() }
+        }
+
     LazyRow(
         contentPadding = PaddingValues(horizontal = 16.dp, vertical = 4.dp),
         horizontalArrangement = Arrangement.spacedBy(12.dp),
     ) {
         items(
-            items = entries,
-            key = { it.videoId },
-        ) { entry ->
+            items = rowVideos,
+            key = Video::id,
+        ) { video ->
             ShortsCard(
-                video = shortVideos[entry.videoId] ?: entry.toShortVideo(),
-                onClick = { onShortClick(entry.videoId) },
+                video = video,
+                onClick = { onShortClick(rowVideos, video) },
                 trailingContent = {
-                    IconButton(onClick = { onRemove(entry.videoId) }) {
+                    IconButton(onClick = { onRemove(video.id) }) {
                         Icon(
                             imageVector = Icons.Default.Close,
                             contentDescription = stringResource(R.string.remove_from_history),
@@ -610,13 +599,14 @@ private fun HistoryVideoCard(
                 emptyList()
             }
     }
+    val conjunction = stringResource(R.string.conjunction_and)
     val displayChannelName =
-        remember(entry.channelName, resolvedCollaborators) {
+        remember(entry.channelName, resolvedCollaborators, conjunction) {
             resolvedCollaborators
                 .map { it.name }
                 .filter { it.isNotBlank() }
                 .takeIf { it.size > 1 }
-                ?.joinToString(" and ")
+                ?.joinToString(" $conjunction ")
                 ?: entry.channelName
         }
 

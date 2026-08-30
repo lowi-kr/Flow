@@ -24,14 +24,18 @@ import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import io.github.aedev.flow.R
+import io.github.aedev.flow.data.local.PlayerOverlayPreferences
 import io.github.aedev.flow.data.local.PlayerPreferences
 import io.github.aedev.flow.data.local.VideoCodec
 import io.github.aedev.flow.data.lyrics.LyricsProviderRegistry
+import io.github.aedev.flow.player.stream.CaptionTrackResolver
+import io.github.aedev.flow.ui.components.layout.topbar.FlowTopBar
 import io.github.aedev.flow.ui.components.rememberFlowSheetState
 import kotlinx.coroutines.launch
 
@@ -129,6 +133,22 @@ private fun audioLanguageDisplayName(
         fallbackName.orEmpty()
     }
 
+/** Same language list as audio, with "no preference" standing in for "original". */
+private val subtitleLanguageOptions: List<Pair<String, String?>> =
+    listOf(CaptionTrackResolver.NO_PREFERRED_LANGUAGE to null) +
+        audioLanguageOptions.filterNot { it.first == "original" }
+
+@Composable
+private fun subtitleLanguageDisplayName(
+    code: String,
+    fallbackName: String?,
+): String =
+    if (code == CaptionTrackResolver.NO_PREFERRED_LANGUAGE) {
+        stringResource(R.string.player_settings_subtitle_language_none)
+    } else {
+        fallbackName.orEmpty()
+    }
+
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun PlayerSettingsScreen(onNavigateBack: () -> Unit) {
@@ -136,15 +156,18 @@ fun PlayerSettingsScreen(onNavigateBack: () -> Unit) {
     val coroutineScope = rememberCoroutineScope()
     val playerPreferences = remember { PlayerPreferences(context) }
 
-    val overlayCastEnabled by playerPreferences.overlayCastEnabled.collectAsState(initial = true)
-    val overlayCcEnabled by playerPreferences.overlayCcEnabled.collectAsState(initial = false)
-    val overlayPipEnabled by playerPreferences.overlayPipEnabled.collectAsState(initial = false)
+    val overlayDefaults = remember { PlayerOverlayPreferences() }
+    val overlayCastEnabled by playerPreferences.overlayCastEnabled.collectAsState(overlayDefaults.castEnabled)
+    val overlayCcEnabled by playerPreferences.overlayCcEnabled.collectAsState(overlayDefaults.captionsEnabled)
+    val overlayPipEnabled by playerPreferences.overlayPipEnabled.collectAsState(overlayDefaults.pipEnabled)
     val autoPipEnabled by playerPreferences.autoPipEnabled.collectAsState(initial = false)
-    val overlayAutoplayEnabled by playerPreferences.overlayAutoplayEnabled.collectAsState(initial = false)
-    val overlaySleepTimerEnabled by playerPreferences.overlaySleepTimerEnabled.collectAsState(initial = true)
+    val overlayAutoplayEnabled by playerPreferences.overlayAutoplayEnabled.collectAsState(overlayDefaults.autoplayEnabled)
+    val overlaySleepTimerEnabled by
+        playerPreferences.overlaySleepTimerEnabled.collectAsState(overlayDefaults.sleepTimerEnabled)
     val overlayLockModeEnabled by playerPreferences.overlayLockModeEnabled.collectAsState(initial = false)
-    val overlaySpeedIndicatorEnabled by playerPreferences.overlaySpeedIndicatorEnabled.collectAsState(initial = false)
-    val overlayCommentsEnabled by playerPreferences.overlayCommentsEnabled.collectAsState(initial = true)
+    val overlaySpeedIndicatorEnabled by
+        playerPreferences.overlaySpeedIndicatorEnabled.collectAsState(overlayDefaults.speedIndicatorEnabled)
+    val overlayCommentsEnabled by playerPreferences.overlayCommentsEnabled.collectAsState(overlayDefaults.commentsEnabled)
 
     val autoplayEnabled by playerPreferences.autoplayEnabled.collectAsState(initial = true)
     val queueAutoplayEnabled by playerPreferences.queueAutoplayEnabled.collectAsState(initial = true)
@@ -154,9 +177,15 @@ fun PlayerSettingsScreen(onNavigateBack: () -> Unit) {
     val backgroundPlayEnabled by playerPreferences.backgroundPlayEnabled.collectAsState(initial = false)
     val shortsBackgroundPlay by playerPreferences.shortsBackgroundPlay.collectAsState(initial = false)
     val shortsPlaybackMode by playerPreferences.shortsPlaybackMode.collectAsState(initial = "loop")
+    val shortsPipEnabled by playerPreferences.shortsPipEnabled.collectAsState(initial = false)
     val shortsAutoScrollSeconds by playerPreferences.shortsAutoScrollSeconds.collectAsState(initial = 10)
+    val shortsQueueContinuesIntoFeed by playerPreferences.shortsQueueContinuesIntoFeed.collectAsState(initial = true)
     val preferredAudioLanguage by playerPreferences.preferredAudioLanguage.collectAsState(initial = "original")
+    val preferredSubtitleLanguage by playerPreferences.preferredSubtitleLanguage
+        .collectAsState(initial = CaptionTrackResolver.NO_PREFERRED_LANGUAGE)
+    val autoEnableSubtitles by playerPreferences.autoEnableSubtitles.collectAsState(initial = false)
     val defaultVideoCodec by playerPreferences.defaultVideoCodec.collectAsState(initial = VideoCodec.H264)
+    val fallbackVideoCodec by playerPreferences.fallbackVideoCodec.collectAsState(initial = VideoCodec.AUTO)
     val playDuringCalls by playerPreferences.playDuringCalls.collectAsState(initial = false)
     val lyricsProviderOrder by playerPreferences.lyricsProviderOrder.collectAsState(initial = "")
     val lyricsEnabledStates by playerPreferences.allLyricsProviderEnabledStates().collectAsState(initial = emptyMap())
@@ -167,7 +196,9 @@ fun PlayerSettingsScreen(onNavigateBack: () -> Unit) {
     val rememberPlaybackSpeed by playerPreferences.rememberPlaybackSpeed.collectAsState(initial = false)
 
     var showAudioLanguageDialog by remember { mutableStateOf(false) }
+    var showSubtitleLanguageDialog by remember { mutableStateOf(false) }
     var showVideoCodecDialog by remember { mutableStateOf(false) }
+    var showFallbackVideoCodecDialog by remember { mutableStateOf(false) }
     var showLyricsProviderSheet by remember { mutableStateOf(false) }
     var showSeekDurationDialog by remember { mutableStateOf(false) }
     var showShortsPlaybackModeDialog by remember { mutableStateOf(false) }
@@ -190,26 +221,10 @@ fun PlayerSettingsScreen(onNavigateBack: () -> Unit) {
     Scaffold(
         contentWindowInsets = WindowInsets(0.dp),
         topBar = {
-            Surface(
-                modifier = Modifier.fillMaxWidth(),
-                color = MaterialTheme.colorScheme.background,
-            ) {
-                Row(
-                    modifier =
-                        Modifier
-                            .fillMaxWidth()
-                            .padding(horizontal = 4.dp, vertical = 8.dp),
-                    verticalAlignment = Alignment.CenterVertically,
-                ) {
-                    IconButton(onClick = onNavigateBack) {
-                        Icon(Icons.Default.ArrowBack, stringResource(R.string.btn_back))
-                    }
-                    Text(
-                        text = stringResource(R.string.player_settings_title),
-                        style = MaterialTheme.typography.titleLarge.copy(fontWeight = FontWeight.Bold),
-                    )
-                }
-            }
+            FlowTopBar(
+                title = stringResource(R.string.player_settings_title),
+                onBack = onNavigateBack,
+            )
         },
     ) { paddingValues ->
         LazyColumn(
@@ -346,6 +361,14 @@ fun PlayerSettingsScreen(onNavigateBack: () -> Unit) {
                         onCheckedChange = { coroutineScope.launch { playerPreferences.setShortsBackgroundPlay(it) } },
                     )
                     HorizontalDivider(Modifier.padding(start = 56.dp), color = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.5f))
+                    SettingsSwitchItem(
+                        icon = Icons.Outlined.PictureInPictureAlt,
+                        title = stringResource(R.string.player_settings_shorts_pip),
+                        subtitle = stringResource(R.string.player_settings_shorts_pip_subtitle),
+                        checked = shortsPipEnabled,
+                        onCheckedChange = { coroutineScope.launch { playerPreferences.setShortsPipEnabled(it) } },
+                    )
+                    HorizontalDivider(Modifier.padding(start = 56.dp), color = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.5f))
                     SettingsClickItem(
                         icon = Icons.Outlined.SwapVert,
                         title = stringResource(R.string.player_settings_shorts_playback_mode_title),
@@ -356,8 +379,9 @@ fun PlayerSettingsScreen(onNavigateBack: () -> Unit) {
                                 }
 
                                 "auto_interval" -> {
-                                    stringResource(
-                                        R.string.player_settings_shorts_playback_mode_auto_interval_summary,
+                                    pluralStringResource(
+                                        R.plurals.player_settings_shorts_playback_mode_auto_interval_summary,
+                                        shortsAutoScrollSeconds,
                                         shortsAutoScrollSeconds,
                                     )
                                 }
@@ -367,6 +391,14 @@ fun PlayerSettingsScreen(onNavigateBack: () -> Unit) {
                                 }
                             },
                         onClick = { showShortsPlaybackModeDialog = true },
+                    )
+                    HorizontalDivider(Modifier.padding(start = 56.dp), color = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.5f))
+                    SettingsSwitchItem(
+                        icon = Icons.Outlined.AllInclusive,
+                        title = stringResource(R.string.player_settings_shorts_continue_into_feed),
+                        subtitle = stringResource(R.string.player_settings_shorts_continue_into_feed_subtitle),
+                        checked = shortsQueueContinuesIntoFeed,
+                        onCheckedChange = { coroutineScope.launch { playerPreferences.setShortsQueueContinuesIntoFeed(it) } },
                     )
                     HorizontalDivider(Modifier.padding(start = 56.dp), color = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.5f))
                     SettingsSwitchItem(
@@ -402,8 +434,9 @@ fun PlayerSettingsScreen(onNavigateBack: () -> Unit) {
                             if (autoplayCountdownSeconds <= 0) {
                                 stringResource(R.string.player_settings_autoplay_countdown_none)
                             } else {
-                                stringResource(
-                                    R.string.player_settings_autoplay_countdown_seconds_template,
+                                pluralStringResource(
+                                    R.plurals.player_settings_autoplay_countdown_seconds_template,
+                                    autoplayCountdownSeconds,
                                     autoplayCountdownSeconds,
                                 )
                             },
@@ -478,7 +511,7 @@ fun PlayerSettingsScreen(onNavigateBack: () -> Unit) {
                                         verticalAlignment = Alignment.CenterVertically,
                                     ) {
                                         Text(
-                                            text = "${speed}x",
+                                            text = stringResource(R.string.playback_speed_multiplier, speed.toString()),
                                             style = MaterialTheme.typography.bodyLarge,
                                             modifier = Modifier.weight(1f),
                                         )
@@ -570,6 +603,19 @@ fun PlayerSettingsScreen(onNavigateBack: () -> Unit) {
                         subtitle = defaultVideoCodec.label,
                         onClick = { showVideoCodecDialog = true },
                     )
+                    if (defaultVideoCodec != VideoCodec.AUTO) {
+                        SettingsClickItem(
+                            icon = Icons.Outlined.SwapHoriz,
+                            title = stringResource(R.string.player_settings_video_codec_fallback),
+                            subtitle =
+                                if (fallbackVideoCodec == VideoCodec.AUTO) {
+                                    stringResource(R.string.player_settings_video_codec_fallback_auto)
+                                } else {
+                                    fallbackVideoCodec.label
+                                },
+                            onClick = { showFallbackVideoCodecDialog = true },
+                        )
+                    }
                 }
             }
 
@@ -605,6 +651,31 @@ fun PlayerSettingsScreen(onNavigateBack: () -> Unit) {
                 }
             }
 
+            // Subtitle Settings Section
+            item {
+                SectionHeader(text = stringResource(R.string.filter_subtitles))
+                SettingsGroup {
+                    SettingsClickItem(
+                        icon = Icons.Outlined.ClosedCaption,
+                        title = stringResource(R.string.player_settings_subtitle_language),
+                        subtitle =
+                            subtitleLanguageOptions
+                                .find { it.first == preferredSubtitleLanguage }
+                                ?.let { (code, fallbackName) -> subtitleLanguageDisplayName(code, fallbackName) }
+                                ?: stringResource(R.string.player_settings_subtitle_language_none),
+                        onClick = { showSubtitleLanguageDialog = true },
+                    )
+                    HorizontalDivider(Modifier.padding(start = 56.dp))
+                    SettingsSwitchItem(
+                        icon = Icons.Outlined.Subtitles,
+                        title = stringResource(R.string.player_settings_auto_enable_subtitles),
+                        subtitle = stringResource(R.string.player_settings_auto_enable_subtitles_subtitle),
+                        checked = autoEnableSubtitles,
+                        onCheckedChange = { coroutineScope.launch { playerPreferences.setAutoEnableSubtitles(it) } },
+                    )
+                }
+            }
+
             // Gestures Settings Section
             item {
                 Text(
@@ -617,7 +688,12 @@ fun PlayerSettingsScreen(onNavigateBack: () -> Unit) {
                     SettingsClickItem(
                         icon = Icons.Outlined.TouchApp,
                         title = stringResource(R.string.player_settings_double_tap_seek),
-                        subtitle = stringResource(R.string.player_settings_double_tap_seek_subtitle_template, doubleTapSeekSeconds),
+                        subtitle =
+                            pluralStringResource(
+                                R.plurals.player_settings_double_tap_seek_subtitle,
+                                doubleTapSeekSeconds,
+                                doubleTapSeekSeconds,
+                            ),
                         onClick = { showSeekDurationDialog = true },
                     )
                 }
@@ -634,7 +710,12 @@ fun PlayerSettingsScreen(onNavigateBack: () -> Unit) {
                             run {
                                 val enabledCount = lyricsEnabledStates.count { it.value }
                                 val total = registry.providerNames.size
-                                "$enabledCount / $total providers enabled"
+                                pluralStringResource(
+                                    R.plurals.lyrics_providers_enabled,
+                                    enabledCount,
+                                    enabledCount,
+                                    total,
+                                )
                             },
                         onClick = { showLyricsProviderSheet = true },
                     )
@@ -717,13 +798,12 @@ fun PlayerSettingsScreen(onNavigateBack: () -> Unit) {
         )
     }
 
-    // Default Video Codec Selection Dialog
-    if (showVideoCodecDialog) {
+    if (showSubtitleLanguageDialog) {
         AlertDialog(
-            onDismissRequest = { showVideoCodecDialog = false },
+            onDismissRequest = { showSubtitleLanguageDialog = false },
             title = {
                 Text(
-                    stringResource(R.string.player_settings_video_codec_dialog_title),
+                    stringResource(R.string.player_settings_subtitle_language_dialog_title),
                     style = MaterialTheme.typography.titleLarge,
                 )
             },
@@ -735,37 +815,37 @@ fun PlayerSettingsScreen(onNavigateBack: () -> Unit) {
                             .verticalScroll(rememberScrollState()),
                 ) {
                     Text(
-                        stringResource(R.string.player_settings_video_codec_dialog_body),
+                        stringResource(R.string.player_settings_subtitle_language_dialog_body),
                         style = MaterialTheme.typography.bodyMedium,
                         color = MaterialTheme.colorScheme.onSurfaceVariant,
                         modifier = Modifier.padding(bottom = 16.dp),
                     )
-                    VideoCodec.values().forEach { codec ->
+                    subtitleLanguageOptions.forEach { (code, displayName) ->
                         Row(
                             modifier =
                                 Modifier
                                     .fillMaxWidth()
                                     .clickable {
                                         coroutineScope.launch {
-                                            playerPreferences.setDefaultVideoCodec(codec)
+                                            playerPreferences.setPreferredSubtitleLanguage(code)
                                         }
-                                        showVideoCodecDialog = false
+                                        showSubtitleLanguageDialog = false
                                     }.padding(vertical = 12.dp, horizontal = 8.dp),
                             verticalAlignment = Alignment.CenterVertically,
                         ) {
                             RadioButton(
-                                selected = defaultVideoCodec == codec,
+                                selected = preferredSubtitleLanguage == code,
                                 onClick = null,
                             )
                             Spacer(modifier = Modifier.width(12.dp))
                             Column {
                                 Text(
-                                    text = codec.label,
+                                    text = subtitleLanguageDisplayName(code, displayName),
                                     style = MaterialTheme.typography.bodyLarge,
                                 )
-                                if (codec == VideoCodec.AUTO) {
+                                if (code == CaptionTrackResolver.NO_PREFERRED_LANGUAGE) {
                                     Text(
-                                        text = stringResource(R.string.player_settings_video_codec_auto_desc),
+                                        text = stringResource(R.string.player_settings_subtitle_language_none_desc),
                                         style = MaterialTheme.typography.bodySmall,
                                         color = MaterialTheme.colorScheme.onSurfaceVariant,
                                     )
@@ -776,10 +856,46 @@ fun PlayerSettingsScreen(onNavigateBack: () -> Unit) {
                 }
             },
             confirmButton = {
-                TextButton(onClick = { showVideoCodecDialog = false }) {
+                TextButton(onClick = { showSubtitleLanguageDialog = false }) {
                     Text(stringResource(R.string.btn_close))
                 }
             },
+        )
+    }
+
+    if (showVideoCodecDialog) {
+        VideoCodecPickerDialog(
+            title = stringResource(R.string.player_settings_video_codec_dialog_title),
+            description = stringResource(R.string.player_settings_video_codec_dialog_body),
+            options = VideoCodec.values().toList(),
+            selectedCodec = defaultVideoCodec,
+            autoDescription = stringResource(R.string.player_settings_video_codec_auto_desc),
+            onCodecSelected = { codec ->
+                coroutineScope.launch {
+                    playerPreferences.setDefaultVideoCodec(codec)
+                    // A fallback that matches the preferred codec is no fallback at all.
+                    if (fallbackVideoCodec == codec) {
+                        playerPreferences.setFallbackVideoCodec(VideoCodec.AUTO)
+                    }
+                }
+                showVideoCodecDialog = false
+            },
+            onDismissRequest = { showVideoCodecDialog = false },
+        )
+    }
+
+    if (showFallbackVideoCodecDialog) {
+        VideoCodecPickerDialog(
+            title = stringResource(R.string.player_settings_video_codec_fallback),
+            description = stringResource(R.string.player_settings_video_codec_fallback_dialog_body),
+            options = VideoCodec.values().filterNot { it == defaultVideoCodec },
+            selectedCodec = fallbackVideoCodec,
+            autoDescription = stringResource(R.string.player_settings_video_codec_fallback_auto_desc),
+            onCodecSelected = { codec ->
+                coroutineScope.launch { playerPreferences.setFallbackVideoCodec(codec) }
+                showFallbackVideoCodecDialog = false
+            },
+            onDismissRequest = { showFallbackVideoCodecDialog = false },
         )
     }
 
@@ -839,8 +955,9 @@ fun PlayerSettingsScreen(onNavigateBack: () -> Unit) {
                         ) {
                             Text(
                                 text =
-                                    stringResource(
-                                        R.string.player_settings_shorts_auto_scroll_seconds_template,
+                                    pluralStringResource(
+                                        R.plurals.player_settings_shorts_auto_scroll_seconds_template,
+                                        shortsAutoScrollSeconds,
                                         shortsAutoScrollSeconds,
                                     ),
                                 style = MaterialTheme.typography.labelLarge,
@@ -910,8 +1027,9 @@ fun PlayerSettingsScreen(onNavigateBack: () -> Unit) {
                                     if (seconds == 0) {
                                         stringResource(R.string.player_settings_autoplay_countdown_none)
                                     } else {
-                                        stringResource(
-                                            R.string.player_settings_autoplay_countdown_seconds_template,
+                                        pluralStringResource(
+                                            R.plurals.player_settings_autoplay_countdown_seconds_template,
+                                            seconds,
                                             seconds,
                                         )
                                     },
@@ -1053,7 +1171,12 @@ fun PlayerSettingsScreen(onNavigateBack: () -> Unit) {
                             )
                             Spacer(modifier = Modifier.width(12.dp))
                             Text(
-                                text = stringResource(R.string.player_settings_double_tap_seek_subtitle_template, seconds),
+                                text =
+                                    pluralStringResource(
+                                        R.plurals.player_settings_double_tap_seek_subtitle,
+                                        seconds,
+                                        seconds,
+                                    ),
                                 style = MaterialTheme.typography.bodyLarge,
                             )
                         }

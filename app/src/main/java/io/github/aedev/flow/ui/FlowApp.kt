@@ -31,9 +31,11 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.media3.common.util.UnstableApi
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
+import io.github.aedev.flow.MainActivity
 import io.github.aedev.flow.data.local.PlayerPreferences
 import io.github.aedev.flow.data.model.Video
 import io.github.aedev.flow.data.recommendation.FlowNeuroEngine
+import io.github.aedev.flow.data.shorts.queue.ShortsQueueSource
 import io.github.aedev.flow.data.subscriptions.refreshSubscriptionsAtStartup
 import io.github.aedev.flow.player.DeepFlowManager
 import io.github.aedev.flow.player.EnhancedMusicPlayerManager
@@ -47,10 +49,12 @@ import io.github.aedev.flow.ui.components.MusicPlayerSheetState
 import io.github.aedev.flow.ui.components.PersistentMiniMusicPlayer
 import io.github.aedev.flow.ui.components.PlayerSheetValue
 import io.github.aedev.flow.ui.components.SleepTimerSheet
+import io.github.aedev.flow.ui.components.layout.topbar.ProvideFlowGlobalActions
 import io.github.aedev.flow.ui.components.rememberMusicPlayerSheetState
 import io.github.aedev.flow.ui.components.rememberPlayerDraggableState
 import io.github.aedev.flow.ui.screens.home.HomeViewModel
 import io.github.aedev.flow.ui.screens.music.EnhancedMusicPlayerScreen
+import io.github.aedev.flow.ui.screens.notifications.NotificationViewModel
 import io.github.aedev.flow.ui.screens.player.VideoPlayerViewModel
 import io.github.aedev.flow.ui.theme.CustomThemePalettes
 import io.github.aedev.flow.ui.theme.ThemeMode
@@ -87,6 +91,8 @@ fun FlowApp(
     val snackbarHostState = remember { androidx.compose.material3.SnackbarHostState() }
 
     val playerViewModel: VideoPlayerViewModel = hiltViewModel(activity!!)
+    // Activity-scoped so the unread badge has exactly one collector for the whole shell.
+    val notificationViewModel: NotificationViewModel = hiltViewModel(activity)
     val playerUiStateResult = playerViewModel.uiState.collectAsStateWithLifecycle()
     val playerUiState by playerUiStateResult
     val enhancedPlayerManager = remember { EnhancedPlayerManager.getInstance() }
@@ -96,11 +102,11 @@ fun FlowApp(
 
     val preferences = remember { PlayerPreferences(context) }
     val isHomeNavigationEnabled by preferences.homeNavigationEnabled.collectAsState(initial = true)
-    val isShortsNavigationEnabled by preferences.shortsNavigationEnabled.collectAsState(initial = true)
+    val isShortsNavigationEnabled by preferences.effectiveShortsNavigationEnabled.collectAsState(initial = true)
     val isMusicNavigationEnabled by preferences.musicNavigationEnabled.collectAsState(initial = true)
     val isSearchNavigationEnabled by preferences.searchNavigationEnabled.collectAsState(initial = false)
     val isCategoriesNavigationEnabled by preferences.categoriesNavigationEnabled.collectAsState(initial = false)
-    val disableShortsPlayer by preferences.disableShortsPlayer.collectAsState(initial = false)
+    val disableShortsPlayer by preferences.effectiveDisableShortsPlayer.collectAsState(initial = false)
     val navTabOrder by preferences.navTabOrder.collectAsState(initial = io.github.aedev.flow.data.local.DEFAULT_NAV_TAB_ORDER)
     val defaultNavTabIndex by preferences.defaultNavTabIndex.collectAsState(initial = 0)
     val subscriptionRefreshOnStartup by preferences.subscriptionRefreshOnStartup.collectAsState(initial = false)
@@ -141,7 +147,8 @@ fun FlowApp(
     LaunchedEffect(Unit) {
         FlowNeuroEngine.initialize(context)
         DeepFlowManager.initialize(context)
-        needsOnboarding = FlowNeuroEngine.needsOnboarding()
+        val bypass = activity?.intent?.getBooleanExtra(MainActivity.EXTRA_BENCHMARK_BYPASS_ONBOARDING, false) == true
+        needsOnboarding = if (bypass) false else FlowNeuroEngine.needsOnboarding()
     }
 
     LaunchedEffect(sleepTimerCloseAppOnExpiry) {
@@ -221,8 +228,7 @@ fun FlowApp(
                     val route = currentRoute.value
                     if (!bottomNavHideOnScroll ||
                         source != NestedScrollSource.UserInput ||
-                        route == "shorts" ||
-                        route == "savedShortsPlayer"
+                        route == "shorts"
                     ) {
                         return Offset.Zero
                     }
@@ -252,8 +258,7 @@ fun FlowApp(
 
     val isInPipMode by GlobalPlayerState.isInPipMode.collectAsState()
     val currentVideo by GlobalPlayerState.currentVideo.collectAsState()
-    val isShortsPlayerRoute =
-        currentRoute.value == "shorts" || currentRoute.value == "savedShortsPlayer"
+    val isShortsPlayerRoute = currentRoute.value == "shorts"
 
     LaunchedEffect(isShortsPlayerRoute) {
         if (isShortsPlayerRoute) {
@@ -328,7 +333,7 @@ fun FlowApp(
             }
         }
 
-        LaunchedEffect(playerUiState.cachedVideo, playerUiState.isBackgroundPlaybackMode) {
+        LaunchedEffect(playerUiState.cachedVideo?.id, playerUiState.isBackgroundPlaybackMode) {
             if (playerUiState.cachedVideo != null) {
                 if (playerUiState.isBackgroundPlaybackMode) {
                     playerSheetState.snapTo(PlayerSheetValue.Collapsed)
@@ -432,11 +437,16 @@ fun FlowApp(
             systemDarkThemeMode = systemDarkThemeMode,
             isFullscreen = playerUiState.isFullscreen,
             isMusicPlayerImmersive = currentMusicTrack != null && musicPlayerSheetState.progress > 0.5f,
-            isShortsPlayer = currentRoute.value == "shorts" || currentRoute.value == "savedShortsPlayer",
+            isShortsPlayer = isShortsPlayerRoute,
         )
 
         LaunchedEffect(isInPipMode) {
-            if (isInPipMode && !currentRoute.value.startsWith("player") && currentVideo != null) {
+            if (
+                isInPipMode &&
+                !isShortsPlayerRoute &&
+                !currentRoute.value.startsWith("player") &&
+                currentVideo != null
+            ) {
                 navController.navigate("player/${currentVideo!!.id}")
             }
         }
@@ -533,71 +543,77 @@ fun FlowApp(
                             homeViewModel.initialize(context.applicationContext)
                         }
 
-                        NavHost(
-                            navController = navController,
-                            startDestination = if (needsOnboarding == true) "onboarding" else defaultStartRoute,
-                            enterTransition = {
-                                fadeIn(animationSpec = tween(250, easing = FastOutSlowInEasing)) +
-                                    slideInHorizontally(
-                                        initialOffsetX = { (it * 0.06f).toInt() },
-                                        animationSpec =
-                                            spring(
-                                                dampingRatio = Spring.DampingRatioNoBouncy,
-                                                stiffness = Spring.StiffnessMediumLow,
-                                            ),
-                                    )
-                            },
-                            exitTransition = {
-                                fadeOut(animationSpec = tween(200, easing = FastOutLinearInEasing))
-                            },
-                            popEnterTransition = {
-                                fadeIn(animationSpec = tween(250, easing = FastOutSlowInEasing))
-                            },
-                            popExitTransition = {
-                                fadeOut(animationSpec = tween(200, easing = FastOutLinearInEasing)) +
-                                    slideOutHorizontally(
-                                        targetOffsetX = { (it * 0.06f).toInt() },
-                                        animationSpec =
-                                            spring(
-                                                dampingRatio = Spring.DampingRatioNoBouncy,
-                                                stiffness = Spring.StiffnessMediumLow,
-                                            ),
-                                    )
-                            },
+                        ProvideFlowGlobalActions(
+                            unreadNotifications = notificationViewModel.unreadCount,
+                            onOpenNotifications = { navController.navigate("notifications") },
+                            onOpenSettings = { navController.navigate("settings") },
                         ) {
-                            flowAppGraph(
+                            NavHost(
                                 navController = navController,
-                                currentRoute = currentRoute,
-                                showBottomNav = showBottomNav,
-                                selectedBottomNavIndex = selectedBottomNavIndex,
-                                playerSheetState = playerSheetState,
-                                musicPlayerSheetState = musicPlayerSheetState,
-                                homeViewModel = homeViewModel,
-                                playerViewModel = playerViewModel,
-                                playerUiStateResult = playerUiStateResult,
-                                playerVisibleState = playerVisibleState,
-                                currentTheme = currentTheme,
-                                themeVariant = themeVariant,
-                                customThemePalettes = customThemePalettes,
-                                systemLightThemeMode = systemLightThemeMode,
-                                systemDarkThemeMode = systemDarkThemeMode,
-                                systemDarkThemeVariant = systemDarkThemeVariant,
-                                onThemeChange = onThemeChange,
-                                onThemeVariantChange = onThemeVariantChange,
-                                onCustomThemePalettesChange = onCustomThemePalettesChange,
-                                onSystemLightThemeChange = onSystemLightThemeChange,
-                                onSystemDarkThemeChange = onSystemDarkThemeChange,
-                                onSystemDarkThemeVariantChange = onSystemDarkThemeVariantChange,
-                                disableShortsPlayer = disableShortsPlayer,
-                                defaultStartRoute = defaultStartRoute,
-                                bottomNavOverlayPadding = {
-                                    if (showBottomNav.value && isNavScrolledVisible) {
-                                        bottomNavContentHeightDp
-                                    } else {
-                                        0.dp
-                                    }
+                                startDestination = if (needsOnboarding == true) "onboarding" else defaultStartRoute,
+                                enterTransition = {
+                                    fadeIn(animationSpec = tween(250, easing = FastOutSlowInEasing)) +
+                                        slideInHorizontally(
+                                            initialOffsetX = { (it * 0.06f).toInt() },
+                                            animationSpec =
+                                                spring(
+                                                    dampingRatio = Spring.DampingRatioNoBouncy,
+                                                    stiffness = Spring.StiffnessMediumLow,
+                                                ),
+                                        )
                                 },
-                            )
+                                exitTransition = {
+                                    fadeOut(animationSpec = tween(200, easing = FastOutLinearInEasing))
+                                },
+                                popEnterTransition = {
+                                    fadeIn(animationSpec = tween(250, easing = FastOutSlowInEasing))
+                                },
+                                popExitTransition = {
+                                    fadeOut(animationSpec = tween(200, easing = FastOutLinearInEasing)) +
+                                        slideOutHorizontally(
+                                            targetOffsetX = { (it * 0.06f).toInt() },
+                                            animationSpec =
+                                                spring(
+                                                    dampingRatio = Spring.DampingRatioNoBouncy,
+                                                    stiffness = Spring.StiffnessMediumLow,
+                                                ),
+                                        )
+                                },
+                            ) {
+                                flowAppGraph(
+                                    navController = navController,
+                                    currentRoute = currentRoute,
+                                    showBottomNav = showBottomNav,
+                                    selectedBottomNavIndex = selectedBottomNavIndex,
+                                    playerSheetState = playerSheetState,
+                                    musicPlayerSheetState = musicPlayerSheetState,
+                                    homeViewModel = homeViewModel,
+                                    playerViewModel = playerViewModel,
+                                    playerUiStateResult = playerUiStateResult,
+                                    playerVisibleState = playerVisibleState,
+                                    currentTheme = currentTheme,
+                                    themeVariant = themeVariant,
+                                    customThemePalettes = customThemePalettes,
+                                    systemLightThemeMode = systemLightThemeMode,
+                                    systemDarkThemeMode = systemDarkThemeMode,
+                                    systemDarkThemeVariant = systemDarkThemeVariant,
+                                    onThemeChange = onThemeChange,
+                                    onThemeVariantChange = onThemeVariantChange,
+                                    onCustomThemePalettesChange = onCustomThemePalettesChange,
+                                    onSystemLightThemeChange = onSystemLightThemeChange,
+                                    onSystemDarkThemeChange = onSystemDarkThemeChange,
+                                    onSystemDarkThemeVariantChange = onSystemDarkThemeVariantChange,
+                                    disableShortsPlayer = disableShortsPlayer,
+                                    defaultStartRoute = defaultStartRoute,
+                                    bottomNavOverlayPadding = {
+                                        if (showBottomNav.value && isNavScrolledVisible) {
+                                            bottomNavContentHeightDp
+                                        } else {
+                                            0.dp
+                                        }
+                                    },
+                                )
+                            }
                         }
                     }
                 }
@@ -689,7 +705,7 @@ fun FlowApp(
             },
             onNavigateToShorts = { videoId ->
                 playerSheetState.collapse()
-                navController.navigate("shorts?startVideoId=$videoId")
+                navController.openShorts(ShortsQueueSource.SeededFeed(videoId))
             },
         )
 

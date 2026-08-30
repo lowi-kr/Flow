@@ -32,6 +32,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.PathEffect
 import androidx.compose.ui.graphics.drawscope.DrawScope
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
@@ -40,6 +41,7 @@ import androidx.compose.ui.unit.sp
 import androidx.core.content.ContextCompat
 import androidx.hilt.navigation.compose.hiltViewModel
 import io.github.aedev.flow.R
+import io.github.aedev.flow.ui.components.layout.topbar.FlowTopBar
 import java.util.Locale
 
 // ============================================================================
@@ -89,34 +91,11 @@ fun TimeManagementScreen(
     Scaffold(
         contentWindowInsets = WindowInsets(0.dp),
         topBar = {
-            Surface(
-                modifier = Modifier.fillMaxWidth(),
-                color = MaterialTheme.colorScheme.background,
-            ) {
-                Row(
-                    modifier =
-                        Modifier
-                            .fillMaxWidth()
-                            .padding(horizontal = 4.dp, vertical = 8.dp),
-                    verticalAlignment = Alignment.CenterVertically,
-                ) {
-                    IconButton(onClick = onNavigateBack) {
-                        Icon(Icons.Default.ArrowBack, stringResource(R.string.btn_back))
-                    }
-                    Column {
-                        Text(
-                            stringResource(R.string.time_management_title),
-                            style = MaterialTheme.typography.titleLarge,
-                            fontWeight = FontWeight.Bold,
-                        )
-                        Text(
-                            stringResource(R.string.time_management_subtitle),
-                            style = MaterialTheme.typography.bodySmall,
-                            color = MaterialTheme.colorScheme.onSurfaceVariant,
-                        )
-                    }
-                }
-            }
+            FlowTopBar(
+                title = stringResource(R.string.time_management_title),
+                subtitle = stringResource(R.string.time_management_subtitle),
+                onBack = onNavigateBack,
+            )
         },
     ) { padding ->
         Column(
@@ -460,7 +439,7 @@ private fun WeeklyChartCard(data: List<DailyStat>) {
                         val labels = (yMax.toInt() downTo 0 step gridStep).toList()
                         labels.forEach { value ->
                             Text(
-                                "${value}h",
+                                stringResource(R.string.duration_hours_short, value),
                                 style = MaterialTheme.typography.labelSmall,
                                 color = textColor,
                                 fontSize = 10.sp,
@@ -545,7 +524,7 @@ private fun ChartBar(
         // Value label above bar
         if (stat.isToday && stat.durationH > 0) {
             Text(
-                String.format("%.1fh", stat.durationH),
+                stringResource(R.string.duration_hours_decimal, stat.durationH),
                 style = MaterialTheme.typography.labelSmall,
                 color = primaryColor,
                 fontWeight = FontWeight.Bold,
@@ -940,7 +919,7 @@ private fun FrequencySelector(
                 verticalAlignment = Alignment.CenterVertically,
             ) {
                 Text(
-                    stringResource(R.string.every_min_template, currentMinutes),
+                    pluralStringResource(R.plurals.every_min_template, currentMinutes, currentMinutes),
                     style = MaterialTheme.typography.bodyMedium,
                     color = MaterialTheme.colorScheme.primary,
                     fontWeight = FontWeight.Bold,
@@ -1054,12 +1033,18 @@ private fun FrequencyPickerDialog(
                             Spacer(Modifier.width(12.dp))
                             Column {
                                 Text(
-                                    stringResource(R.string.every_minutes_template, minutes),
+                                    pluralStringResource(R.plurals.every_minutes_template, minutes, minutes),
                                     fontWeight = if (isSelected) FontWeight.Bold else FontWeight.Normal,
                                 )
                                 if (minutes >= 60) {
                                     Text(
-                                        "${minutes / 60}h${if (minutes % 60 > 0) " ${minutes % 60}m" else ""}",
+                                        buildString {
+                                            append(stringResource(R.string.duration_hours_short, minutes / 60))
+                                            if (minutes % 60 > 0) {
+                                                append(" ")
+                                                append(stringResource(R.string.duration_minutes_short, minutes % 60))
+                                            }
+                                        },
                                         style = MaterialTheme.typography.bodySmall,
                                         color = MaterialTheme.colorScheme.onSurfaceVariant,
                                         fontSize = 11.sp,

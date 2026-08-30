@@ -1,6 +1,8 @@
 package io.github.aedev.flow.ui.screens.settings
 
+import android.net.Uri
 import androidx.activity.ComponentActivity
+import androidx.activity.compose.ManagedActivityResultLauncher
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.animation.AnimatedVisibility
@@ -23,6 +25,7 @@ import androidx.compose.material.icons.outlined.History
 import androidx.compose.material.icons.outlined.PlaylistPlay
 import androidx.compose.material.icons.outlined.Psychology
 import androidx.compose.material.icons.outlined.QueueMusic
+import androidx.compose.material.icons.outlined.WatchLater
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -42,6 +45,7 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import io.github.aedev.flow.R
 import io.github.aedev.flow.data.local.BackupRepository
 import io.github.aedev.flow.data.recommendation.FlowNeuroEngine
+import io.github.aedev.flow.ui.components.layout.topbar.FlowTopBar
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -63,9 +67,9 @@ fun ImportDataScreen(onNavigateBack: () -> Unit) {
             is ImportViewModel.State.Success -> {
                 snackbarHostState.showSnackbar(
                     s.message ?: if ((s.count ?: 0) > 0) {
-                        "Imported ${s.count} ${s.label.lowercase()}"
+                        context.getString(R.string.import_success_count, s.count, s.label.lowercase())
                     } else {
-                        "${s.label} imported successfully"
+                        context.getString(R.string.import_success, s.label)
                     },
                 )
                 importViewModel.dismiss()
@@ -138,56 +142,13 @@ fun ImportDataScreen(onNavigateBack: () -> Unit) {
         )
 
     val youtubePlaylistImportLauncher =
-        rememberLauncherForActivityResult(
-            contract = ActivityResultContracts.OpenDocument(),
-            onResult = { uri ->
-                uri?.let {
-                    scope.launch {
-                        val result = backupRepo.importYouTubePlaylist(it)
-                        if (result.isSuccess) {
-                            val (name, count) = result.getOrNull()!!
-                            snackbarHostState.showSnackbar(
-                                context.getString(R.string.import_yt_playlist_success_template, name, count),
-                            )
-                        } else {
-                            val errMsg = result.exceptionOrNull()?.message
-                            val display =
-                                when (errMsg) {
-                                    "no_videos" -> context.getString(R.string.import_yt_playlist_empty_error)
-                                    else -> context.getString(R.string.import_yt_playlist_failed_template, errMsg)
-                                }
-                            snackbarHostState.showSnackbar(display)
-                        }
-                    }
-                }
-            },
-        )
+        rememberTakeoutCsvImportLauncher(backupRepo, snackbarHostState)
+
+    val youtubeWatchLaterImportLauncher =
+        rememberTakeoutCsvImportLauncher(backupRepo, snackbarHostState, forceWatchLater = true)
 
     val youtubeMusicPlaylistImportLauncher =
-        rememberLauncherForActivityResult(
-            contract = ActivityResultContracts.OpenDocument(),
-            onResult = { uri ->
-                uri?.let {
-                    scope.launch {
-                        val result = backupRepo.importYouTubePlaylist(it, isMusic = true)
-                        if (result.isSuccess) {
-                            val (name, count) = result.getOrNull()!!
-                            snackbarHostState.showSnackbar(
-                                context.getString(R.string.import_yt_playlist_success_template, name, count),
-                            )
-                        } else {
-                            val errMsg = result.exceptionOrNull()?.message
-                            val display =
-                                when (errMsg) {
-                                    "no_videos" -> context.getString(R.string.import_yt_playlist_empty_error)
-                                    else -> context.getString(R.string.import_yt_playlist_failed_template, errMsg)
-                                }
-                            snackbarHostState.showSnackbar(display)
-                        }
-                    }
-                }
-            },
-        )
+        rememberTakeoutCsvImportLauncher(backupRepo, snackbarHostState, isMusic = true)
 
     val libreTubeImportLauncher =
         rememberLauncherForActivityResult(
@@ -252,27 +213,10 @@ fun ImportDataScreen(onNavigateBack: () -> Unit) {
     Scaffold(
         contentWindowInsets = WindowInsets(0.dp),
         topBar = {
-            Surface(
-                modifier = Modifier.fillMaxWidth(),
-                color = MaterialTheme.colorScheme.background,
-            ) {
-                Row(
-                    modifier =
-                        Modifier
-                            .fillMaxWidth()
-                            .padding(horizontal = 4.dp, vertical = 8.dp),
-                    verticalAlignment = Alignment.CenterVertically,
-                ) {
-                    IconButton(onClick = onNavigateBack) {
-                        Icon(Icons.Default.ArrowBack, contentDescription = stringResource(R.string.btn_back))
-                    }
-                    Text(
-                        text = stringResource(R.string.import_data_title),
-                        style = MaterialTheme.typography.titleLarge.copy(fontWeight = FontWeight.Bold),
-                        modifier = Modifier.weight(1f),
-                    )
-                }
-            }
+            FlowTopBar(
+                title = stringResource(R.string.import_data_title),
+                onBack = onNavigateBack,
+            )
         },
         snackbarHost = { SnackbarHost(snackbarHostState) },
         containerColor = MaterialTheme.colorScheme.background,
@@ -470,7 +414,18 @@ fun ImportDataScreen(onNavigateBack: () -> Unit) {
                     icon = Icons.Outlined.PlaylistPlay,
                     containerColor = MaterialTheme.colorScheme.surfaceVariant,
                     enabled = importState !is ImportViewModel.State.Running,
-                    onClick = { youtubePlaylistImportLauncher.launch(arrayOf("text/comma-separated-values", "text/csv", "text/plain")) },
+                    onClick = { youtubePlaylistImportLauncher.launch(CSV_MIME_TYPES) },
+                )
+            }
+
+            item {
+                ImportOptionCard(
+                    title = stringResource(R.string.import_yt_watch_later),
+                    description = stringResource(R.string.import_yt_watch_later_desc),
+                    icon = Icons.Outlined.WatchLater,
+                    containerColor = MaterialTheme.colorScheme.surfaceVariant,
+                    enabled = importState !is ImportViewModel.State.Running,
+                    onClick = { youtubeWatchLaterImportLauncher.launch(CSV_MIME_TYPES) },
                 )
             }
 
@@ -496,11 +451,7 @@ fun ImportDataScreen(onNavigateBack: () -> Unit) {
                     icon = Icons.Outlined.QueueMusic,
                     containerColor = MaterialTheme.colorScheme.surfaceVariant,
                     enabled = importState !is ImportViewModel.State.Running,
-                    onClick = {
-                        youtubeMusicPlaylistImportLauncher.launch(
-                            arrayOf("text/comma-separated-values", "text/csv", "text/plain"),
-                        )
-                    },
+                    onClick = { youtubeMusicPlaylistImportLauncher.launch(CSV_MIME_TYPES) },
                 )
             }
 
@@ -509,6 +460,48 @@ fun ImportDataScreen(onNavigateBack: () -> Unit) {
             }
         }
     }
+}
+
+private val CSV_MIME_TYPES = arrayOf("text/comma-separated-values", "text/csv", "text/plain")
+
+/** Picker for a single YouTube Takeout playlist CSV, reporting the outcome on [snackbarHostState]. */
+@Composable
+private fun rememberTakeoutCsvImportLauncher(
+    backupRepo: BackupRepository,
+    snackbarHostState: SnackbarHostState,
+    isMusic: Boolean = false,
+    forceWatchLater: Boolean = false,
+): ManagedActivityResultLauncher<Array<String>, Uri?> {
+    val context = LocalContext.current
+    val scope = rememberCoroutineScope()
+    return rememberLauncherForActivityResult(
+        contract = ActivityResultContracts.OpenDocument(),
+        onResult = { uri ->
+            uri?.let {
+                scope.launch {
+                    val result = backupRepo.importYouTubePlaylist(it, isMusic, forceWatchLater)
+                    val message =
+                        result.fold(
+                            onSuccess = { (name, count) ->
+                                context.resources.getQuantityString(
+                                    R.plurals.import_yt_playlist_success_template,
+                                    count,
+                                    name,
+                                    count,
+                                )
+                            },
+                            onFailure = { error ->
+                                when (error.message) {
+                                    "no_videos" -> context.getString(R.string.import_yt_playlist_empty_error)
+                                    else -> context.getString(R.string.import_yt_playlist_failed_template, error.message)
+                                }
+                            },
+                        )
+                    snackbarHostState.showSnackbar(message)
+                }
+            }
+        },
+    )
 }
 
 @Composable
@@ -719,7 +712,7 @@ internal fun ImportProgressBanner(state: ImportViewModel.State) {
                     )
                     if (running.total > 0) {
                         Text(
-                            text = "${running.current} / ${running.total}",
+                            text = stringResource(R.string.sync_progress_fraction, running.current, running.total),
                             style = MaterialTheme.typography.labelSmall,
                             color = MaterialTheme.colorScheme.onSurfaceVariant,
                         )

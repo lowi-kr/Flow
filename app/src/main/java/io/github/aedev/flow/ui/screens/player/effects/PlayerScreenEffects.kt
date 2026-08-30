@@ -4,12 +4,13 @@ import android.app.Activity
 import android.content.Context
 import android.content.pm.ActivityInfo
 import android.content.res.Configuration
-import android.net.ConnectivityManager
-import android.net.NetworkCapabilities
 import android.os.Build
 import android.os.SystemClock
+import android.provider.Settings
 import android.util.Log
+import android.view.OrientationEventListener
 import android.view.WindowManager
+import android.widget.Toast
 import androidx.compose.runtime.*
 import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
@@ -17,24 +18,26 @@ import androidx.core.view.WindowInsetsControllerCompat
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleEventObserver
 import androidx.lifecycle.LifecycleOwner
+import androidx.lifecycle.compose.LocalLifecycleOwner
+import androidx.media3.common.C
+import androidx.media3.common.Player
+import androidx.media3.common.Timeline
+import io.github.aedev.flow.R
 import io.github.aedev.flow.data.model.Video
 import io.github.aedev.flow.player.EnhancedPlayerManager
 import io.github.aedev.flow.player.error.PlayerDiagnostics
+import io.github.aedev.flow.player.sponsorblock.SponsorBlockHandler
 import io.github.aedev.flow.player.state.EnhancedPlayerState
 import io.github.aedev.flow.ui.screens.player.VideoPlayerUiState
 import io.github.aedev.flow.ui.screens.player.VideoPlayerViewModel
 import io.github.aedev.flow.ui.screens.player.state.PlayerScreenState
+import io.github.aedev.flow.ui.screens.player.state.SubtitleSelection
+import io.github.aedev.flow.ui.utils.isTabletFormFactor
+import io.github.aedev.flow.utils.NetworkState
 import kotlinx.coroutines.delay
-import android.view.OrientationEventListener
-import android.widget.Toast
-import android.provider.Settings
-import io.github.aedev.flow.R
-import androidx.media3.common.C
-import androidx.media3.common.Player
-import androidx.media3.common.Timeline
+import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.take
-import io.github.aedev.flow.player.sponsorblock.SponsorBlockHandler
 import org.schabi.newpipe.extractor.stream.StreamType
 import kotlin.math.roundToLong
 
@@ -47,22 +50,27 @@ private const val STARTUP_RECOVERY_DELAY_MS = 5_000L
 private const val STARTUP_BUFFERING_GRACE_MS = 4_000L
 private const val ACTIVE_POSITION_TRACKING_INTERVAL_MS = 250L
 private const val IDLE_POSITION_TRACKING_INTERVAL_MS = 1_000L
+private const val AUTO_HIDE_CONTROLS_DELAY_MS = 3_000L
+private const val GESTURE_OVERLAY_HIDE_DELAY_MS = 1_000L
 
 private var liveDisplayVideoId: String? = null
 private var liveDisplayRawPositionMs: Long = 0L
 private var liveDisplayUpdatedAtMs: Long = 0L
 private var liveDisplayLastSeekAtMs: Long = 0L
 
-private fun VideoPlayerUiState.isCurrentLiveStream(): Boolean =
-    streamInfo?.streamType == StreamType.LIVE_STREAM || !hlsUrl.isNullOrEmpty()
+private fun VideoPlayerUiState.isCurrentLiveStream(): Boolean = streamInfo?.streamType == StreamType.LIVE_STREAM || !hlsUrl.isNullOrEmpty()
 
-private fun resolveHistoryChannelName(video: Video, extractedName: String?): String {
+private fun resolveHistoryChannelName(
+    video: Video,
+    extractedName: String?,
+): String {
     val cachedName = video.channelName
     val normalized = " ${cachedName.trim().lowercase()} "
-    val isCollaboration = normalized.contains(" and ") ||
-        normalized.contains(" & ") ||
-        normalized.contains(" x ") ||
-        normalized.contains(" with ")
+    val isCollaboration =
+        normalized.contains(" and ") ||
+            normalized.contains(" & ") ||
+            normalized.contains(" x ") ||
+            normalized.contains(" with ")
 
     return when {
         isCollaboration && cachedName.isNotBlank() -> cachedName
@@ -81,14 +89,14 @@ private data class StartupRecoverySnapshot(
     val playbackState: Int?,
     val position: Long,
     val duration: Long,
-    val bufferedPosition: Long
+    val bufferedPosition: Long,
 )
 
 private fun captureStartupRecoverySnapshot(
     manager: EnhancedPlayerManager,
     videoId: String,
     uiState: VideoPlayerUiState,
-    screenState: PlayerScreenState
+    screenState: PlayerScreenState,
 ): StartupRecoverySnapshot {
     val player = manager.getPlayer()
     val playerState = manager.playerState.value
@@ -101,16 +109,22 @@ private fun captureStartupRecoverySnapshot(
         isIdle = player == null || player.playbackState == Player.STATE_IDLE,
         hasDuration = screenState.duration > 0L || playerDuration > 0L,
         hasStarted = playerPosition > 500L || playerState.isPlaying,
-        isActivelyBuffering = (player?.playbackState == Player.STATE_BUFFERING &&
-            player.playWhenReady) || playerState.isBuffering,
+        isActivelyBuffering =
+            (
+                player?.playbackState == Player.STATE_BUFFERING &&
+                    player.playWhenReady
+            ) || playerState.isBuffering,
         playbackState = player?.playbackState,
         position = playerPosition,
         duration = playerDuration,
-        bufferedPosition = player?.bufferedPosition ?: 0L
+        bufferedPosition = player?.bufferedPosition ?: 0L,
     )
 }
 
-private fun updateScreenPositionFromPlayer(player: Player, screenState: PlayerScreenState) {
+private fun updateScreenPositionFromPlayer(
+    player: Player,
+    screenState: PlayerScreenState,
+) {
     val managerState = EnhancedPlayerManager.getInstance().playerState.value
     if (managerState.isLive || player.isCurrentMediaItemLive) {
         updateLiveScreenPosition(player, screenState)
@@ -126,65 +140,89 @@ private fun updateScreenPositionFromPlayer(player: Player, screenState: PlayerSc
     }
 }
 
-private fun updateLiveScreenPosition(player: Player, screenState: PlayerScreenState) {
+private fun updateLiveScreenPosition(
+    player: Player,
+    screenState: PlayerScreenState,
+) {
     val manager = EnhancedPlayerManager.getInstance()
     val managerState = manager.playerState.value
     val videoId = managerState.currentVideoId ?: player.currentMediaItem?.mediaId
     val sameLiveItem = liveDisplayVideoId == videoId
     val now = SystemClock.elapsedRealtime()
-    val elapsedMs = if (sameLiveItem) {
-        (now - liveDisplayUpdatedAtMs).coerceIn(0L, LIVE_DISPLAY_MAX_TICK_MS)
-    } else {
-        0L
-    }
+    val elapsedMs =
+        if (sameLiveItem) {
+            (now - liveDisplayUpdatedAtMs).coerceIn(0L, LIVE_DISPLAY_MAX_TICK_MS)
+        } else {
+            0L
+        }
     val rawPosition = player.currentPosition.coerceAtLeast(0L)
     val pendingSeekPosition = manager.consumeRecentLiveDisplaySeek()
     if (pendingSeekPosition != null) {
         liveDisplayLastSeekAtMs = now
     }
     val recentlySeeked = now - liveDisplayLastSeekAtMs <= LIVE_DISPLAY_RECENT_SEEK_MS
-    val previousDisplayPosition = if (sameLiveItem) {
-        screenState.currentPosition.takeIf { it > 0L } ?: liveDisplayRawPositionMs
-    } else {
-        rawPosition
-    }
-    val displayPosition = when {
-        pendingSeekPosition != null -> pendingSeekPosition
-        !sameLiveItem -> rawPosition
-        !player.isPlaying -> previousDisplayPosition
-        recentlySeeked -> rawPosition
-        else -> {
-            val rawDelta = rawPosition - previousDisplayPosition
-            when {
-                rawDelta > LIVE_DISPLAY_FORWARD_JUMP_THRESHOLD_MS -> rawPosition
-                rawDelta < -LIVE_DISPLAY_BACKWARD_DRIFT_TOLERANCE_MS -> {
-                    val speed = managerState.playbackSpeed.coerceAtLeast(0.1f)
-                    previousDisplayPosition + (elapsedMs * speed).roundToLong()
-                }
-                else -> {
-                    val speed = managerState.playbackSpeed.coerceAtLeast(0.1f)
-                    maxOf(rawPosition, previousDisplayPosition + (elapsedMs * speed).roundToLong())
+    val previousDisplayPosition =
+        if (sameLiveItem) {
+            screenState.currentPosition.takeIf { it > 0L } ?: liveDisplayRawPositionMs
+        } else {
+            rawPosition
+        }
+    val displayPosition =
+        when {
+            pendingSeekPosition != null -> {
+                pendingSeekPosition
+            }
+
+            !sameLiveItem -> {
+                rawPosition
+            }
+
+            !player.isPlaying -> {
+                previousDisplayPosition
+            }
+
+            recentlySeeked -> {
+                rawPosition
+            }
+
+            else -> {
+                val rawDelta = rawPosition - previousDisplayPosition
+                when {
+                    rawDelta > LIVE_DISPLAY_FORWARD_JUMP_THRESHOLD_MS -> {
+                        rawPosition
+                    }
+
+                    rawDelta < -LIVE_DISPLAY_BACKWARD_DRIFT_TOLERANCE_MS -> {
+                        val speed = managerState.playbackSpeed.coerceAtLeast(0.1f)
+                        previousDisplayPosition + (elapsedMs * speed).roundToLong()
+                    }
+
+                    else -> {
+                        val speed = managerState.playbackSpeed.coerceAtLeast(0.1f)
+                        maxOf(rawPosition, previousDisplayPosition + (elapsedMs * speed).roundToLong())
+                    }
                 }
             }
-        }
-    }.coerceAtLeast(0L)
+        }.coerceAtLeast(0L)
 
     val resolvedDuration = resolveLiveTimelineDuration(player) ?: 0L
-    val liveDuration = maxOf(
-        resolvedDuration,
-        managerState.liveDurationMs,
-        if (sameLiveItem) screenState.duration else 0L,
-        displayPosition
-    )
+    val liveDuration =
+        maxOf(
+            resolvedDuration,
+            managerState.liveDurationMs,
+            if (sameLiveItem) screenState.duration else 0L,
+            displayPosition,
+        )
 
     screenState.duration = liveDuration
     screenState.currentPosition = displayPosition.coerceAtMost(liveDuration.takeIf { it > 0L } ?: displayPosition)
-    screenState.bufferedPosition = maxOf(
-        player.bufferedPosition.coerceAtLeast(0L),
-        screenState.currentPosition
-    ).let { buffered ->
-        if (liveDuration > 0L) buffered.coerceAtMost(liveDuration) else buffered
-    }
+    screenState.bufferedPosition =
+        maxOf(
+            player.bufferedPosition.coerceAtLeast(0L),
+            screenState.currentPosition,
+        ).let { buffered ->
+            if (liveDuration > 0L) buffered.coerceAtMost(liveDuration) else buffered
+        }
 
     liveDisplayVideoId = videoId
     liveDisplayRawPositionMs = rawPosition
@@ -230,7 +268,7 @@ private fun resolveLiveTimelineDuration(player: Player): Long? {
 fun PositionTrackingEffect(
     isPlaying: Boolean,
     screenState: PlayerScreenState,
-    showsPreciseProgress: Boolean
+    showsPreciseProgress: Boolean,
 ) {
     LaunchedEffect(isPlaying, showsPreciseProgress) {
         while (true) {
@@ -244,7 +282,7 @@ fun PositionTrackingEffect(
                     ACTIVE_POSITION_TRACKING_INTERVAL_MS
                 } else {
                     IDLE_POSITION_TRACKING_INTERVAL_MS
-                }
+                },
             )
         }
     }
@@ -265,16 +303,17 @@ fun PositionTrackingEffect(
 @Composable
 fun PlaybackRefocusEffect(
     screenState: PlayerScreenState,
-    lifecycleOwner: LifecycleOwner
+    lifecycleOwner: LifecycleOwner,
 ) {
     var resumeTrigger by remember { mutableIntStateOf(0) }
 
     DisposableEffect(lifecycleOwner) {
-        val observer = LifecycleEventObserver { _, event ->
-            if (event == Lifecycle.Event.ON_RESUME) {
-                resumeTrigger++
+        val observer =
+            LifecycleEventObserver { _, event ->
+                if (event == Lifecycle.Event.ON_RESUME) {
+                    resumeTrigger++
+                }
             }
-        }
         lifecycleOwner.lifecycle.addObserver(observer)
         onDispose { lifecycleOwner.lifecycle.removeObserver(observer) }
     }
@@ -316,8 +355,9 @@ fun PlaybackRefocusEffect(
         if (playerMgrState.currentVideoId != null) {
             mgr.beginBackgroundRecovery()
             try {
-                val savedPosition = player.currentPosition.takeIf { it > 500L }
-                    ?: screenState.currentPosition.takeIf { it > 500L }
+                val savedPosition =
+                    player.currentPosition.takeIf { it > 500L }
+                        ?: screenState.currentPosition.takeIf { it > 500L }
 
                 var attempts = 0
                 while (attempts < 25 && player.duration <= 0L) {
@@ -332,7 +372,7 @@ fun PlaybackRefocusEffect(
                 } else {
                     PlayerDiagnostics.logRefocusGlitch(
                         TAG,
-                        "No valid duration after $attempts polls; state=${player.playbackState} pos=${player.currentPosition}"
+                        "No valid duration after $attempts polls; state=${player.playbackState} pos=${player.currentPosition}",
                     )
                     mgr.handleRefocusStuck(playerMgrState.currentVideoId)
                     return@LaunchedEffect
@@ -367,7 +407,7 @@ fun WatchProgressSaveEffect(
     currentPosition: () -> Long,
     duration: () -> Long,
     uiState: VideoPlayerUiState,
-    viewModel: VideoPlayerViewModel
+    viewModel: VideoPlayerViewModel,
 ) {
     val currentPosProvider by rememberUpdatedState(currentPosition)
     val currentDurProvider by rememberUpdatedState(duration)
@@ -379,9 +419,10 @@ fun WatchProgressSaveEffect(
         if (currentUi.isCurrentLiveStream()) return@LaunchedEffect
         val channelId = streamInfo?.uploaderUrl?.substringAfterLast("/") ?: video.channelId
         val channelName = resolveHistoryChannelName(video, streamInfo?.uploaderName)
-        val thumbnailUrl = streamInfo?.thumbnails?.maxByOrNull { it.height }?.url
-            ?: video.thumbnailUrl.takeIf { it.isNotEmpty() }
-            ?: "https://i.ytimg.com/vi/$videoId/hq720.jpg"
+        val thumbnailUrl =
+            streamInfo?.thumbnails?.maxByOrNull { it.height }?.url
+                ?: video.thumbnailUrl.takeIf { it.isNotEmpty() }
+                ?: "https://i.ytimg.com/vi/$videoId/hq720.jpg"
         val title = streamInfo?.name ?: video.title
         val durationMs = currentDurProvider()
         if (title.isNotEmpty() && durationMs > 0) {
@@ -393,7 +434,7 @@ fun WatchProgressSaveEffect(
                 thumbnailUrl = thumbnailUrl,
                 channelName = channelName,
                 channelId = channelId,
-                isShort = video.isShort
+                isShort = video.isShort,
             )
         }
     }
@@ -405,9 +446,10 @@ fun WatchProgressSaveEffect(
             if (currentUi.isCurrentLiveStream()) continue
             val channelId = streamInfo?.uploaderUrl?.substringAfterLast("/") ?: video.channelId
             val channelName = resolveHistoryChannelName(video, streamInfo?.uploaderName)
-            val thumbnailUrl = streamInfo?.thumbnails?.maxByOrNull { it.height }?.url
-                ?: video.thumbnailUrl.takeIf { it.isNotEmpty() }
-                ?: "https://i.ytimg.com/vi/$videoId/hq720.jpg"
+            val thumbnailUrl =
+                streamInfo?.thumbnails?.maxByOrNull { it.height }?.url
+                    ?: video.thumbnailUrl.takeIf { it.isNotEmpty() }
+                    ?: "https://i.ytimg.com/vi/$videoId/hq720.jpg"
             val title = streamInfo?.name ?: video.title
             val durationMs = currentDurProvider()
             if (durationMs > 0 && title.isNotEmpty()) {
@@ -419,7 +461,7 @@ fun WatchProgressSaveEffect(
                     thumbnailUrl = thumbnailUrl,
                     channelName = channelName,
                     channelId = channelId,
-                    isShort = video.isShort
+                    isShort = video.isShort,
                 )
             }
         }
@@ -433,54 +475,46 @@ fun AutoHideControlsEffect(
     hasEnded: Boolean,
     lastInteractionTimestamp: Long,
     isTouchLocked: Boolean = false,
-    onHideControls: () -> Unit
+    isScrubbing: Boolean = false,
+    onHideControls: () -> Unit,
 ) {
-    LaunchedEffect(showControls, isPlaying, hasEnded, lastInteractionTimestamp, isTouchLocked) {
-        if (showControls && isPlaying && !hasEnded && !isTouchLocked) {
-            delay(3000)
+    LaunchedEffect(
+        showControls,
+        isPlaying,
+        hasEnded,
+        lastInteractionTimestamp,
+        isTouchLocked,
+        isScrubbing,
+    ) {
+        if (showControls && isPlaying && !hasEnded && !isTouchLocked && !isScrubbing) {
+            delay(AUTO_HIDE_CONTROLS_DELAY_MS)
             onHideControls()
         }
     }
 }
 
 @Composable
-fun AutoPlayNextEffect(
-    hasEnded: Boolean,
-    autoplayEnabled: Boolean,
-    isLooping: Boolean,
-    hasNextInQueue: Boolean,
-    relatedVideos: List<Video>,
-    onVideoClick: (Video) -> Unit
-) {
-    LaunchedEffect(hasEnded, autoplayEnabled, isLooping, hasNextInQueue) {
-        if (hasEnded && autoplayEnabled && !isLooping && !hasNextInQueue) {
-            relatedVideos.firstOrNull()?.let { nextVideo ->
-                onVideoClick(nextVideo)
+fun GestureOverlayAutoHideEffect(screenState: PlayerScreenState) {
+    LaunchedEffect(screenState) {
+        snapshotFlow { screenState.showBrightnessOverlay to screenState.brightnessLevel }
+            .collectLatest { (visible, _) ->
+                if (visible) {
+                    delay(GESTURE_OVERLAY_HIDE_DELAY_MS)
+                    screenState.showBrightnessOverlay = false
+                }
             }
-        }
     }
-}
 
-@Composable
-fun GestureOverlayAutoHideEffect(
-    screenState: PlayerScreenState
-) {
-    // Brightness overlay auto-hide
-    LaunchedEffect(screenState.showBrightnessOverlay) {
-        if (screenState.showBrightnessOverlay) {
-            delay(1000)
-            screenState.showBrightnessOverlay = false
-        }
+    LaunchedEffect(screenState) {
+        snapshotFlow { screenState.showVolumeOverlay to screenState.volumeLevel }
+            .collectLatest { (visible, _) ->
+                if (visible) {
+                    delay(GESTURE_OVERLAY_HIDE_DELAY_MS)
+                    screenState.showVolumeOverlay = false
+                }
+            }
     }
-    
-    // Volume overlay auto-hide
-    LaunchedEffect(screenState.showVolumeOverlay, screenState.volumeLevel) {
-        if (screenState.showVolumeOverlay) {
-            delay(1000)
-            screenState.showVolumeOverlay = false
-        }
-    }
-    
+
     LaunchedEffect(screenState.seekAccumulation, screenState.showSeekForwardAnimation) {
         if (screenState.showSeekForwardAnimation) {
             delay(800)
@@ -506,16 +540,26 @@ fun FullscreenEffect(
     activity: Activity?,
     videoAspectRatio: Float = 16f / 9f,
     lifecycleOwner: LifecycleOwner,
-    fullscreenBrightnessLevel: Float? = null,
+    fullscreenBrightnessLevel: () -> Float? = { null },
     suppressFullscreenRequest: Boolean = false,
-    isPortrait: Boolean = false
+    isPortrait: Boolean = false,
 ) {
     var resumeTrigger by remember { mutableIntStateOf(0) }
     var forcePortraitLock by remember { mutableStateOf(false) }
+    var wasFullscreen by remember { mutableStateOf(false) }
     DisposableEffect(lifecycleOwner) {
-        val observer = LifecycleEventObserver { _, event ->
-            if (event == Lifecycle.Event.ON_RESUME) resumeTrigger++
-        }
+        val observer =
+            LifecycleEventObserver { _, event ->
+                when (event) {
+                    Lifecycle.Event.ON_RESUME -> resumeTrigger++
+
+                    // MainActivity drops the activity's own lock in onStop, so holding on to ours
+                    // would re-pin portrait on the next resume and never let go again (#841).
+                    Lifecycle.Event.ON_STOP -> forcePortraitLock = false
+
+                    else -> Unit
+                }
+            }
         lifecycleOwner.lifecycle.addObserver(observer)
         onDispose { lifecycleOwner.lifecycle.removeObserver(observer) }
     }
@@ -526,11 +570,13 @@ fun FullscreenEffect(
             if (suppressFullscreenRequest && isFullscreen) return@let
             if (isFullscreen) {
                 forcePortraitLock = false
-                val orientation = when {
-                    isPortrait -> ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
-                    videoAspectRatio < 1f -> ActivityInfo.SCREEN_ORIENTATION_SENSOR_PORTRAIT
-                    else -> ActivityInfo.SCREEN_ORIENTATION_SENSOR_LANDSCAPE
-                }
+                wasFullscreen = true
+                val orientation =
+                    when {
+                        isPortrait -> ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
+                        videoAspectRatio < 1f -> ActivityInfo.SCREEN_ORIENTATION_SENSOR_PORTRAIT
+                        else -> ActivityInfo.SCREEN_ORIENTATION_SENSOR_LANDSCAPE
+                    }
                 act.requestedOrientation = orientation
 
                 WindowCompat.setDecorFitsSystemWindows(act.window, false)
@@ -538,31 +584,49 @@ fun FullscreenEffect(
                 insetsController.hide(WindowInsetsCompat.Type.systemBars())
                 insetsController.systemBarsBehavior = WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
 
-                fullscreenBrightnessLevel?.let { brightnessLevel ->
+                fullscreenBrightnessLevel()?.let { brightnessLevel ->
                     val layoutParams = act.window.attributes
-                    layoutParams.screenBrightness = if (brightnessLevel < 0f) {
-                        WindowManager.LayoutParams.BRIGHTNESS_OVERRIDE_NONE
-                    } else {
-                        brightnessLevel.coerceIn(0f, 1f)
-                    }
+                    layoutParams.screenBrightness =
+                        if (brightnessLevel < 0f) {
+                            WindowManager.LayoutParams.BRIGHTNESS_OVERRIDE_NONE
+                        } else {
+                            brightnessLevel.coerceIn(0f, 1f)
+                        }
                     act.window.attributes = layoutParams
                 }
             } else {
-                val cfgLandscape =
-                    act.resources.configuration.orientation == Configuration.ORIENTATION_LANDSCAPE
-                val autoRotateOn = try {
-                    Settings.System.getInt(
-                        act.contentResolver,
-                        Settings.System.ACCELEROMETER_ROTATION
-                    ) == 1
-                } catch (e: Exception) { false }
+                val leavingFullscreen = wasFullscreen
+                wasFullscreen = false
+                val configuration = act.resources.configuration
+                val cfgLandscape = configuration.orientation == Configuration.ORIENTATION_LANDSCAPE
+                val autoRotateOn =
+                    try {
+                        Settings.System.getInt(
+                            act.contentResolver,
+                            Settings.System.ACCELEROMETER_ROTATION,
+                        ) == 1
+                    } catch (e: Exception) {
+                        false
+                    }
 
-                if (cfgLandscape && autoRotateOn) {
-                    act.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
-                    forcePortraitLock = true
-                } else {
-                    act.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED
-                    forcePortraitLock = false
+                // A phone has no landscape layout outside fullscreen, so it is held in portrait
+                // until the user physically rotates back. A tablet's landscape layout is the
+                // primary one and the release listener below can never fire on a device whose
+                // natural orientation is portrait but is being held sideways, so pinning one here
+                // would strand it in portrait for the rest of the session (#918).
+                //
+                // Only an actual fullscreen exit may pin: this effect also re-runs on every resume
+                // and on the first composition, where pinning locks an app that was merely
+                // backgrounded in landscape into portrait until it is force-restarted (#841).
+                when {
+                    leavingFullscreen && cfgLandscape && autoRotateOn && !configuration.isTabletFormFactor -> {
+                        act.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
+                        forcePortraitLock = true
+                    }
+
+                    !forcePortraitLock -> {
+                        act.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED
+                    }
                 }
 
                 // Reset screen brightness to default when exiting fullscreen
@@ -580,17 +644,18 @@ fun FullscreenEffect(
     val lockActivity = activity
     if (forcePortraitLock && lockActivity != null) {
         DisposableEffect(lockActivity) {
-            val listener = object : OrientationEventListener(lockActivity) {
-                override fun onOrientationChanged(orientation: Int) {
-                    if (orientation == ORIENTATION_UNKNOWN) return
-                    val physicallyPortrait =
-                        orientation in 0..30 || orientation in 330..359 || orientation in 150..210
-                    if (physicallyPortrait) {
-                        lockActivity.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED
-                        forcePortraitLock = false
+            val listener =
+                object : OrientationEventListener(lockActivity) {
+                    override fun onOrientationChanged(orientation: Int) {
+                        if (orientation == ORIENTATION_UNKNOWN) return
+                        val physicallyPortrait =
+                            orientation in 0..30 || orientation in 330..359 || orientation in 150..210
+                        if (physicallyPortrait) {
+                            lockActivity.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED
+                            forcePortraitLock = false
+                        }
                     }
                 }
-            }
             listener.enable()
             onDispose { listener.disable() }
         }
@@ -601,7 +666,7 @@ fun FullscreenEffect(
 fun KeepScreenOnEffect(
     isPlaying: Boolean,
     activity: Activity?,
-    lifecycleOwner: LifecycleOwner? = null
+    lifecycleOwner: LifecycleOwner? = null,
 ) {
     DisposableEffect(activity, isPlaying, lifecycleOwner) {
         val clearScreenOn = {
@@ -614,17 +679,26 @@ fun KeepScreenOnEffect(
             clearScreenOn()
         }
 
-        val observer = lifecycleOwner?.let {
-            LifecycleEventObserver { _, event ->
-                when (event) {
-                    Lifecycle.Event.ON_STOP -> clearScreenOn()
-                    Lifecycle.Event.ON_START -> if (isPlaying) {
-                        activity?.window?.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
+        val observer =
+            lifecycleOwner?.let {
+                LifecycleEventObserver { _, event ->
+                    when (event) {
+                        Lifecycle.Event.ON_STOP -> {
+                            clearScreenOn()
+                        }
+
+                        Lifecycle.Event.ON_START -> {
+                            if (isPlaying) {
+                                activity?.window?.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
+                            }
+                        }
+
+                        else -> {
+                            Unit
+                        }
                     }
-                    else -> Unit
-                }
-            }.also(it.lifecycle::addObserver)
-        }
+                }.also(it.lifecycle::addObserver)
+            }
 
         onDispose {
             if (observer != null && lifecycleOwner != null) {
@@ -654,17 +728,12 @@ fun VideoLoadEffect(
     videoId: String,
     context: Context,
     screenState: PlayerScreenState,
-    viewModel: VideoPlayerViewModel
+    viewModel: VideoPlayerViewModel,
 ) {
     LaunchedEffect(videoId) {
         screenState.resetForNewVideo()
 
-        // Detect if on Wifi for preferred quality
-        val connectivityManager = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
-        val activeNetwork = connectivityManager.activeNetwork
-        val capabilities = connectivityManager.getNetworkCapabilities(activeNetwork)
-        val isWifi = capabilities?.hasTransport(NetworkCapabilities.TRANSPORT_WIFI) ?: true
-        viewModel.loadVideoInfo(videoId, isWifi)
+        viewModel.loadVideoInfo(videoId, NetworkState.isOnWifi(context))
     }
 }
 
@@ -673,7 +742,7 @@ fun PlaybackStartupRecoveryEffect(
     videoId: String,
     uiState: VideoPlayerUiState,
     screenState: PlayerScreenState,
-    viewModel: VideoPlayerViewModel
+    viewModel: VideoPlayerViewModel,
 ) {
     var recoveredVideoId by remember { mutableStateOf<String?>(null) }
 
@@ -710,13 +779,16 @@ fun PlaybackStartupRecoveryEffect(
         }
 
         val unresolvedStartup = !snapshot.hasDuration && !snapshot.hasStarted
-        val stillStuck = snapshot.belongsToVideo &&
-            recoveredVideoId != videoId &&
-            (
-                (!snapshot.isActivelyBuffering &&
-                    (!manager.isPreparedForPlayback(videoId) || unresolvedStartup)) ||
-                    (snapshot.isActivelyBuffering && unresolvedStartup)
-            )
+        val stillStuck =
+            snapshot.belongsToVideo &&
+                recoveredVideoId != videoId &&
+                (
+                    (
+                        !snapshot.isActivelyBuffering &&
+                            (!manager.isPreparedForPlayback(videoId) || unresolvedStartup)
+                    ) ||
+                        (snapshot.isActivelyBuffering && unresolvedStartup)
+                )
 
         if (stillStuck) {
             recoveredVideoId = videoId
@@ -725,67 +797,9 @@ fun PlaybackStartupRecoveryEffect(
                 "Startup recovery: reloading stuck playback for $videoId " +
                     "(state=${snapshot.playbackState}, pos=${snapshot.position}, " +
                     "dur=${snapshot.duration}, buff=${snapshot.bufferedPosition}, " +
-                    "activeBuffering=${snapshot.isActivelyBuffering})"
+                    "activeBuffering=${snapshot.isActivelyBuffering})",
             )
             viewModel.retryLoadVideo()
-        }
-    }
-}
-
-@Composable
-fun VideoCleanupEffect(
-    videoId: String,
-    video: Video,
-    currentPosition: Long,
-    duration: Long,
-    uiState: VideoPlayerUiState,
-    viewModel: VideoPlayerViewModel
-) {
-    var lastKnownPosition by remember(videoId) { mutableLongStateOf(currentPosition) }
-    var lastKnownDuration by remember(videoId) { mutableLongStateOf(duration) }
-    var lastKnownTitle by remember(videoId) { mutableStateOf(video.title) }
-    var lastKnownThumbnail by remember(videoId) {
-        mutableStateOf(
-            video.thumbnailUrl.takeIf { it.isNotEmpty() }
-                ?: "https://i.ytimg.com/vi/$videoId/hq720.jpg"
-        )
-    }
-    var lastKnownChannelName by remember(videoId) { mutableStateOf(video.channelName) }
-    var lastKnownChannelId by remember(videoId) { mutableStateOf(video.channelId) }
-    val currentUiState by rememberUpdatedState(uiState)
-
-    SideEffect {
-        val streamInfo = uiState.streamInfo
-        val belongsToVideo = streamInfo?.id == videoId || uiState.cachedVideo?.id == videoId
-        if (belongsToVideo) {
-            lastKnownPosition = currentPosition
-            lastKnownDuration = duration
-            lastKnownTitle = streamInfo?.name ?: video.title
-            lastKnownThumbnail = streamInfo?.thumbnails?.maxByOrNull { it.height }?.url
-                ?: video.thumbnailUrl.takeIf { it.isNotEmpty() }
-                ?: "https://i.ytimg.com/vi/$videoId/hq720.jpg"
-            lastKnownChannelName = resolveHistoryChannelName(video, streamInfo?.uploaderName)
-            lastKnownChannelId = streamInfo?.uploaderUrl?.substringAfterLast("/") ?: video.channelId
-        }
-    }
-
-    DisposableEffect(videoId) {
-        onDispose {
-            if (!currentUiState.isCurrentLiveStream()) {
-                viewModel.savePlaybackPosition(
-                    videoId = videoId,
-                    position = lastKnownPosition,
-                    duration = lastKnownDuration,
-                    title = lastKnownTitle,
-                    thumbnailUrl = lastKnownThumbnail,
-                    channelName = lastKnownChannelName,
-                    channelId = lastKnownChannelId,
-                    isShort = video.isShort
-                )
-
-                viewModel.reportWatchProgress(video, lastKnownPosition, lastKnownDuration)
-            }
-            Log.d(TAG, "Video cleanup disposed for $videoId")
         }
     }
 }
@@ -796,7 +810,7 @@ fun ShortVideoPromptEffect(
     screenState: PlayerScreenState,
     isInQueue: Boolean,
     disableShortsPlayer: Boolean,
-    showShortsPlayerPrompt: Boolean
+    showShortsPlayerPrompt: Boolean,
 ) {
     LaunchedEffect(videoDuration, screenState.hasShownShortsPrompt, isInQueue, disableShortsPlayer, showShortsPlayerPrompt) {
         if (disableShortsPlayer || !showShortsPlayerPrompt) {
@@ -815,20 +829,10 @@ fun ShortVideoPromptEffect(
 }
 
 @Composable
-fun CommentsLoadEffect(
-    videoId: String,
-    viewModel: VideoPlayerViewModel
-) {
-    LaunchedEffect(videoId) {
-        viewModel.loadComments(videoId)
-    }
-}
-
-@Composable
 fun SubscriptionAndLikeEffect(
     videoId: String,
     uiState: VideoPlayerUiState,
-    viewModel: VideoPlayerViewModel
+    viewModel: VideoPlayerViewModel,
 ) {
     LaunchedEffect(uiState.streamInfo) {
         uiState.streamInfo?.let { streamInfo ->
@@ -850,6 +854,19 @@ fun SponsorSkipEffect(context: Context) {
 }
 
 @Composable
+fun SubtitleLoadErrorEffect(
+    context: Context,
+    screenState: PlayerScreenState,
+) {
+    LaunchedEffect(Unit) {
+        EnhancedPlayerManager.getInstance().subtitleLoadFailedEvent.collect { label ->
+            SubtitleSelection.disable(screenState)
+            Toast.makeText(context, context.getString(R.string.subtitle_load_failed, label), Toast.LENGTH_SHORT).show()
+        }
+    }
+}
+
+@Composable
 fun OrientationListenerEffect(
     context: Context,
     isExpanded: Boolean,
@@ -857,9 +874,10 @@ fun OrientationListenerEffect(
     videoAspectRatio: Float = 16f / 9f,
     isPortraitFullscreen: Boolean = false,
     onEnterFullscreen: () -> Unit,
-    onExitFullscreen: () -> Unit
+    onExitFullscreen: () -> Unit,
 ) {
     var physicalOrientation by remember { mutableIntStateOf(-1) }
+    val lifecycleOwner = LocalLifecycleOwner.current
 
     val currentIsFullscreen by rememberUpdatedState(isFullscreen)
     val currentAspectRatio by rememberUpdatedState(videoAspectRatio)
@@ -867,35 +885,53 @@ fun OrientationListenerEffect(
     val currentEnter by rememberUpdatedState(onEnterFullscreen)
     val currentExit by rememberUpdatedState(onExitFullscreen)
 
-    DisposableEffect(context) {
-        val listener = object : OrientationEventListener(context) {
-            override fun onOrientationChanged(orientation: Int) {
-                if (orientation == ORIENTATION_UNKNOWN) return
-                
-                val autoRotateOn = try {
-                    Settings.System.getInt(context.contentResolver, Settings.System.ACCELEROMETER_ROTATION) == 1
-                } catch (e: Exception) { true }
-                
-                if (!autoRotateOn) return
+    DisposableEffect(context, lifecycleOwner) {
+        val listener =
+            object : OrientationEventListener(context) {
+                override fun onOrientationChanged(orientation: Int) {
+                    if (orientation == ORIENTATION_UNKNOWN) return
 
-                val newOrientation = when {
-                    orientation in 60..120 || orientation in 240..300 -> 1 
-                    orientation in 0..30 || orientation in 330..359 || orientation in 150..210 -> 0 
-                    else -> physicalOrientation 
-                }
+                    val autoRotateOn =
+                        try {
+                            Settings.System.getInt(context.contentResolver, Settings.System.ACCELEROMETER_ROTATION) == 1
+                        } catch (e: Exception) {
+                            true
+                        }
 
-                if (newOrientation != physicalOrientation) {
-                    physicalOrientation = newOrientation
+                    if (!autoRotateOn) return
+
+                    val newOrientation =
+                        when {
+                            orientation in 60..120 || orientation in 240..300 -> 1
+                            orientation in 0..30 || orientation in 330..359 || orientation in 150..210 -> 0
+                            else -> physicalOrientation
+                        }
+
+                    if (newOrientation != physicalOrientation) {
+                        physicalOrientation = newOrientation
+                    }
                 }
             }
+        // Sensor-driven fullscreen changes are only meaningful while the user is looking at the
+        // player, and an accelerometer left registered in the background costs battery for nothing.
+        val observer =
+            LifecycleEventObserver { _, event ->
+                when (event) {
+                    Lifecycle.Event.ON_RESUME -> listener.enable()
+                    Lifecycle.Event.ON_PAUSE -> listener.disable()
+                    else -> Unit
+                }
+            }
+        lifecycleOwner.lifecycle.addObserver(observer)
+        onDispose {
+            lifecycleOwner.lifecycle.removeObserver(observer)
+            listener.disable()
         }
-        listener.enable()
-        onDispose { listener.disable() }
     }
 
     LaunchedEffect(physicalOrientation, isExpanded) {
         delay(150)
-        
+
         if (physicalOrientation == -1) return@LaunchedEffect
 
         val isVerticalVideo = currentAspectRatio < 1f

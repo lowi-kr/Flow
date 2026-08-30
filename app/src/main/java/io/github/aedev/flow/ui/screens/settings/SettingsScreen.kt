@@ -58,6 +58,8 @@ import io.github.aedev.flow.discord.DiscordPresenceRuntime
 import io.github.aedev.flow.network.AppProxyManager
 import io.github.aedev.flow.platform.AppUiMode
 import io.github.aedev.flow.player.DeepFlowManager
+import io.github.aedev.flow.ui.components.layout.topbar.FlowSearchTopBar
+import io.github.aedev.flow.ui.components.layout.topbar.FlowTopBar
 import io.github.aedev.flow.ui.theme.ThemeMode
 import io.github.aedev.flow.ui.theme.extendedColors
 import io.github.aedev.flow.utils.AppLanguageManager
@@ -157,7 +159,15 @@ fun SettingsScreen(
             val remainingMs = expiresAt - System.currentTimeMillis()
             if (remainingMs <= 0) return@remember null
             val remainingMins = remainingMs / 60_000
-            if (remainingMins < 60) "${remainingMins}m" else "${remainingMins / 60}h ${remainingMins % 60}m"
+            if (remainingMins < 60) {
+                context.getString(R.string.duration_minutes_short, remainingMins)
+            } else {
+                context.getString(
+                    R.string.duration_hours_minutes_short,
+                    remainingMins / 60,
+                    remainingMins % 60,
+                )
+            }
         }
 
     // Optimize Region Dialog: compute list only once
@@ -177,10 +187,6 @@ fun SettingsScreen(
     // Search state
     var searchQuery by remember { mutableStateOf("") }
     var isSearchActive by remember { mutableStateOf(false) }
-    val searchFocusRequester = remember { FocusRequester() }
-    LaunchedEffect(isSearchActive) {
-        if (isSearchActive) runCatching { searchFocusRequester.requestFocus() }
-    }
     BackHandler(enabled = isSearchActive) {
         isSearchActive = false
         searchQuery = ""
@@ -487,68 +493,26 @@ fun SettingsScreen(
     Scaffold(
         contentWindowInsets = WindowInsets(0.dp),
         topBar = {
-            Surface(
-                modifier = Modifier.fillMaxWidth(),
-                color = MaterialTheme.colorScheme.background,
-            ) {
-                if (isSearchActive) {
-                    Row(
-                        modifier =
-                            Modifier
-                                .fillMaxWidth()
-                                .padding(horizontal = 4.dp, vertical = 8.dp),
-                        verticalAlignment = Alignment.CenterVertically,
-                    ) {
-                        IconButton(onClick = {
-                            isSearchActive = false
-                            searchQuery = ""
-                        }) {
-                            Icon(Icons.Default.ArrowBack, "Close search")
-                        }
-                        OutlinedTextField(
-                            value = searchQuery,
-                            onValueChange = { searchQuery = it },
-                            modifier =
-                                Modifier
-                                    .weight(1f)
-                                    .focusRequester(searchFocusRequester),
-                            placeholder = { Text(stringResource(R.string.ui_search_settings)) },
-                            singleLine = true,
-                            keyboardOptions = KeyboardOptions(imeAction = ImeAction.Search),
-                            keyboardActions = KeyboardActions(onSearch = {}),
-                            colors =
-                                OutlinedTextFieldDefaults.colors(
-                                    focusedBorderColor = Color.Transparent,
-                                    unfocusedBorderColor = Color.Transparent,
-                                ),
-                        )
-                        if (searchQuery.isNotEmpty()) {
-                            IconButton(onClick = { searchQuery = "" }) {
-                                Icon(Icons.Outlined.Close, "Clear search")
-                            }
-                        }
-                    }
-                } else {
-                    Row(
-                        modifier =
-                            Modifier
-                                .fillMaxWidth()
-                                .padding(horizontal = 4.dp, vertical = 8.dp),
-                        verticalAlignment = Alignment.CenterVertically,
-                    ) {
-                        IconButton(onClick = onNavigateBack) {
-                            Icon(Icons.Default.ArrowBack, stringResource(R.string.btn_back))
-                        }
-                        Text(
-                            text = stringResource(R.string.settings_title),
-                            style = MaterialTheme.typography.titleLarge.copy(fontWeight = FontWeight.Bold),
-                            modifier = Modifier.weight(1f),
-                        )
+            if (isSearchActive) {
+                FlowSearchTopBar(
+                    query = searchQuery,
+                    onQueryChange = { searchQuery = it },
+                    onClose = {
+                        isSearchActive = false
+                        searchQuery = ""
+                    },
+                    placeholder = stringResource(R.string.ui_search_settings),
+                )
+            } else {
+                FlowTopBar(
+                    title = stringResource(R.string.settings_title),
+                    onBack = onNavigateBack,
+                    actions = {
                         IconButton(onClick = { isSearchActive = true }) {
                             Icon(Icons.Outlined.Search, stringResource(R.string.ui_search_settings))
                         }
-                    }
-                }
+                    },
+                )
             }
         },
         modifier = modifier,
@@ -891,15 +855,45 @@ fun SettingsScreen(
                                             R.string.deep_flow_expire_duration_subtitle,
                                             deepFlowExpireHours.let { hours ->
                                                 when (hours) {
-                                                    DEEP_FLOW_NEVER_EXPIRES_HOURS -> context.getString(R.string.deep_flow_duration_never)
-                                                    1 -> context.getString(R.string.deep_flow_duration_1h)
-                                                    2 -> context.getString(R.string.deep_flow_duration_2h)
-                                                    4 -> context.getString(R.string.deep_flow_duration_4h)
-                                                    6 -> context.getString(R.string.deep_flow_duration_6h)
-                                                    8 -> context.getString(R.string.deep_flow_duration_8h)
-                                                    12 -> context.getString(R.string.deep_flow_duration_12h)
-                                                    24 -> context.getString(R.string.deep_flow_duration_24h)
-                                                    else -> context.getString(R.string.deep_flow_duration_hours, hours)
+                                                    DEEP_FLOW_NEVER_EXPIRES_HOURS -> {
+                                                        context.getString(R.string.deep_flow_duration_never)
+                                                    }
+
+                                                    1 -> {
+                                                        context.getString(R.string.deep_flow_duration_1h)
+                                                    }
+
+                                                    2 -> {
+                                                        context.getString(R.string.deep_flow_duration_2h)
+                                                    }
+
+                                                    4 -> {
+                                                        context.getString(R.string.deep_flow_duration_4h)
+                                                    }
+
+                                                    6 -> {
+                                                        context.getString(R.string.deep_flow_duration_6h)
+                                                    }
+
+                                                    8 -> {
+                                                        context.getString(R.string.deep_flow_duration_8h)
+                                                    }
+
+                                                    12 -> {
+                                                        context.getString(R.string.deep_flow_duration_12h)
+                                                    }
+
+                                                    24 -> {
+                                                        context.getString(R.string.deep_flow_duration_24h)
+                                                    }
+
+                                                    else -> {
+                                                        context.resources.getQuantityString(
+                                                            R.plurals.deep_flow_duration_hours,
+                                                            hours,
+                                                            hours,
+                                                        )
+                                                    }
                                                 }
                                             },
                                         ),
@@ -1554,32 +1548,6 @@ fun SettingsScreen(
             confirmButton = {},
             dismissButton = { TextButton(onClick = { showRegionDialog = false }) { Text(stringResource(R.string.cancel)) } },
         )
-    }
-}
-
-@Composable
-fun BrainTraitRow(
-    label: String,
-    value: Double,
-    leftLabel: String,
-    rightLabel: String,
-) {
-    Column {
-        Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
-            Text(label, style = MaterialTheme.typography.labelMedium, fontWeight = FontWeight.Bold)
-            Text("${(value * 100).toInt()}%", style = MaterialTheme.typography.labelMedium)
-        }
-        Spacer(Modifier.height(4.dp))
-        LinearProgressIndicator(
-            progress = value.toFloat(), // Fixed: No lambda
-            modifier = Modifier.fillMaxWidth().height(8.dp).clip(CircleShape),
-            color = MaterialTheme.colorScheme.secondary,
-            trackColor = MaterialTheme.colorScheme.surfaceVariant,
-        )
-        Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
-            Text(leftLabel, style = MaterialTheme.typography.labelSmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
-            Text(rightLabel, style = MaterialTheme.typography.labelSmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
-        }
     }
 }
 

@@ -28,6 +28,8 @@ import coil3.compose.AsyncImage
 import io.github.aedev.flow.R
 import io.github.aedev.flow.data.local.PlaylistRepository
 import io.github.aedev.flow.data.model.Video
+import io.github.aedev.flow.ui.components.ShortWatchedIndicator
+import io.github.aedev.flow.ui.components.layout.topbar.FlowTopBar
 import kotlinx.coroutines.flow.collectLatest
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -50,29 +52,10 @@ fun SavedShortsGridScreen(
     Scaffold(
         contentWindowInsets = WindowInsets(0.dp),
         topBar = {
-            Surface(
-                modifier = Modifier.fillMaxWidth(),
-                color = MaterialTheme.colorScheme.background,
-            ) {
-                Row(
-                    modifier =
-                        Modifier
-                            .fillMaxWidth()
-                            .padding(horizontal = 4.dp, vertical = 8.dp),
-                    verticalAlignment = Alignment.CenterVertically,
-                ) {
-                    IconButton(onClick = onBackClick) {
-                        Icon(Icons.Default.ArrowBack, contentDescription = stringResource(R.string.ui_back))
-                    }
-                    Text(
-                        text = stringResource(R.string.library_saved_shorts_label),
-                        style = MaterialTheme.typography.titleLarge.copy(fontWeight = FontWeight.Bold),
-                        maxLines = 1,
-                        overflow = TextOverflow.Ellipsis,
-                        modifier = Modifier.weight(1f),
-                    )
-                }
-            }
+            FlowTopBar(
+                title = stringResource(R.string.library_saved_shorts_label),
+                onBack = onBackClick,
+            )
         },
         containerColor = MaterialTheme.colorScheme.background,
     ) { padding ->
@@ -191,6 +174,8 @@ fun SavedShortCard(
                     overflow = TextOverflow.Ellipsis,
                 )
             }
+
+            ShortWatchedIndicator(videoId = video.id)
         }
     }
 }

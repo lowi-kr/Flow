@@ -7,14 +7,19 @@ import io.github.aedev.flow.data.model.Comment
 import io.github.aedev.flow.data.model.Video
 import io.github.aedev.flow.data.model.VideoCollaborator
 import io.github.aedev.flow.data.model.needsCollaboratorResolution
+import io.github.aedev.flow.data.shorts.ChannelReelIndex
+import io.github.aedev.flow.data.shorts.ShortsClassifier
 import io.github.aedev.flow.innertube.YouTube
 import io.github.aedev.flow.innertube.models.SongItem
 import io.github.aedev.flow.innertube.models.response.WatchMetadataResponse
 import io.github.aedev.flow.utils.PerformanceDispatcher
+import io.github.aedev.flow.utils.RelativeUploadDateParser
 import io.github.aedev.flow.utils.ThumbnailUrlResolver
 import io.github.aedev.flow.utils.avatarImageIdentityKey
 import io.github.aedev.flow.utils.bestImageUrl
 import io.github.aedev.flow.utils.distinctBestImageUrls
+import io.github.aedev.flow.utils.newPipeContentCountry
+import io.github.aedev.flow.utils.newPipeLocalization
 import io.github.aedev.flow.utils.parseToTimestamp
 import kotlinx.coroutines.Deferred
 import kotlinx.coroutines.Dispatchers
@@ -33,7 +38,6 @@ import org.schabi.newpipe.extractor.comments.CommentsInfoItem
 import org.schabi.newpipe.extractor.exceptions.ExtractionException
 import org.schabi.newpipe.extractor.kiosk.KioskExtractor
 import org.schabi.newpipe.extractor.localization.ContentCountry
-import org.schabi.newpipe.extractor.localization.Localization
 import org.schabi.newpipe.extractor.stream.ContentAvailability
 import org.schabi.newpipe.extractor.stream.StreamInfo
 import org.schabi.newpipe.extractor.stream.StreamInfoItem
@@ -47,6 +51,7 @@ class YouTubeRepository
     @Inject
     constructor(
         private val playerPreferences: PlayerPreferences,
+        private val channelReelIndex: ChannelReelIndex,
     ) {
         private val service = ServiceList.YouTube
 
@@ -243,10 +248,10 @@ class YouTubeRepository
             withContext(Dispatchers.IO) {
                 try {
                     val effectiveRegion = region.ifBlank { playerPreferences.trendingRegion.first() }
-                    // Update localization based on region
-                    val country = ContentCountry(effectiveRegion)
-                    val localization = Localization.fromLocale(java.util.Locale.ENGLISH)
-                    NewPipe.init(NewPipe.getDownloader(), localization, country)
+                    NewPipe.setupLocalization(
+                        newPipeLocalization(playerPreferences.appLanguage.first()),
+                        newPipeContentCountry(effectiveRegion),
+                    )
 
                     val kioskList = service.kioskList
                     val trendingExtractor = kioskList.getExtractorById("Trending", null) as KioskExtractor<*>
@@ -559,9 +564,11 @@ class YouTubeRepository
 
                         // Re-init NewPipe to potentially clear internal state
                         try {
-                            val country = ContentCountry("US")
-                            val localization = Localization.fromLocale(java.util.Locale.ENGLISH)
-                            NewPipe.init(NewPipe.getDownloader(), localization, country)
+                            NewPipe.init(
+                                NewPipe.getDownloader(),
+                                NewPipe.getPreferredLocalization(),
+                                NewPipe.getPreferredContentCountry(),
+                            )
                         } catch (initEx: Exception) {
                             Log.e("YouTubeRepository", "Failed to re-init NewPipe", initEx)
                         }
@@ -675,7 +682,7 @@ class YouTubeRepository
                                 .filterNot { it.isPaidOrMembersOnly() }
                                 .take(limitPerChannel)
                                 .map { it.toVideo() }
-                        return@withContext items
+                        return@withContext markUploadsPlaylistReels(channelId, items)
                     }
 
                     // Fallback: attempt to use channel extractor directly (best-effort)
@@ -710,15 +717,29 @@ class YouTubeRepository
                             emptyList()
                         }
 
-                    pageItems
-                        .filterNot { it.isPaidOrMembersOnly() }
-                        .take(limitPerChannel)
-                        .map { it.toVideo() }
+                    val fallbackItems =
+                        pageItems
+                            .filterNot { it.isPaidOrMembersOnly() }
+                            .take(limitPerChannel)
+                            .map { it.toVideo() }
+                    if (channelId != null) {
+                        markUploadsPlaylistReels(channelId, fallbackItems)
+                    } else {
+                        fallbackItems
+                    }
                 } catch (e: Exception) {
                     Log.w(TAG, "${e::class.simpleName}: ${e.message}")
                     emptyList()
                 }
             }
+
+        private suspend fun markUploadsPlaylistReels(
+            channelId: String,
+            videos: List<Video>,
+        ): List<Video> =
+            withTimeoutOrNull(REEL_INDEX_TIMEOUT_MS) {
+                channelReelIndex.markReels(channelId, videos)
+            } ?: videos
 
         /**
          * Fetch channel info (best-effort) using NewPipe's channel extractor.
@@ -741,6 +762,22 @@ class YouTubeRepository
                     null
                 }
             }
+
+        /**
+         * Fetches a channel's creator-declared keyword tags (+ description) and
+         * feeds them to the recommendation engine — authored channel identity,
+         * used for topic profiles and interest clustering. Best-effort.
+         */
+        suspend fun learnChannelTags(
+            context: android.content.Context,
+            channelId: String,
+        ) {
+            val info = getChannelInfo(channelId) ?: return
+            val tags = info.tags.orEmpty()
+            if (tags.isEmpty() && info.description.isNullOrBlank()) return
+            io.github.aedev.flow.data.recommendation.FlowNeuroEngine
+                .onChannelTagsLearned(context, channelId, tags, info.description)
+        }
 
         /**
          * PERFORMANCE OPTIMIZED: Aggregate uploads from multiple channels
@@ -833,9 +870,8 @@ class YouTubeRepository
         ): List<Video> =
             withContext(Dispatchers.IO) {
                 val effectiveRegion = region.ifBlank { playerPreferences.trendingRegion.first() }
-                val country = ContentCountry(effectiveRegion)
-                val localization = Localization.fromLocale(java.util.Locale.ENGLISH)
-                NewPipe.init(NewPipe.getDownloader(), localization, country)
+                val country = newPipeContentCountry(effectiveRegion)
+                NewPipe.setupLocalization(newPipeLocalization(playerPreferences.appLanguage.first()), country)
 
                 when (category) {
                     TrendingCategory.ALL -> {
@@ -1348,9 +1384,9 @@ class YouTubeRepository
 
             var durationSecs = if (duration > 0) duration.toInt() else 0
 
-            val isShortUrl = rawUrl.contains("/shorts/")
+            val isReel = ShortsClassifier.isReel(this)
 
-            if (isShortUrl && durationSecs == 0) {
+            if (isReel && durationSecs == 0) {
                 durationSecs = 60
             }
 
@@ -1410,7 +1446,7 @@ class YouTubeRepository
                 channelThumbnailUrls = avatarUrls,
                 isUpcoming = streamType == StreamType.NONE,
                 isLive = isLiveStream,
-                isShort = isShortUrl,
+                isShort = isReel,
                 isMusic = isMusicCandidate,
             )
         }
@@ -1510,50 +1546,12 @@ class YouTubeRepository
             textualDate: String?,
         ): Long {
             absoluteMillis?.let { if (it > 0L) return it }
-            val parsed = parseRelativeUploadDate(textualDate)
+            // Shared parser: the old private copy carried the plural-"s" bug
+            // ("3 days" matched the seconds branch), which stamped every
+            // plural-dated subs video as seconds old — stale uploads then won
+            // the recency sort and the fresh-subs slots over genuinely new ones.
+            val parsed = RelativeUploadDateParser.parse(textualDate)
             return parsed ?: System.currentTimeMillis()
-        }
-
-        private fun parseRelativeUploadDate(textualDate: String?): Long? {
-            val raw = textualDate?.trim().orEmpty()
-            if (raw.isBlank()) return null
-
-            val normalized =
-                raw
-                    .lowercase(Locale.US)
-                    .replace("streamed", "")
-                    .replace("premiered", "")
-                    .replace("ago", "")
-                    .trim()
-
-            if (normalized.contains("just now") || normalized.contains("today")) {
-                return System.currentTimeMillis()
-            }
-            if (normalized.contains("yesterday")) {
-                return System.currentTimeMillis() - 24L * 60L * 60L * 1000L
-            }
-
-            val value =
-                Regex("(\\d+)")
-                    .find(normalized)
-                    ?.groupValues
-                    ?.getOrNull(1)
-                    ?.toLongOrNull()
-                    ?: return null
-
-            val unitMillis =
-                when {
-                    normalized.contains("second") || normalized.endsWith("s") -> 1_000L
-                    normalized.contains("minute") || normalized.endsWith("m") -> 60_000L
-                    normalized.contains("hour") || normalized.endsWith("h") -> 3_600_000L
-                    normalized.contains("day") || normalized.endsWith("d") -> 86_400_000L
-                    normalized.contains("week") || normalized.endsWith("w") -> 7L * 86_400_000L
-                    normalized.contains("month") || normalized.endsWith("mo") -> 30L * 86_400_000L
-                    normalized.contains("year") || normalized.endsWith("y") -> 365L * 86_400_000L
-                    else -> return null
-                }
-
-            return System.currentTimeMillis() - (value * unitMillis)
         }
 
         private fun <T> takeRotatingWindow(
@@ -1580,13 +1578,17 @@ class YouTubeRepository
             private const val HOME_SUBS_MAX_CHANNELS = 18
             private const val COMMENT_AVATAR_FETCH_CONCURRENCY = 4
             private const val COMMENT_AVATAR_FETCH_TIMEOUT_MS = 6_000L
+            private const val REEL_INDEX_TIMEOUT_MS = 3_000L
 
             @Volatile
             private var instance: YouTubeRepository? = null
 
-            fun getInstance(playerPreferences: io.github.aedev.flow.data.local.PlayerPreferences): YouTubeRepository =
+            fun getInstance(
+                playerPreferences: io.github.aedev.flow.data.local.PlayerPreferences,
+                channelReelIndex: ChannelReelIndex,
+            ): YouTubeRepository =
                 instance ?: synchronized(this) {
-                    instance ?: YouTubeRepository(playerPreferences).also { instance = it }
+                    instance ?: YouTubeRepository(playerPreferences, channelReelIndex).also { instance = it }
                 }
 
             fun getInstance(): YouTubeRepository =
@@ -1664,6 +1666,7 @@ internal object WatchMetadataVideoMapper {
             val id = cv.videoId ?: return@mapNotNull null
             val viewText = cv.viewCountText?.text()
             val isLive = cv.isLive || viewText.isLiveViewCountText()
+            val uploadDateText = cv.publishedTimeText?.text() ?: ""
             Video(
                 id = id,
                 title = cv.title?.text() ?: "",
@@ -1674,7 +1677,11 @@ internal object WatchMetadataVideoMapper {
                         ?: ThumbnailUrlResolver.buildHighQualityYoutubeThumbnail(id),
                 duration = if (isLive) 0 else parseDurationTextToSeconds(cv.lengthText?.text()),
                 viewCount = parseAbbreviatedCount(viewText) ?: 0L,
-                uploadDate = cv.publishedTimeText?.text() ?: "",
+                uploadDate = uploadDateText,
+                // Video.timestamp defaults to now(), which made every related item
+                // look brand new — defeating the age filter and shorts-shelf sort.
+                // Parse the real age; 0 means unknown (callers fall back to text).
+                timestamp = RelativeUploadDateParser.parse(uploadDateText) ?: 0L,
                 isLive = isLive,
             )
         }

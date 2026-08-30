@@ -76,6 +76,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.platform.LocalUriHandler
+import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextLayoutResult
 import androidx.compose.ui.text.font.FontWeight
@@ -165,6 +166,7 @@ fun FlowCommentsBottomSheet(
     expandedHeight: Dp? = null,
     collapsedHeight: Dp = 0.dp,
     onSheetProgressChange: (Float) -> Unit = {},
+    dismissOnOutsideTap: Boolean = false,
     modifier: Modifier = Modifier,
 ) {
     val configuration = androidx.compose.ui.platform.LocalConfiguration.current
@@ -272,6 +274,16 @@ fun FlowCommentsBottomSheet(
         modifier = modifier.fillMaxSize(),
         contentAlignment = Alignment.BottomCenter,
     ) {
+        if (dismissOnOutsideTap) {
+            Box(
+                modifier =
+                    Modifier
+                        .fillMaxSize()
+                        .pointerInput(isAnimatingOut) {
+                            detectTapGestures { animateToDismiss() }
+                        },
+            )
+        }
         Surface(
             modifier =
                 Modifier
@@ -713,7 +725,11 @@ fun FlowCommentItem(
                                     R.string.hide_replies,
                                 )
                             } else {
-                                stringResource(R.string.view_replies_template, comment.replyCount)
+                                pluralStringResource(
+                                    R.plurals.view_replies_template,
+                                    comment.replyCount,
+                                    comment.replyCount,
+                                )
                             },
                         color = MaterialTheme.colorScheme.primary,
                         style = MaterialTheme.typography.labelMedium,

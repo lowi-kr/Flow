@@ -23,6 +23,10 @@ import io.github.aedev.flow.notification.SubscriptionCheckWorker
 import io.github.aedev.flow.utils.AppLanguageManager
 import io.github.aedev.flow.utils.FlowCrashHandler
 import io.github.aedev.flow.utils.PerformanceDispatcher
+import io.github.aedev.flow.utils.cipher.PipePipeNsigDecoder
+import io.github.aedev.flow.utils.newPipeContentCountry
+import io.github.aedev.flow.utils.newPipeLocalization
+import io.github.aedev.flow.utils.normalizeYouTubeCountry
 import io.github.aedev.flow.utils.potoken.NewPipePoTokenProvider
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -36,7 +40,6 @@ import okhttp3.OkHttpClient
 import org.conscrypt.Conscrypt
 import org.schabi.newpipe.extractor.NewPipe
 import org.schabi.newpipe.extractor.localization.ContentCountry
-import org.schabi.newpipe.extractor.localization.Localization
 import org.schabi.newpipe.extractor.services.youtube.extractors.YoutubeStreamExtractor
 import java.security.Security
 import java.util.Locale
@@ -51,6 +54,9 @@ class FlowApplication :
 
     @Inject
     lateinit var okHttpClient: OkHttpClient
+
+    @Inject
+    lateinit var channelReelIndex: io.github.aedev.flow.data.shorts.ChannelReelIndex
 
     override fun newImageLoader(context: PlatformContext): ImageLoader = imageLoader
 
@@ -85,11 +91,16 @@ class FlowApplication :
         FlowCrashHandler.install(this)
 
         try {
-            val country = ContentCountry("US")
-            val localization = Localization("en", "US")
-            NewPipe.init(NewPipeDownloader.getInstance(this), localization, country)
+            // Seeded from the device locale so the very first extraction is already localized; the
+            // stored app-language/region preference takes over as soon as it loads below.
+            val localization = newPipeLocalization(Locale.getDefault().toLanguageTag())
+            NewPipe.init(
+                NewPipeDownloader.getInstance(this),
+                localization,
+                newPipeContentCountry(Locale.getDefault().country),
+            )
             YoutubeStreamExtractor.setPoTokenProvider(NewPipePoTokenProvider)
-            Log.d(TAG, "NewPipe initialized successfully with en-US settings")
+            Log.d(TAG, "NewPipe initialized with ${localization.localizationCode}")
         } catch (e: Exception) {
             // Log error but don't crash the app
             Log.e(TAG, "Failed to initialize NewPipe", e)
@@ -102,6 +113,8 @@ class FlowApplication :
         } catch (e: Exception) {
             Log.e(TAG, "Failed to initialize CipherDeobfuscator", e)
         }
+
+        PipePipeNsigDecoder.initialize(this)
 
         // Initialize notification channels
         NotificationHelper.createNotificationChannels(this)
@@ -138,8 +151,17 @@ class FlowApplication :
         // The X-Goog-Visitor-Id header prevents YouTube from returning empty
         // search results on tablets and fresh Android 16 installs (Issue #223).
         CoroutineScope(SupervisorJob() + Dispatchers.IO).launch {
+            var nsigWarmed = false
             playerPreferences.proxyConfig.collectLatest { proxyConfig ->
                 applyProxyConfig(proxyConfig)
+                // Ordered after the first proxy application so the warm-up honours it. Resolving
+                // the remote n-decoder player id is a round trip that the first video of a session
+                // would otherwise pay on its path to first frame; it is persisted for 24h, so on
+                // most launches this is only a disk read.
+                if (!nsigWarmed) {
+                    nsigWarmed = true
+                    PipePipeNsigDecoder.warmUp()
+                }
             }
         }
 
@@ -192,6 +214,10 @@ class FlowApplication :
                 YouTubeLocale(gl = glCode, hl = hlCode)
             }.collectLatest { newLocale ->
                 YouTube.locale = newLocale
+                NewPipe.setupLocalization(
+                    newPipeLocalization(newLocale.hl),
+                    ContentCountry(newLocale.gl),
+                )
                 Log.d(TAG, "Dynamic YouTube Locale updated: gl=${newLocale.gl}, hl=${newLocale.hl}")
             }
         }
@@ -232,7 +258,7 @@ class FlowApplication :
         CoroutineScope(SupervisorJob() + Dispatchers.IO).launch {
             try {
                 val repository = SubscriptionRepository.getInstance(this@FlowApplication)
-                val youtubeRepository = YouTubeRepository.getInstance(playerPreferences)
+                val youtubeRepository = YouTubeRepository.getInstance(playerPreferences, channelReelIndex)
                 val repaired =
                     repository.repairVideoThumbnailSubscriptions { channelId ->
                         withTimeoutOrNull(6_000L) {
@@ -253,21 +279,6 @@ class FlowApplication :
         YouTube.proxy = AppProxyManager.currentProxy()
         YouTube.proxyAuth = AppProxyManager.currentHttpProxyAuthorizationHeader()
         NewPipeExtractor.invalidateClient()
-    }
-
-    private fun normalizeYouTubeCountry(region: String): String {
-        val normalized = region.trim().uppercase(Locale.US)
-        return if (normalized.matches(Regex("[A-Z]{2}"))) {
-            normalized
-        } else {
-            Locale
-                .getDefault()
-                .country
-                .trim()
-                .uppercase(Locale.US)
-                .takeIf { it.matches(Regex("[A-Z]{2}")) }
-                ?: "US"
-        }
     }
 
     override fun onTerminate() {
