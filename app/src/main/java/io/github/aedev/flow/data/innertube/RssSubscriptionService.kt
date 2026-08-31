@@ -1,14 +1,14 @@
-package io.github.aedev.flow.data.innertube
+package com.arubr.smsvcodes.data.innertube
 
 import android.util.Log
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.data.shorts.ChannelReelIndex
-import io.github.aedev.flow.data.shorts.ShortsClassifier
-import io.github.aedev.flow.data.subscriptions.ChannelRssClient
-import io.github.aedev.flow.data.subscriptions.ChannelRssEntry
-import io.github.aedev.flow.utils.ThumbnailUrlResolver
-import io.github.aedev.flow.utils.formatYouTubeRelativeTime
-import io.github.aedev.flow.utils.parsePremiereTimestamp
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.data.shorts.ChannelReelIndex
+import com.arubr.smsvcodes.data.shorts.ShortsClassifier
+import com.arubr.smsvcodes.data.subscriptions.ChannelRssClient
+import com.arubr.smsvcodes.data.subscriptions.ChannelRssEntry
+import com.arubr.smsvcodes.utils.ThumbnailUrlResolver
+import com.arubr.smsvcodes.utils.formatYouTubeRelativeTime
+import com.arubr.smsvcodes.utils.parsePremiereTimestamp
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async

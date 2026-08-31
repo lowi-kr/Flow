@@ -1,4 +1,4 @@
-package io.github.aedev.flow.player
+package com.arubr.smsvcodes.player
 
 import com.google.common.truth.Truth.assertThat
 import kotlinx.coroutines.CompletableDeferred

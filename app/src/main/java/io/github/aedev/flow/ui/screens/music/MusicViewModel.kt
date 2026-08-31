@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.music
+package com.arubr.smsvcodes.ui.screens.music
 
 import android.content.Context
 import android.util.Log
@@ -6,26 +6,26 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.local.LikedVideosRepository
-import io.github.aedev.flow.data.music.DownloadManager
-import io.github.aedev.flow.data.music.MusicCache
-import io.github.aedev.flow.data.music.YouTubeMusicService
-import io.github.aedev.flow.data.newmusic.InnertubeMusicService
-import io.github.aedev.flow.data.recommendation.MusicRecommendationAlgorithm
-import io.github.aedev.flow.data.recommendation.MusicSection
-import io.github.aedev.flow.data.recommendation.music.MusicArtistInsights
-import io.github.aedev.flow.data.recommendation.music.MusicQuickPicks
-import io.github.aedev.flow.data.recommendation.music.MusicTimeBucket
-import io.github.aedev.flow.data.recommendation.music.musicArtistKey
-import io.github.aedev.flow.innertube.YouTube
-import io.github.aedev.flow.innertube.models.BrowseEndpoint
-import io.github.aedev.flow.innertube.models.SongItem
-import io.github.aedev.flow.innertube.pages.ArtistItemsPage
-import io.github.aedev.flow.innertube.pages.HomePage
-import io.github.aedev.flow.innertube.pages.MoodAndGenres
-import io.github.aedev.flow.player.EnhancedMusicPlayerManager
-import io.github.aedev.flow.utils.PerformanceDispatcher
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.local.LikedVideosRepository
+import com.arubr.smsvcodes.data.music.DownloadManager
+import com.arubr.smsvcodes.data.music.MusicCache
+import com.arubr.smsvcodes.data.music.YouTubeMusicService
+import com.arubr.smsvcodes.data.newmusic.InnertubeMusicService
+import com.arubr.smsvcodes.data.recommendation.MusicRecommendationAlgorithm
+import com.arubr.smsvcodes.data.recommendation.MusicSection
+import com.arubr.smsvcodes.data.recommendation.music.MusicArtistInsights
+import com.arubr.smsvcodes.data.recommendation.music.MusicQuickPicks
+import com.arubr.smsvcodes.data.recommendation.music.MusicTimeBucket
+import com.arubr.smsvcodes.data.recommendation.music.musicArtistKey
+import com.arubr.smsvcodes.innertube.YouTube
+import com.arubr.smsvcodes.innertube.models.BrowseEndpoint
+import com.arubr.smsvcodes.innertube.models.SongItem
+import com.arubr.smsvcodes.innertube.pages.ArtistItemsPage
+import com.arubr.smsvcodes.innertube.pages.HomePage
+import com.arubr.smsvcodes.innertube.pages.MoodAndGenres
+import com.arubr.smsvcodes.player.EnhancedMusicPlayerManager
+import com.arubr.smsvcodes.utils.PerformanceDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
 import kotlinx.coroutines.awaitAll
@@ -51,11 +51,11 @@ class MusicViewModel
     constructor(
         @ApplicationContext private val context: Context,
         private val musicRecommendationAlgorithm: MusicRecommendationAlgorithm,
-        private val subscriptionRepository: io.github.aedev.flow.data.local.SubscriptionRepository,
-        private val playlistRepository: io.github.aedev.flow.data.music.PlaylistRepository,
-        private val localPlaylistRepository: io.github.aedev.flow.data.local.PlaylistRepository,
+        private val subscriptionRepository: com.arubr.smsvcodes.data.local.SubscriptionRepository,
+        private val playlistRepository: com.arubr.smsvcodes.data.music.PlaylistRepository,
+        private val localPlaylistRepository: com.arubr.smsvcodes.data.local.PlaylistRepository,
         private val downloadManager: DownloadManager,
-        private val musicBrain: io.github.aedev.flow.data.recommendation.music.MusicBrainEngine,
+        private val musicBrain: com.arubr.smsvcodes.data.recommendation.music.MusicBrainEngine,
     ) : ViewModel() {
         companion object {
             /** Route prefix for synthesized Daily Mix playlist pages. */
@@ -1028,7 +1028,7 @@ class MusicViewModel
                                     artist = playlist.author,
                                     thumbnailUrl = playlist.thumbnailUrl,
                                     duration = 0,
-                                    itemType = io.github.aedev.flow.ui.screens.music.MusicItemType.PLAYLIST,
+                                    itemType = com.arubr.smsvcodes.ui.screens.music.MusicItemType.PLAYLIST,
                                 )
                             }
                         similarSections.add(
@@ -1294,7 +1294,7 @@ class MusicViewModel
                     subscriptionRepository.unsubscribe(artist.channelId)
                 } else {
                     subscriptionRepository.subscribe(
-                        io.github.aedev.flow.data.local.ChannelSubscription(
+                        com.arubr.smsvcodes.data.local.ChannelSubscription(
                             channelId = artist.channelId,
                             channelName = artist.name,
                             channelThumbnail = artist.thumbnailUrl,
@@ -1549,7 +1549,7 @@ data class MusicUiState(
     val homeChips: List<HomePage.Chip> = emptyList(),
     val selectedHomeChip: HomePage.Chip? = null,
     val brainMaturity: String? = null, // "cold_start" / "warming" / "mature" — steers section order
-    val explorePage: io.github.aedev.flow.innertube.pages.ExplorePage? = null,
+    val explorePage: com.arubr.smsvcodes.innertube.pages.ExplorePage? = null,
     val moodsAndGenres: List<MoodAndGenres> = emptyList(),
     val selectedGenre: String? = null,
     val selectedFilter: String? = null,
@@ -1567,7 +1567,7 @@ data class MusicUiState(
     val isMoreLoading: Boolean = false,
     val searchResultsArtists: List<ArtistDetails> = emptyList(),
     val homeContinuation: String? = null,
-    val artistItemsPage: io.github.aedev.flow.innertube.pages.ArtistItemsPage? = null,
+    val artistItemsPage: com.arubr.smsvcodes.innertube.pages.ArtistItemsPage? = null,
     val isArtistItemsLoading: Boolean = false,
     val similarToSections: List<MusicSection> = emptyList(),
 )

@@ -1,7 +1,7 @@
-package io.github.aedev.flow.ui.screens.channel
+package com.arubr.smsvcodes.ui.screens.channel
 
 import androidx.annotation.StringRes
-import io.github.aedev.flow.R
+import com.arubr.smsvcodes.R
 
 /**
  * The channel screen's tabs, addressed by identity rather than by position.

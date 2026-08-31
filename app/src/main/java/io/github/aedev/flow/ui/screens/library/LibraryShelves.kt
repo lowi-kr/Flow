@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.library
+package com.arubr.smsvcodes.ui.screens.library
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -28,11 +28,11 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.data.music.DownloadedTrack
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.data.video.DownloadedVideo
-import io.github.aedev.flow.ui.components.ShortsCard
-import io.github.aedev.flow.ui.screens.music.MusicTrack
+import com.arubr.smsvcodes.data.music.DownloadedTrack
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.data.video.DownloadedVideo
+import com.arubr.smsvcodes.ui.components.ShortsCard
+import com.arubr.smsvcodes.ui.screens.music.MusicTrack
 
 @Composable
 internal fun LibraryShelf(

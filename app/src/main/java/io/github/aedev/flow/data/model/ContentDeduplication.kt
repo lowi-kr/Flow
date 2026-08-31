@@ -1,4 +1,4 @@
-package io.github.aedev.flow.data.model
+package com.arubr.smsvcodes.data.model
 
 internal fun <T> Iterable<T>.distinctByNonBlankKey(
     keySelector: (T) -> String

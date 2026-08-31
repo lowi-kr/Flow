@@ -1,7 +1,7 @@
-package io.github.aedev.flow.ui.tv.player.state
+package com.arubr.smsvcodes.ui.tv.player.state
 
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.data.model.SponsorBlockSegment
+import com.arubr.smsvcodes.data.model.SponsorBlockSegment
 import org.junit.Test
 
 class TvSeekBarMarksTest {

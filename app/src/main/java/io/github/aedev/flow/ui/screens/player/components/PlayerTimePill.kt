@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.player.components
+package com.arubr.smsvcodes.ui.screens.player.components
 
 import androidx.compose.animation.core.LinearEasing
 import androidx.compose.animation.core.RepeatMode
@@ -29,10 +29,10 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.ui.screens.player.util.VideoPlayerUtils
-import io.github.aedev.flow.ui.theme.PlayerScrimAffordance
-import io.github.aedev.flow.ui.theme.PlayerScrimContent
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.ui.screens.player.util.VideoPlayerUtils
+import com.arubr.smsvcodes.ui.theme.PlayerScrimAffordance
+import com.arubr.smsvcodes.ui.theme.PlayerScrimContent
 
 @Composable
 fun PlayerTimePill(

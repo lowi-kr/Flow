@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.tv.components
+package com.arubr.smsvcodes.ui.tv.components
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -35,9 +35,9 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import coil3.compose.AsyncImage
-import io.github.aedev.flow.R
-import io.github.aedev.flow.player.EnhancedMusicPlayerManager
-import io.github.aedev.flow.ui.screens.music.MusicTrack
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.player.EnhancedMusicPlayerManager
+import com.arubr.smsvcodes.ui.screens.music.MusicTrack
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.isActive
 

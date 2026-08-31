@@ -1,4 +1,4 @@
-package io.github.aedev.flow.player
+package com.arubr.smsvcodes.player
 
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow

@@ -1,8 +1,8 @@
-package io.github.aedev.flow.player.stream
+package com.arubr.smsvcodes.player.stream
 
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.data.shorts.ShortsClassifier
-import io.github.aedev.flow.utils.ThumbnailUrlResolver
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.data.shorts.ShortsClassifier
+import com.arubr.smsvcodes.utils.ThumbnailUrlResolver
 import org.schabi.newpipe.extractor.stream.StreamInfo
 import org.schabi.newpipe.extractor.stream.StreamInfoItem
 import org.schabi.newpipe.extractor.stream.StreamType

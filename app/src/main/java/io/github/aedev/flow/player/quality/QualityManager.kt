@@ -1,13 +1,13 @@
-package io.github.aedev.flow.player.quality
+package com.arubr.smsvcodes.player.quality
 
 import android.util.Log
 import androidx.media3.common.util.UnstableApi
 import androidx.media3.exoplayer.trackselection.DefaultTrackSelector
 import androidx.media3.exoplayer.upstream.DefaultBandwidthMeter
-import io.github.aedev.flow.player.config.PlayerConfig
-import io.github.aedev.flow.player.state.EnhancedPlayerState
-import io.github.aedev.flow.player.state.QualityOption
-import io.github.aedev.flow.player.stream.VideoCodecUtils
+import com.arubr.smsvcodes.player.config.PlayerConfig
+import com.arubr.smsvcodes.player.state.EnhancedPlayerState
+import com.arubr.smsvcodes.player.state.QualityOption
+import com.arubr.smsvcodes.player.stream.VideoCodecUtils
 import kotlinx.coroutines.flow.MutableStateFlow
 import org.schabi.newpipe.extractor.stream.VideoStream
 

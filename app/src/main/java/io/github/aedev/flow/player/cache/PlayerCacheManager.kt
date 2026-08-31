@@ -1,4 +1,4 @@
-package io.github.aedev.flow.player.cache
+package com.arubr.smsvcodes.player.cache
 
 import android.content.Context
 import android.util.Log
@@ -7,9 +7,9 @@ import androidx.media3.datasource.DataSource
 import androidx.media3.datasource.DefaultDataSource
 import androidx.media3.datasource.cache.CacheDataSource
 import androidx.media3.datasource.cache.SimpleCache
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.player.config.PlayerConfig
-import io.github.aedev.flow.player.datasource.YouTubeHttpDataSource
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.player.config.PlayerConfig
+import com.arubr.smsvcodes.player.datasource.YouTubeHttpDataSource
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.withContext

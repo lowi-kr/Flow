@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.music
+package com.arubr.smsvcodes.ui.screens.music
 
 import android.content.Context
 import android.net.Uri
@@ -8,22 +8,22 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.local.LikedVideoInfo
-import io.github.aedev.flow.data.local.LikedVideosRepository
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.data.local.ViewHistory
-import io.github.aedev.flow.data.lyrics.LyricsEntry
-import io.github.aedev.flow.data.lyrics.LyricsHelper
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.data.model.distinctByNonBlankKey
-import io.github.aedev.flow.data.music.DownloadManager
-import io.github.aedev.flow.data.music.PlaylistRepository
-import io.github.aedev.flow.data.music.YouTubeMusicService
-import io.github.aedev.flow.data.recommendation.music.MusicBrainEngine
-import io.github.aedev.flow.player.EnhancedMusicPlayerManager
-import io.github.aedev.flow.player.RepeatMode
-import io.github.aedev.flow.utils.PerformanceDispatcher
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.local.LikedVideoInfo
+import com.arubr.smsvcodes.data.local.LikedVideosRepository
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.data.local.ViewHistory
+import com.arubr.smsvcodes.data.lyrics.LyricsEntry
+import com.arubr.smsvcodes.data.lyrics.LyricsHelper
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.data.model.distinctByNonBlankKey
+import com.arubr.smsvcodes.data.music.DownloadManager
+import com.arubr.smsvcodes.data.music.PlaylistRepository
+import com.arubr.smsvcodes.data.music.YouTubeMusicService
+import com.arubr.smsvcodes.data.recommendation.music.MusicBrainEngine
+import com.arubr.smsvcodes.player.EnhancedMusicPlayerManager
+import com.arubr.smsvcodes.player.RepeatMode
+import com.arubr.smsvcodes.utils.PerformanceDispatcher
 import kotlinx.coroutines.async
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -49,7 +49,7 @@ class MusicPlayerViewModel
         private val downloadManager: DownloadManager,
         private val likedVideosRepository: LikedVideosRepository,
         private val viewHistory: ViewHistory,
-        private val localPlaylistRepository: io.github.aedev.flow.data.local.PlaylistRepository,
+        private val localPlaylistRepository: com.arubr.smsvcodes.data.local.PlaylistRepository,
         private val musicBrain: MusicBrainEngine,
     ) : ViewModel() {
         private val _uiState = MutableStateFlow(MusicPlayerUiState())
@@ -187,7 +187,7 @@ class MusicPlayerViewModel
                 localPlaylistRepository.getMusicPlaylistsFlow().collect { playlistInfos ->
                     val playlists =
                         playlistInfos.map { info ->
-                            io.github.aedev.flow.data.music.Playlist(
+                            com.arubr.smsvcodes.data.music.Playlist(
                                 id = info.id,
                                 name = info.name,
                                 description = info.description,
@@ -814,7 +814,7 @@ data class MusicPlayerUiState(
     val isLiked: Boolean = false,
     val isLoading: Boolean = false,
     val error: String? = null,
-    val playlists: List<io.github.aedev.flow.data.music.Playlist> = emptyList(),
+    val playlists: List<com.arubr.smsvcodes.data.music.Playlist> = emptyList(),
     val showAddToPlaylistDialog: Boolean = false,
     val showCreatePlaylistDialog: Boolean = false,
     val lyrics: String? = null,

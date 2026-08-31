@@ -1,7 +1,7 @@
-package io.github.aedev.flow.ui.components
+package com.arubr.smsvcodes.ui.components
 
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.data.model.VideoCollaborator
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.data.model.VideoCollaborator
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertTrue
 import org.junit.Test

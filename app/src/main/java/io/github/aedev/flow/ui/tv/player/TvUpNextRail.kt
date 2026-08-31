@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.tv.player
+package com.arubr.smsvcodes.ui.tv.player
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -13,12 +13,12 @@ import androidx.compose.ui.focus.FocusRequester
 import androidx.compose.ui.focus.focusRequester
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.ui.tv.components.TvVideoCard
-import io.github.aedev.flow.ui.tv.focus.ProvideTvRowPivot
-import io.github.aedev.flow.ui.tv.focus.tvRowFocus
-import io.github.aedev.flow.ui.tv.theme.LocalTvDimens
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.ui.tv.components.TvVideoCard
+import com.arubr.smsvcodes.ui.tv.focus.ProvideTvRowPivot
+import com.arubr.smsvcodes.ui.tv.focus.tvRowFocus
+import com.arubr.smsvcodes.ui.tv.theme.LocalTvDimens
 
 /**
  * Up-next shelf in the player overlay: the active queue when one exists,

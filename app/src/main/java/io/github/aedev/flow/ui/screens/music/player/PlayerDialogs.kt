@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.music.player
+package com.arubr.smsvcodes.ui.screens.music.player
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.*
@@ -6,9 +6,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.player.EnhancedMusicPlayerManager
-import io.github.aedev.flow.ui.screens.music.MusicTrack
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.player.EnhancedMusicPlayerManager
+import com.arubr.smsvcodes.ui.screens.music.MusicTrack
 
 @Composable
 fun TrackInfoDialog(

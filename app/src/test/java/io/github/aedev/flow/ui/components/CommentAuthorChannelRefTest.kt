@@ -1,7 +1,7 @@
-package io.github.aedev.flow.ui.components
+package com.arubr.smsvcodes.ui.components
 
-import io.github.aedev.flow.data.model.Comment
-import io.github.aedev.flow.ui.youtubeChannelUrl
+import com.arubr.smsvcodes.data.model.Comment
+import com.arubr.smsvcodes.ui.youtubeChannelUrl
 import org.junit.Assert.assertEquals
 import org.junit.Test
 

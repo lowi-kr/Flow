@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.settings
+package com.arubr.smsvcodes.ui.screens.settings
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -12,7 +12,7 @@ import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.res.stringResource
-import io.github.aedev.flow.R
+import com.arubr.smsvcodes.R
 
 @Composable
 fun SettingsGroup(content: @Composable ColumnScope.() -> Unit) {

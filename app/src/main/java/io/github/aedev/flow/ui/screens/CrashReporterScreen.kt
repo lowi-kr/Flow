@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens
+package com.arubr.smsvcodes.ui.screens
 
 import android.content.ClipData
 import android.content.ClipboardManager
@@ -18,7 +18,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.R
+import com.arubr.smsvcodes.R
 
 @Composable
 fun CrashReporterScreen(

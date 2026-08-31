@@ -1,20 +1,20 @@
-package io.github.aedev.flow.data.recommendation
+package com.arubr.smsvcodes.data.recommendation
 
 import android.content.Context
 import android.util.Log
 import dagger.hilt.android.qualifiers.ApplicationContext
-import io.github.aedev.flow.data.local.LikedVideosRepository
-import io.github.aedev.flow.data.music.PlaylistRepository
-import io.github.aedev.flow.innertube.YouTube
-import io.github.aedev.flow.innertube.models.AlbumItem
-import io.github.aedev.flow.innertube.models.PlaylistItem
-import io.github.aedev.flow.innertube.models.SongItem
-import io.github.aedev.flow.innertube.models.WatchEndpoint
-import io.github.aedev.flow.innertube.models.YTItem
-import io.github.aedev.flow.innertube.pages.HomePage
-import io.github.aedev.flow.ui.screens.music.MusicArtist
-import io.github.aedev.flow.ui.screens.music.MusicItemType
-import io.github.aedev.flow.ui.screens.music.MusicTrack
+import com.arubr.smsvcodes.data.local.LikedVideosRepository
+import com.arubr.smsvcodes.data.music.PlaylistRepository
+import com.arubr.smsvcodes.innertube.YouTube
+import com.arubr.smsvcodes.innertube.models.AlbumItem
+import com.arubr.smsvcodes.innertube.models.PlaylistItem
+import com.arubr.smsvcodes.innertube.models.SongItem
+import com.arubr.smsvcodes.innertube.models.WatchEndpoint
+import com.arubr.smsvcodes.innertube.models.YTItem
+import com.arubr.smsvcodes.innertube.pages.HomePage
+import com.arubr.smsvcodes.ui.screens.music.MusicArtist
+import com.arubr.smsvcodes.ui.screens.music.MusicItemType
+import com.arubr.smsvcodes.ui.screens.music.MusicTrack
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
 import kotlinx.coroutines.awaitAll
@@ -52,7 +52,7 @@ class MusicRecommendationAlgorithm
         private val playlistRepository: PlaylistRepository,
         private val likedVideosRepository: LikedVideosRepository,
         private val youTube: YouTube,
-        private val cacheDao: io.github.aedev.flow.data.local.dao.CacheDao,
+        private val cacheDao: com.arubr.smsvcodes.data.local.dao.CacheDao,
     ) {
         companion object {
             private const val TAG = "MusicRecAlgo"
@@ -67,7 +67,7 @@ class MusicRecommendationAlgorithm
             context.getSharedPreferences("music_home_cache_prefs", Context.MODE_PRIVATE)
         }
 
-        private fun currentRegion(): String = io.github.aedev.flow.innertube.YouTube.locale.gl
+        private fun currentRegion(): String = com.arubr.smsvcodes.innertube.YouTube.locale.gl
 
         /** A cache fetched under a different content region is stale by definition. */
         private fun isCacheRegionCurrent(): Boolean = cachePrefs.getString(KEY_LAST_CACHE_REGION, null) == currentRegion()
@@ -126,7 +126,7 @@ class MusicRecommendationAlgorithm
                             if (entity.browseId !=
                                 null
                             ) {
-                                io.github.aedev.flow.innertube.models
+                                com.arubr.smsvcodes.innertube.models
                                     .BrowseEndpoint(entity.browseId, entity.params)
                             } else {
                                 null
@@ -135,7 +135,7 @@ class MusicRecommendationAlgorithm
                             if (entity.deselectBrowseId !=
                                 null
                             ) {
-                                io.github.aedev.flow.innertube.models
+                                com.arubr.smsvcodes.innertube.models
                                     .BrowseEndpoint(entity.deselectBrowseId, entity.deselectParams)
                             } else {
                                 null
@@ -178,7 +178,7 @@ class MusicRecommendationAlgorithm
                     // Cache them
                     val entities =
                         sections.mapIndexed { index, section ->
-                            io.github.aedev.flow.data.local.entity.MusicHomeCacheEntity(
+                            com.arubr.smsvcodes.data.local.entity.MusicHomeCacheEntity(
                                 sectionId = "section_$index",
                                 title = section.title,
                                 subtitle = section.subtitle,
@@ -198,7 +198,7 @@ class MusicRecommendationAlgorithm
                     homePage.chips?.let { chips ->
                         val chipEntities =
                             chips.mapIndexed { index, chip ->
-                                io.github.aedev.flow.data.local.entity.MusicHomeChipEntity(
+                                com.arubr.smsvcodes.data.local.entity.MusicHomeChipEntity(
                                     title = chip.title,
                                     browseId = chip.endpoint?.browseId,
                                     params = chip.endpoint?.params,

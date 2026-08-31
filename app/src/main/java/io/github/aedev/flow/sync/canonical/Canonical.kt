@@ -1,6 +1,6 @@
-package io.github.aedev.flow.sync.canonical
+package com.arubr.smsvcodes.sync.canonical
 
-import io.github.aedev.flow.sync.identity.Hlc
+import com.arubr.smsvcodes.sync.identity.Hlc
 import kotlinx.serialization.KSerializer
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.builtins.MapSerializer

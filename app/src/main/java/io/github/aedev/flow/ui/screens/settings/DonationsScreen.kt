@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.settings
+package com.arubr.smsvcodes.ui.screens.settings
 
 import android.content.ClipData
 import android.content.ClipboardManager
@@ -28,8 +28,8 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.ui.components.layout.topbar.FlowTopBar
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.ui.components.layout.topbar.FlowTopBar
 
 // Icon Ported from Mihon.
 private val IconPatreon: ImageVector by lazy {

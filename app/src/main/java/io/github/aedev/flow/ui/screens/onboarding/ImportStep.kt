@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.onboarding
+package com.arubr.smsvcodes.ui.screens.onboarding
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -35,9 +35,9 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.ui.screens.settings.ImportProgressBanner
-import io.github.aedev.flow.ui.screens.settings.ImportViewModel
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.ui.screens.settings.ImportProgressBanner
+import com.arubr.smsvcodes.ui.screens.settings.ImportViewModel
 
 @Composable
 internal fun ImportStep(

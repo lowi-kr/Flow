@@ -1,10 +1,10 @@
-package io.github.aedev.flow.player.sabr.core
+package com.arubr.smsvcodes.player.sabr.core
 
 import android.util.Log
-import io.github.aedev.flow.player.sabr.proto.ClientAbrState
-import io.github.aedev.flow.player.sabr.proto.ClientInfo
-import io.github.aedev.flow.player.sabr.proto.StreamerContext
-import io.github.aedev.flow.player.sabr.proto.VideoPlaybackAbrRequest
+import com.arubr.smsvcodes.player.sabr.proto.ClientAbrState
+import com.arubr.smsvcodes.player.sabr.proto.ClientInfo
+import com.arubr.smsvcodes.player.sabr.proto.StreamerContext
+import com.arubr.smsvcodes.player.sabr.proto.VideoPlaybackAbrRequest
 
 object SabrRequestBuilder {
     private const val TAG = "SabrRequestBuilder"

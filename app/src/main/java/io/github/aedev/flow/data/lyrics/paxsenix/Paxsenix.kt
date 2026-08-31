@@ -2,16 +2,16 @@
 //This implementation was based on metrolist's (https://github.com/MetrolistGroup/Metrolist)
 //==================================================================================================
 
-package io.github.aedev.flow.data.lyrics.paxsenix
+package com.arubr.smsvcodes.data.lyrics.paxsenix
 
 import android.content.Context
 import android.util.Log
 import com.google.gson.Gson
-import io.github.aedev.flow.data.lyrics.TTMLParser
-import io.github.aedev.flow.data.lyrics.paxsenix.models.AppleMusicSearchResponse
-import io.github.aedev.flow.data.lyrics.paxsenix.models.LyricsResponse
-import io.github.aedev.flow.data.lyrics.paxsenix.models.SearchResult
-import io.github.aedev.flow.network.AppProxyManager
+import com.arubr.smsvcodes.data.lyrics.TTMLParser
+import com.arubr.smsvcodes.data.lyrics.paxsenix.models.AppleMusicSearchResponse
+import com.arubr.smsvcodes.data.lyrics.paxsenix.models.LyricsResponse
+import com.arubr.smsvcodes.data.lyrics.paxsenix.models.SearchResult
+import com.arubr.smsvcodes.network.AppProxyManager
 import okhttp3.OkHttpClient
 import okhttp3.Request
 import kotlinx.coroutines.sync.Mutex

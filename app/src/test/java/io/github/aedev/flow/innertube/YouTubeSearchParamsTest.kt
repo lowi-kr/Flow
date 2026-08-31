@@ -1,4 +1,4 @@
-package io.github.aedev.flow.innertube
+package com.arubr.smsvcodes.innertube
 
 import org.junit.Assert.assertEquals
 import org.junit.Test

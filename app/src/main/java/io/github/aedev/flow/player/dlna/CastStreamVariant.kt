@@ -1,4 +1,4 @@
-package io.github.aedev.flow.player.dlna
+package com.arubr.smsvcodes.player.dlna
 
 data class CastStreamVariant(
     val url: String,

@@ -1,4 +1,4 @@
-package io.github.aedev.flow.player.sabr.core
+package com.arubr.smsvcodes.player.sabr.core
 
 import java.security.SecureRandom
 

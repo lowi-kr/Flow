@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.tv.components
+package com.arubr.smsvcodes.ui.tv.components
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
@@ -14,8 +14,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.ui.tv.focus.rememberTvFocusState
-import io.github.aedev.flow.ui.tv.focus.tvFocusScale
+import com.arubr.smsvcodes.ui.tv.focus.rememberTvFocusState
+import com.arubr.smsvcodes.ui.tv.focus.tvFocusScale
 
 /**
  * Focusable pill button for the ten-foot UI. Focus flips to the inverse surface

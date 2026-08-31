@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.music
+package com.arubr.smsvcodes.ui.screens.music
 
 import androidx.compose.animation.*
 import androidx.compose.foundation.background
@@ -30,8 +30,8 @@ import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.viewmodel.compose.viewModel
 import coil3.compose.AsyncImage
-import io.github.aedev.flow.R
-import io.github.aedev.flow.ui.components.layout.topbar.FlowTopBar
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.ui.components.layout.topbar.FlowTopBar
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -148,8 +148,8 @@ fun LibraryScreen(
 
 @Composable
 private fun PlaylistsTab(
-    playlists: List<io.github.aedev.flow.data.music.Playlist>,
-    onPlaylistClick: (io.github.aedev.flow.data.music.Playlist) -> Unit,
+    playlists: List<com.arubr.smsvcodes.data.music.Playlist>,
+    onPlaylistClick: (com.arubr.smsvcodes.data.music.Playlist) -> Unit,
     onCreatePlaylist: () -> Unit,
 ) {
     LazyColumn(
@@ -329,11 +329,11 @@ private fun HistoryTab(
 
 @Composable
 private fun DownloadsTab(
-    downloads: List<io.github.aedev.flow.data.music.DownloadedTrack>,
+    downloads: List<com.arubr.smsvcodes.data.music.DownloadedTrack>,
     onTrackClick: (MusicTrack, List<MusicTrack>) -> Unit,
-    onDeleteDownload: (io.github.aedev.flow.data.music.DownloadedTrack) -> Unit,
+    onDeleteDownload: (com.arubr.smsvcodes.data.music.DownloadedTrack) -> Unit,
     downloadProgress: Map<String, Int>,
-    downloadStatus: Map<String, io.github.aedev.flow.data.music.DownloadStatus>,
+    downloadStatus: Map<String, com.arubr.smsvcodes.data.music.DownloadStatus>,
 ) {
     if (downloads.isEmpty()) {
         EmptyState(
@@ -363,7 +363,7 @@ private fun DownloadsTab(
 
 @Composable
 private fun PlaylistCard(
-    playlist: io.github.aedev.flow.data.music.Playlist,
+    playlist: com.arubr.smsvcodes.data.music.Playlist,
     onClick: () -> Unit,
 ) {
     Surface(
@@ -446,7 +446,7 @@ private fun PlaylistCard(
 
 @Composable
 private fun DownloadedTrackCard(
-    download: io.github.aedev.flow.data.music.DownloadedTrack,
+    download: com.arubr.smsvcodes.data.music.DownloadedTrack,
     onClick: () -> Unit,
     onDelete: () -> Unit,
 ) {
@@ -527,7 +527,7 @@ private fun DownloadedTrackCard(
 }
 
 @Composable
-private fun DownloadStatsCard(downloads: List<io.github.aedev.flow.data.music.DownloadedTrack>) {
+private fun DownloadStatsCard(downloads: List<com.arubr.smsvcodes.data.music.DownloadedTrack>) {
     val totalSize = downloads.sumOf { it.fileSize }
 
     Surface(

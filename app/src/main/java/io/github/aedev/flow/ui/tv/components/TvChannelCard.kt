@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.tv.components
+package com.arubr.smsvcodes.ui.tv.components
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -19,9 +19,9 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.model.Channel
-import io.github.aedev.flow.utils.formatSubscriberCount
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.model.Channel
+import com.arubr.smsvcodes.utils.formatSubscriberCount
 
 /** Circular-avatar channel card for search results and subscription rows. */
 @Composable

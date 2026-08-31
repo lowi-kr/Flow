@@ -1,14 +1,14 @@
-package io.github.aedev.flow.ui.screens.settings
+package com.arubr.smsvcodes.ui.screens.settings
 
 import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.local.LocalDataManager
-import io.github.aedev.flow.data.local.ViewHistory
-import io.github.aedev.flow.notification.ReminderManager
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.local.LocalDataManager
+import com.arubr.smsvcodes.data.local.ViewHistory
+import com.arubr.smsvcodes.notification.ReminderManager
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow

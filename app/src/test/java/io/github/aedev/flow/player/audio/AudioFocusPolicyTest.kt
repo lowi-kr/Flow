@@ -1,4 +1,4 @@
-package io.github.aedev.flow.player.audio
+package com.arubr.smsvcodes.player.audio
 
 import com.google.common.truth.Truth.assertThat
 import org.junit.Test

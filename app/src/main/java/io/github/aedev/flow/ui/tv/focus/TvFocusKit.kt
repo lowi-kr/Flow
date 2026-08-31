@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.tv.focus
+package com.arubr.smsvcodes.ui.tv.focus
 
 import androidx.compose.animation.core.Spring
 import androidx.compose.animation.core.animateFloatAsState
@@ -13,7 +13,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.focus.onFocusChanged
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.zIndex
-import io.github.aedev.flow.ui.tv.theme.LocalTvDimens
+import com.arubr.smsvcodes.ui.tv.theme.LocalTvDimens
 
 /**
  * Canonical focus state for TV focusables. All TV components observe

@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components
+package com.arubr.smsvcodes.ui.components
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
@@ -12,9 +12,9 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.ui.platform.LocalContext
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.data.local.VideoHistoryEntry
-import io.github.aedev.flow.data.local.ViewHistory
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.data.local.VideoHistoryEntry
+import com.arubr.smsvcodes.data.local.ViewHistory
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.distinctUntilChanged

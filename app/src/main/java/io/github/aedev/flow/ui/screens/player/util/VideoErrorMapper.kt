@@ -1,8 +1,8 @@
-package io.github.aedev.flow.ui.screens.player.util
+package com.arubr.smsvcodes.ui.screens.player.util
 
 import android.util.Log
 import android.content.Context
-import io.github.aedev.flow.R
+import com.arubr.smsvcodes.R
 import org.schabi.newpipe.extractor.exceptions.AccountTerminatedException
 import org.schabi.newpipe.extractor.exceptions.AgeRestrictedContentException
 import org.schabi.newpipe.extractor.exceptions.ContentNotAvailableException

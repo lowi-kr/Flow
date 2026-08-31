@@ -1,4 +1,4 @@
-package io.github.aedev.flow.di
+package com.arubr.smsvcodes.di
 
 import android.content.Context
 import coil3.ImageLoader
@@ -13,8 +13,8 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
-import io.github.aedev.flow.BuildConfig
-import io.github.aedev.flow.innertube.YouTube
+import com.arubr.smsvcodes.BuildConfig
+import com.arubr.smsvcodes.innertube.YouTube
 import okhttp3.OkHttpClient
 import okio.Path.Companion.toOkioPath
 import javax.inject.Singleton

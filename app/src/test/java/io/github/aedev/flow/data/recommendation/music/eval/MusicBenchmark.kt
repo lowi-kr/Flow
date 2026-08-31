@@ -4,13 +4,13 @@
  * This file is part of Flow (https://github.com/A-EDev/Flow).
  */
 
-package io.github.aedev.flow.data.recommendation.music.eval
+package com.arubr.smsvcodes.data.recommendation.music.eval
 
-import io.github.aedev.flow.data.recommendation.music.MusicBrain
-import io.github.aedev.flow.data.recommendation.music.MusicBrainLearn
-import io.github.aedev.flow.data.recommendation.music.MusicBrainRanker
-import io.github.aedev.flow.data.recommendation.music.MusicRankInput
-import io.github.aedev.flow.data.recommendation.music.MusicSignal
+import com.arubr.smsvcodes.data.recommendation.music.MusicBrain
+import com.arubr.smsvcodes.data.recommendation.music.MusicBrainLearn
+import com.arubr.smsvcodes.data.recommendation.music.MusicBrainRanker
+import com.arubr.smsvcodes.data.recommendation.music.MusicRankInput
+import com.arubr.smsvcodes.data.recommendation.music.MusicSignal
 
 /**
  * Offline benchmark over the real learn + rank pipeline with music-native

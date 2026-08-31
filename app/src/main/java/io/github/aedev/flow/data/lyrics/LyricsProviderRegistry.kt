@@ -1,4 +1,4 @@
-package io.github.aedev.flow.data.lyrics
+package com.arubr.smsvcodes.data.lyrics
 
 class LyricsProviderRegistry(
     private val providerMap: Map<String, LyricsProvider>

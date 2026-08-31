@@ -1,6 +1,6 @@
-package io.github.aedev.flow.ui.tv.player.state
+package com.arubr.smsvcodes.ui.tv.player.state
 
-import io.github.aedev.flow.data.model.SponsorBlockSegment
+import com.arubr.smsvcodes.data.model.SponsorBlockSegment
 
 /**
  * Precomputed seek-bar geometry: chapter tick fractions and SponsorBlock

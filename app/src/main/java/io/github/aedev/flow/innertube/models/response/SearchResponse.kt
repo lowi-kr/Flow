@@ -1,8 +1,8 @@
-package io.github.aedev.flow.innertube.models.response
+package com.arubr.smsvcodes.innertube.models.response
 
-import io.github.aedev.flow.innertube.models.Continuation
-import io.github.aedev.flow.innertube.models.MusicResponsiveListItemRenderer
-import io.github.aedev.flow.innertube.models.Tabs
+import com.arubr.smsvcodes.innertube.models.Continuation
+import com.arubr.smsvcodes.innertube.models.MusicResponsiveListItemRenderer
+import com.arubr.smsvcodes.innertube.models.Tabs
 import kotlinx.serialization.Serializable
 
 @Serializable

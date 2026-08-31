@@ -1,11 +1,11 @@
-package io.github.aedev.flow.player.audio
+package com.arubr.smsvcodes.player.audio
 
 import android.util.Log
 import androidx.media3.common.C
 import androidx.media3.common.audio.AudioProcessor
 import androidx.media3.common.util.UnstableApi
-import io.github.aedev.flow.data.model.ParametricEQ
-import io.github.aedev.flow.data.model.ParametricEQBand
+import com.arubr.smsvcodes.data.model.ParametricEQ
+import com.arubr.smsvcodes.data.model.ParametricEQBand
 import java.nio.ByteBuffer
 import java.nio.ByteOrder
 import kotlin.math.pow

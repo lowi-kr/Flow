@@ -1,12 +1,12 @@
-package io.github.aedev.flow.data.music
+package com.arubr.smsvcodes.data.music
 
 import android.util.Log
-import io.github.aedev.flow.FlowApplication
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.ui.screens.music.MusicTrack
-import io.github.aedev.flow.innertube.YouTube
-import io.github.aedev.flow.innertube.models.SongItem
-import io.github.aedev.flow.player.stream.AudioStreamSelector
+import com.arubr.smsvcodes.FlowApplication
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.ui.screens.music.MusicTrack
+import com.arubr.smsvcodes.innertube.YouTube
+import com.arubr.smsvcodes.innertube.models.SongItem
+import com.arubr.smsvcodes.player.stream.AudioStreamSelector
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.withContext
@@ -78,13 +78,13 @@ object YouTubeMusicService {
         
         try {
             // Priority: Innertube Home Data (Official YT Music Home)
-            val innertubeTracks = io.github.aedev.flow.data.newmusic.InnertubeMusicService.fetchTrendingMusic()
+            val innertubeTracks = com.arubr.smsvcodes.data.newmusic.InnertubeMusicService.fetchTrendingMusic()
             if (innertubeTracks.isNotEmpty()) {
                 Log.d(TAG, "Fetched ${innertubeTracks.size} tracks from Innertube")
                 tracks.addAll(innertubeTracks)
             } else {
                 // Fallback: Innertube charts (FEmusic_charts — stable, no hardcoded IDs)
-                val chartTracks = io.github.aedev.flow.data.newmusic.InnertubeMusicService.fetchCharts()
+                val chartTracks = com.arubr.smsvcodes.data.newmusic.InnertubeMusicService.fetchCharts()
                 if (chartTracks.isNotEmpty()) {
                     tracks.addAll(chartTracks)
                 }
@@ -96,7 +96,7 @@ object YouTubeMusicService {
         } catch (e: Exception) {
             Log.e(TAG, "Error in fetchTrendingMusic", e)
             try {
-                tracks.addAll(io.github.aedev.flow.data.newmusic.InnertubeMusicService.fetchCharts())
+                tracks.addAll(com.arubr.smsvcodes.data.newmusic.InnertubeMusicService.fetchCharts())
             } catch (ignore: Exception) {}
         }
         
@@ -110,7 +110,7 @@ object YouTubeMusicService {
      */
     suspend fun fetchNewReleases(limit: Int = 30): List<MusicTrack> = withContext(Dispatchers.IO) {
         try {
-            val innertubeResults = io.github.aedev.flow.data.newmusic.InnertubeMusicService.searchMusic("new music releases 2025")
+            val innertubeResults = com.arubr.smsvcodes.data.newmusic.InnertubeMusicService.searchMusic("new music releases 2025")
             if (innertubeResults.isNotEmpty()) {
                 return@withContext innertubeResults.take(limit)
             }
@@ -129,7 +129,7 @@ object YouTubeMusicService {
     suspend fun searchMusic(query: String, limit: Int = 50): List<MusicTrack> = withContext(Dispatchers.IO) {
         try {
             // Try Innertube first
-            val innertubeResults = io.github.aedev.flow.data.newmusic.InnertubeMusicService.searchMusic(query)
+            val innertubeResults = com.arubr.smsvcodes.data.newmusic.InnertubeMusicService.searchMusic(query)
             if (innertubeResults.isNotEmpty()) {
                 return@withContext innertubeResults.take(limit)
             }
@@ -165,7 +165,7 @@ object YouTubeMusicService {
     /**
      * Search for artists on YouTube
      */
-    suspend fun searchArtists(query: String, limit: Int = 10): List<io.github.aedev.flow.ui.screens.music.ArtistDetails> = withContext(Dispatchers.IO) {
+    suspend fun searchArtists(query: String, limit: Int = 10): List<com.arubr.smsvcodes.ui.screens.music.ArtistDetails> = withContext(Dispatchers.IO) {
         try {
             val service = ServiceList.YouTube
             val searchExtractor = service.getSearchExtractor(query, listOf("channel"), "")
@@ -176,7 +176,7 @@ object YouTubeMusicService {
                 .take(limit)
                 .map { item ->
                     val channelId = item.url.substringAfterLast("/")
-                    io.github.aedev.flow.ui.screens.music.ArtistDetails(
+                    com.arubr.smsvcodes.ui.screens.music.ArtistDetails(
                         name = item.name,
                         channelId = channelId,
                         thumbnailUrl = item.thumbnails.maxByOrNull { it.height }?.url ?: "",
@@ -326,15 +326,15 @@ object YouTubeMusicService {
     /**
      * Fetch full playlist details (info + tracks)
      */
-    suspend fun fetchPlaylistDetails(playlistId: String): io.github.aedev.flow.ui.screens.music.PlaylistDetails? = withContext(Dispatchers.IO) {
+    suspend fun fetchPlaylistDetails(playlistId: String): com.arubr.smsvcodes.ui.screens.music.PlaylistDetails? = withContext(Dispatchers.IO) {
         Log.d("YouTubeMusicService", "Fetching playlist details for: $playlistId")
         
         try {
             if (playlistId.startsWith("MPREb_") || playlistId.startsWith("FEmusic_library_privately_owned_release_")) {
-                val album = io.github.aedev.flow.data.newmusic.InnertubeMusicService.fetchAlbum(playlistId)
+                val album = com.arubr.smsvcodes.data.newmusic.InnertubeMusicService.fetchAlbum(playlistId)
                 if (album != null) return@withContext album
             } else {
-                val playlist = io.github.aedev.flow.data.newmusic.InnertubeMusicService.fetchPlaylistDetails(playlistId)
+                val playlist = com.arubr.smsvcodes.data.newmusic.InnertubeMusicService.fetchPlaylistDetails(playlistId)
                 if (playlist != null) return@withContext playlist
             }
         } catch (e: Exception) {
@@ -350,7 +350,7 @@ object YouTubeMusicService {
                     val totalSeconds = tracks.sumOf { it.duration }
                     val durationText = formatTotalDuration(totalSeconds)
                     
-                    return@withContext io.github.aedev.flow.ui.screens.music.PlaylistDetails(
+                    return@withContext com.arubr.smsvcodes.ui.screens.music.PlaylistDetails(
                         id = playlistId,
                         title = albumPage.album.title,
                         thumbnailUrl = albumPage.album.thumbnail,
@@ -378,7 +378,7 @@ object YouTubeMusicService {
             val totalSeconds = tracks.sumOf { it.duration }
             val durationText = formatTotalDuration(totalSeconds)
 
-            io.github.aedev.flow.ui.screens.music.PlaylistDetails(
+            com.arubr.smsvcodes.ui.screens.music.PlaylistDetails(
                 id = playlistId,
                 title = playlistInfo.name,
                 thumbnailUrl = playlistInfo.thumbnails?.maxByOrNull { it.height }?.url ?: "",
@@ -403,7 +403,7 @@ object YouTubeMusicService {
      */
     suspend fun fetchPlaylistContinuation(playlistId: String, continuation: String): Pair<List<MusicTrack>, String?> = withContext(Dispatchers.IO) {
         try {
-            io.github.aedev.flow.data.newmusic.InnertubeMusicService.fetchPlaylistContinuation(playlistId, continuation)
+            com.arubr.smsvcodes.data.newmusic.InnertubeMusicService.fetchPlaylistContinuation(playlistId, continuation)
         } catch (e: Exception) {
             Log.e(TAG, "Error fetching continuation for $playlistId", e)
             emptyList<MusicTrack>() to null
@@ -418,7 +418,7 @@ object YouTubeMusicService {
         return if (hours > 0) "$hours hr $minutes min" else "$minutes min $seconds sec"
     }
 
-    private fun convertSongItemToMusicTrack(item: io.github.aedev.flow.innertube.models.SongItem): MusicTrack? {
+    private fun convertSongItemToMusicTrack(item: com.arubr.smsvcodes.innertube.models.SongItem): MusicTrack? {
         return MusicTrack(
             videoId = item.id,
             title = item.title,
@@ -438,7 +438,7 @@ object YouTubeMusicService {
      */
     suspend fun getRelatedMusic(videoId: String, limit: Int = 20, audioOnly: Boolean = false): List<MusicTrack> = withContext(Dispatchers.IO) {
         try {
-            val innertubeRelated = io.github.aedev.flow.data.newmusic.InnertubeMusicService.getRelatedMusic(videoId, audioOnly)
+            val innertubeRelated = com.arubr.smsvcodes.data.newmusic.InnertubeMusicService.getRelatedMusic(videoId, audioOnly)
             if (innertubeRelated.isNotEmpty()) {
                 return@withContext innertubeRelated
                     .filterNot { audioOnly && it.isVideoSong }
@@ -512,9 +512,9 @@ object YouTubeMusicService {
     /**
      * Search for playlists (albums)
      */
-    suspend fun searchPlaylists(query: String, limit: Int = 10): List<io.github.aedev.flow.ui.screens.music.MusicPlaylist> = withContext(Dispatchers.IO) {
+    suspend fun searchPlaylists(query: String, limit: Int = 10): List<com.arubr.smsvcodes.ui.screens.music.MusicPlaylist> = withContext(Dispatchers.IO) {
         try {
-            val innertubePlaylists = io.github.aedev.flow.data.newmusic.InnertubeMusicService.searchPlaylists(query)
+            val innertubePlaylists = com.arubr.smsvcodes.data.newmusic.InnertubeMusicService.searchPlaylists(query)
             if (innertubePlaylists.isNotEmpty()) {
                 return@withContext innertubePlaylists.take(limit)
             }
@@ -527,7 +527,7 @@ object YouTubeMusicService {
                 .filterIsInstance<PlaylistInfoItem>()
                 .take(limit)
                 .map { item ->
-                    io.github.aedev.flow.ui.screens.music.MusicPlaylist(
+                    com.arubr.smsvcodes.ui.screens.music.MusicPlaylist(
                         id = item.url.substringAfter("list="),
                         title = item.name,
                         thumbnailUrl = item.thumbnails.maxByOrNull { it.height }?.url ?: "",
@@ -547,10 +547,10 @@ object YouTubeMusicService {
     /**
      * Fetch artist details including top tracks
      */
-    suspend fun fetchArtistDetails(channelId: String): io.github.aedev.flow.ui.screens.music.ArtistDetails? = withContext(Dispatchers.IO) {
+    suspend fun fetchArtistDetails(channelId: String): com.arubr.smsvcodes.ui.screens.music.ArtistDetails? = withContext(Dispatchers.IO) {
         try {
             // Priority: Innertube Data (Rich Metadata)
-            val innertubeDetails = io.github.aedev.flow.data.newmusic.InnertubeMusicService.fetchArtistDetails(channelId)
+            val innertubeDetails = com.arubr.smsvcodes.data.newmusic.InnertubeMusicService.fetchArtistDetails(channelId)
             if (innertubeDetails != null) {
                 return@withContext innertubeDetails
             }
@@ -596,7 +596,7 @@ object YouTubeMusicService {
                 emptyList()
             }
                 
-            io.github.aedev.flow.ui.screens.music.ArtistDetails(
+            com.arubr.smsvcodes.ui.screens.music.ArtistDetails(
                 name = name,
                 channelId = channelId,
                 thumbnailUrl = thumbnail,

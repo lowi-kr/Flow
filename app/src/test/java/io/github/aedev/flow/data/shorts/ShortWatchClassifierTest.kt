@@ -4,10 +4,10 @@
  * This file is part of Flow (https://github.com/A-EDev/Flow).
  */
 
-package io.github.aedev.flow.data.shorts
+package com.arubr.smsvcodes.data.shorts
 
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.data.recommendation.InteractionType
+import com.arubr.smsvcodes.data.recommendation.InteractionType
 import org.junit.Test
 
 /** I-5: a Short's watch signal reflects what actually happened, not a fabricated full watch. */

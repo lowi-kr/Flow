@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.tv.screens.settings
+package com.arubr.smsvcodes.ui.tv.screens.settings
 
 import androidx.annotation.StringRes
 import androidx.compose.material.icons.Icons
@@ -12,7 +12,7 @@ import androidx.compose.material.icons.outlined.Shield
 import androidx.compose.material.icons.outlined.Tv
 import androidx.compose.material.icons.outlined.Tune
 import androidx.compose.ui.graphics.vector.ImageVector
-import io.github.aedev.flow.R
+import com.arubr.smsvcodes.R
 
 /** Categories of the two-pane TV settings surface. Pure model — unit-testable. */
 enum class TvSettingsCategory(

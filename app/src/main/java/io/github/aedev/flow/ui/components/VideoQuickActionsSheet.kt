@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components
+package com.arubr.smsvcodes.ui.components
 
 import android.content.ClipData
 import android.content.ClipboardManager
@@ -62,11 +62,11 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import coil3.compose.AsyncImage
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.data.model.VideoCollaborator
-import io.github.aedev.flow.data.model.needsCollaboratorResolution
-import io.github.aedev.flow.data.repository.VideoCollaboratorResolver
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.data.model.VideoCollaborator
+import com.arubr.smsvcodes.data.model.needsCollaboratorResolution
+import com.arubr.smsvcodes.data.repository.VideoCollaboratorResolver
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

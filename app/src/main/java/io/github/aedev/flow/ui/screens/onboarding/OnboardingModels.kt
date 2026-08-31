@@ -1,6 +1,6 @@
-package io.github.aedev.flow.ui.screens.onboarding
+package com.arubr.smsvcodes.ui.screens.onboarding
 
-import io.github.aedev.flow.R
+import com.arubr.smsvcodes.R
 
 internal const val MIN_TOPICS = 3
 internal const val STAGGER_DELAY_MS = 50L

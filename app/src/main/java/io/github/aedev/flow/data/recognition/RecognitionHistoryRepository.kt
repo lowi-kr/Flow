@@ -1,7 +1,7 @@
-package io.github.aedev.flow.data.recognition
+package com.arubr.smsvcodes.data.recognition
 
-import io.github.aedev.flow.data.local.dao.RecognitionHistoryDao
-import io.github.aedev.flow.data.local.entity.RecognitionHistoryEntity
+import com.arubr.smsvcodes.data.local.dao.RecognitionHistoryDao
+import com.arubr.smsvcodes.data.local.entity.RecognitionHistoryEntity
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 import javax.inject.Singleton

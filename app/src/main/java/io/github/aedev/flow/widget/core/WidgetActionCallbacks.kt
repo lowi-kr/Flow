@@ -1,4 +1,4 @@
-package io.github.aedev.flow.widget.core
+package com.arubr.smsvcodes.widget.core
 
 import android.content.ComponentName
 import android.content.Context
@@ -11,7 +11,7 @@ import androidx.glance.appwidget.action.ActionCallback
 import androidx.media3.session.MediaController
 import androidx.media3.session.SessionCommand
 import androidx.media3.session.SessionToken
-import io.github.aedev.flow.service.Media3MusicService
+import com.arubr.smsvcodes.service.Media3MusicService
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.suspendCancellableCoroutine
 import kotlinx.coroutines.withContext

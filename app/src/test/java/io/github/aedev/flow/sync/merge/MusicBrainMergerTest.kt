@@ -4,15 +4,15 @@
  * This file is part of Flow (https://github.com/A-EDev/Flow).
  */
 
-package io.github.aedev.flow.sync.merge
+package com.arubr.smsvcodes.sync.merge
 
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.sync.canonical.CanonicalMusicAffinity
-import io.github.aedev.flow.sync.canonical.CanonicalMusicBrain
-import io.github.aedev.flow.sync.canonical.CanonicalMusicTrackMeta
-import io.github.aedev.flow.sync.canonical.GCounter
-import io.github.aedev.flow.sync.canonical.Lww
-import io.github.aedev.flow.sync.canonical.OrSet
+import com.arubr.smsvcodes.sync.canonical.CanonicalMusicAffinity
+import com.arubr.smsvcodes.sync.canonical.CanonicalMusicBrain
+import com.arubr.smsvcodes.sync.canonical.CanonicalMusicTrackMeta
+import com.arubr.smsvcodes.sync.canonical.GCounter
+import com.arubr.smsvcodes.sync.canonical.Lww
+import com.arubr.smsvcodes.sync.canonical.OrSet
 import org.junit.Test
 
 class MusicBrainMergerTest {

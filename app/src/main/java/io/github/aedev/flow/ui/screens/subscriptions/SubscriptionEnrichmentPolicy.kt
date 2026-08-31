@@ -1,6 +1,6 @@
-package io.github.aedev.flow.ui.screens.subscriptions
+package com.arubr.smsvcodes.ui.screens.subscriptions
 
-import io.github.aedev.flow.data.model.Video
+import com.arubr.smsvcodes.data.model.Video
 
 internal const val SUBSCRIPTION_ENRICHMENT_LOOKAHEAD = 4
 internal const val MAX_VISIBLE_DURATION_CANDIDATES = 12

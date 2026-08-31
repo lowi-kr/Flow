@@ -1,8 +1,8 @@
-package io.github.aedev.flow.ui.screens.likedvideos
+package com.arubr.smsvcodes.ui.screens.likedvideos
 
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.data.local.LikedVideoInfo
-import io.github.aedev.flow.data.local.LikedVideosRepository
+import com.arubr.smsvcodes.data.local.LikedVideoInfo
+import com.arubr.smsvcodes.data.local.LikedVideosRepository
 import io.mockk.coEvery
 import io.mockk.coVerify
 import io.mockk.mockk

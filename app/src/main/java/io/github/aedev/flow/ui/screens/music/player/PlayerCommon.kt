@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.music.player
+package com.arubr.smsvcodes.ui.screens.music.player
 
 import androidx.compose.animation.core.*
 import androidx.compose.foundation.isSystemInDarkTheme

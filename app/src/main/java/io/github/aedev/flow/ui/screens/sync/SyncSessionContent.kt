@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.sync
+package com.arubr.smsvcodes.ui.screens.sync
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -40,10 +40,10 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.sync.SyncState
-import io.github.aedev.flow.sync.protocol.ApplyStats
-import io.github.aedev.flow.sync.qr.QrCodec
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.sync.SyncState
+import com.arubr.smsvcodes.sync.protocol.ApplyStats
+import com.arubr.smsvcodes.sync.qr.QrCodec
 import kotlinx.coroutines.delay
 
 /** The steps that run once a session is live: pairing code, verification, merge consent, outcome. */

@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.player.dialogs
+package com.arubr.smsvcodes.ui.screens.player.dialogs
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -9,16 +9,16 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.player.EnhancedPlayerManager
-import io.github.aedev.flow.player.state.EnhancedPlayerState
-import io.github.aedev.flow.ui.screens.player.VideoPlayerUiState
-import io.github.aedev.flow.ui.screens.player.VideoPlayerViewModel
-import io.github.aedev.flow.ui.screens.player.components.*
-import io.github.aedev.flow.ui.screens.player.components.PlayerSettingsPage
-import io.github.aedev.flow.ui.screens.player.state.PlayerScreenState
-import io.github.aedev.flow.ui.screens.player.state.SubtitleSelection
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.player.EnhancedPlayerManager
+import com.arubr.smsvcodes.player.state.EnhancedPlayerState
+import com.arubr.smsvcodes.ui.screens.player.VideoPlayerUiState
+import com.arubr.smsvcodes.ui.screens.player.VideoPlayerViewModel
+import com.arubr.smsvcodes.ui.screens.player.components.*
+import com.arubr.smsvcodes.ui.screens.player.components.PlayerSettingsPage
+import com.arubr.smsvcodes.ui.screens.player.state.PlayerScreenState
+import com.arubr.smsvcodes.ui.screens.player.state.SubtitleSelection
 import kotlinx.coroutines.launch
 
 @Composable
@@ -52,7 +52,7 @@ fun PlayerDialogsContainer(
     val downloadDialogStyle by playerPreferences.downloadDialogStyle.collectAsState(initial = null)
     if (screenState.showDownloadDialog) {
         when (downloadDialogStyle) {
-            io.github.aedev.flow.data.local.DownloadDialogStyle.COMPACT -> {
+            com.arubr.smsvcodes.data.local.DownloadDialogStyle.COMPACT -> {
                 DownloadQualityDialogCompact(
                     streamInfo = uiState.streamInfo,
                     streamSizes = uiState.streamSizes,
@@ -64,7 +64,7 @@ fun PlayerDialogsContainer(
                 )
             }
 
-            io.github.aedev.flow.data.local.DownloadDialogStyle.FULL -> {
+            com.arubr.smsvcodes.data.local.DownloadDialogStyle.FULL -> {
                 DownloadQualityDialog(
                     streamInfo = uiState.streamInfo,
                     streamSizes = uiState.streamSizes,
@@ -144,18 +144,18 @@ fun PlayerDialogsContainer(
             ambientModeEnabled = ambientModeEnabled,
             onAmbientModeToggle = { coroutineScope.launch { playerPreferences.setVideoAmbientModeEnabled(it) } },
             onCastClick = {
-                io.github.aedev.flow.player.dlna.DlnaCastManager
+                com.arubr.smsvcodes.player.dlna.DlnaCastManager
                     .startDiscovery(context)
                 screenState.showSettingsMenu = false
                 screenState.showDlnaDialog = true
             },
             onPipClick = {
                 if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O &&
-                    io.github.aedev.flow.player.PictureInPictureHelper
+                    com.arubr.smsvcodes.player.PictureInPictureHelper
                         .isPlayerPopupSupported(context)
                 ) {
                     screenState.showSettingsMenu = false
-                    io.github.aedev.flow.player.PictureInPictureHelper.requestPlayerPipMode(
+                    com.arubr.smsvcodes.player.PictureInPictureHelper.requestPlayerPipMode(
                         activity = context as androidx.activity.ComponentActivity,
                         isPlaying = playerState.isPlaying,
                     )

@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.music.components
+package com.arubr.smsvcodes.ui.screens.music.components
 
 import androidx.compose.animation.core.*
 import androidx.compose.foundation.ExperimentalFoundationApi
@@ -29,11 +29,11 @@ import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
 import coil3.request.ImageRequest
 import coil3.request.crossfade
-import io.github.aedev.flow.R
-import io.github.aedev.flow.ui.components.PlayingWaveform
-import io.github.aedev.flow.ui.screens.music.MusicTrack
-import io.github.aedev.flow.ui.screens.music.formatDuration
-import io.github.aedev.flow.ui.screens.music.formatViews
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.ui.components.PlayingWaveform
+import com.arubr.smsvcodes.ui.screens.music.MusicTrack
+import com.arubr.smsvcodes.ui.screens.music.formatDuration
+import com.arubr.smsvcodes.ui.screens.music.formatViews
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable

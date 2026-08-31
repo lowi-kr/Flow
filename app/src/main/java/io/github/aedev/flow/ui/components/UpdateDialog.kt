@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components
+package com.arubr.smsvcodes.ui.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -29,8 +29,8 @@ import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.Dialog
-import io.github.aedev.flow.R
-import io.github.aedev.flow.utils.UpdateInfo
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.utils.UpdateInfo
 
 @Composable
 fun UpdateDialog(

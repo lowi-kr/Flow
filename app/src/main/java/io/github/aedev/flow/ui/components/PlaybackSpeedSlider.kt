@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components
+package com.arubr.smsvcodes.ui.components
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -30,7 +30,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.R
+import com.arubr.smsvcodes.R
 import kotlin.math.abs
 import kotlin.math.round
 import kotlin.math.sqrt

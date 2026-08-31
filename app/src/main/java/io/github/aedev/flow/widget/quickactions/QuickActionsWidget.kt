@@ -1,4 +1,4 @@
-package io.github.aedev.flow.widget.quickactions
+package com.arubr.smsvcodes.widget.quickactions
 
 import android.content.Context
 import androidx.compose.runtime.Composable
@@ -32,11 +32,11 @@ import androidx.glance.layout.width
 import androidx.glance.text.FontWeight
 import androidx.glance.text.Text
 import androidx.glance.text.TextStyle
-import io.github.aedev.flow.R
-import io.github.aedev.flow.widget.core.FlowGlanceTheme
-import io.github.aedev.flow.widget.core.WidgetDeepLink
-import io.github.aedev.flow.widget.core.widgetColorsFlow
-import io.github.aedev.flow.widget.core.widgetSurface
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.widget.core.FlowGlanceTheme
+import com.arubr.smsvcodes.widget.core.WidgetDeepLink
+import com.arubr.smsvcodes.widget.core.widgetColorsFlow
+import com.arubr.smsvcodes.widget.core.widgetSurface
 import kotlinx.coroutines.flow.first
 
 /**

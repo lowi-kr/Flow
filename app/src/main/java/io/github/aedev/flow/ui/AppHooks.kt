@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui
+package com.arubr.smsvcodes.ui
 
 import android.content.Context
 import android.net.Uri
@@ -12,9 +12,9 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavController
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.shorts.queue.ShortsQueueSource
-import io.github.aedev.flow.utils.NetworkConnectivityObserver
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.shorts.queue.ShortsQueueSource
+import com.arubr.smsvcodes.utils.NetworkConnectivityObserver
 import kotlinx.coroutines.delay
 
 @Composable

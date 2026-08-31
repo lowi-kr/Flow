@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.player.components
+package com.arubr.smsvcodes.ui.screens.player.components
 
 import androidx.compose.ui.hapticfeedback.HapticFeedback
 import androidx.compose.ui.hapticfeedback.HapticFeedbackType

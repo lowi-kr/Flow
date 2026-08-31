@@ -48,16 +48,16 @@
 }
 
 ## Keep data models and serialization structures
--keep class io.github.aedev.flow.data.model.** { *; }
--keep class io.github.aedev.flow.data.local.** { *; }
--keep class io.github.aedev.flow.data.lyrics.** { *; }
--keep class io.github.aedev.flow.innertube.models.** { *; }
+-keep class com.arubr.smsvcodes.data.model.** { *; }
+-keep class com.arubr.smsvcodes.data.local.** { *; }
+-keep class com.arubr.smsvcodes.data.lyrics.** { *; }
+-keep class com.arubr.smsvcodes.innertube.models.** { *; }
 
 ## Shazam recognition models + kotlinx serializers
--keepclasseswithmembers class io.github.aedev.flow.data.recognition.shazam.** {
+-keepclasseswithmembers class com.arubr.smsvcodes.data.recognition.shazam.** {
     kotlinx.serialization.KSerializer serializer(...);
 }
--keepclassmembers class io.github.aedev.flow.data.recognition.shazam.** {
+-keepclassmembers class com.arubr.smsvcodes.data.recognition.shazam.** {
     *** Companion;
 }
 

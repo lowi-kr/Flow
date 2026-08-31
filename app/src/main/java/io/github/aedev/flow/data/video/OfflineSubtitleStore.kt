@@ -1,11 +1,11 @@
-package io.github.aedev.flow.data.video
+package com.arubr.smsvcodes.data.video
 
 import android.content.Context
 import android.util.Log
 import dagger.hilt.android.qualifiers.ApplicationContext
-import io.github.aedev.flow.innertube.YouTube
-import io.github.aedev.flow.innertube.models.YouTubeClient
-import io.github.aedev.flow.player.stream.CaptionTrackResolver
+import com.arubr.smsvcodes.innertube.YouTube
+import com.arubr.smsvcodes.innertube.models.YouTubeClient
+import com.arubr.smsvcodes.player.stream.CaptionTrackResolver
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import okhttp3.OkHttpClient

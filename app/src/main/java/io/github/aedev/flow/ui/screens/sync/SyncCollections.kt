@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.sync
+package com.arubr.smsvcodes.ui.screens.sync
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.outlined.PlaylistPlay
@@ -12,8 +12,8 @@ import androidx.compose.material.icons.outlined.Tune
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.stringResource
-import io.github.aedev.flow.R
-import io.github.aedev.flow.sync.protocol.SyncCollection
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.sync.protocol.SyncCollection
 
 /** The collections offered in the picker, in the order they are shown. */
 internal val COLLECTION_KEYS =

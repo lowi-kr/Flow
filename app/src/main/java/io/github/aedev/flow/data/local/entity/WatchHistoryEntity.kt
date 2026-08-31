@@ -1,10 +1,10 @@
-package io.github.aedev.flow.data.local.entity
+package com.arubr.smsvcodes.data.local.entity
 
 import androidx.room.Entity
 import androidx.room.Index
 import androidx.room.PrimaryKey
-import io.github.aedev.flow.data.local.VideoHistoryEntry
-import io.github.aedev.flow.data.model.Video
+import com.arubr.smsvcodes.data.local.VideoHistoryEntry
+import com.arubr.smsvcodes.data.model.Video
 
 /**
  * Room entity that replaces the previous DataStore-based watch history.

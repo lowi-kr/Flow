@@ -1,8 +1,8 @@
-package io.github.aedev.flow.ui
+package com.arubr.smsvcodes.ui
 
 import android.net.Uri
 import androidx.navigation.NavController
-import io.github.aedev.flow.data.shorts.queue.ShortsQueueSource
+import com.arubr.smsvcodes.data.shorts.queue.ShortsQueueSource
 
 const val SHORTS_ROUTE_PATTERN = "shorts?src={src}"
 

@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui
+package com.arubr.smsvcodes.ui
 
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.SharedFlow

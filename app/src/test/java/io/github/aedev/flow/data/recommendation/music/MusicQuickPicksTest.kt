@@ -4,11 +4,11 @@
  * This file is part of Flow (https://github.com/A-EDev/Flow).
  */
 
-package io.github.aedev.flow.data.recommendation.music
+package com.arubr.smsvcodes.data.recommendation.music
 
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.ui.screens.music.MusicArtist
-import io.github.aedev.flow.ui.screens.music.MusicTrack
+import com.arubr.smsvcodes.ui.screens.music.MusicArtist
+import com.arubr.smsvcodes.ui.screens.music.MusicTrack
 import org.junit.Test
 
 class MusicQuickPicksTest {

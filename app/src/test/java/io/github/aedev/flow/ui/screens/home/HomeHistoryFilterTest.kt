@@ -1,8 +1,8 @@
-package io.github.aedev.flow.ui.screens.home
+package com.arubr.smsvcodes.ui.screens.home
 
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.data.local.VideoHistoryEntry
-import io.github.aedev.flow.data.local.WatchedThreshold
+import com.arubr.smsvcodes.data.local.VideoHistoryEntry
+import com.arubr.smsvcodes.data.local.WatchedThreshold
 import org.junit.Test
 
 class HomeHistoryFilterTest {

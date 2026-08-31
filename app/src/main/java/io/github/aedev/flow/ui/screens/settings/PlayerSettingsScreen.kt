@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.settings
+package com.arubr.smsvcodes.ui.screens.settings
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.background
@@ -29,14 +29,14 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.local.PlayerOverlayPreferences
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.data.local.VideoCodec
-import io.github.aedev.flow.data.lyrics.LyricsProviderRegistry
-import io.github.aedev.flow.player.stream.CaptionTrackResolver
-import io.github.aedev.flow.ui.components.layout.topbar.FlowTopBar
-import io.github.aedev.flow.ui.components.rememberFlowSheetState
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.local.PlayerOverlayPreferences
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.data.local.VideoCodec
+import com.arubr.smsvcodes.data.lyrics.LyricsProviderRegistry
+import com.arubr.smsvcodes.player.stream.CaptionTrackResolver
+import com.arubr.smsvcodes.ui.components.layout.topbar.FlowTopBar
+import com.arubr.smsvcodes.ui.components.rememberFlowSheetState
 import kotlinx.coroutines.launch
 
 private val audioLanguageOptions: List<Pair<String, String?>> =

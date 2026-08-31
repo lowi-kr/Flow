@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.tv.player
+package com.arubr.smsvcodes.ui.tv.player
 
 import androidx.compose.foundation.focusable
 import androidx.compose.foundation.layout.Arrangement
@@ -30,8 +30,8 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.compose.LocalLifecycleOwner
 import androidx.lifecycle.repeatOnLifecycle
-import io.github.aedev.flow.ui.tv.player.state.TvSeekBarMarks
-import io.github.aedev.flow.utils.formatDuration
+import com.arubr.smsvcodes.ui.tv.player.state.TvSeekBarMarks
+import com.arubr.smsvcodes.utils.formatDuration
 import kotlinx.coroutines.isActive
 
 /**

@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.onboarding
+package com.arubr.smsvcodes.ui.screens.onboarding
 
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.rememberLauncherForActivityResult
@@ -30,12 +30,12 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalHapticFeedback
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.local.BackupRepository
-import io.github.aedev.flow.data.local.ChannelSubscription
-import io.github.aedev.flow.data.local.SubscriptionRepository
-import io.github.aedev.flow.data.recommendation.FlowNeuroEngine
-import io.github.aedev.flow.ui.screens.settings.ImportViewModel
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.local.BackupRepository
+import com.arubr.smsvcodes.data.local.ChannelSubscription
+import com.arubr.smsvcodes.data.local.SubscriptionRepository
+import com.arubr.smsvcodes.data.recommendation.FlowNeuroEngine
+import com.arubr.smsvcodes.ui.screens.settings.ImportViewModel
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch

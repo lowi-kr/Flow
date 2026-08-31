@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.shorts
+package com.arubr.smsvcodes.ui.screens.shorts
 
 import android.app.Activity
 import android.os.Build
@@ -8,8 +8,8 @@ import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.remember
 import androidx.compose.ui.platform.LocalContext
 import androidx.core.content.ContextCompat
-import io.github.aedev.flow.player.PictureInPictureHelper
-import io.github.aedev.flow.player.shorts.ShortsPlayerPool
+import com.arubr.smsvcodes.player.PictureInPictureHelper
+import com.arubr.smsvcodes.player.shorts.ShortsPlayerPool
 
 private const val TAG = "ShortsPipEffects"
 

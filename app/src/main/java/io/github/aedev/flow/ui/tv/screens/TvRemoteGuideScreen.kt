@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.tv.screens
+package com.arubr.smsvcodes.ui.tv.screens
 
 import androidx.annotation.StringRes
 import androidx.compose.foundation.focusGroup
@@ -23,14 +23,14 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.ui.tv.components.TvButton
-import io.github.aedev.flow.ui.tv.components.TvScreenScaffold
-import io.github.aedev.flow.ui.tv.focus.ProvideTvColumnPivot
-import io.github.aedev.flow.ui.tv.focus.rememberTvFocusState
-import io.github.aedev.flow.ui.tv.focus.tvFocusScale
-import io.github.aedev.flow.ui.tv.focus.tvInitialFocus
-import io.github.aedev.flow.ui.tv.theme.LocalTvDimens
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.ui.tv.components.TvButton
+import com.arubr.smsvcodes.ui.tv.components.TvScreenScaffold
+import com.arubr.smsvcodes.ui.tv.focus.ProvideTvColumnPivot
+import com.arubr.smsvcodes.ui.tv.focus.rememberTvFocusState
+import com.arubr.smsvcodes.ui.tv.focus.tvFocusScale
+import com.arubr.smsvcodes.ui.tv.focus.tvInitialFocus
+import com.arubr.smsvcodes.ui.tv.theme.LocalTvDimens
 
 private data class TvGuideEntry(
     @StringRes val keyRes: Int,

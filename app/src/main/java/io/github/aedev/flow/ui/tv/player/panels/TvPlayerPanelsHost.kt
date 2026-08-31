@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.tv.player.panels
+package com.arubr.smsvcodes.ui.tv.player.panels
 
 import android.view.KeyEvent
 import androidx.compose.foundation.focusable
@@ -51,21 +51,21 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import coil3.compose.AsyncImage
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.local.PlaylistRepository
-import io.github.aedev.flow.data.model.Comment
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.player.EnhancedPlayerManager
-import io.github.aedev.flow.player.state.SubtitleOption
-import io.github.aedev.flow.ui.components.VideoThumbnailImage
-import io.github.aedev.flow.ui.components.parseHtmlDescription
-import io.github.aedev.flow.ui.screens.player.VideoPlayerViewModel
-import io.github.aedev.flow.ui.tv.components.TvButton
-import io.github.aedev.flow.ui.tv.components.TvCard
-import io.github.aedev.flow.ui.tv.components.TvSelectionRow
-import io.github.aedev.flow.ui.tv.components.TvSidePanel
-import io.github.aedev.flow.ui.tv.focus.tvInitialFocus
-import io.github.aedev.flow.ui.tv.player.state.TvPlayerPanel
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.local.PlaylistRepository
+import com.arubr.smsvcodes.data.model.Comment
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.player.EnhancedPlayerManager
+import com.arubr.smsvcodes.player.state.SubtitleOption
+import com.arubr.smsvcodes.ui.components.VideoThumbnailImage
+import com.arubr.smsvcodes.ui.components.parseHtmlDescription
+import com.arubr.smsvcodes.ui.screens.player.VideoPlayerViewModel
+import com.arubr.smsvcodes.ui.tv.components.TvButton
+import com.arubr.smsvcodes.ui.tv.components.TvCard
+import com.arubr.smsvcodes.ui.tv.components.TvSelectionRow
+import com.arubr.smsvcodes.ui.tv.components.TvSidePanel
+import com.arubr.smsvcodes.ui.tv.focus.tvInitialFocus
+import com.arubr.smsvcodes.ui.tv.player.state.TvPlayerPanel
 import kotlinx.coroutines.launch
 
 /**
@@ -663,7 +663,7 @@ private fun TvLiveChatPanelContent(viewModel: VideoPlayerViewModel) {
 
 @Composable
 private fun TvLiveChatMessages(
-    uiState: io.github.aedev.flow.ui.screens.player.VideoPlayerUiState,
+    uiState: com.arubr.smsvcodes.ui.screens.player.VideoPlayerUiState,
     listState: androidx.compose.foundation.lazy.LazyListState,
 ) {
     when {
@@ -789,7 +789,7 @@ private fun TvDescriptionPanelContent(
                     TvSelectionRow(
                         label = chapter.title.orEmpty(),
                         supportingText =
-                            io.github.aedev.flow.utils
+                            com.arubr.smsvcodes.utils
                                 .formatDuration(chapter.startTimeSeconds),
                         selected = false,
                         onClick = { onSeekTo(chapter.startTimeSeconds * 1_000L) },

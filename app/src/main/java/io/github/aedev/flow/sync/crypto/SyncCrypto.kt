@@ -1,4 +1,4 @@
-package io.github.aedev.flow.sync.crypto
+package com.arubr.smsvcodes.sync.crypto
 
 import java.security.SecureRandom
 import javax.crypto.Cipher

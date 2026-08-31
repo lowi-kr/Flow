@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.tv.components
+package com.arubr.smsvcodes.ui.tv.components
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.Arrangement
@@ -23,15 +23,15 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.ui.components.VideoThumbnailImage
-import io.github.aedev.flow.ui.tv.focus.rememberTvFocusState
-import io.github.aedev.flow.ui.tv.focus.tvFocusScale
-import io.github.aedev.flow.ui.tv.theme.LocalTvDimens
-import io.github.aedev.flow.utils.formatDuration
-import io.github.aedev.flow.utils.formatTimeAgo
-import io.github.aedev.flow.utils.formatViewCount
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.ui.components.VideoThumbnailImage
+import com.arubr.smsvcodes.ui.tv.focus.rememberTvFocusState
+import com.arubr.smsvcodes.ui.tv.focus.tvFocusScale
+import com.arubr.smsvcodes.ui.tv.theme.LocalTvDimens
+import com.arubr.smsvcodes.utils.formatDuration
+import com.arubr.smsvcodes.utils.formatTimeAgo
+import com.arubr.smsvcodes.utils.formatViewCount
 
 /**
  * Flat ten-foot video card, YouTube-TV style: no container surface — a rounded

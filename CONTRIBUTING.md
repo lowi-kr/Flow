@@ -110,7 +110,7 @@ Use clear, descriptive commit messages:
 ## 🔐 Release and Signing Invariants
 
 Flow is distributed through GitHub Releases and
-[IzzyOnDroid](https://apt.izzysoft.de/packages/io.github.aedev.flow). Both pin
+[IzzyOnDroid](https://apt.izzysoft.de/packages/com.arubr.smsvcodes). Both pin
 properties of the published artifacts, so the following are hard constraints.
 Breaking one of them cannot be fixed by a follow-up release — it forces every
 installed user to uninstall and reinstall, losing their local data.

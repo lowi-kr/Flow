@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.tv.screens.settings
+package com.arubr.smsvcodes.ui.tv.screens.settings
 
 import android.content.Context
 import android.content.Intent
@@ -35,11 +35,11 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.BuildConfig
-import io.github.aedev.flow.R
-import io.github.aedev.flow.ui.tv.components.TvNavRow
-import io.github.aedev.flow.ui.tv.components.TvSectionHeader
-import io.github.aedev.flow.ui.tv.focus.ProvideTvColumnPivot
+import com.arubr.smsvcodes.BuildConfig
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.ui.tv.components.TvNavRow
+import com.arubr.smsvcodes.ui.tv.components.TvSectionHeader
+import com.arubr.smsvcodes.ui.tv.focus.ProvideTvColumnPivot
 
 private const val FLOW_WEBSITE_URL = "https://flow.aedev.me"
 private const val FLOW_RELEASES_URL = "https://github.com/A-EDev/Flow/releases"

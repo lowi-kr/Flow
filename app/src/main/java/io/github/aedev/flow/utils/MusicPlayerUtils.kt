@@ -1,30 +1,30 @@
-package io.github.aedev.flow.utils
+package com.arubr.smsvcodes.utils
 
 import android.net.Uri
 import android.util.Log
-import io.github.aedev.flow.FlowApplication
-import io.github.aedev.flow.data.local.MusicAudioQuality
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.innertube.YouTube
-import io.github.aedev.flow.innertube.models.YouTubeClient
-import io.github.aedev.flow.innertube.models.YouTubeClient.Companion.ANDROID_CREATOR
-import io.github.aedev.flow.innertube.models.YouTubeClient.Companion.ANDROID_VR_1_43_32
-import io.github.aedev.flow.innertube.models.YouTubeClient.Companion.ANDROID_VR_1_61_48
-import io.github.aedev.flow.innertube.models.YouTubeClient.Companion.ANDROID_VR_NO_AUTH
-import io.github.aedev.flow.innertube.models.YouTubeClient.Companion.MOBILE
-import io.github.aedev.flow.innertube.models.YouTubeClient.Companion.TVHTML5
-import io.github.aedev.flow.innertube.models.YouTubeClient.Companion.TVHTML5_SIMPLY_EMBEDDED_PLAYER
-import io.github.aedev.flow.innertube.models.YouTubeClient.Companion.VISIONOS
-import io.github.aedev.flow.innertube.models.YouTubeClient.Companion.WEB
-import io.github.aedev.flow.innertube.models.YouTubeClient.Companion.WEB_CREATOR
-import io.github.aedev.flow.innertube.models.YouTubeClient.Companion.WEB_REMIX
-import io.github.aedev.flow.innertube.models.YouTubeLocale
-import io.github.aedev.flow.innertube.models.response.PlayerResponse
-import io.github.aedev.flow.innertube.pages.NewPipeExtractor
-import io.github.aedev.flow.network.AppProxyManager
-import io.github.aedev.flow.utils.cipher.CipherDeobfuscator
-import io.github.aedev.flow.utils.potoken.PoTokenGenerator
-import io.github.aedev.flow.utils.potoken.PoTokenResult
+import com.arubr.smsvcodes.FlowApplication
+import com.arubr.smsvcodes.data.local.MusicAudioQuality
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.innertube.YouTube
+import com.arubr.smsvcodes.innertube.models.YouTubeClient
+import com.arubr.smsvcodes.innertube.models.YouTubeClient.Companion.ANDROID_CREATOR
+import com.arubr.smsvcodes.innertube.models.YouTubeClient.Companion.ANDROID_VR_1_43_32
+import com.arubr.smsvcodes.innertube.models.YouTubeClient.Companion.ANDROID_VR_1_61_48
+import com.arubr.smsvcodes.innertube.models.YouTubeClient.Companion.ANDROID_VR_NO_AUTH
+import com.arubr.smsvcodes.innertube.models.YouTubeClient.Companion.MOBILE
+import com.arubr.smsvcodes.innertube.models.YouTubeClient.Companion.TVHTML5
+import com.arubr.smsvcodes.innertube.models.YouTubeClient.Companion.TVHTML5_SIMPLY_EMBEDDED_PLAYER
+import com.arubr.smsvcodes.innertube.models.YouTubeClient.Companion.VISIONOS
+import com.arubr.smsvcodes.innertube.models.YouTubeClient.Companion.WEB
+import com.arubr.smsvcodes.innertube.models.YouTubeClient.Companion.WEB_CREATOR
+import com.arubr.smsvcodes.innertube.models.YouTubeClient.Companion.WEB_REMIX
+import com.arubr.smsvcodes.innertube.models.YouTubeLocale
+import com.arubr.smsvcodes.innertube.models.response.PlayerResponse
+import com.arubr.smsvcodes.innertube.pages.NewPipeExtractor
+import com.arubr.smsvcodes.network.AppProxyManager
+import com.arubr.smsvcodes.utils.cipher.CipherDeobfuscator
+import com.arubr.smsvcodes.utils.potoken.PoTokenGenerator
+import com.arubr.smsvcodes.utils.potoken.PoTokenResult
 import kotlinx.coroutines.CompletableDeferred
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.first
@@ -128,7 +128,7 @@ object MusicPlayerUtils {
         activeRequests.remove(videoId)
         resultCache.remove(videoId)
         cachedSignatureTimestamp = null
-        io.github.aedev.flow.utils.cipher.CipherDeobfuscator
+        com.arubr.smsvcodes.utils.cipher.CipherDeobfuscator
             .invalidateSignatureTimestamp()
     }
 
@@ -421,7 +421,7 @@ object MusicPlayerUtils {
                                 .deobfuscateThrottling(videoId, rawStreamUrl)
                                 ?.takeIf { it != rawStreamUrl }
                                 ?: CipherDeobfuscator.transformNParamInUrl(rawStreamUrl).takeIf { it != rawStreamUrl }
-                                ?: io.github.aedev.flow.utils.cipher.PipePipeNsigDecoder
+                                ?: com.arubr.smsvcodes.utils.cipher.PipePipeNsigDecoder
                                     .deobfuscateUrl(rawStreamUrl)
                                 ?: rawStreamUrl
                         if (usedClient.useWebPoTokens) {
@@ -690,7 +690,7 @@ object MusicPlayerUtils {
         }
 
         return try {
-            io.github.aedev.flow.utils.cipher.CipherDeobfuscator
+            com.arubr.smsvcodes.utils.cipher.CipherDeobfuscator
                 .getSignatureTimestamp()
                 ?.also {
                     Log.d(TAG, "Signature timestamp obtained from CipherDeobfuscator: $it")

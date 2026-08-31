@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.shorts
+package com.arubr.smsvcodes.ui.screens.shorts
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.Immutable
@@ -10,11 +10,11 @@ import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableLongStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
-import io.github.aedev.flow.data.local.DownloadDialogStyle
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.data.local.ShortsPlayerUiMode
-import io.github.aedev.flow.data.shorts.ShortVideoQuality
-import io.github.aedev.flow.innertube.models.response.PlayerResponse
+import com.arubr.smsvcodes.data.local.DownloadDialogStyle
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.data.local.ShortsPlayerUiMode
+import com.arubr.smsvcodes.data.shorts.ShortVideoQuality
+import com.arubr.smsvcodes.innertube.models.response.PlayerResponse
 import org.schabi.newpipe.extractor.stream.AudioStream
 import org.schabi.newpipe.extractor.stream.StreamInfo
 

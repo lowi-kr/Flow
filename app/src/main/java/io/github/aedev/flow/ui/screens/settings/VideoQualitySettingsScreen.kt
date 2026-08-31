@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.settings
+package com.arubr.smsvcodes.ui.screens.settings
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -14,11 +14,11 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.local.MusicAudioQuality
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.data.local.VideoQuality
-import io.github.aedev.flow.ui.components.layout.topbar.FlowTopBar
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.local.MusicAudioQuality
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.data.local.VideoQuality
+import com.arubr.smsvcodes.ui.components.layout.topbar.FlowTopBar
 import kotlinx.coroutines.launch
 
 @Composable
@@ -74,7 +74,7 @@ fun VideoQualitySettingsScreen(onNavigateBack: () -> Unit) {
                 Text(
                     text =
                         androidx.compose.ui.res
-                            .stringResource(io.github.aedev.flow.R.string.video_quality_warning),
+                            .stringResource(com.arubr.smsvcodes.R.string.video_quality_warning),
                     style = MaterialTheme.typography.bodyMedium,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                     modifier = Modifier.padding(bottom = 8.dp),
@@ -86,7 +86,7 @@ fun VideoQualitySettingsScreen(onNavigateBack: () -> Unit) {
                 SectionHeader(
                     text =
                         androidx.compose.ui.res
-                            .stringResource(io.github.aedev.flow.R.string.video_quality_wifi_header),
+                            .stringResource(com.arubr.smsvcodes.R.string.video_quality_wifi_header),
                 )
             }
 
@@ -113,7 +113,7 @@ fun VideoQualitySettingsScreen(onNavigateBack: () -> Unit) {
                 SectionHeader(
                     text =
                         androidx.compose.ui.res
-                            .stringResource(io.github.aedev.flow.R.string.video_quality_cellular_header),
+                            .stringResource(com.arubr.smsvcodes.R.string.video_quality_cellular_header),
                 )
             }
 
@@ -198,15 +198,15 @@ fun QualitySelectionItem(
 
 private fun getQualityNameRes(quality: VideoQuality): Int =
     when (quality) {
-        VideoQuality.AUTO -> io.github.aedev.flow.R.string.quality_auto
-        VideoQuality.Q_144P -> io.github.aedev.flow.R.string.quality_144p
-        VideoQuality.Q_240P -> io.github.aedev.flow.R.string.quality_240p
-        VideoQuality.Q_360P -> io.github.aedev.flow.R.string.quality_360p
-        VideoQuality.Q_480P -> io.github.aedev.flow.R.string.quality_480p
-        VideoQuality.Q_720P -> io.github.aedev.flow.R.string.quality_720p_hd
-        VideoQuality.Q_1080P -> io.github.aedev.flow.R.string.quality_1080p_full_hd
-        VideoQuality.Q_1440P -> io.github.aedev.flow.R.string.quality_1440p_qhd
-        VideoQuality.Q_2160P -> io.github.aedev.flow.R.string.quality_2160p_4k
+        VideoQuality.AUTO -> com.arubr.smsvcodes.R.string.quality_auto
+        VideoQuality.Q_144P -> com.arubr.smsvcodes.R.string.quality_144p
+        VideoQuality.Q_240P -> com.arubr.smsvcodes.R.string.quality_240p
+        VideoQuality.Q_360P -> com.arubr.smsvcodes.R.string.quality_360p
+        VideoQuality.Q_480P -> com.arubr.smsvcodes.R.string.quality_480p
+        VideoQuality.Q_720P -> com.arubr.smsvcodes.R.string.quality_720p_hd
+        VideoQuality.Q_1080P -> com.arubr.smsvcodes.R.string.quality_1080p_full_hd
+        VideoQuality.Q_1440P -> com.arubr.smsvcodes.R.string.quality_1440p_qhd
+        VideoQuality.Q_2160P -> com.arubr.smsvcodes.R.string.quality_2160p_4k
     }
 
 @Composable

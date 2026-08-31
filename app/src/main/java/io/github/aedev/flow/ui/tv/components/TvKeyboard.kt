@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.tv.components
+package com.arubr.smsvcodes.ui.tv.components
 
 import androidx.compose.foundation.focusGroup
 import androidx.compose.foundation.layout.Arrangement
@@ -24,7 +24,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.focus.onFocusChanged
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.R
+import com.arubr.smsvcodes.R
 
 private val KEY_SIZE = 48.dp
 private val KEY_GAP = 6.dp

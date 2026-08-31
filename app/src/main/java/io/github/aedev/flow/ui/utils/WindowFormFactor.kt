@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.utils
+package com.arubr.smsvcodes.ui.utils
 
 import android.content.res.Configuration
 

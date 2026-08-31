@@ -1,6 +1,6 @@
-package io.github.aedev.flow.sync.protocol
+package com.arubr.smsvcodes.sync.protocol
 
-import io.github.aedev.flow.sync.crypto.SyncCrypto
+import com.arubr.smsvcodes.sync.crypto.SyncCrypto
 import java.io.ByteArrayInputStream
 import java.io.ByteArrayOutputStream
 import java.util.zip.GZIPInputStream

@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.music
+package com.arubr.smsvcodes.ui.screens.music
 
 import android.app.Activity
 import android.content.Intent
@@ -42,15 +42,15 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import coil3.compose.AsyncImage
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.innertube.YouTube.SearchFilter
-import io.github.aedev.flow.innertube.models.*
-import io.github.aedev.flow.ui.components.AddToPlaylistDialog
-import io.github.aedev.flow.ui.components.MusicCollectionActionItem
-import io.github.aedev.flow.ui.components.MusicCollectionQuickActionsSheet
-import io.github.aedev.flow.ui.components.MusicQuickActionsSheet
-import io.github.aedev.flow.ui.screens.music.components.TrackListItem
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.innertube.YouTube.SearchFilter
+import com.arubr.smsvcodes.innertube.models.*
+import com.arubr.smsvcodes.ui.components.AddToPlaylistDialog
+import com.arubr.smsvcodes.ui.components.MusicCollectionActionItem
+import com.arubr.smsvcodes.ui.components.MusicCollectionQuickActionsSheet
+import com.arubr.smsvcodes.ui.components.MusicQuickActionsSheet
+import com.arubr.smsvcodes.ui.screens.music.components.TrackListItem
 import kotlinx.coroutines.FlowPreview
 
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalComposeUiApi::class, FlowPreview::class, ExperimentalFoundationApi::class)

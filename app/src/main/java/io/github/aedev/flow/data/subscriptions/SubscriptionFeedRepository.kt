@@ -1,16 +1,16 @@
-package io.github.aedev.flow.data.subscriptions
+package com.arubr.smsvcodes.data.subscriptions
 
 import android.util.Log
 import androidx.room.withTransaction
-import io.github.aedev.flow.data.innertube.RssSubscriptionService
-import io.github.aedev.flow.data.local.AppDatabase
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.data.local.SubscriptionRepository
-import io.github.aedev.flow.data.local.dao.CacheDao
-import io.github.aedev.flow.data.local.entity.SubscriptionFeedEntity
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.data.subscriptions.SubscriptionFeedMerger.preservingEnrichedMetadata
-import io.github.aedev.flow.utils.PerformanceDispatcher
+import com.arubr.smsvcodes.data.innertube.RssSubscriptionService
+import com.arubr.smsvcodes.data.local.AppDatabase
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.data.local.SubscriptionRepository
+import com.arubr.smsvcodes.data.local.dao.CacheDao
+import com.arubr.smsvcodes.data.local.entity.SubscriptionFeedEntity
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.data.subscriptions.SubscriptionFeedMerger.preservingEnrichedMetadata
+import com.arubr.smsvcodes.utils.PerformanceDispatcher
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.flow
@@ -315,7 +315,7 @@ private fun ChannelRssEntry.toEntity(
     channelName = channelName.orEmpty(),
     channelId = channelId,
     thumbnailUrl =
-        io.github.aedev.flow.utils.ThumbnailUrlResolver
+        com.arubr.smsvcodes.utils.ThumbnailUrlResolver
             .normalizeVideoThumbnail(videoId, thumbnailUrl),
     // RSS carries neither; the feed's on-demand enrichment fills them in when the item is shown.
     duration = 0,

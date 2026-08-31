@@ -1,12 +1,12 @@
-package io.github.aedev.flow.widget.core
+package com.arubr.smsvcodes.widget.core
 
 import android.content.Context
 import dagger.hilt.EntryPoint
 import dagger.hilt.InstallIn
 import dagger.hilt.android.EntryPointAccessors
 import dagger.hilt.components.SingletonComponent
-import io.github.aedev.flow.data.recommendation.music.MusicBrainEngine
-import io.github.aedev.flow.data.video.VideoDownloadManager
+import com.arubr.smsvcodes.data.recommendation.music.MusicBrainEngine
+import com.arubr.smsvcodes.data.video.VideoDownloadManager
 
 /**
  * Glance widgets can't use constructor injection (the framework instantiates them),

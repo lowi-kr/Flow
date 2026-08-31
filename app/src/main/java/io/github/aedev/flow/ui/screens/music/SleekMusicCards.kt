@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.music
+package com.arubr.smsvcodes.ui.screens.music
 
 import androidx.compose.animation.*
 import androidx.compose.foundation.background
@@ -21,7 +21,7 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil3.compose.AsyncImage
-import io.github.aedev.flow.R
+import com.arubr.smsvcodes.R
 
 /**
  * Compact sleek card for lists

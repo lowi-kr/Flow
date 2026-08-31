@@ -1,11 +1,11 @@
-package io.github.aedev.flow.data.subscriptions
+package com.arubr.smsvcodes.data.subscriptions
 
 import android.content.Context
 import dagger.hilt.EntryPoint
 import dagger.hilt.InstallIn
 import dagger.hilt.android.EntryPointAccessors
 import dagger.hilt.components.SingletonComponent
-import io.github.aedev.flow.utils.PerformanceDispatcher
+import com.arubr.smsvcodes.utils.PerformanceDispatcher
 import kotlinx.coroutines.withContext
 
 /**

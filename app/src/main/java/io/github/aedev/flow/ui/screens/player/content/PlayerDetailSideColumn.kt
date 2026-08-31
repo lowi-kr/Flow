@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.player.content
+package com.arubr.smsvcodes.ui.screens.player.content
 
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.layout.Column
@@ -20,18 +20,18 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.local.PlayerRelatedCardStyle
-import io.github.aedev.flow.data.model.Comment
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.player.EnhancedPlayerManager
-import io.github.aedev.flow.ui.components.LiveChatList
-import io.github.aedev.flow.ui.components.LiveChatPreview
-import io.github.aedev.flow.ui.components.PlayerCommentsPanel
-import io.github.aedev.flow.ui.components.commentTimestampToMs
-import io.github.aedev.flow.ui.screens.player.VideoPlayerUiState
-import io.github.aedev.flow.ui.screens.player.VideoPlayerViewModel
-import io.github.aedev.flow.ui.screens.player.state.PlayerScreenState
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.local.PlayerRelatedCardStyle
+import com.arubr.smsvcodes.data.model.Comment
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.player.EnhancedPlayerManager
+import com.arubr.smsvcodes.ui.components.LiveChatList
+import com.arubr.smsvcodes.ui.components.LiveChatPreview
+import com.arubr.smsvcodes.ui.components.PlayerCommentsPanel
+import com.arubr.smsvcodes.ui.components.commentTimestampToMs
+import com.arubr.smsvcodes.ui.screens.player.VideoPlayerUiState
+import com.arubr.smsvcodes.ui.screens.player.VideoPlayerViewModel
+import com.arubr.smsvcodes.ui.screens.player.state.PlayerScreenState
 
 /**
  * Right-hand column of the tablet landscape player. Comments take the column over when opened so

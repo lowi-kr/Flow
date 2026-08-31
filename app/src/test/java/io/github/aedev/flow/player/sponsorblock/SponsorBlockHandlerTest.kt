@@ -1,7 +1,7 @@
-package io.github.aedev.flow.player.sponsorblock
+package com.arubr.smsvcodes.player.sponsorblock
 
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.data.model.SponsorBlockSegment
+import com.arubr.smsvcodes.data.model.SponsorBlockSegment
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.test.UnconfinedTestDispatcher
 import org.junit.Test

@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components
+package com.arubr.smsvcodes.ui.components
 
 import android.graphics.Typeface
 import android.util.TypedValue
@@ -35,7 +35,7 @@ import androidx.media3.common.text.Cue
 import androidx.media3.common.text.CueGroup
 import androidx.media3.ui.CaptionStyleCompat
 import androidx.media3.ui.SubtitleView
-import io.github.aedev.flow.player.EnhancedPlayerManager
+import com.arubr.smsvcodes.player.EnhancedPlayerManager
 import android.graphics.Color as AndroidColor
 
 @Composable

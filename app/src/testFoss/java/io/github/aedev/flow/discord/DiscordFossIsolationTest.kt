@@ -1,4 +1,4 @@
-package io.github.aedev.flow.discord
+package com.arubr.smsvcodes.discord
 
 import com.google.common.truth.Truth.assertThat
 import org.junit.Test
@@ -7,12 +7,12 @@ class DiscordFossIsolationTest {
     @Test
     fun `foss classpath excludes functional Discord implementation`() {
         val forbiddenClasses = listOf(
-            "io.github.aedev.flow.discord.DiscordTokenStore",
-            "io.github.aedev.flow.discord.DiscordAuthTokens",
-            "io.github.aedev.flow.discord.DiscordPlaybackSource",
-            "io.github.aedev.flow.discord.DiscordPresenceCoordinator",
-            "io.github.aedev.flow.discord.KizzyDiscordPresenceTransport",
-            "io.github.aedev.flow.discord.KizzyGatewayProtocol",
+            "com.arubr.smsvcodes.discord.DiscordTokenStore",
+            "com.arubr.smsvcodes.discord.DiscordAuthTokens",
+            "com.arubr.smsvcodes.discord.DiscordPlaybackSource",
+            "com.arubr.smsvcodes.discord.DiscordPresenceCoordinator",
+            "com.arubr.smsvcodes.discord.KizzyDiscordPresenceTransport",
+            "com.arubr.smsvcodes.discord.KizzyGatewayProtocol",
         )
 
         forbiddenClasses.forEach { className ->

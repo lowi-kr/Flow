@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.layout.topbar
+package com.arubr.smsvcodes.ui.components.layout.topbar
 
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
@@ -7,7 +7,7 @@ import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.compose.ui.test.onNodeWithContentDescription
 import androidx.compose.ui.test.onNodeWithText
 import androidx.test.platform.app.InstrumentationRegistry
-import io.github.aedev.flow.R
+import com.arubr.smsvcodes.R
 import kotlinx.coroutines.flow.MutableStateFlow
 import org.junit.Rule
 import org.junit.Test

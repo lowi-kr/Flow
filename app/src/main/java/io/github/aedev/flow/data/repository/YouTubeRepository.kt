@@ -1,26 +1,26 @@
-package io.github.aedev.flow.data.repository
+package com.arubr.smsvcodes.data.repository
 
 import android.util.Log
 import android.util.LruCache
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.data.model.Comment
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.data.model.VideoCollaborator
-import io.github.aedev.flow.data.model.needsCollaboratorResolution
-import io.github.aedev.flow.data.shorts.ChannelReelIndex
-import io.github.aedev.flow.data.shorts.ShortsClassifier
-import io.github.aedev.flow.innertube.YouTube
-import io.github.aedev.flow.innertube.models.SongItem
-import io.github.aedev.flow.innertube.models.response.WatchMetadataResponse
-import io.github.aedev.flow.utils.PerformanceDispatcher
-import io.github.aedev.flow.utils.RelativeUploadDateParser
-import io.github.aedev.flow.utils.ThumbnailUrlResolver
-import io.github.aedev.flow.utils.avatarImageIdentityKey
-import io.github.aedev.flow.utils.bestImageUrl
-import io.github.aedev.flow.utils.distinctBestImageUrls
-import io.github.aedev.flow.utils.newPipeContentCountry
-import io.github.aedev.flow.utils.newPipeLocalization
-import io.github.aedev.flow.utils.parseToTimestamp
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.data.model.Comment
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.data.model.VideoCollaborator
+import com.arubr.smsvcodes.data.model.needsCollaboratorResolution
+import com.arubr.smsvcodes.data.shorts.ChannelReelIndex
+import com.arubr.smsvcodes.data.shorts.ShortsClassifier
+import com.arubr.smsvcodes.innertube.YouTube
+import com.arubr.smsvcodes.innertube.models.SongItem
+import com.arubr.smsvcodes.innertube.models.response.WatchMetadataResponse
+import com.arubr.smsvcodes.utils.PerformanceDispatcher
+import com.arubr.smsvcodes.utils.RelativeUploadDateParser
+import com.arubr.smsvcodes.utils.ThumbnailUrlResolver
+import com.arubr.smsvcodes.utils.avatarImageIdentityKey
+import com.arubr.smsvcodes.utils.bestImageUrl
+import com.arubr.smsvcodes.utils.distinctBestImageUrls
+import com.arubr.smsvcodes.utils.newPipeContentCountry
+import com.arubr.smsvcodes.utils.newPipeLocalization
+import com.arubr.smsvcodes.utils.parseToTimestamp
 import kotlinx.coroutines.Deferred
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
@@ -354,7 +354,7 @@ class YouTubeRepository
             query: String,
             contentFilters: List<String> = emptyList(),
             nextPage: Page? = null,
-        ): io.github.aedev.flow.data.model.SearchResult =
+        ): com.arubr.smsvcodes.data.model.SearchResult =
             withContext(Dispatchers.IO) {
                 try {
                     val searchExtractor = service.getSearchExtractor(query, contentFilters, "")
@@ -369,8 +369,8 @@ class YouTubeRepository
                         }
 
                     val videos = mutableListOf<Video>()
-                    val channels = mutableListOf<io.github.aedev.flow.data.model.Channel>()
-                    val playlists = mutableListOf<io.github.aedev.flow.data.model.Playlist>()
+                    val channels = mutableListOf<com.arubr.smsvcodes.data.model.Channel>()
+                    val playlists = mutableListOf<com.arubr.smsvcodes.data.model.Playlist>()
 
                     infoItems.items.forEach { item ->
                         when (item) {
@@ -388,7 +388,7 @@ class YouTubeRepository
                         }
                     }
 
-                    io.github.aedev.flow.data.model.SearchResult(
+                    com.arubr.smsvcodes.data.model.SearchResult(
                         videos =
                             enrichLikelyCollabAvatarStacks(
                                 enrichVideosWithSearchAvatarStacks(query, videos),
@@ -398,7 +398,7 @@ class YouTubeRepository
                     )
                 } catch (e: Exception) {
                     Log.w(TAG, "${e::class.simpleName}: ${e.message}")
-                    io.github.aedev.flow.data.model
+                    com.arubr.smsvcodes.data.model
                         .SearchResult()
                 }
             }
@@ -775,7 +775,7 @@ class YouTubeRepository
             val info = getChannelInfo(channelId) ?: return
             val tags = info.tags.orEmpty()
             if (tags.isEmpty() && info.description.isNullOrBlank()) return
-            io.github.aedev.flow.data.recommendation.FlowNeuroEngine
+            com.arubr.smsvcodes.data.recommendation.FlowNeuroEngine
                 .onChannelTagsLearned(context, channelId, tags, info.description)
         }
 
@@ -1125,7 +1125,7 @@ class YouTubeRepository
         /**
          * Fetch playlist details
          */
-        suspend fun getPlaylistDetails(playlistId: String): io.github.aedev.flow.data.model.Playlist? =
+        suspend fun getPlaylistDetails(playlistId: String): com.arubr.smsvcodes.data.model.Playlist? =
             withContext(Dispatchers.IO) {
                 try {
                     val playlistUrl = "https://www.youtube.com/playlist?list=$playlistId"
@@ -1166,7 +1166,7 @@ class YouTubeRepository
                             .firstOrNull()
                             ?.url ?: playlistVideos.firstOrNull()?.thumbnailUrl ?: ""
 
-                    io.github.aedev.flow.data.model.Playlist(
+                    com.arubr.smsvcodes.data.model.Playlist(
                         id = playlistId,
                         name = playlistInfo.name ?: "Unknown Playlist",
                         thumbnailUrl = bestThumbnail,
@@ -1454,7 +1454,7 @@ class YouTubeRepository
         /**
          * Extension function to convert ChannelInfoItem to our Channel model
          */
-        private fun org.schabi.newpipe.extractor.channel.ChannelInfoItem.toChannel(): io.github.aedev.flow.data.model.Channel {
+        private fun org.schabi.newpipe.extractor.channel.ChannelInfoItem.toChannel(): com.arubr.smsvcodes.data.model.Channel {
             val bestThumbnail =
                 thumbnails
                     .sortedByDescending { it.height }
@@ -1471,7 +1471,7 @@ class YouTubeRepository
                     else -> url.substringAfterLast("/").substringBefore("?")
                 }
 
-            return io.github.aedev.flow.data.model.Channel(
+            return com.arubr.smsvcodes.data.model.Channel(
                 id = channelId,
                 name = name ?: "Unknown Channel",
                 thumbnailUrl = bestThumbnail,
@@ -1484,7 +1484,7 @@ class YouTubeRepository
         /**
          * Extension function to convert PlaylistInfoItem to our Playlist model
          */
-        private fun org.schabi.newpipe.extractor.playlist.PlaylistInfoItem.toPlaylist(): io.github.aedev.flow.data.model.Playlist {
+        private fun org.schabi.newpipe.extractor.playlist.PlaylistInfoItem.toPlaylist(): com.arubr.smsvcodes.data.model.Playlist {
             val playlistId = url.substringAfterLast("=")
             val bestThumbnail =
                 thumbnails
@@ -1493,7 +1493,7 @@ class YouTubeRepository
                     .firstOrNull()
                     .let { ThumbnailUrlResolver.normalizeVideoThumbnail(playlistId, it) }
 
-            return io.github.aedev.flow.data.model.Playlist(
+            return com.arubr.smsvcodes.data.model.Playlist(
                 id = playlistId,
                 name = name ?: "Unknown Playlist",
                 thumbnailUrl = bestThumbnail,
@@ -1584,7 +1584,7 @@ class YouTubeRepository
             private var instance: YouTubeRepository? = null
 
             fun getInstance(
-                playerPreferences: io.github.aedev.flow.data.local.PlayerPreferences,
+                playerPreferences: com.arubr.smsvcodes.data.local.PlayerPreferences,
                 channelReelIndex: ChannelReelIndex,
             ): YouTubeRepository =
                 instance ?: synchronized(this) {

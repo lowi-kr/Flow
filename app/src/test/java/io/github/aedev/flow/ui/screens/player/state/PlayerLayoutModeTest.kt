@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.player.state
+package com.arubr.smsvcodes.ui.screens.player.state
 
 import android.content.res.Configuration
 import com.google.common.truth.Truth.assertThat

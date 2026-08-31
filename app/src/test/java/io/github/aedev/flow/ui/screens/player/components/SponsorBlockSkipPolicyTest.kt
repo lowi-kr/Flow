@@ -1,8 +1,8 @@
-package io.github.aedev.flow.ui.screens.player.components
+package com.arubr.smsvcodes.ui.screens.player.components
 
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.data.local.SponsorBlockAction
-import io.github.aedev.flow.data.model.SponsorBlockSegment
+import com.arubr.smsvcodes.data.local.SponsorBlockAction
+import com.arubr.smsvcodes.data.model.SponsorBlockSegment
 import org.junit.Test
 
 class SponsorBlockSkipPolicyTest {

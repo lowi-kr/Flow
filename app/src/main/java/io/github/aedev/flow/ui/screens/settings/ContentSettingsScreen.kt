@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.settings
+package com.arubr.smsvcodes.ui.screens.settings
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -48,15 +48,15 @@ import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.data.local.PlayerRelatedCardStyle
-import io.github.aedev.flow.data.local.WatchedThreshold
-import io.github.aedev.flow.ui.NavigationVisibility
-import io.github.aedev.flow.ui.components.layout.topbar.FlowTopBar
-import io.github.aedev.flow.ui.resolveDefaultNavTabIndex
-import io.github.aedev.flow.ui.theme.GridItemSize
-import io.github.aedev.flow.ui.visibleNavTabIndices
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.data.local.PlayerRelatedCardStyle
+import com.arubr.smsvcodes.data.local.WatchedThreshold
+import com.arubr.smsvcodes.ui.NavigationVisibility
+import com.arubr.smsvcodes.ui.components.layout.topbar.FlowTopBar
+import com.arubr.smsvcodes.ui.resolveDefaultNavTabIndex
+import com.arubr.smsvcodes.ui.theme.GridItemSize
+import com.arubr.smsvcodes.ui.visibleNavTabIndices
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -86,7 +86,7 @@ fun ContentSettingsScreen(onBackClick: () -> Unit) {
     val showRestoredMusicMiniPlayer by preferences.showRestoredMusicMiniPlayer.collectAsState(initial = true)
     val showRelatedVideos by preferences.showRelatedVideos.collectAsState(initial = true)
 
-    val homeViewModeString by preferences.homeViewMode.collectAsState(initial = io.github.aedev.flow.data.local.HomeViewMode.GRID)
+    val homeViewModeString by preferences.homeViewMode.collectAsState(initial = com.arubr.smsvcodes.data.local.HomeViewMode.GRID)
     val currentHomeViewMode = homeViewModeString
 
     val homeFeedEnabled by preferences.homeFeedEnabled.collectAsState(initial = true)
@@ -97,7 +97,7 @@ fun ContentSettingsScreen(onBackClick: () -> Unit) {
     val hideWatchedVideosFromSubscriptions by preferences.hideWatchedVideosFromSubscriptions.collectAsState(initial = false)
     val hideUnplayableVideosFromSubscriptions by preferences.hideUnplayableVideosFromSubscriptions.collectAsState(initial = false)
     val watchedThreshold by preferences.watchedThreshold.collectAsState(
-        initial = io.github.aedev.flow.data.local.WatchedThreshold.ALMOST_FINISHED,
+        initial = com.arubr.smsvcodes.data.local.WatchedThreshold.ALMOST_FINISHED,
     )
     var showWatchedThresholdDialog by remember { mutableStateOf(false) }
     val bottomNavHideOnScroll by preferences.bottomNavHideOnScroll.collectAsState(initial = true)
@@ -115,7 +115,7 @@ fun ContentSettingsScreen(onBackClick: () -> Unit) {
     val subscriptionShowVideos by preferences.subscriptionShowVideos.collectAsState(initial = true)
     val subscriptionShowShorts by preferences.subscriptionShowShorts.collectAsState(initial = true)
     val subscriptionShowLive by preferences.subscriptionShowLive.collectAsState(initial = true)
-    val navTabOrder by preferences.navTabOrder.collectAsState(initial = io.github.aedev.flow.data.local.DEFAULT_NAV_TAB_ORDER)
+    val navTabOrder by preferences.navTabOrder.collectAsState(initial = com.arubr.smsvcodes.data.local.DEFAULT_NAV_TAB_ORDER)
     val defaultNavTabIndex by preferences.defaultNavTabIndex.collectAsState(initial = 0)
     val navigationVisibility =
         NavigationVisibility(
@@ -133,7 +133,7 @@ fun ContentSettingsScreen(onBackClick: () -> Unit) {
             visibility = navigationVisibility,
         )
     val downloadDialogStyle by preferences.downloadDialogStyle.collectAsState(
-        initial = io.github.aedev.flow.data.local.DownloadDialogStyle.FULL,
+        initial = com.arubr.smsvcodes.data.local.DownloadDialogStyle.FULL,
     )
 
     Scaffold(
@@ -242,10 +242,10 @@ fun ContentSettingsScreen(onBackClick: () -> Unit) {
                             GridSizeOption(
                                 title = stringResource(R.string.download_menu_style_classic),
                                 description = stringResource(R.string.download_menu_style_classic_desc),
-                                isSelected = downloadDialogStyle == io.github.aedev.flow.data.local.DownloadDialogStyle.FULL,
+                                isSelected = downloadDialogStyle == com.arubr.smsvcodes.data.local.DownloadDialogStyle.FULL,
                                 onClick = {
                                     coroutineScope.launch {
-                                        preferences.setDownloadDialogStyle(io.github.aedev.flow.data.local.DownloadDialogStyle.FULL)
+                                        preferences.setDownloadDialogStyle(com.arubr.smsvcodes.data.local.DownloadDialogStyle.FULL)
                                     }
                                 },
                                 modifier = Modifier.weight(1f),
@@ -253,10 +253,10 @@ fun ContentSettingsScreen(onBackClick: () -> Unit) {
                             GridSizeOption(
                                 title = stringResource(R.string.download_menu_style_compact),
                                 description = stringResource(R.string.download_menu_style_compact_desc),
-                                isSelected = downloadDialogStyle == io.github.aedev.flow.data.local.DownloadDialogStyle.COMPACT,
+                                isSelected = downloadDialogStyle == com.arubr.smsvcodes.data.local.DownloadDialogStyle.COMPACT,
                                 onClick = {
                                     coroutineScope.launch {
-                                        preferences.setDownloadDialogStyle(io.github.aedev.flow.data.local.DownloadDialogStyle.COMPACT)
+                                        preferences.setDownloadDialogStyle(com.arubr.smsvcodes.data.local.DownloadDialogStyle.COMPACT)
                                     }
                                 },
                                 modifier = Modifier.weight(1f),
@@ -274,7 +274,7 @@ fun ContentSettingsScreen(onBackClick: () -> Unit) {
                         Row(verticalAlignment = Alignment.CenterVertically) {
                             Icon(
                                 if (currentHomeViewMode ==
-                                    io.github.aedev.flow.data.local.HomeViewMode.GRID
+                                    com.arubr.smsvcodes.data.local.HomeViewMode.GRID
                                 ) {
                                     Icons.Outlined.GridView
                                 } else {
@@ -307,10 +307,10 @@ fun ContentSettingsScreen(onBackClick: () -> Unit) {
                             LayoutOption(
                                 title = stringResource(R.string.content_settings_layout_grid),
                                 icon = Icons.Outlined.GridView,
-                                isSelected = currentHomeViewMode == io.github.aedev.flow.data.local.HomeViewMode.GRID,
+                                isSelected = currentHomeViewMode == com.arubr.smsvcodes.data.local.HomeViewMode.GRID,
                                 onClick = {
                                     coroutineScope.launch {
-                                        preferences.setHomeViewMode(io.github.aedev.flow.data.local.HomeViewMode.GRID)
+                                        preferences.setHomeViewMode(com.arubr.smsvcodes.data.local.HomeViewMode.GRID)
                                     }
                                 },
                                 modifier = Modifier.weight(1f),
@@ -318,10 +318,10 @@ fun ContentSettingsScreen(onBackClick: () -> Unit) {
                             LayoutOption(
                                 title = stringResource(R.string.content_settings_layout_list),
                                 icon = Icons.AutoMirrored.Outlined.List,
-                                isSelected = currentHomeViewMode == io.github.aedev.flow.data.local.HomeViewMode.LIST,
+                                isSelected = currentHomeViewMode == com.arubr.smsvcodes.data.local.HomeViewMode.LIST,
                                 onClick = {
                                     coroutineScope.launch {
-                                        preferences.setHomeViewMode(io.github.aedev.flow.data.local.HomeViewMode.LIST)
+                                        preferences.setHomeViewMode(com.arubr.smsvcodes.data.local.HomeViewMode.LIST)
                                     }
                                 },
                                 modifier = Modifier.weight(1f),

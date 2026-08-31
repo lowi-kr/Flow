@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.subscriptions
+package com.arubr.smsvcodes.ui.screens.subscriptions
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -22,7 +22,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.R
+import com.arubr.smsvcodes.R
 
 /** How many channel names are spelled out before the rest are summarised as a count. */
 private const val MAX_NAMED_CHANNELS = 3

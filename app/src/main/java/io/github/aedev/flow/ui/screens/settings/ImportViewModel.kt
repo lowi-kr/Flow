@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.settings
+package com.arubr.smsvcodes.ui.screens.settings
 
 import android.content.Context
 import android.net.Uri
@@ -6,9 +6,9 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.local.BackupRepository
-import io.github.aedev.flow.notification.NotificationHelper
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.local.BackupRepository
+import com.arubr.smsvcodes.notification.NotificationHelper
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow

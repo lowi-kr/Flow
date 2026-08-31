@@ -1,4 +1,4 @@
-package io.github.aedev.flow.player
+package com.arubr.smsvcodes.player
 
 import android.content.ComponentCallbacks2
 

@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.player.effects
+package com.arubr.smsvcodes.ui.screens.player.effects
 
 import android.app.Activity
 import android.content.Context
@@ -22,18 +22,18 @@ import androidx.lifecycle.compose.LocalLifecycleOwner
 import androidx.media3.common.C
 import androidx.media3.common.Player
 import androidx.media3.common.Timeline
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.player.EnhancedPlayerManager
-import io.github.aedev.flow.player.error.PlayerDiagnostics
-import io.github.aedev.flow.player.sponsorblock.SponsorBlockHandler
-import io.github.aedev.flow.player.state.EnhancedPlayerState
-import io.github.aedev.flow.ui.screens.player.VideoPlayerUiState
-import io.github.aedev.flow.ui.screens.player.VideoPlayerViewModel
-import io.github.aedev.flow.ui.screens.player.state.PlayerScreenState
-import io.github.aedev.flow.ui.screens.player.state.SubtitleSelection
-import io.github.aedev.flow.ui.utils.isTabletFormFactor
-import io.github.aedev.flow.utils.NetworkState
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.player.EnhancedPlayerManager
+import com.arubr.smsvcodes.player.error.PlayerDiagnostics
+import com.arubr.smsvcodes.player.sponsorblock.SponsorBlockHandler
+import com.arubr.smsvcodes.player.state.EnhancedPlayerState
+import com.arubr.smsvcodes.ui.screens.player.VideoPlayerUiState
+import com.arubr.smsvcodes.ui.screens.player.VideoPlayerViewModel
+import com.arubr.smsvcodes.ui.screens.player.state.PlayerScreenState
+import com.arubr.smsvcodes.ui.screens.player.state.SubtitleSelection
+import com.arubr.smsvcodes.ui.utils.isTabletFormFactor
+import com.arubr.smsvcodes.utils.NetworkState
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.first

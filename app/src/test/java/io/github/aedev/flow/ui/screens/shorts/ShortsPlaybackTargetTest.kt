@@ -1,6 +1,6 @@
-package io.github.aedev.flow.ui.screens.shorts
+package com.arubr.smsvcodes.ui.screens.shorts
 
-import io.github.aedev.flow.data.local.VideoQuality
+import com.arubr.smsvcodes.data.local.VideoQuality
 import org.junit.Assert.assertEquals
 import org.junit.Test
 

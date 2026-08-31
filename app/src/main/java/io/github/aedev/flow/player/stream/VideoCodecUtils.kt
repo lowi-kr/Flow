@@ -1,4 +1,4 @@
-package io.github.aedev.flow.player.stream
+package com.arubr.smsvcodes.player.stream
 
 import android.net.Uri
 import org.schabi.newpipe.extractor.stream.VideoStream

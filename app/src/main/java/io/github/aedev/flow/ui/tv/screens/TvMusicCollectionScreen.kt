@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.tv.screens
+package com.arubr.smsvcodes.ui.tv.screens
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -27,16 +27,16 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import coil3.compose.AsyncImage
-import io.github.aedev.flow.R
-import io.github.aedev.flow.ui.screens.music.MusicTrack
-import io.github.aedev.flow.ui.screens.music.MusicViewModel
-import io.github.aedev.flow.ui.tv.components.TvButton
-import io.github.aedev.flow.ui.tv.components.TvLoadingState
-import io.github.aedev.flow.ui.tv.components.TvMessageState
-import io.github.aedev.flow.ui.tv.components.TvMusicTrackRow
-import io.github.aedev.flow.ui.tv.focus.ProvideTvColumnPivot
-import io.github.aedev.flow.ui.tv.focus.tvInitialFocus
-import io.github.aedev.flow.ui.tv.theme.LocalTvDimens
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.ui.screens.music.MusicTrack
+import com.arubr.smsvcodes.ui.screens.music.MusicViewModel
+import com.arubr.smsvcodes.ui.tv.components.TvButton
+import com.arubr.smsvcodes.ui.tv.components.TvLoadingState
+import com.arubr.smsvcodes.ui.tv.components.TvMessageState
+import com.arubr.smsvcodes.ui.tv.components.TvMusicTrackRow
+import com.arubr.smsvcodes.ui.tv.focus.ProvideTvColumnPivot
+import com.arubr.smsvcodes.ui.tv.focus.tvInitialFocus
+import com.arubr.smsvcodes.ui.tv.theme.LocalTvDimens
 
 /**
  * Album / playlist detail page for TV music: large art header with Play All

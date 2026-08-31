@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.player.controls
+package com.arubr.smsvcodes.ui.screens.player.controls
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -52,11 +52,11 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.local.PlayerOverlayPreferences
-import io.github.aedev.flow.ui.theme.PlayerScrim
-import io.github.aedev.flow.ui.theme.PlayerScrimAffordance
-import io.github.aedev.flow.ui.theme.PlayerScrimContent
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.local.PlayerOverlayPreferences
+import com.arubr.smsvcodes.ui.theme.PlayerScrim
+import com.arubr.smsvcodes.ui.theme.PlayerScrimAffordance
+import com.arubr.smsvcodes.ui.theme.PlayerScrimContent
 
 /** Alpha the top gradient reaches at the very top of the player. */
 private const val TOP_GRADIENT_ALPHA = 0.38f

@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.subscriptions
+package com.arubr.smsvcodes.ui.screens.subscriptions
 
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
@@ -116,18 +116,18 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import coil3.compose.AsyncImage
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.model.Channel
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.data.shorts.queue.ShortsQueueSource
-import io.github.aedev.flow.ui.TabScrollEventBus
-import io.github.aedev.flow.ui.components.ShortsShelf
-import io.github.aedev.flow.ui.components.VideoCardFullWidth
-import io.github.aedev.flow.ui.components.VideoCardHorizontal
-import io.github.aedev.flow.ui.components.layout.topbar.FlowSearchTopBar
-import io.github.aedev.flow.ui.components.layout.topbar.FlowTopBar
-import io.github.aedev.flow.ui.components.rememberFeedGridLayout
-import io.github.aedev.flow.ui.theme.extendedColors
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.model.Channel
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.data.shorts.queue.ShortsQueueSource
+import com.arubr.smsvcodes.ui.TabScrollEventBus
+import com.arubr.smsvcodes.ui.components.ShortsShelf
+import com.arubr.smsvcodes.ui.components.VideoCardFullWidth
+import com.arubr.smsvcodes.ui.components.VideoCardHorizontal
+import com.arubr.smsvcodes.ui.components.layout.topbar.FlowSearchTopBar
+import com.arubr.smsvcodes.ui.components.layout.topbar.FlowTopBar
+import com.arubr.smsvcodes.ui.components.rememberFeedGridLayout
+import com.arubr.smsvcodes.ui.theme.extendedColors
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.filter

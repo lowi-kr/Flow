@@ -1,4 +1,4 @@
-package io.github.aedev.flow.data.music
+package com.arubr.smsvcodes.data.music
 
 import android.content.Context
 import android.util.Log
@@ -6,15 +6,15 @@ import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.stringPreferencesKey
-import io.github.aedev.flow.data.local.safePreferencesDataStore
-import io.github.aedev.flow.ui.screens.music.MusicTrack
-import io.github.aedev.flow.data.download.DownloadUtil
-import io.github.aedev.flow.data.local.entity.DownloadItemStatus
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.data.video.VideoDownloadManager
-import io.github.aedev.flow.data.video.downloader.FlowDownloadService
-import io.github.aedev.flow.service.ExoDownloadService
-import io.github.aedev.flow.utils.MusicPlayerUtils
+import com.arubr.smsvcodes.data.local.safePreferencesDataStore
+import com.arubr.smsvcodes.ui.screens.music.MusicTrack
+import com.arubr.smsvcodes.data.download.DownloadUtil
+import com.arubr.smsvcodes.data.local.entity.DownloadItemStatus
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.data.video.VideoDownloadManager
+import com.arubr.smsvcodes.data.video.downloader.FlowDownloadService
+import com.arubr.smsvcodes.service.ExoDownloadService
+import com.arubr.smsvcodes.utils.MusicPlayerUtils
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import kotlinx.coroutines.Dispatchers

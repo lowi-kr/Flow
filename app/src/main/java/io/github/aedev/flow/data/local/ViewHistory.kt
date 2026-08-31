@@ -1,4 +1,4 @@
-package io.github.aedev.flow.data.local
+package com.arubr.smsvcodes.data.local
 
 import android.content.Context
 import android.util.Log
@@ -8,8 +8,8 @@ import androidx.datastore.preferences.core.booleanPreferencesKey
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.longPreferencesKey
 import androidx.datastore.preferences.core.stringPreferencesKey
-import io.github.aedev.flow.data.local.entity.WatchHistoryEntity
-import io.github.aedev.flow.utils.ThumbnailUrlResolver
+import com.arubr.smsvcodes.data.local.entity.WatchHistoryEntity
+import com.arubr.smsvcodes.utils.ThumbnailUrlResolver
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob

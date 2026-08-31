@@ -1,7 +1,7 @@
-package io.github.aedev.flow.player.stream
+package com.arubr.smsvcodes.player.stream
 
 import android.util.Log
-import io.github.aedev.flow.innertube.models.response.PlayerResponse
+import com.arubr.smsvcodes.innertube.models.response.PlayerResponse
 import org.schabi.newpipe.extractor.MediaFormat
 import org.schabi.newpipe.extractor.stream.SubtitlesStream
 import java.util.Locale
@@ -17,7 +17,7 @@ object CaptionTrackResolver {
     /**
      * @param format timedtext format requested for authored tracks. Defaults to
      *   [MediaFormat.TRANSCRIPT3] (srv3), YouTube's own styled/positioned caption XML, decoded by
-     *   [io.github.aedev.flow.player.renderer.subtitle.Srv3SubtitleParser]. Callers that need the
+     *   [com.arubr.smsvcodes.player.renderer.subtitle.Srv3SubtitleParser]. Callers that need the
      *   plain-text `vtt` conversion (offline downloads validate and store the raw response body)
      *   pass [MediaFormat.VTT] explicitly. Auto-generated (ASR) tracks always stay on `vtt`
      *   regardless: their srv3 form is a roll-up stream of word-timed segments, which the rolling

@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.player
+package com.arubr.smsvcodes.ui.screens.player
 
 import android.app.Activity
 import androidx.compose.foundation.background
@@ -16,20 +16,20 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.media3.common.util.UnstableApi
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.data.local.PlayerRelatedCardStyle
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.player.EnhancedPlayerManager
-import io.github.aedev.flow.player.GlobalPlayerState
-import io.github.aedev.flow.ui.components.PlaylistQueueDock
-import io.github.aedev.flow.ui.screens.player.content.PlayerDetailSideColumn
-import io.github.aedev.flow.ui.screens.player.content.VideoInfoContent
-import io.github.aedev.flow.ui.screens.player.content.relatedVideosContent
-import io.github.aedev.flow.ui.screens.player.content.relatedVideosGridContent
-import io.github.aedev.flow.ui.screens.player.state.PlayerLayoutMode
-import io.github.aedev.flow.ui.screens.player.state.PlayerScreenState
-import io.github.aedev.flow.ui.screens.player.state.playerLayoutModeFor
-import io.github.aedev.flow.ui.screens.player.state.rememberPlayerScreenState
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.data.local.PlayerRelatedCardStyle
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.player.EnhancedPlayerManager
+import com.arubr.smsvcodes.player.GlobalPlayerState
+import com.arubr.smsvcodes.ui.components.PlaylistQueueDock
+import com.arubr.smsvcodes.ui.screens.player.content.PlayerDetailSideColumn
+import com.arubr.smsvcodes.ui.screens.player.content.VideoInfoContent
+import com.arubr.smsvcodes.ui.screens.player.content.relatedVideosContent
+import com.arubr.smsvcodes.ui.screens.player.content.relatedVideosGridContent
+import com.arubr.smsvcodes.ui.screens.player.state.PlayerLayoutMode
+import com.arubr.smsvcodes.ui.screens.player.state.PlayerScreenState
+import com.arubr.smsvcodes.ui.screens.player.state.playerLayoutModeFor
+import com.arubr.smsvcodes.ui.screens.player.state.rememberPlayerScreenState
 
 /**
  * EnhancedVideoPlayerScreen - Simplified version for DraggablePlayerLayout

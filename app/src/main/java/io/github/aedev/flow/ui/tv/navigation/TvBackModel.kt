@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.tv.navigation
+package com.arubr.smsvcodes.ui.tv.navigation
 
 /** What pressing Back should do in the TV shell (panels/dialogs consume Back before this). */
 enum class TvBackAction {

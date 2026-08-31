@@ -1,4 +1,4 @@
-package io.github.aedev.flow.notification
+package com.arubr.smsvcodes.notification
 
 import android.Manifest
 import android.app.NotificationChannel
@@ -19,11 +19,11 @@ import coil3.request.allowHardware
 import coil3.size.Precision
 import coil3.size.Scale
 import coil3.toBitmap
-import io.github.aedev.flow.MainActivity
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.local.AppDatabase
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.data.local.entity.NotificationEntity
+import com.arubr.smsvcodes.MainActivity
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.local.AppDatabase
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.data.local.entity.NotificationEntity
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.runBlocking

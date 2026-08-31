@@ -1,4 +1,4 @@
-package io.github.aedev.flow.data.lyrics
+package com.arubr.smsvcodes.data.lyrics
 
 import android.util.Xml
 import org.xmlpull.v1.XmlPullParser

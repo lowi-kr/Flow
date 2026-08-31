@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.tv.components
+package com.arubr.smsvcodes.ui.tv.components
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -24,9 +24,9 @@ import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.model.Playlist
-import io.github.aedev.flow.ui.tv.theme.LocalTvDimens
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.model.Playlist
+import com.arubr.smsvcodes.ui.tv.theme.LocalTvDimens
 
 /** Playlist card with a count badge over the cover art. */
 @Composable

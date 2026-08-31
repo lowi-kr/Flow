@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.tv.components
+package com.arubr.smsvcodes.ui.tv.components
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.core.animateDpAsState
@@ -41,9 +41,9 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.ui.tv.navigation.TvDestination
-import io.github.aedev.flow.ui.tv.theme.LocalTvDimens
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.ui.tv.navigation.TvDestination
+import com.arubr.smsvcodes.ui.tv.theme.LocalTvDimens
 
 /**
  * Collapsible navigation rail: 72dp icon-only strip that expands with labels

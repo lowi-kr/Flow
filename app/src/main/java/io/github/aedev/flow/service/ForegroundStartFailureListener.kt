@@ -1,11 +1,11 @@
-package io.github.aedev.flow.service
+package com.arubr.smsvcodes.service
 
 import android.os.Build
 import androidx.annotation.RequiresApi
 import androidx.media3.common.util.UnstableApi
 import androidx.media3.session.MediaSessionService
-import io.github.aedev.flow.player.error.PlayerDiagnostics
-import io.github.aedev.flow.utils.FlowCrashHandler
+import com.arubr.smsvcodes.player.error.PlayerDiagnostics
+import com.arubr.smsvcodes.utils.FlowCrashHandler
 
 @UnstableApi
 internal fun MediaSessionService.recordForegroundStartFailures(tag: String) {

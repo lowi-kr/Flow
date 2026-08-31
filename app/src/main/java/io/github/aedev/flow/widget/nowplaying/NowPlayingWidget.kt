@@ -1,4 +1,4 @@
-package io.github.aedev.flow.widget.nowplaying
+package com.arubr.smsvcodes.widget.nowplaying
 
 import android.content.Context
 import androidx.compose.runtime.collectAsState
@@ -11,11 +11,11 @@ import androidx.glance.appwidget.GlanceAppWidget
 import androidx.glance.appwidget.GlanceAppWidgetReceiver
 import androidx.glance.appwidget.SizeMode
 import androidx.glance.appwidget.provideContent
-import io.github.aedev.flow.widget.core.FlowGlanceTheme
-import io.github.aedev.flow.widget.core.WidgetImageLoader
-import io.github.aedev.flow.widget.core.WidgetShape
-import io.github.aedev.flow.widget.core.nowPlayingSnapshotFlow
-import io.github.aedev.flow.widget.core.widgetColorsFlow
+import com.arubr.smsvcodes.widget.core.FlowGlanceTheme
+import com.arubr.smsvcodes.widget.core.WidgetImageLoader
+import com.arubr.smsvcodes.widget.core.WidgetShape
+import com.arubr.smsvcodes.widget.core.nowPlayingSnapshotFlow
+import com.arubr.smsvcodes.widget.core.widgetColorsFlow
 import kotlinx.coroutines.flow.first
 
 class NowPlayingWidget : GlanceAppWidget() {

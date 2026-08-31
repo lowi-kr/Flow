@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components
+package com.arubr.smsvcodes.ui.components
 
 import android.content.Context
 import android.widget.Toast
@@ -6,23 +6,23 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.local.ChannelSubscription
-import io.github.aedev.flow.data.local.PlaylistRepository
-import io.github.aedev.flow.data.local.SubscriptionRepository
-import io.github.aedev.flow.data.local.entity.DownloadItemStatus
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.data.recommendation.FlowNeuroEngine
-import io.github.aedev.flow.data.recommendation.InteractionType
-import io.github.aedev.flow.data.repository.YouTubeRepository
-import io.github.aedev.flow.data.video.VideoDownloadManager
-import io.github.aedev.flow.innertube.YouTube
-import io.github.aedev.flow.innertube.models.YouTubeClient
-import io.github.aedev.flow.player.quality.QualityManager
-import io.github.aedev.flow.player.sabr.integration.SabrUrlResolver
-import io.github.aedev.flow.player.stream.AudioStreamSelector
-import io.github.aedev.flow.player.stream.VideoCodecUtils
-import io.github.aedev.flow.utils.ThumbnailUrlResolver
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.local.ChannelSubscription
+import com.arubr.smsvcodes.data.local.PlaylistRepository
+import com.arubr.smsvcodes.data.local.SubscriptionRepository
+import com.arubr.smsvcodes.data.local.entity.DownloadItemStatus
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.data.recommendation.FlowNeuroEngine
+import com.arubr.smsvcodes.data.recommendation.InteractionType
+import com.arubr.smsvcodes.data.repository.YouTubeRepository
+import com.arubr.smsvcodes.data.video.VideoDownloadManager
+import com.arubr.smsvcodes.innertube.YouTube
+import com.arubr.smsvcodes.innertube.models.YouTubeClient
+import com.arubr.smsvcodes.player.quality.QualityManager
+import com.arubr.smsvcodes.player.sabr.integration.SabrUrlResolver
+import com.arubr.smsvcodes.player.stream.AudioStreamSelector
+import com.arubr.smsvcodes.player.stream.VideoCodecUtils
+import com.arubr.smsvcodes.utils.ThumbnailUrlResolver
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -76,7 +76,7 @@ class QuickActionsViewModel
     constructor(
         private val repository: YouTubeRepository,
         private val playlistRepository: PlaylistRepository,
-        private val playerPreferences: io.github.aedev.flow.data.local.PlayerPreferences,
+        private val playerPreferences: com.arubr.smsvcodes.data.local.PlayerPreferences,
         private val videoDownloadManager: VideoDownloadManager,
         @ApplicationContext private val context: Context,
     ) : ViewModel() {
@@ -163,7 +163,7 @@ class QuickActionsViewModel
                     Toast
                         .makeText(
                             context,
-                            context.getString(io.github.aedev.flow.R.string.quick_actions_error_template, e.message),
+                            context.getString(com.arubr.smsvcodes.R.string.quick_actions_error_template, e.message),
                             Toast.LENGTH_SHORT,
                         ).show()
                 }
@@ -194,7 +194,7 @@ class QuickActionsViewModel
                     Toast
                         .makeText(
                             context,
-                            context.getString(io.github.aedev.flow.R.string.quick_actions_error_template, e.message),
+                            context.getString(com.arubr.smsvcodes.R.string.quick_actions_error_template, e.message),
                             Toast.LENGTH_SHORT,
                         ).show()
                 }
@@ -217,7 +217,7 @@ class QuickActionsViewModel
                         }
                     val channelId = metadata?.channelId.orEmpty().ifBlank { video.channelId }
                     check(channelId.isNotBlank()) {
-                        context.getString(io.github.aedev.flow.R.string.channel_metadata_unavailable)
+                        context.getString(com.arubr.smsvcodes.R.string.channel_metadata_unavailable)
                     }
                     FlowNeuroEngine.blockChannel(context, channelId)
                     FeedInvalidationBus.emit(
@@ -227,7 +227,7 @@ class QuickActionsViewModel
                         .makeText(
                             context,
                             context.getString(
-                                io.github.aedev.flow.R.string.channel_blocked_toast,
+                                com.arubr.smsvcodes.R.string.channel_blocked_toast,
                                 metadata?.channelName.orEmpty().ifBlank { video.channelName },
                             ),
                             Toast.LENGTH_SHORT,
@@ -236,7 +236,7 @@ class QuickActionsViewModel
                     Toast
                         .makeText(
                             context,
-                            context.getString(io.github.aedev.flow.R.string.quick_actions_error_template, e.message),
+                            context.getString(com.arubr.smsvcodes.R.string.quick_actions_error_template, e.message),
                             Toast.LENGTH_SHORT,
                         ).show()
                 }
@@ -257,14 +257,14 @@ class QuickActionsViewModel
                     Toast
                         .makeText(
                             context,
-                            context.getString(io.github.aedev.flow.R.string.not_interested_toast),
+                            context.getString(com.arubr.smsvcodes.R.string.not_interested_toast),
                             Toast.LENGTH_SHORT,
                         ).show()
                 } catch (e: Exception) {
                     Toast
                         .makeText(
                             context,
-                            context.getString(io.github.aedev.flow.R.string.quick_actions_error_template, e.message),
+                            context.getString(com.arubr.smsvcodes.R.string.quick_actions_error_template, e.message),
                             Toast.LENGTH_SHORT,
                         ).show()
                 }
@@ -290,7 +290,7 @@ class QuickActionsViewModel
                     val thumbnailUrl =
                         video.thumbnailUrl.takeIf { it.isNotEmpty() }
                             ?: "https://i.ytimg.com/vi/${video.id}/hq720.jpg"
-                    io.github.aedev.flow.data.local.ViewHistory.getInstance(context).savePlaybackPosition(
+                    com.arubr.smsvcodes.data.local.ViewHistory.getInstance(context).savePlaybackPosition(
                         videoId = video.id,
                         position = durationMs,
                         duration = durationMs,
@@ -307,14 +307,14 @@ class QuickActionsViewModel
                     Toast
                         .makeText(
                             context,
-                            context.getString(io.github.aedev.flow.R.string.mark_as_watched_toast),
+                            context.getString(com.arubr.smsvcodes.R.string.mark_as_watched_toast),
                             Toast.LENGTH_SHORT,
                         ).show()
                 } catch (e: Exception) {
                     Toast
                         .makeText(
                             context,
-                            context.getString(io.github.aedev.flow.R.string.quick_actions_error_template, e.message),
+                            context.getString(com.arubr.smsvcodes.R.string.quick_actions_error_template, e.message),
                             Toast.LENGTH_SHORT,
                         ).show()
                 }
@@ -338,14 +338,14 @@ class QuickActionsViewModel
                     Toast
                         .makeText(
                             context,
-                            context.getString(io.github.aedev.flow.R.string.i_like_this_toast),
+                            context.getString(com.arubr.smsvcodes.R.string.i_like_this_toast),
                             Toast.LENGTH_SHORT,
                         ).show()
                 } catch (e: Exception) {
                     Toast
                         .makeText(
                             context,
-                            context.getString(io.github.aedev.flow.R.string.quick_actions_error_template, e.message),
+                            context.getString(com.arubr.smsvcodes.R.string.quick_actions_error_template, e.message),
                             Toast.LENGTH_SHORT,
                         ).show()
                 }
@@ -356,7 +356,7 @@ class QuickActionsViewModel
          * Insert [video] immediately after the current position (Play Next).
          */
         fun playVideoNext(video: Video) {
-            io.github.aedev.flow.player.EnhancedPlayerManager
+            com.arubr.smsvcodes.player.EnhancedPlayerManager
                 .getInstance()
                 .addVideoToQueueNext(video)
         }
@@ -365,7 +365,7 @@ class QuickActionsViewModel
          * Append [video] to the end of the current queue.
          */
         fun addVideoToQueue(video: Video) {
-            io.github.aedev.flow.player.EnhancedPlayerManager
+            com.arubr.smsvcodes.player.EnhancedPlayerManager
                 .getInstance()
                 .addVideoToQueue(video)
         }
@@ -373,7 +373,7 @@ class QuickActionsViewModel
         fun downloadVideo(video: Video) {
             viewModelScope.launch {
                 try {
-                    io.github.aedev.flow.ui.screens.player.util.VideoPlayerUtils
+                    com.arubr.smsvcodes.ui.screens.player.util.VideoPlayerUtils
                         .promptStoragePermissionIfNeeded(context)
 
                     // Downloading is a high-intent save signal for the engine.
@@ -390,7 +390,7 @@ class QuickActionsViewModel
                     val innerTubeResult =
                         withContext(Dispatchers.IO) {
                             kotlinx.coroutines.withTimeoutOrNull(8000L) {
-                                io.github.aedev.flow.player.stream.InnerTubeVideoStreamExtractor
+                                com.arubr.smsvcodes.player.stream.InnerTubeVideoStreamExtractor
                                     .extract(video.id)
                             }
                         }
@@ -408,7 +408,7 @@ class QuickActionsViewModel
 
                     if (streamInfo != null) {
                         val videoStreams =
-                            io.github.aedev.flow.player.stream.InnerTubeStreamBridge
+                            com.arubr.smsvcodes.player.stream.InnerTubeStreamBridge
                                 .convertVideoFormats(
                                     innerTubeResult?.videoFormats ?: emptyList(),
                                 ).ifEmpty {
@@ -416,7 +416,7 @@ class QuickActionsViewModel
                                         .filterIsInstance<org.schabi.newpipe.extractor.stream.VideoStream>()
                                 }
                         val audioStreams: List<org.schabi.newpipe.extractor.stream.AudioStream> =
-                            io.github.aedev.flow.player.stream.InnerTubeStreamBridge
+                            com.arubr.smsvcodes.player.stream.InnerTubeStreamBridge
                                 .convertAudioFormats(
                                     innerTubeResult?.audioFormats ?: emptyList(),
                                 ).ifEmpty { streamInfo.audioStreams ?: emptyList() }
@@ -547,7 +547,7 @@ class QuickActionsViewModel
                             )
 
                         if (selectedStream != null && videoUrl != null) {
-                            io.github.aedev.flow.data.video.downloader.FlowDownloadService.startDownload(
+                            com.arubr.smsvcodes.data.video.downloader.FlowDownloadService.startDownload(
                                 context = context,
                                 video = fullVideo,
                                 url = videoUrl,
@@ -567,7 +567,7 @@ class QuickActionsViewModel
                     Toast
                         .makeText(
                             context,
-                            context.getString(io.github.aedev.flow.R.string.quick_actions_error_template, e.message),
+                            context.getString(com.arubr.smsvcodes.R.string.quick_actions_error_template, e.message),
                             Toast.LENGTH_SHORT,
                         ).show()
                 }
@@ -576,7 +576,7 @@ class QuickActionsViewModel
 
         private fun downloadFromInnerTube(
             video: Video,
-            result: io.github.aedev.flow.player.stream.InnerTubeVideoStreamExtractor.VideoExtractionResult,
+            result: com.arubr.smsvcodes.player.stream.InnerTubeVideoStreamExtractor.VideoExtractionResult,
             targetHeight: Int,
         ) {
             val videoFormats = result.videoFormats.filter { it.url != null && it.height != null }
@@ -643,7 +643,7 @@ class QuickActionsViewModel
                 }
             }
 
-            io.github.aedev.flow.data.video.downloader.FlowDownloadService.startDownload(
+            com.arubr.smsvcodes.data.video.downloader.FlowDownloadService.startDownload(
                 context = context,
                 video = video,
                 url = bestVideo.url!!,
@@ -682,7 +682,7 @@ class QuickActionsViewModel
 
                     if (sabrInfo != null) {
                         val codecHint = if (sabrInfo.videoItag in listOf(313, 271, 308, 248, 303, 247, 302, 244, 243, 242)) "vp9" else null
-                        io.github.aedev.flow.data.video.downloader.FlowDownloadService.startSabrDownload(
+                        com.arubr.smsvcodes.data.video.downloader.FlowDownloadService.startSabrDownload(
                             context = context,
                             video = video,
                             quality = "${targetHeight.takeIf { it > 0 } ?: "best"}p",

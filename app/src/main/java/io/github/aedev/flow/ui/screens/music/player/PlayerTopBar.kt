@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.music.player
+package com.arubr.smsvcodes.ui.screens.music.player
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -18,8 +18,8 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.player.SleepTimerManager
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.player.SleepTimerManager
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

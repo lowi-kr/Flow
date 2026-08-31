@@ -4,7 +4,7 @@
  * This file is part of Flow (https://github.com/A-EDev/Flow).
  */
 
-package io.github.aedev.flow.data.recommendation.music
+package com.arubr.smsvcodes.data.recommendation.music
 
 import kotlin.math.ln
 import kotlin.math.pow

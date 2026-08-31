@@ -1,4 +1,4 @@
-package io.github.aedev.flow.widget.nowplaying
+package com.arubr.smsvcodes.widget.nowplaying
 
 import android.graphics.Bitmap
 import androidx.compose.runtime.Composable
@@ -30,13 +30,13 @@ import androidx.glance.layout.width
 import androidx.glance.text.FontWeight
 import androidx.glance.text.Text
 import androidx.glance.text.TextStyle
-import io.github.aedev.flow.R
-import io.github.aedev.flow.widget.core.NextTrackAction
-import io.github.aedev.flow.widget.core.NowPlayingSnapshot
-import io.github.aedev.flow.widget.core.ShapeDecor
-import io.github.aedev.flow.widget.core.WidgetDeepLink
-import io.github.aedev.flow.widget.core.WidgetShape
-import io.github.aedev.flow.widget.core.widgetSurface
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.widget.core.NextTrackAction
+import com.arubr.smsvcodes.widget.core.NowPlayingSnapshot
+import com.arubr.smsvcodes.widget.core.ShapeDecor
+import com.arubr.smsvcodes.widget.core.WidgetDeepLink
+import com.arubr.smsvcodes.widget.core.WidgetShape
+import com.arubr.smsvcodes.widget.core.widgetSurface
 
 /**
  * Material 3 Expressive player: sunny-shaped artwork, emphasized type, and the same

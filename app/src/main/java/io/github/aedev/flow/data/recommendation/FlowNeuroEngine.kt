@@ -12,12 +12,12 @@
  * explicitly credit "Flow Android Client" and link back to the original repository.
  */
 
-package io.github.aedev.flow.data.recommendation
+package com.arubr.smsvcodes.data.recommendation
 
 import android.content.Context
 import android.util.Log
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.data.model.Video
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.data.model.Video
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job

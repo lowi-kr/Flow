@@ -4,12 +4,12 @@
  * This file is part of Flow (https://github.com/A-EDev/Flow).
  */
 
-package io.github.aedev.flow.sync.mapping
+package com.arubr.smsvcodes.sync.mapping
 
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.data.recommendation.music.MusicBrainStorage
-import io.github.aedev.flow.sync.merge.MusicBrainCrdtState
-import io.github.aedev.flow.sync.merge.MusicBrainMerger
+import com.arubr.smsvcodes.data.recommendation.music.MusicBrainStorage
+import com.arubr.smsvcodes.sync.merge.MusicBrainCrdtState
+import com.arubr.smsvcodes.sync.merge.MusicBrainMerger
 import org.junit.Test
 
 class MusicBrainMapperTest {
@@ -111,7 +111,7 @@ class MusicBrainMapperTest {
             mine.copy(
                 deviceId = "desk",
                 totalPlays =
-                    io.github.aedev.flow.sync.canonical
+                    com.arubr.smsvcodes.sync.canonical
                         .GCounter(mapOf("desk" to 3L)),
                 artistAffinity =
                     mapOf(
@@ -120,7 +120,7 @@ class MusicBrainMapperTest {
                                 .getValue("UCnf")
                                 .copy(
                                     plays =
-                                        io.github.aedev.flow.sync.canonical
+                                        com.arubr.smsvcodes.sync.canonical
                                             .GCounter(mapOf("desk" to 3L)),
                                 ),
                     ),

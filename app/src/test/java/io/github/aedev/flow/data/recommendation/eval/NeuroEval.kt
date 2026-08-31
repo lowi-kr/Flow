@@ -5,17 +5,17 @@
  * Test-source-set only — never shipped in the APK.
  */
 
-package io.github.aedev.flow.data.recommendation.eval
+package com.arubr.smsvcodes.data.recommendation.eval
 
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.data.recommendation.ContentVector
-import io.github.aedev.flow.data.recommendation.FeedEntry
-import io.github.aedev.flow.data.recommendation.ImpressionEntry
-import io.github.aedev.flow.data.recommendation.MomentumEntry
-import io.github.aedev.flow.data.recommendation.NeuroScoring
-import io.github.aedev.flow.data.recommendation.ScoringParams
-import io.github.aedev.flow.data.recommendation.UserBrain
-import io.github.aedev.flow.data.recommendation.WatchEntry
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.data.recommendation.ContentVector
+import com.arubr.smsvcodes.data.recommendation.FeedEntry
+import com.arubr.smsvcodes.data.recommendation.ImpressionEntry
+import com.arubr.smsvcodes.data.recommendation.MomentumEntry
+import com.arubr.smsvcodes.data.recommendation.NeuroScoring
+import com.arubr.smsvcodes.data.recommendation.ScoringParams
+import com.arubr.smsvcodes.data.recommendation.UserBrain
+import com.arubr.smsvcodes.data.recommendation.WatchEntry
 import kotlin.math.ln
 import kotlin.math.sqrt
 

@@ -1,4 +1,4 @@
-package io.github.aedev.flow.player.shorts
+package com.arubr.smsvcodes.player.shorts
 
 import android.app.ActivityManager
 import android.content.Context
@@ -22,15 +22,15 @@ import androidx.media3.exoplayer.source.MergingMediaSource
 import androidx.media3.exoplayer.source.ProgressiveMediaSource
 import androidx.media3.exoplayer.trackselection.AdaptiveTrackSelection
 import androidx.media3.exoplayer.trackselection.DefaultTrackSelector
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.data.model.ShortVideo
-import io.github.aedev.flow.player.analytics.PlaybackAnalyticsLogger
-import io.github.aedev.flow.player.cache.PlayerCacheManager
-import io.github.aedev.flow.player.cache.SharedPlayerCacheProvider
-import io.github.aedev.flow.player.config.PlayerConfig
-import io.github.aedev.flow.player.datasource.YouTubeHttpDataSource
-import io.github.aedev.flow.player.factory.LoadControlFactory
-import io.github.aedev.flow.player.resolver.MediaSourceBuilder
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.data.model.ShortVideo
+import com.arubr.smsvcodes.player.analytics.PlaybackAnalyticsLogger
+import com.arubr.smsvcodes.player.cache.PlayerCacheManager
+import com.arubr.smsvcodes.player.cache.SharedPlayerCacheProvider
+import com.arubr.smsvcodes.player.config.PlayerConfig
+import com.arubr.smsvcodes.player.datasource.YouTubeHttpDataSource
+import com.arubr.smsvcodes.player.factory.LoadControlFactory
+import com.arubr.smsvcodes.player.resolver.MediaSourceBuilder
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob

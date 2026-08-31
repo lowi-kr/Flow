@@ -1,11 +1,11 @@
-package io.github.aedev.flow.data.repository
+package com.arubr.smsvcodes.data.repository
 
 import android.util.Log
-import io.github.aedev.flow.data.model.LiveChatMessage
-import io.github.aedev.flow.data.model.LiveChatMessageType
-import io.github.aedev.flow.data.model.LiveChatSegment
-import io.github.aedev.flow.innertube.YouTube
-import io.github.aedev.flow.innertube.models.response.GetLiveChatResponse
+import com.arubr.smsvcodes.data.model.LiveChatMessage
+import com.arubr.smsvcodes.data.model.LiveChatMessageType
+import com.arubr.smsvcodes.data.model.LiveChatSegment
+import com.arubr.smsvcodes.innertube.YouTube
+import com.arubr.smsvcodes.innertube.models.response.GetLiveChatResponse
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext

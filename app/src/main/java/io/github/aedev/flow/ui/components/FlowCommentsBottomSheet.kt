@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components
+package com.arubr.smsvcodes.ui.components
 
 import androidx.activity.compose.BackHandler
 import androidx.compose.animation.animateContentSize
@@ -90,12 +90,12 @@ import coil3.compose.AsyncImage
 import coil3.request.ImageRequest
 import coil3.request.allowHardware
 import coil3.request.crossfade
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.model.Comment
-import io.github.aedev.flow.data.model.distinctByNonBlankKey
-import io.github.aedev.flow.utils.formatLikeCount
-import io.github.aedev.flow.utils.formatRichText
-import io.github.aedev.flow.utils.formatTimeAgo
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.model.Comment
+import com.arubr.smsvcodes.data.model.distinctByNonBlankKey
+import com.arubr.smsvcodes.utils.formatLikeCount
+import com.arubr.smsvcodes.utils.formatRichText
+import com.arubr.smsvcodes.utils.formatTimeAgo
 import kotlinx.coroutines.launch
 
 enum class CommentSortFilter {

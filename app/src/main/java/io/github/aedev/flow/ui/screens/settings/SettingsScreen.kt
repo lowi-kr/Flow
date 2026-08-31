@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.settings
+package com.arubr.smsvcodes.ui.screens.settings
 
 import android.content.Intent
 import android.net.Uri
@@ -47,22 +47,22 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.google.gson.JsonParser
-import io.github.aedev.flow.BuildConfig
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.local.AppUiModePreferences
-import io.github.aedev.flow.data.local.DEEP_FLOW_NEVER_EXPIRES_HOURS
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.data.recommendation.FlowNeuroEngine
-import io.github.aedev.flow.data.recommendation.UserBrain
-import io.github.aedev.flow.discord.DiscordPresenceRuntime
-import io.github.aedev.flow.network.AppProxyManager
-import io.github.aedev.flow.platform.AppUiMode
-import io.github.aedev.flow.player.DeepFlowManager
-import io.github.aedev.flow.ui.components.layout.topbar.FlowSearchTopBar
-import io.github.aedev.flow.ui.components.layout.topbar.FlowTopBar
-import io.github.aedev.flow.ui.theme.ThemeMode
-import io.github.aedev.flow.ui.theme.extendedColors
-import io.github.aedev.flow.utils.AppLanguageManager
+import com.arubr.smsvcodes.BuildConfig
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.local.AppUiModePreferences
+import com.arubr.smsvcodes.data.local.DEEP_FLOW_NEVER_EXPIRES_HOURS
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.data.recommendation.FlowNeuroEngine
+import com.arubr.smsvcodes.data.recommendation.UserBrain
+import com.arubr.smsvcodes.discord.DiscordPresenceRuntime
+import com.arubr.smsvcodes.network.AppProxyManager
+import com.arubr.smsvcodes.platform.AppUiMode
+import com.arubr.smsvcodes.player.DeepFlowManager
+import com.arubr.smsvcodes.ui.components.layout.topbar.FlowSearchTopBar
+import com.arubr.smsvcodes.ui.components.layout.topbar.FlowTopBar
+import com.arubr.smsvcodes.ui.theme.ThemeMode
+import com.arubr.smsvcodes.ui.theme.extendedColors
+import com.arubr.smsvcodes.utils.AppLanguageManager
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -109,7 +109,7 @@ fun SettingsScreen(
     var showInterfaceModeDialog by remember { mutableStateOf(false) }
     val backupRepo =
         remember {
-            io.github.aedev.flow.data.local
+            com.arubr.smsvcodes.data.local
                 .BackupRepository(context)
         }
 

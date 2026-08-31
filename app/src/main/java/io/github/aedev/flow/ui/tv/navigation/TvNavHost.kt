@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.tv.navigation
+package com.arubr.smsvcodes.ui.tv.navigation
 
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
@@ -9,24 +9,24 @@ import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.ui.screens.home.HomeViewModel
-import io.github.aedev.flow.ui.screens.music.MusicPlayerViewModel
-import io.github.aedev.flow.ui.screens.music.MusicViewModel
-import io.github.aedev.flow.ui.screens.search.SearchViewModel
-import io.github.aedev.flow.ui.screens.subscriptions.SubscriptionsViewModel
-import io.github.aedev.flow.ui.tv.screens.TvArtistScreen
-import io.github.aedev.flow.ui.tv.screens.TvChannelScreen
-import io.github.aedev.flow.ui.tv.screens.TvHomeScreen
-import io.github.aedev.flow.ui.tv.screens.TvLibraryScreen
-import io.github.aedev.flow.ui.tv.screens.TvMusicCollectionScreen
-import io.github.aedev.flow.ui.tv.screens.TvMusicScreen
-import io.github.aedev.flow.ui.tv.screens.TvPlaylistDetailScreen
-import io.github.aedev.flow.ui.tv.screens.TvRemoteGuideScreen
-import io.github.aedev.flow.ui.tv.screens.TvSearchScreen
-import io.github.aedev.flow.ui.tv.screens.TvSettingsScreen
-import io.github.aedev.flow.ui.tv.screens.TvSubscriptionsScreen
-import io.github.aedev.flow.ui.tv.screens.TvSyncScreen
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.ui.screens.home.HomeViewModel
+import com.arubr.smsvcodes.ui.screens.music.MusicPlayerViewModel
+import com.arubr.smsvcodes.ui.screens.music.MusicViewModel
+import com.arubr.smsvcodes.ui.screens.search.SearchViewModel
+import com.arubr.smsvcodes.ui.screens.subscriptions.SubscriptionsViewModel
+import com.arubr.smsvcodes.ui.tv.screens.TvArtistScreen
+import com.arubr.smsvcodes.ui.tv.screens.TvChannelScreen
+import com.arubr.smsvcodes.ui.tv.screens.TvHomeScreen
+import com.arubr.smsvcodes.ui.tv.screens.TvLibraryScreen
+import com.arubr.smsvcodes.ui.tv.screens.TvMusicCollectionScreen
+import com.arubr.smsvcodes.ui.tv.screens.TvMusicScreen
+import com.arubr.smsvcodes.ui.tv.screens.TvPlaylistDetailScreen
+import com.arubr.smsvcodes.ui.tv.screens.TvRemoteGuideScreen
+import com.arubr.smsvcodes.ui.tv.screens.TvSearchScreen
+import com.arubr.smsvcodes.ui.tv.screens.TvSettingsScreen
+import com.arubr.smsvcodes.ui.tv.screens.TvSubscriptionsScreen
+import com.arubr.smsvcodes.ui.tv.screens.TvSyncScreen
 
 /** Top-level TV navigation graph plus detail routes (channel, …). */
 @androidx.annotation.OptIn(UnstableApi::class)

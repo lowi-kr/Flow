@@ -1,9 +1,9 @@
-package io.github.aedev.flow.data.repository
+package com.arubr.smsvcodes.data.repository
 
-import io.github.aedev.flow.data.model.SponsorBlockSegment
+import com.arubr.smsvcodes.data.model.SponsorBlockSegment
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
-import io.github.aedev.flow.network.AppProxyManager
+import com.arubr.smsvcodes.network.AppProxyManager
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import okhttp3.HttpUrl.Companion.toHttpUrl

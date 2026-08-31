@@ -1,6 +1,6 @@
-package io.github.aedev.flow.innertube.pages
+package com.arubr.smsvcodes.innertube.pages
 
-import io.github.aedev.flow.innertube.models.response.ReelWatchSequenceResponse
+import com.arubr.smsvcodes.innertube.models.response.ReelWatchSequenceResponse
 
 data class ShortsPage(
     val items: List<ShortsItem>,

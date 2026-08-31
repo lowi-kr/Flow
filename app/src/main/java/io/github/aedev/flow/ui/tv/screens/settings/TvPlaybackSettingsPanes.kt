@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.tv.screens.settings
+package com.arubr.smsvcodes.ui.tv.screens.settings
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.fillMaxSize
@@ -10,13 +10,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.data.local.VideoCodec
-import io.github.aedev.flow.data.local.VideoQuality
-import io.github.aedev.flow.ui.tv.components.TvSectionHeader
-import io.github.aedev.flow.ui.tv.components.TvSelectionRow
-import io.github.aedev.flow.ui.tv.components.TvToggleRow
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.data.local.VideoCodec
+import com.arubr.smsvcodes.data.local.VideoQuality
+import com.arubr.smsvcodes.ui.tv.components.TvSectionHeader
+import com.arubr.smsvcodes.ui.tv.components.TvSelectionRow
+import com.arubr.smsvcodes.ui.tv.components.TvToggleRow
 import kotlinx.coroutines.launch
 
 @Composable

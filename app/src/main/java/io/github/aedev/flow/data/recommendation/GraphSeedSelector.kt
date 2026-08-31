@@ -1,4 +1,4 @@
-package io.github.aedev.flow.data.recommendation
+package com.arubr.smsvcodes.data.recommendation
 
 internal object GraphSeedSelector {
     private const val DAY_MS = 24L * 60L * 60L * 1000L

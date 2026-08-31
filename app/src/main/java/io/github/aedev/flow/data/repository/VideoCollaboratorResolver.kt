@@ -1,7 +1,7 @@
-package io.github.aedev.flow.data.repository
+package com.arubr.smsvcodes.data.repository
 
-import io.github.aedev.flow.data.model.VideoCollaborator
-import io.github.aedev.flow.innertube.YouTube
+import com.arubr.smsvcodes.data.model.VideoCollaborator
+import com.arubr.smsvcodes.innertube.YouTube
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.sync.Mutex

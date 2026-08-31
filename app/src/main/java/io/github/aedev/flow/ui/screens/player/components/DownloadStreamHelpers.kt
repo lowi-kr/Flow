@@ -1,8 +1,8 @@
-package io.github.aedev.flow.ui.screens.player.components
+package com.arubr.smsvcodes.ui.screens.player.components
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.res.stringResource
-import io.github.aedev.flow.R
+import com.arubr.smsvcodes.R
 import org.schabi.newpipe.extractor.stream.AudioStream
 import org.schabi.newpipe.extractor.stream.AudioTrackType
 import java.util.Locale

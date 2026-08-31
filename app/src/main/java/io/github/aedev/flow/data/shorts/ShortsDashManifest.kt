@@ -1,8 +1,8 @@
-package io.github.aedev.flow.data.shorts
+package com.arubr.smsvcodes.data.shorts
 
-import io.github.aedev.flow.innertube.models.response.PlayerResponse
-import io.github.aedev.flow.player.resolver.ManifestGenerator
-import io.github.aedev.flow.player.stream.InnerTubeStreamBridge
+import com.arubr.smsvcodes.innertube.models.response.PlayerResponse
+import com.arubr.smsvcodes.player.resolver.ManifestGenerator
+import com.arubr.smsvcodes.player.stream.InnerTubeStreamBridge
 import org.schabi.newpipe.extractor.stream.Stream
 
 /**

@@ -1,4 +1,4 @@
-package io.github.aedev.flow.di
+package com.arubr.smsvcodes.di
 
 import android.content.Context
 import dagger.Module
@@ -6,9 +6,9 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.data.repository.YouTubeRepository
-import io.github.aedev.flow.data.shorts.ChannelReelIndex
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.data.repository.YouTubeRepository
+import com.arubr.smsvcodes.data.shorts.ChannelReelIndex
 import javax.inject.Singleton
 
 @Module
@@ -25,32 +25,32 @@ object RepositoryModule {
     @Singleton
     fun provideSubscriptionRepository(
         @ApplicationContext context: Context,
-    ): io.github.aedev.flow.data.local.SubscriptionRepository =
-        io.github.aedev.flow.data.local.SubscriptionRepository
+    ): com.arubr.smsvcodes.data.local.SubscriptionRepository =
+        com.arubr.smsvcodes.data.local.SubscriptionRepository
             .getInstance(context)
 
     @Provides
     @Singleton
     fun provideLikedVideosRepository(
         @ApplicationContext context: Context,
-    ): io.github.aedev.flow.data.local.LikedVideosRepository =
-        io.github.aedev.flow.data.local.LikedVideosRepository
+    ): com.arubr.smsvcodes.data.local.LikedVideosRepository =
+        com.arubr.smsvcodes.data.local.LikedVideosRepository
             .getInstance(context)
 
     @Provides
     @Singleton
     fun provideViewHistory(
         @ApplicationContext context: Context,
-    ): io.github.aedev.flow.data.local.ViewHistory =
-        io.github.aedev.flow.data.local.ViewHistory
+    ): com.arubr.smsvcodes.data.local.ViewHistory =
+        com.arubr.smsvcodes.data.local.ViewHistory
             .getInstance(context)
 
     @Provides
     @Singleton
     fun provideMusicPlaylistRepository(
         @ApplicationContext context: Context,
-    ): io.github.aedev.flow.data.music.PlaylistRepository =
-        io.github.aedev.flow.data.music
+    ): com.arubr.smsvcodes.data.music.PlaylistRepository =
+        com.arubr.smsvcodes.data.music
             .PlaylistRepository(context)
 
     // VideoDownloadManager is now @Singleton @Inject — Hilt provides it automatically
@@ -58,15 +58,15 @@ object RepositoryModule {
     @Singleton
     fun providePlayerPreferences(
         @ApplicationContext context: Context,
-    ): io.github.aedev.flow.data.local.PlayerPreferences =
-        io.github.aedev.flow.data.local
+    ): com.arubr.smsvcodes.data.local.PlayerPreferences =
+        com.arubr.smsvcodes.data.local
             .PlayerPreferences(context)
 
     @Provides
     @Singleton
     fun provideShortsRepository(
         @ApplicationContext context: Context,
-    ): io.github.aedev.flow.data.shorts.ShortsRepository =
-        io.github.aedev.flow.data.shorts.ShortsRepository
+    ): com.arubr.smsvcodes.data.shorts.ShortsRepository =
+        com.arubr.smsvcodes.data.shorts.ShortsRepository
             .getInstance(context)
 }

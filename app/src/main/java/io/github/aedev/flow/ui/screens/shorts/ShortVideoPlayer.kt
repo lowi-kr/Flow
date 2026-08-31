@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.shorts
+package com.arubr.smsvcodes.ui.screens.shorts
 
 import android.support.v4.media.session.MediaSessionCompat
 import android.support.v4.media.session.PlaybackStateCompat
@@ -50,28 +50,28 @@ import androidx.compose.ui.viewinterop.AndroidView
 import androidx.compose.ui.zIndex
 import androidx.media3.ui.PlayerView
 import coil3.compose.AsyncImage
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.local.ShortsPlayerUiMode
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.data.model.toShortVideo
-import io.github.aedev.flow.data.shorts.ShortVideoQuality
-import io.github.aedev.flow.player.EnhancedMusicPlayerManager
-import io.github.aedev.flow.player.GlobalPlayerState
-import io.github.aedev.flow.player.shorts.ShortsPlayerPool
-import io.github.aedev.flow.player.stream.StreamProcessor
-import io.github.aedev.flow.player.stream.VideoCodecUtils
-import io.github.aedev.flow.ui.components.ChannelAvatarImage
-import io.github.aedev.flow.ui.components.PlaybackSpeedSlider
-import io.github.aedev.flow.ui.components.playbackSpeedOptions
-import io.github.aedev.flow.ui.components.playbackSpeedSliderPresets
-import io.github.aedev.flow.ui.components.rememberDateDisplaySettings
-import io.github.aedev.flow.ui.screens.player.components.PlayerQualitySelectorContent
-import io.github.aedev.flow.ui.screens.player.components.PlayerQualitySelectorOption
-import io.github.aedev.flow.ui.screens.player.components.SeekbarWithPreview
-import io.github.aedev.flow.ui.screens.player.components.VideoAmbientBackground
-import io.github.aedev.flow.ui.screens.player.components.rememberAmbientFrame
-import io.github.aedev.flow.utils.DateContext
-import io.github.aedev.flow.utils.formatViewCount
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.local.ShortsPlayerUiMode
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.data.model.toShortVideo
+import com.arubr.smsvcodes.data.shorts.ShortVideoQuality
+import com.arubr.smsvcodes.player.EnhancedMusicPlayerManager
+import com.arubr.smsvcodes.player.GlobalPlayerState
+import com.arubr.smsvcodes.player.shorts.ShortsPlayerPool
+import com.arubr.smsvcodes.player.stream.StreamProcessor
+import com.arubr.smsvcodes.player.stream.VideoCodecUtils
+import com.arubr.smsvcodes.ui.components.ChannelAvatarImage
+import com.arubr.smsvcodes.ui.components.PlaybackSpeedSlider
+import com.arubr.smsvcodes.ui.components.playbackSpeedOptions
+import com.arubr.smsvcodes.ui.components.playbackSpeedSliderPresets
+import com.arubr.smsvcodes.ui.components.rememberDateDisplaySettings
+import com.arubr.smsvcodes.ui.screens.player.components.PlayerQualitySelectorContent
+import com.arubr.smsvcodes.ui.screens.player.components.PlayerQualitySelectorOption
+import com.arubr.smsvcodes.ui.screens.player.components.SeekbarWithPreview
+import com.arubr.smsvcodes.ui.screens.player.components.VideoAmbientBackground
+import com.arubr.smsvcodes.ui.screens.player.components.rememberAmbientFrame
+import com.arubr.smsvcodes.utils.DateContext
+import com.arubr.smsvcodes.utils.formatViewCount
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
@@ -96,7 +96,7 @@ internal fun ShortVideoPage(
     val context = LocalContext.current
     val playerPreferences =
         remember {
-            io.github.aedev.flow.data.local
+            com.arubr.smsvcodes.data.local
                 .PlayerPreferences(context)
         }
     val settings = rememberShortVideoPlayerSettings(playerPreferences)
@@ -1197,8 +1197,8 @@ internal fun ShortVideoPage(
             pageState.showDownloadDialog &&
             (pageState.currentStreamInfo != null || pageState.currentInnerTubeVideoFormats.isNotEmpty())
         ) {
-            if (settings.downloadDialogStyle == io.github.aedev.flow.data.local.DownloadDialogStyle.COMPACT) {
-                io.github.aedev.flow.ui.screens.player.components.DownloadQualityDialogCompact(
+            if (settings.downloadDialogStyle == com.arubr.smsvcodes.data.local.DownloadDialogStyle.COMPACT) {
+                com.arubr.smsvcodes.ui.screens.player.components.DownloadQualityDialogCompact(
                     streamInfo = pageState.currentStreamInfo,
                     streamSizes = pageState.currentStreamSizes,
                     innerTubeVideoFormats = pageState.currentInnerTubeVideoFormats,
@@ -1207,7 +1207,7 @@ internal fun ShortVideoPage(
                     onDismiss = { pageState.showDownloadDialog = false },
                 )
             } else {
-                io.github.aedev.flow.ui.screens.player.components.DownloadQualityDialog(
+                com.arubr.smsvcodes.ui.screens.player.components.DownloadQualityDialog(
                     streamInfo = pageState.currentStreamInfo,
                     streamSizes = pageState.currentStreamSizes,
                     innerTubeVideoFormats = pageState.currentInnerTubeVideoFormats,

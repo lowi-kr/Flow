@@ -1,4 +1,4 @@
-package io.github.aedev.flow.updater
+package com.arubr.smsvcodes.updater
 
 import android.app.Activity
 import com.supersuman.apkupdater.ApkUpdater

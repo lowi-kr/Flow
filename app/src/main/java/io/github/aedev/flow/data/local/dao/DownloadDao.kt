@@ -1,4 +1,4 @@
-package io.github.aedev.flow.data.local.dao
+package com.arubr.smsvcodes.data.local.dao
 
 import androidx.room.Dao
 import androidx.room.Insert
@@ -6,10 +6,10 @@ import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import androidx.room.Transaction
 import androidx.room.Update
-import io.github.aedev.flow.data.local.entity.DownloadEntity
-import io.github.aedev.flow.data.local.entity.DownloadItemEntity
-import io.github.aedev.flow.data.local.entity.DownloadItemStatus
-import io.github.aedev.flow.data.local.entity.DownloadWithItems
+import com.arubr.smsvcodes.data.local.entity.DownloadEntity
+import com.arubr.smsvcodes.data.local.entity.DownloadItemEntity
+import com.arubr.smsvcodes.data.local.entity.DownloadItemStatus
+import com.arubr.smsvcodes.data.local.entity.DownloadWithItems
 import kotlinx.coroutines.flow.Flow
 
 @Dao

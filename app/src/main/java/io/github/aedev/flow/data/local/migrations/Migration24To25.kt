@@ -1,4 +1,4 @@
-package io.github.aedev.flow.data.local.migrations
+package com.arubr.smsvcodes.data.local.migrations
 
 import androidx.room.DeleteTable
 import androidx.room.migration.AutoMigrationSpec

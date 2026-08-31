@@ -1,7 +1,7 @@
-package io.github.aedev.flow.sync.mapping
+package com.arubr.smsvcodes.sync.mapping
 
-import io.github.aedev.flow.data.local.SettingsBackup
-import io.github.aedev.flow.sync.canonical.CanonicalSetting
+import com.arubr.smsvcodes.data.local.SettingsBackup
+import com.arubr.smsvcodes.sync.canonical.CanonicalSetting
 import kotlinx.serialization.json.JsonElement
 import kotlinx.serialization.json.JsonPrimitive
 import kotlinx.serialization.json.booleanOrNull

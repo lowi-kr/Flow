@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.tv.screens
+package com.arubr.smsvcodes.ui.tv.screens
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.BoxWithConstraints
@@ -25,22 +25,22 @@ import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.model.Channel
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.ui.screens.subscriptions.SubscriptionsViewModel
-import io.github.aedev.flow.ui.tv.components.TvButton
-import io.github.aedev.flow.ui.tv.components.TvChannelCard
-import io.github.aedev.flow.ui.tv.components.TvFilterChip
-import io.github.aedev.flow.ui.tv.components.TvMediaRow
-import io.github.aedev.flow.ui.tv.components.TvMessageState
-import io.github.aedev.flow.ui.tv.components.TvScreenScaffold
-import io.github.aedev.flow.ui.tv.components.TvSectionHeader
-import io.github.aedev.flow.ui.tv.components.TvShimmerRow
-import io.github.aedev.flow.ui.tv.components.TvVideoCard
-import io.github.aedev.flow.ui.tv.focus.ProvideTvColumnPivot
-import io.github.aedev.flow.ui.tv.focus.tvRowFocus
-import io.github.aedev.flow.ui.tv.theme.LocalTvDimens
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.model.Channel
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.ui.screens.subscriptions.SubscriptionsViewModel
+import com.arubr.smsvcodes.ui.tv.components.TvButton
+import com.arubr.smsvcodes.ui.tv.components.TvChannelCard
+import com.arubr.smsvcodes.ui.tv.components.TvFilterChip
+import com.arubr.smsvcodes.ui.tv.components.TvMediaRow
+import com.arubr.smsvcodes.ui.tv.components.TvMessageState
+import com.arubr.smsvcodes.ui.tv.components.TvScreenScaffold
+import com.arubr.smsvcodes.ui.tv.components.TvSectionHeader
+import com.arubr.smsvcodes.ui.tv.components.TvShimmerRow
+import com.arubr.smsvcodes.ui.tv.components.TvVideoCard
+import com.arubr.smsvcodes.ui.tv.focus.ProvideTvColumnPivot
+import com.arubr.smsvcodes.ui.tv.focus.tvRowFocus
+import com.arubr.smsvcodes.ui.tv.theme.LocalTvDimens
 
 private const val SUBS_GRID_COLUMNS = 3
 

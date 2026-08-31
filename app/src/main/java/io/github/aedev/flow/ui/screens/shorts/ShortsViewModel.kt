@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.shorts
+package com.arubr.smsvcodes.ui.screens.shorts
 
 import android.content.Context
 import android.util.Log
@@ -6,28 +6,28 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.local.LikedVideosRepository
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.data.local.PlaylistRepository
-import io.github.aedev.flow.data.local.SubscriptionRepository
-import io.github.aedev.flow.data.local.ViewHistory
-import io.github.aedev.flow.data.model.ShortVideo
-import io.github.aedev.flow.data.model.toVideo
-import io.github.aedev.flow.data.recommendation.FlowNeuroEngine
-import io.github.aedev.flow.data.recommendation.InteractionType
-import io.github.aedev.flow.data.repository.YouTubeRepository
-import io.github.aedev.flow.data.shorts.ShortWatchClassifier
-import io.github.aedev.flow.data.shorts.ShortsRepository
-import io.github.aedev.flow.data.shorts.queue.ShortsQueueChange
-import io.github.aedev.flow.data.shorts.queue.ShortsQueueController
-import io.github.aedev.flow.data.shorts.queue.ShortsQueueLoaderFactory
-import io.github.aedev.flow.data.shorts.queue.ShortsQueueSource
-import io.github.aedev.flow.data.shorts.queue.openAtVideoId
-import io.github.aedev.flow.innertube.models.response.PlayerResponse
-import io.github.aedev.flow.player.stream.StreamSizeEstimator
-import io.github.aedev.flow.ui.components.FeedInvalidationBus
-import io.github.aedev.flow.utils.PerformanceDispatcher
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.local.LikedVideosRepository
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.data.local.PlaylistRepository
+import com.arubr.smsvcodes.data.local.SubscriptionRepository
+import com.arubr.smsvcodes.data.local.ViewHistory
+import com.arubr.smsvcodes.data.model.ShortVideo
+import com.arubr.smsvcodes.data.model.toVideo
+import com.arubr.smsvcodes.data.recommendation.FlowNeuroEngine
+import com.arubr.smsvcodes.data.recommendation.InteractionType
+import com.arubr.smsvcodes.data.repository.YouTubeRepository
+import com.arubr.smsvcodes.data.shorts.ShortWatchClassifier
+import com.arubr.smsvcodes.data.shorts.ShortsRepository
+import com.arubr.smsvcodes.data.shorts.queue.ShortsQueueChange
+import com.arubr.smsvcodes.data.shorts.queue.ShortsQueueController
+import com.arubr.smsvcodes.data.shorts.queue.ShortsQueueLoaderFactory
+import com.arubr.smsvcodes.data.shorts.queue.ShortsQueueSource
+import com.arubr.smsvcodes.data.shorts.queue.openAtVideoId
+import com.arubr.smsvcodes.innertube.models.response.PlayerResponse
+import com.arubr.smsvcodes.player.stream.StreamSizeEstimator
+import com.arubr.smsvcodes.ui.components.FeedInvalidationBus
+import com.arubr.smsvcodes.utils.PerformanceDispatcher
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
@@ -70,8 +70,8 @@ class ShortsViewModel
 
         private var queue: ShortsQueueController? = null
 
-        private val _commentsState = MutableStateFlow<List<io.github.aedev.flow.data.model.Comment>>(emptyList())
-        val commentsState: StateFlow<List<io.github.aedev.flow.data.model.Comment>> = _commentsState.asStateFlow()
+        private val _commentsState = MutableStateFlow<List<com.arubr.smsvcodes.data.model.Comment>>(emptyList())
+        val commentsState: StateFlow<List<com.arubr.smsvcodes.data.model.Comment>> = _commentsState.asStateFlow()
 
         private val _isLoadingComments = MutableStateFlow(false)
         val isLoadingComments: StateFlow<Boolean> = _isLoadingComments.asStateFlow()
@@ -321,7 +321,7 @@ class ShortsViewModel
                 likedVideosRepository.removeLikeState(video.id)
             } else {
                 likedVideosRepository.likeVideo(
-                    io.github.aedev.flow.data.local.LikedVideoInfo(
+                    com.arubr.smsvcodes.data.local.LikedVideoInfo(
                         videoId = video.id,
                         title = video.title,
                         thumbnail = video.thumbnailUrl,
@@ -342,7 +342,7 @@ class ShortsViewModel
                 subscriptionRepository.unsubscribe(channelId)
             } else {
                 subscriptionRepository.subscribe(
-                    io.github.aedev.flow.data.local.ChannelSubscription(
+                    com.arubr.smsvcodes.data.local.ChannelSubscription(
                         channelId = channelId,
                         channelName = channelName,
                         channelThumbnail = channelThumbnail,
@@ -493,7 +493,7 @@ class ShortsViewModel
             }
         }
 
-        fun loadCommentReplies(comment: io.github.aedev.flow.data.model.Comment) {
+        fun loadCommentReplies(comment: com.arubr.smsvcodes.data.model.Comment) {
             val currentShort = _uiState.value.shorts.getOrNull(_uiState.value.currentIndex) ?: return
             val repliesPage = comment.repliesPage ?: return
 

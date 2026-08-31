@@ -1,4 +1,4 @@
-package io.github.aedev.flow.player.factory
+package com.arubr.smsvcodes.player.factory
 
 import android.app.ActivityManager
 import android.content.Context
@@ -7,8 +7,8 @@ import androidx.media3.common.C
 import androidx.media3.common.util.UnstableApi
 import androidx.media3.exoplayer.DefaultLoadControl
 import androidx.media3.exoplayer.upstream.DefaultAllocator
-import io.github.aedev.flow.data.local.BufferDurations
-import io.github.aedev.flow.player.config.PlayerConfig
+import com.arubr.smsvcodes.data.local.BufferDurations
+import com.arubr.smsvcodes.player.config.PlayerConfig
 
 /**
  * The app's three `DefaultLoadControl` profiles — video, Shorts and music — in one place.

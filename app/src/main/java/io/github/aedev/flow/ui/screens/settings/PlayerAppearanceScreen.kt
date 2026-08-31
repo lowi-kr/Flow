@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.settings
+package com.arubr.smsvcodes.ui.screens.settings
 
 import androidx.compose.animation.core.animateDpAsState
 import androidx.compose.animation.core.spring
@@ -35,22 +35,22 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.Dialog
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.local.DEFAULT_FULLSCREEN_SEEKBAR_PADDING_DP
-import io.github.aedev.flow.data.local.DEFAULT_PORTRAIT_SEEKBAR_PADDING_DP
-import io.github.aedev.flow.data.local.MAX_FULLSCREEN_SEEKBAR_PADDING_DP
-import io.github.aedev.flow.data.local.MAX_PORTRAIT_SEEKBAR_PADDING_DP
-import io.github.aedev.flow.data.local.MusicPlayerBackgroundStyle
-import io.github.aedev.flow.data.local.PlayerOverlayPreferences
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.data.local.SeekbarPaddingMode
-import io.github.aedev.flow.data.local.ShortsPlayerUiMode
-import io.github.aedev.flow.data.local.SliderStyle
-import io.github.aedev.flow.data.local.resolveSeekbarHorizontalPaddingDp
-import io.github.aedev.flow.ui.components.layout.topbar.FlowTopBar
-import io.github.aedev.flow.ui.components.rememberFlowSheetState
-import io.github.aedev.flow.ui.screens.music.player.components.PlayerSliderTrack
-import io.github.aedev.flow.ui.screens.music.player.components.SquigglySlider
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.local.DEFAULT_FULLSCREEN_SEEKBAR_PADDING_DP
+import com.arubr.smsvcodes.data.local.DEFAULT_PORTRAIT_SEEKBAR_PADDING_DP
+import com.arubr.smsvcodes.data.local.MAX_FULLSCREEN_SEEKBAR_PADDING_DP
+import com.arubr.smsvcodes.data.local.MAX_PORTRAIT_SEEKBAR_PADDING_DP
+import com.arubr.smsvcodes.data.local.MusicPlayerBackgroundStyle
+import com.arubr.smsvcodes.data.local.PlayerOverlayPreferences
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.data.local.SeekbarPaddingMode
+import com.arubr.smsvcodes.data.local.ShortsPlayerUiMode
+import com.arubr.smsvcodes.data.local.SliderStyle
+import com.arubr.smsvcodes.data.local.resolveSeekbarHorizontalPaddingDp
+import com.arubr.smsvcodes.ui.components.layout.topbar.FlowTopBar
+import com.arubr.smsvcodes.ui.components.rememberFlowSheetState
+import com.arubr.smsvcodes.ui.screens.music.player.components.PlayerSliderTrack
+import com.arubr.smsvcodes.ui.screens.music.player.components.SquigglySlider
 import kotlinx.coroutines.launch
 import kotlin.math.roundToInt
 

@@ -1,4 +1,4 @@
-package io.github.aedev.flow.widget.nowplaying
+package com.arubr.smsvcodes.widget.nowplaying
 
 import android.graphics.Bitmap
 import androidx.compose.runtime.Composable
@@ -25,14 +25,14 @@ import androidx.glance.layout.fillMaxSize
 import androidx.glance.layout.height
 import androidx.glance.layout.size
 import androidx.glance.layout.width
-import io.github.aedev.flow.R
-import io.github.aedev.flow.widget.core.NextTrackAction
-import io.github.aedev.flow.widget.core.PlayPauseAction
-import io.github.aedev.flow.widget.core.PreviousTrackAction
-import io.github.aedev.flow.widget.core.ShapeDecor
-import io.github.aedev.flow.widget.core.ToggleLikeAction
-import io.github.aedev.flow.widget.core.WidgetDeepLink
-import io.github.aedev.flow.widget.core.WidgetShape
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.widget.core.NextTrackAction
+import com.arubr.smsvcodes.widget.core.PlayPauseAction
+import com.arubr.smsvcodes.widget.core.PreviousTrackAction
+import com.arubr.smsvcodes.widget.core.ShapeDecor
+import com.arubr.smsvcodes.widget.core.ToggleLikeAction
+import com.arubr.smsvcodes.widget.core.WidgetDeepLink
+import com.arubr.smsvcodes.widget.core.WidgetShape
 
 /**
  * Artwork clipped to an expressive shape at load time (see WidgetShapeTransformation).

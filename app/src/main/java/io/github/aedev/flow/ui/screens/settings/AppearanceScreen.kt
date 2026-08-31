@@ -1,6 +1,6 @@
 @file:OptIn(androidx.compose.material3.ExperimentalMaterial3Api::class)
 
-package io.github.aedev.flow.ui.screens.settings
+package com.arubr.smsvcodes.ui.screens.settings
 
 import androidx.annotation.StringRes
 import androidx.compose.foundation.BorderStroke
@@ -79,9 +79,9 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
 import androidx.core.graphics.ColorUtils
-import io.github.aedev.flow.R
-import io.github.aedev.flow.ui.components.layout.topbar.FlowTopBar
-import io.github.aedev.flow.ui.theme.*
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.ui.components.layout.topbar.FlowTopBar
+import com.arubr.smsvcodes.ui.theme.*
 import kotlin.math.roundToInt
 
 private data class ThemeInfo(

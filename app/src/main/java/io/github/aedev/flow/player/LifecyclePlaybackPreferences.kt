@@ -1,6 +1,6 @@
-package io.github.aedev.flow.player
+package com.arubr.smsvcodes.player
 
-import io.github.aedev.flow.data.local.PlayerPreferences
+import com.arubr.smsvcodes.data.local.PlayerPreferences
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.combine

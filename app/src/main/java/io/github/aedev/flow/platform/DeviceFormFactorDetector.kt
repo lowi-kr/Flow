@@ -1,4 +1,4 @@
-package io.github.aedev.flow.platform
+package com.arubr.smsvcodes.platform
 
 import android.app.UiModeManager
 import android.content.Context

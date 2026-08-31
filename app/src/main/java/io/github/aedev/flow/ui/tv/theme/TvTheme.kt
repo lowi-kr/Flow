@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.tv.theme
+package com.arubr.smsvcodes.ui.tv.theme
 
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.MaterialTheme
@@ -16,7 +16,7 @@ private val TvShapes = Shapes(
 )
 
 /**
- * TV layer over [io.github.aedev.flow.ui.theme.FlowTheme]: keeps the already-resolved
+ * TV layer over [com.arubr.smsvcodes.ui.theme.FlowTheme]: keeps the already-resolved
  * color scheme (all theme modes work unchanged) and swaps in the ten-foot type scale,
  * larger shapes, and TV layout tokens.
  */

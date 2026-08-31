@@ -1,4 +1,4 @@
-package io.github.aedev.flow.data.video
+package com.arubr.smsvcodes.data.video
 
 import android.content.ContentUris
 import android.content.ContentValues
@@ -12,14 +12,14 @@ import android.provider.MediaStore
 import android.provider.Settings
 import android.util.Log
 import dagger.hilt.android.qualifiers.ApplicationContext
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.local.dao.DownloadDao
-import io.github.aedev.flow.data.local.entity.DownloadEntity
-import io.github.aedev.flow.data.local.entity.DownloadFileType
-import io.github.aedev.flow.data.local.entity.DownloadItemEntity
-import io.github.aedev.flow.data.local.entity.DownloadItemStatus
-import io.github.aedev.flow.data.local.entity.DownloadWithItems
-import io.github.aedev.flow.data.model.Video
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.local.dao.DownloadDao
+import com.arubr.smsvcodes.data.local.entity.DownloadEntity
+import com.arubr.smsvcodes.data.local.entity.DownloadFileType
+import com.arubr.smsvcodes.data.local.entity.DownloadItemEntity
+import com.arubr.smsvcodes.data.local.entity.DownloadItemStatus
+import com.arubr.smsvcodes.data.local.entity.DownloadWithItems
+import com.arubr.smsvcodes.data.model.Video
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob

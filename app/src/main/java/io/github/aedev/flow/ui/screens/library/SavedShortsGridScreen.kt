@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.library
+package com.arubr.smsvcodes.ui.screens.library
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -25,11 +25,11 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil3.compose.AsyncImage
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.local.PlaylistRepository
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.ui.components.ShortWatchedIndicator
-import io.github.aedev.flow.ui.components.layout.topbar.FlowTopBar
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.local.PlaylistRepository
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.ui.components.ShortWatchedIndicator
+import com.arubr.smsvcodes.ui.components.layout.topbar.FlowTopBar
 import kotlinx.coroutines.flow.collectLatest
 
 @OptIn(ExperimentalMaterial3Api::class)

@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.tv.player
+package com.arubr.smsvcodes.ui.tv.player
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -19,9 +19,9 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
-import io.github.aedev.flow.R
-import io.github.aedev.flow.player.AutoplayCountdownState
-import io.github.aedev.flow.ui.tv.components.TvButton
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.player.AutoplayCountdownState
+import com.arubr.smsvcodes.ui.tv.components.TvButton
 
 /** Autoplay "up next in N seconds" card with focusable Play now / Cancel actions. */
 @Composable

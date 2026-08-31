@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.tv.music
+package com.arubr.smsvcodes.ui.tv.music
 
 import android.view.KeyEvent
 import androidx.activity.compose.BackHandler
@@ -54,21 +54,21 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import coil3.compose.AsyncImage
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.local.MusicPlayerBackgroundStyle
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.player.EnhancedMusicPlayerManager
-import io.github.aedev.flow.player.RepeatMode
-import io.github.aedev.flow.ui.screens.music.MusicPlayerViewModel
-import io.github.aedev.flow.ui.screens.music.player.PlayerBackground
-import io.github.aedev.flow.ui.screens.music.player.PlayerProgressSlider
-import io.github.aedev.flow.ui.screens.music.player.rememberMusicPalette
-import io.github.aedev.flow.ui.tv.components.TvIconButton
-import io.github.aedev.flow.ui.tv.components.TvIconButtonColors
-import io.github.aedev.flow.ui.tv.input.TvPlayerAction
-import io.github.aedev.flow.ui.tv.input.TvPlayerKeyMapper
-import io.github.aedev.flow.ui.tv.player.state.TvScrubController
-import io.github.aedev.flow.ui.tv.theme.LocalTvDimens
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.local.MusicPlayerBackgroundStyle
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.player.EnhancedMusicPlayerManager
+import com.arubr.smsvcodes.player.RepeatMode
+import com.arubr.smsvcodes.ui.screens.music.MusicPlayerViewModel
+import com.arubr.smsvcodes.ui.screens.music.player.PlayerBackground
+import com.arubr.smsvcodes.ui.screens.music.player.PlayerProgressSlider
+import com.arubr.smsvcodes.ui.screens.music.player.rememberMusicPalette
+import com.arubr.smsvcodes.ui.tv.components.TvIconButton
+import com.arubr.smsvcodes.ui.tv.components.TvIconButtonColors
+import com.arubr.smsvcodes.ui.tv.input.TvPlayerAction
+import com.arubr.smsvcodes.ui.tv.input.TvPlayerKeyMapper
+import com.arubr.smsvcodes.ui.tv.player.state.TvScrubController
+import com.arubr.smsvcodes.ui.tv.theme.LocalTvDimens
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.isActive
 

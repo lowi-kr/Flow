@@ -1,6 +1,6 @@
-package io.github.aedev.flow.sync
+package com.arubr.smsvcodes.sync
 
-import io.github.aedev.flow.sync.transport.LanAddress
+import com.arubr.smsvcodes.sync.transport.LanAddress
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertTrue
 import org.junit.Test

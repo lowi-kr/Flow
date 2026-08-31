@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components
+package com.arubr.smsvcodes.ui.components
 
 import androidx.activity.compose.BackHandler
 import androidx.compose.animation.core.Animatable
@@ -48,7 +48,7 @@ import androidx.compose.ui.unit.sp
 import coil3.compose.AsyncImage
 import coil3.request.ImageRequest
 import coil3.request.crossfade
-import io.github.aedev.flow.R
+import com.arubr.smsvcodes.R
 import kotlinx.coroutines.launch
 import org.schabi.newpipe.extractor.stream.StreamSegment
 

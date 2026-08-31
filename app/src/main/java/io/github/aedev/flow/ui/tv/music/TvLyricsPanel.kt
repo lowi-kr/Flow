@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.tv.music
+package com.arubr.smsvcodes.ui.tv.music
 
 import androidx.compose.foundation.focusable
 import androidx.compose.foundation.layout.Box
@@ -9,12 +9,12 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
-import io.github.aedev.flow.R
-import io.github.aedev.flow.ui.screens.music.MusicPlayerUiState
-import io.github.aedev.flow.ui.screens.music.MusicTrack
-import io.github.aedev.flow.ui.screens.music.player.InlineLyricsPanel
-import io.github.aedev.flow.ui.tv.components.TvSidePanel
-import io.github.aedev.flow.ui.tv.focus.tvInitialFocus
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.ui.screens.music.MusicPlayerUiState
+import com.arubr.smsvcodes.ui.screens.music.MusicTrack
+import com.arubr.smsvcodes.ui.screens.music.player.InlineLyricsPanel
+import com.arubr.smsvcodes.ui.tv.components.TvSidePanel
+import com.arubr.smsvcodes.ui.tv.focus.tvInitialFocus
 
 /**
  * Lyrics side panel hosting the mobile lyrics canvas ([InlineLyricsPanel]):

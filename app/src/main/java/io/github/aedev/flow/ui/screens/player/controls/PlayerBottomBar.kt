@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.player.controls
+package com.arubr.smsvcodes.ui.screens.player.controls
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -37,11 +37,11 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.zIndex
-import io.github.aedev.flow.R
-import io.github.aedev.flow.ui.screens.player.components.PlayerTimePill
-import io.github.aedev.flow.ui.theme.PlayerScrim
-import io.github.aedev.flow.ui.theme.PlayerScrimAffordance
-import io.github.aedev.flow.ui.theme.PlayerScrimContent
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.ui.screens.player.components.PlayerTimePill
+import com.arubr.smsvcodes.ui.theme.PlayerScrim
+import com.arubr.smsvcodes.ui.theme.PlayerScrimAffordance
+import com.arubr.smsvcodes.ui.theme.PlayerScrimContent
 import org.schabi.newpipe.extractor.stream.StreamSegment
 
 /** Alpha the bottom gradient reaches at the very bottom of the player. */

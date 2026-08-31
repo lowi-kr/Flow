@@ -1,4 +1,4 @@
-package io.github.aedev.flow.data.shorts
+package com.arubr.smsvcodes.data.shorts
 
 internal fun <T> diversifySubscriptions(
     items: List<T>,

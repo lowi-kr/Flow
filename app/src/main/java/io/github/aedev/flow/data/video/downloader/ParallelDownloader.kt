@@ -1,11 +1,11 @@
-package io.github.aedev.flow.data.video.downloader
+package com.arubr.smsvcodes.data.video.downloader
 
 import android.content.Context
 import android.net.Uri
 import android.util.Log
 import dagger.hilt.android.qualifiers.ApplicationContext
-import io.github.aedev.flow.R
-import io.github.aedev.flow.network.AppProxyManager
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.network.AppProxyManager
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
 import kotlinx.coroutines.awaitAll

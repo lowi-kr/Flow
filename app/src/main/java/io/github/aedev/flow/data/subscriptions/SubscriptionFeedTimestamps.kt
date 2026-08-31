@@ -1,8 +1,8 @@
-package io.github.aedev.flow.data.subscriptions
+package com.arubr.smsvcodes.data.subscriptions
 
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.utils.ThumbnailUrlResolver
-import io.github.aedev.flow.utils.formatYouTubeRelativeTime
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.utils.ThumbnailUrlResolver
+import com.arubr.smsvcodes.utils.formatYouTubeRelativeTime
 
 /**
  * Upload-time reconciliation for subscription items.

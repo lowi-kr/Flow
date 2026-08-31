@@ -1,4 +1,4 @@
-package io.github.aedev.flow.service
+package com.arubr.smsvcodes.service
 
 import android.content.Context
 import android.content.Intent
@@ -12,13 +12,13 @@ import androidx.media3.common.util.UnstableApi
 import androidx.media3.session.DefaultMediaNotificationProvider
 import androidx.media3.session.MediaSession
 import androidx.media3.session.MediaSessionService
-import io.github.aedev.flow.R
-import io.github.aedev.flow.notification.NotificationHelper
-import io.github.aedev.flow.player.EnhancedPlayerManager
-import io.github.aedev.flow.player.GlobalPlayerState
-import io.github.aedev.flow.player.PopupPlayerWindow
-import io.github.aedev.flow.player.error.PlayerDiagnostics
-import io.github.aedev.flow.utils.FlowCrashHandler
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.notification.NotificationHelper
+import com.arubr.smsvcodes.player.EnhancedPlayerManager
+import com.arubr.smsvcodes.player.GlobalPlayerState
+import com.arubr.smsvcodes.player.PopupPlayerWindow
+import com.arubr.smsvcodes.player.error.PlayerDiagnostics
+import com.arubr.smsvcodes.utils.FlowCrashHandler
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.collectLatest
@@ -29,8 +29,8 @@ class VideoPlayerService : MediaSessionService() {
     companion object {
         private const val TAG = "VideoPlayerService"
         private const val LOCK_RELEASE_DELAY_MS = 30_000L
-        const val ACTION_SHOW_POPUP = "io.github.aedev.flow.action.SHOW_POPUP_PLAYER"
-        const val ACTION_HIDE_POPUP = "io.github.aedev.flow.action.HIDE_POPUP_PLAYER"
+        const val ACTION_SHOW_POPUP = "com.arubr.smsvcodes.action.SHOW_POPUP_PLAYER"
+        const val ACTION_HIDE_POPUP = "com.arubr.smsvcodes.action.HIDE_POPUP_PLAYER"
 
         const val EXTRA_VIDEO_ID = "video_id"
         const val EXTRA_VIDEO_TITLE = "video_title"

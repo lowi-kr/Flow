@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.tv.screens
+package com.arubr.smsvcodes.ui.tv.screens
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -34,19 +34,19 @@ import androidx.paging.LoadState
 import androidx.paging.compose.collectAsLazyPagingItems
 import androidx.paging.compose.itemKey
 import coil3.compose.AsyncImage
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.ui.screens.channel.ChannelViewModel
-import io.github.aedev.flow.ui.tv.components.TvButton
-import io.github.aedev.flow.ui.tv.components.TvFilterChip
-import io.github.aedev.flow.ui.tv.components.TvLoadingState
-import io.github.aedev.flow.ui.tv.components.TvMessageState
-import io.github.aedev.flow.ui.tv.components.TvPlaylistCard
-import io.github.aedev.flow.ui.tv.components.TvVideoCard
-import io.github.aedev.flow.ui.tv.focus.tvInitialFocus
-import io.github.aedev.flow.ui.tv.focus.tvRowFocus
-import io.github.aedev.flow.ui.tv.theme.LocalTvDimens
-import io.github.aedev.flow.utils.formatSubscriberCount
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.ui.screens.channel.ChannelViewModel
+import com.arubr.smsvcodes.ui.tv.components.TvButton
+import com.arubr.smsvcodes.ui.tv.components.TvFilterChip
+import com.arubr.smsvcodes.ui.tv.components.TvLoadingState
+import com.arubr.smsvcodes.ui.tv.components.TvMessageState
+import com.arubr.smsvcodes.ui.tv.components.TvPlaylistCard
+import com.arubr.smsvcodes.ui.tv.components.TvVideoCard
+import com.arubr.smsvcodes.ui.tv.focus.tvInitialFocus
+import com.arubr.smsvcodes.ui.tv.focus.tvRowFocus
+import com.arubr.smsvcodes.ui.tv.theme.LocalTvDimens
+import com.arubr.smsvcodes.utils.formatSubscriberCount
 
 private const val CHANNEL_GRID_COLUMNS = 3
 

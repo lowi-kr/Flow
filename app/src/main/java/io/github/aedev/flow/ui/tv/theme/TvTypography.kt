@@ -1,13 +1,13 @@
-package io.github.aedev.flow.ui.tv.theme
+package com.arubr.smsvcodes.ui.tv.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
-import io.github.aedev.flow.ui.theme.InterFontFamily
+import com.arubr.smsvcodes.ui.theme.InterFontFamily
 
 /**
- * Ten-foot type scale. Mirrors the roles of [io.github.aedev.flow.ui.theme.Typography]
+ * Ten-foot type scale. Mirrors the roles of [com.arubr.smsvcodes.ui.theme.Typography]
  * but sized for reading at TV viewing distance — nothing below 14sp.
  */
 val TvTypography = Typography(

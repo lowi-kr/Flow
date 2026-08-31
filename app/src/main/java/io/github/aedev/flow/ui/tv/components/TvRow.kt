@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.tv.components
+package com.arubr.smsvcodes.ui.tv.components
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -10,9 +10,9 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.ui.tv.focus.ProvideTvRowPivot
-import io.github.aedev.flow.ui.tv.focus.tvRowFocus
-import io.github.aedev.flow.ui.tv.theme.LocalTvDimens
+import com.arubr.smsvcodes.ui.tv.focus.ProvideTvRowPivot
+import com.arubr.smsvcodes.ui.tv.focus.tvRowFocus
+import com.arubr.smsvcodes.ui.tv.theme.LocalTvDimens
 
 /**
  * Standard TV content shelf: optional section header + full-bleed LazyRow with

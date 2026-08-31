@@ -1,8 +1,8 @@
-package io.github.aedev.flow.ui.screens.player.state
+package com.arubr.smsvcodes.ui.screens.player.state
 
-import io.github.aedev.flow.player.EnhancedPlayerManager
-import io.github.aedev.flow.player.state.SubtitleOption
-import io.github.aedev.flow.player.stream.CaptionTrackResolver
+import com.arubr.smsvcodes.player.EnhancedPlayerManager
+import com.arubr.smsvcodes.player.state.SubtitleOption
+import com.arubr.smsvcodes.player.stream.CaptionTrackResolver
 
 object SubtitleSelection {
     fun indexOfLanguage(

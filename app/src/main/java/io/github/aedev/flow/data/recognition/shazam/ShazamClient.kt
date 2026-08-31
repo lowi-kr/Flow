@@ -2,9 +2,9 @@
  * Shazam discovery client. Recognition protocol/mapping ported from Metrolist's
  * :shazamkit (GPL-3.0), which credits MusicRecognizer by Aleksey Saenko.
  */
-package io.github.aedev.flow.data.recognition.shazam
+package com.arubr.smsvcodes.data.recognition.shazam
 
-import io.github.aedev.flow.data.recognition.RecognitionResult
+import com.arubr.smsvcodes.data.recognition.RecognitionResult
 import io.ktor.client.HttpClient
 import io.ktor.client.call.body
 import io.ktor.client.engine.okhttp.OkHttp

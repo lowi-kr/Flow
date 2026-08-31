@@ -1,7 +1,7 @@
-package io.github.aedev.flow.data.shorts.queue
+package com.arubr.smsvcodes.data.shorts.queue
 
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.data.model.toShortVideo
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.data.model.toShortVideo
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNull
 import org.junit.Assert.assertTrue

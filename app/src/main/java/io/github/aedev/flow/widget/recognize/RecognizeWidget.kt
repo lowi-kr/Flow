@@ -1,4 +1,4 @@
-package io.github.aedev.flow.widget.recognize
+package com.arubr.smsvcodes.widget.recognize
 
 import android.content.Context
 import androidx.compose.runtime.Composable
@@ -21,13 +21,13 @@ import androidx.glance.layout.Alignment
 import androidx.glance.layout.Box
 import androidx.glance.layout.fillMaxSize
 import androidx.glance.layout.size
-import io.github.aedev.flow.R
-import io.github.aedev.flow.widget.core.FlowGlanceTheme
-import io.github.aedev.flow.widget.core.ShapeDecor
-import io.github.aedev.flow.widget.core.WidgetDeepLink
-import io.github.aedev.flow.widget.core.WidgetShape
-import io.github.aedev.flow.widget.core.widgetColorsFlow
-import io.github.aedev.flow.widget.core.widgetSurface
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.widget.core.FlowGlanceTheme
+import com.arubr.smsvcodes.widget.core.ShapeDecor
+import com.arubr.smsvcodes.widget.core.WidgetDeepLink
+import com.arubr.smsvcodes.widget.core.WidgetShape
+import com.arubr.smsvcodes.widget.core.widgetColorsFlow
+import com.arubr.smsvcodes.widget.core.widgetSurface
 import kotlinx.coroutines.flow.first
 
 /**

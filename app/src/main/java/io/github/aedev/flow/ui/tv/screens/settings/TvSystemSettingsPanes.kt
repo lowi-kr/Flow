@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.tv.screens.settings
+package com.arubr.smsvcodes.ui.tv.screens.settings
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -13,13 +13,13 @@ import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.local.AppUiModePreferences
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.platform.AppUiMode
-import io.github.aedev.flow.player.DeepFlowManager
-import io.github.aedev.flow.ui.tv.components.TvSelectionRow
-import io.github.aedev.flow.ui.tv.components.TvToggleRow
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.local.AppUiModePreferences
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.platform.AppUiMode
+import com.arubr.smsvcodes.player.DeepFlowManager
+import com.arubr.smsvcodes.ui.tv.components.TvSelectionRow
+import com.arubr.smsvcodes.ui.tv.components.TvToggleRow
 import kotlinx.coroutines.launch
 
 @Composable

@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.music.player
+package com.arubr.smsvcodes.ui.screens.music.player
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
@@ -11,10 +11,10 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.player.EnhancedMusicPlayerManager
-import io.github.aedev.flow.ui.components.audio.EqualizerEditor
-import io.github.aedev.flow.ui.components.rememberFlowSheetState
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.player.EnhancedMusicPlayerManager
+import com.arubr.smsvcodes.ui.components.audio.EqualizerEditor
+import com.arubr.smsvcodes.ui.components.rememberFlowSheetState
 import kotlin.math.roundToInt
 
 @OptIn(ExperimentalMaterial3Api::class)

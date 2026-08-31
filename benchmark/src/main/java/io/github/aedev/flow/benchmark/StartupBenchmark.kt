@@ -1,4 +1,4 @@
-package io.github.aedev.flow.benchmark
+package com.arubr.smsvcodes.benchmark
 
 import android.content.Intent
 import androidx.benchmark.macro.BaselineProfileMode
@@ -57,7 +57,7 @@ class StartupBenchmark {
             },
         ) {
             startActivityAndWait { intent ->
-                intent.putExtra("io.github.aedev.flow.extra.BENCHMARK_BYPASS_ONBOARDING", true)
+                intent.putExtra("com.arubr.smsvcodes.extra.BENCHMARK_BYPASS_ONBOARDING", true)
             }
 
             device.wait(Until.hasObject(By.res("home_feed")), 5000)

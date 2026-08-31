@@ -1,9 +1,9 @@
-package io.github.aedev.flow.widget.core
+package com.arubr.smsvcodes.widget.core
 
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
-import io.github.aedev.flow.MainActivity
+import com.arubr.smsvcodes.MainActivity
 
 /**
  * Single source of truth for widget-tap intents into [MainActivity].
@@ -45,7 +45,7 @@ object WidgetDeepLink {
         Intent(context, MainActivity::class.java).apply {
             // Custom action (not ACTION_VIEW): MainActivity.handleIntent must read our
             // extras, not try to parse the uniqueness-only data Uri as a YouTube URL.
-            action = "io.github.aedev.flow.widget.OPEN"
+            action = "com.arubr.smsvcodes.widget.OPEN"
             data = Uri.parse("flow://widget/$path")
             addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
         }

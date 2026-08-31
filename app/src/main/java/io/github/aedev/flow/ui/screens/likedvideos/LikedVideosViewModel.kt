@@ -1,10 +1,10 @@
-package io.github.aedev.flow.ui.screens.likedvideos
+package com.arubr.smsvcodes.ui.screens.likedvideos
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
-import io.github.aedev.flow.data.local.LikedVideoInfo
-import io.github.aedev.flow.data.local.LikedVideosRepository
+import com.arubr.smsvcodes.data.local.LikedVideoInfo
+import com.arubr.smsvcodes.data.local.LikedVideosRepository
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow

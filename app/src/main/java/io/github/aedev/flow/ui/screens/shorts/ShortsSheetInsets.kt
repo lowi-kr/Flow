@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.shorts
+package com.arubr.smsvcodes.ui.screens.shorts
 
 import androidx.compose.animation.core.FastOutSlowInEasing
 import androidx.compose.animation.core.animate
@@ -18,7 +18,7 @@ import androidx.compose.ui.layout.layout
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.zIndex
-import io.github.aedev.flow.ui.components.FlowBottomSheet
+import com.arubr.smsvcodes.ui.components.FlowBottomSheet
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch

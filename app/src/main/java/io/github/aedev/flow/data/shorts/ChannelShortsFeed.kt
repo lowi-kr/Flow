@@ -1,10 +1,10 @@
-package io.github.aedev.flow.data.shorts
+package com.arubr.smsvcodes.data.shorts
 
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.innertube.YouTube
-import io.github.aedev.flow.innertube.pages.ChannelShortsPage
-import io.github.aedev.flow.innertube.pages.ChannelSortOption
-import io.github.aedev.flow.utils.ThumbnailUrlResolver
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.innertube.YouTube
+import com.arubr.smsvcodes.innertube.pages.ChannelShortsPage
+import com.arubr.smsvcodes.innertube.pages.ChannelSortOption
+import com.arubr.smsvcodes.utils.ThumbnailUrlResolver
 
 /**
  * Who the Shorts belong to. Only the first browse carries the channel header, so the caller threads

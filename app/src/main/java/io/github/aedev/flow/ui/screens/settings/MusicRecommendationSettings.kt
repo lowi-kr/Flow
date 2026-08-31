@@ -4,7 +4,7 @@
  * This file is part of Flow (https://github.com/A-EDev/Flow).
  */
 
-package io.github.aedev.flow.ui.screens.settings
+package com.arubr.smsvcodes.ui.screens.settings
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Radio
@@ -12,8 +12,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.res.stringResource
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.local.PlayerPreferences
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.local.PlayerPreferences
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 

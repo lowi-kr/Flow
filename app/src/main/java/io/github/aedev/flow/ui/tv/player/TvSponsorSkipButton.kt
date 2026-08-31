@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.tv.player
+package com.arubr.smsvcodes.ui.tv.player
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -8,9 +8,9 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.model.SponsorBlockSegment
-import io.github.aedev.flow.ui.tv.components.TvButton
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.model.SponsorBlockSegment
+import com.arubr.smsvcodes.ui.tv.components.TvButton
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.isActive
 import java.util.Locale

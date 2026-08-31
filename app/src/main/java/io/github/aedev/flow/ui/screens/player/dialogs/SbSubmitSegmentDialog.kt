@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.player.dialogs
+package com.arubr.smsvcodes.ui.screens.player.dialogs
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -13,9 +13,9 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.data.repository.SponsorBlockRepository
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.data.repository.SponsorBlockRepository
 import kotlinx.coroutines.launch
 
 /** All SponsorBlock submit categories shown in the dialog dropdown. */

@@ -1,14 +1,14 @@
-package io.github.aedev.flow.innertube.pages
+package com.arubr.smsvcodes.innertube.pages
 
-import io.github.aedev.flow.innertube.models.Album
-import io.github.aedev.flow.innertube.models.Artist
-import io.github.aedev.flow.innertube.models.BrowseEndpoint
-import io.github.aedev.flow.innertube.models.PlaylistPanelVideoRenderer
-import io.github.aedev.flow.innertube.models.SongItem
-import io.github.aedev.flow.innertube.models.WatchEndpoint
-import io.github.aedev.flow.innertube.models.oddElements
-import io.github.aedev.flow.innertube.models.splitBySeparator
-import io.github.aedev.flow.innertube.utils.parseTime
+import com.arubr.smsvcodes.innertube.models.Album
+import com.arubr.smsvcodes.innertube.models.Artist
+import com.arubr.smsvcodes.innertube.models.BrowseEndpoint
+import com.arubr.smsvcodes.innertube.models.PlaylistPanelVideoRenderer
+import com.arubr.smsvcodes.innertube.models.SongItem
+import com.arubr.smsvcodes.innertube.models.WatchEndpoint
+import com.arubr.smsvcodes.innertube.models.oddElements
+import com.arubr.smsvcodes.innertube.models.splitBySeparator
+import com.arubr.smsvcodes.innertube.utils.parseTime
 
 data class NextResult(
     val title: String? = null,

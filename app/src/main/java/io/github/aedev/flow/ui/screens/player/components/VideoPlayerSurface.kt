@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.player.components
+package com.arubr.smsvcodes.ui.screens.player.components
 
 import android.content.Context
 import android.graphics.Outline
@@ -33,12 +33,12 @@ import androidx.lifecycle.compose.LocalLifecycleOwner
 import androidx.media3.common.Player
 import androidx.media3.common.VideoSize
 import androidx.media3.ui.PlayerView
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.player.EnhancedPlayerManager
-import io.github.aedev.flow.player.PictureInPictureHelper
-import io.github.aedev.flow.player.sanitizeDisplayAspectRatio
-import io.github.aedev.flow.player.surface.VideoSurfacePolicy
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.player.EnhancedPlayerManager
+import com.arubr.smsvcodes.player.PictureInPictureHelper
+import com.arubr.smsvcodes.player.sanitizeDisplayAspectRatio
+import com.arubr.smsvcodes.player.surface.VideoSurfacePolicy
 
 private fun pickPlayerViewLayoutRes(): Int =
     if (VideoSurfacePolicy.usesSurfaceView(Build.VERSION.SDK_INT)) {

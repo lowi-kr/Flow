@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components
+package com.arubr.smsvcodes.ui.components
 
 import androidx.compose.animation.core.Spring
 import androidx.compose.animation.core.animateFloatAsState

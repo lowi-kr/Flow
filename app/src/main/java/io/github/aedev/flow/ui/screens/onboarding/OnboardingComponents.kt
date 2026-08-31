@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.onboarding
+package com.arubr.smsvcodes.ui.screens.onboarding
 
 import androidx.compose.animation.animateColorAsState
 import androidx.compose.animation.core.tween
@@ -36,7 +36,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import io.github.aedev.flow.R
+import com.arubr.smsvcodes.R
 
 @Composable
 internal fun StepIndicatorBar(currentStep: OnboardingStep) {

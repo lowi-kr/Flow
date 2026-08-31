@@ -1,4 +1,4 @@
-package io.github.aedev.flow.player
+package com.arubr.smsvcodes.player
 
 internal enum class ServicePlaybackCommitDecision {
     COMMIT,

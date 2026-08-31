@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui
+package com.arubr.smsvcodes.ui
 
 import androidx.navigation.NavHostController
 import java.net.URLDecoder

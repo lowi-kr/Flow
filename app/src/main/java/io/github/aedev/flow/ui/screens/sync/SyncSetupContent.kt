@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.sync
+package com.arubr.smsvcodes.ui.screens.sync
 
 import android.Manifest
 import android.content.pm.PackageManager
@@ -43,7 +43,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.unit.dp
 import androidx.core.content.ContextCompat
-import io.github.aedev.flow.R
+import com.arubr.smsvcodes.R
 
 /**
  * The pre-session steps: pick a direction, pick what travels, pick how the two devices pair, and

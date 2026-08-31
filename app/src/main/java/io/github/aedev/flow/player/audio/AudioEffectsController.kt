@@ -1,12 +1,12 @@
-package io.github.aedev.flow.player.audio
+package com.arubr.smsvcodes.player.audio
 
 import android.content.Context
 import android.util.Log
-import io.github.aedev.flow.data.local.AudioSettingsPersistence
-import io.github.aedev.flow.data.model.EqPresets
-import io.github.aedev.flow.data.model.FilterType
-import io.github.aedev.flow.data.model.ParametricEQ
-import io.github.aedev.flow.data.model.ParametricEQBand
+import com.arubr.smsvcodes.data.local.AudioSettingsPersistence
+import com.arubr.smsvcodes.data.model.EqPresets
+import com.arubr.smsvcodes.data.model.FilterType
+import com.arubr.smsvcodes.data.model.ParametricEQ
+import com.arubr.smsvcodes.data.model.ParametricEQBand
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job

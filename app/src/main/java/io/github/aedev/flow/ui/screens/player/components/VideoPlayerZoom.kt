@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.player.components
+package com.arubr.smsvcodes.ui.screens.player.components
 
 import androidx.compose.animation.core.Spring
 import androidx.compose.animation.core.animate

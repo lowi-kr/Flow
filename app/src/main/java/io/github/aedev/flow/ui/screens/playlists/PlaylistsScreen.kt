@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.playlists
+package com.arubr.smsvcodes.ui.screens.playlists
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -40,10 +40,10 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import io.github.aedev.flow.R
-import io.github.aedev.flow.ui.components.PlaylistCard
-import io.github.aedev.flow.ui.components.layout.topbar.FlowTopBar
-import io.github.aedev.flow.ui.screens.music.MusicPlaylistsViewModel
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.ui.components.PlaylistCard
+import com.arubr.smsvcodes.ui.components.layout.topbar.FlowTopBar
+import com.arubr.smsvcodes.ui.screens.music.MusicPlaylistsViewModel
 
 @Composable
 fun PlaylistsScreen(

@@ -1,6 +1,6 @@
-package io.github.aedev.flow.ui
+package com.arubr.smsvcodes.ui
 
-import io.github.aedev.flow.data.local.DEFAULT_NAV_TAB_ORDER
+import com.arubr.smsvcodes.data.local.DEFAULT_NAV_TAB_ORDER
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue

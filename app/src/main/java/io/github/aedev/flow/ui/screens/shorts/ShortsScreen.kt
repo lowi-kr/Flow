@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.shorts
+package com.arubr.smsvcodes.ui.screens.shorts
 
 import android.content.Intent
 import android.util.Log
@@ -20,16 +20,16 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.data.model.ShortVideo
-import io.github.aedev.flow.data.model.toVideo
-import io.github.aedev.flow.data.shorts.queue.ShortsQueueSource
-import io.github.aedev.flow.player.GlobalPlayerState
-import io.github.aedev.flow.player.shorts.ShortsPlayerPool
-import io.github.aedev.flow.ui.components.CommentSortFilter
-import io.github.aedev.flow.ui.components.FlowCommentsBottomSheet
-import io.github.aedev.flow.ui.components.FlowDescriptionBottomSheet
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.data.model.ShortVideo
+import com.arubr.smsvcodes.data.model.toVideo
+import com.arubr.smsvcodes.data.shorts.queue.ShortsQueueSource
+import com.arubr.smsvcodes.player.GlobalPlayerState
+import com.arubr.smsvcodes.player.shorts.ShortsPlayerPool
+import com.arubr.smsvcodes.ui.components.CommentSortFilter
+import com.arubr.smsvcodes.ui.components.FlowCommentsBottomSheet
+import com.arubr.smsvcodes.ui.components.FlowDescriptionBottomSheet
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.first

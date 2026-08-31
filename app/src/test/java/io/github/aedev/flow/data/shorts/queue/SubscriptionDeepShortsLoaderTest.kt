@@ -1,13 +1,13 @@
-package io.github.aedev.flow.data.shorts.queue
+package com.arubr.smsvcodes.data.shorts.queue
 
-import io.github.aedev.flow.data.local.ChannelSubscription
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.data.local.SubscriptionRepository
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.data.shorts.ChannelShortsFeedPage
-import io.github.aedev.flow.data.shorts.ChannelShortsOwner
-import io.github.aedev.flow.data.subscriptions.SubscriptionFeedRepository
-import io.github.aedev.flow.data.subscriptions.SubscriptionWatchedVideos
+import com.arubr.smsvcodes.data.local.ChannelSubscription
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.data.local.SubscriptionRepository
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.data.shorts.ChannelShortsFeedPage
+import com.arubr.smsvcodes.data.shorts.ChannelShortsOwner
+import com.arubr.smsvcodes.data.subscriptions.SubscriptionFeedRepository
+import com.arubr.smsvcodes.data.subscriptions.SubscriptionWatchedVideos
 import io.mockk.every
 import io.mockk.mockk
 import kotlinx.coroutines.flow.flowOf

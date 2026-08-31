@@ -1,11 +1,11 @@
-package io.github.aedev.flow.ui.components
+package com.arubr.smsvcodes.ui.components
 
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.ui.test.getUnclippedBoundsInRoot
 import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.compose.ui.test.onNodeWithText
 import androidx.test.platform.app.InstrumentationRegistry
-import io.github.aedev.flow.R
+import com.arubr.smsvcodes.R
 import kotlin.math.abs
 import org.junit.Assert.assertTrue
 import org.junit.Rule

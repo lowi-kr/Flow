@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui
+package com.arubr.smsvcodes.ui
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -31,10 +31,10 @@ import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.res.stringResource
-import io.github.aedev.flow.R
-import io.github.aedev.flow.player.EnhancedPlayerManager
-import io.github.aedev.flow.player.GlobalPlayerState
-import io.github.aedev.flow.player.state.EnhancedPlayerState
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.player.EnhancedPlayerManager
+import com.arubr.smsvcodes.player.GlobalPlayerState
+import com.arubr.smsvcodes.player.state.EnhancedPlayerState
 
 /**
  * Mini Player Controls - Dynamically arranges Play/Pause, Rewind/FastForward, and Next/Previous.

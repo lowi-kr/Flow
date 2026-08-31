@@ -1,4 +1,4 @@
-package io.github.aedev.flow
+package com.arubr.smsvcodes
 
 import android.app.Application
 import android.content.ComponentCallbacks2
@@ -8,26 +8,26 @@ import coil3.ImageLoader
 import coil3.PlatformContext
 import coil3.SingletonImageLoader
 import dagger.hilt.android.HiltAndroidApp
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.data.local.SubscriptionRepository
-import io.github.aedev.flow.data.repository.NewPipeDownloader
-import io.github.aedev.flow.data.repository.YouTubeRepository
-import io.github.aedev.flow.discord.DiscordPresenceRuntime
-import io.github.aedev.flow.innertube.YouTube
-import io.github.aedev.flow.innertube.models.YouTubeLocale
-import io.github.aedev.flow.innertube.models.normalizeYouTubeHostLanguage
-import io.github.aedev.flow.innertube.pages.NewPipeExtractor
-import io.github.aedev.flow.network.AppProxyManager
-import io.github.aedev.flow.notification.NotificationHelper
-import io.github.aedev.flow.notification.SubscriptionCheckWorker
-import io.github.aedev.flow.utils.AppLanguageManager
-import io.github.aedev.flow.utils.FlowCrashHandler
-import io.github.aedev.flow.utils.PerformanceDispatcher
-import io.github.aedev.flow.utils.cipher.PipePipeNsigDecoder
-import io.github.aedev.flow.utils.newPipeContentCountry
-import io.github.aedev.flow.utils.newPipeLocalization
-import io.github.aedev.flow.utils.normalizeYouTubeCountry
-import io.github.aedev.flow.utils.potoken.NewPipePoTokenProvider
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.data.local.SubscriptionRepository
+import com.arubr.smsvcodes.data.repository.NewPipeDownloader
+import com.arubr.smsvcodes.data.repository.YouTubeRepository
+import com.arubr.smsvcodes.discord.DiscordPresenceRuntime
+import com.arubr.smsvcodes.innertube.YouTube
+import com.arubr.smsvcodes.innertube.models.YouTubeLocale
+import com.arubr.smsvcodes.innertube.models.normalizeYouTubeHostLanguage
+import com.arubr.smsvcodes.innertube.pages.NewPipeExtractor
+import com.arubr.smsvcodes.network.AppProxyManager
+import com.arubr.smsvcodes.notification.NotificationHelper
+import com.arubr.smsvcodes.notification.SubscriptionCheckWorker
+import com.arubr.smsvcodes.utils.AppLanguageManager
+import com.arubr.smsvcodes.utils.FlowCrashHandler
+import com.arubr.smsvcodes.utils.PerformanceDispatcher
+import com.arubr.smsvcodes.utils.cipher.PipePipeNsigDecoder
+import com.arubr.smsvcodes.utils.newPipeContentCountry
+import com.arubr.smsvcodes.utils.newPipeLocalization
+import com.arubr.smsvcodes.utils.normalizeYouTubeCountry
+import com.arubr.smsvcodes.utils.potoken.NewPipePoTokenProvider
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
@@ -56,7 +56,7 @@ class FlowApplication :
     lateinit var okHttpClient: OkHttpClient
 
     @Inject
-    lateinit var channelReelIndex: io.github.aedev.flow.data.shorts.ChannelReelIndex
+    lateinit var channelReelIndex: com.arubr.smsvcodes.data.shorts.ChannelReelIndex
 
     override fun newImageLoader(context: PlatformContext): ImageLoader = imageLoader
 
@@ -107,7 +107,7 @@ class FlowApplication :
         }
 
         try {
-            io.github.aedev.flow.utils.cipher.CipherDeobfuscator
+            com.arubr.smsvcodes.utils.cipher.CipherDeobfuscator
                 .initialize(this)
             Log.d(TAG, "CipherDeobfuscator initialized")
         } catch (e: Exception) {
@@ -140,7 +140,7 @@ class FlowApplication :
 
             // Schedule periodic update checks (every 12 hours) — github flavor only
             if (BuildConfig.UPDATER_ENABLED) {
-                io.github.aedev.flow.notification.UpdateCheckWorker
+                com.arubr.smsvcodes.notification.UpdateCheckWorker
                     .schedulePeriodicCheck(this@FlowApplication)
             }
         }
@@ -197,7 +197,7 @@ class FlowApplication :
                 Log.w(TAG, "visitorData init error: ${e.message}")
             }
             try {
-                io.github.aedev.flow.utils.potoken.WebPoTokenSession
+                com.arubr.smsvcodes.utils.potoken.WebPoTokenSession
                     .prewarm()
             } catch (e: Exception) {
                 Log.w(TAG, "WebPoTokenSession prewarm failed: ${e.message}")
@@ -274,7 +274,7 @@ class FlowApplication :
         }
     }
 
-    private fun applyProxyConfig(config: io.github.aedev.flow.network.AppProxyConfig) {
+    private fun applyProxyConfig(config: com.arubr.smsvcodes.network.AppProxyConfig) {
         AppProxyManager.update(config)
         YouTube.proxy = AppProxyManager.currentProxy()
         YouTube.proxyAuth = AppProxyManager.currentHttpProxyAuthorizationHeader()

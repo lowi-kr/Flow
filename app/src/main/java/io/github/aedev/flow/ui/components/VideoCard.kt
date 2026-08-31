@@ -1,6 +1,6 @@
 @file:OptIn(androidx.compose.foundation.ExperimentalFoundationApi::class)
 
-package io.github.aedev.flow.ui.components
+package com.arubr.smsvcodes.ui.components
 
 import android.util.Log
 import androidx.compose.foundation.BorderStroke
@@ -57,21 +57,21 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import coil3.compose.AsyncImage
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.local.VideoHistoryEntry
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.data.model.VideoCollaborator
-import io.github.aedev.flow.data.model.distinctByNonBlankKey
-import io.github.aedev.flow.data.model.hasLikelyCollaborationByline
-import io.github.aedev.flow.data.model.needsCollaboratorResolution
-import io.github.aedev.flow.data.repository.VideoCollaboratorResolver
-import io.github.aedev.flow.ui.theme.extendedColors
-import io.github.aedev.flow.utils.DateContext
-import io.github.aedev.flow.utils.ThumbnailUrlResolver
-import io.github.aedev.flow.utils.avatarImageIdentityKey
-import io.github.aedev.flow.utils.formatDuration
-import io.github.aedev.flow.utils.formatPremiereDate
-import io.github.aedev.flow.utils.formatViewCount
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.local.VideoHistoryEntry
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.data.model.VideoCollaborator
+import com.arubr.smsvcodes.data.model.distinctByNonBlankKey
+import com.arubr.smsvcodes.data.model.hasLikelyCollaborationByline
+import com.arubr.smsvcodes.data.model.needsCollaboratorResolution
+import com.arubr.smsvcodes.data.repository.VideoCollaboratorResolver
+import com.arubr.smsvcodes.ui.theme.extendedColors
+import com.arubr.smsvcodes.utils.DateContext
+import com.arubr.smsvcodes.utils.ThumbnailUrlResolver
+import com.arubr.smsvcodes.utils.avatarImageIdentityKey
+import com.arubr.smsvcodes.utils.formatDuration
+import com.arubr.smsvcodes.utils.formatPremiereDate
+import com.arubr.smsvcodes.utils.formatViewCount
 
 private const val AVATAR_TAG = "ChannelAvatarImage"
 

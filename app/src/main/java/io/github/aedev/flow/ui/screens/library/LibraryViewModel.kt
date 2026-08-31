@@ -1,15 +1,15 @@
-package io.github.aedev.flow.ui.screens.library
+package com.arubr.smsvcodes.ui.screens.library
 
 import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
-import io.github.aedev.flow.data.local.LikedVideosRepository
-import io.github.aedev.flow.data.local.PlaylistRepository
-import io.github.aedev.flow.data.local.ViewHistory
-import io.github.aedev.flow.data.shorts.ShortsContentFilter
-import io.github.aedev.flow.data.video.VideoDownloadManager
+import com.arubr.smsvcodes.data.local.LikedVideosRepository
+import com.arubr.smsvcodes.data.local.PlaylistRepository
+import com.arubr.smsvcodes.data.local.ViewHistory
+import com.arubr.smsvcodes.data.shorts.ShortsContentFilter
+import com.arubr.smsvcodes.data.video.VideoDownloadManager
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.combine
@@ -18,7 +18,7 @@ import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.stateIn
 import javax.inject.Inject
-import io.github.aedev.flow.data.music.DownloadManager as MusicDownloadManager
+import com.arubr.smsvcodes.data.music.DownloadManager as MusicDownloadManager
 
 @HiltViewModel
 class LibraryViewModel

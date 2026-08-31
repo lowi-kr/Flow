@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.utils
+package com.arubr.smsvcodes.ui.utils
 
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.drawWithContent

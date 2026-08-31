@@ -1,4 +1,4 @@
-package io.github.aedev.flow.player
+package com.arubr.smsvcodes.player
 
 import kotlinx.coroutines.Deferred
 import kotlinx.coroutines.selects.select

@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.tv.screens
+package com.arubr.smsvcodes.ui.tv.screens
 
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.layout.Arrangement
@@ -28,18 +28,18 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import io.github.aedev.flow.R
-import io.github.aedev.flow.sync.SyncState
-import io.github.aedev.flow.sync.protocol.SyncRole
-import io.github.aedev.flow.ui.screens.sync.COLLECTION_KEYS
-import io.github.aedev.flow.ui.screens.sync.QrCodeImage
-import io.github.aedev.flow.ui.screens.sync.SyncViewModel
-import io.github.aedev.flow.ui.screens.sync.collectionLabel
-import io.github.aedev.flow.ui.tv.components.TvButton
-import io.github.aedev.flow.ui.tv.components.TvScreenScaffold
-import io.github.aedev.flow.ui.tv.components.TvSelectionRow
-import io.github.aedev.flow.ui.tv.focus.tvInitialFocus
-import io.github.aedev.flow.ui.tv.theme.LocalTvDimens
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.sync.SyncState
+import com.arubr.smsvcodes.sync.protocol.SyncRole
+import com.arubr.smsvcodes.ui.screens.sync.COLLECTION_KEYS
+import com.arubr.smsvcodes.ui.screens.sync.QrCodeImage
+import com.arubr.smsvcodes.ui.screens.sync.SyncViewModel
+import com.arubr.smsvcodes.ui.screens.sync.collectionLabel
+import com.arubr.smsvcodes.ui.tv.components.TvButton
+import com.arubr.smsvcodes.ui.tv.components.TvScreenScaffold
+import com.arubr.smsvcodes.ui.tv.components.TvSelectionRow
+import com.arubr.smsvcodes.ui.tv.focus.tvInitialFocus
+import com.arubr.smsvcodes.ui.tv.theme.LocalTvDimens
 
 private enum class TvSyncStep { CHOOSER, SEND_SELECT }
 

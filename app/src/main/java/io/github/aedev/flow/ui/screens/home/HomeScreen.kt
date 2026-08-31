@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.home
+package com.arubr.smsvcodes.ui.screens.home
 
 import androidx.activity.compose.ReportDrawnWhen
 import androidx.compose.animation.core.animateFloatAsState
@@ -47,12 +47,12 @@ import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.LifecycleStartEffect
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.player.DeepFlowManager
-import io.github.aedev.flow.ui.TabScrollEventBus
-import io.github.aedev.flow.ui.components.*
-import io.github.aedev.flow.ui.components.layout.topbar.FlowTopBar
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.player.DeepFlowManager
+import com.arubr.smsvcodes.ui.TabScrollEventBus
+import com.arubr.smsvcodes.ui.components.*
+import com.arubr.smsvcodes.ui.components.layout.topbar.FlowTopBar
 import kotlinx.coroutines.FlowPreview
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.debounce
@@ -94,7 +94,7 @@ private fun rememberHomeLayoutConfig(maxWidth: Dp): HomeLayoutConfig {
 @Composable
 fun HomeScreen(
     onVideoClick: (Video) -> Unit,
-    onShortClick: (io.github.aedev.flow.data.shorts.queue.ShortsQueueSource) -> Unit,
+    onShortClick: (com.arubr.smsvcodes.data.shorts.queue.ShortsQueueSource) -> Unit,
     onSearchClick: () -> Unit,
     onChannelClick: (String) -> Unit = {},
     onNavigateToHistory: () -> Unit = {},
@@ -106,11 +106,11 @@ fun HomeScreen(
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
     val preferences =
         remember {
-            io.github.aedev.flow.data.local
+            com.arubr.smsvcodes.data.local
                 .PlayerPreferences(context)
         }
     val homeViewMode by preferences.homeViewMode.collectAsStateWithLifecycle(
-        initialValue = io.github.aedev.flow.data.local.HomeViewMode.GRID,
+        initialValue = com.arubr.smsvcodes.data.local.HomeViewMode.GRID,
     )
     val homeFeedEnabled by preferences.homeFeedEnabled.collectAsStateWithLifecycle(initialValue = true)
     val refreshHomeOnReselect by preferences.refreshHomeOnReselect.collectAsStateWithLifecycle(initialValue = true)
@@ -222,7 +222,7 @@ fun HomeScreen(
                     .background(MaterialTheme.colorScheme.background),
         ) {
             BoxWithConstraints(modifier = Modifier.fillMaxSize()) {
-                val isListView = homeViewMode == io.github.aedev.flow.data.local.HomeViewMode.LIST
+                val isListView = homeViewMode == com.arubr.smsvcodes.data.local.HomeViewMode.LIST
                 val layoutConfig = rememberHomeLayoutConfig(maxWidth)
                 val gridCells = if (isListView) GridCells.Fixed(1) else GridCells.Fixed(layoutConfig.columns)
 

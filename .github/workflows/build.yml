@@ -284,7 +284,7 @@ jobs:
       # flow.apk and flow-foss.apk are the universal builds and are a public
       # contract: IzzyOnDroid matches release assets by file name, and the
       # README links to them directly. Do not rename or drop them without
-      # first updating the IzzyOnDroid entry for io.github.aedev.flow.
+      # first updating the IzzyOnDroid entry for com.arubr.smsvcodes.
       - name: Rename APKs for release
         run: |
           set -euo pipefail

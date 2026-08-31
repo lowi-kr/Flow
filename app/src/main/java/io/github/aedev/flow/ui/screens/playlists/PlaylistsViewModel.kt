@@ -1,9 +1,9 @@
-package io.github.aedev.flow.ui.screens.playlists
+package com.arubr.smsvcodes.ui.screens.playlists
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
-import io.github.aedev.flow.data.local.PlaylistRepository
+import com.arubr.smsvcodes.data.local.PlaylistRepository
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow

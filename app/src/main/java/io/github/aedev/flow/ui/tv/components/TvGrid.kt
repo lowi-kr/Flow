@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.tv.components
+package com.arubr.smsvcodes.ui.tv.components
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.PaddingValues
@@ -9,9 +9,9 @@ import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.ui.tv.focus.ProvideTvColumnPivot
-import io.github.aedev.flow.ui.tv.focus.tvRowFocus
-import io.github.aedev.flow.ui.tv.theme.LocalTvDimens
+import com.arubr.smsvcodes.ui.tv.focus.ProvideTvColumnPivot
+import com.arubr.smsvcodes.ui.tv.focus.tvRowFocus
+import com.arubr.smsvcodes.ui.tv.theme.LocalTvDimens
 
 /** Column count every TV video grid shares (home, subs, library, playlists). */
 const val TV_GRID_COLUMNS = 3

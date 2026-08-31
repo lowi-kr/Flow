@@ -1,9 +1,9 @@
-package io.github.aedev.flow.player.sponsorblock
+package com.arubr.smsvcodes.player.sponsorblock
 
 import android.util.Log
-import io.github.aedev.flow.data.local.SponsorBlockAction
-import io.github.aedev.flow.data.model.SponsorBlockSegment
-import io.github.aedev.flow.data.repository.SponsorBlockRepository
+import com.arubr.smsvcodes.data.local.SponsorBlockAction
+import com.arubr.smsvcodes.data.model.SponsorBlockSegment
+import com.arubr.smsvcodes.data.repository.SponsorBlockRepository
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.MutableSharedFlow

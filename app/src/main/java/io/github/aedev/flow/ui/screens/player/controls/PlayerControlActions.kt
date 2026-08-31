@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.player.controls
+package com.arubr.smsvcodes.ui.screens.player.controls
 
 import androidx.compose.runtime.Immutable
 

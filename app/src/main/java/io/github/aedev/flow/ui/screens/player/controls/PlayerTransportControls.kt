@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.player.controls
+package com.arubr.smsvcodes.ui.screens.player.controls
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -25,12 +25,12 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.ui.components.pressScale
-import io.github.aedev.flow.ui.screens.player.SleekLoadingAnimation
-import io.github.aedev.flow.ui.theme.PlayerScrimAffordance
-import io.github.aedev.flow.ui.theme.PlayerScrimContent
-import io.github.aedev.flow.ui.theme.PlayerScrimContentDisabled
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.ui.components.pressScale
+import com.arubr.smsvcodes.ui.screens.player.SleekLoadingAnimation
+import com.arubr.smsvcodes.ui.theme.PlayerScrimAffordance
+import com.arubr.smsvcodes.ui.theme.PlayerScrimContent
+import com.arubr.smsvcodes.ui.theme.PlayerScrimContentDisabled
 
 /**
  * Previous / play-pause / next.

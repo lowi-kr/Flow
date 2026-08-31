@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.music
+package com.arubr.smsvcodes.ui.screens.music
 
 import android.content.Context
 import android.content.Intent
@@ -46,20 +46,20 @@ import androidx.compose.ui.unit.sp
 import coil3.compose.AsyncImage
 import coil3.request.ImageRequest
 import coil3.request.crossfade
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.ui.components.AddToPlaylistDialog
-import io.github.aedev.flow.ui.components.MusicCollectionActionItem
-import io.github.aedev.flow.ui.components.MusicCollectionQuickActionsSheet
-import io.github.aedev.flow.ui.components.MusicQuickActionsSheet
-import io.github.aedev.flow.ui.screens.music.components.TrackListItem
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.ui.components.AddToPlaylistDialog
+import com.arubr.smsvcodes.ui.components.MusicCollectionActionItem
+import com.arubr.smsvcodes.ui.components.MusicCollectionQuickActionsSheet
+import com.arubr.smsvcodes.ui.components.MusicQuickActionsSheet
+import com.arubr.smsvcodes.ui.screens.music.components.TrackListItem
 
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalFoundationApi::class)
 @Composable
 fun ArtistPage(
     artistDetails: ArtistDetails,
     downloadedTrackIds: Set<String> = emptySet(),
-    insights: io.github.aedev.flow.data.recommendation.music.MusicArtistInsights? = null,
+    insights: com.arubr.smsvcodes.data.recommendation.music.MusicArtistInsights? = null,
     knownRelatedArtistIds: Set<String> = emptySet(),
     onBackClick: () -> Unit,
     onTrackClick: (MusicTrack, List<MusicTrack>) -> Unit,

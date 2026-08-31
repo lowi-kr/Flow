@@ -1,4 +1,4 @@
-package io.github.aedev.flow.utils.potoken
+package com.arubr.smsvcodes.utils.potoken
 
 import android.content.Context
 import android.util.Log
@@ -7,8 +7,8 @@ import android.webkit.JavascriptInterface
 import android.webkit.WebChromeClient
 import android.webkit.WebView
 import androidx.annotation.MainThread
-import io.github.aedev.flow.BuildConfig
-import io.github.aedev.flow.network.AppProxyManager
+import com.arubr.smsvcodes.BuildConfig
+import com.arubr.smsvcodes.network.AppProxyManager
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.MainScope

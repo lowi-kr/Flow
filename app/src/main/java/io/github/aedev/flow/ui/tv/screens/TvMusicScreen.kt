@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.tv.screens
+package com.arubr.smsvcodes.ui.tv.screens
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -14,20 +14,20 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import io.github.aedev.flow.R
-import io.github.aedev.flow.ui.screens.music.MusicItemType
-import io.github.aedev.flow.ui.screens.music.MusicPlaylist
-import io.github.aedev.flow.ui.screens.music.MusicTrack
-import io.github.aedev.flow.ui.screens.music.MusicViewModel
-import io.github.aedev.flow.ui.tv.components.TvArtistCard
-import io.github.aedev.flow.ui.tv.components.TvMediaRow
-import io.github.aedev.flow.ui.tv.components.TvMessageState
-import io.github.aedev.flow.ui.tv.components.TvMusicCard
-import io.github.aedev.flow.ui.tv.components.TvMusicCollectionCard
-import io.github.aedev.flow.ui.tv.components.TvScreenScaffold
-import io.github.aedev.flow.ui.tv.components.TvShimmerRow
-import io.github.aedev.flow.ui.tv.focus.ProvideTvColumnPivot
-import io.github.aedev.flow.ui.tv.theme.LocalTvDimens
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.ui.screens.music.MusicItemType
+import com.arubr.smsvcodes.ui.screens.music.MusicPlaylist
+import com.arubr.smsvcodes.ui.screens.music.MusicTrack
+import com.arubr.smsvcodes.ui.screens.music.MusicViewModel
+import com.arubr.smsvcodes.ui.tv.components.TvArtistCard
+import com.arubr.smsvcodes.ui.tv.components.TvMediaRow
+import com.arubr.smsvcodes.ui.tv.components.TvMessageState
+import com.arubr.smsvcodes.ui.tv.components.TvMusicCard
+import com.arubr.smsvcodes.ui.tv.components.TvMusicCollectionCard
+import com.arubr.smsvcodes.ui.tv.components.TvScreenScaffold
+import com.arubr.smsvcodes.ui.tv.components.TvShimmerRow
+import com.arubr.smsvcodes.ui.tv.focus.ProvideTvColumnPivot
+import com.arubr.smsvcodes.ui.tv.theme.LocalTvDimens
 
 /**
  * TV music home: mirrors the mobile feed's section order — Listen Again, Daily

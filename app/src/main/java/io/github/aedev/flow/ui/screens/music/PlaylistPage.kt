@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.music
+package com.arubr.smsvcodes.ui.screens.music
 
 import android.content.Intent
 import androidx.compose.animation.AnimatedVisibility
@@ -48,13 +48,13 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import coil3.compose.AsyncImage
-import io.github.aedev.flow.R
-import io.github.aedev.flow.ui.components.MusicQuickActionsSheet
-import io.github.aedev.flow.ui.components.ReorderHandle
-import io.github.aedev.flow.ui.components.ThumbnailWatchProgress
-import io.github.aedev.flow.ui.components.rememberFlowSheetState
-import io.github.aedev.flow.ui.components.rememberReorderableLazyListState
-import io.github.aedev.flow.ui.screens.playlists.PlaylistInfo
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.ui.components.MusicQuickActionsSheet
+import com.arubr.smsvcodes.ui.components.ReorderHandle
+import com.arubr.smsvcodes.ui.components.ThumbnailWatchProgress
+import com.arubr.smsvcodes.ui.components.rememberFlowSheetState
+import com.arubr.smsvcodes.ui.components.rememberReorderableLazyListState
+import com.arubr.smsvcodes.ui.screens.playlists.PlaylistInfo
 import kotlinx.coroutines.delay
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -504,7 +504,7 @@ private fun PlaylistTopBar(
                                 imageVector = Icons.Default.PlaylistAdd,
                                 contentDescription =
                                     androidx.compose.ui.res.stringResource(
-                                        io.github.aedev.flow.R.string.add_all_to_playlist,
+                                        com.arubr.smsvcodes.R.string.add_all_to_playlist,
                                     ),
                                 tint = Color.White,
                             )
@@ -1102,7 +1102,7 @@ private fun MusicMergeIntoPlaylistDialog(
             Text(
                 text =
                     androidx.compose.ui.res
-                        .stringResource(io.github.aedev.flow.R.string.merge_playlist_dialog_title),
+                        .stringResource(com.arubr.smsvcodes.R.string.merge_playlist_dialog_title),
                 style = MaterialTheme.typography.titleLarge,
                 fontWeight = FontWeight.Bold,
                 modifier = Modifier.padding(horizontal = 24.dp, vertical = 16.dp),
@@ -1114,7 +1114,7 @@ private fun MusicMergeIntoPlaylistDialog(
                 Text(
                     text =
                         androidx.compose.ui.res
-                            .stringResource(io.github.aedev.flow.R.string.merge_playlist_no_playlists),
+                            .stringResource(com.arubr.smsvcodes.R.string.merge_playlist_no_playlists),
                     style = MaterialTheme.typography.bodyMedium,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                     modifier = Modifier.padding(24.dp),
@@ -1176,7 +1176,7 @@ private fun MusicMergeIntoPlaylistDialog(
                                 Text(
                                     text =
                                         androidx.compose.ui.res.pluralStringResource(
-                                            io.github.aedev.flow.R.plurals.songs_count_template,
+                                            com.arubr.smsvcodes.R.plurals.songs_count_template,
                                             playlist.videoCount,
                                             playlist.videoCount,
                                         ),

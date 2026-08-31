@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.library
+package com.arubr.smsvcodes.ui.screens.library
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -28,12 +28,12 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.data.music.DownloadedTrack
-import io.github.aedev.flow.data.video.DownloadedVideo
-import io.github.aedev.flow.ui.components.layout.topbar.FlowTopBar
-import io.github.aedev.flow.ui.screens.music.MusicTrack
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.data.music.DownloadedTrack
+import com.arubr.smsvcodes.data.video.DownloadedVideo
+import com.arubr.smsvcodes.ui.components.layout.topbar.FlowTopBar
+import com.arubr.smsvcodes.ui.screens.music.MusicTrack
 
 @Composable
 fun LibraryScreen(

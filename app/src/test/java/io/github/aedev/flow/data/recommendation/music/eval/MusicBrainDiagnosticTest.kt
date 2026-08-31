@@ -5,13 +5,13 @@
  * Test-source-set only — never shipped in the APK.
  */
 
-package io.github.aedev.flow.data.recommendation.music.eval
+package com.arubr.smsvcodes.data.recommendation.music.eval
 
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.data.recommendation.music.MusicBrain
-import io.github.aedev.flow.data.recommendation.music.MusicBrainRanker
-import io.github.aedev.flow.data.recommendation.music.MusicBrainStorage
-import io.github.aedev.flow.data.recommendation.music.toMusicBrain
+import com.arubr.smsvcodes.data.recommendation.music.MusicBrain
+import com.arubr.smsvcodes.data.recommendation.music.MusicBrainRanker
+import com.arubr.smsvcodes.data.recommendation.music.MusicBrainStorage
+import com.arubr.smsvcodes.data.recommendation.music.toMusicBrain
 import kotlinx.serialization.json.Json
 import org.junit.Assume.assumeTrue
 import org.junit.Test
@@ -21,7 +21,7 @@ import java.io.File
  * Offline diagnostic over a REAL exported music brain. Pull it from a debug
  * device with:
  *
- *   adb shell run-as io.github.aedev.flow.debug cat files/datastore/flow_music_brain_v1.json > diagnostics/music-brain.json
+ *   adb shell run-as com.arubr.smsvcodes.debug cat files/datastore/flow_music_brain_v1.json > diagnostics/music-brain.json
  *
  * then run this test (or pass -Dflow.musicBrainPath=...). Skips when no file
  * exists so CI stays green. Reports go to build/reports/music-brain-diagnostic/.

@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.player.components
+package com.arubr.smsvcodes.ui.screens.player.components
 
 import android.app.Activity
 import android.media.AudioManager
@@ -24,8 +24,8 @@ import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.input.pointer.positionChange
 import androidx.compose.ui.platform.LocalHapticFeedback
 import androidx.media3.common.Player
-import io.github.aedev.flow.player.EnhancedPlayerManager
-import io.github.aedev.flow.ui.screens.player.util.VideoPlayerUtils
+import com.arubr.smsvcodes.player.EnhancedPlayerManager
+import com.arubr.smsvcodes.ui.screens.player.util.VideoPlayerUtils
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay

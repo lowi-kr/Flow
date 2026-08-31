@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.settings
+package com.arubr.smsvcodes.ui.screens.settings
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -15,10 +15,10 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.local.BufferProfile
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.ui.components.layout.topbar.FlowTopBar
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.local.BufferProfile
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.ui.components.layout.topbar.FlowTopBar
 import kotlinx.coroutines.launch
 
 @Composable
@@ -80,7 +80,7 @@ fun BufferSettingsScreen(onNavigateBack: () -> Unit) {
                 Text(
                     text =
                         androidx.compose.ui.res
-                            .stringResource(io.github.aedev.flow.R.string.buffer_settings_desc),
+                            .stringResource(com.arubr.smsvcodes.R.string.buffer_settings_desc),
                     style = MaterialTheme.typography.bodyMedium,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                 )
@@ -91,7 +91,7 @@ fun BufferSettingsScreen(onNavigateBack: () -> Unit) {
                 SectionHeader(
                     text =
                         androidx.compose.ui.res
-                            .stringResource(io.github.aedev.flow.R.string.buffer_settings_header_profile),
+                            .stringResource(com.arubr.smsvcodes.R.string.buffer_settings_header_profile),
                 )
             }
 
@@ -135,7 +135,7 @@ fun BufferSettingsScreen(onNavigateBack: () -> Unit) {
                 SectionHeader(
                     text =
                         androidx.compose.ui.res
-                            .stringResource(io.github.aedev.flow.R.string.buffer_settings_header_custom),
+                            .stringResource(com.arubr.smsvcodes.R.string.buffer_settings_header_custom),
                 )
             }
 
@@ -144,10 +144,10 @@ fun BufferSettingsScreen(onNavigateBack: () -> Unit) {
                     ProfileSelectionItem(
                         title =
                             androidx.compose.ui.res
-                                .stringResource(io.github.aedev.flow.R.string.buffer_profile_custom),
+                                .stringResource(com.arubr.smsvcodes.R.string.buffer_profile_custom),
                         subtitle =
                             androidx.compose.ui.res
-                                .stringResource(io.github.aedev.flow.R.string.buffer_profile_custom_desc),
+                                .stringResource(com.arubr.smsvcodes.R.string.buffer_profile_custom_desc),
                         isSelected = currentBufferProfile == BufferProfile.CUSTOM,
                         onClick = { coroutineScope.launch { playerPreferences.setBufferProfile(BufferProfile.CUSTOM) } },
                     )
@@ -160,7 +160,7 @@ fun BufferSettingsScreen(onNavigateBack: () -> Unit) {
                         Column(Modifier.padding(16.dp)) {
                             Text(
                                 androidx.compose.ui.res
-                                    .stringResource(io.github.aedev.flow.R.string.buffer_custom_mode_desc),
+                                    .stringResource(com.arubr.smsvcodes.R.string.buffer_custom_mode_desc),
                                 style = MaterialTheme.typography.bodySmall,
                                 color = MaterialTheme.colorScheme.onSurfaceVariant,
                             )
@@ -170,7 +170,7 @@ fun BufferSettingsScreen(onNavigateBack: () -> Unit) {
                             // Min Buffer
                             Text(
                                 androidx.compose.ui.res.stringResource(
-                                    io.github.aedev.flow.R.string.buffer_label_min,
+                                    com.arubr.smsvcodes.R.string.buffer_label_min,
                                     tempMinBuffer.toInt() / 1000,
                                 ),
                                 style = MaterialTheme.typography.bodyMedium,
@@ -190,7 +190,7 @@ fun BufferSettingsScreen(onNavigateBack: () -> Unit) {
                             // Max Buffer
                             Text(
                                 androidx.compose.ui.res.stringResource(
-                                    io.github.aedev.flow.R.string.buffer_label_max,
+                                    com.arubr.smsvcodes.R.string.buffer_label_max,
                                     tempMaxBuffer.toInt() / 1000,
                                 ),
                                 style = MaterialTheme.typography.bodyMedium,
@@ -210,7 +210,7 @@ fun BufferSettingsScreen(onNavigateBack: () -> Unit) {
                             // Playback Buffer
                             Text(
                                 androidx.compose.ui.res.stringResource(
-                                    io.github.aedev.flow.R.string.buffer_label_playback,
+                                    com.arubr.smsvcodes.R.string.buffer_label_playback,
                                     tempPlaybackBuffer.toInt() / 1000,
                                 ),
                                 style = MaterialTheme.typography.bodyMedium,
@@ -230,7 +230,7 @@ fun BufferSettingsScreen(onNavigateBack: () -> Unit) {
                             // Rebuffer
                             Text(
                                 androidx.compose.ui.res.stringResource(
-                                    io.github.aedev.flow.R.string.buffer_label_rebuffer,
+                                    com.arubr.smsvcodes.R.string.buffer_label_rebuffer,
                                     tempRebuffer.toInt() / 1000,
                                 ),
                                 style = MaterialTheme.typography.bodyMedium,
@@ -252,7 +252,7 @@ fun BufferSettingsScreen(onNavigateBack: () -> Unit) {
                     Text(
                         text =
                             androidx.compose.ui.res
-                                .stringResource(io.github.aedev.flow.R.string.buffer_switch_to_custom),
+                                .stringResource(com.arubr.smsvcodes.R.string.buffer_switch_to_custom),
                         style = MaterialTheme.typography.bodySmall,
                         color = MaterialTheme.colorScheme.onSurfaceVariant,
                         modifier = Modifier.padding(start = 16.dp),
@@ -265,14 +265,14 @@ fun BufferSettingsScreen(onNavigateBack: () -> Unit) {
                 SectionHeader(
                     text =
                         androidx.compose.ui.res
-                            .stringResource(io.github.aedev.flow.R.string.cache_size_header),
+                            .stringResource(com.arubr.smsvcodes.R.string.cache_size_header),
                 )
             }
             item {
                 Text(
                     text =
                         androidx.compose.ui.res
-                            .stringResource(io.github.aedev.flow.R.string.cache_size_desc),
+                            .stringResource(com.arubr.smsvcodes.R.string.cache_size_desc),
                     style = MaterialTheme.typography.bodySmall,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                     modifier = Modifier.padding(bottom = 8.dp),
@@ -281,16 +281,16 @@ fun BufferSettingsScreen(onNavigateBack: () -> Unit) {
                     listOf(
                         100 to
                             androidx.compose.ui.res
-                                .stringResource(io.github.aedev.flow.R.string.cache_size_100mb),
+                                .stringResource(com.arubr.smsvcodes.R.string.cache_size_100mb),
                         200 to
                             androidx.compose.ui.res
-                                .stringResource(io.github.aedev.flow.R.string.cache_size_200mb),
+                                .stringResource(com.arubr.smsvcodes.R.string.cache_size_200mb),
                         500 to
                             androidx.compose.ui.res
-                                .stringResource(io.github.aedev.flow.R.string.cache_size_500mb),
+                                .stringResource(com.arubr.smsvcodes.R.string.cache_size_500mb),
                         0 to
                             androidx.compose.ui.res
-                                .stringResource(io.github.aedev.flow.R.string.cache_size_unlimited),
+                                .stringResource(com.arubr.smsvcodes.R.string.cache_size_unlimited),
                     )
                 androidx.compose.foundation.layout.Column {
                     cacheOptions.forEach { (sizeMb, label) ->
@@ -340,17 +340,17 @@ fun ProfileSelectionItem(
 
 private fun getProfileNameRes(profile: BufferProfile): Int =
     when (profile) {
-        BufferProfile.STABLE -> io.github.aedev.flow.R.string.buffer_profile_stable
-        BufferProfile.AGGRESSIVE -> io.github.aedev.flow.R.string.buffer_profile_aggressive
-        BufferProfile.DATASAVER -> io.github.aedev.flow.R.string.buffer_profile_datasaver
-        BufferProfile.CUSTOM -> io.github.aedev.flow.R.string.buffer_profile_custom
-        else -> io.github.aedev.flow.R.string.buffer_profile_stable // Default fallback
+        BufferProfile.STABLE -> com.arubr.smsvcodes.R.string.buffer_profile_stable
+        BufferProfile.AGGRESSIVE -> com.arubr.smsvcodes.R.string.buffer_profile_aggressive
+        BufferProfile.DATASAVER -> com.arubr.smsvcodes.R.string.buffer_profile_datasaver
+        BufferProfile.CUSTOM -> com.arubr.smsvcodes.R.string.buffer_profile_custom
+        else -> com.arubr.smsvcodes.R.string.buffer_profile_stable // Default fallback
     }
 
 private fun getProfileDescriptionRes(profile: BufferProfile): Int? =
     when (profile) {
-        BufferProfile.STABLE -> io.github.aedev.flow.R.string.buffer_desc_stable
-        BufferProfile.AGGRESSIVE -> io.github.aedev.flow.R.string.buffer_desc_aggressive
-        BufferProfile.DATASAVER -> io.github.aedev.flow.R.string.buffer_desc_datasaver
+        BufferProfile.STABLE -> com.arubr.smsvcodes.R.string.buffer_desc_stable
+        BufferProfile.AGGRESSIVE -> com.arubr.smsvcodes.R.string.buffer_desc_aggressive
+        BufferProfile.DATASAVER -> com.arubr.smsvcodes.R.string.buffer_desc_datasaver
         else -> null
     }

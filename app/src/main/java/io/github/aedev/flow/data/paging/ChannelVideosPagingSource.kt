@@ -1,16 +1,16 @@
-package io.github.aedev.flow.data.paging
+package com.arubr.smsvcodes.data.paging
 
 import android.util.Log
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
-import io.github.aedev.flow.data.model.DistinctKeyTracker
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.data.model.VideoCollaborator
-import io.github.aedev.flow.data.model.hasLikelyCollaborationByline
-import io.github.aedev.flow.data.shorts.ShortsClassifier
-import io.github.aedev.flow.innertube.YouTube
-import io.github.aedev.flow.utils.ThumbnailUrlResolver
-import io.github.aedev.flow.utils.avatarImageIdentityKey
+import com.arubr.smsvcodes.data.model.DistinctKeyTracker
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.data.model.VideoCollaborator
+import com.arubr.smsvcodes.data.model.hasLikelyCollaborationByline
+import com.arubr.smsvcodes.data.shorts.ShortsClassifier
+import com.arubr.smsvcodes.innertube.YouTube
+import com.arubr.smsvcodes.utils.ThumbnailUrlResolver
+import com.arubr.smsvcodes.utils.avatarImageIdentityKey
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import kotlinx.coroutines.withTimeoutOrNull
@@ -112,7 +112,7 @@ class ChannelVideosPagingSource(
         val textualDate = this.textualUploadDate?.takeIf { it.isNotBlank() }
         val displayUploadDate =
             textualDate
-                ?: io.github.aedev.flow.utils
+                ?: com.arubr.smsvcodes.utils
                     .formatTimeAgo(this.uploadDate?.offsetDateTime()?.toString())
         val uploadTimestamp =
             absoluteUploadTimestamp

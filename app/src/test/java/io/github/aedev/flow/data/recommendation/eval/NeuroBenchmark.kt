@@ -5,19 +5,19 @@
  * Test-source-set only — never shipped in the APK.
  */
 
-package io.github.aedev.flow.data.recommendation.eval
+package com.arubr.smsvcodes.data.recommendation.eval
 
-import io.github.aedev.flow.data.recommendation.ContentVector
-import io.github.aedev.flow.data.recommendation.FeedEntry
-import io.github.aedev.flow.data.recommendation.FlowPersona
-import io.github.aedev.flow.data.recommendation.NeuroDiscovery
-import io.github.aedev.flow.data.recommendation.NeuroScoring
-import io.github.aedev.flow.data.recommendation.NeuroTokenizer
-import io.github.aedev.flow.data.recommendation.NeuroTopicCatalog
-import io.github.aedev.flow.data.recommendation.ScoredVideo
-import io.github.aedev.flow.data.recommendation.TopicEvidence
-import io.github.aedev.flow.data.recommendation.UserBrain
-import io.github.aedev.flow.data.recommendation.WatchEntry
+import com.arubr.smsvcodes.data.recommendation.ContentVector
+import com.arubr.smsvcodes.data.recommendation.FeedEntry
+import com.arubr.smsvcodes.data.recommendation.FlowPersona
+import com.arubr.smsvcodes.data.recommendation.NeuroDiscovery
+import com.arubr.smsvcodes.data.recommendation.NeuroScoring
+import com.arubr.smsvcodes.data.recommendation.NeuroTokenizer
+import com.arubr.smsvcodes.data.recommendation.NeuroTopicCatalog
+import com.arubr.smsvcodes.data.recommendation.ScoredVideo
+import com.arubr.smsvcodes.data.recommendation.TopicEvidence
+import com.arubr.smsvcodes.data.recommendation.UserBrain
+import com.arubr.smsvcodes.data.recommendation.WatchEntry
 import java.util.Random
 
 /**

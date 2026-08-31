@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.sync
+package com.arubr.smsvcodes.ui.screens.sync
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box

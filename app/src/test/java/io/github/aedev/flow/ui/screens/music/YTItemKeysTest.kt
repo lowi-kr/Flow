@@ -1,10 +1,10 @@
-package io.github.aedev.flow.ui.screens.music
+package com.arubr.smsvcodes.ui.screens.music
 
-import io.github.aedev.flow.innertube.models.AlbumItem
-import io.github.aedev.flow.innertube.models.Artist
-import io.github.aedev.flow.innertube.models.SongItem
-import io.github.aedev.flow.innertube.pages.SearchSummary
-import io.github.aedev.flow.innertube.pages.SearchSummaryPage
+import com.arubr.smsvcodes.innertube.models.AlbumItem
+import com.arubr.smsvcodes.innertube.models.Artist
+import com.arubr.smsvcodes.innertube.models.SongItem
+import com.arubr.smsvcodes.innertube.pages.SearchSummary
+import com.arubr.smsvcodes.innertube.pages.SearchSummaryPage
 import org.junit.Assert.assertEquals
 import org.junit.Test
 

@@ -1,6 +1,6 @@
 @file:Suppress("ktlint:standard:backing-property-naming")
 
-package io.github.aedev.flow.ui.screens.search
+package com.arubr.smsvcodes.ui.screens.search
 
 import android.content.Context
 import androidx.lifecycle.ViewModel
@@ -11,16 +11,16 @@ import androidx.paging.PagingData
 import androidx.paging.cachedIn
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
-import io.github.aedev.flow.data.local.ContentType
-import io.github.aedev.flow.data.local.SearchFilter
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.data.paging.SearchPagingSource
-import io.github.aedev.flow.data.paging.SearchResultItem
-import io.github.aedev.flow.data.recommendation.FlowNeuroEngine
-import io.github.aedev.flow.data.repository.YouTubeRepository
-import io.github.aedev.flow.data.shorts.ShortsContentFilter
-import io.github.aedev.flow.data.shorts.queue.ShortsQueueHandoff
-import io.github.aedev.flow.data.shorts.queue.ShortsQueueSource
+import com.arubr.smsvcodes.data.local.ContentType
+import com.arubr.smsvcodes.data.local.SearchFilter
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.data.paging.SearchPagingSource
+import com.arubr.smsvcodes.data.paging.SearchResultItem
+import com.arubr.smsvcodes.data.recommendation.FlowNeuroEngine
+import com.arubr.smsvcodes.data.repository.YouTubeRepository
+import com.arubr.smsvcodes.data.shorts.ShortsContentFilter
+import com.arubr.smsvcodes.data.shorts.queue.ShortsQueueHandoff
+import com.arubr.smsvcodes.data.shorts.queue.ShortsQueueSource
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow

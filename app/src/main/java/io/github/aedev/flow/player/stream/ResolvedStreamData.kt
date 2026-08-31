@@ -1,7 +1,7 @@
-package io.github.aedev.flow.player.stream
+package com.arubr.smsvcodes.player.stream
 
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.innertube.models.response.PlayerResponse
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.innertube.models.response.PlayerResponse
 import org.schabi.newpipe.extractor.stream.AudioStream
 import org.schabi.newpipe.extractor.stream.StreamType
 import org.schabi.newpipe.extractor.stream.SubtitlesStream

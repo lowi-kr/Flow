@@ -1,17 +1,17 @@
-package io.github.aedev.flow.data.local
+package com.arubr.smsvcodes.data.local
 
 import android.content.Context
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.toArgb
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.*
-import io.github.aedev.flow.network.AppProxyConfig
-import io.github.aedev.flow.network.AppProxyType
-import io.github.aedev.flow.player.stream.CaptionTrackResolver
-import io.github.aedev.flow.ui.components.SubtitleStyle
-import io.github.aedev.flow.utils.DateContextMode
-import io.github.aedev.flow.utils.DateDisplayMode
-import io.github.aedev.flow.utils.DateFormatStyle
+import com.arubr.smsvcodes.network.AppProxyConfig
+import com.arubr.smsvcodes.network.AppProxyType
+import com.arubr.smsvcodes.player.stream.CaptionTrackResolver
+import com.arubr.smsvcodes.ui.components.SubtitleStyle
+import com.arubr.smsvcodes.utils.DateContextMode
+import com.arubr.smsvcodes.utils.DateDisplayMode
+import com.arubr.smsvcodes.utils.DateFormatStyle
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.distinctUntilChanged

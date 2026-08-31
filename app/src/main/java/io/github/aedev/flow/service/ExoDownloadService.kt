@@ -1,4 +1,4 @@
-package io.github.aedev.flow.service
+package com.arubr.smsvcodes.service
 
 import android.app.Notification
 import android.content.Context
@@ -12,8 +12,8 @@ import androidx.media3.exoplayer.offline.DownloadService
 import androidx.media3.exoplayer.scheduler.PlatformScheduler
 import androidx.media3.exoplayer.scheduler.Scheduler
 import dagger.hilt.android.AndroidEntryPoint
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.download.DownloadUtil
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.download.DownloadUtil
 import javax.inject.Inject
 
 @AndroidEntryPoint
@@ -44,7 +44,7 @@ class ExoDownloadService :
     ): Notification =
         downloadUtil.downloadNotificationHelper.buildProgressNotification(
             this,
-            io.github.aedev.flow.R.drawable.ic_music_note,
+            com.arubr.smsvcodes.R.drawable.ic_music_note,
             null,
             null,
             downloads,

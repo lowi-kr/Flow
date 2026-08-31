@@ -1,12 +1,12 @@
-package io.github.aedev.flow.data.local
+package com.arubr.smsvcodes.data.local
 
 import androidx.sqlite.db.SupportSQLiteDatabase
 import androidx.sqlite.db.SupportSQLiteOpenHelper
 import androidx.sqlite.db.framework.FrameworkSQLiteOpenHelperFactory
 import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import io.github.aedev.flow.data.local.migrations.Migration20To21
-import io.github.aedev.flow.data.local.migrations.Migration21To22
+import com.arubr.smsvcodes.data.local.migrations.Migration20To21
+import com.arubr.smsvcodes.data.local.migrations.Migration21To22
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNotNull
 import org.junit.Test

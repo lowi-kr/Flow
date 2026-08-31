@@ -1,12 +1,12 @@
-package io.github.aedev.flow.widget.core
+package com.arubr.smsvcodes.widget.core
 
 import android.content.Context
 import androidx.glance.color.ColorProviders
-import io.github.aedev.flow.data.local.LocalDataManager
-import io.github.aedev.flow.ui.theme.CustomThemePalettes
-import io.github.aedev.flow.ui.theme.ThemeMode
-import io.github.aedev.flow.ui.theme.ThemeVariant
-import io.github.aedev.flow.ui.theme.resolveFlowColorScheme
+import com.arubr.smsvcodes.data.local.LocalDataManager
+import com.arubr.smsvcodes.ui.theme.CustomThemePalettes
+import com.arubr.smsvcodes.ui.theme.ThemeMode
+import com.arubr.smsvcodes.ui.theme.ThemeVariant
+import com.arubr.smsvcodes.ui.theme.resolveFlowColorScheme
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.distinctUntilChanged

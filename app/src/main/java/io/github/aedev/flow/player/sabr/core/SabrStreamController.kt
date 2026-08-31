@@ -1,23 +1,23 @@
-package io.github.aedev.flow.player.sabr.core
+package com.arubr.smsvcodes.player.sabr.core
 
 import android.util.Log
-import io.github.aedev.flow.player.sabr.network.SabrDataSource
-import io.github.aedev.flow.player.sabr.proto.FormatBufferedRange
-import io.github.aedev.flow.player.sabr.proto.FormatId
-import io.github.aedev.flow.player.sabr.proto.FormatInitializationMetadata
-import io.github.aedev.flow.player.sabr.proto.MediaHeader
-import io.github.aedev.flow.player.sabr.proto.NextRequestPolicy
-import io.github.aedev.flow.player.sabr.proto.PlaybackStartPolicy
-import io.github.aedev.flow.player.sabr.proto.SabrContextUpdate
-import io.github.aedev.flow.player.sabr.proto.SabrContextSendingPolicy
-import io.github.aedev.flow.player.sabr.proto.SabrError
-import io.github.aedev.flow.player.sabr.proto.SabrRedirect
-import io.github.aedev.flow.player.sabr.proto.SabrSeek
-import io.github.aedev.flow.player.sabr.proto.StreamProtectionStatus
-import io.github.aedev.flow.player.sabr.ump.UmpFrame
-import io.github.aedev.flow.player.sabr.ump.UmpFrameDecoder
-import io.github.aedev.flow.player.sabr.ump.UmpPartType
-import io.github.aedev.flow.player.sabr.ump.SabrMediaPayload
+import com.arubr.smsvcodes.player.sabr.network.SabrDataSource
+import com.arubr.smsvcodes.player.sabr.proto.FormatBufferedRange
+import com.arubr.smsvcodes.player.sabr.proto.FormatId
+import com.arubr.smsvcodes.player.sabr.proto.FormatInitializationMetadata
+import com.arubr.smsvcodes.player.sabr.proto.MediaHeader
+import com.arubr.smsvcodes.player.sabr.proto.NextRequestPolicy
+import com.arubr.smsvcodes.player.sabr.proto.PlaybackStartPolicy
+import com.arubr.smsvcodes.player.sabr.proto.SabrContextUpdate
+import com.arubr.smsvcodes.player.sabr.proto.SabrContextSendingPolicy
+import com.arubr.smsvcodes.player.sabr.proto.SabrError
+import com.arubr.smsvcodes.player.sabr.proto.SabrRedirect
+import com.arubr.smsvcodes.player.sabr.proto.SabrSeek
+import com.arubr.smsvcodes.player.sabr.proto.StreamProtectionStatus
+import com.arubr.smsvcodes.player.sabr.ump.UmpFrame
+import com.arubr.smsvcodes.player.sabr.ump.UmpFrameDecoder
+import com.arubr.smsvcodes.player.sabr.ump.UmpPartType
+import com.arubr.smsvcodes.player.sabr.ump.SabrMediaPayload
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
@@ -242,7 +242,7 @@ class SabrStreamController(
         consecutiveMedialessResponses++
         if (consecutiveMedialessResponses >= MAX_MEDIALESS_RESPONSES) {
             Log.w(TAG, "No media in $consecutiveMedialessResponses consecutive responses — session wedged")
-            io.github.aedev.flow.player.error.PlayerDiagnostics.logError(
+            com.arubr.smsvcodes.player.error.PlayerDiagnostics.logError(
                 TAG, "SABR wedged: no media in $consecutiveMedialessResponses responses (reload loop)")
             _events.emit(SabrEvent.Error(
                 code = -3,
@@ -489,9 +489,9 @@ class SabrStreamController(
         // ReloadPlayerResponse { reload_playback_params = 1 { token = 1 } }
         val token = try {
             var t: String? = null
-            io.github.aedev.flow.player.sabr.proto.ProtobufReader(frame.payload).forEachField { field ->
+            com.arubr.smsvcodes.player.sabr.proto.ProtobufReader(frame.payload).forEachField { field ->
                 if (field.fieldNumber == 1) {
-                    io.github.aedev.flow.player.sabr.proto.ProtobufReader(field.asBytes()).forEachField { inner ->
+                    com.arubr.smsvcodes.player.sabr.proto.ProtobufReader(field.asBytes()).forEachField { inner ->
                         if (inner.fieldNumber == 1) t = inner.asString()
                     }
                 }
@@ -503,7 +503,7 @@ class SabrStreamController(
         sessionState.reloadToken = token
         reloadPending = true
         Log.w(TAG, "Server demands player reload (token=${token != null})")
-        io.github.aedev.flow.player.error.PlayerDiagnostics.logWarning(
+        com.arubr.smsvcodes.player.error.PlayerDiagnostics.logWarning(
             TAG, "SABR: server demands player reload (token=${token != null})")
         _events.emit(SabrEvent.ReloadRequired("Server requested player response reload", token))
     }

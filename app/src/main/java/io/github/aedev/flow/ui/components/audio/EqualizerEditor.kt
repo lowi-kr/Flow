@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.audio
+package com.arubr.smsvcodes.ui.components.audio
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -45,11 +45,11 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.model.FilterType
-import io.github.aedev.flow.data.model.ParametricEQ
-import io.github.aedev.flow.data.model.ParametricEQBand
-import io.github.aedev.flow.player.audio.AudioEffectsController
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.model.FilterType
+import com.arubr.smsvcodes.data.model.ParametricEQ
+import com.arubr.smsvcodes.data.model.ParametricEQBand
+import com.arubr.smsvcodes.player.audio.AudioEffectsController
 import kotlin.math.pow
 import kotlin.math.roundToInt
 

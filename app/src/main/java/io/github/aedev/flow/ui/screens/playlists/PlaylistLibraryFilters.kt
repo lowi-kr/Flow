@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.playlists
+package com.arubr.smsvcodes.ui.screens.playlists
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -23,7 +23,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.R
+import com.arubr.smsvcodes.R
 
 internal enum class PlaylistContentFilter {
     Videos,

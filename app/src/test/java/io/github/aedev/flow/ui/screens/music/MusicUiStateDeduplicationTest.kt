@@ -1,6 +1,6 @@
-package io.github.aedev.flow.ui.screens.music
+package com.arubr.smsvcodes.ui.screens.music
 
-import io.github.aedev.flow.data.recommendation.MusicSection
+import com.arubr.smsvcodes.data.recommendation.MusicSection
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertSame
 import org.junit.Test

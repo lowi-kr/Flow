@@ -1,4 +1,4 @@
-package io.github.aedev.flow.player
+package com.arubr.smsvcodes.player
 
 import android.content.ComponentName
 import android.content.Context
@@ -17,11 +17,11 @@ import androidx.media3.session.SessionCommand
 import androidx.media3.session.SessionToken
 import com.google.common.util.concurrent.ListenableFuture
 import com.google.common.util.concurrent.MoreExecutors
-import io.github.aedev.flow.data.local.AudioSettingsPersistence
-import io.github.aedev.flow.data.local.QueuePersistence
-import io.github.aedev.flow.player.audio.AudioEffectsController
-import io.github.aedev.flow.service.Media3MusicService
-import io.github.aedev.flow.ui.screens.music.MusicTrack
+import com.arubr.smsvcodes.data.local.AudioSettingsPersistence
+import com.arubr.smsvcodes.data.local.QueuePersistence
+import com.arubr.smsvcodes.player.audio.AudioEffectsController
+import com.arubr.smsvcodes.service.Media3MusicService
+import com.arubr.smsvcodes.ui.screens.music.MusicTrack
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -184,7 +184,7 @@ object EnhancedMusicPlayerManager {
         // 2. Resolve (using MusicPlayerUtils)
         return try {
             val playbackData =
-                io.github.aedev.flow.utils.MusicPlayerUtils
+                com.arubr.smsvcodes.utils.MusicPlayerUtils
                     .playerResponseForPlayback(videoId)
                     .getOrNull()
             val url = playbackData?.streamUrl
@@ -325,7 +325,7 @@ object EnhancedMusicPlayerManager {
                 override fun onPlayerError(error: androidx.media3.common.PlaybackException) {
                     Log.e("EnhancedMusicPlayer", "Player error: ${error.errorCodeName} (${error.errorCode})", error)
                     showPlaybackWarning(
-                        appContext?.getString(io.github.aedev.flow.R.string.music_playback_warning_generic)
+                        appContext?.getString(com.arubr.smsvcodes.R.string.music_playback_warning_generic)
                             ?: "Music playback failed. Try again or switch networks.",
                     )
                     retryCount = 0
@@ -976,11 +976,11 @@ object EnhancedMusicPlayerManager {
         }
     }
 
-    private fun applyEqProfile(profile: io.github.aedev.flow.data.model.ParametricEQ) {
+    private fun applyEqProfile(profile: com.arubr.smsvcodes.data.model.ParametricEQ) {
         try {
             val json =
                 Json.encodeToString(
-                    io.github.aedev.flow.data.model.ParametricEQ
+                    com.arubr.smsvcodes.data.model.ParametricEQ
                         .serializer(),
                     profile,
                 )

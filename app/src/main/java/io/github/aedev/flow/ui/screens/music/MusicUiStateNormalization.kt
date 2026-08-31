@@ -1,8 +1,8 @@
-package io.github.aedev.flow.ui.screens.music
+package com.arubr.smsvcodes.ui.screens.music
 
-import io.github.aedev.flow.data.model.distinctByNonBlankKeyOrSelf
-import io.github.aedev.flow.data.recommendation.MusicSection
-import io.github.aedev.flow.data.recommendation.music.isHiddenArtist
+import com.arubr.smsvcodes.data.model.distinctByNonBlankKeyOrSelf
+import com.arubr.smsvcodes.data.recommendation.MusicSection
+import com.arubr.smsvcodes.data.recommendation.music.isHiddenArtist
 
 /**
  * Applies "not interested"/"don't recommend" feedback to every recommendation

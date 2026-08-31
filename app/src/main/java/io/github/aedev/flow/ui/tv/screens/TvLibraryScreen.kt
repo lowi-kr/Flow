@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.tv.screens
+package com.arubr.smsvcodes.ui.tv.screens
 
 import androidx.annotation.StringRes
 import androidx.compose.foundation.layout.Arrangement
@@ -24,29 +24,29 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.local.LikedVideoInfo
-import io.github.aedev.flow.data.local.PlaylistRepository
-import io.github.aedev.flow.data.local.ViewHistory
-import io.github.aedev.flow.data.local.LikedVideosRepository
-import io.github.aedev.flow.data.model.Playlist
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.ui.screens.playlists.PlaylistInfo
-import io.github.aedev.flow.ui.screens.music.MusicTrack
-import io.github.aedev.flow.ui.tv.components.TvFilterChip
-import io.github.aedev.flow.ui.tv.components.TvMediaRow
-import io.github.aedev.flow.ui.tv.components.TvMessageState
-import io.github.aedev.flow.ui.tv.components.TvMusicCard
-import io.github.aedev.flow.ui.tv.components.TvMusicCollectionCard
-import io.github.aedev.flow.ui.tv.components.TvPlaylistCard
-import io.github.aedev.flow.ui.tv.components.TvScreenScaffold
-import io.github.aedev.flow.ui.tv.components.TvVideoCard
-import io.github.aedev.flow.ui.tv.focus.ProvideTvColumnPivot
-import io.github.aedev.flow.ui.tv.focus.tvRowFocus
-import io.github.aedev.flow.ui.tv.theme.LocalTvDimens
-import io.github.aedev.flow.ui.tv.toTvMusicTrack
-import io.github.aedev.flow.ui.tv.toTvVideo
-import io.github.aedev.flow.ui.tv.tvWatchProgress
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.local.LikedVideoInfo
+import com.arubr.smsvcodes.data.local.PlaylistRepository
+import com.arubr.smsvcodes.data.local.ViewHistory
+import com.arubr.smsvcodes.data.local.LikedVideosRepository
+import com.arubr.smsvcodes.data.model.Playlist
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.ui.screens.playlists.PlaylistInfo
+import com.arubr.smsvcodes.ui.screens.music.MusicTrack
+import com.arubr.smsvcodes.ui.tv.components.TvFilterChip
+import com.arubr.smsvcodes.ui.tv.components.TvMediaRow
+import com.arubr.smsvcodes.ui.tv.components.TvMessageState
+import com.arubr.smsvcodes.ui.tv.components.TvMusicCard
+import com.arubr.smsvcodes.ui.tv.components.TvMusicCollectionCard
+import com.arubr.smsvcodes.ui.tv.components.TvPlaylistCard
+import com.arubr.smsvcodes.ui.tv.components.TvScreenScaffold
+import com.arubr.smsvcodes.ui.tv.components.TvVideoCard
+import com.arubr.smsvcodes.ui.tv.focus.ProvideTvColumnPivot
+import com.arubr.smsvcodes.ui.tv.focus.tvRowFocus
+import com.arubr.smsvcodes.ui.tv.theme.LocalTvDimens
+import com.arubr.smsvcodes.ui.tv.toTvMusicTrack
+import com.arubr.smsvcodes.ui.tv.toTvVideo
+import com.arubr.smsvcodes.ui.tv.tvWatchProgress
 
 private const val LIBRARY_GRID_COLUMNS = 3
 

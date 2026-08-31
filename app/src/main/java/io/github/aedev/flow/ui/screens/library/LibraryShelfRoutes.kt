@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.library
+package com.arubr.smsvcodes.ui.screens.library
 
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.items
@@ -7,14 +7,14 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.music.DownloadedTrack
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.data.video.DownloadedVideo
-import io.github.aedev.flow.ui.components.PlaylistCard
-import io.github.aedev.flow.ui.components.PlaylistCardLayout
-import io.github.aedev.flow.ui.screens.music.MusicTrack
-import io.github.aedev.flow.ui.screens.playlists.PlaylistInfo
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.music.DownloadedTrack
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.data.video.DownloadedVideo
+import com.arubr.smsvcodes.ui.components.PlaylistCard
+import com.arubr.smsvcodes.ui.components.PlaylistCardLayout
+import com.arubr.smsvcodes.ui.screens.music.MusicTrack
+import com.arubr.smsvcodes.ui.screens.playlists.PlaylistInfo
 import kotlinx.coroutines.flow.StateFlow
 
 @Composable

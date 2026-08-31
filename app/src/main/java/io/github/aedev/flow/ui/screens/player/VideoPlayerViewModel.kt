@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.player
+package com.arubr.smsvcodes.ui.screens.player
 
 import android.content.Context
 import android.net.ConnectivityManager
@@ -10,56 +10,56 @@ import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.local.*
-import io.github.aedev.flow.data.local.entity.WatchHistoryEntity
-import io.github.aedev.flow.data.model.Comment
-import io.github.aedev.flow.data.model.SponsorBlockSegment
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.data.model.distinctByNonBlankKey
-import io.github.aedev.flow.data.model.mergeDistinctByNonBlankKey
-import io.github.aedev.flow.data.recommendation.FlowNeuroEngine
-import io.github.aedev.flow.data.recommendation.InteractionType
-import io.github.aedev.flow.data.repository.SponsorBlockRepository
-import io.github.aedev.flow.data.repository.YouTubeRepository
-import io.github.aedev.flow.data.video.DownloadedVideo
-import io.github.aedev.flow.data.video.VideoDownloadManager
-import io.github.aedev.flow.innertube.YouTube
-import io.github.aedev.flow.innertube.models.YouTubeClient
-import io.github.aedev.flow.innertube.models.response.PlayerResponse
-import io.github.aedev.flow.notification.UpcomingVideoReminderWorker
-import io.github.aedev.flow.player.BackgroundPlaybackPolicy
-import io.github.aedev.flow.player.EnhancedMusicPlayerManager
-import io.github.aedev.flow.player.EnhancedPlayerManager
-import io.github.aedev.flow.player.GlobalPlayerState
-import io.github.aedev.flow.player.MiniPlayerExpansionState
-import io.github.aedev.flow.player.PlaybackResolverReadiness
-import io.github.aedev.flow.player.PlaybackResolverWinner
-import io.github.aedev.flow.player.PlaybackResumePolicy
-import io.github.aedev.flow.player.PlaybackStartupPolicy
-import io.github.aedev.flow.player.PlayerChannelMetadataPolicy
-import io.github.aedev.flow.player.PlayerRelatedVideosPolicy
-import io.github.aedev.flow.player.awaitFirstPlaybackResolver
-import io.github.aedev.flow.player.error.PlayerDiagnostics
-import io.github.aedev.flow.player.quality.QualityManager
-import io.github.aedev.flow.player.sabr.SabrRoutingPolicy
-import io.github.aedev.flow.player.sabr.integration.SabrStreamInfo
-import io.github.aedev.flow.player.sabr.integration.SabrUrlResolver
-import io.github.aedev.flow.player.stream.CaptionTrackResolver
-import io.github.aedev.flow.player.stream.InnerTubeStreamBridge
-import io.github.aedev.flow.player.stream.InnerTubeVideoStreamExtractor
-import io.github.aedev.flow.player.stream.StreamMergeUtils
-import io.github.aedev.flow.player.stream.StreamProcessor
-import io.github.aedev.flow.player.stream.StreamSizeEstimator
-import io.github.aedev.flow.player.stream.VideoCodecUtils
-import io.github.aedev.flow.ui.components.FeedInvalidationBus
-import io.github.aedev.flow.ui.screens.player.util.VideoErrorMapper
-import io.github.aedev.flow.ui.screens.player.util.VideoPlayerUtils
-import io.github.aedev.flow.utils.NetworkState
-import io.github.aedev.flow.utils.PerformanceDispatcher
-import io.github.aedev.flow.utils.ThumbnailUrlResolver
-import io.github.aedev.flow.utils.distinctBestImageUrls
-import io.github.aedev.flow.utils.parsePremiereTimestamp
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.local.*
+import com.arubr.smsvcodes.data.local.entity.WatchHistoryEntity
+import com.arubr.smsvcodes.data.model.Comment
+import com.arubr.smsvcodes.data.model.SponsorBlockSegment
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.data.model.distinctByNonBlankKey
+import com.arubr.smsvcodes.data.model.mergeDistinctByNonBlankKey
+import com.arubr.smsvcodes.data.recommendation.FlowNeuroEngine
+import com.arubr.smsvcodes.data.recommendation.InteractionType
+import com.arubr.smsvcodes.data.repository.SponsorBlockRepository
+import com.arubr.smsvcodes.data.repository.YouTubeRepository
+import com.arubr.smsvcodes.data.video.DownloadedVideo
+import com.arubr.smsvcodes.data.video.VideoDownloadManager
+import com.arubr.smsvcodes.innertube.YouTube
+import com.arubr.smsvcodes.innertube.models.YouTubeClient
+import com.arubr.smsvcodes.innertube.models.response.PlayerResponse
+import com.arubr.smsvcodes.notification.UpcomingVideoReminderWorker
+import com.arubr.smsvcodes.player.BackgroundPlaybackPolicy
+import com.arubr.smsvcodes.player.EnhancedMusicPlayerManager
+import com.arubr.smsvcodes.player.EnhancedPlayerManager
+import com.arubr.smsvcodes.player.GlobalPlayerState
+import com.arubr.smsvcodes.player.MiniPlayerExpansionState
+import com.arubr.smsvcodes.player.PlaybackResolverReadiness
+import com.arubr.smsvcodes.player.PlaybackResolverWinner
+import com.arubr.smsvcodes.player.PlaybackResumePolicy
+import com.arubr.smsvcodes.player.PlaybackStartupPolicy
+import com.arubr.smsvcodes.player.PlayerChannelMetadataPolicy
+import com.arubr.smsvcodes.player.PlayerRelatedVideosPolicy
+import com.arubr.smsvcodes.player.awaitFirstPlaybackResolver
+import com.arubr.smsvcodes.player.error.PlayerDiagnostics
+import com.arubr.smsvcodes.player.quality.QualityManager
+import com.arubr.smsvcodes.player.sabr.SabrRoutingPolicy
+import com.arubr.smsvcodes.player.sabr.integration.SabrStreamInfo
+import com.arubr.smsvcodes.player.sabr.integration.SabrUrlResolver
+import com.arubr.smsvcodes.player.stream.CaptionTrackResolver
+import com.arubr.smsvcodes.player.stream.InnerTubeStreamBridge
+import com.arubr.smsvcodes.player.stream.InnerTubeVideoStreamExtractor
+import com.arubr.smsvcodes.player.stream.StreamMergeUtils
+import com.arubr.smsvcodes.player.stream.StreamProcessor
+import com.arubr.smsvcodes.player.stream.StreamSizeEstimator
+import com.arubr.smsvcodes.player.stream.VideoCodecUtils
+import com.arubr.smsvcodes.ui.components.FeedInvalidationBus
+import com.arubr.smsvcodes.ui.screens.player.util.VideoErrorMapper
+import com.arubr.smsvcodes.ui.screens.player.util.VideoPlayerUtils
+import com.arubr.smsvcodes.utils.NetworkState
+import com.arubr.smsvcodes.utils.PerformanceDispatcher
+import com.arubr.smsvcodes.utils.ThumbnailUrlResolver
+import com.arubr.smsvcodes.utils.distinctBestImageUrls
+import com.arubr.smsvcodes.utils.parsePremiereTimestamp
 import kotlinx.coroutines.Deferred
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
@@ -86,18 +86,18 @@ class VideoPlayerViewModel
         private val viewHistory: ViewHistory,
         private val subscriptionRepository: SubscriptionRepository,
         private val likedVideosRepository: LikedVideosRepository,
-        private val playlistRepository: io.github.aedev.flow.data.local.PlaylistRepository,
+        private val playlistRepository: com.arubr.smsvcodes.data.local.PlaylistRepository,
         private val playerPreferences: PlayerPreferences,
         private val videoDownloadManager: VideoDownloadManager,
-        private val offlineSubtitleStore: io.github.aedev.flow.data.video.OfflineSubtitleStore,
+        private val offlineSubtitleStore: com.arubr.smsvcodes.data.video.OfflineSubtitleStore,
         private val sponsorBlockRepository: SponsorBlockRepository,
-        private val liveChatRepository: io.github.aedev.flow.data.repository.LiveChatRepository,
+        private val liveChatRepository: com.arubr.smsvcodes.data.repository.LiveChatRepository,
     ) : ViewModel() {
         private val _uiState = MutableStateFlow(VideoPlayerUiState())
         val uiState: StateFlow<VideoPlayerUiState> = _uiState.asStateFlow()
 
-        private val _commentsState = MutableStateFlow<List<io.github.aedev.flow.data.model.Comment>>(emptyList())
-        val commentsState: StateFlow<List<io.github.aedev.flow.data.model.Comment>> = _commentsState.asStateFlow()
+        private val _commentsState = MutableStateFlow<List<com.arubr.smsvcodes.data.model.Comment>>(emptyList())
+        val commentsState: StateFlow<List<com.arubr.smsvcodes.data.model.Comment>> = _commentsState.asStateFlow()
 
         private val _isLoadingComments = MutableStateFlow(false)
         val isLoadingComments: StateFlow<Boolean> = _isLoadingComments.asStateFlow()
@@ -262,7 +262,7 @@ class VideoPlayerViewModel
                 }
         }
 
-        private fun appendLiveChatMessage(message: io.github.aedev.flow.data.model.LiveChatMessage) {
+        private fun appendLiveChatMessage(message: com.arubr.smsvcodes.data.model.LiveChatMessage) {
             _uiState.update { state ->
                 val combined = state.liveChatMessages + message
                 val trimmed =
@@ -1163,7 +1163,7 @@ class VideoPlayerViewModel
             if (!handledByPlayer) {
                 _uiState.value.relatedVideos.firstOrNull()?.let { nextVideo ->
                     playVideo(nextVideo)
-                    io.github.aedev.flow.player.GlobalPlayerState
+                    com.arubr.smsvcodes.player.GlobalPlayerState
                         .setCurrentVideo(nextVideo)
                 }
             }
@@ -1185,7 +1185,7 @@ class VideoPlayerViewModel
                             uploadDate = "",
                         )
                     playVideo(prevVideo)
-                    io.github.aedev.flow.player.GlobalPlayerState
+                    com.arubr.smsvcodes.player.GlobalPlayerState
                         .setCurrentVideo(prevVideo)
                 }
             }
@@ -3130,7 +3130,7 @@ class VideoPlayerViewModel
         }
 
         fun reportWatchProgress(
-            video: io.github.aedev.flow.data.model.Video,
+            video: com.arubr.smsvcodes.data.model.Video,
             position: Long,
             duration: Long,
         ) {
@@ -3399,7 +3399,7 @@ class VideoPlayerViewModel
             }
         }
 
-        fun loadCommentReplies(comment: io.github.aedev.flow.data.model.Comment) {
+        fun loadCommentReplies(comment: com.arubr.smsvcodes.data.model.Comment) {
             val videoId = _uiState.value.streamInfo?.id ?: return
             val repliesPage = comment.repliesPage ?: return
 
@@ -3426,7 +3426,7 @@ class VideoPlayerViewModel
             }
         }
 
-        fun loadMoreCommentReplies(comment: io.github.aedev.flow.data.model.Comment) {
+        fun loadMoreCommentReplies(comment: com.arubr.smsvcodes.data.model.Comment) {
             val videoId = _uiState.value.streamInfo?.id ?: return
             val repliesPage = comment.repliesPage ?: return
 
@@ -3676,7 +3676,7 @@ data class VideoPlayerUiState(
     val innerTubeAudioFormats: List<PlayerResponse.StreamingData.Format> = emptyList(),
     val isLive: Boolean = false,
     val isLiveChatAvailable: Boolean = false,
-    val liveChatMessages: List<io.github.aedev.flow.data.model.LiveChatMessage> = emptyList(),
+    val liveChatMessages: List<com.arubr.smsvcodes.data.model.LiveChatMessage> = emptyList(),
     val isLiveChatLoading: Boolean = false,
 )
 

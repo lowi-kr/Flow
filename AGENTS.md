@@ -1,6 +1,6 @@
 # Working with Flow as an AI agent
 
-Flow (`io.github.aedev.flow`) is an Android music/video app written in Kotlin with Jetpack Compose, Hilt, and Media3/ExoPlayer. It plays YouTube content via a native InnerTube client with a NewPipe-based fallback extraction path, supports local media playback, offline downloads, casting, lyrics, a device-to-device sync feature, and an on-device recommendation engine (FlowNeuroEngine). It follows Material 3 design guidelines closely.
+Flow (`com.arubr.smsvcodes`) is an Android music/video app written in Kotlin with Jetpack Compose, Hilt, and Media3/ExoPlayer. It plays YouTube content via a native InnerTube client with a NewPipe-based fallback extraction path, supports local media playback, offline downloads, casting, lyrics, a device-to-device sync feature, and an on-device recommendation engine (FlowNeuroEngine). It follows Material 3 design guidelines closely.
 
 Product flavors: `github` (default, in-app updater enabled) and `foss` (no updater). Always use flavor-prefixed Gradle tasks — e.g. `assembleGithubDebug`, `compileFossDebugKotlin` — never bare `assembleDebug`/`compileDebugKotlin`.
 

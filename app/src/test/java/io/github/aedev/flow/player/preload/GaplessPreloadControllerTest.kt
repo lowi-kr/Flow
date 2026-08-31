@@ -1,12 +1,12 @@
-package io.github.aedev.flow.player.preload
+package com.arubr.smsvcodes.player.preload
 
 import androidx.media3.common.MediaItem
 import androidx.media3.common.util.UnstableApi
 import androidx.media3.exoplayer.ExoPlayer
 import androidx.media3.exoplayer.source.MediaSource
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.player.stream.ResolvedStreamData
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.player.stream.ResolvedStreamData
 import io.mockk.every
 import io.mockk.mockk
 import io.mockk.verify

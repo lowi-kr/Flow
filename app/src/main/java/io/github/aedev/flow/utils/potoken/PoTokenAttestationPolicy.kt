@@ -1,4 +1,4 @@
-package io.github.aedev.flow.utils.potoken
+package com.arubr.smsvcodes.utils.potoken
 
 /**
  * When the shared BotGuard session needs re-attesting, and whether a minted token can be trusted.

@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.playlists
+package com.arubr.smsvcodes.ui.screens.playlists
 
 import org.junit.Assert.assertEquals
 import org.junit.Test

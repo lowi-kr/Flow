@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components
+package com.arubr.smsvcodes.ui.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -39,8 +39,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.model.Video
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.model.Video
 
 @Composable
 internal fun PlaylistQueueItem(

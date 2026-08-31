@@ -1,6 +1,6 @@
-package io.github.aedev.flow.player.audio
+package com.arubr.smsvcodes.player.audio
 
-import io.github.aedev.flow.data.model.FilterType
+import com.arubr.smsvcodes.data.model.FilterType
 import kotlin.math.PI
 import kotlin.math.cos
 import kotlin.math.pow

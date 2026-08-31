@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.tv.screens
+package com.arubr.smsvcodes.ui.tv.screens
 
 import androidx.compose.foundation.focusGroup
 import androidx.compose.foundation.layout.Arrangement
@@ -25,20 +25,20 @@ import androidx.compose.ui.focus.onFocusChanged
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.local.AppUiModePreferences
-import io.github.aedev.flow.data.local.LocalDataManager
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.ui.tv.components.TvScreenScaffold
-import io.github.aedev.flow.ui.tv.screens.settings.TvAboutSettingsPane
-import io.github.aedev.flow.ui.tv.screens.settings.TvAppearanceSettingsPane
-import io.github.aedev.flow.ui.tv.screens.settings.TvContentSettingsPane
-import io.github.aedev.flow.ui.tv.screens.settings.TvFlowEngineSettingsPane
-import io.github.aedev.flow.ui.tv.screens.settings.TvInterfaceSettingsPane
-import io.github.aedev.flow.ui.tv.screens.settings.TvPlaybackSettingsPane
-import io.github.aedev.flow.ui.tv.screens.settings.TvQualitySettingsPane
-import io.github.aedev.flow.ui.tv.screens.settings.TvSettingsCategory
-import io.github.aedev.flow.ui.tv.theme.LocalTvDimens
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.local.AppUiModePreferences
+import com.arubr.smsvcodes.data.local.LocalDataManager
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.ui.tv.components.TvScreenScaffold
+import com.arubr.smsvcodes.ui.tv.screens.settings.TvAboutSettingsPane
+import com.arubr.smsvcodes.ui.tv.screens.settings.TvAppearanceSettingsPane
+import com.arubr.smsvcodes.ui.tv.screens.settings.TvContentSettingsPane
+import com.arubr.smsvcodes.ui.tv.screens.settings.TvFlowEngineSettingsPane
+import com.arubr.smsvcodes.ui.tv.screens.settings.TvInterfaceSettingsPane
+import com.arubr.smsvcodes.ui.tv.screens.settings.TvPlaybackSettingsPane
+import com.arubr.smsvcodes.ui.tv.screens.settings.TvQualitySettingsPane
+import com.arubr.smsvcodes.ui.tv.screens.settings.TvSettingsCategory
+import com.arubr.smsvcodes.ui.tv.theme.LocalTvDimens
 
 /**
  * Two-pane TV settings: focusable category list on the left, the selected

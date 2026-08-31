@@ -4,14 +4,14 @@
  * This file is part of Flow (https://github.com/A-EDev/Flow).
  */
 
-package io.github.aedev.flow.data.recommendation.music
+package com.arubr.smsvcodes.data.recommendation.music
 
 import android.content.Context
 import android.util.Log
 import dagger.hilt.android.qualifiers.ApplicationContext
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.ui.screens.music.MusicArtist
-import io.github.aedev.flow.ui.screens.music.MusicTrack
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.ui.screens.music.MusicArtist
+import com.arubr.smsvcodes.ui.screens.music.MusicTrack
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job

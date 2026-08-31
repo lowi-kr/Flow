@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.tv.navigation
+package com.arubr.smsvcodes.ui.tv.navigation
 
 import com.google.common.truth.Truth.assertThat
 import org.junit.Test

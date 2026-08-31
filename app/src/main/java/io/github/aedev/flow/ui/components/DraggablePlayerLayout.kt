@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components
+package com.arubr.smsvcodes.ui.components
 
 import android.content.res.Configuration
 import androidx.compose.animation.core.Animatable
@@ -38,10 +38,10 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
-import io.github.aedev.flow.player.GlobalPlayerState
-import io.github.aedev.flow.player.sanitizeDisplayAspectRatio
-import io.github.aedev.flow.ui.utils.TABLET_SMALLEST_WIDTH_DP
-import io.github.aedev.flow.ui.utils.isTabletFormFactor
+import com.arubr.smsvcodes.player.GlobalPlayerState
+import com.arubr.smsvcodes.player.sanitizeDisplayAspectRatio
+import com.arubr.smsvcodes.ui.utils.TABLET_SMALLEST_WIDTH_DP
+import com.arubr.smsvcodes.ui.utils.isTabletFormFactor
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.channels.Channel

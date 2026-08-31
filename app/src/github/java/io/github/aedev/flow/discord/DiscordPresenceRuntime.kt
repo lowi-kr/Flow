@@ -1,9 +1,9 @@
-package io.github.aedev.flow.discord
+package com.arubr.smsvcodes.discord
 
 import android.app.Activity
 import android.content.Context
 import android.os.SystemClock
-import io.github.aedev.flow.R
+import com.arubr.smsvcodes.R
 import java.lang.ref.WeakReference
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers

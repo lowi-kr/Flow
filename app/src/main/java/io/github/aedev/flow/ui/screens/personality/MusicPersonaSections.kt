@@ -4,7 +4,7 @@
  * This file is part of Flow (https://github.com/A-EDev/Flow).
  */
 
-package io.github.aedev.flow.ui.screens.personality
+package com.arubr.smsvcodes.ui.screens.personality
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -34,10 +34,10 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.recommendation.music.MusicBrainEngine
-import io.github.aedev.flow.data.recommendation.music.MusicTasteProfile
-import io.github.aedev.flow.data.recommendation.music.MusicTimeBucket
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.recommendation.music.MusicBrainEngine
+import com.arubr.smsvcodes.data.recommendation.music.MusicTasteProfile
+import com.arubr.smsvcodes.data.recommendation.music.MusicTimeBucket
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow

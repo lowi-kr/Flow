@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components
+package com.arubr.smsvcodes.ui.components
 
 import androidx.activity.compose.BackHandler
 import androidx.compose.animation.core.Animatable
@@ -54,8 +54,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.model.Video
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.model.Video
 import kotlinx.coroutines.launch
 
 private class QueueDisplayItem(

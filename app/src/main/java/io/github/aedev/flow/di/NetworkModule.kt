@@ -1,7 +1,7 @@
-package io.github.aedev.flow.di
+package com.arubr.smsvcodes.di
 
 import android.content.Context
-import io.github.aedev.flow.network.AppProxyManager
+import com.arubr.smsvcodes.network.AppProxyManager
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

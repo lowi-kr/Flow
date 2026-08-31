@@ -1,7 +1,7 @@
-package io.github.aedev.flow.data.local
+package com.arubr.smsvcodes.data.local
 
-import io.github.aedev.flow.data.local.dao.NotificationDao
-import io.github.aedev.flow.data.local.entity.NotificationEntity
+import com.arubr.smsvcodes.data.local.dao.NotificationDao
+import com.arubr.smsvcodes.data.local.entity.NotificationEntity
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 import javax.inject.Singleton

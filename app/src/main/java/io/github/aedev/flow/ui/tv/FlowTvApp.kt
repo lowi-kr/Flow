@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.tv
+package com.arubr.smsvcodes.ui.tv
 
 import androidx.activity.ComponentActivity
 import androidx.compose.foundation.layout.fillMaxSize
@@ -16,18 +16,18 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.media3.common.util.UnstableApi
 import androidx.navigation.compose.rememberNavController
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.player.EnhancedMusicPlayerManager
-import io.github.aedev.flow.player.GlobalPlayerState
-import io.github.aedev.flow.ui.screens.home.HomeViewModel
-import io.github.aedev.flow.ui.screens.music.MusicPlayerViewModel
-import io.github.aedev.flow.ui.screens.music.MusicViewModel
-import io.github.aedev.flow.ui.screens.player.VideoPlayerViewModel
-import io.github.aedev.flow.ui.screens.search.SearchViewModel
-import io.github.aedev.flow.ui.screens.subscriptions.SubscriptionsViewModel
-import io.github.aedev.flow.ui.tv.music.TvMusicNowPlayingScreen
-import io.github.aedev.flow.ui.tv.screens.TvPlayerScreen
-import io.github.aedev.flow.ui.tv.theme.TvTheme
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.player.EnhancedMusicPlayerManager
+import com.arubr.smsvcodes.player.GlobalPlayerState
+import com.arubr.smsvcodes.ui.screens.home.HomeViewModel
+import com.arubr.smsvcodes.ui.screens.music.MusicPlayerViewModel
+import com.arubr.smsvcodes.ui.screens.music.MusicViewModel
+import com.arubr.smsvcodes.ui.screens.player.VideoPlayerViewModel
+import com.arubr.smsvcodes.ui.screens.search.SearchViewModel
+import com.arubr.smsvcodes.ui.screens.subscriptions.SubscriptionsViewModel
+import com.arubr.smsvcodes.ui.tv.music.TvMusicNowPlayingScreen
+import com.arubr.smsvcodes.ui.tv.screens.TvPlayerScreen
+import com.arubr.smsvcodes.ui.tv.theme.TvTheme
 
 @androidx.annotation.OptIn(UnstableApi::class)
 @Composable

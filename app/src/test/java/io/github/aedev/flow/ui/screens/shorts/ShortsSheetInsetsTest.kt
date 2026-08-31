@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.shorts
+package com.arubr.smsvcodes.ui.screens.shorts
 
 import kotlinx.coroutines.test.TestScope
 import org.junit.Assert.assertEquals

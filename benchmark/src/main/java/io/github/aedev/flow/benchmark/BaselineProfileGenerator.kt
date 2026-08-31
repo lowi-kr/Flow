@@ -1,4 +1,4 @@
-package io.github.aedev.flow.benchmark
+package com.arubr.smsvcodes.benchmark
 
 import androidx.benchmark.macro.MacrobenchmarkScope
 import androidx.benchmark.macro.junit4.BaselineProfileRule

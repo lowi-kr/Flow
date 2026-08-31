@@ -1,8 +1,8 @@
-package io.github.aedev.flow.data.lyrics
+package com.arubr.smsvcodes.data.lyrics
 
 import android.util.Log
 import com.google.gson.Gson
-import io.github.aedev.flow.network.AppProxyManager
+import com.arubr.smsvcodes.network.AppProxyManager
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import okhttp3.OkHttpClient

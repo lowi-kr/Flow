@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.music.player
+package com.arubr.smsvcodes.ui.screens.music.player
 
 import android.view.ViewGroup
 import androidx.compose.foundation.Image
@@ -28,7 +28,7 @@ import coil3.request.ImageRequest
 import coil3.request.allowHardware
 import coil3.request.crossfade
 import coil3.size.Precision
-import io.github.aedev.flow.R
+import com.arubr.smsvcodes.R
 
 @Composable
 fun PlayerArtwork(

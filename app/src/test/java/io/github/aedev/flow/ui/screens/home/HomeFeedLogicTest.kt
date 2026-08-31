@@ -4,15 +4,15 @@
  * This file is part of Flow (https://github.com/A-EDev/Flow).
  */
 
-package io.github.aedev.flow.ui.screens.home
+package com.arubr.smsvcodes.ui.screens.home
 
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.data.local.VideoHistoryEntry
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.data.recommendation.FlowPersona
-import io.github.aedev.flow.data.recommendation.GraphSeedInput
-import io.github.aedev.flow.data.recommendation.GraphSeedSource
-import io.github.aedev.flow.data.recommendation.UserBrain
+import com.arubr.smsvcodes.data.local.VideoHistoryEntry
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.data.recommendation.FlowPersona
+import com.arubr.smsvcodes.data.recommendation.GraphSeedInput
+import com.arubr.smsvcodes.data.recommendation.GraphSeedSource
+import com.arubr.smsvcodes.data.recommendation.UserBrain
 import org.junit.Test
 
 /** I-10: behavioral coverage for the home-feed consumer logic (R-2 seeds, I-1 impressions). */

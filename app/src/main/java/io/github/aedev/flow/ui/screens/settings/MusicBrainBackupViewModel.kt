@@ -4,12 +4,12 @@
  * This file is part of Flow (https://github.com/A-EDev/Flow).
  */
 
-package io.github.aedev.flow.ui.screens.settings
+package com.arubr.smsvcodes.ui.screens.settings
 
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
-import io.github.aedev.flow.data.recommendation.music.MusicBrainEngine
+import com.arubr.smsvcodes.data.recommendation.music.MusicBrainEngine
 import java.io.InputStream
 import java.io.OutputStream
 import javax.inject.Inject

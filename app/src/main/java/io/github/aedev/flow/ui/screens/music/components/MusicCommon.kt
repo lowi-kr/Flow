@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.music.components
+package com.arubr.smsvcodes.ui.screens.music.components
 
 import androidx.compose.animation.core.*
 import androidx.compose.foundation.background
@@ -15,7 +15,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.R
+import com.arubr.smsvcodes.R
 
 @Composable
 fun ErrorContent(

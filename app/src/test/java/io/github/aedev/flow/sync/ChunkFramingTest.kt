@@ -1,7 +1,7 @@
-package io.github.aedev.flow.sync
+package com.arubr.smsvcodes.sync
 
-import io.github.aedev.flow.sync.protocol.ChunkFraming
-import io.github.aedev.flow.sync.protocol.ChunkHeader
+import com.arubr.smsvcodes.sync.protocol.ChunkFraming
+import com.arubr.smsvcodes.sync.protocol.ChunkHeader
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertTrue
 import org.junit.Test

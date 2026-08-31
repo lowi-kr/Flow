@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.channel
+package com.arubr.smsvcodes.ui.screens.channel
 
 import android.content.Intent
 import android.util.Log
@@ -104,24 +104,24 @@ import androidx.paging.compose.LazyPagingItems
 import androidx.paging.compose.collectAsLazyPagingItems
 import androidx.paging.compose.itemKey
 import coil3.compose.AsyncImage
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.innertube.pages.CommunityPost
-import io.github.aedev.flow.ui.components.ChannelBanner
-import io.github.aedev.flow.ui.components.CommentSortFilter
-import io.github.aedev.flow.ui.components.CompactVideoCard
-import io.github.aedev.flow.ui.components.FlowCommentsBottomSheet
-import io.github.aedev.flow.ui.components.FullSizeImageDialog
-import io.github.aedev.flow.ui.components.PlaylistCard
-import io.github.aedev.flow.ui.components.ShortWatchedIndicator
-import io.github.aedev.flow.ui.components.SortChipRow
-import io.github.aedev.flow.ui.components.VideoCardFullWidth
-import io.github.aedev.flow.ui.components.sortCommentsByFilter
-import io.github.aedev.flow.ui.theme.extendedColors
-import io.github.aedev.flow.ui.youtubeChannelUrl
-import io.github.aedev.flow.utils.ThumbnailUrlResolver
-import io.github.aedev.flow.utils.formatSubscriberCount
-import io.github.aedev.flow.utils.formatViewCount
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.innertube.pages.CommunityPost
+import com.arubr.smsvcodes.ui.components.ChannelBanner
+import com.arubr.smsvcodes.ui.components.CommentSortFilter
+import com.arubr.smsvcodes.ui.components.CompactVideoCard
+import com.arubr.smsvcodes.ui.components.FlowCommentsBottomSheet
+import com.arubr.smsvcodes.ui.components.FullSizeImageDialog
+import com.arubr.smsvcodes.ui.components.PlaylistCard
+import com.arubr.smsvcodes.ui.components.ShortWatchedIndicator
+import com.arubr.smsvcodes.ui.components.SortChipRow
+import com.arubr.smsvcodes.ui.components.VideoCardFullWidth
+import com.arubr.smsvcodes.ui.components.sortCommentsByFilter
+import com.arubr.smsvcodes.ui.theme.extendedColors
+import com.arubr.smsvcodes.ui.youtubeChannelUrl
+import com.arubr.smsvcodes.utils.ThumbnailUrlResolver
+import com.arubr.smsvcodes.utils.formatSubscriberCount
+import com.arubr.smsvcodes.utils.formatViewCount
 import kotlinx.coroutines.launch
 import kotlin.math.roundToInt
 
@@ -335,7 +335,7 @@ private fun ChannelContent(
     selectedLiveSort: Int,
     onLiveSortSelected: (Int) -> Unit,
     allLiveVideos: List<Video>,
-    playlistsLazyPagingItems: LazyPagingItems<io.github.aedev.flow.data.model.Playlist>?,
+    playlistsLazyPagingItems: LazyPagingItems<com.arubr.smsvcodes.data.model.Playlist>?,
     onVideoClick: (Video) -> Unit,
     onChannelClick: (String) -> Unit,
     onShortClick: (String) -> Unit,
@@ -360,7 +360,7 @@ private fun ChannelContent(
     val context = androidx.compose.ui.platform.LocalContext.current
     val preferences =
         remember {
-            io.github.aedev.flow.data.local
+            com.arubr.smsvcodes.data.local
                 .PlayerPreferences(context)
         }
     val isGridView by preferences.channelIsGridView.collectAsState(initial = false)
@@ -1281,7 +1281,7 @@ private fun LazyListScope.liveContent(
 }
 
 private fun LazyListScope.playlistsContent(
-    pagingItems: LazyPagingItems<io.github.aedev.flow.data.model.Playlist>?,
+    pagingItems: LazyPagingItems<com.arubr.smsvcodes.data.model.Playlist>?,
     onPlaylistClick: (String) -> Unit,
 ) {
     if (pagingItems == null ||

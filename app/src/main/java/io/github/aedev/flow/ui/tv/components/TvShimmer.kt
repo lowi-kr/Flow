@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.tv.components
+package com.arubr.smsvcodes.ui.tv.components
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -12,8 +12,8 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.ui.components.ShimmerBone
-import io.github.aedev.flow.ui.tv.theme.LocalTvDimens
+import com.arubr.smsvcodes.ui.components.ShimmerBone
+import com.arubr.smsvcodes.ui.tv.theme.LocalTvDimens
 
 /** TV-sized skeleton for a shelf of video cards, reusing the app's shimmer system. */
 @Composable

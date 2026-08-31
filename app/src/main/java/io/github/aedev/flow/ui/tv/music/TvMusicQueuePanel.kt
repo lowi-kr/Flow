@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.tv.music
+package com.arubr.smsvcodes.ui.tv.music
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.BoxScope
@@ -13,11 +13,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import io.github.aedev.flow.R
-import io.github.aedev.flow.player.EnhancedMusicPlayerManager
-import io.github.aedev.flow.ui.tv.components.TvMusicTrackRow
-import io.github.aedev.flow.ui.tv.components.TvSidePanel
-import io.github.aedev.flow.ui.tv.focus.tvInitialFocus
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.player.EnhancedMusicPlayerManager
+import com.arubr.smsvcodes.ui.tv.components.TvMusicTrackRow
+import com.arubr.smsvcodes.ui.tv.components.TvSidePanel
+import com.arubr.smsvcodes.ui.tv.focus.tvInitialFocus
 
 /** Music queue side panel: current queue plus the automix (radio) continuation. */
 @Composable

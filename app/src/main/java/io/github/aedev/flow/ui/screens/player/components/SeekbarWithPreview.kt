@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.player.components
+package com.arubr.smsvcodes.ui.screens.player.components
 
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.Spring
@@ -46,9 +46,9 @@ import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.input.pointer.positionChange
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.util.lerp
-import io.github.aedev.flow.data.model.SponsorBlockSegment
-import io.github.aedev.flow.ui.theme.SPONSOR_BLOCK_SEGMENT_ALPHA
-import io.github.aedev.flow.ui.theme.defaultSponsorBlockColor
+import com.arubr.smsvcodes.data.model.SponsorBlockSegment
+import com.arubr.smsvcodes.ui.theme.SPONSOR_BLOCK_SEGMENT_ALPHA
+import com.arubr.smsvcodes.ui.theme.defaultSponsorBlockColor
 import org.schabi.newpipe.extractor.stream.StreamSegment
 import kotlin.math.abs
 import kotlin.math.roundToInt

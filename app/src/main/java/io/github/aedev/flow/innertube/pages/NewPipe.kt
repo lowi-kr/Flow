@@ -1,8 +1,8 @@
-package io.github.aedev.flow.innertube.pages
+package com.arubr.smsvcodes.innertube.pages
 
-import io.github.aedev.flow.innertube.YouTube
-import io.github.aedev.flow.innertube.models.YouTubeClient
-import io.github.aedev.flow.innertube.models.response.PlayerResponse
+import com.arubr.smsvcodes.innertube.YouTube
+import com.arubr.smsvcodes.innertube.models.YouTubeClient
+import com.arubr.smsvcodes.innertube.models.response.PlayerResponse
 import io.ktor.http.URLBuilder
 import io.ktor.http.parseQueryString
 import okhttp3.OkHttpClient

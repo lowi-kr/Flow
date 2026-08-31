@@ -1,4 +1,4 @@
-package io.github.aedev.flow.player
+package com.arubr.smsvcodes.player
 
 import android.app.Activity
 import android.app.AppOpsManager
@@ -17,9 +17,9 @@ import android.provider.Settings
 import android.util.Rational
 import androidx.annotation.RequiresApi
 import androidx.core.content.ContextCompat
-import io.github.aedev.flow.R
-import io.github.aedev.flow.MainActivity
-import io.github.aedev.flow.service.VideoPlayerService
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.MainActivity
+import com.arubr.smsvcodes.service.VideoPlayerService
 import kotlin.math.roundToInt
 
 /**
@@ -27,11 +27,11 @@ import kotlin.math.roundToInt
  */
 object PictureInPictureHelper {
     
-    const val ACTION_PLAY = "io.github.aedev.flow.action.PIP_PLAY"
-    const val ACTION_PAUSE = "io.github.aedev.flow.action.PIP_PAUSE"
-    const val ACTION_PREVIOUS = "io.github.aedev.flow.action.PIP_PREVIOUS"
-    const val ACTION_NEXT = "io.github.aedev.flow.action.PIP_NEXT"
-    const val ACTION_CLOSE = "io.github.aedev.flow.action.PIP_CLOSE"
+    const val ACTION_PLAY = "com.arubr.smsvcodes.action.PIP_PLAY"
+    const val ACTION_PAUSE = "com.arubr.smsvcodes.action.PIP_PAUSE"
+    const val ACTION_PREVIOUS = "com.arubr.smsvcodes.action.PIP_PREVIOUS"
+    const val ACTION_NEXT = "com.arubr.smsvcodes.action.PIP_NEXT"
+    const val ACTION_CLOSE = "com.arubr.smsvcodes.action.PIP_CLOSE"
     
     private const val REQUEST_CODE_PLAY = 1
     private const val REQUEST_CODE_PAUSE = 2

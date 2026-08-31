@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.tv
+package com.arubr.smsvcodes.ui.tv
 
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.focusGroup
@@ -22,20 +22,20 @@ import androidx.compose.ui.focus.focusProperties
 import androidx.media3.common.util.UnstableApi
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.ui.screens.home.HomeViewModel
-import io.github.aedev.flow.ui.screens.music.MusicPlayerViewModel
-import io.github.aedev.flow.ui.screens.music.MusicTrack
-import io.github.aedev.flow.ui.screens.music.MusicViewModel
-import io.github.aedev.flow.ui.screens.search.SearchViewModel
-import io.github.aedev.flow.ui.screens.subscriptions.SubscriptionsViewModel
-import io.github.aedev.flow.ui.tv.components.TvNavRail
-import io.github.aedev.flow.ui.tv.components.TvNowPlayingStrip
-import io.github.aedev.flow.ui.tv.navigation.TvBackAction
-import io.github.aedev.flow.ui.tv.navigation.TvBackModel
-import io.github.aedev.flow.ui.tv.navigation.TvDestination
-import io.github.aedev.flow.ui.tv.navigation.TvNavHost
-import io.github.aedev.flow.ui.tv.theme.LocalTvDimens
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.ui.screens.home.HomeViewModel
+import com.arubr.smsvcodes.ui.screens.music.MusicPlayerViewModel
+import com.arubr.smsvcodes.ui.screens.music.MusicTrack
+import com.arubr.smsvcodes.ui.screens.music.MusicViewModel
+import com.arubr.smsvcodes.ui.screens.search.SearchViewModel
+import com.arubr.smsvcodes.ui.screens.subscriptions.SubscriptionsViewModel
+import com.arubr.smsvcodes.ui.tv.components.TvNavRail
+import com.arubr.smsvcodes.ui.tv.components.TvNowPlayingStrip
+import com.arubr.smsvcodes.ui.tv.navigation.TvBackAction
+import com.arubr.smsvcodes.ui.tv.navigation.TvBackModel
+import com.arubr.smsvcodes.ui.tv.navigation.TvDestination
+import com.arubr.smsvcodes.ui.tv.navigation.TvNavHost
+import com.arubr.smsvcodes.ui.tv.theme.LocalTvDimens
 
 /**
  * TV browse shell: content + optional music strip laid out against the collapsed

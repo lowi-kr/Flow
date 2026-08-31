@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.player.controls
+package com.arubr.smsvcodes.ui.screens.player.controls
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.core.tween
@@ -30,13 +30,13 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.ui.screens.player.components.LockModeTouchShield
-import io.github.aedev.flow.ui.screens.player.components.PlayerTimePill
-import io.github.aedev.flow.ui.screens.player.components.SeekbarWithPreview
-import io.github.aedev.flow.ui.theme.PlayerLiveIndicator
-import io.github.aedev.flow.ui.theme.PlayerScrim
-import io.github.aedev.flow.ui.theme.PlayerScrimContent
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.ui.screens.player.components.LockModeTouchShield
+import com.arubr.smsvcodes.ui.screens.player.components.PlayerTimePill
+import com.arubr.smsvcodes.ui.screens.player.components.SeekbarWithPreview
+import com.arubr.smsvcodes.ui.theme.PlayerLiveIndicator
+import com.arubr.smsvcodes.ui.theme.PlayerScrim
+import com.arubr.smsvcodes.ui.theme.PlayerScrimContent
 
 /** Backdrop for the unlock button, a shade darker than a normal affordance so it reads as modal. */
 private const val UNLOCK_AFFORDANCE_ALPHA = 0.42f

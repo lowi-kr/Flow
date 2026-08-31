@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.library
+package com.arubr.smsvcodes.ui.screens.library
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -27,10 +27,10 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.ui.components.VideoThumbnailImage
-import io.github.aedev.flow.utils.formatDuration
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.ui.components.VideoThumbnailImage
+import com.arubr.smsvcodes.utils.formatDuration
 
 internal val LibraryShelfCardWidth = 220.dp
 internal val LibraryShelfArtworkHeight = LibraryShelfCardWidth * 9f / 16f

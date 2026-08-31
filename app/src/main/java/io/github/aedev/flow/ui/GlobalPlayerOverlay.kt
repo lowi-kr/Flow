@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui
+package com.arubr.smsvcodes.ui
 
 import android.content.Context
 import android.content.pm.ActivityInfo
@@ -55,55 +55,55 @@ import androidx.compose.ui.zIndex
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.media3.common.util.UnstableApi
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.data.local.SponsorBlockAction
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.player.EnhancedPlayerManager
-import io.github.aedev.flow.player.GlobalPlayerState
-import io.github.aedev.flow.player.PictureInPictureHelper
-import io.github.aedev.flow.player.PlayerHardwareController
-import io.github.aedev.flow.player.dlna.DlnaCastManager
-import io.github.aedev.flow.player.dlna.DlnaDevice
-import io.github.aedev.flow.player.error.PlayerDiagnostics
-import io.github.aedev.flow.player.stream.CaptionTrackResolver
-import io.github.aedev.flow.ui.components.DraggablePlayerLayout
-import io.github.aedev.flow.ui.components.FlowChaptersBottomSheet
-import io.github.aedev.flow.ui.components.Media3SubtitleOverlay
-import io.github.aedev.flow.ui.components.PlayerCommentsPanel
-import io.github.aedev.flow.ui.components.PlayerDraggableState
-import io.github.aedev.flow.ui.components.PlayerSheetValue
-import io.github.aedev.flow.ui.components.SleepTimerSheet
-import io.github.aedev.flow.ui.components.SubtitleStyle
-import io.github.aedev.flow.ui.components.commentTimestampToMs
-import io.github.aedev.flow.ui.components.rememberPlayerDraggableState
-import io.github.aedev.flow.ui.screens.player.EnhancedVideoPlayerScreen
-import io.github.aedev.flow.ui.screens.player.PremiumControlsOverlay
-import io.github.aedev.flow.ui.screens.player.VideoPlayerUiState
-import io.github.aedev.flow.ui.screens.player.VideoPlayerViewModel
-import io.github.aedev.flow.ui.screens.player.components.AutoplayCountdownOverlay
-import io.github.aedev.flow.ui.screens.player.components.LockModeTouchShield
-import io.github.aedev.flow.ui.screens.player.components.PlayerGestureOverlays
-import io.github.aedev.flow.ui.screens.player.components.PlayerSettingsPage
-import io.github.aedev.flow.ui.screens.player.components.SettingsMenuDialog
-import io.github.aedev.flow.ui.screens.player.components.SponsorBlockSkipButton
-import io.github.aedev.flow.ui.screens.player.components.VideoPlayerSurface
-import io.github.aedev.flow.ui.screens.player.components.resolvePlayerQualityLabel
-import io.github.aedev.flow.ui.screens.player.components.videoPlayerControls
-import io.github.aedev.flow.ui.screens.player.components.videoPlayerZoom
-import io.github.aedev.flow.ui.screens.player.content.rememberCompleteVideo
-import io.github.aedev.flow.ui.screens.player.dialogs.PlayerBottomSheetsContainer
-import io.github.aedev.flow.ui.screens.player.dialogs.PlayerDialogsContainer
-import io.github.aedev.flow.ui.screens.player.effects.*
-import io.github.aedev.flow.ui.screens.player.state.PlayerLayoutMode
-import io.github.aedev.flow.ui.screens.player.state.SubtitleSelection
-import io.github.aedev.flow.ui.screens.player.state.playerLayoutModeFor
-import io.github.aedev.flow.ui.screens.player.state.rememberAudioSystemInfo
-import io.github.aedev.flow.ui.screens.player.state.rememberPlayerScreenState
-import io.github.aedev.flow.ui.screens.player.util.VideoPlayerUtils
-import io.github.aedev.flow.ui.theme.PlayerScrim
-import io.github.aedev.flow.ui.theme.PlayerScrimContent
-import io.github.aedev.flow.ui.utils.isTabletFormFactor
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.data.local.SponsorBlockAction
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.player.EnhancedPlayerManager
+import com.arubr.smsvcodes.player.GlobalPlayerState
+import com.arubr.smsvcodes.player.PictureInPictureHelper
+import com.arubr.smsvcodes.player.PlayerHardwareController
+import com.arubr.smsvcodes.player.dlna.DlnaCastManager
+import com.arubr.smsvcodes.player.dlna.DlnaDevice
+import com.arubr.smsvcodes.player.error.PlayerDiagnostics
+import com.arubr.smsvcodes.player.stream.CaptionTrackResolver
+import com.arubr.smsvcodes.ui.components.DraggablePlayerLayout
+import com.arubr.smsvcodes.ui.components.FlowChaptersBottomSheet
+import com.arubr.smsvcodes.ui.components.Media3SubtitleOverlay
+import com.arubr.smsvcodes.ui.components.PlayerCommentsPanel
+import com.arubr.smsvcodes.ui.components.PlayerDraggableState
+import com.arubr.smsvcodes.ui.components.PlayerSheetValue
+import com.arubr.smsvcodes.ui.components.SleepTimerSheet
+import com.arubr.smsvcodes.ui.components.SubtitleStyle
+import com.arubr.smsvcodes.ui.components.commentTimestampToMs
+import com.arubr.smsvcodes.ui.components.rememberPlayerDraggableState
+import com.arubr.smsvcodes.ui.screens.player.EnhancedVideoPlayerScreen
+import com.arubr.smsvcodes.ui.screens.player.PremiumControlsOverlay
+import com.arubr.smsvcodes.ui.screens.player.VideoPlayerUiState
+import com.arubr.smsvcodes.ui.screens.player.VideoPlayerViewModel
+import com.arubr.smsvcodes.ui.screens.player.components.AutoplayCountdownOverlay
+import com.arubr.smsvcodes.ui.screens.player.components.LockModeTouchShield
+import com.arubr.smsvcodes.ui.screens.player.components.PlayerGestureOverlays
+import com.arubr.smsvcodes.ui.screens.player.components.PlayerSettingsPage
+import com.arubr.smsvcodes.ui.screens.player.components.SettingsMenuDialog
+import com.arubr.smsvcodes.ui.screens.player.components.SponsorBlockSkipButton
+import com.arubr.smsvcodes.ui.screens.player.components.VideoPlayerSurface
+import com.arubr.smsvcodes.ui.screens.player.components.resolvePlayerQualityLabel
+import com.arubr.smsvcodes.ui.screens.player.components.videoPlayerControls
+import com.arubr.smsvcodes.ui.screens.player.components.videoPlayerZoom
+import com.arubr.smsvcodes.ui.screens.player.content.rememberCompleteVideo
+import com.arubr.smsvcodes.ui.screens.player.dialogs.PlayerBottomSheetsContainer
+import com.arubr.smsvcodes.ui.screens.player.dialogs.PlayerDialogsContainer
+import com.arubr.smsvcodes.ui.screens.player.effects.*
+import com.arubr.smsvcodes.ui.screens.player.state.PlayerLayoutMode
+import com.arubr.smsvcodes.ui.screens.player.state.SubtitleSelection
+import com.arubr.smsvcodes.ui.screens.player.state.playerLayoutModeFor
+import com.arubr.smsvcodes.ui.screens.player.state.rememberAudioSystemInfo
+import com.arubr.smsvcodes.ui.screens.player.state.rememberPlayerScreenState
+import com.arubr.smsvcodes.ui.screens.player.util.VideoPlayerUtils
+import com.arubr.smsvcodes.ui.theme.PlayerScrim
+import com.arubr.smsvcodes.ui.theme.PlayerScrimContent
+import com.arubr.smsvcodes.ui.utils.isTabletFormFactor
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
@@ -1188,7 +1188,7 @@ fun GlobalPlayerOverlay(
                             isFullscreen = screenState.isFullscreen,
                             isPipSupported =
                                 android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O &&
-                                    io.github.aedev.flow.player.PictureInPictureHelper
+                                    com.arubr.smsvcodes.player.PictureInPictureHelper
                                         .isPlayerPopupSupported(context) &&
                                     pipPreferences.manualPipButtonEnabled,
                             onPipClick = {
@@ -1268,7 +1268,7 @@ fun GlobalPlayerOverlay(
                                 }
                             },
                             onSleepTimerClick = { screenState.showSleepTimerSheet = true },
-                            isSleepTimerActive = io.github.aedev.flow.player.SleepTimerManager.isActive,
+                            isSleepTimerActive = com.arubr.smsvcodes.player.SleepTimerManager.isActive,
                             showRemainingTime = showRemainingTime,
                             onToggleRemainingTime = { showRemainingTime = !showRemainingTime },
                             isTouchLocked = screenState.isTouchLocked,
@@ -1555,7 +1555,7 @@ fun GlobalPlayerOverlay(
                             }
                         }
                         HorizontalDivider(color = MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.2f))
-                        io.github.aedev.flow.ui.components.LiveChatList(
+                        com.arubr.smsvcodes.ui.components.LiveChatList(
                             messages = playerUiState.liveChatMessages,
                             isLoading = playerUiState.isLiveChatLoading,
                             modifier = Modifier.fillMaxWidth().weight(1f),
@@ -1599,7 +1599,7 @@ fun GlobalPlayerOverlay(
         // SB Submit dialog
         if (showSbSubmitDialog) {
             val initialPosition = remember { screenState.currentPosition }
-            io.github.aedev.flow.ui.screens.player.dialogs.SbSubmitSegmentDialog(
+            com.arubr.smsvcodes.ui.screens.player.dialogs.SbSubmitSegmentDialog(
                 videoId = video.id,
                 currentPositionMs = initialPosition,
                 onDismiss = { showSbSubmitDialog = false },

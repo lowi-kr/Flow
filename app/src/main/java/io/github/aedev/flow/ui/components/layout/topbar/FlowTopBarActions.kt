@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.layout.topbar
+package com.arubr.smsvcodes.ui.components.layout.topbar
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -29,7 +29,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import io.github.aedev.flow.R
+import com.arubr.smsvcodes.R
 
 /**
  * The Notifications and Settings actions every root destination gets.

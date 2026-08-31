@@ -1,4 +1,4 @@
-package io.github.aedev.flow.player
+package com.arubr.smsvcodes.player
 
 object PlayerChannelMetadataPolicy {
     fun channelReferences(uploaderUrl: String?, channelId: String?): List<String> =

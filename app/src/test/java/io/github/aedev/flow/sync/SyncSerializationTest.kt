@@ -1,9 +1,9 @@
-package io.github.aedev.flow.sync
+package com.arubr.smsvcodes.sync
 
-import io.github.aedev.flow.sync.canonical.BrainCounters
-import io.github.aedev.flow.sync.canonical.CanonicalBrain
-import io.github.aedev.flow.sync.canonical.GCounter
-import io.github.aedev.flow.sync.protocol.SyncSerialization
+import com.arubr.smsvcodes.sync.canonical.BrainCounters
+import com.arubr.smsvcodes.sync.canonical.CanonicalBrain
+import com.arubr.smsvcodes.sync.canonical.GCounter
+import com.arubr.smsvcodes.sync.protocol.SyncSerialization
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertNull

@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.tv.player
+package com.arubr.smsvcodes.ui.tv.player
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.fadeIn
@@ -23,8 +23,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.ui.tv.theme.LocalTvDimens
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.ui.tv.theme.LocalTvDimens
 
 /**
  * Transport chrome for the TV player: only the top metadata band carries a

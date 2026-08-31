@@ -1,6 +1,6 @@
 @file:Suppress("ktlint:standard:no-wildcard-imports")
 
-package io.github.aedev.flow.ui.screens.search
+package com.arubr.smsvcodes.ui.screens.search
 
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
@@ -44,19 +44,19 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.paging.LoadState
 import androidx.paging.compose.collectAsLazyPagingItems
 import coil3.compose.AsyncImage
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.local.*
-import io.github.aedev.flow.data.local.ContentType
-import io.github.aedev.flow.data.local.SearchFilter
-import io.github.aedev.flow.data.local.SearchHistoryItem
-import io.github.aedev.flow.data.model.*
-import io.github.aedev.flow.data.paging.SearchResultItem
-import io.github.aedev.flow.data.search.SearchSuggestionsService
-import io.github.aedev.flow.data.shorts.queue.ShortsQueueSource
-import io.github.aedev.flow.ui.components.*
-import io.github.aedev.flow.utils.formatDuration
-import io.github.aedev.flow.utils.formatSubscriberCount
-import io.github.aedev.flow.utils.formatViewCount
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.local.*
+import com.arubr.smsvcodes.data.local.ContentType
+import com.arubr.smsvcodes.data.local.SearchFilter
+import com.arubr.smsvcodes.data.local.SearchHistoryItem
+import com.arubr.smsvcodes.data.model.*
+import com.arubr.smsvcodes.data.paging.SearchResultItem
+import com.arubr.smsvcodes.data.search.SearchSuggestionsService
+import com.arubr.smsvcodes.data.shorts.queue.ShortsQueueSource
+import com.arubr.smsvcodes.ui.components.*
+import com.arubr.smsvcodes.utils.formatDuration
+import com.arubr.smsvcodes.utils.formatSubscriberCount
+import com.arubr.smsvcodes.utils.formatViewCount
 import kotlinx.coroutines.FlowPreview
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -75,7 +75,7 @@ fun SearchScreen(
     val searchHistoryRepo = remember { SearchHistoryRepository(context) }
     val preferences =
         remember {
-            io.github.aedev.flow.data.local
+            com.arubr.smsvcodes.data.local
                 .PlayerPreferences(context)
         }
     val uiState by viewModel.uiState.collectAsState()

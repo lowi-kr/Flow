@@ -1,4 +1,4 @@
-package io.github.aedev.flow.player.renderer.subtitle
+package com.arubr.smsvcodes.player.renderer.subtitle
 
 import androidx.media3.extractor.text.SimpleSubtitleDecoder
 import androidx.media3.extractor.text.Subtitle
@@ -6,7 +6,7 @@ import androidx.media3.extractor.text.Subtitle
 /**
  * Bridges [Srv3SubtitleParser] (the modern `SubtitleParser` API) into the legacy
  * [SimpleSubtitleDecoder] flow, since this app's
- * [io.github.aedev.flow.player.renderer.CustomRenderersFactory] runs its `TextRenderer` with legacy
+ * [com.arubr.smsvcodes.player.renderer.CustomRenderersFactory] runs its `TextRenderer` with legacy
  * decoding enabled - sidecar caption tracks arrive through `SingleSampleMediaSource`, which does no
  * subtitle parsing of its own.
  */

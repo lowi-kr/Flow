@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.tv.components
+package com.arubr.smsvcodes.ui.tv.components
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.ColumnScope
@@ -9,9 +9,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.ui.tv.focus.rememberTvFocusState
-import io.github.aedev.flow.ui.tv.focus.tvFocusScale
-import io.github.aedev.flow.ui.tv.theme.LocalTvDimens
+import com.arubr.smsvcodes.ui.tv.focus.rememberTvFocusState
+import com.arubr.smsvcodes.ui.tv.focus.tvFocusScale
+import com.arubr.smsvcodes.ui.tv.theme.LocalTvDimens
 
 /**
  * Base focusable card for the ten-foot UI. Focus visuals are tokens-only:

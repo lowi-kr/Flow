@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.tv.components
+package com.arubr.smsvcodes.ui.tv.components
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.Arrangement
@@ -22,11 +22,11 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
-import io.github.aedev.flow.ui.screens.music.MusicTrack
-import io.github.aedev.flow.ui.tv.focus.rememberTvFocusState
-import io.github.aedev.flow.ui.tv.focus.tvFocusScale
-import io.github.aedev.flow.ui.tv.theme.LocalTvDimens
-import io.github.aedev.flow.utils.formatDuration
+import com.arubr.smsvcodes.ui.screens.music.MusicTrack
+import com.arubr.smsvcodes.ui.tv.focus.rememberTvFocusState
+import com.arubr.smsvcodes.ui.tv.focus.tvFocusScale
+import com.arubr.smsvcodes.ui.tv.theme.LocalTvDimens
+import com.arubr.smsvcodes.utils.formatDuration
 
 /** Square-art music card for TV shelves — flat, matching [TvVideoCard]. */
 @Composable

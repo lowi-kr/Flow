@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.playlists
+package com.arubr.smsvcodes.ui.screens.playlists
 
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material3.AlertDialog
@@ -14,7 +14,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
-import io.github.aedev.flow.R
+import com.arubr.smsvcodes.R
 
 @Composable
 internal fun PlaylistManagementDialogHost(

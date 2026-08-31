@@ -1,10 +1,10 @@
-package io.github.aedev.flow.ui.screens.channel
+package com.arubr.smsvcodes.ui.screens.channel
 
 import android.util.Log
-import io.github.aedev.flow.data.model.Comment
-import io.github.aedev.flow.innertube.YouTube
-import io.github.aedev.flow.innertube.pages.CommunityPost
-import io.github.aedev.flow.utils.PerformanceDispatcher
+import com.arubr.smsvcodes.data.model.Comment
+import com.arubr.smsvcodes.innertube.YouTube
+import com.arubr.smsvcodes.innertube.pages.CommunityPost
+import com.arubr.smsvcodes.utils.PerformanceDispatcher
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow

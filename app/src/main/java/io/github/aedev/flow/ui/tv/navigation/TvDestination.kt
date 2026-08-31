@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.tv.navigation
+package com.arubr.smsvcodes.ui.tv.navigation
 
 import androidx.annotation.StringRes
 import androidx.compose.material.icons.Icons
@@ -9,7 +9,7 @@ import androidx.compose.material.icons.outlined.Settings
 import androidx.compose.material.icons.outlined.Subscriptions
 import androidx.compose.material.icons.outlined.VideoLibrary
 import androidx.compose.ui.graphics.vector.ImageVector
-import io.github.aedev.flow.R
+import com.arubr.smsvcodes.R
 
 /** Stable top-level destinations for Flow's TV interface. */
 enum class TvDestination(

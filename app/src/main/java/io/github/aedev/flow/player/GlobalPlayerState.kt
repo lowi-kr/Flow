@@ -1,9 +1,9 @@
-package io.github.aedev.flow.player
+package com.arubr.smsvcodes.player
 
 import android.content.Context
 import android.util.Log
 import androidx.media3.common.util.UnstableApi
-import io.github.aedev.flow.data.model.Video
+import com.arubr.smsvcodes.data.model.Video
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow

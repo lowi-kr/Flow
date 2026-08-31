@@ -1,12 +1,12 @@
-package io.github.aedev.flow.sync.identity
+package com.arubr.smsvcodes.sync.identity
 
 import android.content.Context
 import android.os.Build
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.stringPreferencesKey
-import io.github.aedev.flow.data.local.safePreferencesDataStore
+import com.arubr.smsvcodes.data.local.safePreferencesDataStore
 import dagger.hilt.android.qualifiers.ApplicationContext
-import io.github.aedev.flow.BuildConfig
+import com.arubr.smsvcodes.BuildConfig
 import kotlinx.coroutines.flow.first
 import java.util.UUID
 import javax.inject.Inject

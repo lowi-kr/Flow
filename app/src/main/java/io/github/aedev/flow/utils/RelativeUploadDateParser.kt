@@ -4,7 +4,7 @@
  * This file is part of Flow (https://github.com/A-EDev/Flow).
  */
 
-package io.github.aedev.flow.utils
+package com.arubr.smsvcodes.utils
 
 /**
  * Parses relative upload-date text ("3 weeks ago", "Streamed 2 days ago") into an

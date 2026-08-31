@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.player.components
+package com.arubr.smsvcodes.ui.screens.player.components
 
 import androidx.compose.animation.*
 import androidx.compose.animation.core.*
@@ -31,14 +31,14 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.local.SponsorBlockAction
-import io.github.aedev.flow.data.model.SponsorBlockSegment
-import io.github.aedev.flow.ui.screens.player.state.PlayerScreenState
-import io.github.aedev.flow.ui.screens.player.util.VideoPlayerUtils
-import io.github.aedev.flow.ui.theme.PlayerScrim
-import io.github.aedev.flow.ui.theme.PlayerScrimContent
-import io.github.aedev.flow.ui.theme.PlayerScrimGestureHud
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.local.SponsorBlockAction
+import com.arubr.smsvcodes.data.model.SponsorBlockSegment
+import com.arubr.smsvcodes.ui.screens.player.state.PlayerScreenState
+import com.arubr.smsvcodes.ui.screens.player.util.VideoPlayerUtils
+import com.arubr.smsvcodes.ui.theme.PlayerScrim
+import com.arubr.smsvcodes.ui.theme.PlayerScrimContent
+import com.arubr.smsvcodes.ui.theme.PlayerScrimGestureHud
 import kotlinx.coroutines.delay
 import kotlin.math.abs
 

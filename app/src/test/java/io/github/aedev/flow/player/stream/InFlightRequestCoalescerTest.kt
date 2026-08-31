@@ -1,4 +1,4 @@
-package io.github.aedev.flow.player.stream
+package com.arubr.smsvcodes.player.stream
 
 import java.util.concurrent.atomic.AtomicInteger
 import kotlinx.coroutines.CompletableDeferred

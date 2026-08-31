@@ -1,14 +1,14 @@
-package io.github.aedev.flow.player.factory
+package com.arubr.smsvcodes.player.factory
 
 import androidx.media3.common.util.UnstableApi
 import androidx.media3.exoplayer.DefaultLoadControl
-import io.github.aedev.flow.player.config.PlayerConfig
+import com.arubr.smsvcodes.player.config.PlayerConfig
 import org.junit.Assert.assertTrue
 import org.junit.Test
 
 /**
  * The Shorts and music profiles are fixed constants rather than user preferences, so nothing else
- * re-checks them: [io.github.aedev.flow.data.local.BufferDurationsTest] only covers the video path,
+ * re-checks them: [com.arubr.smsvcodes.data.local.BufferDurationsTest] only covers the video path,
  * whose durations come from DataStore. These tests are what stops an edit to the constants from
  * reaching a device as the #788 class of failure — `setBufferDurationsMs` throws while the player is
  * being built, which surfaces as a crash on every launch rather than as degraded buffering.

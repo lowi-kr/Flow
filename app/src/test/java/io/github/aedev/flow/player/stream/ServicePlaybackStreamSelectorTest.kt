@@ -1,6 +1,6 @@
-package io.github.aedev.flow.player.stream
+package com.arubr.smsvcodes.player.stream
 
-import io.github.aedev.flow.data.local.VideoQuality
+import com.arubr.smsvcodes.data.local.VideoQuality
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNotNull
 import org.junit.Assert.assertNull

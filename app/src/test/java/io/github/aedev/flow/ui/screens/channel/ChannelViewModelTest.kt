@@ -1,9 +1,9 @@
-package io.github.aedev.flow.ui.screens.channel
+package com.arubr.smsvcodes.ui.screens.channel
 
 import android.content.Context
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.data.local.SubscriptionRepository
-import io.github.aedev.flow.data.shorts.ShortsContentFilter
+import com.arubr.smsvcodes.data.local.SubscriptionRepository
+import com.arubr.smsvcodes.data.shorts.ShortsContentFilter
 import io.mockk.coEvery
 import io.mockk.coVerify
 import io.mockk.mockk

@@ -1,6 +1,6 @@
-package io.github.aedev.flow.player.sabr.integration
+package com.arubr.smsvcodes.player.sabr.integration
 
-import io.github.aedev.flow.innertube.models.YouTubeClient
+import com.arubr.smsvcodes.innertube.models.YouTubeClient
 import org.junit.Assert.assertEquals
 import org.junit.Test
 

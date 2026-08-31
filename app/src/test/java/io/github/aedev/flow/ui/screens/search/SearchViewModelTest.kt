@@ -1,12 +1,12 @@
-package io.github.aedev.flow.ui.screens.search
+package com.arubr.smsvcodes.ui.screens.search
 
 import android.content.Context
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.data.local.ContentType
-import io.github.aedev.flow.data.local.SearchFilter
-import io.github.aedev.flow.data.repository.YouTubeRepository
-import io.github.aedev.flow.data.shorts.ShortsContentFilter
-import io.github.aedev.flow.data.shorts.queue.ShortsQueueHandoff
+import com.arubr.smsvcodes.data.local.ContentType
+import com.arubr.smsvcodes.data.local.SearchFilter
+import com.arubr.smsvcodes.data.repository.YouTubeRepository
+import com.arubr.smsvcodes.data.shorts.ShortsContentFilter
+import com.arubr.smsvcodes.data.shorts.queue.ShortsQueueHandoff
 import io.mockk.coEvery
 import io.mockk.coVerify
 import io.mockk.mockk

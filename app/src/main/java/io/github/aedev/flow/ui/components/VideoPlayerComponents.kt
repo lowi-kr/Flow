@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components
+package com.arubr.smsvcodes.ui.components
 
 import android.content.ClipData
 import android.content.ClipboardManager
@@ -44,16 +44,16 @@ import androidx.compose.ui.unit.sp
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.core.text.HtmlCompat
 import coil3.compose.AsyncImage
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.data.model.VideoCollaborator
-import io.github.aedev.flow.ui.theme.extendedColors
-import io.github.aedev.flow.utils.DateContext
-import io.github.aedev.flow.utils.avatarImageIdentityKey
-import io.github.aedev.flow.utils.formatRichText
-import io.github.aedev.flow.utils.formatSubscriberCount
-import io.github.aedev.flow.utils.formatViewCount
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.data.model.VideoCollaborator
+import com.arubr.smsvcodes.ui.theme.extendedColors
+import com.arubr.smsvcodes.utils.DateContext
+import com.arubr.smsvcodes.utils.avatarImageIdentityKey
+import com.arubr.smsvcodes.utils.formatRichText
+import com.arubr.smsvcodes.utils.formatSubscriberCount
+import com.arubr.smsvcodes.utils.formatViewCount
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable

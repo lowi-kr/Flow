@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.player.components
+package com.arubr.smsvcodes.ui.screens.player.components
 
 internal fun resolvePlayerQualityLabel(
     currentQuality: Int,

@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.settings
+package com.arubr.smsvcodes.ui.screens.settings
 
 import android.content.Intent
 import android.provider.Settings
@@ -54,13 +54,13 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleEventObserver
 import androidx.lifecycle.compose.LocalLifecycleOwner
-import io.github.aedev.flow.BuildConfig
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.notification.BackgroundWorkPolicy
-import io.github.aedev.flow.notification.SubscriptionCheckWorker
-import io.github.aedev.flow.notification.UpdateCheckWorker
-import io.github.aedev.flow.ui.components.layout.topbar.FlowTopBar
+import com.arubr.smsvcodes.BuildConfig
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.notification.BackgroundWorkPolicy
+import com.arubr.smsvcodes.notification.SubscriptionCheckWorker
+import com.arubr.smsvcodes.notification.UpdateCheckWorker
+import com.arubr.smsvcodes.ui.components.layout.topbar.FlowTopBar
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterial3Api::class)

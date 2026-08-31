@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.settings
+package com.arubr.smsvcodes.ui.screens.settings
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -50,12 +50,12 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import io.github.aedev.flow.R
-import io.github.aedev.flow.discord.DiscordConnectionState
-import io.github.aedev.flow.discord.DiscordPresenceRuntime
-import io.github.aedev.flow.discord.DiscordSettingsState
-import io.github.aedev.flow.discord.DiscordSettingsSummary
-import io.github.aedev.flow.ui.components.layout.topbar.FlowTopBar
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.discord.DiscordConnectionState
+import com.arubr.smsvcodes.discord.DiscordPresenceRuntime
+import com.arubr.smsvcodes.discord.DiscordSettingsState
+import com.arubr.smsvcodes.discord.DiscordSettingsSummary
+import com.arubr.smsvcodes.ui.components.layout.topbar.FlowTopBar
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterial3Api::class)

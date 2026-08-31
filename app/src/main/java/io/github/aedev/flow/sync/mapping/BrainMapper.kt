@@ -1,20 +1,20 @@
-package io.github.aedev.flow.sync.mapping
+package com.arubr.smsvcodes.sync.mapping
 
-import io.github.aedev.flow.data.recommendation.TimeBucket
-import io.github.aedev.flow.sync.canonical.BrainCounters
-import io.github.aedev.flow.sync.canonical.BrainFlags
-import io.github.aedev.flow.sync.canonical.BrainLwwMaps
-import io.github.aedev.flow.sync.canonical.BrainPerVideo
-import io.github.aedev.flow.sync.canonical.CanonicalBrain
-import io.github.aedev.flow.sync.canonical.CanonicalBrainVectors
-import io.github.aedev.flow.sync.canonical.CanonicalFeedEntry
-import io.github.aedev.flow.sync.canonical.CanonicalRejectionSignal
-import io.github.aedev.flow.sync.canonical.CanonicalTopicEvidence
-import io.github.aedev.flow.sync.canonical.CanonicalVector
-import io.github.aedev.flow.sync.canonical.GCounter
-import io.github.aedev.flow.sync.canonical.Lww
-import io.github.aedev.flow.sync.merge.BrainCrdtState
-import io.github.aedev.flow.sync.merge.Crdt
+import com.arubr.smsvcodes.data.recommendation.TimeBucket
+import com.arubr.smsvcodes.sync.canonical.BrainCounters
+import com.arubr.smsvcodes.sync.canonical.BrainFlags
+import com.arubr.smsvcodes.sync.canonical.BrainLwwMaps
+import com.arubr.smsvcodes.sync.canonical.BrainPerVideo
+import com.arubr.smsvcodes.sync.canonical.CanonicalBrain
+import com.arubr.smsvcodes.sync.canonical.CanonicalBrainVectors
+import com.arubr.smsvcodes.sync.canonical.CanonicalFeedEntry
+import com.arubr.smsvcodes.sync.canonical.CanonicalRejectionSignal
+import com.arubr.smsvcodes.sync.canonical.CanonicalTopicEvidence
+import com.arubr.smsvcodes.sync.canonical.CanonicalVector
+import com.arubr.smsvcodes.sync.canonical.GCounter
+import com.arubr.smsvcodes.sync.canonical.Lww
+import com.arubr.smsvcodes.sync.merge.BrainCrdtState
+import com.arubr.smsvcodes.sync.merge.Crdt
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
 
@@ -23,7 +23,7 @@ import kotlinx.serialization.json.Json
  * Maps the brain to/from [CanonicalBrain]. Additive counters become per-device
  * G-Counters, blocklists become OR-Sets and the timestamp/evidence maps become HLC-stamped LWW
  * registers — all three sourced from the sync sidecar ([BrainCrdtState]), which is where the state
- * the brain itself cannot express is kept. See [io.github.aedev.flow.sync.merge.BrainMerger].
+ * the brain itself cannot express is kept. See [com.arubr.smsvcodes.sync.merge.BrainMerger].
  */
 object BrainMapper {
     const val SCHEMA_VERSION = 13

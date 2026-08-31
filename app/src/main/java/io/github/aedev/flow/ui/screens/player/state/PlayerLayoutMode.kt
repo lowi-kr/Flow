@@ -1,7 +1,7 @@
-package io.github.aedev.flow.ui.screens.player.state
+package com.arubr.smsvcodes.ui.screens.player.state
 
 import android.content.res.Configuration
-import io.github.aedev.flow.ui.utils.isTabletFormFactor
+import com.arubr.smsvcodes.ui.utils.isTabletFormFactor
 
 /** Which of the player detail layouts the current window can host. */
 enum class PlayerLayoutMode {

@@ -1,4 +1,4 @@
-package io.github.aedev.flow.player
+package com.arubr.smsvcodes.player
 
 internal const val DEFAULT_VIDEO_ASPECT_RATIO = 16f / 9f
 

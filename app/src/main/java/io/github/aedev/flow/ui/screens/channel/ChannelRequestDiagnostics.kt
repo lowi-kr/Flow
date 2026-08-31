@@ -1,9 +1,9 @@
-package io.github.aedev.flow.ui.screens.channel
+package com.arubr.smsvcodes.ui.screens.channel
 
 import android.os.Build
-import io.github.aedev.flow.BuildConfig
-import io.github.aedev.flow.innertube.YouTube
-import io.github.aedev.flow.innertube.models.YouTubeClient
+import com.arubr.smsvcodes.BuildConfig
+import com.arubr.smsvcodes.innertube.YouTube
+import com.arubr.smsvcodes.innertube.models.YouTubeClient
 
 internal fun buildChannelRequestErrorLog(
     operation: String,

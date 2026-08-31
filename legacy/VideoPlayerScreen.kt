@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.player
+package com.arubr.smsvcodes.ui.screens.player
 
 import android.app.Activity
 import android.content.pm.ActivityInfo
@@ -44,12 +44,12 @@ import androidx.media3.exoplayer.source.ProgressiveMediaSource
 import androidx.media3.exoplayer.source.SingleSampleMediaSource
 import androidx.media3.ui.PlayerView
 import coil.compose.AsyncImage
-import io.github.aedev.flow.data.local.VideoQuality
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.player.GlobalPlayerState
-import io.github.aedev.flow.player.PictureInPictureHelper
-import io.github.aedev.flow.ui.components.VideoCardFullWidth
-import io.github.aedev.flow.ui.theme.extendedColors
+import com.arubr.smsvcodes.data.local.VideoQuality
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.player.GlobalPlayerState
+import com.arubr.smsvcodes.player.PictureInPictureHelper
+import com.arubr.smsvcodes.ui.components.VideoCardFullWidth
+import com.arubr.smsvcodes.ui.theme.extendedColors
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.take
 import kotlin.math.abs

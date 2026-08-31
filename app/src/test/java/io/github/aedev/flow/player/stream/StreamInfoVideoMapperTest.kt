@@ -1,6 +1,6 @@
-package io.github.aedev.flow.player.stream
+package com.arubr.smsvcodes.player.stream
 
-import io.github.aedev.flow.player.stream.StreamInfoVideoMapper.toFlowVideo
+import com.arubr.smsvcodes.player.stream.StreamInfoVideoMapper.toFlowVideo
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue

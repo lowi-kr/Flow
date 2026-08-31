@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.playlists
+package com.arubr.smsvcodes.ui.screens.playlists
 
 import android.content.Context
 import android.widget.Toast
@@ -45,23 +45,23 @@ import androidx.lifecycle.viewModelScope
 import coil3.compose.AsyncImage
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.data.local.PlaylistRepository
-import io.github.aedev.flow.data.migration.WatchLaterMetadataMigrator
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.data.music.YouTubeMusicService
-import io.github.aedev.flow.player.stream.AudioStreamSelector
-import io.github.aedev.flow.ui.components.ReorderHandle
-import io.github.aedev.flow.ui.components.ThumbnailWatchProgress
-import io.github.aedev.flow.ui.components.VideoQuickActionsBottomSheet
-import io.github.aedev.flow.ui.components.rememberDateDisplaySettings
-import io.github.aedev.flow.ui.components.rememberFlowSheetState
-import io.github.aedev.flow.ui.components.rememberReorderableLazyListState
-import io.github.aedev.flow.utils.DateContext
-import io.github.aedev.flow.utils.formatPremiereDate
-import io.github.aedev.flow.utils.formatViewCount
-import io.github.aedev.flow.utils.formatYouTubeRelativeTime
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.data.local.PlaylistRepository
+import com.arubr.smsvcodes.data.migration.WatchLaterMetadataMigrator
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.data.music.YouTubeMusicService
+import com.arubr.smsvcodes.player.stream.AudioStreamSelector
+import com.arubr.smsvcodes.ui.components.ReorderHandle
+import com.arubr.smsvcodes.ui.components.ThumbnailWatchProgress
+import com.arubr.smsvcodes.ui.components.VideoQuickActionsBottomSheet
+import com.arubr.smsvcodes.ui.components.rememberDateDisplaySettings
+import com.arubr.smsvcodes.ui.components.rememberFlowSheetState
+import com.arubr.smsvcodes.ui.components.rememberReorderableLazyListState
+import com.arubr.smsvcodes.utils.DateContext
+import com.arubr.smsvcodes.utils.formatPremiereDate
+import com.arubr.smsvcodes.utils.formatViewCount
+import com.arubr.smsvcodes.utils.formatYouTubeRelativeTime
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -1405,7 +1405,7 @@ class PlaylistDetailViewModel
     constructor(
         @ApplicationContext private val context: Context,
         private val repository: PlaylistRepository,
-        private val youTubeRepository: io.github.aedev.flow.data.repository.YouTubeRepository,
+        private val youTubeRepository: com.arubr.smsvcodes.data.repository.YouTubeRepository,
         private val playerPreferences: PlayerPreferences,
         private val watchLaterMetadataMigrator: WatchLaterMetadataMigrator,
         savedStateHandle: SavedStateHandle,
@@ -1522,8 +1522,8 @@ class PlaylistDetailViewModel
 
                                 // Prefer video-only MP4 ≤720p for offline storage efficiency
                                 fun qualityHeight(s: org.schabi.newpipe.extractor.stream.VideoStream): Int =
-                                    io.github.aedev.flow.player.quality.QualityManager.normalizeQualityHeight(
-                                        io.github.aedev.flow.ui.screens.player.util.VideoPlayerUtils
+                                    com.arubr.smsvcodes.player.quality.QualityManager.normalizeQualityHeight(
+                                        com.arubr.smsvcodes.ui.screens.player.util.VideoPlayerUtils
                                             .qualityHeightFromStream(s),
                                     )
 
@@ -1562,7 +1562,7 @@ class PlaylistDetailViewModel
                                     // Without this, VP9 content written into a .mp4 filename
                                     // causes MediaMuxer to fail during audio/video merging.
                                     val videoCodec =
-                                        io.github.aedev.flow.ui.screens.player.util.VideoPlayerUtils
+                                        com.arubr.smsvcodes.ui.screens.player.util.VideoPlayerUtils
                                             .codecKeyFromStream(selectedStream)
 
                                     val qualityLabel = "${qualityHeight(selectedStream)}p"
@@ -1576,7 +1576,7 @@ class PlaylistDetailViewModel
 
                                     if (videoUrl != null) {
                                         withContext(Dispatchers.Main) {
-                                            io.github.aedev.flow.data.video.downloader.FlowDownloadService.startDownload(
+                                            com.arubr.smsvcodes.data.video.downloader.FlowDownloadService.startDownload(
                                                 context = context,
                                                 video = fullVideo,
                                                 url = videoUrl,

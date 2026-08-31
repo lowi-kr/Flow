@@ -1,14 +1,14 @@
-package io.github.aedev.flow.widget.core
+package com.arubr.smsvcodes.widget.core
 
 import android.content.Context
 import androidx.glance.appwidget.updateAll
-import io.github.aedev.flow.widget.downloads.DownloadsWidget
-import io.github.aedev.flow.widget.nowplaying.NowPlayingWidget
-import io.github.aedev.flow.widget.onrepeat.OnRepeatWidget
-import io.github.aedev.flow.widget.quickactions.QuickActionsWidget
-import io.github.aedev.flow.widget.recent.RecentlyPlayedWidget
-import io.github.aedev.flow.widget.recognize.RecognizeWidget
-import io.github.aedev.flow.widget.turntable.TurntableWidget
+import com.arubr.smsvcodes.widget.downloads.DownloadsWidget
+import com.arubr.smsvcodes.widget.nowplaying.NowPlayingWidget
+import com.arubr.smsvcodes.widget.onrepeat.OnRepeatWidget
+import com.arubr.smsvcodes.widget.quickactions.QuickActionsWidget
+import com.arubr.smsvcodes.widget.recent.RecentlyPlayedWidget
+import com.arubr.smsvcodes.widget.recognize.RecognizeWidget
+import com.arubr.smsvcodes.widget.turntable.TurntableWidget
 
 /** Registry of every Flow widget — used to re-render all of them on app theme changes. */
 object FlowWidgets {

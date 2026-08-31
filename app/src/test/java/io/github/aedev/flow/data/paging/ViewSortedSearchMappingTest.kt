@@ -1,10 +1,10 @@
-package io.github.aedev.flow.data.paging
+package com.arubr.smsvcodes.data.paging
 
-import io.github.aedev.flow.data.local.ContentType
-import io.github.aedev.flow.data.local.Duration
-import io.github.aedev.flow.data.local.SearchFilter
-import io.github.aedev.flow.data.local.SortType
-import io.github.aedev.flow.data.local.UploadDate
+import com.arubr.smsvcodes.data.local.ContentType
+import com.arubr.smsvcodes.data.local.Duration
+import com.arubr.smsvcodes.data.local.SearchFilter
+import com.arubr.smsvcodes.data.local.SortType
+import com.arubr.smsvcodes.data.local.UploadDate
 import org.junit.Assert.assertEquals
 import org.junit.Test
 

@@ -1,14 +1,14 @@
-package io.github.aedev.flow.widget.nowplaying
+package com.arubr.smsvcodes.widget.nowplaying
 
 import android.content.Context
 import androidx.media3.common.C
 import androidx.media3.common.Player
 import androidx.glance.appwidget.updateAll
 import dagger.hilt.android.qualifiers.ApplicationContext
-import io.github.aedev.flow.player.EnhancedMusicPlayerManager
-import io.github.aedev.flow.widget.core.NowPlayingSnapshot
-import io.github.aedev.flow.widget.core.markNowPlayingStopped
-import io.github.aedev.flow.widget.core.writeNowPlayingSnapshot
+import com.arubr.smsvcodes.player.EnhancedMusicPlayerManager
+import com.arubr.smsvcodes.widget.core.NowPlayingSnapshot
+import com.arubr.smsvcodes.widget.core.markNowPlayingStopped
+import com.arubr.smsvcodes.widget.core.writeNowPlayingSnapshot
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
@@ -65,6 +65,6 @@ class NowPlayingWidgetPublisher @Inject constructor(
 
     private suspend fun updatePlayerWidgets() {
         NowPlayingWidget().updateAll(context)
-        io.github.aedev.flow.widget.turntable.TurntableWidget().updateAll(context)
+        com.arubr.smsvcodes.widget.turntable.TurntableWidget().updateAll(context)
     }
 }

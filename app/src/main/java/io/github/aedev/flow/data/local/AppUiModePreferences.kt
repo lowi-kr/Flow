@@ -1,11 +1,11 @@
-package io.github.aedev.flow.data.local
+package com.arubr.smsvcodes.data.local
 
 import android.content.Context
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.stringPreferencesKey
-import io.github.aedev.flow.platform.AppUiMode
+import com.arubr.smsvcodes.platform.AppUiMode
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 

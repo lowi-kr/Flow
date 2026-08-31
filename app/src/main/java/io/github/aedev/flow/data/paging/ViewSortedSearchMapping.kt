@@ -1,19 +1,19 @@
-package io.github.aedev.flow.data.paging
+package com.arubr.smsvcodes.data.paging
 
-import io.github.aedev.flow.data.local.ContentType
-import io.github.aedev.flow.data.local.Duration
-import io.github.aedev.flow.data.local.SearchFilter
-import io.github.aedev.flow.data.local.UploadDate
-import io.github.aedev.flow.data.model.Channel
-import io.github.aedev.flow.data.model.Playlist
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.innertube.YouTubeSearchParams
-import io.github.aedev.flow.innertube.pages.SearchChannelItem
-import io.github.aedev.flow.innertube.pages.SearchPlaylistItem
-import io.github.aedev.flow.innertube.pages.SearchVideoItem
-import io.github.aedev.flow.innertube.pages.WebSearchItem
-import io.github.aedev.flow.utils.ThumbnailUrlResolver
-import io.github.aedev.flow.utils.avatarImageIdentityKey
+import com.arubr.smsvcodes.data.local.ContentType
+import com.arubr.smsvcodes.data.local.Duration
+import com.arubr.smsvcodes.data.local.SearchFilter
+import com.arubr.smsvcodes.data.local.UploadDate
+import com.arubr.smsvcodes.data.model.Channel
+import com.arubr.smsvcodes.data.model.Playlist
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.innertube.YouTubeSearchParams
+import com.arubr.smsvcodes.innertube.pages.SearchChannelItem
+import com.arubr.smsvcodes.innertube.pages.SearchPlaylistItem
+import com.arubr.smsvcodes.innertube.pages.SearchVideoItem
+import com.arubr.smsvcodes.innertube.pages.WebSearchItem
+import com.arubr.smsvcodes.utils.ThumbnailUrlResolver
+import com.arubr.smsvcodes.utils.avatarImageIdentityKey
 
 internal fun SearchFilter.toViewSortedSearchParams(): String =
     YouTubeSearchParams.sortedByViewCount(

@@ -1,4 +1,4 @@
-package io.github.aedev.flow.utils
+package com.arubr.smsvcodes.utils
 
 object ThumbnailUrlResolver {
     private val youtubeVideoThumbnailPattern =

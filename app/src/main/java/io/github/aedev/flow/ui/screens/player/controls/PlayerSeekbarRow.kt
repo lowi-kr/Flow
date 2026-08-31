@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.player.controls
+package com.arubr.smsvcodes.ui.screens.player.controls
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -14,9 +14,9 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.zIndex
-import io.github.aedev.flow.data.model.SponsorBlockSegment
-import io.github.aedev.flow.ui.screens.player.components.SeekbarWithPreview
-import io.github.aedev.flow.ui.theme.PlayerLiveIndicator
+import com.arubr.smsvcodes.data.model.SponsorBlockSegment
+import com.arubr.smsvcodes.ui.screens.player.components.SeekbarWithPreview
+import com.arubr.smsvcodes.ui.theme.PlayerLiveIndicator
 import org.schabi.newpipe.extractor.stream.StreamSegment
 
 /**

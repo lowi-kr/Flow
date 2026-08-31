@@ -1,9 +1,9 @@
-package io.github.aedev.flow.ui.tv
+package com.arubr.smsvcodes.ui.tv
 
-import io.github.aedev.flow.data.local.LikedVideoInfo
-import io.github.aedev.flow.data.local.VideoHistoryEntry
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.ui.screens.music.MusicTrack
+import com.arubr.smsvcodes.data.local.LikedVideoInfo
+import com.arubr.smsvcodes.data.local.VideoHistoryEntry
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.ui.screens.music.MusicTrack
 
 internal fun VideoHistoryEntry.toTvVideo(): Video = Video(
     id = videoId,

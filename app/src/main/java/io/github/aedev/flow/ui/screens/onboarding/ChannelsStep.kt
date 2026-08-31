@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.onboarding
+package com.arubr.smsvcodes.ui.screens.onboarding
 
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.animation.core.tween
@@ -56,9 +56,9 @@ import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.model.distinctByNonBlankKey
-import io.github.aedev.flow.utils.formatSubscriberCount
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.model.distinctByNonBlankKey
+import com.arubr.smsvcodes.utils.formatSubscriberCount
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.withContext

@@ -1,10 +1,10 @@
-package io.github.aedev.flow.data.repository
+package com.arubr.smsvcodes.data.repository
 
 import android.util.LruCache
-import io.github.aedev.flow.data.model.DeArrowContent
-import io.github.aedev.flow.data.model.DeArrowResult
+import com.arubr.smsvcodes.data.model.DeArrowContent
+import com.arubr.smsvcodes.data.model.DeArrowResult
 import com.google.gson.Gson
-import io.github.aedev.flow.network.AppProxyManager
+import com.arubr.smsvcodes.network.AppProxyManager
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import okhttp3.OkHttpClient

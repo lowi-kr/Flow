@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.channel
+package com.arubr.smsvcodes.ui.screens.channel
 
 import android.content.Context
 import android.util.Log
@@ -10,23 +10,23 @@ import androidx.paging.PagingData
 import androidx.paging.cachedIn
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.local.ChannelSubscription
-import io.github.aedev.flow.data.local.SubscriptionRepository
-import io.github.aedev.flow.data.model.Comment
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.data.model.distinctByNonBlankKey
-import io.github.aedev.flow.data.model.mergeDistinctByNonBlankKey
-import io.github.aedev.flow.data.paging.ChannelPlaylistsPagingSource
-import io.github.aedev.flow.data.paging.ChannelShortsPagingSource
-import io.github.aedev.flow.data.paging.ChannelVideosPagingSource
-import io.github.aedev.flow.data.shorts.ShortsContentFilter
-import io.github.aedev.flow.innertube.YouTube
-import io.github.aedev.flow.innertube.pages.ChannelSortOption
-import io.github.aedev.flow.innertube.pages.CommunityPost
-import io.github.aedev.flow.ui.youtubeChannelUrl
-import io.github.aedev.flow.utils.PerformanceDispatcher
-import io.github.aedev.flow.utils.ThumbnailUrlResolver
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.local.ChannelSubscription
+import com.arubr.smsvcodes.data.local.SubscriptionRepository
+import com.arubr.smsvcodes.data.model.Comment
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.data.model.distinctByNonBlankKey
+import com.arubr.smsvcodes.data.model.mergeDistinctByNonBlankKey
+import com.arubr.smsvcodes.data.paging.ChannelPlaylistsPagingSource
+import com.arubr.smsvcodes.data.paging.ChannelShortsPagingSource
+import com.arubr.smsvcodes.data.paging.ChannelVideosPagingSource
+import com.arubr.smsvcodes.data.shorts.ShortsContentFilter
+import com.arubr.smsvcodes.innertube.YouTube
+import com.arubr.smsvcodes.innertube.pages.ChannelSortOption
+import com.arubr.smsvcodes.innertube.pages.CommunityPost
+import com.arubr.smsvcodes.ui.youtubeChannelUrl
+import com.arubr.smsvcodes.utils.PerformanceDispatcher
+import com.arubr.smsvcodes.utils.ThumbnailUrlResolver
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
@@ -110,8 +110,8 @@ class ChannelViewModel
                 ).flow.cachedIn(viewModelScope)
         }
 
-        private val _playlistsPagingFlow = MutableStateFlow<Flow<PagingData<io.github.aedev.flow.data.model.Playlist>>?>(null)
-        val playlistsPagingFlow: StateFlow<Flow<PagingData<io.github.aedev.flow.data.model.Playlist>>?> = _playlistsPagingFlow.asStateFlow()
+        private val _playlistsPagingFlow = MutableStateFlow<Flow<PagingData<com.arubr.smsvcodes.data.model.Playlist>>?>(null)
+        val playlistsPagingFlow: StateFlow<Flow<PagingData<com.arubr.smsvcodes.data.model.Playlist>>?> = _playlistsPagingFlow.asStateFlow()
 
         // Eagerly loaded full video lists (all pages) for filter support
         private val _videosAll = MutableStateFlow<List<Video>>(emptyList())
@@ -533,7 +533,7 @@ class ChannelViewModel
                         }
 
                     val result =
-                        io.github.aedev.flow.innertube.YouTube.channelSearch(
+                        com.arubr.smsvcodes.innertube.YouTube.channelSearch(
                             channelId = channelId,
                             channelName = channelInfo.name,
                             channelThumbnailUrl = channelThumbnail,
@@ -710,7 +710,7 @@ class ChannelViewModel
             val textualDate = textualUploadDate?.takeIf { it.isNotBlank() }
             val displayUploadDate =
                 textualDate
-                    ?: io.github.aedev.flow.utils
+                    ?: com.arubr.smsvcodes.utils
                         .formatTimeAgo(uploadDate?.offsetDateTime()?.toString())
             val uploadTimestamp =
                 absoluteUploadTimestamp

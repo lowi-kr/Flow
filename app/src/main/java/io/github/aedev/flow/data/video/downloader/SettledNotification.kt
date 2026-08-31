@@ -1,4 +1,4 @@
-package io.github.aedev.flow.data.video.downloader
+package com.arubr.smsvcodes.data.video.downloader
 
 /** What a download's notification should be left showing once its coroutine has stopped running. */
 enum class SettledNotification {

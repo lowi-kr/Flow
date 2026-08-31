@@ -1,6 +1,6 @@
-package io.github.aedev.flow.data.shorts.queue
+package com.arubr.smsvcodes.data.shorts.queue
 
-import io.github.aedev.flow.data.model.ShortVideo
+import com.arubr.smsvcodes.data.model.ShortVideo
 
 /**
  * One page of a Shorts queue.
