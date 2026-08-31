@@ -20,6 +20,7 @@ import io.github.aedev.flow.data.model.distinctByNonBlankKey
 import io.github.aedev.flow.data.music.DownloadManager
 import io.github.aedev.flow.data.music.PlaylistRepository
 import io.github.aedev.flow.data.music.YouTubeMusicService
+import io.github.aedev.flow.data.recommendation.music.MusicBrainEngine
 import io.github.aedev.flow.player.EnhancedMusicPlayerManager
 import io.github.aedev.flow.player.RepeatMode
 import io.github.aedev.flow.utils.PerformanceDispatcher
@@ -49,6 +50,7 @@ class MusicPlayerViewModel
         private val likedVideosRepository: LikedVideosRepository,
         private val viewHistory: ViewHistory,
         private val localPlaylistRepository: io.github.aedev.flow.data.local.PlaylistRepository,
+        private val musicBrain: MusicBrainEngine,
     ) : ViewModel() {
         private val _uiState = MutableStateFlow(MusicPlayerUiState())
         val uiState: StateFlow<MusicPlayerUiState> = _uiState.asStateFlow()
@@ -245,7 +247,7 @@ class MusicPlayerViewModel
                             title = track.title,
                             thumbnailUrl = track.thumbnailUrl,
                             channelName = track.artist,
-                            channelId = "",
+                            channelId = track.channelId,
                             isMusic = true,
                             isLocal = true,
                         )
@@ -261,9 +263,21 @@ class MusicPlayerViewModel
             sourceName: String? = null,
         ) {
             loadTrackJob?.cancel()
+            // Genre-scoped surfaces tag their source; the genre becomes listen
+            // context for this queue and is stripped from the display label.
+            // Any non-tagged queue start clears the previous context.
+            val contextGenre =
+                sourceName
+                    ?.trim()
+                    ?.takeIf { it.startsWith(MUSIC_GENRE_SOURCE_PREFIX) }
+                    ?.removePrefix(MUSIC_GENRE_SOURCE_PREFIX)
+                    ?.trim()
+                    ?.takeIf { it.isNotEmpty() }
+            EnhancedMusicPlayerManager.playContextGenre = contextGenre
+            val displaySourceName = contextGenre ?: sourceName
             loadTrackJob =
                 viewModelScope.launch {
-                    val finalSourceName = resolveSourceName(sourceName, track)
+                    val finalSourceName = resolveSourceName(displaySourceName, track)
                     val activeQueue = if (queue.isNotEmpty()) queue else listOf(track)
                     val localUriOverrides =
                         withContext(PerformanceDispatcher.diskIO) {
@@ -321,7 +335,7 @@ class MusicPlayerViewModel
                                 title = track.title,
                                 thumbnailUrl = track.thumbnailUrl,
                                 channelName = track.artist,
-                                channelId = "",
+                                channelId = track.channelId,
                                 isMusic = true,
                             )
                         }
@@ -329,19 +343,8 @@ class MusicPlayerViewModel
                         launch(PerformanceDispatcher.networkIO) {
                             fetchRelatedContent(track.videoId)
                         }
-
-                        if (queue.size <= 1) {
-                            launch(PerformanceDispatcher.networkIO) {
-                                val relatedTracks =
-                                    withTimeoutOrNull(8_000L) {
-                                        YouTubeMusicService.getRelatedMusic(track.videoId, 20)
-                                    } ?: emptyList()
-
-                                if (relatedTracks.isNotEmpty()) {
-                                    EnhancedMusicPlayerManager.updateAutomixItems(relatedTracks)
-                                }
-                            }
-                        }
+                        // Single-track queues need no special automix fill: the service
+                        // seeds the radio pool for every new queue context.
                     }
                 }
         }
@@ -359,6 +362,9 @@ class MusicPlayerViewModel
             val mapped =
                 when (key) {
                     "listen_again" -> context.getString(R.string.section_listen_again)
+                    "on_repeat" -> context.getString(R.string.section_on_repeat)
+                    "rotation" -> context.getString(R.string.source_your_rotation)
+                    "rediscover" -> context.getString(R.string.section_rediscover)
                     "daily_discover" -> context.getString(R.string.section_daily_discover)
                     "quick_picks" -> context.getString(R.string.section_quick_picks)
                     "speed_dial", "speed_dial_shuffle" -> context.getString(R.string.section_speed_dial)
@@ -526,13 +532,14 @@ class MusicPlayerViewModel
                             YouTubeMusicService.getRelatedMusic(videoId, 20)
                         } ?: emptyList()
 
+                    // Related content is display-only here: the radio pool (automix)
+                    // is owned by Media3MusicService and must not churn per track.
                     _uiState.update {
                         it.copy(
                             relatedContent = related,
                             isRelatedLoading = false,
                         )
                     }
-                    EnhancedMusicPlayerManager.updateAutomixItems(related)
                 } catch (e: Exception) {
                     _uiState.update { it.copy(isRelatedLoading = false) }
                 }
@@ -564,9 +571,36 @@ class MusicPlayerViewModel
                             isMusic = true,
                         ),
                     )
+                    musicBrain.onExplicitLike(currentTrack)
                 } else {
                     likedVideosRepository.removeLikeState(currentTrack.videoId)
                 }
+            }
+        }
+
+        /**
+         * "Not interested": soft-suppresses the track's artist for two weeks. A
+         * second one while still suppressed escalates to a permanent block —
+         * mirrored from the desktop two-layer feedback system.
+         */
+        fun notInterested(track: MusicTrack) {
+            val primary = track.artists.firstOrNull()
+            viewModelScope.launch(PerformanceDispatcher.diskIO) {
+                musicBrain.dislikeArtist(
+                    primary?.id ?: track.channelId.takeIf { it.isNotBlank() },
+                    primary?.name ?: track.artist,
+                )
+            }
+        }
+
+        /** "Don't recommend {artist}": an immediate permanent hard block, reversible in settings. */
+        fun dontRecommendArtist(track: MusicTrack) {
+            val primary = track.artists.firstOrNull()
+            viewModelScope.launch(PerformanceDispatcher.diskIO) {
+                musicBrain.blockArtist(
+                    primary?.id ?: track.channelId.takeIf { it.isNotBlank() },
+                    primary?.name ?: track.artist,
+                )
             }
         }
 
@@ -582,7 +616,7 @@ class MusicPlayerViewModel
                         id = trackToAdd.videoId,
                         title = trackToAdd.title,
                         channelName = trackToAdd.artist,
-                        channelId = "",
+                        channelId = trackToAdd.channelId,
                         thumbnailUrl = trackToAdd.thumbnailUrl,
                         duration = trackToAdd.duration,
                         viewCount = 0,
