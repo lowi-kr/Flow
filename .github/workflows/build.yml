@@ -7,8 +7,6 @@ on:
       - 'v*'
   pull_request:
     branches: [ main ]
-    tags:
-      - 'v*'
   workflow_dispatch:
 
 # Collapse superseded runs on branches and PRs. Tag runs publish the release
