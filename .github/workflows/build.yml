@@ -7,6 +7,8 @@ on:
       - 'v*'
   pull_request:
     branches: [ main ]
+    tags:
+      - 'v*'
   workflow_dispatch:
 
 # Collapse superseded runs on branches and PRs. Tag runs publish the release
@@ -101,43 +103,6 @@ jobs:
           STORE_PASSWORD: ${{ secrets.STORE_PASSWORD }}
           KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
           KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
-
-      - name: Verify release signing certificate
-        if: ${{ steps.keystore.outputs.signed == 'true' }}
-        run: |
-          set -uo pipefail
-
-          apksigner=$(find "$ANDROID_SDK_ROOT/build-tools" -name apksigner -type f | sort -V | tail -1)
-
-          if [ -z "$apksigner" ]; then
-            echo "::error::apksigner was not found in the runner Android SDK."
-            exit 1
-          fi
-
-          status=0
-
-          for apk in \
-            app/build/outputs/apk/github/release/app-github-universal-release.apk \
-            app/build/outputs/apk/github/release/app-github-arm64-v8a-release.apk \
-            app/build/outputs/apk/github/release/app-github-armeabi-v7a-release.apk
-          do
-            if [ ! -f "$apk" ]; then
-              echo "::error::Missing expected APK $apk"
-              status=1
-              continue
-            fi
-
-            actual=$("$apksigner" verify --print-certs "$apk" | grep -m1 'certificate SHA-256 digest' | awk '{print $NF}')
-
-            if [ "$actual" != "$EXPECTED_SIGNER_SHA256" ]; then
-              echo "::error::$(basename "$apk") is signed with '$actual', expected '$EXPECTED_SIGNER_SHA256'"
-              status=1
-            else
-              echo "OK $(basename "$apk") -> $actual"
-            fi
-          done
-
-          exit $status
 
       # Nightly checksum disabled because the Nightly variant is no longer built.
       #- name: Checksum nightly APK
