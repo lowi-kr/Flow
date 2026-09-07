@@ -40,6 +40,7 @@ import io.github.aedev.flow.R
 import io.github.aedev.flow.data.download.DownloadUtil
 import io.github.aedev.flow.data.model.ParametricEQ
 import io.github.aedev.flow.data.music.YouTubeMusicService
+import io.github.aedev.flow.data.music.model.MusicTrack
 import io.github.aedev.flow.data.newmusic.InnertubeMusicService
 import io.github.aedev.flow.data.recommendation.music.MusicBrainEngine
 import io.github.aedev.flow.extensions.setOffloadEnabled
@@ -48,6 +49,7 @@ import io.github.aedev.flow.innertube.models.WatchEndpoint
 import io.github.aedev.flow.player.audio.CustomEqualizerAudioProcessor
 import io.github.aedev.flow.player.audio.shouldHandleAudioFocus
 import io.github.aedev.flow.player.factory.LoadControlFactory
+import io.github.aedev.flow.player.sessionArtworkBitmapLoader
 import io.github.aedev.flow.utils.MusicPlayerUtils
 import io.github.aedev.flow.utils.NetworkConnectivityObserver
 import kotlinx.coroutines.Dispatchers
@@ -61,6 +63,7 @@ import kotlinx.serialization.json.Json
 import java.util.Locale
 import javax.inject.Inject
 import kotlin.math.min
+import kotlin.math.pow
 
 @AndroidEntryPoint
 class Media3MusicService : MediaLibraryService() {
@@ -135,6 +138,7 @@ class Media3MusicService : MediaLibraryService() {
     private var radioEndpoint: WatchEndpoint? = null
     private var radioTopUpJob: Job? = null
     private var radioAutoplayEnabled = true
+    private var loudnessNormalizationEnabled = true
     private var lastQueueIds: List<String>? = null
 
     // Queue-end continuation: appends go through the manager's MediaController and
@@ -206,6 +210,12 @@ class Media3MusicService : MediaLibraryService() {
             prefs.musicEndlessRadioEnabled.collect { radioAutoplayEnabled = it }
         }
         lifecycleScope.launch {
+            prefs.musicLoudnessNormalizationEnabled.collect {
+                loudnessNormalizationEnabled = it
+                applyLoudnessGain()
+            }
+        }
+        lifecycleScope.launch {
             var lastQuality: io.github.aedev.flow.data.local.MusicAudioQuality? = null
             prefs.musicAudioQuality.collect { quality ->
                 val previous = lastQuality
@@ -224,6 +234,16 @@ class Media3MusicService : MediaLibraryService() {
                 .distinctUntilChanged()
                 .collectLatest(::applyPlayDuringCallsPreference)
         }
+    }
+
+    private fun applyLoudnessGain() {
+        if (!::player.isInitialized) return
+        val mediaId = player.currentMediaItem?.mediaId
+        val gainDb =
+            mediaId
+                ?.takeIf { loudnessNormalizationEnabled && !it.startsWith(LOCAL_MEDIA_PREFIX) }
+                ?.let(MusicPlayerUtils::cachedLoudnessGainDb)
+        player.volume = if (gainDb == null) 1f else 10.0.pow(gainDb / 20.0).toFloat()
     }
 
     private fun applyPlayDuringCallsPreference(playDuringCalls: Boolean) {
@@ -322,6 +342,7 @@ class Media3MusicService : MediaLibraryService() {
                 ) {
                     finalizeListenSession()
                     startListenSession(mediaItem?.mediaId)
+                    applyLoudnessGain()
 
                     if (
                         reason == Player.MEDIA_ITEM_TRANSITION_REASON_AUTO ||
@@ -412,6 +433,7 @@ class Media3MusicService : MediaLibraryService() {
                     }
                     if (playbackState == Player.STATE_READY) {
                         refreshLearnDuration()
+                        applyLoudnessGain()
                         player.currentMediaItem?.mediaId?.let { mediaId ->
                             val lastErrorAt = lastPlaybackErrorAtMap[mediaId] ?: 0L
                             if (System.currentTimeMillis() - lastErrorAt > RECOVERY_SUCCESS_GRACE_MS) {
@@ -454,7 +476,7 @@ class Media3MusicService : MediaLibraryService() {
     // so relistens still count once each.
 
     private var learnMediaId: String? = null
-    private var learnTrack: io.github.aedev.flow.ui.screens.music.MusicTrack? = null
+    private var learnTrack: MusicTrack? = null
     private var learnGenre: String? = null
     private var learnDurationMs = 0L
     private var learnPlayedMs = 0L
@@ -476,7 +498,7 @@ class Media3MusicService : MediaLibraryService() {
         if (d > 0) learnDurationMs = d
     }
 
-    private fun resolveLearnTrack(mediaId: String?): io.github.aedev.flow.ui.screens.music.MusicTrack? {
+    private fun resolveLearnTrack(mediaId: String?): MusicTrack? {
         if (mediaId.isNullOrBlank()) return null
         val manager = io.github.aedev.flow.player.EnhancedMusicPlayerManager
         return manager.queue.value.firstOrNull { it.videoId == mediaId }
@@ -943,6 +965,7 @@ class Media3MusicService : MediaLibraryService() {
             MediaLibrarySession
                 .Builder(this, player, LibrarySessionCallback())
                 .setSessionActivity(pendingIntent)
+                .setBitmapLoader(sessionArtworkBitmapLoader(this))
                 .build()
 
         setMediaNotificationProvider(CustomNotificationProvider())
@@ -1178,10 +1201,15 @@ class Media3MusicService : MediaLibraryService() {
         if (!ended && remaining > RADIO_MIN_UPCOMING) return
 
         val queueIds = manager.queue.value.mapTo(HashSet()) { it.videoId }
-        val batch =
+        // A wider candidate window than the batch gives the artist spread real
+        // alternatives; sequencing is seeded with the queue tail so the appended
+        // batch never opens with the artist that just played (review feedback:
+        // same artist back-to-back in a 10-track radio queue).
+        val candidates =
             manager.automixItems.value
                 .filterNot { it.videoId in queueIds }
-                .take(RADIO_APPEND_BATCH)
+                .take(RADIO_APPEND_BATCH * 2)
+        val batch = musicBrain.sequenceRadioBatch(candidates, manager.queue.value.lastOrNull(), RADIO_APPEND_BATCH)
         if (ended && batch.isNotEmpty() && !radioResumeWhenAppended) {
             radioResumeWhenAppended = true
             radioEndedItemCount = player.mediaItemCount
@@ -1458,7 +1486,7 @@ class Media3MusicService : MediaLibraryService() {
                     .build(),
             ).build()
 
-    private fun io.github.aedev.flow.ui.screens.music.MusicTrack.toAutoMediaItem(): MediaItem {
+    private fun MusicTrack.toAutoMediaItem(): MediaItem {
         val artwork =
             highResThumbnailUrl
                 .ifBlank { thumbnailUrl }
@@ -1482,7 +1510,7 @@ class Media3MusicService : MediaLibraryService() {
             ).build()
     }
 
-    private fun autoTrackForMediaId(mediaId: String): io.github.aedev.flow.ui.screens.music.MusicTrack? {
+    private fun autoTrackForMediaId(mediaId: String): MusicTrack? {
         val manager = io.github.aedev.flow.player.EnhancedMusicPlayerManager
         return manager.queue.value.firstOrNull { it.videoId == mediaId }
             ?: manager.currentTrack.value?.takeIf { it.videoId == mediaId }

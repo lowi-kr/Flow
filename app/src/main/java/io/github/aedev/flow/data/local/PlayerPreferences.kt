@@ -26,6 +26,7 @@ internal fun resolveMigratedHideWatchedPreference(
 private val Context.playerPreferencesDataStore: DataStore<Preferences> by safePreferencesDataStore(name = "player_preferences")
 
 const val DEEP_FLOW_NEVER_EXPIRES_HOURS = 0
+const val CONTENT_LANGUAGE_FOLLOW_APP = "app"
 const val DEFAULT_PORTRAIT_SEEKBAR_PADDING_DP = 16
 const val MAX_PORTRAIT_SEEKBAR_PADDING_DP = 64
 const val DEFAULT_FULLSCREEN_SEEKBAR_PADDING_DP = 48
@@ -66,6 +67,8 @@ class PlayerPreferences(
         val SLEEP_TIMER_CLOSE_APP_ON_EXPIRY = booleanPreferencesKey("sleep_timer_close_app_on_expiry")
         val TRENDING_REGION = stringPreferencesKey("trending_region")
         val APP_LANGUAGE = stringPreferencesKey("app_language")
+        val CONTENT_LANGUAGE = stringPreferencesKey("content_language")
+        val MUSIC_LOUDNESS_NORMALIZATION_ENABLED = booleanPreferencesKey("music_loudness_normalization_enabled")
         val SKIP_SILENCE_ENABLED = booleanPreferencesKey("skip_silence_enabled")
         val SPONSOR_BLOCK_ENABLED = booleanPreferencesKey("sponsor_block_enabled")
         val AUTO_PIP_ENABLED = booleanPreferencesKey("auto_pip_enabled")
@@ -122,7 +125,6 @@ class PlayerPreferences(
         val HIDE_MUSIC_PLAYER_ARTWORK = booleanPreferencesKey("hide_music_player_artwork")
         val SHORTS_PLAYER_UI_MODE = stringPreferencesKey("shorts_player_ui_mode")
         val GROUPED_QUALITY_SELECTOR_ENABLED = booleanPreferencesKey("grouped_quality_selector_enabled")
-        val SQUIGGLY_SLIDER_ENABLED = booleanPreferencesKey("squiggly_slider_enabled")
         val SHORTS_CONTENT_ENABLED = booleanPreferencesKey("shorts_content_enabled")
         val SHORTS_SHELF_ENABLED = booleanPreferencesKey("shorts_shelf_enabled")
         val HOME_SHORTS_SHELF_ENABLED = booleanPreferencesKey("home_shorts_shelf_enabled")
@@ -134,6 +136,7 @@ class PlayerPreferences(
         val CATEGORIES_NAV_TAB_ENABLED = booleanPreferencesKey("categories_nav_tab_enabled")
         val PREFERRED_LYRICS_PROVIDER = stringPreferencesKey("preferred_lyrics_provider")
         val LYRICS_PROVIDER_ORDER = stringPreferencesKey("lyrics_provider_order")
+        val LYRICS_TEXT_ALIGN = stringPreferencesKey("lyrics_text_align")
         val LYRICS_PROVIDER_ENABLED_BETTERLYRICS = booleanPreferencesKey("lyrics_provider_enabled_betterlyrics")
         val LYRICS_PROVIDER_ENABLED_SIMPMUSIC = booleanPreferencesKey("lyrics_provider_enabled_simpmusic")
         val LYRICS_PROVIDER_ENABLED_LYRICSPLUS = booleanPreferencesKey("lyrics_provider_enabled_lyricsplus")
@@ -230,6 +233,7 @@ class PlayerPreferences(
         val SUBS_LAST_REFRESH_TIME = longPreferencesKey("subs_last_refresh_time")
         val SUBS_LAST_REFRESHED_COUNT = intPreferencesKey("subs_last_refreshed_count")
         val SUBS_SHOW_CHECKED_VIDEO_COUNT = booleanPreferencesKey("subs_show_checked_video_count")
+        val SHOW_CHANNEL_GROUP_BADGES = booleanPreferencesKey("show_channel_group_badges")
 
         // Donation / support prompt
         val DONATION_FIRST_LAUNCH_TIME = longPreferencesKey("donation_first_launch_time")
@@ -668,11 +672,16 @@ class PlayerPreferences(
         return newId
     }
 
-    // Slider Style preference
+    // Slider Style preference.
     val sliderStyle: Flow<SliderStyle> =
         context.playerPreferencesDataStore.data
             .map { preferences ->
-                SliderStyle.valueOf(preferences[Keys.SLIDER_STYLE] ?: SliderStyle.METROLIST_SLIM.name)
+                when (val stored = preferences[Keys.SLIDER_STYLE]) {
+                    null -> SliderStyle.COMPACT
+                    "METROLIST" -> SliderStyle.THICK
+                    "METROLIST_SLIM" -> SliderStyle.COMPACT
+                    else -> runCatching { SliderStyle.valueOf(stored) }.getOrDefault(SliderStyle.COMPACT)
+                }
             }
 
     suspend fun setSliderStyle(style: SliderStyle) {
@@ -733,18 +742,6 @@ class PlayerPreferences(
     suspend fun setGroupedQualitySelectorEnabled(enabled: Boolean) {
         context.playerPreferencesDataStore.edit { preferences ->
             preferences[Keys.GROUPED_QUALITY_SELECTOR_ENABLED] = enabled
-        }
-    }
-
-    val squigglySliderEnabled: Flow<Boolean> =
-        context.playerPreferencesDataStore.data
-            .map { preferences ->
-                preferences[Keys.SQUIGGLY_SLIDER_ENABLED] ?: false
-            }
-
-    suspend fun setSquigglySliderEnabled(enabled: Boolean) {
-        context.playerPreferencesDataStore.edit { preferences ->
-            preferences[Keys.SQUIGGLY_SLIDER_ENABLED] = enabled
         }
     }
 
@@ -1003,6 +1000,30 @@ class PlayerPreferences(
     suspend fun setAppLanguage(languageTag: String) {
         context.playerPreferencesDataStore.edit { preferences ->
             preferences[Keys.APP_LANGUAGE] = languageTag
+        }
+    }
+
+    val contentLanguage: Flow<String> =
+        context.playerPreferencesDataStore.data
+            .map { preferences ->
+                preferences[Keys.CONTENT_LANGUAGE] ?: CONTENT_LANGUAGE_FOLLOW_APP
+            }
+
+    suspend fun setContentLanguage(languageTag: String) {
+        context.playerPreferencesDataStore.edit { preferences ->
+            preferences[Keys.CONTENT_LANGUAGE] = languageTag
+        }
+    }
+
+    val musicLoudnessNormalizationEnabled: Flow<Boolean> =
+        context.playerPreferencesDataStore.data
+            .map { preferences ->
+                preferences[Keys.MUSIC_LOUDNESS_NORMALIZATION_ENABLED] ?: true
+            }
+
+    suspend fun setMusicLoudnessNormalizationEnabled(enabled: Boolean) {
+        context.playerPreferencesDataStore.edit { preferences ->
+            preferences[Keys.MUSIC_LOUDNESS_NORMALIZATION_ENABLED] = enabled
         }
     }
 
@@ -1727,6 +1748,16 @@ class PlayerPreferences(
     val subscriptionLastRefreshedCount: Flow<Int> =
         context.playerPreferencesDataStore.data
             .map { preferences -> preferences[Keys.SUBS_LAST_REFRESHED_COUNT] ?: 0 }
+
+    val showChannelGroupBadges: Flow<Boolean> =
+        context.playerPreferencesDataStore.data
+            .map { preferences -> preferences[Keys.SHOW_CHANNEL_GROUP_BADGES] ?: false }
+
+    suspend fun setShowChannelGroupBadges(enabled: Boolean) {
+        context.playerPreferencesDataStore.edit { preferences ->
+            preferences[Keys.SHOW_CHANNEL_GROUP_BADGES] = enabled
+        }
+    }
 
     val subscriptionShowCheckedVideoCount: Flow<Boolean> =
         context.playerPreferencesDataStore.data
@@ -2635,6 +2666,18 @@ class PlayerPreferences(
             providerEnabledKeys.mapValues { (_, key) -> preferences[key] ?: true }
         }
 
+    val lyricsTextAlign: Flow<String> =
+        context.playerPreferencesDataStore.data
+            .map { preferences ->
+                preferences[Keys.LYRICS_TEXT_ALIGN] ?: LYRICS_ALIGN_CENTER
+            }
+
+    suspend fun setLyricsTextAlign(align: String) {
+        context.playerPreferencesDataStore.edit { preferences ->
+            preferences[Keys.LYRICS_TEXT_ALIGN] = align
+        }
+    }
+
     // ========== MINI PLAYER PREFERENCES ==========
 
     val miniPlayerScale: Flow<Float> =
@@ -2947,9 +2990,10 @@ enum class MusicAudioQuality(
 
 enum class SliderStyle {
     DEFAULT,
-    METROLIST,
-    METROLIST_SLIM,
+    THICK,
+    COMPACT,
     SQUIGGLY,
+    EXPRESSIVE_WAVY,
     SLIM,
 }
 
@@ -2962,6 +3006,7 @@ enum class MusicPlayerBackgroundStyle {
     BLUR_GRADIENT,
     BLUR,
     GRADIENT,
+    IMMERSIVE,
     DEFAULT,
 }
 
@@ -3038,3 +3083,7 @@ enum class WatchedThreshold(
         }
     }
 }
+
+const val LYRICS_ALIGN_LEFT = "left"
+const val LYRICS_ALIGN_CENTER = "center"
+const val LYRICS_ALIGN_RIGHT = "right"

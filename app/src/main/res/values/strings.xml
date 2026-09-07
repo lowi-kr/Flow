@@ -27,6 +27,12 @@
         <item quantity="one">%d channel couldn\'t be loaded</item>
         <item quantity="other">%d channels couldn\'t be loaded</item>
     </plurals>
+    <string name="subscriptions_failed_channels_copy_logs">Copy logs</string>
+    <string name="content_settings_channel_group_badge_title">Show group on channel avatars</string>
+    <string name="content_settings_channel_group_badge_subtitle">Label channel and artist avatars with the subscription group they belong to</string>
+    <string name="channel_add_to_group">Add to group</string>
+    <string name="channel_groups_sheet_title">Channel groups</string>
+    <string name="channel_groups_empty">No groups yet</string>
     <string name="subscriptions_failed_channels_body">Their latest videos are missing from this feed: %1$s</string>
     <string name="subscriptions_failed_channels_more">%1$s and %2$d more</string>
     <string name="retry">Retry</string>
@@ -134,6 +140,30 @@
     <string name="move_down">Move down</string>
     <string name="lyrics_not_available">Lyrics not available</string>
     <string name="refresh_lyrics">Refresh lyrics</string>
+    <string name="lyrics_save_file">Save as .lrc file</string>
+    <plurals name="queue_track_count">
+        <item quantity="one">%1$d track</item>
+        <item quantity="other">%1$d tracks</item>
+    </plurals>
+    <string name="lyrics_saved">Lyrics saved</string>
+    <string name="lyrics_save_failed">Could not save lyrics</string>
+    <string name="lyrics_choose_source">Choose lyrics source</string>
+    <string name="lyrics_synced_badge">Synced</string>
+    <string name="lyrics_edit">Edit lyrics</string>
+    <string name="lyrics_copy">Copy lyrics</string>
+    <string name="lyrics_copied">Lyrics copied</string>
+    <string name="lyrics_alignment">Alignment</string>
+    <string name="lyrics_align_left">Align left</string>
+    <string name="lyrics_align_center">Align center</string>
+    <string name="lyrics_align_right">Align right</string>
+    <string name="lyrics_adjust_sync">Adjust sync offset</string>
+    <string name="lyrics_sync_offset_value">%1$ss</string>
+    <string name="lyrics_sync_reset">Reset lyrics timing</string>
+    <string name="lyrics_searching_sources">Searching sources…</string>
+    <string name="lyrics_no_sources_found">No lyrics found from any source</string>
+    <string name="lyrics_source_edited">Edited</string>
+    <string name="lyrics_current_source">Current source: %1$s</string>
+    <string name="lyrics_display_header">Display</string>
     <string name="playing">Playing</string>
     <string name="remove">Remove</string>
     <string name="related_content">Related Content</string>
@@ -193,8 +223,6 @@
     <string name="save_to">Save to...</string>
     <string name="watch_later">Watch later</string>
     <string name="watch_later_unsave">Unsave Watch Later</string>
-    <string name="playlist_private">Private</string>
-    <string name="playlist_public">Public</string>
     <string name="create_new_playlist">Create new playlist</string>
     <string name="playlist_name">Name</string>
     <string name="playlist_description_optional">Description (optional)</string>
@@ -327,7 +355,6 @@
     <string name="chapters">Chapters</string>
     <string name="artist">Artist</string>
     <string name="playlist">Playlist</string>
-    <string name="playlist_visibility_metadata">%1$s • %2$s</string>
     <string name="app_name_uppercase">FLOW</string>
     <string name="notification_badge_9_plus">9+</string>
     <string name="personalized_feed">Your personalized feed</string>
@@ -653,6 +680,7 @@
     <string name="player_background_style_blur_gradient">Blur + Gradient</string>
     <string name="player_background_style_blur">Blurred Artwork</string>
     <string name="player_background_style_gradient">Palette Gradient</string>
+    <string name="player_background_style_immersive">Immersive Artwork</string>
     <string name="player_background_style_default">Default Surface</string>
     <string name="player_appearance_hide_music_artwork_title">Hide music player artwork</string>
     <string name="player_appearance_hide_music_artwork_subtitle">Show the app icon on the extracted artwork color instead</string>
@@ -669,9 +697,10 @@
     <string name="shorts_showing_less_like_this">Got it, showing less of this</string>
     <string name="settings_item_player_appearance">Player Appearance</string>
     <string name="settings_item_player_appearance_subtitle">Customize progress bar style</string>
-    <string name="style_default">Regular</string>
-    <string name="style_metrolist">Thick</string>
-    <string name="style_metrolist_slim">Default</string>
+    <string name="style_default">Expressive</string>
+    <string name="style_thick">Thick</string>
+    <string name="style_compact">Compact</string>
+    <string name="style_wavy">Wavy</string>
     <string name="style_squiggly">Squiggly</string>
     <string name="style_slim">Ultra Slim</string>
     <string name="player_appearance_gestures_header">Gestures</string>
@@ -1468,8 +1497,6 @@
     <string name="add_description_placeholder">Add a description...</string>
     <string name="edit_playlist_action">Edit playlist</string>
     <string name="delete_playlist_action">Delete playlist</string>
-    <string name="make_public_action">Make public</string>
-    <string name="make_private_action">Make private</string>
     <string name="remove_from_playlist_action">Remove from playlist</string>
     <string name="playlist_empty_title">This playlist is empty</string>
     <string name="playlist_empty_desc">Add videos from the video player\nto build your playlist</string>
@@ -1478,14 +1505,6 @@
     <string name="playlist_download_queue_empty">Could not queue any downloads from this playlist</string>
     <string name="delete_playlist_dialog_title">Delete playlist?</string>
     <string name="delete_playlist_dialog_text">This will permanently delete \'%1$s\' and all its videos.</string>
-    <plurals name="playlist_metadata_private_template">
-        <item quantity="one">Playlist • Private • %1$d video</item>
-        <item quantity="other">Playlist • Private • %1$d videos</item>
-    </plurals>
-    <plurals name="playlist_metadata_public_template">
-        <item quantity="one">Playlist • Public • %1$d video</item>
-        <item quantity="other">Playlist • Public • %1$d videos</item>
-    </plurals>
     <string name="playlist_sort_options">Playlist sort options</string>
     <string name="playlist_sort_manual">Manual</string>
     <string name="playlist_sort_date_added_newest">Date added (newest)</string>
@@ -1622,6 +1641,7 @@
     <string name="label_explicit">Explicit</string>
     <string name="duration_with_dot_template"> • %1$s</string>
     <string name="queue_position_template">%1$d / %2$d</string>
+    <string name="chart_position_template">#%1$d</string>
     <string name="next_up_template">%1$s: %2$s</string>
     <string name="equalizer_frequency_label">F</string>
     <string name="equalizer_gain_label">G</string>
@@ -1650,6 +1670,8 @@
     <string name="section_daily_mix_label">Daily Mix</string>
     <string name="daily_mix_page_description">Built from artists you listen to together. Save it to keep today\'s mix.</string>
     <string name="section_rediscover">Rediscover</string>
+    <string name="section_deep_cuts">Deep cuts</string>
+    <string name="section_artists_for_you">Artists for you</string>
     <string name="section_from_artists_you_love">From artists you love</string>
     <string name="section_your_history">Your history</string>
     <string name="artist_insights_played_times">Played %1$d times</string>
@@ -1671,6 +1693,13 @@
     <string name="music_prefs_section_title">Music recommendations</string>
     <string name="music_endless_radio_title">Endless radio</string>
     <string name="music_endless_radio_desc">Keep the queue going with similar songs when it runs out</string>
+    <string name="music_content_language_title">Content language</string>
+    <string name="music_content_language_follow_app">Follow app language</string>
+    <string name="music_content_language_dialog_title">Select content language</string>
+    <string name="music_content_country_title">Content country</string>
+    <string name="music_normalize_volume_title">Normalize volume</string>
+    <string name="music_normalize_volume_desc">Level every track to the YouTube Music loudness target</string>
+    <string name="section_other_versions">Other versions</string>
     <string name="music_blocked_artists_title">Blocked artists</string>
     <string name="music_blocked_artists_empty">No blocked artists</string>
     <string name="music_unblock">Unblock</string>
@@ -1738,9 +1767,15 @@
     <string name="daily_discover_subtitle">Fresh picks from your listening</string>
     <string name="genre_mix_template">%1$s mix</string>
     <string name="section_top_albums">Top Albums</string>
+    <string name="section_charts_in">Charts in %1$s</string>
+    <string name="section_charts_global">Global charts</string>
+    <string name="section_top_artists_in">Top artists in %1$s</string>
+    <string name="section_top_artists_global">Top artists worldwide</string>
     <string name="similar_to">Similar to</string>
     <string name="section_similar_to">Similar to %1$s</string>
     <string name="subtitle_similar_to">Based on your listening history</string>
+    <string name="section_other_performances">Other performances</string>
+    <string name="section_more_from">More from</string>
     <string name="section_vibe_vibes">%1$s Vibes</string>
     <string name="subtitle_community_playlists">Community Playlists</string>
     <string name="playlist_author_community">Community Playlist</string>
@@ -1863,6 +1898,19 @@
     <string name="download_status_paused">Paused</string>
     <string name="download_status_failed">Failed</string>
     <string name="download_status_cancelled">Cancelled</string>
+    <string name="download_progress_percent">%1$d%%</string>
+    <string name="download_status_paused_template">%1$d%% • %2$s</string>
+    <string name="file_size_kb">%1$s KB</string>
+    <string name="file_size_mb">%1$s MB</string>
+    <string name="file_size_gb">%1$s GB</string>
+    <string name="removed_from_history">Removed from history</string>
+    <string name="removed_from_likes">Removed from likes</string>
+    <string name="delete_download_dialog_title">Delete download?</string>
+    <string name="delete_download_dialog_text">%1$s will be removed from this device.</string>
+    <string name="library_empty_title">Your library is empty</string>
+    <string name="library_empty_body">Videos and music you watch, like, save or download will collect here.</string>
+    <string name="playlist_load_failed">Could not load this playlist</string>
+    <string name="library_settings_subtitle">Playback, downloads, appearance and data</string>
     <string name="remove_incomplete_downloads">Remove incomplete downloads</string>
     <plurals name="remove_incomplete_downloads_message">
         <item quantity="one">Remove %1$d paused, failed, or partial download? Completed downloads will not be touched.</item>
@@ -1950,11 +1998,18 @@
     <string name="sync_show_qr_here">Show a QR code here</string>
     <string name="sync_scan_other_qr">Scan the other device\'s QR</string>
     <string name="sync_send_show_qr_hint">The other device scans it. Use this if the other device has a camera.</string>
-    <string name="sync_send_scan_hint">Use this to send to a device with no camera (e.g. desktop) that is showing a receive code.</string>
-    <string name="sync_receive_scan_hint">Use this if this device has a camera and the other is showing a send code.</string>
-    <string name="sync_receive_show_qr_hint">The sender scans it. Use this if this device has no camera or you\'d rather show a code.</string>
-    <string name="sync_scan_prompt_receive_code">Point the camera at the other device\'s receive code</string>
-    <string name="sync_scan_prompt_send_code">Point the camera at the other device\'s send code</string>
+    <string name="sync_send_scan_hint">Use this to send to a device with no camera (e.g. desktop) that is showing a receive QR code.</string>
+    <string name="sync_receive_scan_hint">Use this if this device has a camera and the other is showing a send QR code.</string>
+    <string name="sync_receive_show_qr_hint">The sender scans it. Use this if this device has no camera or you\'d rather show a QR code.</string>
+    <string name="sync_scan_prompt_receive_code">Point the camera at the other device\'s receive QR code</string>
+    <string name="sync_scan_prompt_send_code">Point the camera at the other device\'s send QR code</string>
+    <string name="sync_enter_connection_data">Enter connection data manually</string>
+    <string name="sync_enter_connection_data_hint">Paste the connection data copied from the other device when scanning is not possible.</string>
+    <string name="sync_connection_data_label">Connection data</string>
+    <string name="sync_paste_connection_data">Paste connection data</string>
+    <string name="sync_connection_data_security_note">Connection data contains a temporary encryption key. Share it only with the device you want to sync.</string>
+    <string name="sync_copy_connection_data">Copy connection data</string>
+    <string name="sync_connect">Connect</string>
     <string name="sync_camera_permission_rationale">Camera permission is needed to scan the QR code.</string>
     <string name="sync_grant_camera">Grant camera access</string>
     <string name="sync_choose_what_to_send">Choose what to send</string>
@@ -1962,12 +2017,12 @@
     <string name="sync_continue">Continue</string>
     <string name="sync_qr_scan_on_target_sending">Scan this on the device you\'re sending to</string>
     <string name="sync_qr_scan_on_target_receiving">Scan this on the device you\'re receiving from</string>
-    <string name="sync_confirmation_code">Confirmation code: %1$s</string>
     <string name="sync_expires_in">Expires in %1$ds</string>
     <string name="sync_qr_network_note">Both devices must be on the same Wi-Fi (or one device\'s hotspot). You may need to allow Flow through a firewall.</string>
     <string name="sync_qr_advertised_address">This device: %1$s</string>
-    <string name="sync_sas_title">Do the codes match?</string>
-    <string name="sync_sas_body">Confirm this 6-digit code is identical on both devices before continuing.</string>
+    <string name="sync_sas_title">Do the verification codes match?</string>
+    <string name="sync_sas_body">Confirm this 6-digit verification code is identical on both devices before continuing.</string>
+    <string name="sync_verification_after_connect">After connecting, compare the verification code shown on both devices before continuing.</string>
     <string name="sync_sas_differ">They differ</string>
     <string name="sync_sas_match">They match</string>
     <string name="sync_consent_title">Merge incoming data?</string>
@@ -1985,17 +2040,18 @@
     <string name="sync_try_again">Try again</string>
     <string name="sync_qr_content_description">Sync QR code</string>
     <string name="sync_error_no_network">No Wi-Fi/LAN connection. Connect both devices to the same network or a hotspot.</string>
-    <string name="sync_error_peer_also_send">The other device is also set to Send. Set it to Receive, then scan again.</string>
-    <string name="sync_error_peer_also_receive">The other device is also set to Receive. Set it to Send, then scan again.</string>
-    <string name="sync_error_qr_expired">This QR code has expired. Ask the other device to show a fresh one.</string>
+    <string name="sync_error_peer_also_send">The other device is also set to Send. Set it to Receive, then try again.</string>
+    <string name="sync_error_peer_also_receive">The other device is also set to Receive. Set it to Send, then try again.</string>
+    <string name="sync_error_qr_expired">This pairing session has expired. Ask the other device to create a fresh one.</string>
     <string name="sync_error_qr_wrong_version">Incompatible app version on the other device.</string>
-    <string name="sync_error_qr_not_flow">That doesn\'t look like a Flow sync code.</string>
-    <string name="sync_error_qr_bad_address">The sync code is missing a valid network address.</string>
+    <string name="sync_error_qr_not_flow">That doesn\'t look like valid Flow connection data.</string>
+    <string name="sync_error_qr_bad_address">The connection data is missing a valid network address.</string>
     <string name="sync_step_title_send">Send</string>
     <string name="sync_step_title_receive">Receive</string>
     <string name="sync_step_title_pair">Pair devices</string>
-    <string name="sync_step_title_scan">Scan code</string>
-    <string name="sync_step_title_code">Your code</string>
+    <string name="sync_step_title_scan">Scan QR code</string>
+    <string name="sync_step_title_manual">Enter connection data</string>
+    <string name="sync_step_title_code">Connect devices</string>
     <string name="sync_step_title_verify">Verify</string>
     <string name="sync_step_title_merge">Merge</string>
     <string name="sync_step_title_syncing">Syncing</string>
@@ -2016,10 +2072,10 @@
     <string name="sync_collection_music_profile_body">What Flow has learned about what you listen to.</string>
     <string name="sync_waiting_for_peer">Waiting for the other device to connect…</string>
     <string name="sync_cancel_session">Cancel sync</string>
-    <string name="sync_expires_label">Code expires</string>
+    <string name="sync_expires_label">QR code expires</string>
     <string name="sync_expires_seconds">%1$ds</string>
     <string name="sync_done_stats_summary">%1$d added · %2$d updated · %3$d skipped</string>
-    <string name="sync_scanning_hint">Hold the other device\'s code inside the frame.</string>
+    <string name="sync_scanning_hint">Hold the other device\'s QR code inside the frame.</string>
     <!-- Automated Backups -->
     <string name="auto_backup_title">Automated Backups</string>
     <string name="auto_backup_subtitle">Schedule automatic backups to a folder</string>
@@ -2702,6 +2758,7 @@
     <string name="imported_successfully">%1$s imported successfully</string>
     <string name="importing_label">Importing %1$s…</string>
     <string name="imported_from_google_takeout">Imported from Google Takeout</string>
+    <string name="imported_playlist_fallback">Imported Playlist</string>
     <!-- Localization follow-up: fallback labels (#738) -->
     <string name="fallback_playing">Playing…</string>
     <string name="empty_saved_shorts">No saved shorts yet</string>
@@ -2739,4 +2796,5 @@
     <string name="remove_from_queue">Remove from queue</string>
     <string name="remove_from_queue_confirmation">Are you sure you want to remove this video from the queue?</string>
     <string name="reorder_queue_item">Reorder queue item</string>
+    <string name="music_search_no_results">No results for \"%1$s\"</string>
 </resources>

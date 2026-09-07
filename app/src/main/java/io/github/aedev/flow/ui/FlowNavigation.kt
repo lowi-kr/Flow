@@ -22,13 +22,14 @@ import androidx.navigation.navArgument
 import androidx.navigation.navDeepLink
 import io.github.aedev.flow.data.local.PlaylistRepository
 import io.github.aedev.flow.data.model.Video
+import io.github.aedev.flow.data.music.model.MusicTrack
 import io.github.aedev.flow.data.shorts.queue.ShortsQueueSource
 import io.github.aedev.flow.data.shorts.queue.openAtVideoId
 import io.github.aedev.flow.player.EnhancedMusicPlayerManager
 import io.github.aedev.flow.player.GlobalPlayerState
-import io.github.aedev.flow.ui.components.MusicPlayerSheetState
 import io.github.aedev.flow.ui.components.PlayerDraggableState
 import io.github.aedev.flow.ui.components.PlayerSheetValue
+import io.github.aedev.flow.ui.components.musicplayer.MusicPlayerSheetState
 import io.github.aedev.flow.ui.screens.channel.ChannelScreen
 import io.github.aedev.flow.ui.screens.history.HistoryScreen
 import io.github.aedev.flow.ui.screens.home.HomeScreen
@@ -37,9 +38,8 @@ import io.github.aedev.flow.ui.screens.library.LibraryScreen
 import io.github.aedev.flow.ui.screens.likedvideos.LikesScreen
 import io.github.aedev.flow.ui.screens.music.ArtistPage
 import io.github.aedev.flow.ui.screens.music.EnhancedMusicScreen
-import io.github.aedev.flow.ui.screens.music.MusicPlayerViewModel
-import io.github.aedev.flow.ui.screens.music.MusicTrack
 import io.github.aedev.flow.ui.screens.music.MusicViewModel
+import io.github.aedev.flow.ui.screens.music.sharedMusicPlayerViewModel
 import io.github.aedev.flow.ui.screens.notifications.NotificationScreen
 import io.github.aedev.flow.ui.screens.onboarding.OnboardingScreen
 import io.github.aedev.flow.ui.screens.personality.FlowPersonalityScreen
@@ -231,7 +231,7 @@ fun NavGraphBuilder.flowAppGraph(
         currentRoute.value = "library"
         showBottomNav.value = true
         selectedBottomNavIndex.intValue = 4
-        val musicPlayerViewModel: MusicPlayerViewModel = hiltViewModel()
+        val musicPlayerViewModel = sharedMusicPlayerViewModel()
         val downloadsSourceName =
             androidx.compose.ui.res.stringResource(
                 io.github.aedev.flow.R.string.library_downloads_label,
@@ -647,7 +647,7 @@ fun NavGraphBuilder.flowAppGraph(
     composable("history") {
         currentRoute.value = "history"
         showBottomNav.value = false
-        val musicPlayerViewModel: MusicPlayerViewModel = hiltViewModel()
+        val musicPlayerViewModel = sharedMusicPlayerViewModel()
         HistoryScreen(
             onVideoClick = { track ->
                 val localId = track.videoId.removePrefix("local_").toLongOrNull()
@@ -715,7 +715,7 @@ fun NavGraphBuilder.flowAppGraph(
     composable("likes") {
         currentRoute.value = "likes"
         showBottomNav.value = false
-        val musicPlayerViewModel: MusicPlayerViewModel = hiltViewModel()
+        val musicPlayerViewModel = sharedMusicPlayerViewModel()
         LikesScreen(
             onVideoClick = { track ->
                 navController.navigateToPlayer(track.videoId)
@@ -792,7 +792,7 @@ fun NavGraphBuilder.flowAppGraph(
         currentRoute.value = "downloads"
         showBottomNav.value = false
 
-        val musicPlayerViewModel: MusicPlayerViewModel = hiltViewModel()
+        val musicPlayerViewModel = sharedMusicPlayerViewModel()
 
         io.github.aedev.flow.ui.screens.library.DownloadsScreen(
             onBackClick = { navController.popBackStack() },
@@ -825,7 +825,7 @@ fun NavGraphBuilder.flowAppGraph(
         currentRoute.value = "localMedia"
         showBottomNav.value = false
 
-        val musicPlayerViewModel: MusicPlayerViewModel = hiltViewModel()
+        val musicPlayerViewModel = sharedMusicPlayerViewModel()
 
         io.github.aedev.flow.ui.screens.library.LocalMediaScreen(
             onBackClick = { navController.popBackStack() },
@@ -850,7 +850,7 @@ fun NavGraphBuilder.flowAppGraph(
             onMusicClick = { items, index ->
                 val tracks =
                     items.map { item ->
-                        io.github.aedev.flow.ui.screens.music.MusicTrack(
+                        MusicTrack(
                             videoId =
                                 io.github.aedev.flow.ui.screens.library.LocalMediaViewModel
                                     .localMediaId(item),
@@ -881,9 +881,10 @@ fun NavGraphBuilder.flowAppGraph(
         showBottomNav.value = true
         selectedBottomNavIndex.intValue = 2
 
-        val musicPlayerViewModel: MusicPlayerViewModel = hiltViewModel()
+        val musicPlayerViewModel = sharedMusicPlayerViewModel()
 
         EnhancedMusicScreen(
+            bottomNavOverlayPadding = bottomNavOverlayPadding,
             onSongClick = { track, queue, source ->
                 musicPlayerViewModel.loadAndPlayTrack(track, queue, source)
 
@@ -947,7 +948,7 @@ fun NavGraphBuilder.flowAppGraph(
         currentRoute.value = "musicSearch"
         showBottomNav.value = false
 
-        val musicPlayerViewModel: MusicPlayerViewModel = hiltViewModel()
+        val musicPlayerViewModel = sharedMusicPlayerViewModel()
         val initialQuery = backStackEntry.arguments?.getString("query")
 
         io.github.aedev.flow.ui.screens.music.MusicSearchScreen(
@@ -977,7 +978,7 @@ fun NavGraphBuilder.flowAppGraph(
         currentRoute.value = "musicRecognize"
         showBottomNav.value = false
 
-        val musicPlayerViewModel: MusicPlayerViewModel = hiltViewModel()
+        val musicPlayerViewModel = sharedMusicPlayerViewModel()
 
         fun playRecognized(result: io.github.aedev.flow.data.recognition.RecognitionResult) {
             val track =
@@ -1013,7 +1014,7 @@ fun NavGraphBuilder.flowAppGraph(
         currentRoute.value = "recognitionHistory"
         showBottomNav.value = false
 
-        val musicPlayerViewModel: MusicPlayerViewModel = hiltViewModel()
+        val musicPlayerViewModel = sharedMusicPlayerViewModel()
 
         io.github.aedev.flow.ui.screens.recognition.RecognitionHistoryScreen(
             onBackClick = { navController.popBackStack() },
@@ -1021,7 +1022,7 @@ fun NavGraphBuilder.flowAppGraph(
                 val videoId = item.youtubeVideoId
                 if (!videoId.isNullOrBlank()) {
                     val track =
-                        io.github.aedev.flow.ui.screens.music.MusicTrack(
+                        MusicTrack(
                             videoId = videoId,
                             title = item.title,
                             artist = item.artist,
@@ -1062,13 +1063,13 @@ fun NavGraphBuilder.flowAppGraph(
         currentRoute.value = "youtube_browse"
         showBottomNav.value = false
 
-        val musicPlayerViewModel: MusicPlayerViewModel = hiltViewModel()
+        val musicPlayerViewModel = sharedMusicPlayerViewModel()
 
         io.github.aedev.flow.ui.screens.music.YouTubeBrowseScreen(
             onBackClick = { navController.popBackStack() },
             onSongClick = { song ->
                 val track =
-                    io.github.aedev.flow.ui.screens.music.MusicTrack(
+                    MusicTrack(
                         videoId = song.id,
                         title = song.title,
                         artist = song.artists.joinToString(", ") { it.name },
@@ -1095,31 +1096,13 @@ fun NavGraphBuilder.flowAppGraph(
         )
     }
 
-    composable("musicLibrary") {
-        currentRoute.value = "musicLibrary"
-        showBottomNav.value = false
-
-        val musicPlayerViewModel: MusicPlayerViewModel = hiltViewModel()
-
-        io.github.aedev.flow.ui.screens.music.LibraryScreen(
-            onBackClick = { navController.popBackStack() },
-            onTrackClick = { track, queue ->
-                musicPlayerViewModel.loadAndPlayTrack(track, queue)
-                val encodedUrl = android.net.Uri.encode(track.thumbnailUrl)
-                val encodedTitle = android.net.Uri.encode(track.title)
-                val encodedArtist = android.net.Uri.encode(track.artist)
-                navController.navigate("musicPlayer/${track.videoId}?title=$encodedTitle&artist=$encodedArtist&thumbnailUrl=$encodedUrl")
-            },
-        )
-    }
-
     // Artist Page
     composable("artist/{channelId}") { backStackEntry ->
         val channelId = backStackEntry.arguments?.getString("channelId") ?: return@composable
         val musicViewModel: MusicViewModel =
             io.github.aedev.flow.ui.screens.music
                 .sharedMusicViewModel()
-        val musicPlayerViewModel: MusicPlayerViewModel = hiltViewModel()
+        val musicPlayerViewModel = sharedMusicPlayerViewModel()
         val uiState by musicViewModel.uiState.collectAsState()
 
         LaunchedEffect(channelId) {
@@ -1186,7 +1169,7 @@ fun NavGraphBuilder.flowAppGraph(
         val musicViewModel: MusicViewModel =
             io.github.aedev.flow.ui.screens.music
                 .sharedMusicViewModel()
-        val musicPlayerViewModel: MusicPlayerViewModel = hiltViewModel()
+        val musicPlayerViewModel = sharedMusicPlayerViewModel()
 
         io.github.aedev.flow.ui.screens.music.ArtistItemsScreen(
             browseId = browseId,
@@ -1195,7 +1178,7 @@ fun NavGraphBuilder.flowAppGraph(
             viewModel = musicViewModel,
             onTrackClick = { songItem ->
                 val track =
-                    io.github.aedev.flow.ui.screens.music.MusicTrack(
+                    MusicTrack(
                         videoId = songItem.id,
                         title = songItem.title,
                         artist = songItem.artists.joinToString(", ") { it.name },
@@ -1226,7 +1209,7 @@ fun NavGraphBuilder.flowAppGraph(
         val musicViewModel: MusicViewModel =
             io.github.aedev.flow.ui.screens.music
                 .sharedMusicViewModel()
-        val musicPlayerViewModel: MusicPlayerViewModel = hiltViewModel()
+        val musicPlayerViewModel = sharedMusicPlayerViewModel()
         val musicPlaylistsViewModel: io.github.aedev.flow.ui.screens.music.MusicPlaylistsViewModel = hiltViewModel()
         val uiState by musicViewModel.uiState.collectAsState()
         val isSaved by musicPlaylistsViewModel.isSavedPlaylist.collectAsState()
@@ -1274,6 +1257,7 @@ fun NavGraphBuilder.flowAppGraph(
                     onArtistClick = { channelId ->
                         navController.navigate("artist/$channelId")
                     },
+                    onCollectionClick = { navController.navigate("musicPlaylist/$it") },
                     onLoadMore = { musicViewModel.loadMorePlaylistTracks() },
                     isUserPlaylist = isUserPlaylist,
                     isSaved = isSaved,
