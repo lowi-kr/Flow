@@ -91,10 +91,11 @@ import io.github.aedev.flow.data.music.model.MusicTrack
 import io.github.aedev.flow.player.EnhancedMusicPlayerManager
 import io.github.aedev.flow.player.SleepTimerManager
 import io.github.aedev.flow.service.Media3MusicService
-import io.github.aedev.flow.ui.components.SleepTimerSheet
 import io.github.aedev.flow.ui.components.music.sheet.AddToPlaylistDialog
 import io.github.aedev.flow.ui.components.music.sheet.CreatePlaylistDialog
 import io.github.aedev.flow.ui.components.music.sheet.MusicQuickActionsSheet
+import io.github.aedev.flow.ui.components.shared.MediaPalette
+import io.github.aedev.flow.ui.components.shared.MediaSleepTimerSheet
 import io.github.aedev.flow.ui.screens.music.MusicPlayerViewModel
 import io.github.aedev.flow.ui.screens.music.sharedMusicPlayerViewModel
 import kotlinx.coroutines.launch
@@ -107,7 +108,7 @@ private val PlayerHorizontalPadding = 28.dp
 internal fun FullMusicPlayerContent(
     track: MusicTrack,
     isPlayerSheetExpanded: Boolean,
-    palette: MusicPaletteColors,
+    palette: MediaPalette,
     backgroundStyle: MusicPlayerBackgroundStyle,
     hideArtwork: Boolean,
     onArtistClick: (String) -> Unit,
@@ -731,7 +732,8 @@ internal fun FullMusicPlayerContent(
                     queue = uiState.queue,
                     radioTracks = uiState.autoplaySuggestions,
                     currentIndex = uiState.currentQueueIndex,
-                    isRadioLoading = uiState.isRelatedLoading,
+                    isPlaying = uiState.isPlaying,
+                    isRadioLoading = uiState.isRadioLoading,
                     endlessRadioEnabled = uiState.endlessRadioEnabled,
                     shuffleEnabled = uiState.shuffleEnabled,
                     repeatMode = uiState.repeatMode,
@@ -740,7 +742,7 @@ internal fun FullMusicPlayerContent(
                     onMoveTrack = { from, to -> viewModel.moveTrack(from, to) },
                     onPlayNextFromQueue = { viewModel.playNextFromQueuePosition(it) },
                     onSendQueueTrackToEnd = { viewModel.moveQueueTrackToEnd(it) },
-                    onRadioTrackClick = { viewModel.loadAndPlayTrack(it) },
+                    onRadioTrackClick = { viewModel.playRadioTrack(it) },
                     onPlayNextRadio = { viewModel.playNextFromRadio(it) },
                     onAddRadioToQueue = { viewModel.addRadioTrackToQueue(it) },
                     onToggleEndlessRadio = { viewModel.setEndlessRadioEnabled(it) },
@@ -787,7 +789,7 @@ internal fun FullMusicPlayerContent(
 
         // Hosted here rather than at app level so it picks up the palette-derived scheme.
         if (showSleepTimer) {
-            SleepTimerSheet(onDismiss = { showSleepTimer = false })
+            MediaSleepTimerSheet(onDismiss = { showSleepTimer = false })
         }
     }
 }

@@ -37,12 +37,12 @@ import io.github.aedev.flow.R
 import io.github.aedev.flow.data.model.Channel
 import io.github.aedev.flow.data.model.Video
 import io.github.aedev.flow.data.shorts.queue.ShortsQueueSource
-import io.github.aedev.flow.ui.components.ShortsShelf
 import io.github.aedev.flow.ui.components.VideoCardFullWidth
 import io.github.aedev.flow.ui.components.VideoCardHorizontal
 import io.github.aedev.flow.ui.components.rememberFeedGridLayout
 import io.github.aedev.flow.ui.components.shared.FlowFilterChip
 import io.github.aedev.flow.ui.components.shared.FlowPullToRefreshBox
+import io.github.aedev.flow.ui.components.shared.MediaShortsShelf
 
 private val GroupRowHorizontalPadding = 12.dp
 private val GroupRowVerticalPadding = 8.dp
@@ -92,7 +92,7 @@ internal fun SubscriptionsFeedContent(
             val feedLayout = rememberFeedGridLayout(maxWidth)
             val gridSpacing = if (state.isFullWidthView) feedLayout.cardSpacing else 0.dp
             LazyVerticalGrid(
-                columns = if (state.isFullWidthView) GridCells.Fixed(feedLayout.columns) else GridCells.Fixed(1),
+                columns = if (state.isFullWidthView) feedLayout.cells else GridCells.Fixed(1),
                 state = gridState,
                 modifier = Modifier.fillMaxSize(),
                 contentPadding =
@@ -182,7 +182,7 @@ internal fun SubscriptionsFeedContent(
                 if (state.isShortsShelfEnabled && state.shorts.isNotEmpty()) {
                     item(span = { GridItemSpan(maxLineSpan) }) {
                         Column {
-                            ShortsShelf(
+                            MediaShortsShelf(
                                 shorts = state.shorts,
                                 // The shelf shows one reel per channel; the queue behind it is
                                 // every subscription reel in date order (#823).

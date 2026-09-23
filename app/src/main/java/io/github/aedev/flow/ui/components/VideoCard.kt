@@ -22,6 +22,7 @@ import androidx.compose.material.icons.filled.AccountCircle
 import androidx.compose.material.icons.filled.Close
 import androidx.compose.material.icons.filled.MoreVert
 import androidx.compose.material.icons.filled.PlayCircle
+import androidx.compose.material.icons.filled.Star
 import androidx.compose.material.icons.outlined.AutoFixHigh
 import androidx.compose.material.icons.outlined.ThumbDown
 import androidx.compose.material.icons.outlined.ThumbUp
@@ -300,6 +301,7 @@ fun VideoCardHorizontal(
     video: Video,
     modifier: Modifier = Modifier,
     onChannelClick: ((String) -> Unit)? = null,
+    showChannelName: Boolean = true,
     onClick: () -> Unit,
 ) {
     val dateSettings = rememberDateDisplaySettings()
@@ -367,19 +369,21 @@ fun VideoCardHorizontal(
             )
 
             Column {
-                Text(
-                    text = displayChannelName,
-                    style = MaterialTheme.typography.bodySmall,
-                    color = MaterialTheme.extendedColors.textSecondary,
-                    maxLines = 1,
-                    overflow = TextOverflow.Ellipsis,
-                    modifier =
-                        if (onChannelClick != null) {
-                            Modifier.clickable { openChannelOrCollaborators() }
-                        } else {
-                            Modifier
-                        },
-                )
+                if (showChannelName) {
+                    Text(
+                        text = displayChannelName,
+                        style = MaterialTheme.typography.bodySmall,
+                        color = MaterialTheme.extendedColors.textSecondary,
+                        maxLines = 1,
+                        overflow = TextOverflow.Ellipsis,
+                        modifier =
+                            if (onChannelClick != null) {
+                                Modifier.clickable { openChannelOrCollaborators() }
+                            } else {
+                                Modifier
+                            },
+                    )
+                }
 
                 Text(
                     text =
@@ -419,6 +423,7 @@ fun VideoCardFullWidth(
     modifier: Modifier = Modifier,
     useInternalPadding: Boolean = true,
     showChannelAvatar: Boolean = true,
+    showChannelName: Boolean = true,
     onClick: () -> Unit,
     onChannelClick: ((String) -> Unit)? = null,
     onMoreClick: () -> Unit = {},
@@ -528,7 +533,7 @@ fun VideoCardFullWidth(
                             video = video,
                             isUpcoming = video.isUpcoming,
                             channelName = displayChannelName,
-                            includeChannel = true,
+                            includeChannel = showChannelName,
                         ),
                     style = MaterialTheme.typography.bodySmall,
                     color =
@@ -546,6 +551,8 @@ fun VideoCardFullWidth(
                             Modifier
                         },
                 )
+
+                MembersOnlyLabel(video)
             }
 
             // More options button
@@ -673,6 +680,9 @@ fun VideoCardFullWidth(
     )
 }
 
+/** The width every existing caller renders, so [thumbnailWidth] only ever widens it deliberately. */
+val CompactVideoCardThumbnailWidth = 168.dp
+
 /**
  * A horizontal Video Card optimized for side panes (tablets/foldables) or lists.
  * Image on Left, Info on Right.
@@ -684,6 +694,8 @@ fun CompactVideoCard(
     onClick: () -> Unit,
     onMoreClick: () -> Unit = {},
     onChannelClick: ((String) -> Unit)? = null,
+    showChannelName: Boolean = true,
+    thumbnailWidth: Dp = CompactVideoCardThumbnailWidth,
 ) {
     var showQuickActions by remember { mutableStateOf(false) }
     var showCollaborators by remember { mutableStateOf(false) }
@@ -708,6 +720,9 @@ fun CompactVideoCard(
     val isWatchedCompact = rememberIsWatched(video.id, quickActionsVmCompact.watchedVideoIds, watchProgress)
     val displayTitle = deArrowResultCompact?.title ?: video.title
     val displayThumbnailUrl = deArrowResultCompact?.thumbnailUrl ?: video.thumbnailUrl
+    // A negative count is the older "no count reported" sentinel; a row that declares itself
+    // upcoming counts too. The badge and the metadata line read the same answer.
+    val isUpcomingRow = video.isUpcoming || video.viewCount < 0L
 
     val interactionSource = remember { MutableInteractionSource() }
     Row(
@@ -726,7 +741,7 @@ fun CompactVideoCard(
         Box(
             modifier =
                 Modifier
-                    .width(168.dp)
+                    .width(thumbnailWidth)
                     .aspectRatio(16f / 9f)
                     .clip(RoundedCornerShape(8.dp))
                     .background(MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.5f)),
@@ -736,7 +751,7 @@ fun CompactVideoCard(
                 displayTitle = displayTitle,
                 displayThumbnailUrl = displayThumbnailUrl,
                 watchProgress = watchProgress,
-                isUpcoming = video.isUpcoming || video.viewCount < 0L,
+                isUpcoming = isUpcomingRow,
                 badgePadding = 4.dp,
                 showDeArrowBadge = deArrowResultCompact != null && deArrowBadgeEnabledCompact,
             )
@@ -762,30 +777,32 @@ fun CompactVideoCard(
 
             Spacer(modifier = Modifier.height(6.dp))
 
-            Text(
-                text = displayChannelName,
-                style = MaterialTheme.typography.bodySmall,
-                color = MaterialTheme.extendedColors.textSecondary,
-                maxLines = 1,
-                overflow = TextOverflow.Ellipsis,
-                modifier =
-                    if (onChannelClick != null) {
-                        Modifier.clickable { openChannelOrCollaborators() }
-                    } else {
-                        Modifier
-                    },
-            )
+            if (showChannelName) {
+                Text(
+                    text = displayChannelName,
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.extendedColors.textSecondary,
+                    maxLines = 1,
+                    overflow = TextOverflow.Ellipsis,
+                    modifier =
+                        if (onChannelClick != null) {
+                            Modifier.clickable { openChannelOrCollaborators() }
+                        } else {
+                            Modifier
+                        },
+                )
+            }
 
             Text(
                 text =
                     videoMetadataLine(
                         video = video,
-                        isUpcoming = video.viewCount < 0L,
+                        isUpcoming = isUpcomingRow,
                         channelName = displayChannelName,
                     ),
                 style = MaterialTheme.typography.bodySmall,
                 color =
-                    if (video.viewCount < 0L) {
+                    if (isUpcomingRow) {
                         MaterialTheme.colorScheme.primary
                     } else {
                         MaterialTheme.extendedColors.textSecondary.copy(alpha = 0.8f)
@@ -794,6 +811,8 @@ fun CompactVideoCard(
                 overflow = TextOverflow.Ellipsis,
                 fontSize = 11.sp,
             )
+
+            MembersOnlyLabel(video)
         }
 
         Column(
@@ -950,338 +969,6 @@ fun CollaboratorsBottomSheet(
     }
 }
 
-@Composable
-fun ContinueWatchingShelf(
-    entries: List<VideoHistoryEntry>,
-    onVideoClick: (String) -> Unit,
-    onRemove: (String) -> Unit = {},
-    onSeeAllClick: (() -> Unit)? = null,
-    modifier: Modifier = Modifier,
-) {
-    val uniqueEntries =
-        remember(entries) {
-            entries.distinctByNonBlankKey(VideoHistoryEntry::videoId)
-        }
-    if (uniqueEntries.isEmpty()) return
-    val context = LocalContext.current
-    Column(modifier = modifier.fillMaxWidth().padding(vertical = 4.dp)) {
-        Row(
-            modifier =
-                Modifier
-                    .fillMaxWidth()
-                    .then(if (onSeeAllClick != null) Modifier.clickable(onClick = onSeeAllClick) else Modifier)
-                    .padding(horizontal = 12.dp, vertical = 8.dp),
-            verticalAlignment = Alignment.CenterVertically,
-        ) {
-            Icon(
-                imageVector = Icons.Filled.PlayCircle,
-                contentDescription = null,
-                tint = MaterialTheme.colorScheme.primary,
-                modifier = Modifier.size(24.dp),
-            )
-            Spacer(modifier = Modifier.width(8.dp))
-            Text(
-                text = context.getString(R.string.continue_watching_title),
-                style = MaterialTheme.typography.titleMedium,
-                fontWeight = FontWeight.Bold,
-            )
-            if (onSeeAllClick != null) {
-                Spacer(modifier = Modifier.weight(1f))
-                Icon(
-                    imageVector = Icons.AutoMirrored.Filled.KeyboardArrowRight,
-                    contentDescription = null,
-                    tint = MaterialTheme.colorScheme.onSurfaceVariant,
-                    modifier = Modifier.size(24.dp),
-                )
-            }
-        }
-        LazyRow(
-            contentPadding = PaddingValues(horizontal = 12.dp),
-            horizontalArrangement = Arrangement.spacedBy(10.dp),
-        ) {
-            items(uniqueEntries, key = { it.videoId }) { entry ->
-                ContinueWatchingCard(
-                    entry = entry,
-                    onClick = { onVideoClick(entry.videoId) },
-                    onRemove = { onRemove(entry.videoId) },
-                )
-            }
-        }
-    }
-}
-
-@Composable
-private fun ContinueWatchingCard(
-    entry: VideoHistoryEntry,
-    onClick: () -> Unit,
-    onRemove: () -> Unit,
-) {
-    val resolvedCollaborators by produceState<List<VideoCollaborator>>(
-        initialValue = emptyList(),
-        key1 = entry.videoId,
-        key2 = entry.channelName,
-    ) {
-        value =
-            if (entry.channelName.hasLikelyCollaborationByline()) {
-                VideoCollaboratorResolver.resolve(entry.videoId)
-            } else {
-                emptyList()
-            }
-    }
-    val displayChannelName = rememberCollaboratorChannelDisplayName(entry.channelName, resolvedCollaborators)
-
-    ShelfVideoCardContent(
-        videoId = entry.videoId,
-        thumbnailUrl = entry.thumbnailUrl,
-        title = entry.title,
-        channelName = displayChannelName,
-        durationText =
-            entry.duration.takeIf { it > 0 }?.let { duration ->
-                formatContinueWatchingTime((duration - entry.position).coerceAtLeast(0L))
-            },
-        progress = (entry.progressPercentage / 100f).coerceIn(0f, 1f),
-        onClick = onClick,
-        trailingContent = {
-            IconButton(
-                onClick = onRemove,
-                modifier = Modifier.size(28.dp),
-            ) {
-                Icon(
-                    imageVector = Icons.Filled.Close,
-                    contentDescription = null,
-                    tint = MaterialTheme.colorScheme.onSurfaceVariant,
-                    modifier = Modifier.size(16.dp),
-                )
-            }
-        },
-    )
-}
-
-@Composable
-private fun ShelfVideoCardContent(
-    videoId: String,
-    thumbnailUrl: String,
-    title: String,
-    channelName: String,
-    durationText: String?,
-    onClick: () -> Unit,
-    modifier: Modifier = Modifier,
-    progress: Float? = null,
-    trailingContent: (@Composable () -> Unit)? = null,
-) {
-    val interactionSource = remember { MutableInteractionSource() }
-    Column(
-        modifier =
-            modifier
-                .width(350.dp)
-                .pressScale(interactionSource)
-                .clickable(
-                    interactionSource = interactionSource,
-                    indication = androidx.compose.material3.ripple(),
-                    onClick = onClick,
-                ),
-    ) {
-        Box(
-            modifier =
-                Modifier
-                    .fillMaxWidth()
-                    .aspectRatio(16f / 9f)
-                    .clip(RoundedCornerShape(12.dp))
-                    .background(MaterialTheme.colorScheme.surfaceVariant)
-                    .thumbnailGradientOverlay(),
-        ) {
-            VideoThumbnailImage(
-                videoId = videoId,
-                model = thumbnailUrl,
-                contentDescription = null,
-                modifier = Modifier.fillMaxSize(),
-                contentScale = ContentScale.Crop,
-            )
-            if (durationText != null) {
-                MediaTextBadge(
-                    text = durationText,
-                    modifier =
-                        Modifier
-                            .align(Alignment.BottomEnd)
-                            .padding(4.dp),
-                )
-            }
-            if (progress != null) {
-                WatchProgressBar(
-                    progress = progress,
-                    modifier = Modifier.align(Alignment.BottomStart),
-                )
-            }
-        }
-        Spacer(modifier = Modifier.height(6.dp))
-        Row(
-            modifier = Modifier.fillMaxWidth(),
-            verticalAlignment = Alignment.Top,
-        ) {
-            Column(modifier = Modifier.weight(1f)) {
-                Text(
-                    text = title,
-                    maxLines = 2,
-                    overflow = TextOverflow.Ellipsis,
-                    style =
-                        MaterialTheme.typography.bodySmall.copy(
-                            lineHeight = MaterialTheme.typography.bodySmall.fontSize * 1.12f,
-                        ),
-                    fontWeight = FontWeight.SemiBold,
-                )
-                if (channelName.isNotEmpty()) {
-                    Spacer(modifier = Modifier.height(4.dp))
-                    Text(
-                        text = channelName,
-                        style = MaterialTheme.typography.labelSmall,
-                        color = MaterialTheme.colorScheme.onSurfaceVariant,
-                        maxLines = 1,
-                        overflow = TextOverflow.Ellipsis,
-                    )
-                }
-            }
-            trailingContent?.invoke()
-        }
-    }
-}
-
-private fun formatContinueWatchingTime(ms: Long): String {
-    val totalSeconds = ms / 1000
-    val hours = totalSeconds / 3600
-    val minutes = (totalSeconds % 3600) / 60
-    val seconds = totalSeconds % 60
-    return if (hours > 0) {
-        String.format("%d:%02d:%02d", hours, minutes, seconds)
-    } else {
-        String.format("%d:%02d", minutes, seconds)
-    }
-}
-
-@Composable
-fun ShortsShelf(
-    shorts: List<Video>,
-    onShortClick: (shelf: List<Video>, tapped: Video) -> Unit,
-    modifier: Modifier = Modifier,
-    onSeeAllClick: (() -> Unit)? = null,
-) {
-    val uniqueShorts =
-        remember(shorts) {
-            shorts.distinctByNonBlankKey(Video::id)
-        }
-    if (uniqueShorts.isEmpty()) return
-    val context = LocalContext.current
-    Column(modifier = modifier.fillMaxWidth().padding(vertical = 4.dp)) {
-        Row(
-            modifier =
-                Modifier
-                    .fillMaxWidth()
-                    .then(if (onSeeAllClick != null) Modifier.clickable(onClick = onSeeAllClick) else Modifier)
-                    .padding(horizontal = 12.dp, vertical = 8.dp),
-            verticalAlignment = Alignment.CenterVertically,
-        ) {
-            Icon(
-                imageVector = ImageVector.vectorResource(id = R.drawable.ic_shorts),
-                contentDescription = stringResource(R.string.shorts),
-                tint = Color.Red,
-                modifier = Modifier.size(24.dp),
-            )
-            Spacer(modifier = Modifier.width(8.dp))
-            Text(
-                text = context.getString(R.string.shorts),
-                style = MaterialTheme.typography.titleMedium,
-                fontWeight = FontWeight.Bold,
-            )
-            if (onSeeAllClick != null) {
-                Spacer(modifier = Modifier.weight(1f))
-                Icon(
-                    imageVector = Icons.AutoMirrored.Filled.KeyboardArrowRight,
-                    contentDescription = null,
-                    tint = MaterialTheme.colorScheme.onSurfaceVariant,
-                    modifier = Modifier.size(24.dp),
-                )
-            }
-        }
-
-        LazyRow(
-            contentPadding = PaddingValues(horizontal = 12.dp),
-            horizontalArrangement = Arrangement.spacedBy(10.dp),
-        ) {
-            items(uniqueShorts, key = { it.id }) { short ->
-                ShortsCard(video = short, onClick = { onShortClick(uniqueShorts, short) })
-            }
-        }
-    }
-}
-
-@Composable
-fun ShortsCard(
-    video: Video,
-    onClick: () -> Unit,
-    modifier: Modifier = Modifier.width(160.dp),
-    trailingContent: (@Composable () -> Unit)? = null,
-) {
-    var showQuickActions by remember { mutableStateOf(false) }
-    val interactionSource = remember { MutableInteractionSource() }
-    Column(
-        modifier =
-            modifier
-                .pressScale(interactionSource)
-                .combinedClickable(
-                    interactionSource = interactionSource,
-                    indication = androidx.compose.material3.ripple(),
-                    onLongClick = { showQuickActions = true },
-                    onClick = onClick,
-                ),
-    ) {
-        Box(
-            modifier =
-                Modifier
-                    .fillMaxWidth()
-                    .aspectRatio(9f / 16f)
-                    .clip(RoundedCornerShape(16.dp))
-                    .background(MaterialTheme.colorScheme.surfaceVariant)
-                    .thumbnailGradientOverlay(),
-        ) {
-            VideoThumbnailImage(
-                videoId = video.id,
-                model = video.thumbnailUrl,
-                contentDescription = null,
-                modifier = Modifier.fillMaxSize(),
-                contentScale = ContentScale.Crop,
-            )
-            ShortWatchedIndicator(videoId = video.id)
-        }
-        Spacer(modifier = Modifier.height(8.dp))
-        Text(
-            text = video.title,
-            maxLines = 2,
-            overflow = TextOverflow.Ellipsis,
-            style = MaterialTheme.typography.bodyMedium,
-            fontWeight = FontWeight.SemiBold,
-        )
-        Row(
-            verticalAlignment = Alignment.CenterVertically,
-            modifier = Modifier.fillMaxWidth(),
-        ) {
-            Text(
-                text = stringResource(R.string.views_template, formatViewCount(video.viewCount)),
-                style = MaterialTheme.typography.bodySmall,
-                color = MaterialTheme.extendedColors.textSecondary,
-                modifier = Modifier.weight(1f),
-            )
-            trailingContent?.invoke()
-        }
-    }
-
-    if (showQuickActions) {
-        VideoQuickActionsBottomSheet(
-            video = video,
-            onChannelClick = null,
-            onDismiss = { showQuickActions = false },
-        )
-    }
-}
-
 /**
  * Channel avatar that gracefully degrades on load failure:
  *  1. Tries the original URL (may be high-res, e.g. =s800)
@@ -1433,6 +1120,33 @@ fun ChannelAvatarStack(
                             Modifier
                         },
                     ),
+        )
+    }
+}
+
+/**
+ * YouTube omits the view count on members-only uploads and shows this badge instead, so the row above
+ * it legitimately reads "2 days ago" with no views.
+ */
+@Composable
+private fun MembersOnlyLabel(video: Video) {
+    val label = video.membersOnlyText ?: return
+    Row(
+        horizontalArrangement = Arrangement.spacedBy(4.dp),
+        verticalAlignment = Alignment.CenterVertically,
+    ) {
+        Icon(
+            imageVector = Icons.Filled.Star,
+            contentDescription = null,
+            modifier = Modifier.size(12.dp),
+            tint = MaterialTheme.extendedColors.success,
+        )
+        Text(
+            text = label,
+            style = MaterialTheme.typography.labelSmall,
+            color = MaterialTheme.extendedColors.success,
+            maxLines = 1,
+            overflow = TextOverflow.Ellipsis,
         )
     }
 }

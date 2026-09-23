@@ -2,11 +2,14 @@ package io.github.aedev.flow.ui.components.shared
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.outlined.StickyNote2
 import androidx.compose.material.icons.rounded.Folder
 import androidx.compose.material.icons.rounded.KeyboardArrowDown
 import androidx.compose.material.icons.rounded.NotificationsActive
@@ -33,6 +36,8 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.hapticfeedback.HapticFeedbackType
+import androidx.compose.ui.platform.LocalHapticFeedback
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import io.github.aedev.flow.R
@@ -40,6 +45,25 @@ import io.github.aedev.flow.R
 private val MenuWidth = 200.dp
 private val MenuLabelHorizontalPadding = 16.dp
 private val MenuLabelVerticalPadding = 8.dp
+
+/**
+ * How much room the control takes.
+ *
+ * [Compact] is the extra-small Material 3 size, for a row that already carries an avatar, a channel
+ * name and a subscriber count beside it.
+ */
+enum class FlowSubscribeButtonSize {
+    Default,
+    Compact,
+
+    /**
+     * Stretches the unsubscribed control to the width it is given, for a row that shares its space
+     * with another action — it otherwise sizes to its short label and sits small beside a stretched
+     * neighbour. The subscribed control always sizes to its own content, which is the only width
+     * that fits "Subscribed" beside the menu on one line.
+     */
+    Wide,
+}
 
 /**
  * The one subscribe control, shared by the channel page, the player, the subscription manager and
@@ -60,8 +84,39 @@ fun FlowSubscribeButton(
     areShortsExcluded: Boolean? = null,
     onShortsExcludeChange: (Boolean) -> Unit = {},
     onManageGroups: (() -> Unit)? = null,
+    onAddNote: (() -> Unit)? = null,
+    size: FlowSubscribeButtonSize = FlowSubscribeButtonSize.Default,
+    tint: MediaArtworkTint? = null,
 ) {
+    val haptics = LocalHapticFeedback.current
     var menuExpanded by remember { mutableStateOf(false) }
+    val compact = size == FlowSubscribeButtonSize.Compact
+    val containerHeight =
+        if (compact) ButtonDefaults.ExtraSmallContainerHeight else ButtonDefaults.MinHeight
+    val leadingIconSize =
+        if (compact) ButtonDefaults.ExtraSmallIconSize else SplitButtonDefaults.LeadingIconSize
+    val trailingIconSize =
+        if (compact) SplitButtonDefaults.ExtraSmallTrailingButtonIconSize else SplitButtonDefaults.TrailingIconSize
+
+    val fill = if (size == FlowSubscribeButtonSize.Wide) Modifier.fillMaxWidth() else Modifier
+
+    // On an artwork-tinted card the theme's own primary lands as an unrelated colour, and its
+    // contrast is against the theme surface rather than against the tint the card actually drew.
+    // Filling with the ink the tint already clamped to 4.5:1 stays readable whatever the avatar is.
+    val tonalColors =
+        if (tint != null) {
+            ButtonDefaults.filledTonalButtonColors(
+                containerColor = tint.raised,
+                contentColor = tint.onContainer,
+            )
+        } else {
+            ButtonDefaults.filledTonalButtonColors()
+        }
+    val subscribeColors =
+        ToggleButtonDefaults.toggleButtonColors(
+            containerColor = tint?.onContainer ?: MaterialTheme.colorScheme.primary,
+            contentColor = tint?.container ?: MaterialTheme.colorScheme.onPrimary,
+        )
 
     Box(modifier = modifier) {
         if (isSubscribed) {
@@ -69,6 +124,14 @@ fun FlowSubscribeButton(
                 leadingButton = {
                     SplitButtonDefaults.TonalLeadingButton(
                         onClick = { onNotificationChange?.invoke(!isNotificationsEnabled) },
+                        colors = tonalColors,
+                        contentPadding =
+                            if (compact) {
+                                SplitButtonDefaults.ExtraSmallLeadingButtonContentPadding
+                            } else {
+                                SplitButtonDefaults.SmallLeadingButtonContentPadding
+                            },
+                        modifier = Modifier.heightIn(min = containerHeight),
                     ) {
                         Icon(
                             imageVector =
@@ -78,21 +141,29 @@ fun FlowSubscribeButton(
                                     Icons.Rounded.NotificationsOff
                                 },
                             contentDescription = null,
-                            modifier = Modifier.size(SplitButtonDefaults.LeadingIconSize),
+                            modifier = Modifier.size(leadingIconSize),
                         )
                         Spacer(modifier = Modifier.width(ButtonDefaults.IconSpacing))
-                        Text(text = stringResource(R.string.subscribed))
+                        Text(text = stringResource(R.string.subscribed), maxLines = 1)
                     }
                 },
                 trailingButton = {
                     SplitButtonDefaults.TonalTrailingButton(
                         checked = menuExpanded,
                         onCheckedChange = { menuExpanded = it },
+                        colors = tonalColors,
+                        contentPadding =
+                            if (compact) {
+                                SplitButtonDefaults.ExtraSmallTrailingButtonContentPadding
+                            } else {
+                                SplitButtonDefaults.SmallTrailingButtonContentPadding
+                            },
+                        modifier = Modifier.heightIn(min = containerHeight),
                     ) {
                         Icon(
                             imageVector = Icons.Rounded.KeyboardArrowDown,
                             contentDescription = stringResource(R.string.subscribed),
-                            modifier = Modifier.size(SplitButtonDefaults.TrailingIconSize),
+                            modifier = Modifier.size(trailingIconSize),
                         )
                     }
                 },
@@ -100,15 +171,17 @@ fun FlowSubscribeButton(
         } else {
             ToggleButton(
                 checked = false,
-                onCheckedChange = { onSubscribeClick() },
+                onCheckedChange = {
+                    haptics.performHapticFeedback(HapticFeedbackType.Confirm)
+                    onSubscribeClick()
+                },
                 shapes = ToggleButtonShapes(CircleShape, CircleShape, CircleShape),
-                colors =
-                    ToggleButtonDefaults.toggleButtonColors(
-                        containerColor = MaterialTheme.colorScheme.primary,
-                        contentColor = MaterialTheme.colorScheme.onPrimary,
-                    ),
+                colors = subscribeColors,
+                contentPadding =
+                    if (compact) ButtonDefaults.ExtraSmallContentPadding else ToggleButtonDefaults.ContentPadding,
+                modifier = fill.heightIn(min = containerHeight),
             ) {
-                Text(text = stringResource(R.string.subscribe))
+                Text(text = stringResource(R.string.subscribe), maxLines = 1)
             }
         }
 
@@ -169,6 +242,17 @@ fun FlowSubscribeButton(
                     },
                 )
                 HorizontalDivider()
+            }
+
+            if (onAddNote != null) {
+                DropdownMenuItem(
+                    text = { Text(stringResource(R.string.note_add)) },
+                    leadingIcon = { Icon(Icons.Outlined.StickyNote2, contentDescription = null) },
+                    onClick = {
+                        onAddNote()
+                        menuExpanded = false
+                    },
+                )
             }
 
             if (onManageGroups != null) {

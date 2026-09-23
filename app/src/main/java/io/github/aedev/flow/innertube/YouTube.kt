@@ -12,6 +12,7 @@ import io.github.aedev.flow.innertube.models.MediaInfo
 import io.github.aedev.flow.innertube.models.MusicCarouselShelfRenderer
 import io.github.aedev.flow.innertube.models.MusicShelfRenderer
 import io.github.aedev.flow.innertube.models.PlaylistItem
+import io.github.aedev.flow.innertube.models.ReturnYouTubeDislikeResponse
 import io.github.aedev.flow.innertube.models.Run
 import io.github.aedev.flow.innertube.models.Runs
 import io.github.aedev.flow.innertube.models.SearchSuggestions
@@ -44,11 +45,7 @@ import io.github.aedev.flow.innertube.pages.ArtistItemsContinuationPage
 import io.github.aedev.flow.innertube.pages.ArtistItemsPage
 import io.github.aedev.flow.innertube.pages.ArtistPage
 import io.github.aedev.flow.innertube.pages.BrowseResult
-import io.github.aedev.flow.innertube.pages.ChannelShortsPage
-import io.github.aedev.flow.innertube.pages.ChannelSortOption
 import io.github.aedev.flow.innertube.pages.ChartsPage
-import io.github.aedev.flow.innertube.pages.CommunityCommentsPage
-import io.github.aedev.flow.innertube.pages.CommunityPostsPage
 import io.github.aedev.flow.innertube.pages.ExplorePage
 import io.github.aedev.flow.innertube.pages.HistoryPage
 import io.github.aedev.flow.innertube.pages.HomePage
@@ -63,23 +60,60 @@ import io.github.aedev.flow.innertube.pages.PlaylistPage
 import io.github.aedev.flow.innertube.pages.RelatedPage
 import io.github.aedev.flow.innertube.pages.SearchPage
 import io.github.aedev.flow.innertube.pages.SearchResult
-import io.github.aedev.flow.innertube.pages.SearchShortItem
 import io.github.aedev.flow.innertube.pages.SearchSuggestionPage
 import io.github.aedev.flow.innertube.pages.SearchSummary
 import io.github.aedev.flow.innertube.pages.SearchSummaryPage
-import io.github.aedev.flow.innertube.pages.SearchVideosPage
-import io.github.aedev.flow.innertube.pages.ShortsPage
-import io.github.aedev.flow.innertube.pages.channelSortOptions
-import io.github.aedev.flow.innertube.pages.toChannelShortsPage
-import io.github.aedev.flow.innertube.pages.toCommunityCommentsPage
-import io.github.aedev.flow.innertube.pages.toCommunityPostsPage
-import io.github.aedev.flow.innertube.pages.toSearchShorts
-import io.github.aedev.flow.innertube.pages.toSearchVideosPage
-import io.github.aedev.flow.innertube.pages.toShortsPage
+import io.github.aedev.flow.innertube.pages.VideoCommentsPage
+import io.github.aedev.flow.innertube.pages.VideoDescriptionPage
+import io.github.aedev.flow.innertube.pages.channel.ChannelAbout
+import io.github.aedev.flow.innertube.pages.channel.ChannelHeader
+import io.github.aedev.flow.innertube.pages.channel.ChannelPage
+import io.github.aedev.flow.innertube.pages.channel.ChannelShortsPage
+import io.github.aedev.flow.innertube.pages.channel.ChannelSortOption
+import io.github.aedev.flow.innertube.pages.channel.ChannelTabContent
+import io.github.aedev.flow.innertube.pages.channel.ChannelTabKind
+import io.github.aedev.flow.innertube.pages.channel.channelAboutContinuation
+import io.github.aedev.flow.innertube.pages.channel.channelSortOptions
+import io.github.aedev.flow.innertube.pages.channel.toChannelAbout
+import io.github.aedev.flow.innertube.pages.channel.toChannelHeader
+import io.github.aedev.flow.innertube.pages.channel.toChannelShortsPage
+import io.github.aedev.flow.innertube.pages.channel.toChannelTabContent
+import io.github.aedev.flow.innertube.pages.channel.toChannelTabs
+import io.github.aedev.flow.innertube.pages.explore.CHARTS_BROWSE_ID
+import io.github.aedev.flow.innertube.pages.explore.ExploreDestinationPage
+import io.github.aedev.flow.innertube.pages.explore.VideoChartsPage
+import io.github.aedev.flow.innertube.pages.explore.exploreShelves
+import io.github.aedev.flow.innertube.pages.explore.toExploreDestinationShell
+import io.github.aedev.flow.innertube.pages.explore.toVideoChartsPage
+import io.github.aedev.flow.innertube.pages.reel.ReelLockup
+import io.github.aedev.flow.innertube.pages.reel.ReelOverlay
+import io.github.aedev.flow.innertube.pages.reel.ReelParams
+import io.github.aedev.flow.innertube.pages.reel.ReelSequencePage
+import io.github.aedev.flow.innertube.pages.reel.toReelLockups
+import io.github.aedev.flow.innertube.pages.reel.toReelOverlay
+import io.github.aedev.flow.innertube.pages.reel.toReelSequencePage
+import io.github.aedev.flow.innertube.pages.renderer.CommunityCommentsPage
+import io.github.aedev.flow.innertube.pages.renderer.CommunityPostsPage
+import io.github.aedev.flow.innertube.pages.renderer.FeedItemOwner
+import io.github.aedev.flow.innertube.pages.renderer.FeedShelf
+import io.github.aedev.flow.innertube.pages.renderer.toCommunityCommentsPage
+import io.github.aedev.flow.innertube.pages.renderer.toCommunityPostsPage
+import io.github.aedev.flow.innertube.pages.search.SearchResultsPage
+import io.github.aedev.flow.innertube.pages.search.SearchSuggestion
+import io.github.aedev.flow.innertube.pages.search.parseSearchSuggestions
+import io.github.aedev.flow.innertube.pages.search.toSearchResultsPage
+import io.github.aedev.flow.innertube.pages.toCommentRepliesPage
+import io.github.aedev.flow.innertube.pages.toVideoCommentsPage
+import io.github.aedev.flow.innertube.pages.toVideoDescriptionPage
+import io.github.aedev.flow.innertube.pages.videoCommentsContinuation
+import io.github.aedev.flow.utils.PerformanceDispatcher
 import io.github.aedev.flow.utils.avatarImageIdentityKey
 import io.ktor.client.call.body
 import io.ktor.client.statement.bodyAsText
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.flow
+import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.withContext
 import kotlinx.serialization.encodeToString
@@ -94,6 +128,8 @@ import kotlinx.serialization.json.jsonObject
 import kotlinx.serialization.json.jsonPrimitive
 import org.schabi.newpipe.extractor.services.youtube.YoutubeParsingHelper
 import java.net.Proxy
+import java.time.Instant
+import java.time.ZoneId
 import java.util.Locale
 import kotlin.random.Random
 
@@ -285,31 +321,45 @@ object YouTube {
             )
         }
 
-    // Long-form search ignores the Shorts shelf; fetch it from the main site (not music).
-    suspend fun searchShorts(query: String): Result<List<SearchShortItem>> =
-        runCatching {
-            innerTube.webSearch(currentWebClient(), query).body<JsonObject>().toSearchShorts()
-        }.onSuccess { Log.d("SearchShorts", "query='$query' shorts=${it.size}") }
-            .onFailure { Log.w("SearchShorts", "query='$query' failed: ${it.message}") }
-
-    suspend fun searchByViews(
-        query: String,
-        searchParams: String,
-        continuation: String? = null,
-    ): Result<SearchVideosPage> =
+    /** Reels matching [query], through the Shorts filter the search dialog itself sends. */
+    suspend fun searchShorts(query: String): Result<List<ReelLockup>> =
         runCatching {
             ensureVisitorData()
-            val searchClient = currentWebClient()
             innerTube
                 .webSearch(
-                    client = searchClient,
+                    client = currentWebClient(),
+                    query = query,
+                    params = ReelParams.SEARCH_SHORTS_FILTER,
+                    anonymous = true,
+                    includeVisitorData = true,
+                ).body<JsonObject>()
+                .toReelLockups()
+        }.onFailure { Log.w("SearchShorts", "query='$query' failed: ${it.message}") }
+
+    /** Typeahead suggestions for the video search bar, in the app's content language. */
+    suspend fun videoSearchSuggestions(query: String): Result<List<SearchSuggestion>> =
+        runCatching {
+            parseSearchSuggestions(innerTube.searchSuggestions(query).bodyAsText())
+        }
+
+    /** One page of video search. Filters and sorting ride in [params]; paging rides in [continuation]. */
+    suspend fun videoSearch(
+        query: String,
+        params: String? = null,
+        continuation: String? = null,
+    ): Result<SearchResultsPage> =
+        runCatching {
+            ensureVisitorData()
+            innerTube
+                .webSearch(
+                    client = currentWebClient(),
                     query = query.takeIf { continuation == null },
-                    params = searchParams.takeIf { continuation == null },
+                    params = params?.takeIf { continuation == null },
                     continuation = continuation,
                     anonymous = true,
                     includeVisitorData = true,
                 ).body<JsonObject>()
-                .toSearchVideosPage()
+                .toSearchResultsPage()
         }
 
     private suspend fun ensureVisitorData() {
@@ -658,6 +708,99 @@ object YouTube {
                 "subscribe",
             )
 
+    // ── Channel (native InnerTube) ─────────────────────
+
+    /**
+     * A channel's landing page: header, the tabs it actually has, and the tab YouTube returned with
+     * it. [idOrHandle] must be a channel id in practice: browse answers 400 to an @handle, which
+     * would need a resolve request first.
+     */
+    suspend fun channel(idOrHandle: String): Result<ChannelPage> =
+        runCatching {
+            val response = channelBrowseJson(browseId = idOrHandle)
+            val about =
+                response
+                    .channelAboutContinuation()
+                    ?.let { token -> runCatching { channelBrowseJson(continuation = token).toChannelAbout() }.getOrNull() }
+            val header = response.toChannelHeader(idOrHandle).mergedWith(about)
+            val tabs = response.toChannelTabs()
+            ChannelPage(
+                header = header,
+                tabs = tabs,
+                initialTab =
+                    tabs
+                        .firstOrNull { it.selected }
+                        ?.let { tab -> response.toChannelTabContent(tab.kind, header.toOwner()) },
+            )
+        }
+
+    suspend fun channelTab(
+        browseId: String,
+        params: String,
+        owner: FeedItemOwner = FeedItemOwner(id = browseId),
+        kind: ChannelTabKind = ChannelTabKind.Unknown,
+    ): Result<ChannelTabContent> =
+        runCatching {
+            channelBrowseJson(browseId = browseId, params = params).toChannelTabContent(kind, owner)
+        }
+
+    /** Serves paging and sort switching alike — a sort chip's token is just another continuation. */
+    suspend fun channelTabContinuation(
+        continuation: String,
+        owner: FeedItemOwner,
+        kind: ChannelTabKind = ChannelTabKind.Unknown,
+    ): Result<ChannelTabContent> =
+        runCatching {
+            channelBrowseJson(continuation = continuation).toChannelTabContent(kind, owner)
+        }
+
+    private suspend fun channelBrowseJson(
+        browseId: String? = null,
+        params: String? = null,
+        continuation: String? = null,
+    ): JsonElement {
+        // Channel rows carry server-rendered times ("Scheduled for 9/16/26, 6:45 PM"); the WEB
+        // client's zero offset would print them in UTC.
+        val response =
+            innerTube.channelBrowse(
+                client = currentWebClient().copy(utcOffsetMinutes = localUtcOffsetMinutes()),
+                channelId = browseId,
+                params = params,
+                continuation = continuation,
+            )
+        return Json.parseToJsonElement(response.bodyAsText())
+    }
+
+    private fun localUtcOffsetMinutes(): Int =
+        ZoneId
+            .systemDefault()
+            .rules
+            .getOffset(Instant.now())
+            .totalSeconds / 60
+
+    /**
+     * The landing response carries a one-line description and nothing else about the channel; the
+     * About panel is a separate continuation and is where the links, country, join date and totals
+     * live.
+     */
+    private fun ChannelHeader.mergedWith(about: ChannelAbout?): ChannelHeader =
+        if (about == null) {
+            this
+        } else {
+            copy(
+                description = about.description ?: description,
+                subscriberCountText = about.subscriberCountText ?: subscriberCountText,
+                videoCountText = about.videoCountText ?: videoCountText,
+                joinedDateText = about.joinedDateText,
+                viewCountText = about.viewCountText,
+                countryText = about.countryText,
+                canonicalUrl = about.canonicalUrl ?: canonicalUrl,
+                links = about.links,
+            )
+        }
+
+    private fun ChannelHeader.toOwner() = FeedItemOwner(id = id, name = title, avatarUrl = avatarUrl)
+
     // ── Channel-scoped video search (YouTube.com WEB API) ─────────────────────
 
     data class ChannelVideoSearchResult(
@@ -840,6 +983,51 @@ object YouTube {
                 .parseToJsonElement(response.bodyAsText())
                 .jsonObject
                 .toChannelShortsPage()
+        }
+
+    /**
+     * An explore destination's landing page, emitted as it is mapped: the tabs first, then one more
+     * shelf each time. `FEtrending` and `FEexplore` are dead — see
+     * [io.github.aedev.flow.innertube.pages.explore.ExploreDestination].
+     *
+     * The whole page arrives in a single browse response, so this cannot paint before the body
+     * lands; what it takes off first paint is the mapping of every shelf after the first, which on
+     * a destination runs to hundreds of items. That mapping and the parse it walks both stay off
+     * the collector's thread.
+     */
+    fun exploreDestination(
+        browseId: String,
+        params: String? = null,
+    ): Flow<ExploreDestinationPage> =
+        flow {
+            val response = channelBrowseJson(browseId = browseId, params = params)
+            val shell = response.toExploreDestinationShell()
+            emit(shell)
+            val shelves = mutableListOf<FeedShelf>()
+            response.exploreShelves(shell.owner).forEach { shelf ->
+                shelves += shelf
+                emit(shell.copy(shelves = shelves.toList()))
+            }
+        }.flowOn(PerformanceDispatcher.parsing)
+
+    suspend fun videoCharts(
+        chartType: String,
+        country: String,
+    ): Result<VideoChartsPage> =
+        runCatching {
+            val response =
+                innerTube.analyticsChartsBrowse(
+                    browseId = CHARTS_BROWSE_ID,
+                    query =
+                        "perspective=CHART_DETAILS" +
+                            "&chart_params_country_code=$country" +
+                            "&chart_params_chart_type=$chartType",
+                )
+            withContext(PerformanceDispatcher.parsing) {
+                Json
+                    .parseToJsonElement(response.bodyAsText())
+                    .toVideoChartsPage(chartType, country)
+            }
         }
 
     suspend fun communityPosts(
@@ -2474,6 +2662,70 @@ object YouTube {
                 .body<PlayerResponse>()
         }
 
+    /**
+     * The creator-declared category for [videoId].
+     *
+     * MWEB carries a `microformat` where the direct-URL clients the player path uses do not, and it
+     * fills it without a `signatureTimestamp` — the response is UNPLAYABLE and carries no streams,
+     * which is the point: it costs ~8 KB and no base.js fetch, against ~215 KB for WEB.
+     */
+    suspend fun videoCategory(videoId: String): Result<String?> =
+        runCatching {
+            innerTube
+                .player(
+                    YouTubeClient.MWEB,
+                    videoId,
+                    playlistId = null,
+                    signatureTimestamp = null,
+                    localeOverride = YouTubeLocale.EXTRACTION,
+                    apiUrl = YouTubeClient.API_URL_YOUTUBE,
+                ).body<PlayerResponse>()
+                .microformat
+                ?.playerMicroformatRenderer
+                ?.category
+                ?.takeIf { it.isNotBlank() }
+        }
+
+    /**
+     * The raw web watch response for [videoId].
+     *
+     * The comment section, the attributed description and the related lane all read this one
+     * response, so callers go through the cache that wraps it rather than requesting it each.
+     */
+    suspend fun watchNextJson(videoId: String): Result<JsonElement> =
+        runCatching {
+            Json.parseToJsonElement(innerTube.nextWatch(videoId = videoId).bodyAsText())
+        }
+
+    /** The description, its typed spans and the figures beside it, from an already-fetched watch response. */
+    fun videoDescription(
+        watchNext: JsonElement,
+        videoId: String,
+    ): VideoDescriptionPage = watchNext.toVideoDescriptionPage(videoId)
+
+    /** The continuation that opens [videoId]'s comment section, from an already-fetched watch response. */
+    fun commentsContinuation(watchNext: JsonElement): String? = watchNext.videoCommentsContinuation()
+
+    suspend fun comments(
+        continuation: String,
+        ownVideoId: String?,
+    ): Result<VideoCommentsPage> =
+        runCatching {
+            Json
+                .parseToJsonElement(innerTube.nextWatch(continuation = continuation).bodyAsText())
+                .toVideoCommentsPage(ownVideoId)
+        }
+
+    suspend fun commentReplies(
+        continuation: String,
+        ownVideoId: String?,
+    ): Result<VideoCommentsPage> =
+        runCatching {
+            Json
+                .parseToJsonElement(innerTube.nextWatch(continuation = continuation).bodyAsText())
+                .toCommentRepliesPage(ownVideoId)
+        }
+
     suspend fun liveChatContinuation(videoId: String): Result<String?> =
         runCatching {
             innerTube
@@ -2746,6 +2998,11 @@ object YouTube {
             return innerTube.getMediaInfo(videoId)
         }
 
+    suspend fun returnYouTubeDislike(videoId: String): Result<ReturnYouTubeDislikeResponse> =
+        runCatching {
+            innerTube.returnYouTubeDislike(videoId).body<ReturnYouTubeDislikeResponse>()
+        }
+
     @JvmInline
     value class SearchFilter(
         val value: String,
@@ -2774,57 +3031,36 @@ object YouTube {
 
     const val MAX_GET_QUEUE_SIZE = 1000
 
-    suspend fun shorts(sequenceParams: String? = null): Result<ShortsPage> =
-        runCatching {
-            innerTube
-                .reel(
-                    client = YouTubeClient.ANDROID,
-                    sequenceParams = sequenceParams ?: "CA8%3D",
-                ).toShortsPage()
-        }
-
     /**
-     * Fetch the Shorts reel sequence that *follows* [videoId].
+     * One page of the reel feed: the seedless first page for a null token, else the page a
+     * previous response's continuation names. Entries carry ids and tokens only; see [reelOverlay].
      *
-     * The seed belongs in `sequenceParams` — the field YouTube's own Shorts player sends. Seeding
-     * through `params` instead is rejected outright (HTTP 400), which is what used to send callers
-     * to the unseeded feed and open an unrelated Short (#931).
-     *
-     * The response never contains the seed itself, because the client that asked is already
-     * playing it; whoever opens a queue on [videoId] has to supply it.
+     * IOS first because its page is a few kilobytes per entry; ANDROID's carries a serialized
+     * prefetch of every reel's player response and runs to several megabytes for the same ids.
      */
-    suspend fun shortsFromVideo(videoId: String): Result<ShortsPage> =
+    suspend fun shorts(sequenceParams: String? = null): Result<ReelSequencePage> =
         runCatching {
-            innerTube
-                .reel(
-                    client = YouTubeClient.ANDROID,
-                    sequenceParams = buildShortsSequenceParams(videoId),
-                ).toShortsPage()
+            ensureVisitorData()
+            val params = sequenceParams ?: ReelParams.INITIAL_SEQUENCE
+            runCatching { reelSequence(YouTubeClient.IOS, params) }
+                .getOrNull()
+                ?.takeIf { it.entries.isNotEmpty() }
+                ?: reelSequence(YouTubeClient.ANDROID, params)
         }
 
-    /**
-     * Resolve stream URLs for a Short using the ANDROID client.
-     * The ANDROID client is required for Shorts-compatible stream formats.
-     */
-    suspend fun shortsPlayer(videoId: String): Result<PlayerResponse> =
-        runCatching {
-            innerTube
-                .player(
-                    client = YouTubeClient.ANDROID,
-                    videoId = videoId,
-                    playlistId = null,
-                    signatureTimestamp = null,
-                ).body<PlayerResponse>()
-        }
+    private suspend fun reelSequence(
+        client: YouTubeClient,
+        sequenceParams: String,
+    ): ReelSequencePage = innerTube.reel(client = client, sequenceParams = sequenceParams).body<JsonObject>().toReelSequencePage()
 
-    /** Protobuf `{1: videoId}`, base64url — how the reel sequence names the Short it continues from. */
-    private fun buildShortsSequenceParams(videoId: String): String {
-        val bytes = byteArrayOf(0x0A) + videoId.length.toByte() + videoId.toByteArray(Charsets.UTF_8)
-        return java.util.Base64
-            .getUrlEncoder()
-            .withoutPadding()
-            .encodeToString(bytes)
-    }
+    /** The reels that follow [videoId]. The response never contains the seed itself. */
+    suspend fun shortsFromVideo(videoId: String): Result<ReelSequencePage> = shorts(ReelParams.seedSequenceParams(videoId))
+
+    /** Title, channel, counts and sound for one reel — everything the sequence leaves out. */
+    suspend fun reelOverlay(videoId: String): Result<ReelOverlay?> =
+        runCatching {
+            innerTube.reelItemWatch(client = WEB, videoId = videoId).body<JsonObject>().toReelOverlay()
+        }
 
     fun getNewPipeStreamUrls(videoId: String): List<Pair<Int, String>> =
         io.github.aedev.flow.innertube.pages.NewPipeExtractor
