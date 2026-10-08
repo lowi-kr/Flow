@@ -8,13 +8,15 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
 import io.github.aedev.flow.R
 import io.github.aedev.flow.data.comments.CommentsPager
+import io.github.aedev.flow.data.engagement.FeedInvalidationBus
 import io.github.aedev.flow.data.engagement.VideoEngagementUseCase
 import io.github.aedev.flow.data.feed.FeedPrefetchQueue
 import io.github.aedev.flow.data.local.PlayerPreferences
 import io.github.aedev.flow.data.local.PlaylistRepository
-import io.github.aedev.flow.data.local.ViewHistory
 import io.github.aedev.flow.data.model.Comment
+import io.github.aedev.flow.data.model.ShortLinkedVideo
 import io.github.aedev.flow.data.model.ShortVideo
+import io.github.aedev.flow.data.model.Video
 import io.github.aedev.flow.data.model.toVideo
 import io.github.aedev.flow.data.recommendation.FlowNeuroEngine
 import io.github.aedev.flow.data.recommendation.InteractionType
@@ -27,17 +29,23 @@ import io.github.aedev.flow.data.shorts.ShortWatchClassifier
 import io.github.aedev.flow.data.shorts.ShortsFeedRepository
 import io.github.aedev.flow.data.shorts.ShortsMetadataRepository
 import io.github.aedev.flow.data.shorts.ShortsStreamResolver
+import io.github.aedev.flow.data.shorts.ShortsWatchHistory
 import io.github.aedev.flow.data.shorts.queue.ShortsQueueChange
 import io.github.aedev.flow.data.shorts.queue.ShortsQueueController
 import io.github.aedev.flow.data.shorts.queue.ShortsQueueLoaderFactory
 import io.github.aedev.flow.data.shorts.queue.ShortsQueueSource
 import io.github.aedev.flow.data.shorts.queue.openAtVideoId
+import io.github.aedev.flow.data.stats.LedgerAction
+import io.github.aedev.flow.data.stats.VideoStatsRecorder
+import io.github.aedev.flow.data.stats.ViewEvent
+import io.github.aedev.flow.data.stats.ViewFormat
 import io.github.aedev.flow.innertube.models.response.PlayerResponse
 import io.github.aedev.flow.innertube.pages.VideoCommentSort
 import io.github.aedev.flow.innertube.pages.reel.ReelOverlay
 import io.github.aedev.flow.player.stream.StreamSizeEstimator
-import io.github.aedev.flow.ui.components.FeedInvalidationBus
 import io.github.aedev.flow.utils.PerformanceDispatcher
+import kotlinx.coroutines.CancellationException
+import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
@@ -59,14 +67,17 @@ class ShortsViewModel
         private val metadata: ShortsMetadataRepository,
         private val engagement: VideoEngagementUseCase,
         private val playlistRepository: PlaylistRepository,
-        private val viewHistory: ViewHistory,
+        private val watchHistory: ShortsWatchHistory,
         private val queueFactory: ShortsQueueLoaderFactory,
         private val playerPreferences: PlayerPreferences,
+        private val videoStats: VideoStatsRecorder,
     ) : ViewModel() {
         private val _uiState = MutableStateFlow(ShortsUiState())
         val uiState: StateFlow<ShortsUiState> = _uiState.asStateFlow()
 
         private var queue: ShortsQueueController? = null
+        private var loadedSource: ShortsQueueSource? = null
+        private var loadJob: Job? = null
 
         private val prefetch =
             FeedPrefetchQueue(
@@ -156,44 +167,52 @@ class ShortsViewModel
          * Opens the queue for [source]. Every surface funnels through here; which loader that needs,
          * and whether the algorithmic feed follows it, is [ShortsQueueLoaderFactory]'s decision.
          *
-         * Idempotent: re-entering the screen must not refetch or reset the position.
+         * Idempotent for the same source: re-entering the screen must not refetch or reset the
+         * position. A different source rebuilds, because a reused back stack entry hands this
+         * ViewModel a new source rather than a new ViewModel.
          */
         fun load(source: ShortsQueueSource) {
-            if (queue != null || _uiState.value.isLoading) return
+            if (source == loadedSource && (queue != null || _uiState.value.isLoading)) return
+            loadJob?.cancel()
+            loadedSource = source
 
             val resolved = queueFactory.resolve(source)
             val controller = queueFactory.create(resolved)
             queue = controller
-            _uiState.value = _uiState.value.copy(isLoading = true, error = null)
+            _uiState.value = ShortsUiState(isLoading = true)
 
             // Resolving the tapped short's streams starts now rather than after the queue loads, so
             // playback is not gated on whichever network call the source happens to need.
             resolved.openAtVideoId?.let { prefetchPlaybackStreams(listOf(it)) }
 
-            viewModelScope.launch(PerformanceDispatcher.networkIO) {
-                try {
-                    controller.loadInitial(resolved.openAtVideoId)
-                    _uiState.value = _uiState.value.copy(isLoading = false)
-                    publishQueue()
+            loadJob =
+                viewModelScope.launch(PerformanceDispatcher.networkIO) {
+                    try {
+                        controller.loadInitial(resolved.openAtVideoId)
+                        _uiState.value = _uiState.value.copy(isLoading = false)
+                        publishQueue()
 
-                    val items = controller.items.value
-                    val at = controller.currentIndex.value
-                    prefetchPlaybackStreams(listOfNotNull(items.getOrNull(at)?.id, items.getOrNull(at + 1)?.id))
-                    onScreenVisible()
-                } catch (e: Exception) {
-                    Log.e(TAG, "Error loading shorts queue", e)
-                    queue = null
-                    _uiState.value =
-                        _uiState.value.copy(
-                            isLoading = false,
-                            error = e.message ?: context.getString(R.string.error_failed_to_load_shorts),
-                        )
+                        val items = controller.items.value
+                        val at = controller.currentIndex.value
+                        prefetchPlaybackStreams(listOfNotNull(items.getOrNull(at)?.id, items.getOrNull(at + 1)?.id))
+                        onScreenVisible()
+                    } catch (e: CancellationException) {
+                        throw e
+                    } catch (e: Exception) {
+                        Log.e(TAG, "Error loading shorts queue", e)
+                        queue = null
+                        _uiState.value =
+                            _uiState.value.copy(
+                                isLoading = false,
+                                error = e.message ?: context.getString(R.string.error_failed_to_load_shorts),
+                            )
+                    }
                 }
-            }
         }
 
         fun retry(source: ShortsQueueSource) {
             queue = null
+            loadedSource = null
             _uiState.value = _uiState.value.copy(error = null)
             load(source)
         }
@@ -316,8 +335,11 @@ class ShortsViewModel
             videoId: String,
             details: ShortDetails,
         ) {
-            if (feed.isBlocked(details.channelId, details.title, details.channelName)) {
-                if (queue?.remove(videoId) != ShortsQueueChange.None) publishQueue()
+            val dropped =
+                feed.isBlocked(details.channelId, details.title, details.channelName) &&
+                    (queue?.dropFiltered(videoId) ?: ShortsQueueChange.None) != ShortsQueueChange.None
+            if (dropped) {
+                publishQueue()
                 return
             }
             enrich(videoId) { short ->
@@ -342,6 +364,8 @@ class ShortsViewModel
                 uploadDate = uploadDate.ifBlank { overlay.relativeTimestamp.orEmpty() },
                 soundTitle = overlay.soundTitle ?: soundTitle,
                 soundThumbnailUrl = overlay.soundThumbnailUrl ?: soundThumbnailUrl,
+                linkedVideo =
+                    overlay.companionVideoId?.let { ShortLinkedVideo(it, overlay.companionVideoTitle) } ?: linkedVideo,
             )
 
         private fun enrich(
@@ -393,26 +417,13 @@ class ShortsViewModel
             durationMs: Long,
         ) {
             viewModelScope.launch(PerformanceDispatcher.diskIO) {
-                val video = short.toVideo()
                 val safeDuration =
                     when {
                         durationMs > 0L -> durationMs
-                        video.duration > 0 -> video.duration * 1000L
+                        short.durationMs >= 1_000L -> short.durationMs
                         else -> DEFAULT_REEL_DURATION_MS
                     }
-                val safePosition = positionMs.coerceAtLeast(1_000L).coerceAtMost(safeDuration)
-
-                viewHistory.savePlaybackPosition(
-                    videoId = video.id,
-                    position = safePosition,
-                    duration = safeDuration,
-                    title = video.title,
-                    thumbnailUrl = video.thumbnailUrl,
-                    channelName = video.channelName,
-                    channelId = video.channelId,
-                    isMusic = false,
-                    isShort = true,
-                )
+                watchHistory.save(short, positionMs.coerceAtLeast(1_000L).coerceAtMost(safeDuration), safeDuration)
             }
         }
 
@@ -427,7 +438,14 @@ class ShortsViewModel
         ) {
             viewModelScope.launch(PerformanceDispatcher.diskIO) {
                 val video = short.toVideo()
-                val signal = ShortWatchClassifier.classifyAbandon(positionMs, durationMs, video.duration) ?: return@launch
+                val signal = ShortWatchClassifier.classifyAbandon(positionMs, durationMs, video.duration)
+                recordShortView(
+                    video,
+                    positionMs,
+                    counted =
+                        signal?.interaction != InteractionType.SKIPPED && positionMs >= ShortWatchClassifier.MIN_SHORT_WATCH_MS,
+                )
+                signal ?: return@launch
                 runCatching {
                     FlowNeuroEngine.onVideoInteraction(video.copy(isShort = true), signal.interaction, percentWatched = signal.percent)
                     FlowNeuroEngine.recordSeenShorts(listOf(video.id))
@@ -443,18 +461,8 @@ class ShortsViewModel
             viewModelScope.launch(PerformanceDispatcher.diskIO) {
                 val video = short.toVideo()
                 val signal = ShortWatchClassifier.classify(positionMs, durationMs, video.duration)
-
-                viewHistory.savePlaybackPosition(
-                    videoId = video.id,
-                    position = signal.position,
-                    duration = signal.safeDuration,
-                    title = video.title,
-                    thumbnailUrl = video.thumbnailUrl,
-                    channelName = video.channelName,
-                    channelId = video.channelId,
-                    isMusic = false,
-                    isShort = true,
-                )
+                recordShortView(video, signal.position, counted = signal.interaction == InteractionType.WATCHED)
+                watchHistory.save(short, signal.position, signal.safeDuration)
 
                 runCatching {
                     FlowNeuroEngine.onVideoInteraction(video.copy(isShort = true), signal.interaction, percentWatched = signal.percent)
@@ -462,6 +470,25 @@ class ShortsViewModel
                 }.onFailure { e -> Log.w(TAG, "Failed to record watched short in FlowNeuro", e) }
             }
         }
+
+        private fun recordShortView(
+            video: Video,
+            watchedMs: Long,
+            counted: Boolean,
+        ) = videoStats.onView(
+            ViewEvent(
+                videoId = video.id,
+                title = video.title,
+                channelId = video.channelId,
+                channelName = video.channelName,
+                format = ViewFormat.SHORT,
+                watchedMs = watchedMs,
+                counted = counted,
+                skipped = !counted,
+                channelAvatarUrl = video.channelThumbnailUrl,
+            ),
+            video.copy(isShort = true),
+        )
 
         fun loadComments(videoId: String) = comments.load(videoId)
 
@@ -507,6 +534,7 @@ class ShortsViewModel
                     val channelId = short.channelId
                     check(channelId.isNotBlank()) { context.getString(R.string.channel_metadata_unavailable) }
                     FlowNeuroEngine.blockChannel(context, channelId)
+                    videoStats.onAction(LedgerAction.BLOCK_CHANNEL)
                     dropChannel(channelId)
                     FeedInvalidationBus.emit(FeedInvalidationBus.Event.ChannelBlocked(channelId, short.id))
                     _snackbarMessage.value = context.getString(R.string.channel_blocked_toast, short.channelName)
@@ -527,6 +555,7 @@ class ShortsViewModel
                 try {
                     val video = short.toVideo()
                     FlowNeuroEngine.markNotInterested(video)
+                    videoStats.onAction(LedgerAction.NOT_INTERESTED)
                     FeedInvalidationBus.emit(FeedInvalidationBus.Event.NotInterested(video.id, video.channelId))
 
                     queue?.remove(short.id)

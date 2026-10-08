@@ -5,7 +5,6 @@ import io.github.aedev.flow.data.local.VideoQuality
 import io.github.aedev.flow.data.model.SponsorBlockSegment
 import io.github.aedev.flow.data.model.Video
 import io.github.aedev.flow.player.error.VideoErrorMapper
-import io.github.aedev.flow.player.stream.MergedPlayback
 import io.github.aedev.flow.player.stream.ResolvedPlayback
 import io.github.aedev.flow.ui.screens.player.SecondaryMetadata
 import io.mockk.every
@@ -52,30 +51,40 @@ class PlayerPlaybackReducersTest {
     }
 
     @Test
-    fun `a local copy after a failure only clears the load and the error`() {
-        val video = video("vid_a")
-        val state = VideoPlayerUiState(cachedVideo = video, isLoading = true, error = "boom", errorHint = "hint")
+    fun `a screen opened with only an id borrows the download row identity`() {
+        val blank = video("vid_a").copy(title = "", channelName = "", channelId = "", thumbnailUrl = "", duration = 0)
+        val row = video("vid_a").copy(title = "Row title", channelId = "")
 
-        val next = state.applyLocalCopyAfterFailure()
+        val next =
+            VideoPlayerUiState(cachedVideo = blank).applyLocalCopyReady(
+                videoId = "vid_a",
+                step = ResolvedPlayback.LocalCopyReady("/tmp/a.mp4", null, downloadedVideo = row),
+            )
 
-        assertThat(next).isEqualTo(state.copy(isLoading = false, error = null, errorHint = null))
+        assertThat(next.cachedVideo?.title).isEqualTo("Row title")
+        assertThat(next.cachedVideo?.channelName).isEqualTo("Channel vid_a")
+        assertThat(next.cachedVideo?.thumbnailUrl).isEqualTo("https://example.invalid/vid_a.jpg")
+        assertThat(next.cachedVideo?.duration).isEqualTo(120)
+        assertThat(next.cachedVideo?.channelId).isEmpty()
     }
 
     @Test
-    fun `an offline fallback fills in the lane around a copy that is already playing`() {
-        val related = listOf(video("rel_1"))
-        val state = VideoPlayerUiState(isLoading = true, isUpcoming = true, upcomingReleaseTimeMs = 42L)
+    fun `the card a screen was opened from keeps its own fields over the download row`() {
+        val card = video("vid_a").copy(title = "Card title")
+        val row = video("vid_a").copy(title = "Row title", channelName = "Row channel")
 
-        val next =
-            state.applyOfflineFallback(
-                ResolvedPlayback.OfflineFallback(localFilePath = "/tmp/a.mp4", offlineSegments = null, relatedVideos = related),
-            )
+        val next = card.withDownloadIdentity("vid_a", row)
 
-        assertThat(next.relatedVideos.map { it.id }).containsExactly("rel_1")
-        assertThat(next.localFilePath).isEqualTo("/tmp/a.mp4")
-        assertThat(next.isLoading).isFalse()
-        assertThat(next.isUpcoming).isFalse()
-        assertThat(next.upcomingReleaseTimeMs).isNull()
+        assertThat(next).isEqualTo(card)
+    }
+
+    @Test
+    fun `a download row for another video is ignored, and an empty screen takes the row`() {
+        val row = video("vid_b")
+
+        assertThat(video("vid_a").copy(title = "").withDownloadIdentity("vid_a", row)?.title).isEmpty()
+        assertThat(null.withDownloadIdentity("vid_b", row)).isEqualTo(row)
+        assertThat(null.withDownloadIdentity("vid_b", null)).isNull()
     }
 
     @Test
@@ -320,38 +329,4 @@ class PlayerPlaybackReducersTest {
             .setIsVideoOnly(true)
             .setDeliveryMethod(DeliveryMethod.PROGRESSIVE_HTTP)
             .build()
-
-    private fun mergedPlayback(
-        selectedVideoStream: VideoStream? = null,
-        selectedAudioStream: AudioStream? = null,
-        availableQualities: List<VideoQuality> = emptyList(),
-        streamSizes: Map<String, Long> = emptyMap(),
-        hlsUrl: String? = null,
-        isLiveStream: Boolean = false,
-        localFilePath: String? = null,
-        preferredQuality: VideoQuality = VideoQuality.AUTO,
-    ): MergedPlayback =
-        MergedPlayback(
-            videoStreams = emptyList(),
-            audioStreams = emptyList(),
-            availableQualities = availableQualities,
-            selectedVideoStream = selectedVideoStream,
-            selectedAudioStream = selectedAudioStream,
-            subtitles = emptyList(),
-            chapters = emptyList(),
-            streamSizes = streamSizes,
-            innerTubeVideoFormats = emptyList(),
-            innerTubeAudioFormats = emptyList(),
-            hlsUrl = hlsUrl,
-            dashManifestUrl = null,
-            isLiveType = isLiveStream,
-            isLiveStream = isLiveStream,
-            hasPlayableContent = true,
-            localFilePath = localFilePath,
-            sabrInfo = null,
-            preferSabr = false,
-            preferredQuality = preferredQuality,
-            preferredCodecKey = "auto",
-            storyboard = emptyList(),
-        )
 }

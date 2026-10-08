@@ -34,19 +34,19 @@ import io.github.aedev.flow.data.local.PlayerPreferences
 import io.github.aedev.flow.data.model.Video
 import io.github.aedev.flow.innertube.pages.explore.ExploreSectionKind
 import io.github.aedev.flow.ui.OnTabReselected
-import io.github.aedev.flow.ui.components.FEED_MAX_AUTO_COLUMNS
 import io.github.aedev.flow.ui.components.categories.CategoryChartGrid
 import io.github.aedev.flow.ui.components.categories.CategoryPagedGrid
 import io.github.aedev.flow.ui.components.categories.CategoryShelfPage
-import io.github.aedev.flow.ui.components.categories.CategoryShimmer
 import io.github.aedev.flow.ui.components.categories.CategorySubTabMenu
 import io.github.aedev.flow.ui.components.categories.CategoryTabBar
 import io.github.aedev.flow.ui.components.layout.navigation.FlowTab
 import io.github.aedev.flow.ui.components.layout.topbar.FlowTopBar
 import io.github.aedev.flow.ui.components.rememberFeedGridLayout
+import io.github.aedev.flow.ui.components.shared.FeedGridSkeleton
+import io.github.aedev.flow.ui.components.shared.FlowChoice
+import io.github.aedev.flow.ui.components.shared.FlowChoiceDialog
 import io.github.aedev.flow.ui.components.shared.FlowErrorState
-import io.github.aedev.flow.ui.screens.settings.SearchablePickerDialog
-import io.github.aedev.flow.ui.screens.settings.regionPickerOptions
+import io.github.aedev.flow.utils.RegionCatalog
 
 /**
  * Explore: one tab per YouTube destination, each rendering whichever of the three shapes its source
@@ -55,7 +55,6 @@ import io.github.aedev.flow.ui.screens.settings.regionPickerOptions
 @Composable
 fun CategoriesScreen(
     onVideoClick: (Video) -> Unit,
-    onChannelClick: (String) -> Unit = {},
     onShortClick: (String) -> Unit = {},
     onPlaylistClick: (String) -> Unit = {},
     viewModel: CategoriesViewModel = hiltViewModel(),
@@ -125,10 +124,10 @@ fun CategoriesScreen(
             }
 
             BoxWithConstraints(modifier = Modifier.weight(1f).fillMaxWidth()) {
-                val feedLayout = rememberFeedGridLayout(maxWidth, columnPreference, FEED_MAX_AUTO_COLUMNS)
+                val feedLayout = rememberFeedGridLayout(maxWidth, columnPreference)
                 when {
                     uiState.isLoading -> {
-                        CategoryShimmer(feedLayout = feedLayout, isListView = uiState.isListView)
+                        FeedGridSkeleton(layout = feedLayout, listMode = uiState.isListView)
                     }
 
                     uiState.error != null -> {
@@ -142,7 +141,6 @@ fun CategoriesScreen(
                             feedLayout = feedLayout,
                             isListView = uiState.isListView,
                             onVideoClick = onVideoClick,
-                            onChannelClick = onChannelClick,
                         )
                     }
 
@@ -153,7 +151,6 @@ fun CategoriesScreen(
                             feedLayout = feedLayout,
                             isListView = uiState.isListView,
                             onVideoClick = onVideoClick,
-                            onChannelClick = onChannelClick,
                             onPlaylistClick = onPlaylistClick,
                         )
                     }
@@ -166,7 +163,6 @@ fun CategoriesScreen(
                             columnPreference = columnPreference,
                             onVideoClick = onVideoClick,
                             onShortClick = onShortClick,
-                            onChannelClick = onChannelClick,
                             onPlaylistClick = onPlaylistClick,
                             onShelfOpen = viewModel::openShelf,
                         )
@@ -177,15 +173,12 @@ fun CategoriesScreen(
     }
 
     if (showRegionDialog) {
-        val regionOptions = remember { regionPickerOptions() }
-        SearchablePickerDialog(
+        val regionOptions = remember { RegionCatalog.sorted().map { (code, name) -> FlowChoice(code, name) } }
+        FlowChoiceDialog(
             title = stringResource(R.string.settings_region_dialog_title),
             options = regionOptions,
-            selectedKey = trendingRegion,
-            onSelect = { code ->
-                viewModel.setRegion(code)
-                showRegionDialog = false
-            },
+            selected = trendingRegion,
+            onSelect = viewModel::setRegion,
             onDismiss = { showRegionDialog = false },
             listMaxHeight = RegionDialogMaxHeight,
         )

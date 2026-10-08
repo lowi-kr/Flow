@@ -35,7 +35,7 @@ import androidx.compose.ui.unit.dp
 import io.github.aedev.flow.R
 import io.github.aedev.flow.data.local.PlayerPreferences
 import io.github.aedev.flow.data.model.ShortVideo
-import io.github.aedev.flow.player.QualityOption
+import io.github.aedev.flow.data.shorts.ShortVideoQuality
 import io.github.aedev.flow.player.shorts.ShortsPlayerPool
 import io.github.aedev.flow.player.stream.VideoCodecUtils
 import io.github.aedev.flow.ui.components.shared.FlowBottomSheet
@@ -114,11 +114,11 @@ internal fun ShortsSettingsSheet(
         if (state.availableQualities.isNotEmpty()) return
         withStreams {
             state.availableQualities = viewModel.availableQualities(short.id)
-            val activeFormat = playerPool.ownedPlayer(pageIndex)?.videoFormat
+            val activeFormat = playerPool.ownedPlayer(pageIndex, short.id)?.videoFormat
             val active =
                 findActiveShortQuality(
                     qualities = state.availableQualities,
-                    currentVideoUrl = playerPool.getVideoUrlForIndex(pageIndex),
+                    currentVideoUrl = playerPool.getVideoUrlForIndex(pageIndex, short.id),
                     activeVideoWidth = activeFormat?.width ?: 0,
                     activeVideoHeight = activeFormat?.height ?: 0,
                     activeCodecKey = activeFormat?.let { VideoCodecUtils.codecKeyFromMimeType(it.fullMimeType()) },
@@ -319,25 +319,14 @@ private fun ShortsSettingsMainPage(
 private fun ShortsQualityPage(
     state: ShortsSettingsSheetState,
     groupedByResolution: Boolean,
-    onQualitySelected: (io.github.aedev.flow.data.shorts.ShortVideoQuality) -> Unit,
+    onQualitySelected: (ShortVideoQuality) -> Unit,
 ) {
     if (state.isLoadingStreams) {
         SheetLoading()
         return
     }
     val qualities = state.availableQualities
-    val options =
-        remember(qualities) {
-            qualities.map { quality ->
-                QualityOption(
-                    height = quality.heightClass,
-                    label = quality.label,
-                    bitrate = 0L,
-                    codecKey = quality.codecKey,
-                    streamKey = quality.videoUrl,
-                )
-            }
-        }
+    val options = remember(qualities) { qualities.map(ShortVideoQuality::toQualityOption) }
     val selectedKey = state.selectedQualityUrl ?: qualities.firstOrNull { it.heightClass == state.selectedQualityHeight }?.videoUrl
     PlayerSettingsQualityPage(
         availableQualities = options,

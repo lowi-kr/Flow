@@ -2,6 +2,7 @@ package io.github.aedev.flow.ui.components.library
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
@@ -26,6 +27,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import io.github.aedev.flow.data.model.Video
 import io.github.aedev.flow.data.music.DownloadedTrack
@@ -33,6 +35,7 @@ import io.github.aedev.flow.data.music.model.MusicTrack
 import io.github.aedev.flow.data.video.DownloadedVideo
 import io.github.aedev.flow.ui.components.shared.MediaShortCard
 import io.github.aedev.flow.ui.components.shared.ShimmerBone
+import io.github.aedev.flow.ui.components.shared.ShortCardDefaults
 
 private const val PLACEHOLDER_CARD_COUNT = 2
 private const val PLACEHOLDER_STAGGER_MS = 120
@@ -43,13 +46,14 @@ private fun LibraryShelfHeader(
     title: String,
     icon: ImageVector,
     showChevron: Boolean,
+    horizontalInset: Dp,
     modifier: Modifier = Modifier,
 ) {
     Row(
         modifier =
             modifier
                 .fillMaxWidth()
-                .padding(horizontal = 16.dp, vertical = 8.dp),
+                .padding(horizontal = horizontalInset, vertical = 8.dp),
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.spacedBy(12.dp),
     ) {
@@ -80,23 +84,29 @@ private fun LibraryShelfHeader(
 internal fun LibraryShelf(
     title: String,
     icon: ImageVector,
-    onTitleClick: () -> Unit,
+    onTitleClick: (() -> Unit)?,
     modifier: Modifier = Modifier,
-    content: LazyListScope.() -> Unit,
+    horizontalInset: Dp = 16.dp,
+    content: LazyListScope.(cardWidth: Dp) -> Unit,
 ) {
-    Column(modifier = modifier.fillMaxWidth()) {
-        LibraryShelfHeader(
-            title = title,
-            icon = icon,
-            showChevron = true,
-            modifier = Modifier.clickable(onClick = onTitleClick),
-        )
+    BoxWithConstraints(modifier = modifier.fillMaxWidth()) {
+        val cardWidth = libraryShelfCardWidth(maxWidth)
+        Column(modifier = Modifier.fillMaxWidth()) {
+            LibraryShelfHeader(
+                title = title,
+                icon = icon,
+                showChevron = onTitleClick != null,
+                horizontalInset = horizontalInset,
+                modifier = if (onTitleClick != null) Modifier.clickable(onClick = onTitleClick) else Modifier,
+            )
 
-        LazyRow(
-            contentPadding = PaddingValues(horizontal = 16.dp),
-            horizontalArrangement = Arrangement.spacedBy(12.dp),
-            content = content,
-        )
+            LazyRow(
+                contentPadding = PaddingValues(horizontal = horizontalInset),
+                horizontalArrangement = Arrangement.spacedBy(12.dp),
+            ) {
+                content(cardWidth)
+            }
+        }
     }
 }
 
@@ -125,7 +135,8 @@ internal fun LibraryMediaShelf(
             items.mapNotNull { (it as? LibraryMediaItem.DownloadedMusicItem)?.download }
         }
 
-    LibraryShelf(title = title, icon = icon, onTitleClick = onTitleClick) {
+    LibraryShelf(title = title, icon = icon, onTitleClick = onTitleClick) { cardWidth ->
+        val artworkSize = cardWidth * 9f / 16f
         items(
             items = items,
             key = LibraryMediaItem::key,
@@ -146,6 +157,7 @@ internal fun LibraryMediaShelf(
                     LibraryVideoCard(
                         video = item.video,
                         onClick = { onVideoClick(item.video) },
+                        width = cardWidth,
                     )
                 }
 
@@ -155,6 +167,7 @@ internal fun LibraryMediaShelf(
                         subtitle = item.track.artist,
                         thumbnailUrl = item.track.thumbnailUrl,
                         onClick = { onMusicClick(item.track, musicQueue, sourceName) },
+                        artworkSize = artworkSize,
                     )
                 }
 
@@ -168,6 +181,7 @@ internal fun LibraryMediaShelf(
                                 }
                             if (index >= 0) onDownloadedVideoClick(downloadedVideoQueue, index)
                         },
+                        width = cardWidth,
                     )
                 }
 
@@ -184,6 +198,7 @@ internal fun LibraryMediaShelf(
                                 }
                             if (index >= 0) onDownloadedMusicClick(downloadedMusicQueue, index)
                         },
+                        artworkSize = artworkSize,
                     )
                 }
             }
@@ -201,7 +216,7 @@ internal fun LibraryShortsShelf(
 ) {
     LibraryShelf(title = title, icon = icon, onTitleClick = onTitleClick) {
         items(shorts, key = Video::id, contentType = { "short" }) { short ->
-            MediaShortCard(video = short, onClick = { onShortClick(short) })
+            MediaShortCard(video = short, onClick = { onShortClick(short) }, removableFromSavedShorts = true)
         }
     }
 }
@@ -211,39 +226,45 @@ internal fun LibraryShelfPlaceholder(
     title: String,
     icon: ImageVector,
     modifier: Modifier = Modifier,
+    portrait: Boolean = false,
 ) {
-    Column(modifier = modifier.fillMaxWidth()) {
-        LibraryShelfHeader(
-            title = title,
-            icon = icon,
-            showChevron = false,
-        )
+    BoxWithConstraints(modifier = modifier.fillMaxWidth()) {
+        val cardWidth = if (portrait) ShortCardDefaults.MinWidth else libraryShelfCardWidth(maxWidth)
+        val aspectRatio = if (portrait) ShortCardDefaults.ASPECT_RATIO else 16f / 9f
+        Column(modifier = Modifier.fillMaxWidth()) {
+            LibraryShelfHeader(
+                title = title,
+                icon = icon,
+                showChevron = false,
+                horizontalInset = 16.dp,
+            )
 
-        Row(
-            modifier = Modifier.padding(horizontal = 16.dp),
-            horizontalArrangement = Arrangement.spacedBy(12.dp),
-        ) {
-            repeat(PLACEHOLDER_CARD_COUNT) { index ->
-                Column(
-                    modifier = Modifier.width(LibraryShelfCardWidth),
-                    verticalArrangement = Arrangement.spacedBy(8.dp),
-                ) {
-                    ShimmerBone(
-                        modifier =
-                            Modifier
-                                .fillMaxWidth()
-                                .aspectRatio(16f / 9f),
-                        shape = MaterialTheme.shapes.medium,
-                        delayMillis = index * PLACEHOLDER_STAGGER_MS,
-                    )
-                    ShimmerBone(
-                        modifier =
-                            Modifier
-                                .fillMaxWidth()
-                                .height(14.dp),
-                        shape = MaterialTheme.shapes.extraSmall,
-                        delayMillis = index * PLACEHOLDER_STAGGER_MS,
-                    )
+            Row(
+                modifier = Modifier.padding(horizontal = 16.dp),
+                horizontalArrangement = Arrangement.spacedBy(12.dp),
+            ) {
+                repeat(PLACEHOLDER_CARD_COUNT) { index ->
+                    Column(
+                        modifier = Modifier.width(cardWidth),
+                        verticalArrangement = Arrangement.spacedBy(8.dp),
+                    ) {
+                        ShimmerBone(
+                            modifier =
+                                Modifier
+                                    .fillMaxWidth()
+                                    .aspectRatio(aspectRatio),
+                            shape = MaterialTheme.shapes.medium,
+                            delayMillis = index * PLACEHOLDER_STAGGER_MS,
+                        )
+                        ShimmerBone(
+                            modifier =
+                                Modifier
+                                    .fillMaxWidth()
+                                    .height(14.dp),
+                            shape = MaterialTheme.shapes.extraSmall,
+                            delayMillis = index * PLACEHOLDER_STAGGER_MS,
+                        )
+                    }
                 }
             }
         }

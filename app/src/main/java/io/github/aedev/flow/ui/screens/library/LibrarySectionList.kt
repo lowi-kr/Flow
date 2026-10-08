@@ -2,6 +2,7 @@ package io.github.aedev.flow.ui.screens.library
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.widthIn
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -10,24 +11,34 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import io.github.aedev.flow.R
 import io.github.aedev.flow.ui.components.library.LibraryNavigationRow
+import io.github.aedev.flow.ui.components.shared.FlowMaxContentWidth
+import io.github.aedev.flow.ui.components.shared.MediaKind
 
 @Composable
 internal fun LibrarySectionList(
     counts: LibraryCounts?,
     shortsEnabled: Boolean,
+    separatePlaylistKinds: Boolean,
     onNavigateToHistory: () -> Unit,
-    onNavigateToPlaylists: () -> Unit,
+    onNavigateToPlaylists: (MediaKind?) -> Unit,
     onNavigateToLikedVideos: () -> Unit,
+    onNavigateToLikedMusic: () -> Unit,
     onNavigateToWatchLater: () -> Unit,
     onNavigateToSavedShorts: () -> Unit,
     onNavigateToDownloads: () -> Unit,
 ) {
-    Column(modifier = Modifier.padding(horizontal = 16.dp)) {
+    Column(modifier = Modifier.widthIn(max = FlowMaxContentWidth).padding(horizontal = 16.dp)) {
         LibrarySectionHeader(stringResource(R.string.library_section_header))
         LibrarySectionRow(LibrarySection.HISTORY, counts, onNavigateToHistory)
-        LibrarySectionRow(LibrarySection.PLAYLISTS, counts, onNavigateToPlaylists)
+        if (separatePlaylistKinds) {
+            LibrarySectionRow(LibrarySection.VIDEO_PLAYLISTS, counts) { onNavigateToPlaylists(MediaKind.Videos) }
+            LibrarySectionRow(LibrarySection.MUSIC_PLAYLISTS, counts) { onNavigateToPlaylists(MediaKind.Music) }
+        } else {
+            LibrarySectionRow(LibrarySection.PLAYLISTS, counts) { onNavigateToPlaylists(null) }
+        }
         LibrarySectionRow(LibrarySection.WATCH_LATER, counts, onNavigateToWatchLater)
-        LibrarySectionRow(LibrarySection.LIKES, counts, onNavigateToLikedVideos)
+        LibrarySectionRow(LibrarySection.LIKED_VIDEOS, counts, onNavigateToLikedVideos)
+        LibrarySectionRow(LibrarySection.LIKED_MUSIC, counts, onNavigateToLikedMusic)
         LibrarySectionRow(LibrarySection.DOWNLOADS, counts, onNavigateToDownloads)
         if (shortsEnabled) {
             LibrarySectionRow(LibrarySection.SAVED_SHORTS, counts, onNavigateToSavedShorts)

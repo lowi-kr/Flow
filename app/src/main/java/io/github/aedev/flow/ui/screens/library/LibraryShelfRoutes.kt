@@ -19,7 +19,6 @@ import io.github.aedev.flow.ui.components.library.LibraryAlbumCard
 import io.github.aedev.flow.ui.components.library.LibraryMediaItem
 import io.github.aedev.flow.ui.components.library.LibraryMediaShelf
 import io.github.aedev.flow.ui.components.library.LibraryShelf
-import io.github.aedev.flow.ui.components.library.LibraryShelfCardWidth
 import io.github.aedev.flow.ui.components.library.LibraryShelfPlaceholder
 import io.github.aedev.flow.ui.components.library.LibraryShortsShelf
 import io.github.aedev.flow.ui.components.library.LibraryVideoCard
@@ -65,14 +64,14 @@ internal fun LibraryMediaShelfRoute(
 @Composable
 internal fun LibraryPlaylistsShelf(
     section: LibrarySection,
-    videoPlaylistsFlow: StateFlow<List<PlaylistInfo>?>,
-    musicPlaylistsFlow: StateFlow<List<PlaylistInfo>?>,
+    videoPlaylistsFlow: StateFlow<List<PlaylistInfo>?>?,
+    musicPlaylistsFlow: StateFlow<List<PlaylistInfo>?>?,
     onTitleClick: () -> Unit,
     onVideoPlaylistClick: (String) -> Unit,
     onMusicPlaylistClick: (String) -> Unit,
 ) {
-    val videoPlaylists by videoPlaylistsFlow.collectAsStateWithLifecycle()
-    val musicPlaylists by musicPlaylistsFlow.collectAsStateWithLifecycle()
+    val videoPlaylists = videoPlaylistsFlow?.collectAsStateWithLifecycle()?.value
+    val musicPlaylists = musicPlaylistsFlow?.collectAsStateWithLifecycle()?.value
     val title = section.title
 
     if (videoPlaylists == null && musicPlaylists == null) {
@@ -85,7 +84,7 @@ internal fun LibraryPlaylistsShelf(
         title = title,
         icon = section.icon,
         onTitleClick = onTitleClick,
-    ) {
+    ) { cardWidth ->
         items(
             items = videoPlaylists.orEmpty(),
             key = { "video-${it.id}" },
@@ -95,7 +94,7 @@ internal fun LibraryPlaylistsShelf(
                 playlist = playlist,
                 onClick = { onVideoPlaylistClick(playlist.id) },
                 layout = PlaylistCardLayout.SHELF,
-                modifier = Modifier.width(LibraryShelfCardWidth),
+                modifier = Modifier.width(cardWidth),
             )
         }
         items(
@@ -108,6 +107,7 @@ internal fun LibraryPlaylistsShelf(
                 subtitle = stringResource(R.string.tracks_count_template, playlist.videoCount),
                 thumbnailUrl = playlist.thumbnailUrl,
                 onClick = { onMusicPlaylistClick(playlist.id) },
+                artworkSize = cardWidth * 9f / 16f,
             )
         }
     }
@@ -136,7 +136,7 @@ internal fun LibraryVideoShelf(
                 title = title,
                 icon = section.icon,
                 onTitleClick = onTitleClick,
-            ) {
+            ) { cardWidth ->
                 items(
                     items = videos.orEmpty(),
                     key = Video::id,
@@ -145,6 +145,7 @@ internal fun LibraryVideoShelf(
                     LibraryVideoCard(
                         video = video,
                         onClick = { onVideoClick(video) },
+                        width = cardWidth,
                     )
                 }
             }
@@ -163,7 +164,7 @@ internal fun LibraryShortsShelfRoute(
     val title = section.title
     when {
         shorts == null -> {
-            LibraryShelfPlaceholder(title = title, icon = section.icon)
+            LibraryShelfPlaceholder(title = title, icon = section.icon, portrait = true)
         }
 
         shorts.isNullOrEmpty() -> {

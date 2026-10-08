@@ -175,7 +175,8 @@ class InnerTube {
                     )
                 }
 
-                proxy?.let { proxy = this@InnerTube.proxy }
+                // Qualified: a bare `proxy` here is the engine config's own, which starts null.
+                this@InnerTube.proxy?.let { proxy = it }
 
                 // Fix proxy auth
                 proxyAuth?.let { auth ->
@@ -413,6 +414,14 @@ class InnerTube {
             params = if (continuation == null) params else null,
             continuation = continuation,
         )
+    }
+
+    /** What a youtube.com link points at, as the endpoint the site would follow for it. */
+    suspend fun resolveUrl(
+        client: YouTubeClient,
+        url: String,
+    ) = mainSitePost(client, "navigation/resolve_url") { requestVisitorData ->
+        ResolveUrlBody(context = client.toContext(locale, requestVisitorData, null), url = url)
     }
 
     /**

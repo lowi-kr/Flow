@@ -57,6 +57,7 @@ import io.github.aedev.flow.ui.components.shorts.ShortsTopBar
 import io.github.aedev.flow.ui.components.shorts.rememberShortsReelSettings
 import io.github.aedev.flow.ui.components.shorts.rememberShortsSheetInsetState
 import io.github.aedev.flow.ui.theme.PlayerScrim
+import io.github.aedev.flow.ui.utils.rememberIsOnWifi
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.launch
 
@@ -80,7 +81,6 @@ fun ShortsScreen(
     val shareVideo = rememberVideoShareAction()
 
     val isInPip by GlobalPlayerState.isInPipMode.collectAsState()
-    ShortsPipActionEffect()
 
     val snackbarHostState = remember { SnackbarHostState() }
     val snackbarMessage by viewModel.snackbarMessage.collectAsState()
@@ -165,6 +165,7 @@ fun ShortsScreen(
 
             uiState.shorts.isNotEmpty() -> {
                 val pagerState = rememberPagerState(initialPage = uiState.currentIndex, pageCount = { uiState.shorts.size })
+                ShortsPipActionEffect(pagerState = pagerState, isInPip = isInPip)
 
                 LaunchedEffect(pagerState.currentPage) { viewModel.updateCurrentIndex(pagerState.currentPage) }
                 LaunchedEffect(pagerState.settledPage) {
@@ -206,7 +207,7 @@ fun ShortsScreen(
                                     viewModel.loadShortDescription(short.id)
                                     showDescriptionSheet = true
                                 },
-                                onShareClick = { shareVideo(short.id, short.title) },
+                                onShareClick = { shareVideo(short.id, short.title, true) },
                                 onMoreClick = { settingsSheet.open(page, short.id) },
                                 onVideoEnded = {
                                     scope.launch {

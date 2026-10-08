@@ -27,10 +27,14 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import io.github.aedev.flow.R
 import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.ui.components.VideoQuickActionsBottomSheet
+import io.github.aedev.flow.ui.components.FeedGridLayout
+import io.github.aedev.flow.ui.components.shared.card.VideoCardDefaults
+import io.github.aedev.flow.ui.components.shared.quickactions.VideoQuickActionsBottomSheet
+import io.github.aedev.flow.ui.components.shared.quickactions.sharedQuickActionsViewModel
 import io.github.aedev.flow.ui.theme.extendedColors
 import io.github.aedev.flow.utils.formatViewCount
 
@@ -38,7 +42,16 @@ import io.github.aedev.flow.utils.formatViewCount
 object ShortCardDefaults {
     val MinWidth = 160.dp
     val Spacing = 12.dp
+
+    /** The gap between reels in a horizontal strip, a little tighter than a grid's. */
+    val StripSpacing = 10.dp
     const val ASPECT_RATIO = 9f / 16f
+
+    /** A Shorts grid's side padding: its own on a phone, the feed's margin once the window widens. */
+    fun gridPadding(
+        layout: FeedGridLayout,
+        compactPadding: Dp = Spacing,
+    ): Dp = if (layout.isCompact) compactPadding else layout.contentPadding + VideoCardDefaults.Inset
 }
 
 private val TitleSpacing = 8.dp
@@ -54,6 +67,7 @@ fun MediaShortCard(
     onClick: () -> Unit,
     modifier: Modifier = Modifier.width(ShortCardDefaults.MinWidth),
     trailingContent: (@Composable () -> Unit)? = null,
+    removableFromSavedShorts: Boolean = false,
 ) {
     var showQuickActions by remember { mutableStateOf(false) }
     val interactionSource = remember { MutableInteractionSource() }
@@ -83,6 +97,7 @@ fun MediaShortCard(
                 contentDescription = null,
                 modifier = Modifier.fillMaxSize(),
                 contentScale = ContentScale.Crop,
+                portrait = true,
             )
             ShortWatchedIndicator(videoId = video.id)
         }
@@ -109,10 +124,13 @@ fun MediaShortCard(
     }
 
     if (showQuickActions) {
+        val quickActions = sharedQuickActionsViewModel()
         VideoQuickActionsBottomSheet(
             video = video,
-            onChannelClick = null,
             onDismiss = { showQuickActions = false },
+            onRemoveFromCollection = { quickActions.removeFromSavedShorts(video) }.takeIf { removableFromSavedShorts },
+            removeFromCollectionLabel = stringResource(R.string.remove_from_saved_shorts).takeIf { removableFromSavedShorts },
+            viewModel = quickActions,
         )
     }
 }
