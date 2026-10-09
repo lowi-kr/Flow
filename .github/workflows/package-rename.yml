@@ -1,77 +1,8 @@
-name: One-time package rename
+name: Package rename helper (disabled)
 on:
-  push:
-    branches:
-      - Renamed-2
-permissions:
-  contents: write
+  workflow_dispatch:
 jobs:
-  rename:
+  disabled:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-        with:
-          ref: Renamed-2
-          fetch-depth: 0
-      - name: Replace package name and move package directories
-        shell: bash
-        run: |
-          python3 - <<'PY'
-          import os
-          import subprocess
-
-          old = "io.github.aedev.flow"
-          new = "com.arubr.smsvcodes"
-          old_path = "io/github/aedev/flow"
-          new_path = "com/arubr/smsvcodes"
-
-          tracked = subprocess.check_output(["git", "ls-files", "-z"]).decode().split("\0")
-          for path in filter(None, tracked):
-              if path.startswith(".github/workflows/") or not os.path.isfile(path):
-                  continue
-              try:
-                  with open(path, "rb") as f:
-                      data = f.read()
-                  text = data.decode("utf-8")
-              except (UnicodeDecodeError, OSError):
-                  continue
-              updated = text.replace(old, new).replace(old_path, new_path)
-              if updated != text:
-                  with open(path, "w", encoding="utf-8", newline="") as f:
-                      f.write(updated)
-
-          tracked = subprocess.check_output(["git", "ls-files", "-z"]).decode().split("\0")
-          moves = []
-          for path in filter(None, tracked):
-              updated = path.replace(old, new).replace(old_path, new_path)
-              if updated != path and os.path.exists(path):
-                  moves.append((path, updated))
-          for src, dst in sorted(moves, key=lambda pair: pair[0].count("/"), reverse=True):
-              if not os.path.exists(src):
-                  continue
-              os.makedirs(os.path.dirname(dst) or ".", exist_ok=True)
-              if os.path.exists(dst):
-                  raise RuntimeError(f"Refusing to overwrite existing path: {dst}")
-              os.rename(src, dst)
-
-          for root, dirs, files in os.walk(".", topdown=False):
-              if ".git" in root.split(os.sep) or root == ".":
-                  continue
-              try:
-                  if not os.listdir(root):
-                      os.rmdir(root)
-              except OSError:
-                  pass
-          PY
-      - name: Commit all replacements
-        shell: bash
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A
-          if git diff --cached --quiet; then
-            echo "No changes found."
-            exit 0
-          fi
-          git commit -m "Change package name to com.arubr.smsvcodes"
-          git push origin HEAD:Renamed-2
+      - run: echo "The package migration has already been completed."
