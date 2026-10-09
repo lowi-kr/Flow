@@ -102,6 +102,8 @@ class PlayerPreferences(
         val PROXY_PORT = intPreferencesKey("proxy_port")
         val PROXY_USERNAME = stringPreferencesKey("proxy_username")
         val PROXY_PASSWORD = stringPreferencesKey("proxy_password")
+        val LOGIN_COOKIE = stringPreferencesKey("login_cookie")
+        val LOGIN_ENABLED = booleanPreferencesKey("login_enabled")
         val SURFACE_READY_TIMEOUT_MS = longPreferencesKey("surface_ready_timeout_ms")
 
         // Audio track preference
@@ -2560,6 +2562,31 @@ class PlayerPreferences(
             } else {
                 preferences[Keys.PROXY_PASSWORD] = config.password
             }
+        }
+    }
+
+    // Optional YouTube account cookie for authenticated InnerTube requests.
+    // Treat this as a secret: it is stored locally and should never be logged.
+    val loginCookie: Flow<String> = context.playerPreferencesDataStore.data
+        .map { preferences -> preferences[Keys.LOGIN_COOKIE].orEmpty() }
+        .distinctUntilChanged()
+
+    suspend fun getLoginCookie(): String = loginCookie.first()
+
+    suspend fun setLoginCookie(cookie: String) {
+        context.playerPreferencesDataStore.edit { preferences ->
+            if (cookie.isBlank()) preferences.remove(Keys.LOGIN_COOKIE)
+            else preferences[Keys.LOGIN_COOKIE] = cookie.trim()
+        }
+    }
+
+    val loginEnabled: Flow<Boolean> = context.playerPreferencesDataStore.data
+        .map { preferences -> preferences[Keys.LOGIN_ENABLED] ?: false }
+        .distinctUntilChanged()
+
+    suspend fun setLoginEnabled(enabled: Boolean) {
+        context.playerPreferencesDataStore.edit { preferences ->
+            preferences[Keys.LOGIN_ENABLED] = enabled
         }
     }
 

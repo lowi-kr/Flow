@@ -147,6 +147,24 @@ class FlowApplication :
 
         Log.d(TAG, "Workers scheduled successfully")
 
+        // Restore optional YouTube cookie login before making authenticated InnerTube requests.
+        CoroutineScope(SupervisorJob() + Dispatchers.IO).launch {
+            try {
+                val loginEnabled = playerPreferences.loginEnabled.first()
+                val savedCookie = playerPreferences.loginCookie.first()
+                if (loginEnabled && savedCookie.isNotBlank()) {
+                    YouTube.cookie = savedCookie
+                    YouTube.useLoginForBrowse = true
+                    Log.d(TAG, "YouTube cookie login restored")
+                } else {
+                    YouTube.cookie = ""
+                    YouTube.useLoginForBrowse = false
+                }
+            } catch (e: Exception) {
+                Log.w(TAG, "YouTube cookie login restore failed: ${e.message}")
+            }
+        }
+
         // Fetch and cache visitor data for the lifetime of the install.
         // The X-Goog-Visitor-Id header prevents YouTube from returning empty
         // search results on tablets and fresh Android 16 installs (Issue #223).

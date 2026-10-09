@@ -123,6 +123,10 @@ fun SettingsScreen(
 
     var showRegionDialog by remember { mutableStateOf(false) }
     var showAppLanguageDialog by remember { mutableStateOf(false) }
+    var showYouTubeCookieDialog by remember { mutableStateOf(false) }
+    var youtubeCookieDraft by remember { mutableStateOf("") }
+    val savedYouTubeCookie by playerPreferences.loginCookie.collectAsStateWithLifecycle(initialValue = "")
+    val youtubeCookieLoginEnabled by playerPreferences.loginEnabled.collectAsStateWithLifecycle(initialValue = false)
     var showResetBrainDialog by remember { mutableStateOf(false) }
     // Update checker state (github flavor only)
     var isCheckingUpdate by remember { mutableStateOf(false) }
@@ -1062,6 +1066,19 @@ fun SettingsScreen(
                             color = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.5f),
                         )
                         SettingsItem(
+                            icon = Icons.Outlined.Key,
+                            title = "YouTube cookie login",
+                            subtitle = if (youtubeCookieLoginEnabled && savedYouTubeCookie.isNotBlank()) "Enabled — helps authenticate YouTube requests" else "Optional cookie to help with YouTube playback 403 errors",
+                            onClick = {
+                                youtubeCookieDraft = savedYouTubeCookie
+                                showYouTubeCookieDialog = true
+                            },
+                        )
+                        HorizontalDivider(
+                            Modifier.padding(start = 56.dp),
+                            color = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.5f),
+                        )
+                        SettingsItem(
                             icon = Icons.Outlined.Public,
                             title = stringResource(R.string.settings_item_proxy),
                             subtitle = stringResource(R.string.settings_item_proxy_subtitle),
@@ -1269,6 +1286,54 @@ fun SettingsScreen(
                 }
             }
         }
+    }
+
+    if (showYouTubeCookieDialog) {
+        AlertDialog(
+            onDismissRequest = { showYouTubeCookieDialog = false },
+            title = { Text("YouTube cookie login") },
+            text = {
+                Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
+                    Text("Paste the Cookie header value copied from your own browser session. It is stored on this device. Treat it like a password; anyone with it may be able to access your YouTube account.")
+                    OutlinedTextField(
+                        value = youtubeCookieDraft,
+                        onValueChange = { youtubeCookieDraft = it },
+                        modifier = Modifier.fillMaxWidth(),
+                        minLines = 3,
+                        maxLines = 6,
+                        placeholder = { Text("Cookie: ...") },
+                    )
+                    Text("This may help authenticated InnerTube requests, but it cannot guarantee that every media-stream 403 will be fixed.", style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
+                }
+            },
+            confirmButton = {
+                TextButton(onClick = {
+                    coroutineScope.launch {
+                        val cookie = youtubeCookieDraft.trim()
+                        playerPreferences.setLoginCookie(cookie)
+                        playerPreferences.setLoginEnabled(cookie.isNotBlank())
+                        com.arubr.smsvcodes.innertube.YouTube.cookie = cookie
+                        com.arubr.smsvcodes.innertube.YouTube.useLoginForBrowse = cookie.isNotBlank()
+                        showYouTubeCookieDialog = false
+                    }
+                }) { Text("Save and enable") }
+            },
+            dismissButton = {
+                Row {
+                    TextButton(onClick = {
+                        coroutineScope.launch {
+                            playerPreferences.setLoginCookie("")
+                            playerPreferences.setLoginEnabled(false)
+                            com.arubr.smsvcodes.innertube.YouTube.cookie = ""
+                            com.arubr.smsvcodes.innertube.YouTube.useLoginForBrowse = false
+                            youtubeCookieDraft = ""
+                            showYouTubeCookieDialog = false
+                        }
+                    }) { Text("Clear") }
+                    TextButton(onClick = { showYouTubeCookieDialog = false }) { Text(stringResource(R.string.cancel)) }
+                }
+            },
+        )
     }
 
     if (showDeepFlowDurationDialog) {
