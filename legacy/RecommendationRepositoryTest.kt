@@ -1,11 +1,11 @@
-package io.github.aedev.flow.legacy
+package com.arubr.smsvcodes.legacy
 
 import android.content.Context
 import android.util.Log
-import io.github.aedev.flow.data.local.*
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.data.repository.YouTubeRepository
-import io.github.aedev.flow.legacy.RecommendationRepository
+import com.arubr.smsvcodes.data.local.*
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.data.repository.YouTubeRepository
+import com.arubr.smsvcodes.legacy.RecommendationRepository
 import com.google.common.truth.Truth.assertThat
 import io.mockk.*
 import kotlinx.coroutines.flow.flowOf

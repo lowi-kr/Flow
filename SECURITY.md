@@ -54,5 +54,5 @@ above (lower case, without colons).
 
 Official distribution channels are the
 [GitHub Releases page](https://github.com/A-EDev/Flow/releases) and
-[IzzyOnDroid](https://apt.izzysoft.de/packages/io.github.aedev.flow). Builds
+[IzzyOnDroid](https://apt.izzysoft.de/packages/com.arubr.smsvcodes). Builds
 obtained anywhere else are unverified.
