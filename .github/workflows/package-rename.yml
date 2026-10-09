@@ -1,8 +1,8 @@
 name: One-time package rename
 on:
   push:
-    paths:
-      - ".github/workflows/package-rename.yml"
+    branches:
+      - Renamed-2
 permissions:
   contents: write
 jobs:
