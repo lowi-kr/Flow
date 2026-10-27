@@ -24,22 +24,18 @@ jobs:
           NEW_PATH="com/arubr/smsvcodes"
 
           echo "=== Moving source trees ==="
-          # Main source
           if [ -d "app/src/main/java/$OLD_PATH" ]; then
             mkdir -p "app/src/main/java/$(dirname "$NEW_PATH")"
             git mv "app/src/main/java/$OLD_PATH" "app/src/main/java/$NEW_PATH"
           fi
-          # androidTest
           if [ -d "app/src/androidTest/java/$OLD_PATH" ]; then
             mkdir -p "app/src/androidTest/java/$(dirname "$NEW_PATH")"
             git mv "app/src/androidTest/java/$OLD_PATH" "app/src/androidTest/java/$NEW_PATH"
           fi
-          # test
           if [ -d "app/src/test/java/$OLD_PATH" ]; then
             mkdir -p "app/src/test/java/$(dirname "$NEW_PATH")"
             git mv "app/src/test/java/$OLD_PATH" "app/src/test/java/$NEW_PATH"
           fi
-          # debug / other source sets if present
           for ss in debug release nightly github foss; do
             if [ -d "app/src/$ss/java/$OLD_PATH" ]; then
               mkdir -p "app/src/$ss/java/$(dirname "$NEW_PATH")"
@@ -47,20 +43,28 @@ jobs:
             fi
           done
 
-          # Room schemas
           if [ -d "app/schemas/$OLD" ]; then
             git mv "app/schemas/$OLD" "app/schemas/$NEW"
           fi
 
-          echo "=== Bulk text replacement ==="
-          # Replace in common text/code files. Skip binary and the workflow itself mid-run.
+          echo "=== Bulk text replacement (excluding .github/workflows) ==="
           find . -type f \
             \( -name '*.kt' -o -name '*.java' -o -name '*.kts' -o -name '*.xml' \
                -o -name '*.pro' -o -name '*.md' -o -name '*.properties' \
-               -o -name '*.json' -o -name '*.toml' -o -name '*.yml' -o -name '*.yaml' \
-               -o -name '*.txt' \) \
+               -o -name '*.json' -o -name '*.toml' -o -name '*.txt' \) \
             ! -path './.git/*' \
-            ! -path './.github/workflows/package-rename.yml' \
+            ! -path './.github/*' \
+            -print0 | while IFS= read -r -d '' f; do
+              if grep -q "$OLD" "$f" 2>/dev/null; then
+                sed -i "s/${OLD//./\\.}/${NEW}/g" "$f"
+                echo "updated: $f"
+              fi
+            done
+
+          # Also update yml/yaml outside workflows if any (none expected)
+          find . -type f \( -name '*.yml' -o -name '*.yaml' \) \
+            ! -path './.git/*' \
+            ! -path './.github/*' \
             -print0 | while IFS= read -r -d '' f; do
               if grep -q "$OLD" "$f" 2>/dev/null; then
                 sed -i "s/${OLD//./\\.}/${NEW}/g" "$f"
@@ -71,7 +75,7 @@ jobs:
           echo "=== Cleanup empty old dirs ==="
           find app/src -type d -empty -delete 2>/dev/null || true
 
-          echo "=== Remaining old-package references ==="
+          echo "=== Remaining old-package references (source only) ==="
           grep -RIn "$OLD" --include='*.kt' --include='*.java' --include='*.kts' --include='*.xml' --include='*.pro' . || echo "(none in source)"
 
       - name: Commit and push
