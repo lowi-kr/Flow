@@ -1,4 +1,4 @@
-package io.github.aedev.flow.discord
+package com.arubr.smsvcodes.discord
 
 import com.google.common.truth.Truth.assertThat
 import java.util.concurrent.Executors

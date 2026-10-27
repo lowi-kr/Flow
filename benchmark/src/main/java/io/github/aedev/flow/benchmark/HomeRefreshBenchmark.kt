@@ -1,4 +1,4 @@
-package io.github.aedev.flow.benchmark
+package com.arubr.smsvcodes.benchmark
 
 import androidx.benchmark.macro.BaselineProfileMode
 import androidx.benchmark.macro.CompilationMode
@@ -20,7 +20,7 @@ import org.junit.runner.RunWith
  *
  * Run with:
  *   ./gradlew :benchmark:connectedBenchmarkReleaseAndroidTest --no-configuration-cache \
- *     -Pandroid.testInstrumentationRunnerArguments.class=io.github.aedev.flow.benchmark.HomeRefreshBenchmark
+ *     -Pandroid.testInstrumentationRunnerArguments.class=com.arubr.smsvcodes.benchmark.HomeRefreshBenchmark
  */
 @RunWith(AndroidJUnit4::class)
 @OptIn(ExperimentalMetricApi::class)
@@ -49,7 +49,7 @@ class HomeRefreshBenchmark {
             setupBlock = { pressHome() },
         ) {
             startActivityAndWait { intent ->
-                intent.putExtra("io.github.aedev.flow.extra.BENCHMARK_BYPASS_ONBOARDING", true)
+                intent.putExtra("com.arubr.smsvcodes.extra.BENCHMARK_BYPASS_ONBOARDING", true)
             }
             device.wait(Until.hasObject(By.res("home_video_card")), HOME_TIMEOUT_MS)
         }
