@@ -8,7 +8,6 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import io.github.aedev.flow.data.local.DEFAULT_SPEED_SWIPE_STEP
 import io.github.aedev.flow.data.local.DoubleTapSeekZone
-import io.github.aedev.flow.data.local.DownloadDialogStyle
 import io.github.aedev.flow.data.local.GestureOverlayStyle
 import io.github.aedev.flow.data.local.HomeFeedColumns
 import io.github.aedev.flow.data.local.PlayerPreferences
@@ -55,7 +54,7 @@ internal class VideoPlayerPreferencesState(
     val relatedCardStyle: PlayerRelatedCardStyle,
     val feedColumns: HomeFeedColumns,
     val deArrowEnabled: Boolean,
-    val downloadDialogStyle: DownloadDialogStyle?,
+    val tiltFullscreenRotationLocked: Boolean,
 )
 
 @Composable
@@ -93,7 +92,7 @@ internal fun rememberVideoPlayerPreferences(context: Context): VideoPlayerPrefer
     val relatedCardStyle by playerPreferences.playerRelatedCardStyle.collectAsState(initial = PlayerRelatedCardStyle.FULL_WIDTH)
     val feedColumns by playerPreferences.homeFeedColumns.collectAsState(initial = HomeFeedColumns.AUTO)
     val deArrowEnabled by playerPreferences.deArrowEnabled.collectAsState(initial = false)
-    val downloadDialogStyle by playerPreferences.downloadDialogStyle.collectAsState(initial = null)
+    val tiltFullscreenRotationLocked by playerPreferences.tiltFullscreenRotationLocked.collectAsState(initial = false)
 
     return VideoPlayerPreferencesState(
         preferences = playerPreferences,
@@ -127,6 +126,6 @@ internal fun rememberVideoPlayerPreferences(context: Context): VideoPlayerPrefer
         relatedCardStyle = relatedCardStyle,
         feedColumns = feedColumns,
         deArrowEnabled = deArrowEnabled,
-        downloadDialogStyle = downloadDialogStyle,
+        tiltFullscreenRotationLocked = tiltFullscreenRotationLocked,
     )
 }

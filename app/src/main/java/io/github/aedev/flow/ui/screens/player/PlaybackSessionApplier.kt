@@ -17,8 +17,10 @@ import io.github.aedev.flow.data.video.OfflineSubtitleStore
 import io.github.aedev.flow.data.video.VideoDownloadManager
 import io.github.aedev.flow.player.EnhancedPlayerManager
 import io.github.aedev.flow.player.GlobalPlayerState
+import io.github.aedev.flow.player.audio.LoudnessGain
 import io.github.aedev.flow.player.error.VideoErrorMapper
 import io.github.aedev.flow.player.stream.InnerTubeVideoStreamExtractor
+import io.github.aedev.flow.player.stream.PlayabilityVerdict
 import io.github.aedev.flow.player.stream.PlaybackFailure
 import io.github.aedev.flow.player.stream.ResolvedCaption
 import io.github.aedev.flow.player.stream.ResolvedPlayback
@@ -241,7 +243,13 @@ internal class PlaybackSessionApplier(
                 PlaybackFailure.TIMEOUT -> VideoErrorMapper.fromTimeout(context)
                 else -> VideoErrorMapper.from(context, step.cause, load.videoId)
             }
-        if (step.failure == PlaybackFailure.UNEXPECTED && !videoError.isRetryable) {
+        val lastingRefusal =
+            step.failure == PlaybackFailure.EXTRACTION &&
+                PlayabilityVerdict.isLasting(
+                    InnerTubeVideoStreamExtractor.isGone(load.videoId),
+                    InnerTubeVideoStreamExtractor.blockOf(load.videoId),
+                )
+        if ((step.failure == PlaybackFailure.UNEXPECTED && !videoError.isRetryable) || lastingRefusal) {
             playerPreferences.markVideoUnplayable(load.videoId)
         }
         // A removed or unplayable video stays that way, so a playlist carries on instead of stopping on it.
@@ -412,6 +420,10 @@ internal class PlaybackSessionApplier(
             loadToken = load.token,
         )
 
+        playerManager.setLoudness(
+            videoId,
+            LoudnessGain.gainDb(result.playerResponse.playerConfig?.audioConfig, result.audioFormats.firstOrNull()?.loudnessDb),
+        )
         playbackPreparer.prepareVodStreams(
             videoId = videoId,
             streams = streams,

@@ -3,13 +3,14 @@ package io.github.aedev.flow
 import android.content.ContentResolver
 import android.content.Context
 import android.content.Intent
-import android.media.AudioManager
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.os.PowerManager
 import android.util.Log
 import android.view.KeyEvent
+import android.view.KeyboardShortcutGroup
+import android.view.Menu
 import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.SystemBarStyle
@@ -35,6 +36,7 @@ import io.github.aedev.flow.data.local.LocalDataManager
 import io.github.aedev.flow.data.playlist.PlaylistImport
 import io.github.aedev.flow.data.playlist.PlaylistTransfer
 import io.github.aedev.flow.data.recommendation.FlowNeuroEngine
+import io.github.aedev.flow.data.repository.DeArrowRepository
 import io.github.aedev.flow.data.repository.OriginalTitleRepository
 import io.github.aedev.flow.discord.DiscordPresenceRuntime
 import io.github.aedev.flow.notification.NotificationHelper
@@ -42,6 +44,7 @@ import io.github.aedev.flow.platform.AppIconController
 import io.github.aedev.flow.platform.AppUiMode
 import io.github.aedev.flow.platform.AppUiRoot
 import io.github.aedev.flow.platform.DeviceFormFactorDetector
+import io.github.aedev.flow.platform.PlayerKeyboardShortcutHelp
 import io.github.aedev.flow.player.BackgroundPlaybackPolicy
 import io.github.aedev.flow.player.EnhancedPlayerManager
 import io.github.aedev.flow.player.GlobalPlayerState
@@ -87,6 +90,9 @@ class MainActivity : ComponentActivity() {
 
     @Inject
     lateinit var originalTitles: OriginalTitleRepository
+
+    @Inject
+    lateinit var deArrow: DeArrowRepository
 
     @Inject
     lateinit var lifecyclePlaybackPreferences: LifecyclePlaybackPreferences
@@ -227,9 +233,14 @@ class MainActivity : ComponentActivity() {
             SideEffect { cachedAppUiRoot = appUiRoot }
 
             // Check for a crash that happened last session.
-            // If found, show the CrashReportScreen instead of the normal UI.
+            // If found, show the CrashReportScreen instead of the normal UI. It is cleared as soon
+            // as it is read, so leaving the screen any way shows it once, not on every launch.
             var pendingCrashLog by remember {
-                mutableStateOf(FlowCrashHandler.getLastCrash(applicationContext))
+                mutableStateOf(
+                    FlowCrashHandler.getLastCrash(applicationContext)?.also {
+                        FlowCrashHandler.clearLastCrash(applicationContext)
+                    },
+                )
             }
 
             if (pendingCrashLog != null) {
@@ -237,10 +248,7 @@ class MainActivity : ComponentActivity() {
                 FlowTheme(theme.copy(fontFamily = FlowFontFamily)) {
                     CrashReportScreen(
                         report = pendingCrashLog!!,
-                        onContinue = {
-                            FlowCrashHandler.clearLastCrash(applicationContext)
-                            pendingCrashLog = null
-                        },
+                        onContinue = { pendingCrashLog = null },
                     )
                 }
                 return@setContent
@@ -254,7 +262,8 @@ class MainActivity : ComponentActivity() {
 
             FlowTheme(theme) {
                 val splashTone = splashTone(MaterialTheme.colorScheme.background)
-                LaunchedEffect(splashTone) { splashController.rememberTheme(splashTone, appIconController.activeSuffix()) }
+                val selectedIcon by appIconController.selected.collectAsState(initial = null)
+                LaunchedEffect(splashTone, selectedIcon) { splashController.rememberTheme(splashTone, appIconController.activeSuffix()) }
 
                 // Date preferences: five DataStore flows used to be opened per video card,
                 // metadata line, info section, description sheet and info dialog.
@@ -263,7 +272,7 @@ class MainActivity : ComponentActivity() {
                         // Card preferences and watch progress are collected once here. Cards used to
                         // collect them individually, so a feed of ten opened ten Room observers and
                         // fifty DataStore collectors.
-                        ProvideVideoCardState(originalTitles) {
+                        ProvideVideoCardState(originalTitles, deArrow) {
                             Box(
                                 modifier =
                                     Modifier
@@ -278,16 +287,17 @@ class MainActivity : ComponentActivity() {
                                 val isDeeplinkShared by links.isShared
                                 val openMusicPlayerRequest by links.musicPlayerRequest
                                 val pendingRoute by links.route
+                                val downloadVideoId by links.downloadVideoId
 
-                                if (appUiRoot == AppUiRoot.TV) {
-                                    SideEffect { splashController.contentReady = true }
-                                    FlowTvApp(
-                                        deeplinkVideoId = deeplinkVideoId,
-                                        isShort = isDeeplinkShort,
-                                        onDeeplinkConsumed = links::consumeVideo,
-                                    )
-                                } else {
-                                    ProvideChannelGroupLabels {
+                                ProvideChannelGroupLabels {
+                                    if (appUiRoot == AppUiRoot.TV) {
+                                        SideEffect { splashController.contentReady = true }
+                                        FlowTvApp(
+                                            deeplinkVideoId = deeplinkVideoId,
+                                            isShort = isDeeplinkShort,
+                                            onDeeplinkConsumed = links::consumeVideo,
+                                        )
+                                    } else {
                                         FlowApp(
                                             currentTheme = theme.themeMode,
                                             themeVariant = theme.themeVariant,
@@ -300,6 +310,8 @@ class MainActivity : ComponentActivity() {
                                             onDeeplinkConsumed = links::consumeVideo,
                                             pendingRoute = pendingRoute,
                                             onPendingRouteConsumed = links::consumeRoute,
+                                            downloadVideoId = downloadVideoId,
+                                            onDownloadConsumed = links::consumeDownload,
                                             onStartDestinationKnown = { splashController.contentReady = true },
                                         )
                                     }
@@ -392,6 +404,12 @@ class MainActivity : ComponentActivity() {
         }
 
         val linkText = linkTextOf(intent)
+        if (linkText != null && intent.component?.className?.endsWith(DOWNLOAD_SHARE_ALIAS) == true) {
+            if (!isRestoringState && !links.openDownload(linkText)) {
+                Toast.makeText(this, R.string.share_download_not_a_video, Toast.LENGTH_LONG).show()
+            }
+            return
+        }
         if (linkText != null) {
             val understood = links.openLink(linkText, isShared = intent.action == Intent.ACTION_SEND, isRestoring = isRestoringState)
             if (!understood && !isRestoringState) Toast.makeText(this, R.string.link_not_supported, Toast.LENGTH_LONG).show()
@@ -435,14 +453,12 @@ class MainActivity : ComponentActivity() {
                     delay(350L)
                     val stillBackgrounded = !lifecycle.currentState.isAtLeast(Lifecycle.State.STARTED)
                     if (stillBackgrounded && !isInPictureInPictureMode) {
-                        GlobalPlayerState.requestDismiss()
-                        io.github.aedev.flow.player.EnhancedPlayerManager
-                            .getInstance()
-                            .stop()
-                        io.github.aedev.flow.player.EnhancedPlayerManager
-                            .getInstance()
-                            .stopBackgroundService()
-                        // onStop ran while the window was still in PiP, so it skipped this (#1152).
+                        // onStop ran while the window was still in PiP, so it skipped its pause (#1152).
+                        // Closing the window pauses like leaving the app does, and keeps the video (#1349).
+                        if (cachedAppUiRoot == AppUiRoot.MOBILE) {
+                            releaseOrientationLock()
+                        }
+                        pauseVideoForBackground()
                         pauseShortsPlayers()
                     }
                 }
@@ -503,33 +519,22 @@ class MainActivity : ComponentActivity() {
     ): Boolean {
         if (
             (keyCode == KeyEvent.KEYCODE_VOLUME_UP || keyCode == KeyEvent.KEYCODE_VOLUME_DOWN) &&
-            io.github.aedev.flow.player.PlayerHardwareController.fullscreenVideoActive.value
+            io.github.aedev.flow.player.PlayerHardwareController.fullscreenVideoActive.value &&
+            io.github.aedev.flow.player.PlayerHardwareController
+                .adjustVolume(this, raise = keyCode == KeyEvent.KEYCODE_VOLUME_UP)
         ) {
-            val audioManager = getSystemService(Context.AUDIO_SERVICE) as? AudioManager
-            if (audioManager != null) {
-                val direction =
-                    if (keyCode == KeyEvent.KEYCODE_VOLUME_UP) {
-                        AudioManager.ADJUST_RAISE
-                    } else {
-                        AudioManager.ADJUST_LOWER
-                    }
-                audioManager.adjustStreamVolume(
-                    AudioManager.STREAM_MUSIC,
-                    direction,
-                    if (io.github.aedev.flow.player.PlayerHardwareController.inAppVolumeOverlayEnabled.value) {
-                        0
-                    } else {
-                        AudioManager.FLAG_SHOW_UI
-                    },
-                )
-                if (io.github.aedev.flow.player.PlayerHardwareController.inAppVolumeOverlayEnabled.value) {
-                    io.github.aedev.flow.player.PlayerHardwareController
-                        .notifyVolumeKey()
-                }
-                return true
-            }
+            return true
         }
         return super.onKeyDown(keyCode, event)
+    }
+
+    override fun onProvideKeyboardShortcuts(
+        data: MutableList<KeyboardShortcutGroup>,
+        menu: Menu?,
+        deviceId: Int,
+    ) {
+        super.onProvideKeyboardShortcuts(data, menu, deviceId)
+        data += PlayerKeyboardShortcutHelp.group(this)
     }
 
     override fun onKeyUp(
@@ -718,13 +723,23 @@ class MainActivity : ComponentActivity() {
             handOffVideoPlaybackToBackground()
         } else {
             videoLifecycleLog("handleBackgroundPlaybackOnStop pause")
-            playerManager.pause()
-            playerManager.parkVideoForBackground()
-            playerManager.stopBackgroundService()
+            pauseVideoForBackground()
         }
+    }
+
+    private fun pauseVideoForBackground() {
+        val playerManager =
+            io.github.aedev.flow.player.EnhancedPlayerManager
+                .getInstance()
+        playerManager.pause()
+        playerManager.parkVideoForBackground()
+        playerManager.stopBackgroundService()
     }
 
     companion object {
         const val EXTRA_BENCHMARK_BYPASS_ONBOARDING = "io.github.aedev.flow.extra.BENCHMARK_BYPASS_ONBOARDING"
+
+        /** The share-menu entry Download with Flow: an activity-alias of this activity in the manifest. */
+        private const val DOWNLOAD_SHARE_ALIAS = ".DownloadShareAlias"
     }
 }

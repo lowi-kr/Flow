@@ -42,6 +42,7 @@ import io.github.aedev.flow.player.analytics.PlaybackAnalyticsLogger
 import io.github.aedev.flow.player.analytics.RenderedFirstFrameListener
 import io.github.aedev.flow.player.audio.AudioEffectsEntryPoint
 import io.github.aedev.flow.player.audio.AudioFeaturesManager
+import io.github.aedev.flow.player.audio.AudioSessionAnnouncer
 import io.github.aedev.flow.player.audio.eq.EqualizerAudioProcessor
 import io.github.aedev.flow.player.cache.PlayerCacheManager
 import io.github.aedev.flow.player.config.PlayerConfig
@@ -101,7 +102,9 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.combine
+import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import kotlinx.coroutines.withTimeoutOrNull
@@ -141,7 +144,7 @@ class EnhancedPlayerManager private constructor() {
     private var videoEqualizer: EqualizerAudioProcessor? = null
     private var eqObserver: Job? = null
     private var audioEffects: AudioEffectsEntryPoint? = null
-    private var announcedAudioSession = 0
+    private var audioSessionAnnouncer: AudioSessionAnnouncer? = null
 
     // State management
     private val _playerState = MutableStateFlow(EnhancedPlayerState())
@@ -373,6 +376,7 @@ class EnhancedPlayerManager private constructor() {
     }
 
     @Volatile private var videoMediaSession: MediaSession? = null
+    private var videoSessionButtonsJob: Job? = null
 
     fun getVideoMediaSession(): MediaSession? = videoMediaSession
 
@@ -438,13 +442,31 @@ class EnhancedPlayerManager private constructor() {
                     override fun hasPreviousMediaItem(): Boolean = this@EnhancedPlayerManager.hasPrevious()
                 }
 
+            val controls =
+                VideoSessionButtons(
+                    context = appCtx,
+                    currentState = { _playerState.value.toVideoSessionState() },
+                    onLoop = { target ->
+                        toggleLoop(target.videoLoop)
+                        if (queue.loopEnabled != target.queueLoop) toggleQueueLoop(target.queueLoop)
+                    },
+                    onShuffle = ::toggleQueueShuffle,
+                )
             val builder =
                 MediaSession
                     .Builder(appCtx, sessionPlayer)
                     .setId("flow_video_session")
                     .setBitmapLoader(sessionArtworkBitmapLoader(appCtx))
+                    .setCallback(controls.callback)
             if (sessionActivity != null) builder.setSessionActivity(sessionActivity)
             videoMediaSession = builder.build()
+            videoSessionButtonsJob =
+                scope.launch {
+                    _playerState
+                        .map { it.toVideoSessionState() }
+                        .distinctUntilChanged()
+                        .collect { state -> videoMediaSession?.setMediaButtonPreferences(controls.buttons(state)) }
+                }
             Log.d(TAG, "Video MediaSession created")
         } catch (e: Exception) {
             Log.e(TAG, "Failed to create video MediaSession", e)
@@ -452,6 +474,8 @@ class EnhancedPlayerManager private constructor() {
     }
 
     private fun releaseVideoMediaSession() {
+        videoSessionButtonsJob?.cancel()
+        videoSessionButtonsJob = null
         try {
             videoMediaSession?.release()
         } catch (e: Exception) {
@@ -459,6 +483,14 @@ class EnhancedPlayerManager private constructor() {
         }
         videoMediaSession = null
     }
+
+    private fun EnhancedPlayerState.toVideoSessionState() =
+        VideoSessionControls.State(
+            videoLooping = isLooping,
+            queueLooping = isQueueLooping,
+            queueShuffled = isQueueShuffled,
+            queueSize = queueSize,
+        )
 
     /**
      * Set to true while PlaybackRefocusEffect is recovering from a screen-off/on cycle.
@@ -489,6 +521,9 @@ class EnhancedPlayerManager private constructor() {
 
     private val _playbackAbandonedEvent = MutableSharedFlow<Unit>(extraBufferCapacity = 1)
     val playbackAbandonedEvent: SharedFlow<Unit> = _playbackAbandonedEvent.asSharedFlow()
+
+    private val _decoderFailureEvent = MutableSharedFlow<Unit>(extraBufferCapacity = 1)
+    val decoderFailureEvent: SharedFlow<Unit> = _decoderFailureEvent.asSharedFlow()
 
     private val _queueAutoAdvanceEvent = MutableSharedFlow<Unit>(extraBufferCapacity = 1)
     val queueAutoAdvanceEvent: SharedFlow<Unit> = _queueAutoAdvanceEvent.asSharedFlow()
@@ -622,6 +657,7 @@ class EnhancedPlayerManager private constructor() {
                 isPlayingDeviceFile = { currentLocalFilePath != null },
                 onStreamExpired = { onStreamsDenied() },
                 onPlaybackAbandoned = { if (!skipAbandonedVideo()) scope.launch { _playbackAbandonedEvent.emit(Unit) } },
+                onDecoderGaveUp = { scope.launch { _decoderFailureEvent.emit(Unit) } },
                 onGatedCodecFallback = { position -> qualityManager?.fallbackToAlternateCodec(position) ?: false },
                 getFailedStreamUrls = {
                     qualityManager?.let { qm ->
@@ -717,7 +753,12 @@ class EnhancedPlayerManager private constructor() {
         player?.addAnalyticsListener(
             RenderedFirstFrameListener(currentVideoId = { currentVideoId }) { videoId -> _firstFrameVideoId.value = videoId },
         )
-        player?.let { announceAudioSession(effects, it.audioSessionId) }
+        player?.let { built ->
+            audioSessionAnnouncer =
+                AudioSessionAnnouncer(effects.audioSessionRegistry(), AudioEffect.CONTENT_TYPE_MOVIE) {
+                    audioFeaturesManager?.onAudioSessionChanged()
+                }.also { it.attach(built) }
+        }
 
         audioFeaturesManager?.setPlayer(player!!)
 
@@ -739,12 +780,20 @@ class EnhancedPlayerManager private constructor() {
         audioFeaturesManager?.setVolumeBoost(player, volume)
     }
 
+    /** YouTube's loudness for [videoId], in dB; null when the stream carries none. */
+    fun setLoudness(
+        videoId: String,
+        gainDb: Float?,
+    ) {
+        audioFeaturesManager?.setLoudness(videoId, gainDb)
+    }
+
     private fun observePreferences(
         context: Context,
         built: CoroutineScope,
     ) {
         audioFeaturesManager?.observeSkipSilencePreference(context, built)
-        audioFeaturesManager?.observeStableVolumePreference(context, built)
+        audioFeaturesManager?.observeVolumeNormalizationPreference(context, built)
 
         val prefs = PlayerPreferences(context)
         built.launch {
@@ -907,6 +956,7 @@ class EnhancedPlayerManager private constructor() {
                     reason: Int,
                 ) {
                     autoNextLog("onMediaItemTransition reason=$reason mediaId=${mediaItem?.mediaId}")
+                    audioFeaturesManager?.onMediaItemChanged()
                     if (reason == Player.MEDIA_ITEM_TRANSITION_REASON_AUTO ||
                         reason == Player.MEDIA_ITEM_TRANSITION_REASON_SEEK
                     ) {
@@ -928,6 +978,7 @@ class EnhancedPlayerManager private constructor() {
                 override fun onRenderedFirstFrame() {
                     Log.d(TAG, "First frame rendered - video renderer working")
                     surfaceManager?.setSurfaceReady(true)
+                    errorHandler?.onFirstFrameRendered()
                     surfaceFirstFrameWatchdog?.cancel()
                     surfaceFirstFrameWatchdog = null
                     pendingSurfaceFirstFrameStartedAtMs.takeIf { it > 0L }?.let { startedAtMs ->
@@ -1224,7 +1275,7 @@ class EnhancedPlayerManager private constructor() {
         lastLiveEdgeRecoveryMs = 0L
         qualityManager?.resetForNewVideo()
         playbackTracker?.reset()
-        errorHandler?.resetExpiryCounter()
+        errorHandler?.resetForNewVideo()
         mediaLoader?.releaseSabr()
         currentSabrInfo = null
         sabrPreferred = false
@@ -2863,7 +2914,7 @@ class EnhancedPlayerManager private constructor() {
 
     fun toggleSkipSilence(isEnabled: Boolean) = audioFeaturesManager?.toggleSkipSilence(isEnabled, appContext)
 
-    fun toggleStableVolume(isEnabled: Boolean) = audioFeaturesManager?.toggleStableVolume(isEnabled, appContext)
+    fun toggleVolumeNormalization(isEnabled: Boolean) = audioFeaturesManager?.toggleVolumeNormalization(isEnabled, appContext)
 
     fun toggleSponsorBlock(isEnabled: Boolean) {
         sponsorBlockHandler?.setEnabled(isEnabled)
@@ -3291,16 +3342,6 @@ class EnhancedPlayerManager private constructor() {
             duration - player.currentPosition <= LIVE_EDGE_THRESHOLD_MS
     }
 
-    private fun announceAudioSession(
-        effects: AudioEffectsEntryPoint,
-        sessionId: Int,
-    ) {
-        val registry = effects.audioSessionRegistry()
-        if (announcedAudioSession != sessionId) registry.close(announcedAudioSession)
-        announcedAudioSession = sessionId
-        registry.open(sessionId, AudioEffect.CONTENT_TYPE_MOVIE)
-    }
-
     fun release() {
         Log.d(TAG, "release() called")
         releaseAdvanceWakeLock()
@@ -3315,10 +3356,11 @@ class EnhancedPlayerManager private constructor() {
         audioFeaturesManager?.clearPlayer()
         buildScope.close()
         surfaceManager?.release(player)
-        audioEffects?.audioSessionRegistry()?.close(announcedAudioSession)
-        announcedAudioSession = 0
+        audioSessionAnnouncer?.detach()
+        audioSessionAnnouncer = null
         player?.release()
         player = null
+        playerFactory.clearPreferences()
         trackSelector = null
         appContext = null
         cacheManager?.release()

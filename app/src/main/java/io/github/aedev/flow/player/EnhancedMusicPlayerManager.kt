@@ -13,10 +13,12 @@ import androidx.media3.session.MediaController
 import androidx.media3.session.SessionToken
 import com.google.common.util.concurrent.ListenableFuture
 import com.google.common.util.concurrent.MoreExecutors
+import io.github.aedev.flow.R
 import io.github.aedev.flow.data.local.AudioSettingsPersistence
 import io.github.aedev.flow.data.local.QueuePersistence
 import io.github.aedev.flow.data.localmedia.LocalMediaIds
 import io.github.aedev.flow.data.music.model.MusicTrack
+import io.github.aedev.flow.player.error.PlayerDiagnostics
 import io.github.aedev.flow.player.musicvideo.MusicVideoItems
 import io.github.aedev.flow.player.musicvideo.MusicVideoPlanner
 import io.github.aedev.flow.service.Media3MusicService
@@ -99,6 +101,12 @@ object EnhancedMusicPlayerManager {
 
     /** The restored track and where it stopped, used once by the next play of that same track. */
     private var resumePosition: Pair<String, Long>? = null
+
+    /** A song started before the controller connected, such as a link opening the app; sent on connect. */
+    private var playBeforeConnect: (() -> Unit)? = null
+
+    /** Counts started queues, so a saved queue read meanwhile knows a newer one replaced it. */
+    private var queueStarts = 0
     private var audioSettingsPersistence: AudioSettingsPersistence? = null
 
     // Audio Settings State
@@ -252,7 +260,23 @@ object EnhancedMusicPlayerManager {
         queuePersistence = QueuePersistence.getInstance(context)
         audioSettingsPersistence = AudioSettingsPersistence.getInstance(context)
 
-        val sessionToken = SessionToken(context, ComponentName(context, Media3MusicService::class.java))
+        connectController(context)
+        startPositionUpdates()
+    }
+
+    /**
+     * Builds the controller for the music service. False when Android reports the service missing,
+     * which happens when the component is disabled on the device (a blocker app, some ROMs): Media3
+     * then throws from the token, and that has to cost music playback, not the app (#1439).
+     */
+    private fun connectController(context: Context): Boolean {
+        val sessionToken =
+            try {
+                SessionToken(context, ComponentName(context, Media3MusicService::class.java))
+            } catch (e: IllegalArgumentException) {
+                PlayerDiagnostics.logError("EnhancedMusicPlayer", "music service unavailable: ${e.message}", e)
+                return false
+            }
         controllerFuture = MediaController.Builder(context, sessionToken).buildAsync()
 
         controllerFuture?.addListener({
@@ -263,8 +287,15 @@ object EnhancedMusicPlayerManager {
                 if (controller != null) {
                     setupPlayerListener(controller)
 
+                    val startedBeforeConnect = playBeforeConnect
+                    playBeforeConnect = null
                     scope.launch {
-                        restoreSavedQueue()
+                        if (startedBeforeConnect != null) {
+                            Log.d("EnhancedMusicPlayer", "Starting the song asked for before the controller connected")
+                            startedBeforeConnect()
+                        } else {
+                            restoreSavedQueue()
+                        }
                         restoreAudioSettings()
                     }
 
@@ -292,13 +323,13 @@ object EnhancedMusicPlayerManager {
                 e.printStackTrace()
             }
         }, MoreExecutors.directExecutor())
-
-        startPositionUpdates()
+        return true
     }
 
     private fun setupPlayerListener(controller: Player) {
-        // The service owns repeat; the button shows what the player will actually do.
+        // The service owns repeat and shuffle; the buttons show what the player will actually do.
         _repeatMode.value = RepeatMode.fromPlayer(controller.repeatMode)
+        _shuffleEnabled.value = controller.shuffleModeEnabled
         controller.addListener(
             object : Player.Listener {
                 override fun onPlaybackStateChanged(playbackState: Int) {
@@ -336,6 +367,13 @@ object EnhancedMusicPlayerManager {
 
                 override fun onRepeatModeChanged(repeatMode: Int) {
                     _repeatMode.value = RepeatMode.fromPlayer(repeatMode)
+                }
+
+                // Every shuffle, from the app, the card, a headset or the car, lands here.
+                override fun onShuffleModeEnabledChanged(shuffleModeEnabled: Boolean) {
+                    val turnedOn = shuffleModeEnabled && !_shuffleEnabled.value
+                    _shuffleEnabled.value = shuffleModeEnabled
+                    if (turnedOn) shuffleQueue() else triggerQueueSave()
                 }
 
                 override fun onPlayerError(error: androidx.media3.common.PlaybackException) {
@@ -618,6 +656,15 @@ object EnhancedMusicPlayerManager {
         sourceName: String? = null,
         localUriOverrides: Map<String, Uri> = emptyMap(),
     ) {
+        val context = appContext
+        if (player == null && controllerFuture == null && context != null && !connectController(context)) {
+            showPlaybackWarning(context.getString(R.string.music_service_disabled))
+            return
+        }
+        queueStarts++
+        if (player == null && controllerFuture != null) {
+            playBeforeConnect = { playTrack(track, audioUrl, queue, startIndex, startPositionMs, sourceName, localUriOverrides) }
+        }
         val restoredStart = resumePosition?.takeIf { (id, _) -> id == track.videoId && startPositionMs == 0L }?.second
         resumePosition = null
         player?.stop()
@@ -779,7 +826,12 @@ object EnhancedMusicPlayerManager {
      */
     private suspend fun restoreSavedQueue() {
         try {
+            val starts = queueStarts
             val restored = queuePersistence?.restoreQueue()?.let(::restoredMusicQueue) ?: return
+            if (queueStarts != starts) {
+                Log.d("EnhancedMusicPlayer", "Saved queue skipped: a newer queue started while it was read")
+                return
+            }
             val controller = player
             val loadedItem = controller?.currentMediaItem
             // The system media controls may already have resumed this queue in the service.
@@ -788,10 +840,17 @@ object EnhancedMusicPlayerManager {
 
             Log.d("EnhancedMusicPlayer", "Restoring saved queue: ${restored.queue.size} tracks")
 
-            _queue.value = restored.queue
+            // The service may have rearranged a resumed queue (a shuffle while the app was closed).
+            val playerOrder = controller?.let { c -> List(c.mediaItemCount) { c.getMediaItemAt(it).mediaId } }
+            _queue.value =
+                playerOrder
+                    ?.takeIf { resumedBySystem }
+                    ?.let { order -> PlaylistQueueOrder.alignTo(restored.queue, order) { it.videoId } }
+                    ?: restored.queue
             _currentQueueIndex.value = restored.index
-            _shuffleEnabled.value = restored.shuffleEnabled
             _automixItems.value = restored.automix
+            // A queue the service resumed already carries its shuffle; otherwise it comes back with it.
+            if (!resumedBySystem) applySavedShuffle(controller, restored.shuffleEnabled)
 
             if (controller != null && loadedItem != null) {
                 syncCurrentTrackFromMediaItem(controller, loadedItem)
@@ -934,16 +993,23 @@ object EnhancedMusicPlayerManager {
         }
     }
 
+    /** The saved queue is already in its shuffled order, so turning the flag back on must not reshuffle it. */
+    private fun applySavedShuffle(
+        controller: Player?,
+        enabled: Boolean,
+    ) {
+        _shuffleEnabled.value = enabled
+        if (controller != null && controller.shuffleModeEnabled != enabled) controller.shuffleModeEnabled = enabled
+    }
+
     /**
-     * Shuffle is app-owned state, not ExoPlayer's shuffle mode: enabling it physically
-     * rearranges the queue so the listed order always matches the playback order.
+     * The player's shuffle flag says whether shuffle is on; turning it on physically rearranges the
+     * queue, so the listed order always matches the playback order.
      */
     fun toggleShuffle() {
         scope.launch {
-            val enabling = !_shuffleEnabled.value
-            player?.shuffleModeEnabled = false
-            _shuffleEnabled.value = enabling
-            if (enabling) shuffleQueue()
+            val controller = player ?: return@launch
+            controller.shuffleModeEnabled = !controller.shuffleModeEnabled
         }
     }
 
@@ -1043,9 +1109,13 @@ object EnhancedMusicPlayerManager {
         }
     }
 
-    fun setPlaybackSpeed(speed: Float) {
+    /** A slider passes [persist] false while dragging and saves once on release. */
+    fun setPlaybackSpeed(
+        speed: Float,
+        persist: Boolean = true,
+    ) {
         _playbackSpeed.value = speed
-        scope.launch { audioSettingsPersistence?.saveSpeed(speed) }
+        if (persist) scope.launch { audioSettingsPersistence?.saveSpeed(speed) }
 
         player?.let { p ->
             val currentPitch = p.playbackParameters.pitch
@@ -1053,9 +1123,12 @@ object EnhancedMusicPlayerManager {
         }
     }
 
-    fun setPlaybackPitch(semitones: Float) {
+    fun setPlaybackPitch(
+        semitones: Float,
+        persist: Boolean = true,
+    ) {
         _playbackPitch.value = semitones
-        scope.launch { audioSettingsPersistence?.savePitch(semitones) }
+        if (persist) scope.launch { audioSettingsPersistence?.savePitch(semitones) }
 
         player?.let { p ->
             val pitch = 2.0.pow(semitones.toDouble() / 12.0).toFloat()
@@ -1114,29 +1187,40 @@ object EnhancedMusicPlayerManager {
         _playerState.value = MusicPlayerState()
     }
 
-    fun removeFromQueue(index: Int) {
-        removeMediaItem(index)
+    /** A song taken out of the queue, with what [restoreToQueue] needs to put it back. */
+    data class RemovedQueueTrack(
+        val track: MusicTrack,
+        val index: Int,
+        internal val queueAfter: List<String>,
+    )
+
+    /** Takes the song at [index] out of the queue; null for the playing song or an index the queue lacks. */
+    fun removeFromQueue(index: Int): RemovedQueueTrack? {
+        val removal = PlaylistQueueOrder.removeAt(_queue.value, _currentQueueIndex.value, index) ?: return null
+        _queue.value = removal.queue.items
+        _currentQueueIndex.value = removal.queue.currentIndex
+        when {
+            pendingPlayNextMediaIndex == index -> clearPendingPlayNext()
+            pendingPlayNextMediaIndex > index -> pendingPlayNextMediaIndex--
+        }
+        player?.let { p -> if (index < p.mediaItemCount) p.removeMediaItem(index) }
+        triggerQueueSave()
+        return RemovedQueueTrack(removal.removedItem, index, removal.queue.items.map { it.videoId })
     }
 
-    fun removeMediaItem(index: Int) {
-        scope.launch {
-            val currentQ = _queue.value.toMutableList()
-            if (index in currentQ.indices) {
-                currentQ.removeAt(index)
-                _queue.value = currentQ
-                when {
-                    pendingPlayNextMediaIndex == index -> clearPendingPlayNext()
-                    pendingPlayNextMediaIndex > index -> pendingPlayNextMediaIndex--
-                }
-
-                player?.let { p ->
-                    if (index < p.mediaItemCount) {
-                        p.removeMediaItem(index)
-                    }
-                }
-                triggerQueueSave()
-            }
-        }
+    /**
+     * Puts [removed] back where it was. Songs added at the end since then are fine; any other change
+     * to the queue means its place no longer exists, and the undo does nothing.
+     */
+    fun restoreToQueue(removed: RemovedQueueTrack) {
+        val queue = _queue.value
+        if (queue.take(removed.queueAfter.size).map { it.videoId } != removed.queueAfter) return
+        val index = removed.index.coerceIn(0, queue.size)
+        _queue.value = queue.toMutableList().apply { add(index, removed.track) }
+        if (index <= _currentQueueIndex.value) _currentQueueIndex.value += 1
+        if (pendingPlayNextMediaIndex >= index) pendingPlayNextMediaIndex++
+        player?.let { p -> if (index <= p.mediaItemCount) p.addMediaItem(index, buildMediaItem(removed.track)) }
+        triggerQueueSave()
     }
 
     fun moveMediaItem(
@@ -1144,20 +1228,18 @@ object EnhancedMusicPlayerManager {
         toIndex: Int,
     ) {
         scope.launch {
-            val currentQ = _queue.value.toMutableList()
-            if (fromIndex in currentQ.indices && toIndex in currentQ.indices) {
-                val item = currentQ.removeAt(fromIndex)
-                currentQ.add(toIndex, item)
-                _queue.value = currentQ
-                clearPendingPlayNext()
+            val moved = PlaylistQueueOrder.move(_queue.value, _currentQueueIndex.value, fromIndex, toIndex) ?: return@launch
+            _queue.value = moved.items
+            // The player reports no transition when songs move around the playing one, so the index follows here.
+            _currentQueueIndex.value = moved.currentIndex
+            clearPendingPlayNext()
 
-                player?.let { p ->
-                    if (fromIndex < p.mediaItemCount && toIndex < p.mediaItemCount) {
-                        p.moveMediaItem(fromIndex, toIndex)
-                    }
+            player?.let { p ->
+                if (fromIndex < p.mediaItemCount && toIndex < p.mediaItemCount) {
+                    p.moveMediaItem(fromIndex, toIndex)
                 }
-                triggerQueueSave()
             }
+            triggerQueueSave()
         }
     }
 

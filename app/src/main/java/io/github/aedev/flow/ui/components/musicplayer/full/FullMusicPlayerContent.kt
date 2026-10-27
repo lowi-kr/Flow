@@ -24,9 +24,11 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalDensity
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.min
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
+import io.github.aedev.flow.R
 import io.github.aedev.flow.data.local.MusicPlayerBackgroundStyle
 import io.github.aedev.flow.data.localmedia.LocalMediaIds
 import io.github.aedev.flow.data.music.model.MusicTrack
@@ -36,12 +38,13 @@ import io.github.aedev.flow.ui.components.layout.navigation.LocalMediaNavigator
 import io.github.aedev.flow.ui.components.music.sheet.MusicQuickActionsSheet
 import io.github.aedev.flow.ui.components.music.sheet.SaveSongSheet
 import io.github.aedev.flow.ui.components.musicplayer.common.PlayerBackdropColors
-import io.github.aedev.flow.ui.components.musicplayer.common.SkipDirection
-import io.github.aedev.flow.ui.components.musicplayer.controls.PlayerPlaybackControls
 import io.github.aedev.flow.ui.components.musicplayer.controls.PlayerProgressSlider
 import io.github.aedev.flow.ui.components.musicplayer.lyrics.DEFAULT_LYRICS_TEXT_SIZE
 import io.github.aedev.flow.ui.components.musicplayer.lyrics.LARGE_LYRICS_TEXT_SIZE
 import io.github.aedev.flow.ui.components.musicplayer.lyrics.lyricsBackdrop
+import io.github.aedev.flow.ui.components.musicplayer.motion.MusicSideSwipeHud
+import io.github.aedev.flow.ui.components.musicplayer.motion.musicSideSwipes
+import io.github.aedev.flow.ui.components.musicplayer.motion.rememberMusicSideSwipes
 import io.github.aedev.flow.ui.components.musicplayer.queue.QueueActions
 import io.github.aedev.flow.ui.components.musicplayer.queue.QueueList
 import io.github.aedev.flow.ui.components.musicplayer.queue.QueuePullUpSheet
@@ -50,7 +53,11 @@ import io.github.aedev.flow.ui.components.musicplayer.queue.queuePullUpGesture
 import io.github.aedev.flow.ui.components.musicplayer.queue.rememberQueuePullUpState
 import io.github.aedev.flow.ui.components.musicplayer.sheet.AudioSettingsSheet
 import io.github.aedev.flow.ui.components.shared.MediaPalette
+import io.github.aedev.flow.ui.components.shared.MediaPlaybackControls
 import io.github.aedev.flow.ui.components.shared.MediaSleepTimerSheet
+import io.github.aedev.flow.ui.components.shared.SkipDirection
+import io.github.aedev.flow.ui.components.shared.quickactions.QuickActionUndo
+import io.github.aedev.flow.ui.components.shared.quickactions.sharedQuickActionsViewModel
 import io.github.aedev.flow.ui.screens.music.MusicPlayerViewModel
 import io.github.aedev.flow.ui.screens.music.MusicVideoSwitchViewModel
 import io.github.aedev.flow.ui.screens.music.sharedMusicPlayerViewModel
@@ -166,13 +173,19 @@ internal fun FullMusicPlayerContent(
         }
     }
 
+    val quickActions = sharedQuickActionsViewModel()
+    val removedFromQueue = stringResource(R.string.removed_from_queue)
+    val queueSwipes by viewModel.queueSwipes.collectAsState()
     val queueActions =
-        remember(viewModel) {
+        remember(viewModel, removedFromQueue) {
             QueueActions(
                 onTrackClick = { viewModel.playFromQueue(it) },
                 onMoveTrack = { from, to -> viewModel.moveTrack(from, to) },
                 onPlayNextFromQueue = { viewModel.playNextFromQueuePosition(it) },
                 onSendQueueTrackToEnd = { viewModel.moveQueueTrackToEnd(it) },
+                onRemoveFromQueue = { index ->
+                    viewModel.removeFromQueue(index)?.let { quickActions.announce(removedFromQueue, QuickActionUndo.MusicQueueRemoval(it)) }
+                },
                 onRadioTrackClick = { viewModel.playRadioTrack(it) },
                 onPlayNextRadio = { viewModel.playNextFromRadio(it) },
                 onAddRadioToQueue = { viewModel.addRadioTrackToQueue(it) },
@@ -204,7 +217,7 @@ internal fun FullMusicPlayerContent(
     }
 
     BoxWithConstraints(
-        modifier = Modifier.fillMaxSize(),
+        modifier = Modifier.fillMaxSize().musicPlayerKeyboardShortcuts(isPlayerSheetExpanded && !showSleepTimer, viewModel),
     ) {
         val navBarPadding = WindowInsets.navigationBars.asPaddingValues().calculateBottomPadding()
         val statusBarPadding = WindowInsets.statusBars.asPaddingValues().calculateTopPadding()
@@ -324,7 +337,7 @@ internal fun FullMusicPlayerContent(
                 },
                 controls = { modifier ->
                     MaterialTheme(colorScheme = controlScheme) {
-                        PlayerPlaybackControls(
+                        MediaPlaybackControls(
                             isPlaying = uiState.isPlaying,
                             isBuffering = uiState.isBuffering && isPlayerSheetExpanded,
                             onPreviousClick = { viewModel.skipToPrevious() },
@@ -364,7 +377,8 @@ internal fun FullMusicPlayerContent(
             animatedArtwork = animatedArtwork.takeIf { immersiveBackground },
         )
 
-        val pullUpQueue = Modifier.queuePullUpGesture(queueState, enabled = isPlayerSheetExpanded && !isWide)
+        val sideSwipes = rememberMusicSideSwipes(layout, isPlayerSheetExpanded) { queueState.fraction() > 0f || showLyricsSheet }
+        val pullUpQueue = Modifier.musicSideSwipes(sideSwipes).queuePullUpGesture(queueState, enabled = isPlayerSheetExpanded && !isWide)
         when (layout) {
             MusicPlayerLayout.COMPACT -> {
                 CompactPlayerLayout(slots, artworkSize, queueState::fraction, navBarPadding, pullUpQueue)
@@ -402,6 +416,7 @@ internal fun FullMusicPlayerContent(
                                 isRadioLoading = uiState.isRadioLoading,
                                 endlessRadioEnabled = uiState.endlessRadioEnabled,
                                 downloadedTrackIds = uiState.downloadedTrackIds,
+                                swipes = queueSwipes,
                                 actions = queueActions,
                                 clearNavigationBar = false,
                             )
@@ -422,6 +437,7 @@ internal fun FullMusicPlayerContent(
             }
         }
 
+        MusicSideSwipeHud(sideSwipes)
         val queueSheetModifier =
             if (layout == MusicPlayerLayout.PORTRAIT_LARGE) {
                 Modifier.align(Alignment.TopCenter).widthIn(max = PortraitLargeQueueMaxWidth)
@@ -440,6 +456,7 @@ internal fun FullMusicPlayerContent(
                 shuffleEnabled = uiState.shuffleEnabled,
                 repeatMode = uiState.repeatMode,
                 downloadedTrackIds = uiState.downloadedTrackIds,
+                swipes = queueSwipes,
                 actions = queueActions,
                 dragHandleModifier = dragHandleModifier,
             )

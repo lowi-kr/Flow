@@ -221,6 +221,68 @@ class VideoPlayerViewModelEntryPointsTest {
         }
 
     @Test
+    fun `with open in fullscreen on an opened video asks for fullscreen until the screen takes it`() =
+        runTest {
+            harness.openVideosFullscreen = true
+            val viewModel = newViewModel()
+
+            viewModel.playVideo(video("open_1"))
+            assertThat(viewModel.fullscreenOpen.value).isEqualTo("open_1")
+
+            viewModel.consumeFullscreenOpen("other")
+            assertThat(viewModel.fullscreenOpen.value).isEqualTo("open_1")
+            viewModel.consumeFullscreenOpen("open_1")
+            assertThat(viewModel.fullscreenOpen.value).isNull()
+        }
+
+    @Test
+    fun `open in fullscreen covers device videos and the video a playlist starts on`() =
+        runTest {
+            harness.openVideosFullscreen = true
+            val viewModel = newViewModel()
+
+            viewModel.playLocalVideo(video("local_1"), "content://media/external/video/1")
+            assertThat(viewModel.fullscreenOpen.value).isEqualTo("local_1")
+
+            viewModel.playPlaylist(listOf(video("a"), video("b")), startIndex = 1)
+            assertThat(viewModel.fullscreenOpen.value).isEqualTo("b")
+        }
+
+    @Test
+    fun `a video that follows another never asks for fullscreen`() =
+        runTest {
+            harness.openVideosFullscreen = true
+            val viewModel = newViewModel()
+            viewModel.playVideo(video("open_1"))
+
+            viewModel.playVideo(video("next_1"), userOpened = false)
+
+            assertThat(viewModel.fullscreenOpen.value).isNull()
+        }
+
+    @Test
+    fun `with open in fullscreen off an opened video asks for nothing`() =
+        runTest {
+            val viewModel = newViewModel()
+
+            viewModel.playVideo(video("open_1"))
+
+            assertThat(viewModel.fullscreenOpen.value).isNull()
+        }
+
+    @Test
+    fun `resuming a restored session never asks for fullscreen`() =
+        runTest {
+            harness.openVideosFullscreen = true
+            coEvery { harness.viewHistory.getLatestUnfinishedVideo() } returns historyEntity("hist_1")
+            val viewModel = newViewModel()
+
+            viewModel.resumeRestoredSession(stayMini = false)
+
+            assertThat(viewModel.fullscreenOpen.value).isNull()
+        }
+
+    @Test
     fun `syncing with a local video that is already playing keeps its state`() =
         runTest {
             val viewModel = newViewModel()
@@ -393,19 +455,19 @@ class VideoPlayerViewModelEntryPointsTest {
         }
 
     @Test
-    fun `toggleSkipSilence and toggleStableVolume delegate to the player without touching ui state`() =
+    fun `toggleSkipSilence and toggleVolumeNormalization delegate to the player without touching ui state`() =
         runTest {
             val viewModel = newViewModel()
             val before = viewModel.uiState.value
 
             viewModel.toggleSkipSilence(true)
-            viewModel.toggleStableVolume(true)
+            viewModel.toggleVolumeNormalization(true)
             viewModel.toggleSkipSilence(false)
             advanceUntilIdle()
 
             verifyOrder {
                 harness.playerManager.toggleSkipSilence(true)
-                harness.playerManager.toggleStableVolume(true)
+                harness.playerManager.toggleVolumeNormalization(true)
                 harness.playerManager.toggleSkipSilence(false)
             }
             assertThat(viewModel.uiState.value).isEqualTo(before)

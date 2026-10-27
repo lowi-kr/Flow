@@ -47,6 +47,8 @@ import kotlinx.coroutines.flow.shareIn
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.supervisorScope
+import kotlinx.coroutines.sync.Mutex
+import kotlinx.coroutines.sync.withLock
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
 import kotlinx.coroutines.channels.Channel as EventChannel
@@ -395,7 +397,7 @@ class SubscriptionsViewModel
                     try {
                         val enrichedById = mutableMapOf<String, Video>()
                         candidates.chunked(DURATION_ENRICHMENT_BATCH_SIZE).forEach { batch ->
-                            val enrichedBatch =
+                            val lookups =
                                 supervisorScope {
                                     batch
                                         .map { video ->
@@ -403,14 +405,15 @@ class SubscriptionsViewModel
                                                 fetchSubscriptionPlayerMetadata(video, DURATION_METADATA_TIMEOUT_MS)
                                             }
                                         }.awaitAll()
-                                }
+                                }.filterNotNull()
                             withContext(Dispatchers.Main.immediate) {
                                 val attemptedAt = System.currentTimeMillis()
                                 batch.forEach { video ->
                                     durationEnrichmentAttemptedAt[video.id] = attemptedAt
                                 }
                             }
-                            enrichedBatch.filterNotNull().associateByTo(enrichedById) { it.id }
+                            lookups.filter { it.refusedToViewer }.forEach { playerPreferences.markVideoUnplayable(it.videoId) }
+                            lookups.mapNotNull { it.enriched }.associateByTo(enrichedById) { it.id }
                         }
 
                         if (enrichedById.isEmpty()) return@launch
@@ -478,11 +481,11 @@ class SubscriptionsViewModel
             }
         }
 
-        fun reorderGroups(
-            fromIndex: Int,
-            toIndex: Int,
-        ) {
-            viewModelScope.launch(PerformanceDispatcher.diskIO) { subscriptionGroupDao.moveGroup(fromIndex, toIndex) }
+        private val groupOrderLock = Mutex()
+
+        /** Saves [names] as the group order; each save is a whole order, so saves are kept in sequence. */
+        fun setGroupOrder(names: List<String>) {
+            viewModelScope.launch(PerformanceDispatcher.diskIO) { groupOrderLock.withLock { subscriptionGroupDao.setOrder(names) } }
         }
 
         private val _importMessages = EventChannel<String>(EventChannel.BUFFERED)

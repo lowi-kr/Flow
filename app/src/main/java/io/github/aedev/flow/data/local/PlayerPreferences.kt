@@ -49,9 +49,9 @@ const val MAX_CONCURRENT_DOWNLOADS = 5
 /** On until turned off, matching NewPipe's default and the Background button (#1298). */
 const val DEFAULT_BACKGROUND_PLAY_ENABLED = true
 
-val DEFAULT_NAV_TAB_ORDER = listOf(0, 1, 2, 3, 4, 5, 6)
+val DEFAULT_NAV_TAB_ORDER = listOf(0, 1, 2, 3, 4, 5, 6, 7)
 
-private const val MAX_UNPLAYABLE_VIDEO_IDS = 300
+private const val MAX_UNPLAYABLE_VIDEO_IDS = 1_000
 
 /**
  * Preferences that never leave the device in a backup: the proxy password, and SponsorBlock's
@@ -76,6 +76,9 @@ class PlayerPreferences(
         val AUTOPLAY_ENABLED = booleanPreferencesKey("autoplay_enabled")
         val QUEUE_AUTOPLAY_ENABLED = booleanPreferencesKey("queue_autoplay_enabled")
         val START_VIDEOS_PAUSED = booleanPreferencesKey("start_videos_paused")
+        val OPEN_VIDEOS_FULLSCREEN = booleanPreferencesKey("open_videos_fullscreen")
+        val TILT_FULLSCREEN_ROTATION_LOCKED = booleanPreferencesKey("tilt_fullscreen_rotation_locked")
+        val RESUME_FROM_HEADPHONES = booleanPreferencesKey("resume_from_headphones")
         val MUSIC_ENDLESS_RADIO_ENABLED = booleanPreferencesKey("music_endless_radio_enabled")
         val AUTOPLAY_COUNTDOWN_SECONDS = intPreferencesKey("autoplay_countdown_seconds")
         val SHOW_CONTROLS_WHILE_LOADING = booleanPreferencesKey("show_controls_while_loading")
@@ -99,11 +102,12 @@ class PlayerPreferences(
         val CONTENT_LANGUAGE = stringPreferencesKey("content_language")
         val ORIGINAL_TITLES = booleanPreferencesKey("original_titles")
         val MUSIC_LOUDNESS_NORMALIZATION_ENABLED = booleanPreferencesKey("music_loudness_normalization_enabled")
+        val MUSIC_AUDIO_OFFLOAD_ENABLED = booleanPreferencesKey("music_audio_offload_enabled")
         val SKIP_SILENCE_ENABLED = booleanPreferencesKey("skip_silence_enabled")
         val SPONSOR_BLOCK_ENABLED = booleanPreferencesKey("sponsor_block_enabled")
         val AUTO_PIP_ENABLED = booleanPreferencesKey("auto_pip_enabled")
         val MANUAL_PIP_BUTTON_ENABLED = booleanPreferencesKey("manual_pip_button_enabled")
-        val STABLE_VOLUME_ENABLED = booleanPreferencesKey("stable_volume_enabled")
+        val VIDEO_VOLUME_NORMALIZATION = booleanPreferencesKey("video_volume_normalization")
 
         // Buffer settings
         val MIN_BUFFER_MS = intPreferencesKey("min_buffer_ms")
@@ -129,6 +133,9 @@ class PlayerPreferences(
 
         // Download dialog style + remembered last-used download options (compact dialog)
         val DOWNLOAD_DIALOG_STYLE = stringPreferencesKey("download_dialog_style")
+        val DOWNLOAD_ASK_EVERY_TIME = booleanPreferencesKey("download_ask_every_time")
+        val DOWNLOADS_STORAGE_CARD = booleanPreferencesKey("downloads_storage_card")
+        val DOWNLOADS_CONFIRM_DELETE = booleanPreferencesKey("downloads_confirm_delete")
         val LAST_DOWNLOAD_TYPE = stringPreferencesKey("last_download_type")
         val LAST_DOWNLOAD_HEIGHT = intPreferencesKey("last_download_height")
         val LAST_DOWNLOAD_CODEC = stringPreferencesKey("last_download_codec")
@@ -196,6 +203,7 @@ class PlayerPreferences(
         val MUSIC_NAVIGATION_ENABLED = booleanPreferencesKey("music_navigation_enabled")
         val SEARCH_NAV_TAB_ENABLED = booleanPreferencesKey("search_nav_tab_enabled")
         val CATEGORIES_NAV_TAB_ENABLED = booleanPreferencesKey("categories_nav_tab_enabled")
+        val DOWNLOADS_NAV_TAB_ENABLED = booleanPreferencesKey("downloads_nav_tab_enabled")
         val PREFERRED_LYRICS_PROVIDER = stringPreferencesKey("preferred_lyrics_provider")
         val LYRICS_PROVIDER_ORDER = stringPreferencesKey("lyrics_provider_order")
         val LYRICS_TEXT_ALIGN = stringPreferencesKey("lyrics_text_align")
@@ -211,6 +219,8 @@ class PlayerPreferences(
         val LYRICS_PROVIDER_ENABLED_KUGOU = booleanPreferencesKey("lyrics_provider_enabled_kugou")
         val LYRICS_PROVIDER_ENABLED_PAXSENIX = booleanPreferencesKey("lyrics_provider_enabled_paxsenix")
         val LYRICS_PROVIDER_ENABLED_YOUTUBESUBTITLE = booleanPreferencesKey("lyrics_provider_enabled_youtubesubtitle")
+        val LYRICS_PROVIDER_ENABLED_LRCRED = booleanPreferencesKey("lyrics_provider_enabled_lrcred")
+        val LYRICS_PROVIDER_ENABLED_UNISON = booleanPreferencesKey("lyrics_provider_enabled_unison")
         val SWIPE_GESTURES_ENABLED = booleanPreferencesKey("swipe_gestures_enabled")
         val BRIGHTNESS_SWIPE_GESTURES_ENABLED = booleanPreferencesKey("brightness_swipe_gestures_enabled")
         val REMEMBER_BRIGHTNESS_ENABLED = booleanPreferencesKey("remember_brightness_enabled")
@@ -256,6 +266,7 @@ class PlayerPreferences(
         // DeArrow
         val DEARROW_ENABLED = booleanPreferencesKey("dearrow_enabled")
         val DEARROW_BADGE_ENABLED = booleanPreferencesKey("dearrow_badge_enabled")
+        val DEARROW_RANDOM_FRAME = booleanPreferencesKey("dearrow_random_frame")
 
         // Notification preferences
         val NOTIFICATIONS_ENABLED = booleanPreferencesKey("notifications_enabled")
@@ -293,6 +304,8 @@ class PlayerPreferences(
         val MINI_PLAYER_SHOW_NEXT_PREV_CONTROLS = booleanPreferencesKey("mini_player_show_next_prev_controls")
         val MINI_BAR_SWIPE_LEFT_ACTION = stringPreferencesKey("mini_bar_swipe_left_action")
         val MINI_BAR_SWIPE_RIGHT_ACTION = stringPreferencesKey("mini_bar_swipe_right_action")
+        val QUEUE_SWIPE_LEFT_ACTION = stringPreferencesKey("queue_swipe_left_action")
+        val QUEUE_SWIPE_RIGHT_ACTION = stringPreferencesKey("queue_swipe_right_action")
         val MINI_PLAYER_CONTINUE_WATCHING_ENABLED = booleanPreferencesKey("mini_player_continue_watching_enabled")
         val SHOW_RESTORED_MUSIC_MINI_PLAYER = booleanPreferencesKey("show_restored_music_mini_player")
         val OPEN_MUSIC_PLAYER_ON_PLAY = booleanPreferencesKey("open_music_player_on_play")
@@ -326,6 +339,8 @@ class PlayerPreferences(
         val ANIMATED_ARTWORK = booleanPreferencesKey("animated_artwork")
         val MUSIC_REPEAT_MODE = intPreferencesKey("music_repeat_mode")
         val PAUSE_MUSIC_WHEN_MUTED = booleanPreferencesKey("pause_music_when_muted")
+        val MUSIC_RESUME_LONG_TRACKS = booleanPreferencesKey("music_resume_long_tracks")
+        val MUSIC_SIDE_SWIPES = booleanPreferencesKey("music_side_swipes")
         val ANIMATED_ARTWORK_WIFI_ONLY = booleanPreferencesKey("animated_artwork_wifi_only")
         val AUTO_DOWNLOAD_LIKED_MUSIC = booleanPreferencesKey("auto_download_liked_music")
         val RECAP_SOURCE = stringPreferencesKey("recap_source")
@@ -1235,6 +1250,16 @@ class PlayerPreferences(
         }
     }
 
+    val downloadsNavigationEnabled: Flow<Boolean> =
+        context.playerPreferencesDataStore.data
+            .map { preferences -> preferences[Keys.DOWNLOADS_NAV_TAB_ENABLED] ?: false }
+
+    suspend fun setDownloadsNavigationEnabled(enabled: Boolean) {
+        context.playerPreferencesDataStore.edit { preferences ->
+            preferences[Keys.DOWNLOADS_NAV_TAB_ENABLED] = enabled
+        }
+    }
+
     // Continue Watching shelf enabled preference
     val continueWatchingEnabled: Flow<Boolean> =
         context.playerPreferencesDataStore.data
@@ -1428,6 +1453,18 @@ class PlayerPreferences(
         }
     }
 
+    val musicAudioOffloadEnabled: Flow<Boolean> =
+        context.playerPreferencesDataStore.data
+            .map { preferences ->
+                preferences[Keys.MUSIC_AUDIO_OFFLOAD_ENABLED] ?: false
+            }
+
+    suspend fun setMusicAudioOffloadEnabled(enabled: Boolean) {
+        context.playerPreferencesDataStore.edit { preferences ->
+            preferences[Keys.MUSIC_AUDIO_OFFLOAD_ENABLED] = enabled
+        }
+    }
+
     // Quality preferences
     val defaultQualityWifi: Flow<VideoQuality> =
         context.playerPreferencesDataStore.data
@@ -1594,6 +1631,39 @@ class PlayerPreferences(
         }
     }
 
+    /** A video the viewer opens goes straight to fullscreen; what plays after it stays where the viewer is. */
+    val openVideosFullscreen: Flow<Boolean> =
+        context.playerPreferencesDataStore.data
+            .map { preferences -> preferences[Keys.OPEN_VIDEOS_FULLSCREEN] ?: false }
+
+    suspend fun setOpenVideosFullscreen(enabled: Boolean) {
+        context.playerPreferencesDataStore.edit { preferences ->
+            preferences[Keys.OPEN_VIDEOS_FULLSCREEN] = enabled
+        }
+    }
+
+    /** Turning the phone sideways enters fullscreen even while the system rotation lock is on. */
+    val tiltFullscreenRotationLocked: Flow<Boolean> =
+        context.playerPreferencesDataStore.data
+            .map { preferences -> preferences[Keys.TILT_FULLSCREEN_ROTATION_LOCKED] ?: false }
+
+    suspend fun setTiltFullscreenRotationLocked(enabled: Boolean) {
+        context.playerPreferencesDataStore.edit { preferences ->
+            preferences[Keys.TILT_FULLSCREEN_ROTATION_LOCKED] = enabled
+        }
+    }
+
+    /** A Play button on headphones may start the last songs after Flow was closed. */
+    val resumeFromHeadphones: Flow<Boolean> =
+        context.playerPreferencesDataStore.data
+            .map { preferences -> preferences[Keys.RESUME_FROM_HEADPHONES] ?: true }
+
+    suspend fun setResumeFromHeadphones(enabled: Boolean) {
+        context.playerPreferencesDataStore.edit { preferences ->
+            preferences[Keys.RESUME_FROM_HEADPHONES] = enabled
+        }
+    }
+
     // Music endless radio — its own switch, independent of the VIDEO autoplay toggles.
     val musicEndlessRadioEnabled: Flow<Boolean> =
         context.playerPreferencesDataStore.data
@@ -1683,16 +1753,15 @@ class PlayerPreferences(
         }
     }
 
-    // Stable Volume
-    val stableVolumeEnabled: Flow<Boolean> =
+    /** Videos and Shorts are turned down to YouTube's loudness level, as on youtube.com. */
+    val videoVolumeNormalizationEnabled: Flow<Boolean> =
         context.playerPreferencesDataStore.data
-            .map { preferences ->
-                preferences[Keys.STABLE_VOLUME_ENABLED] ?: false
-            }
+            .map { preferences -> preferences[Keys.VIDEO_VOLUME_NORMALIZATION] ?: true }
+            .distinctUntilChanged()
 
-    suspend fun setStableVolumeEnabled(enabled: Boolean) {
+    suspend fun setVideoVolumeNormalizationEnabled(enabled: Boolean) {
         context.playerPreferencesDataStore.edit { preferences ->
-            preferences[Keys.STABLE_VOLUME_ENABLED] = enabled
+            preferences[Keys.VIDEO_VOLUME_NORMALIZATION] = enabled
         }
     }
 
@@ -1729,6 +1798,17 @@ class PlayerPreferences(
     suspend fun setDeArrowBadgeEnabled(enabled: Boolean) {
         context.playerPreferencesDataStore.edit { preferences ->
             preferences[Keys.DEARROW_BADGE_ENABLED] = enabled
+        }
+    }
+
+    /** DeArrow's own default: a video with no thumbnail submission shows a frame from the video. */
+    val deArrowRandomFrame: Flow<Boolean> =
+        context.playerPreferencesDataStore.data
+            .map { preferences -> preferences[Keys.DEARROW_RANDOM_FRAME] ?: true }
+
+    suspend fun setDeArrowRandomFrame(enabled: Boolean) {
+        context.playerPreferencesDataStore.edit { preferences ->
+            preferences[Keys.DEARROW_RANDOM_FRAME] = enabled
         }
     }
 
@@ -2192,6 +2272,30 @@ class PlayerPreferences(
         }
     }
 
+    /** Podcasts and other long tracks pick up where they stopped when played again. */
+    val musicResumeLongTracks: Flow<Boolean> =
+        context.playerPreferencesDataStore.data
+            .map { preferences -> preferences[Keys.MUSIC_RESUME_LONG_TRACKS] ?: false }
+            .distinctUntilChanged()
+
+    suspend fun setMusicResumeLongTracks(enabled: Boolean) {
+        context.playerPreferencesDataStore.edit { preferences ->
+            preferences[Keys.MUSIC_RESUME_LONG_TRACKS] = enabled
+        }
+    }
+
+    /** Vertical swipes on the music player's left and right thirds change speed and volume. */
+    val musicSideSwipes: Flow<Boolean> =
+        context.playerPreferencesDataStore.data
+            .map { preferences -> preferences[Keys.MUSIC_SIDE_SWIPES] ?: false }
+            .distinctUntilChanged()
+
+    suspend fun setMusicSideSwipes(enabled: Boolean) {
+        context.playerPreferencesDataStore.edit { preferences ->
+            preferences[Keys.MUSIC_SIDE_SWIPES] = enabled
+        }
+    }
+
     /** The music player's repeat mode, as Media3's own Player.REPEAT_MODE_* value. */
     val musicRepeatMode: Flow<Int> =
         context.playerPreferencesDataStore.data
@@ -2561,7 +2665,7 @@ class PlayerPreferences(
     val autoPipEnabled: Flow<Boolean> =
         context.playerPreferencesDataStore.data
             .map { preferences ->
-                preferences[Keys.AUTO_PIP_ENABLED] ?: false
+                preferences[Keys.AUTO_PIP_ENABLED] ?: true
             }
 
     suspend fun setAutoPipEnabled(enabled: Boolean) {
@@ -3124,6 +3228,39 @@ class PlayerPreferences(
         }
     }
 
+    /** Download opens the download menu; off, it downloads the default choice at once. */
+    val downloadAskEveryTime: Flow<Boolean> =
+        context.playerPreferencesDataStore.data
+            .map { preferences -> preferences[Keys.DOWNLOAD_ASK_EVERY_TIME] ?: true }
+
+    suspend fun setDownloadAskEveryTime(enabled: Boolean) {
+        context.playerPreferencesDataStore.edit { preferences ->
+            preferences[Keys.DOWNLOAD_ASK_EVERY_TIME] = enabled
+        }
+    }
+
+    /** The space used and free, shown at the top of the Downloads page. */
+    val downloadsStorageCard: Flow<Boolean> =
+        context.playerPreferencesDataStore.data
+            .map { preferences -> preferences[Keys.DOWNLOADS_STORAGE_CARD] ?: true }
+
+    suspend fun setDownloadsStorageCard(enabled: Boolean) {
+        context.playerPreferencesDataStore.edit { preferences ->
+            preferences[Keys.DOWNLOADS_STORAGE_CARD] = enabled
+        }
+    }
+
+    /** Delete in the Downloads menus asks first; a swipe never does, its snackbar can undo it. */
+    val downloadsConfirmDelete: Flow<Boolean> =
+        context.playerPreferencesDataStore.data
+            .map { preferences -> preferences[Keys.DOWNLOADS_CONFIRM_DELETE] ?: true }
+
+    suspend fun setDownloadsConfirmDelete(enabled: Boolean) {
+        context.playerPreferencesDataStore.edit { preferences ->
+            preferences[Keys.DOWNLOADS_CONFIRM_DELETE] = enabled
+        }
+    }
+
     /** Whether a video the viewer opens is also saved for offline, and on which networks. */
     val autoDownloadOpenedVideos: Flow<AutoDownloadMode> =
         context.playerPreferencesDataStore.data
@@ -3436,6 +3573,8 @@ class PlayerPreferences(
             "KuGou" to Keys.LYRICS_PROVIDER_ENABLED_KUGOU,
             "Paxsenix" to Keys.LYRICS_PROVIDER_ENABLED_PAXSENIX,
             "YouTubeSubtitle" to Keys.LYRICS_PROVIDER_ENABLED_YOUTUBESUBTITLE,
+            "LrcRed" to Keys.LYRICS_PROVIDER_ENABLED_LRCRED,
+            "Unison" to Keys.LYRICS_PROVIDER_ENABLED_UNISON,
         )
 
     fun isLyricsProviderEnabled(providerName: String): Flow<Boolean> =
@@ -3606,6 +3745,28 @@ class PlayerPreferences(
     suspend fun setMiniBarSwipeRightAction(action: MiniBarSwipeAction) {
         context.playerPreferencesDataStore.edit { preferences ->
             preferences[Keys.MINI_BAR_SWIPE_RIGHT_ACTION] = action.name
+        }
+    }
+
+    /** What swiping a song in the music queue to the left does. */
+    val queueSwipeLeftAction: Flow<QueueSwipeAction> =
+        context.playerPreferencesDataStore.data
+            .map { preferences -> QueueSwipeAction.fromString(preferences[Keys.QUEUE_SWIPE_LEFT_ACTION], QueueSwipeAction.PLAY_NEXT) }
+
+    suspend fun setQueueSwipeLeftAction(action: QueueSwipeAction) {
+        context.playerPreferencesDataStore.edit { preferences ->
+            preferences[Keys.QUEUE_SWIPE_LEFT_ACTION] = action.name
+        }
+    }
+
+    /** What swiping a song in the music queue to the right does. */
+    val queueSwipeRightAction: Flow<QueueSwipeAction> =
+        context.playerPreferencesDataStore.data
+            .map { preferences -> QueueSwipeAction.fromString(preferences[Keys.QUEUE_SWIPE_RIGHT_ACTION], QueueSwipeAction.REMOVE) }
+
+    suspend fun setQueueSwipeRightAction(action: QueueSwipeAction) {
+        context.playerPreferencesDataStore.edit { preferences ->
+            preferences[Keys.QUEUE_SWIPE_RIGHT_ACTION] = action.name
         }
     }
 
@@ -3807,7 +3968,7 @@ enum class BufferProfile(
     AGGRESSIVE("Fast Start", 5_000, 30_000, 500, 2_500),
 
     // Balanced: Good default for most connections
-    STABLE("Balanced", 30_000, 50_000, 2_500, 5_000),
+    STABLE("Balanced", 20_000, 50_000, 2_500, 5_000),
 
     // Data Saver: Minimize data usage with smaller buffers
     DATASAVER("Data Saver", 12_000, 25_000, 1_500, 3_000),
@@ -3958,6 +4119,21 @@ enum class MiniBarSwipeAction {
 
     companion object {
         fun fromString(value: String?): MiniBarSwipeAction = entries.firstOrNull { it.name == value } ?: CLOSE
+    }
+}
+
+/** A swipe on a song in the music queue. */
+enum class QueueSwipeAction {
+    PLAY_NEXT,
+    MOVE_TO_END,
+    REMOVE,
+    ;
+
+    companion object {
+        fun fromString(
+            value: String?,
+            default: QueueSwipeAction,
+        ): QueueSwipeAction = entries.firstOrNull { it.name == value } ?: default
     }
 }
 

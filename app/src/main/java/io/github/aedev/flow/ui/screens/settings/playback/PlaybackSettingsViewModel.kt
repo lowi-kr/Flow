@@ -1,6 +1,8 @@
 package io.github.aedev.flow.ui.screens.settings.playback
 
+import android.content.Context
 import dagger.hilt.android.lifecycle.HiltViewModel
+import dagger.hilt.android.qualifiers.ApplicationContext
 import io.github.aedev.flow.data.local.DEFAULT_BACKGROUND_PLAY_ENABLED
 import io.github.aedev.flow.data.local.DEFAULT_SPEED_SWIPE_STEP
 import io.github.aedev.flow.data.local.DoubleTapSeekZone
@@ -8,8 +10,9 @@ import io.github.aedev.flow.data.local.PlayerOverlayPreferences
 import io.github.aedev.flow.data.local.PlayerPreferences
 import io.github.aedev.flow.data.local.PlayerRelatedCardStyle
 import io.github.aedev.flow.data.local.SpeedSwipeSide
-import io.github.aedev.flow.data.lyrics.LyricsProviderRegistry
+import io.github.aedev.flow.data.lyrics.LyricsProviderOrder
 import io.github.aedev.flow.player.stream.CaptionTrackResolver
+import io.github.aedev.flow.service.HeadphoneResume
 import io.github.aedev.flow.ui.screens.settings.SettingsViewModel
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.map
@@ -26,14 +29,16 @@ data class LyricsProviderState(
 class PlaybackSettingsViewModel
     @Inject
     constructor(
+        @ApplicationContext private val context: Context,
         private val preferences: PlayerPreferences,
     ) : SettingsViewModel() {
         private val overlay = PlayerOverlayPreferences()
-        private val lyricsRegistry = LyricsProviderRegistry.default()
 
         val backgroundPlay = preferences.backgroundPlayEnabled.asState(DEFAULT_BACKGROUND_PLAY_ENABLED)
         val autoplay = preferences.autoplayEnabled.asState(true)
         val startPaused = preferences.startVideosPaused.asState(false)
+        val openFullscreen = preferences.openVideosFullscreen.asState(false)
+        val tiltFullscreen = preferences.tiltFullscreenRotationLocked.asState(false)
         val queueAutoplay = preferences.queueAutoplayEnabled.asState(true)
         val autoplayCountdown = preferences.autoplayCountdownSeconds.asState(0)
         val loopAll = preferences.videoLoopEnabled.asState(false)
@@ -74,7 +79,7 @@ class PlaybackSettingsViewModel
         val sponsorBlockButton = preferences.overlaySponsorBlockEnabled.asState(overlay.sponsorBlockEnabled)
         val nextPrevButtons = preferences.overlayNextPrevEnabled.asState(overlay.nextPrevButtonsEnabled)
 
-        val autoPip = preferences.autoPipEnabled.asState(false)
+        val autoPip = preferences.autoPipEnabled.asState(true)
         val continueWatchingMiniPlayer = preferences.miniPlayerContinueWatchingEnabled.asState(true)
         val restoreMusicMiniPlayer = preferences.showRestoredMusicMiniPlayer.asState(true)
         val openMusicPlayerOnPlay = preferences.openMusicPlayerOnPlay.asState(false)
@@ -102,14 +107,27 @@ class PlaybackSettingsViewModel
         val endlessRadio = preferences.musicEndlessRadioEnabled.asState(true)
         val musicVideoSwitch = preferences.musicVideoSwitch.asState(false)
         val pauseMusicWhenMuted = preferences.pauseMusicWhenMuted.asState(false)
+        val musicResume = preferences.musicResumeLongTracks.asState(false)
+        val resumeFromHeadphones = preferences.resumeFromHeadphones.asState(true)
+        val musicSideSwipes = preferences.musicSideSwipes.asState(false)
+        val normalizeVolume = preferences.videoVolumeNormalizationEnabled.asState(true)
         val lyricsProviders =
             combine(preferences.lyricsProviderOrder, preferences.allLyricsProviderEnabledStates()) { order, enabled ->
-                lyricsRegistry.getOrderedProviders(order).map { LyricsProviderState(it.name, enabled[it.name] ?: true) }
-            }.asState(lyricsRegistry.getOrderedProviders("").map { LyricsProviderState(it.name, true) })
+                LyricsProviderOrder.resolve(order).map { LyricsProviderState(it, enabled[it] ?: true) }
+            }.asState(LyricsProviderOrder.DEFAULT.map { LyricsProviderState(it, true) })
 
         fun setBackgroundPlay(value: Boolean) = write { preferences.setBackgroundPlayEnabled(value) }
 
+        fun setResumeFromHeadphones(value: Boolean) {
+            if (!value) HeadphoneResume.set(context, allowed = false)
+            write { preferences.setResumeFromHeadphones(value) }
+        }
+
         fun setStartPaused(value: Boolean) = write { preferences.setStartVideosPaused(value) }
+
+        fun setOpenFullscreen(value: Boolean) = write { preferences.setOpenVideosFullscreen(value) }
+
+        fun setTiltFullscreen(value: Boolean) = write { preferences.setTiltFullscreenRotationLocked(value) }
 
         fun setAutoplay(value: Boolean) = write { preferences.setAutoplayEnabled(value && !loopAll.value) }
 
@@ -237,13 +255,18 @@ class PlaybackSettingsViewModel
 
         fun setPauseMusicWhenMuted(value: Boolean) = write { preferences.setPauseMusicWhenMuted(value) }
 
+        fun setMusicResume(value: Boolean) = write { preferences.setMusicResumeLongTracks(value) }
+
+        fun setMusicSideSwipes(value: Boolean) = write { preferences.setMusicSideSwipes(value) }
+
+        fun setNormalizeVolume(value: Boolean) = write { preferences.setVideoVolumeNormalizationEnabled(value) }
+
         fun setLyricsProviderEnabled(
             name: String,
             enabled: Boolean,
         ) = write { preferences.setLyricsProviderEnabled(name, enabled) }
 
-        fun setLyricsProviderOrder(names: List<String>) =
-            write { preferences.setLyricsProviderOrder(lyricsRegistry.serializeProviderOrder(names)) }
+        fun setLyricsProviderOrder(names: List<String>) = write { preferences.setLyricsProviderOrder(LyricsProviderOrder.serialize(names)) }
 
         companion object {
             const val ORIGINAL_AUDIO = "original"
