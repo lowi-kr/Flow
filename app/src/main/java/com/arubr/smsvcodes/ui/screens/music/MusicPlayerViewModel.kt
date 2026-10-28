@@ -25,6 +25,7 @@ import com.arubr.smsvcodes.data.recommendation.music.MusicBrainEngine
 import com.arubr.smsvcodes.data.recommendation.music.onRepeatShelf
 import com.arubr.smsvcodes.data.scrobble.Scrobbler
 import com.arubr.smsvcodes.player.EnhancedMusicPlayerManager
+import com.arubr.smsvcodes.data.music.zemer.ZemerFilter
 import com.arubr.smsvcodes.ui.components.musicplayer.queue.QueueSwipes
 import com.arubr.smsvcodes.utils.PerformanceDispatcher
 import kotlinx.coroutines.Job
@@ -191,7 +192,7 @@ class MusicPlayerViewModel
 
             viewModelScope.launch {
                 EnhancedMusicPlayerManager.queue.collect { queue ->
-                    _uiState.update { it.copy(queue = queue) }
+                    _uiState.update { it.copy(queue = ZemerFilter.filterTracks(queue)) }
                 }
             }
 

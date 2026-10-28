@@ -219,6 +219,14 @@ internal object ContentIndex {
             section = R.string.settings_section_links,
             destination = page,
         )
+    val zemerFilter =
+        SettingEntry(
+            key = "content.music.zemer_filter",
+            title = R.string.content_settings_zemer_filter_title,
+            summary = R.string.content_settings_zemer_filter_subtitle,
+            section = R.string.screen_title_music,
+            destination = page,
+        )
 
     val all =
         listOf(
@@ -248,5 +256,6 @@ internal object ContentIndex {
             shareWithoutText,
             openLinks,
             sharedLinks,
+            zemerFilter,
         )
 }

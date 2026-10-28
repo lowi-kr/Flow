@@ -234,6 +234,7 @@ class PlayerPreferences(
         val HOME_VIEW_MODE = stringPreferencesKey("home_view_mode")
         val HOME_FEED_COLUMNS = stringPreferencesKey("home_feed_columns")
         val HOME_FEED_ENABLED = booleanPreferencesKey("home_feed_enabled")
+        val ZEMER_FILTER_ENABLED = booleanPreferencesKey("zemer_filter_enabled")
         val REFRESH_HOME_ON_RESELECT = booleanPreferencesKey("refresh_home_on_reselect")
         val RELATED_CARD_STYLE = stringPreferencesKey("related_card_style")
 
@@ -1350,6 +1351,17 @@ class PlayerPreferences(
     suspend fun setHomeFeedEnabled(enabled: Boolean) {
         context.playerPreferencesDataStore.edit { preferences ->
             preferences[Keys.HOME_FEED_ENABLED] = enabled
+        }
+    }
+
+    /** Off until the user turns it on. Music only; video and Shorts ignore it. */
+    val zemerFilterEnabled: Flow<Boolean> =
+        context.playerPreferencesDataStore.data
+            .map { preferences -> preferences[Keys.ZEMER_FILTER_ENABLED] ?: false }
+
+    suspend fun setZemerFilterEnabled(enabled: Boolean) {
+        context.playerPreferencesDataStore.edit { preferences ->
+            preferences[Keys.ZEMER_FILTER_ENABLED] = enabled
         }
     }
 

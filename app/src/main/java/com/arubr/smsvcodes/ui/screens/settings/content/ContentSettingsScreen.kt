@@ -61,6 +61,7 @@ internal fun ContentSettingsScreen(
             switch(ContentIndex.hideWatchedHome, viewModel.hideWatchedHome, viewModel::setHideWatchedHome)
         }
         group(key = "content.music", header = R.string.screen_title_music) {
+            switch(ContentIndex.zemerFilter, viewModel.zemerFilter, viewModel::setZemerFilter)
             nav(
                 DestinationIndex.entry(SettingsDestination.MUSIC_HOME),
                 onClick = { onNavigate(SettingsTarget(SettingsDestination.MUSIC_HOME)) },

@@ -42,6 +42,7 @@ class ContentSettingsViewModel
         val channelNotes = preferences.channelNotesEnabled.asState(true)
         val videoNotes = preferences.videoNotesEnabled.asState(true)
         val shareWithoutText = preferences.shareWithoutText.asState(false)
+        val zemerFilter = preferences.zemerFilterEnabled.asState(false)
 
         fun setHomeFeed(value: Boolean) = write { preferences.setHomeFeedEnabled(value) }
 
@@ -92,4 +93,6 @@ class ContentSettingsViewModel
         fun setVideoNotes(value: Boolean) = write { preferences.setVideoNotesEnabled(value) }
 
         fun setShareWithoutText(value: Boolean) = write { preferences.setShareWithoutText(value) }
+
+        fun setZemerFilter(value: Boolean) = write { preferences.setZemerFilterEnabled(value) }
     }

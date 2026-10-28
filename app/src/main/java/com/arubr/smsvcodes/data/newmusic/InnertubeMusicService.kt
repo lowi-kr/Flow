@@ -7,7 +7,7 @@ import com.arubr.smsvcodes.data.music.model.MusicPlaylist
 import com.arubr.smsvcodes.data.music.model.MusicTextLink
 import com.arubr.smsvcodes.data.music.model.MusicTrack
 import com.arubr.smsvcodes.data.music.model.PlaylistDetails
-import com.arubr.smsvcodes.data.music.model.RelatedMusic
+import com.arubr.smsvcodes.data.music.zemer.ZemerFilter
 import com.arubr.smsvcodes.innertube.YouTube
 import com.arubr.smsvcodes.innertube.YouTube.SearchFilter
 import com.arubr.smsvcodes.innertube.models.AlbumItem
@@ -148,7 +148,8 @@ object InnertubeMusicService {
                     .getOrNull()
                     ?.items
                     ?.filterIsInstance<com.arubr.smsvcodes.innertube.models.PlaylistItem>()
-                    ?.map { convertPlaylistToMusicPlaylist(it) } ?: emptyList()
+                    ?.map { convertPlaylistToMusicPlaylist(it) }
+                    ?.let { ZemerFilter.filterPlaylists(it) } ?: emptyList()
             } catch (e: Exception) {
                 e.printStackTrace()
                 emptyList()
@@ -162,7 +163,7 @@ object InnertubeMusicService {
         withContext(Dispatchers.IO) {
             try {
                 val result = YouTube.newReleaseAlbums()
-                result.getOrNull()?.map { convertAlbumToPlaylist(it) } ?: emptyList()
+                result.getOrNull()?.map { convertAlbumToPlaylist(it) }?.let { ZemerFilter.filterPlaylists(it) } ?: emptyList()
             } catch (e: Exception) {
                 e.printStackTrace()
                 emptyList()
@@ -223,7 +224,7 @@ object InnertubeMusicService {
                     tracks = tracks,
                     continuation = null,
                     durationText = page.durationText,
-                    otherVersions = page.otherVersions.map { convertAlbumToPlaylist(it) },
+                    otherVersions = ZemerFilter.filterPlaylists(page.otherVersions.map { convertAlbumToPlaylist(it) }),
                 )
             } catch (e: Exception) {
                 e.printStackTrace()
@@ -268,9 +269,9 @@ object InnertubeMusicService {
                         .filterNot { audioOnly && it.isVideoSong }
                         .mapNotNull { convertToMusicTrack(it) },
                 otherPerformances = related.otherPerformances.mapNotNull { convertToMusicTrack(it) },
-                similarArtists = related.artists.map { convertArtistItemToDetails(it) },
-                playlists = related.playlists.map { convertPlaylistToMusicPlaylist(it) },
-                artistAlbums = related.albums.map { convertAlbumToPlaylist(it) },
+                similarArtists = ZemerFilter.filterArtists(related.artists.map { convertArtistItemToDetails(it) }),
+                playlists = ZemerFilter.filterPlaylists(related.playlists.map { convertPlaylistToMusicPlaylist(it) }),
+                artistAlbums = ZemerFilter.filterPlaylists(related.albums.map { convertAlbumToPlaylist(it) }),
             )
         }
 
@@ -290,8 +291,8 @@ object InnertubeMusicService {
                         .filter { it.chartType == ChartsPage.ChartType.SONGS }
                         .flatMap { it.items }
                         .mapNotNull { convertToMusicTrack(it) },
-                playlists = items.filterIsInstance<PlaylistItem>().map { convertPlaylistToMusicPlaylist(it) },
-                artists = items.filterIsInstance<ArtistItem>().map { convertArtistItemToDetails(it) },
+                playlists = ZemerFilter.filterPlaylists(items.filterIsInstance<PlaylistItem>().map { convertPlaylistToMusicPlaylist(it) }),
+                artists = ZemerFilter.filterArtists(items.filterIsInstance<ArtistItem>().map { convertArtistItemToDetails(it) }),
             )
         }
 
@@ -300,6 +301,7 @@ object InnertubeMusicService {
      */
     suspend fun fetchArtistDetails(channelId: String): ArtistDetails? =
         withContext(Dispatchers.IO) {
+            if (!ZemerFilter.allowsArtist(channelId)) return@withContext null
             val page = YouTube.artist(channelId).getOrNull() ?: return@withContext null
             val artistItem = page.artist
 
@@ -335,17 +337,21 @@ object InnertubeMusicService {
                 singles = releases(ArtistSectionKind.SINGLES),
                 videos = tracks(ArtistSectionKind.VIDEOS),
                 relatedArtists =
-                    section(ArtistSectionKind.RELATED_ARTISTS)
-                        ?.items
-                        .orEmpty()
-                        .filterIsInstance<ArtistItem>()
-                        .map { convertArtistItemToDetails(it) },
+                    ZemerFilter.filterArtists(
+                        section(ArtistSectionKind.RELATED_ARTISTS)
+                            ?.items
+                            .orEmpty()
+                            .filterIsInstance<ArtistItem>()
+                            .map { convertArtistItemToDetails(it) },
+                    ),
                 featuredOn =
-                    section(ArtistSectionKind.FEATURED_ON)
-                        ?.items
-                        .orEmpty()
-                        .filterIsInstance<PlaylistItem>()
-                        .map { convertPlaylistToMusicPlaylist(it) },
+                    ZemerFilter.filterPlaylists(
+                        section(ArtistSectionKind.FEATURED_ON)
+                            ?.items
+                            .orEmpty()
+                            .filterIsInstance<PlaylistItem>()
+                            .map { convertPlaylistToMusicPlaylist(it) },
+                    ),
                 albumsBrowseId = albums?.moreEndpoint?.browseId,
                 albumsParams = albums?.moreEndpoint?.params,
                 singlesBrowseId = singles?.moreEndpoint?.browseId,
@@ -395,7 +401,8 @@ object InnertubeMusicService {
                     .getOrNull()
                     ?.items
                     ?.filterIsInstance<com.arubr.smsvcodes.innertube.models.AlbumItem>()
-                    ?.map { convertAlbumToPlaylist(it) } ?: emptyList()
+                    ?.map { convertAlbumToPlaylist(it) }
+                    ?.let { ZemerFilter.filterPlaylists(it) } ?: emptyList()
             } catch (e: Exception) {
                 e.printStackTrace()
                 emptyList()
@@ -515,7 +522,7 @@ object InnertubeMusicService {
                     isVideoSong = item.isVideoSong,
                     views = parseCount(item.viewCountText),
                     likes = parseCount(item.likeCountText),
-                )
+                ).takeIf { ZemerFilter.allowsTrack(it) }
             }
 
             // We can add support for VideoItem or others here if needed
