@@ -7,6 +7,7 @@ import com.arubr.smsvcodes.data.music.model.MusicPlaylist
 import com.arubr.smsvcodes.data.music.model.MusicTextLink
 import com.arubr.smsvcodes.data.music.model.MusicTrack
 import com.arubr.smsvcodes.data.music.model.PlaylistDetails
+import com.arubr.smsvcodes.data.music.model.RelatedMusic
 import com.arubr.smsvcodes.data.music.zemer.ZemerFilter
 import com.arubr.smsvcodes.innertube.YouTube
 import com.arubr.smsvcodes.innertube.YouTube.SearchFilter
