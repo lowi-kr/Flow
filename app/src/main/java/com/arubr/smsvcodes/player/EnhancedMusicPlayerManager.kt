@@ -14,6 +14,7 @@ import androidx.media3.session.SessionToken
 import com.google.common.util.concurrent.ListenableFuture
 import com.google.common.util.concurrent.MoreExecutors
 import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.music.zemer.ZemerFilter
 import com.arubr.smsvcodes.data.local.AudioSettingsPersistence
 import com.arubr.smsvcodes.data.local.QueuePersistence
 import com.arubr.smsvcodes.data.localmedia.LocalMediaIds
@@ -661,6 +662,16 @@ object EnhancedMusicPlayerManager {
             showPlaybackWarning(context.getString(R.string.music_service_disabled))
             return
         }
+        // Hard block: when the Zemer filter is on, nothing outside the whitelist may actually
+        // start playing, regardless of which screen, widget, or queue-building path handed it
+        // the track — list-level filtering elsewhere is a UX nicety, this is the enforcement.
+        if (!ZemerFilter.allowsTrack(track)) {
+            showPlaybackWarning("This track isn't on the Zemer whitelist, so it won't play while the filter is on.")
+            return
+        }
+        // The seed track always survives (it just passed the check above) even if every other
+        // queue entry gets filtered out, so a blocked queue never silently drops playback.
+        val filteredQueue = ZemerFilter.filterTracks(queue).ifEmpty { listOf(track) }
         queueStarts++
         if (player == null && controllerFuture != null) {
             playBeforeConnect = { playTrack(track, audioUrl, queue, startIndex, startPositionMs, sourceName, localUriOverrides) }
@@ -676,7 +687,7 @@ object EnhancedMusicPlayerManager {
 
         _playerState.value = _playerState.value.copy(isPreparing = false)
 
-        val activeQueue = if (queue.isNotEmpty()) queue else listOf(track)
+        val activeQueue = filteredQueue
         _queue.value = activeQueue
         _currentTrack.value = track
         sourceName?.let { _playingFrom.value = it }
@@ -703,7 +714,13 @@ object EnhancedMusicPlayerManager {
         prefetchNextTrack()
     }
 
-    fun updateQueue(newQueue: List<MusicTrack>) {
+    fun updateQueue(rawNewQueue: List<MusicTrack>) {
+        if (rawNewQueue.isEmpty()) return
+        val currentId = _currentTrack.value?.videoId
+        // Never drop the track that's actually playing, even if it somehow isn't on the
+        // whitelist (e.g. the filter was switched on mid-playback) - this only guards what
+        // gets queued up next, not what's already sounding.
+        val newQueue = ZemerFilter.filterTracks(rawNewQueue).ifEmpty { rawNewQueue.filter { it.videoId == currentId } }
         if (newQueue.isEmpty()) return
 
         _queue.value = newQueue
@@ -772,7 +789,10 @@ object EnhancedMusicPlayerManager {
         }
     }
 
-    fun updateAutomixItems(items: List<MusicTrack>) {
+    fun updateAutomixItems(rawItems: List<MusicTrack>) {
+        // Endless radio's main injection point: without this, "up next" would keep pulling in
+        // non-whitelisted tracks indefinitely even with everything else locked down.
+        val items = ZemerFilter.filterTracks(rawItems)
         _automixItems.value =
             MusicRadioPlanner.seedPool(
                 candidates = items,
@@ -783,7 +803,9 @@ object EnhancedMusicPlayerManager {
     }
 
     /** Radio top-up path: grows the suggestion pool without disturbing what's already in it. */
-    fun appendAutomixItems(items: List<MusicTrack>) {
+    fun appendAutomixItems(rawItems: List<MusicTrack>) {
+        if (rawItems.isEmpty()) return
+        val items = ZemerFilter.filterTracks(rawItems)
         if (items.isEmpty()) return
         val existing = _automixItems.value
         val grown =
