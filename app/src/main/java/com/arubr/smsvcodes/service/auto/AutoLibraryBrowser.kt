@@ -16,6 +16,7 @@ import com.google.common.util.concurrent.ListenableFuture
 import com.google.common.util.concurrent.SettableFuture
 import com.arubr.smsvcodes.R
 import com.arubr.smsvcodes.data.music.model.MusicTrack
+import com.arubr.smsvcodes.data.music.zemer.ZemerFilter
 import com.arubr.smsvcodes.data.recommendation.music.MusicTimeBucket
 import com.arubr.smsvcodes.player.EnhancedMusicPlayerManager
 import com.arubr.smsvcodes.player.musicAudioUri
@@ -128,8 +129,14 @@ internal class AutoLibraryBrowser(
         scope.launch {
             try {
                 val single = mediaItems.singleOrNull()
-                val (tracks, index) =
+                val (rawTracks, rawIndex) =
                     if (single != null) expand(single) else resolveEach(mediaItems) to startIndex.coerceAtLeast(0)
+                // Hard block for the car, mirroring EnhancedMusicPlayerManager.playTrack: the car
+                // can resolve its own browse/search items straight into media items without ever
+                // going through that in-app path, so the whitelist has to be enforced here too.
+                val targetId = rawTracks.getOrNull(rawIndex)?.videoId
+                val tracks = ZemerFilter.filterTracks(rawTracks)
+                val index = targetId?.let { id -> tracks.indexOfFirst { it.videoId == id } }?.takeIf { it >= 0 } ?: 0
                 if (tracks.isEmpty()) {
                     future.setException(IllegalArgumentException("Nothing to play for ${mediaItems.map { it.mediaId }}"))
                 } else {
@@ -157,7 +164,7 @@ internal class AutoLibraryBrowser(
         if (mediaItems.all { it.localConfiguration != null }) return null
         val future = SettableFuture.create<List<MediaItem>>()
         scope.launch {
-            runCatching { resolveEach(mediaItems).map(::playable) }
+            runCatching { ZemerFilter.filterTracks(resolveEach(mediaItems)).map(::playable) }
                 .onSuccess { future.set(it) }
                 .onFailure { future.setException(it) }
         }

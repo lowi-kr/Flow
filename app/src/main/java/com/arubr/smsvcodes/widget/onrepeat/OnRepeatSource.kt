@@ -4,6 +4,7 @@ import androidx.glance.appwidget.GlanceAppWidget
 import com.arubr.smsvcodes.data.music.model.MusicTrack
 import com.arubr.smsvcodes.data.recommendation.music.MusicBrainEngine
 import com.arubr.smsvcodes.data.recommendation.music.onRepeatShelf
+import com.arubr.smsvcodes.data.music.zemer.ZemerFilter
 import com.arubr.smsvcodes.widget.core.refresh.WidgetContentKey
 import com.arubr.smsvcodes.widget.core.refresh.WidgetContentSource
 import javax.inject.Inject
@@ -19,7 +20,7 @@ class OnRepeatSource
         override val key = WidgetContentKey.ON_REPEAT
         override val widget: GlanceAppWidget get() = OnRepeatWidget()
 
-        suspend fun tracks(): List<MusicTrack> = musicBrain.onRepeatShelf().take(MAX_ITEMS)
+        suspend fun tracks(): List<MusicTrack> = ZemerFilter.filterTracks(musicBrain.onRepeatShelf()).take(MAX_ITEMS)
 
         override suspend fun signature(): String = tracks().joinToString(",") { it.videoId }
 
