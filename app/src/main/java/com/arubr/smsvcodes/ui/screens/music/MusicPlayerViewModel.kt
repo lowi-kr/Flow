@@ -390,7 +390,7 @@ class MusicPlayerViewModel
 
         /** Plays the On Repeat shelf in a shuffled order, as the widget's Shuffle asks. */
         suspend fun shuffleOnRepeat(sourceName: String) {
-            val tracks = musicBrain.onRepeatShelf().shuffled()
+            val tracks = ZemerFilter.filterTracks(musicBrain.onRepeatShelf()).shuffled()
             loadAndPlayTrack(tracks.firstOrNull() ?: return, tracks, sourceName)
         }
 
