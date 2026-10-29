@@ -921,7 +921,14 @@ class MusicViewModel
             viewModelScope.launch(PerformanceDispatcher.networkIO) {
                 val explore = InnertubeMusicService.fetchExplore()
                 if (explore != null) {
-                    _uiState.update { it.copy(explorePage = explore) }
+                    // ExplorePage.newReleaseAlbums is built from raw AlbumItem data, never through
+                    // InnertubeMusicService's convertToMusicTrack - filter by the album's own
+                    // artist ids the same way ZemerFilter.allowsTrack does for a track.
+                    val filteredAlbums =
+                        explore.newReleaseAlbums.filter { album ->
+                            !ZemerFilter.enabled || album.artists.orEmpty().any { artist -> ZemerFilter.allowsArtist(artist.id) }
+                        }
+                    _uiState.update { it.copy(explorePage = explore.copy(newReleaseAlbums = filteredAlbums)) }
                 }
             }
 
