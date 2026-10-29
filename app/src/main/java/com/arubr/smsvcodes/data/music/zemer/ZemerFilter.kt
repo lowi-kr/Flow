@@ -14,11 +14,13 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.delay
+import okhttp3.OkHttpClient
+import okhttp3.Request
 import org.json.JSONArray
 import org.json.JSONObject
 import java.io.File
-import java.net.HttpURLConnection
-import java.net.URL
+import java.io.IOException
 
 /**
  * Music-only allow-list from content.zemer.io. Off by default.
@@ -98,26 +100,34 @@ object ZemerFilter {
         }
     }
 
-    private fun refresh(context: Context) {
-        try {
-            val body = get("$BASE/whitelist")
-            val array = JSONArray(body)
-            val ids = HashSet<String>(array.length())
-            for (i in 0 until array.length()) {
-                val doc = array.optJSONObject(i) ?: continue
-                if (doc.optBoolean("isFemale", false)) continue
-                val id = doc.optString("id").ifBlank { doc.optString("artistId") }.ifBlank { doc.optString("docId") }
-                if (id.isNotBlank()) ids.add(id)
+    private suspend fun refresh(context: Context) {
+        // The mirror sits behind Cloudflare bot protection, which can 403 a single bad request;
+        // a couple of short retries is enough since a browser/curl hitting the same URL succeeds.
+        var lastError: Exception? = null
+        repeat(RETRY_ATTEMPTS) { attempt ->
+            try {
+                val body = get("$BASE/whitelist")
+                val array = JSONArray(body)
+                val ids = HashSet<String>(array.length())
+                for (i in 0 until array.length()) {
+                    val doc = array.optJSONObject(i) ?: continue
+                    if (doc.optBoolean("isFemale", false)) continue
+                    val id = doc.optString("id").ifBlank { doc.optString("artistId") }.ifBlank { doc.optString("docId") }
+                    if (id.isNotBlank()) ids.add(id)
+                }
+                if (ids.isEmpty()) error("empty whitelist response")
+                applyBlocked(ids)
+                allowed = ids
+                loaded = true
+                File(context.filesDir, "zemer_allowed_ids.txt").writeText(ids.joinToString("\n"))
+                Log.d(TAG, "whitelist ${ids.size} artists")
+                return
+            } catch (e: Exception) {
+                lastError = e
+                if (attempt < RETRY_ATTEMPTS - 1) delay(RETRY_DELAY_MS * (attempt + 1))
             }
-            if (ids.isEmpty()) return
-            applyBlocked(ids)
-            allowed = ids
-            loaded = true
-            File(context.filesDir, "zemer_allowed_ids.txt").writeText(ids.joinToString("\n"))
-            Log.d(TAG, "whitelist ${ids.size} artists")
-        } catch (e: Exception) {
-            Log.w(TAG, "whitelist fetch failed", e)
         }
+        Log.w(TAG, "whitelist fetch failed after $RETRY_ATTEMPTS attempts", lastError)
     }
 
     private fun applyBlocked(ids: MutableSet<String>) {
@@ -134,21 +144,34 @@ object ZemerFilter {
         drop("global")
     }
 
+    // The mirror's Cloudflare front-end treats java.net.HttpURLConnection's default
+    // "Dalvik/2.1.0 (...)" User-Agent as a bot and 403s it, even though the same path answers a
+    // normal browser/curl request fine (confirmed manually against /whitelist/version and
+    // /whitelist). A real client identifier plus OkHttp's ordinary connection/TLS behavior is
+    // enough to pass; this does not attempt to reproduce Zemer's private app-signing header
+    // (X-Zemer-Sig) - that key is never in their source tree, is issued per build, and their own
+    // client code notes a build without one "works exactly the same", so it is not what is
+    // gating these reads.
+    private val httpClient: OkHttpClient by lazy {
+        OkHttpClient.Builder()
+            .connectTimeout(8, java.util.concurrent.TimeUnit.SECONDS)
+            .readTimeout(20, java.util.concurrent.TimeUnit.SECONDS)
+            .build()
+    }
+
     private fun get(url: String): String {
-        val connection = (URL(url).openConnection() as HttpURLConnection).apply {
-            connectTimeout = 8_000
-            readTimeout = 20_000
-            setRequestProperty("Accept", "application/json")
-            setRequestProperty("Accept-Encoding", "identity")
-        }
-        try {
-            val code = connection.responseCode
-            val stream = if (code in 200..299) connection.inputStream else connection.errorStream
-            val text = stream.bufferedReader().use { it.readText() }
-            if (code !in 200..299) error("HTTP $code")
+        val request = Request.Builder()
+            .url(url)
+            .header("Accept", "application/json")
+            .header("User-Agent", "Flow/${com.arubr.smsvcodes.BuildConfig.VERSION_NAME}")
+            .build()
+        httpClient.newCall(request).execute().use { response ->
+            val text = response.body?.string() ?: ""
+            if (!response.isSuccessful) throw IOException("HTTP ${response.code}")
             return text
-        } finally {
-            connection.disconnect()
         }
     }
+
+    private const val RETRY_ATTEMPTS = 3
+    private const val RETRY_DELAY_MS = 1_500L
 }
