@@ -14,7 +14,6 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.delay
 import okhttp3.OkHttpClient
 import okhttp3.Request
 import org.json.JSONArray
@@ -101,33 +100,30 @@ object ZemerFilter {
     }
 
     private suspend fun refresh(context: Context) {
-        // The mirror sits behind Cloudflare bot protection, which can 403 a single bad request;
-        // a couple of short retries is enough since a browser/curl hitting the same URL succeeds.
-        var lastError: Exception? = null
-        repeat(RETRY_ATTEMPTS) { attempt ->
-            try {
-                val body = get("$BASE/whitelist")
-                val array = JSONArray(body)
-                val ids = HashSet<String>(array.length())
-                for (i in 0 until array.length()) {
-                    val doc = array.optJSONObject(i) ?: continue
-                    if (doc.optBoolean("isFemale", false)) continue
-                    val id = doc.optString("id").ifBlank { doc.optString("artistId") }.ifBlank { doc.optString("docId") }
-                    if (id.isNotBlank()) ids.add(id)
-                }
-                if (ids.isEmpty()) error("empty whitelist response")
-                applyBlocked(ids)
-                allowed = ids
-                loaded = true
-                File(context.filesDir, "zemer_allowed_ids.txt").writeText(ids.joinToString("\n"))
-                Log.d(TAG, "whitelist ${ids.size} artists")
-                return
-            } catch (e: Exception) {
-                lastError = e
-                if (attempt < RETRY_ATTEMPTS - 1) delay(RETRY_DELAY_MS * (attempt + 1))
+        // content.zemer.io blocks this endpoint outright behind Cloudflare - confirmed by hitting
+        // it directly in a browser, not just from this app - so retrying is just guaranteed-failed
+        // overhead, not recovery from a flaky request. One attempt, logged once, and move on; this
+        // stays fail-closed (see allowsTrack/allowsArtist/allowsPlaylist) until there's a
+        // legitimate source for the list.
+        try {
+            val body = get("$BASE/whitelist")
+            val array = JSONArray(body)
+            val ids = HashSet<String>(array.length())
+            for (i in 0 until array.length()) {
+                val doc = array.optJSONObject(i) ?: continue
+                if (doc.optBoolean("isFemale", false)) continue
+                val id = doc.optString("id").ifBlank { doc.optString("artistId") }.ifBlank { doc.optString("docId") }
+                if (id.isNotBlank()) ids.add(id)
             }
+            if (ids.isEmpty()) error("empty whitelist response")
+            applyBlocked(ids)
+            allowed = ids
+            loaded = true
+            File(context.filesDir, "zemer_allowed_ids.txt").writeText(ids.joinToString("\n"))
+            Log.d(TAG, "whitelist ${ids.size} artists")
+        } catch (e: Exception) {
+            Log.w(TAG, "whitelist fetch failed - content.zemer.io blocks this endpoint; filter stays closed", e)
         }
-        Log.w(TAG, "whitelist fetch failed after $RETRY_ATTEMPTS attempts", lastError)
     }
 
     private fun applyBlocked(ids: MutableSet<String>) {
@@ -144,14 +140,12 @@ object ZemerFilter {
         drop("global")
     }
 
-    // The mirror's Cloudflare front-end treats java.net.HttpURLConnection's default
-    // "Dalvik/2.1.0 (...)" User-Agent as a bot and 403s it, even though the same path answers a
-    // normal browser/curl request fine (confirmed manually against /whitelist/version and
-    // /whitelist). A real client identifier plus OkHttp's ordinary connection/TLS behavior is
-    // enough to pass; this does not attempt to reproduce Zemer's private app-signing header
-    // (X-Zemer-Sig) - that key is never in their source tree, is issued per build, and their own
-    // client code notes a build without one "works exactly the same", so it is not what is
-    // gating these reads.
+    // content.zemer.io/whitelist returns Cloudflare's "Sorry, you have been blocked" page to a
+    // plain browser too, not just to this app - it's a deliberate block on that endpoint, not a
+    // client-identification problem this app can fix. The real User-Agent here is honest
+    // identification, not an attempt to get past that block; this still does not attempt to
+    // reproduce Zemer's private app-signing header (X-Zemer-Sig), which is never in their source
+    // tree and issued per build.
     private val httpClient: OkHttpClient by lazy {
         OkHttpClient.Builder()
             .connectTimeout(8, java.util.concurrent.TimeUnit.SECONDS)
@@ -171,7 +165,4 @@ object ZemerFilter {
             return text
         }
     }
-
-    private const val RETRY_ATTEMPTS = 3
-    private const val RETRY_DELAY_MS = 1_500L
 }
