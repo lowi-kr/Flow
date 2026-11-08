@@ -2,6 +2,7 @@ package com.arubr.smsvcodes.data.music.zemer
 
 import android.content.Context
 import android.util.Log
+import com.arubr.smsvcodes.R
 import com.arubr.smsvcodes.data.local.PlayerPreferences
 import com.arubr.smsvcodes.data.music.model.ArtistDetails
 import com.arubr.smsvcodes.data.music.model.MusicPlaylist
@@ -14,20 +15,24 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.launch
-import okhttp3.OkHttpClient
-import okhttp3.Request
-import org.json.JSONArray
-import org.json.JSONObject
-import java.io.File
-import java.io.IOException
+import kotlinx.coroutines.withContext
 
 /**
- * Music-only allow-list from content.zemer.io. Off by default.
- * When on, a song/artist passes only if one of its channel ids is on the list and not flagged female.
+ * Music-only allow-list for Zemer-curated artists. Off by default.
+ * When on, a song/artist passes only if one of its channel ids is on the list.
+ *
+ * content.zemer.io/whitelist, the server endpoint this used to fetch from, has required a Zemer
+ * partner key for programmatic access since 2026-10-28 and otherwise returns Cloudflare's block
+ * page - confirmed by hitting it directly in a browser, not just from this app, so it isn't
+ * something this app can work around. Flow has no such key. Instead this ships a snapshot of
+ * YouTube channel ids, matched by hand against zemer.io's own public /artists page (R.raw.zemer_whitelist,
+ * res/raw/zemer_whitelist.txt), bundled in the APK: one id per line, no network call. It goes
+ * stale as Zemer's catalog changes and carries whatever matching error the snapshot had when it
+ * was built - see res/raw/zemer_whitelist.txt's own history for how it was produced - but it
+ * works offline and immediately, where the live endpoint currently cannot work at all.
  */
 object ZemerFilter {
     private const val TAG = "ZemerFilter"
-    private const val BASE = "https://content.zemer.io"
 
     private val _enabled = MutableStateFlow(false)
     val enabledFlow: StateFlow<Boolean> = _enabled.asStateFlow()
@@ -46,12 +51,11 @@ object ZemerFilter {
 
     fun start(context: Context, preferences: PlayerPreferences) {
         val app = context.applicationContext
-        loadCache(app)
+        scope.launch { loadBundledWhitelist(app) }
         scope.launch {
             preferences.zemerFilterEnabled.distinctUntilChanged().collect { on ->
                 enabled = on
                 _enabled.value = on
-                if (on) refresh(app)
             }
         }
     }
@@ -89,80 +93,21 @@ object ZemerFilter {
     fun filterArtists(artists: List<ArtistDetails>): List<ArtistDetails> =
         if (!enabled) artists else artists.filter { allowsArtist(it.channelId) }
 
-    private fun loadCache(context: Context) {
-        val file = File(context.filesDir, "zemer_allowed_ids.txt")
-        if (!file.exists()) return
-        val ids = file.readLines().map { it.trim() }.filter { it.isNotEmpty() }.toSet()
-        if (ids.isNotEmpty()) {
-            allowed = ids
-            loaded = true
-        }
-    }
-
-    private suspend fun refresh(context: Context) {
-        // content.zemer.io blocks this endpoint outright behind Cloudflare - confirmed by hitting
-        // it directly in a browser, not just from this app - so retrying is just guaranteed-failed
-        // overhead, not recovery from a flaky request. One attempt, logged once, and move on; this
-        // stays fail-closed (see allowsTrack/allowsArtist/allowsPlaylist) until there's a
-        // legitimate source for the list.
+    private suspend fun loadBundledWhitelist(context: Context) {
         try {
-            val body = get("$BASE/whitelist")
-            val array = JSONArray(body)
-            val ids = HashSet<String>(array.length())
-            for (i in 0 until array.length()) {
-                val doc = array.optJSONObject(i) ?: continue
-                if (doc.optBoolean("isFemale", false)) continue
-                val id = doc.optString("id").ifBlank { doc.optString("artistId") }.ifBlank { doc.optString("docId") }
-                if (id.isNotBlank()) ids.add(id)
-            }
-            if (ids.isEmpty()) error("empty whitelist response")
-            applyBlocked(ids)
+            val ids =
+                withContext(Dispatchers.IO) {
+                    context.resources
+                        .openRawResource(R.raw.zemer_whitelist)
+                        .bufferedReader()
+                        .useLines { lines -> lines.map(String::trim).filter(String::isNotEmpty).toHashSet() }
+                }
+            if (ids.isEmpty()) error("bundled whitelist was empty")
             allowed = ids
             loaded = true
-            File(context.filesDir, "zemer_allowed_ids.txt").writeText(ids.joinToString("\n"))
-            Log.d(TAG, "whitelist ${ids.size} artists")
+            Log.d(TAG, "loaded bundled whitelist: ${ids.size} channel ids")
         } catch (e: Exception) {
-            Log.w(TAG, "whitelist fetch failed - content.zemer.io blocks this endpoint; filter stays closed", e)
-        }
-    }
-
-    private fun applyBlocked(ids: MutableSet<String>) {
-        val raw = runCatching { get("$BASE/blockedContentIds") }.getOrNull() ?: return
-        val root = JSONObject(raw)
-        fun drop(key: String) {
-            val list = root.optJSONArray(key) ?: return
-            for (i in 0 until list.length()) {
-                val id = list.optString(i)
-                if (id.isNotBlank()) ids.remove(id)
-            }
-        }
-        drop("female")
-        drop("global")
-    }
-
-    // content.zemer.io/whitelist returns Cloudflare's "Sorry, you have been blocked" page to a
-    // plain browser too, not just to this app - it's a deliberate block on that endpoint, not a
-    // client-identification problem this app can fix. The real User-Agent here is honest
-    // identification, not an attempt to get past that block; this still does not attempt to
-    // reproduce Zemer's private app-signing header (X-Zemer-Sig), which is never in their source
-    // tree and issued per build.
-    private val httpClient: OkHttpClient by lazy {
-        OkHttpClient.Builder()
-            .connectTimeout(8, java.util.concurrent.TimeUnit.SECONDS)
-            .readTimeout(20, java.util.concurrent.TimeUnit.SECONDS)
-            .build()
-    }
-
-    private fun get(url: String): String {
-        val request = Request.Builder()
-            .url(url)
-            .header("Accept", "application/json")
-            .header("User-Agent", "Flow/${com.arubr.smsvcodes.BuildConfig.VERSION_NAME}")
-            .build()
-        httpClient.newCall(request).execute().use { response ->
-            val text = response.body?.string() ?: ""
-            if (!response.isSuccessful) throw IOException("HTTP ${response.code}")
-            return text
+            Log.e(TAG, "failed to load bundled whitelist - filter stays closed", e)
         }
     }
 }
