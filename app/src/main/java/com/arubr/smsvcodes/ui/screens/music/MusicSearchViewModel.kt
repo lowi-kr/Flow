@@ -12,6 +12,7 @@ import com.arubr.smsvcodes.data.local.SearchHistoryScope
 import com.arubr.smsvcodes.data.local.SearchType
 import com.arubr.smsvcodes.data.model.distinctByNonBlankKey
 import com.arubr.smsvcodes.data.music.DownloadManager
+import com.arubr.smsvcodes.data.music.zemer.ZemerFilter
 import com.arubr.smsvcodes.data.newmusic.InnertubeMusicService
 import com.arubr.smsvcodes.innertube.YouTube
 import com.arubr.smsvcodes.innertube.YouTube.SearchFilter
@@ -104,7 +105,7 @@ class MusicSearchViewModel
                                     suggestions.queries.distinctByNonBlankKey { query ->
                                         query.trim().lowercase()
                                     },
-                                recommendedItems = suggestions.recommendedItems.distinctByStableIdentity(),
+                                recommendedItems = ZemerFilter.filterYTItems(suggestions.recommendedItems).distinctByStableIdentity(),
                             )
                         }
                     }?.onFailure { throwable ->
@@ -140,7 +141,7 @@ class MusicSearchViewModel
                 ?.onSuccess { summaryPage ->
                     _uiState.update { state ->
                         state.copy(
-                            searchSummary = summaryPage.distinctItemsForLazyKeys(),
+                            searchSummary = summaryPage.filteredByZemer().distinctItemsForLazyKeys(),
                             isLoading = false,
                             isSearching = true,
                             continuation = summaryPage.continuation,
@@ -185,7 +186,7 @@ class MusicSearchViewModel
                 ?.onSuccess { searchResult ->
                     _uiState.update { state ->
                         state.copy(
-                            filteredResults = searchResult.items.distinctByStableIdentity(),
+                            filteredResults = ZemerFilter.filterYTItems(searchResult.items).distinctByStableIdentity(),
                             isLoading = false,
                             continuation = searchResult.continuation,
                         )
@@ -231,7 +232,7 @@ class MusicSearchViewModel
                     val songsSection = artistPage.sections.find { it.kind == ArtistSectionKind.TOP_SONGS }
                     val items = songsSection?.items ?: artistPage.sections.firstOrNull()?.items ?: emptyList()
                     withContext(Dispatchers.Main) {
-                        callback(items.distinctByStableIdentity())
+                        callback(ZemerFilter.filterYTItems(items).distinctByStableIdentity())
                     }
                 }
             }
@@ -253,7 +254,7 @@ class MusicSearchViewModel
                                     val newSummary =
                                         com.arubr.smsvcodes.innertube.pages.SearchSummary(
                                             title = context.getString(R.string.fallback_more_results),
-                                            items = searchResult.items.distinctByStableIdentity(),
+                                            items = ZemerFilter.filterYTItems(searchResult.items).distinctByStableIdentity(),
                                         )
                                     state.copy(
                                         searchSummary =
@@ -268,7 +269,7 @@ class MusicSearchViewModel
                                     state.copy(
                                         filteredResults =
                                             (
-                                                state.filteredResults + searchResult.items
+                                                state.filteredResults + ZemerFilter.filterYTItems(searchResult.items)
                                             ).distinctByStableIdentity(),
                                         continuation = searchResult.continuation,
                                         isMoreLoading = false,

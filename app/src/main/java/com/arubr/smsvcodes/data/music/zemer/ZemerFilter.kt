@@ -7,6 +7,11 @@ import com.arubr.smsvcodes.data.local.PlayerPreferences
 import com.arubr.smsvcodes.data.music.model.ArtistDetails
 import com.arubr.smsvcodes.data.music.model.MusicPlaylist
 import com.arubr.smsvcodes.data.music.model.MusicTrack
+import com.arubr.smsvcodes.innertube.models.AlbumItem
+import com.arubr.smsvcodes.innertube.models.ArtistItem
+import com.arubr.smsvcodes.innertube.models.PlaylistItem
+import com.arubr.smsvcodes.innertube.models.SongItem
+import com.arubr.smsvcodes.innertube.models.YTItem
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
@@ -92,6 +97,32 @@ object ZemerFilter {
 
     fun filterArtists(artists: List<ArtistDetails>): List<ArtistDetails> =
         if (!enabled) artists else artists.filter { allowsArtist(it.channelId) }
+
+    /**
+     * Covers raw Innertube search/browse results (Home feed shelves, the Search tab) before
+     * they're converted into MusicTrack/MusicPlaylist/ArtistDetails - those conversions run
+     * through filterTracks/filterPlaylists/filterArtists on their own, but several call sites
+     * (MusicRecommendationAlgorithm's home-section and recommendation parsing, the Search
+     * screen) work with YTItem directly and need this instead.
+     */
+    fun allowsYTItem(item: YTItem): Boolean {
+        if (!enabled) return true
+        if (!loaded) return false
+        val ids =
+            when (item) {
+                is SongItem -> item.artists.mapNotNull { it.id }
+                is AlbumItem -> item.artists.orEmpty().mapNotNull { it.id }
+                is PlaylistItem -> listOfNotNull(item.author?.id)
+                is ArtistItem -> listOfNotNull(item.channelId ?: item.id)
+            }.filter { it.isNotBlank() }
+        // A playlist with no attributed author (a user/auto-generated playlist, not a catalog
+        // row) isn't something the whitelist can judge - matches allowsPlaylist's own rule.
+        if (ids.isEmpty()) return item is PlaylistItem
+        return ids.any { it in allowed }
+    }
+
+    fun filterYTItems(items: List<YTItem>): List<YTItem> =
+        if (!enabled) items else items.filter(::allowsYTItem)
 
     private suspend fun loadBundledWhitelist(context: Context) {
         try {

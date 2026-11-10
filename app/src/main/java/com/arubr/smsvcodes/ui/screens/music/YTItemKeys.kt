@@ -1,6 +1,7 @@
 package com.arubr.smsvcodes.ui.screens.music
 
 import com.arubr.smsvcodes.data.model.distinctByNonBlankKey
+import com.arubr.smsvcodes.data.music.zemer.ZemerFilter
 import com.arubr.smsvcodes.innertube.models.AlbumItem
 import com.arubr.smsvcodes.innertube.models.ArtistItem
 import com.arubr.smsvcodes.innertube.models.PlaylistItem
@@ -21,6 +22,15 @@ internal fun YTItem.stableIdentityKey(): String {
 internal fun YTItem.stableLazyKey(namespace: String): String = "$namespace:${stableIdentityKey()}"
 
 internal fun Iterable<YTItem>.distinctByStableIdentity(): List<YTItem> = distinctByNonBlankKey(YTItem::stableIdentityKey)
+
+/** Drops every search result not on the Zemer whitelist, section by section, before dedup runs. */
+internal fun SearchSummaryPage.filteredByZemer(): SearchSummaryPage =
+    copy(
+        summaries =
+            summaries.mapNotNull { summary ->
+                summary.copy(items = ZemerFilter.filterYTItems(summary.items)).takeIf { it.items.isNotEmpty() }
+            },
+    )
 
 internal fun SearchSummaryPage.distinctItemsForLazyKeys(): SearchSummaryPage {
     val seenBySection = mutableMapOf<String, MutableSet<String>>()
