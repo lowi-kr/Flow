@@ -5,6 +5,7 @@ import android.util.Log
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.arubr.smsvcodes.data.music.zemer.ZemerFilter
 import com.arubr.smsvcodes.innertube.YouTube
 import com.arubr.smsvcodes.innertube.models.YTItem
 import com.arubr.smsvcodes.innertube.pages.BrowseResult
@@ -46,9 +47,12 @@ class YouTubeBrowseViewModel @Inject constructor(
                         _uiState.value = _uiState.value.copy(
                             isLoading = false,
                             title = result.title,
+                            // This powers the mood/genre detail pages (and any other generic
+                            // YouTube-browse destination) - raw playlists/albums/artists off
+                            // Innertube's browse response, with no filtering upstream.
                             sections = result.items.mapNotNull { section ->
                                 section.copy(
-                                    items = section.items.distinctByStableIdentity()
+                                    items = ZemerFilter.filterYTItems(section.items).distinctByStableIdentity()
                                 ).takeIf { it.items.isNotEmpty() }
                             }
                         )

@@ -600,7 +600,9 @@ class MusicViewModel
                             }
                         }
 
-                        cachedTrending?.let { trend ->
+                        // MusicCache's trending entry can predate the filter being turned on, same
+                        // as the home-section cache - filter on this read too.
+                        cachedTrending?.let { ZemerFilter.filterTracks(it) }?.let { trend ->
                             _uiState.update {
                                 it.copy(
                                     trendingSongs = trend,
@@ -990,6 +992,7 @@ class MusicViewModel
                             }
                         (fromArtists + fromTracks).awaitAll().flatten()
                     }.filter { it.isCommunityPlaylistCandidate() }
+                        .let { ZemerFilter.filterPlaylists(it) }
                         .distinctBy { it.id }
                         .shuffled()
                         .take(COMMUNITY_PLAYLIST_COUNT)
@@ -1002,13 +1005,18 @@ class MusicViewModel
                         candidates
                             .map { playlist ->
                                 async(PerformanceDispatcher.networkIO) {
+                                    // cachedTracks comes from musicGraph's own cache, which (like the
+                                    // home-section cache) may predate the filter being turned on -
+                                    // filter on read rather than trust it was filtered on write.
                                     val allTracks =
-                                        cachedTracks[playlist.id]
-                                            ?: InnertubeMusicService
-                                                .fetchPlaylistDetails(playlist.id)
-                                                ?.also { musicGraph.recordPlaylist(it) }
-                                                ?.tracks
-                                            ?: return@async null
+                                        ZemerFilter.filterTracks(
+                                            cachedTracks[playlist.id]
+                                                ?: InnertubeMusicService
+                                                    .fetchPlaylistDetails(playlist.id)
+                                                    ?.also { musicGraph.recordPlaylist(it) }
+                                                    ?.tracks
+                                                ?: return@async null,
+                                        )
                                     val tracks = allTracks.audioMusicOnly().take(COMMUNITY_PREVIEW_TRACKS)
                                     if (tracks.isEmpty()) return@async null
                                     CommunityMusicPlaylist(
@@ -1199,7 +1207,18 @@ class MusicViewModel
         }
 
         // Helper to process sections to avoid code duplication
-        private suspend fun processHomeSections(sections: List<MusicSection>) {
+        private suspend fun processHomeSections(rawSections: List<MusicSection>) {
+            // Re-filter here regardless of where these sections came from. parseHomeSections()
+            // already filters on fetch, but this function also receives sections straight out of
+            // the on-disk home cache (Room, up to a 4h TTL) and from chip selection - caches in
+            // particular can predate the filter being turned on, or predate this filter existing
+            // at all, so filtering only at fetch time isn't enough. This is the single funnel every
+            // Home-feed path (fresh fetch, stale cache, chip switch) goes through before the UI
+            // sees it, so it's the right place for a last-line-of-defense filter.
+            val sections =
+                rawSections
+                    .map { it.copy(tracks = ZemerFilter.filterTracks(it.tracks)) }
+                    .filter { it.tracks.isNotEmpty() }
             val quickPicks =
                 sections
                     .find {
