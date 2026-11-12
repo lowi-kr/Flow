@@ -73,12 +73,19 @@ object ZemerFilter {
         return ids.any { it in allowed }
     }
 
-    /** User playlists have no author id and stay visible. Catalog rows with an author must match. */
+    /**
+     * Strict mode: a playlist with no attributable author is blocked, same as a track with no
+     * identifiable artist - it isn't something the whitelist can verify, so it doesn't show,
+     * cover art included. This also blocks the user's own local playlists if they're ever routed
+     * through this check (they currently aren't - PlaylistRepository's local library is a
+     * separate model untouched by ZemerFilter), so don't start calling this for that model
+     * without re-deciding this rule first.
+     */
     fun allowsPlaylist(playlist: MusicPlaylist): Boolean {
         if (!enabled) return true
-        val id = playlist.authorId
-        if (id.isNullOrBlank()) return true
         if (!loaded) return false
+        val id = playlist.authorId
+        if (id.isNullOrBlank()) return false
         return id in allowed
     }
 
@@ -115,9 +122,9 @@ object ZemerFilter {
                 is PlaylistItem -> listOfNotNull(item.author?.id)
                 is ArtistItem -> listOfNotNull(item.channelId ?: item.id)
             }.filter { it.isNotBlank() }
-        // A playlist with no attributed author (a user/auto-generated playlist, not a catalog
-        // row) isn't something the whitelist can judge - matches allowsPlaylist's own rule.
-        if (ids.isEmpty()) return item is PlaylistItem
+        // Strict mode: unattributed is blocked for every type, playlists included - matches
+        // allowsPlaylist's rule. No cover, no card, for anything the whitelist can't verify.
+        if (ids.isEmpty()) return false
         return ids.any { it in allowed }
     }
 
