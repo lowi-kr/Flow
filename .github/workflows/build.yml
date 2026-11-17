@@ -228,6 +228,7 @@ jobs:
         if: ${{ !startsWith(github.ref, 'refs/tags/v') }}
         run: >
           ./gradlew :app:assembleGithubNightly :app:assembleFossRelease
+          ${{ github.event_name == 'pull_request' && '-Pflow.prBuild=true' || '' }}
           --build-cache --stacktrace
         env:
           STORE_PASSWORD: ${{ secrets.STORE_PASSWORD }}
@@ -360,15 +361,15 @@ jobs:
             echo '> Release APKs are uploaded individually without compression; GitHub release APKs are built on tags only. Nightly remains a compressed artifact on regular CI runs.'
           } >> "$GITHUB_STEP_SUMMARY"
 
-          # IzzyOnDroid caps the FOSS APK at 30 MB; fail with a 0.5 MB margin so growth is seen before a release.
+          # IzzyOnDroid ships the FOSS arm64-v8a APK and caps it at 30 MB; fail with a 0.5 MB margin so growth is seen before a release.
           foss_limit=29500000
-          foss_bytes=$(stat --format='%s' app/build/outputs/apk/foss/release/app-foss-universal-release*.apk)
+          foss_bytes=$(stat --format='%s' app/build/outputs/apk/foss/release/app-foss-arm64-v8a-release*.apk)
           if (( foss_bytes > foss_limit )); then
-            printf 'flow-foss.apk is %d bytes, over the %d byte budget.\n' "$foss_bytes" "$foss_limit" >&2
+            printf 'flow-foss-arm64-v8a.apk is %d bytes, over the %d byte budget.\n' "$foss_bytes" "$foss_limit" >&2
             exit 1
           fi
 
-      # The universal APKs are what IzzyOnDroid and the README link to.
+      # The universal APKs are the README's download for any device; IzzyOnDroid ships the FOSS arm64-v8a APK.
       - name: Upload GitHub universal APK
         if: ${{ startsWith(github.ref, 'refs/tags/v') }}
         uses: actions/upload-artifact@v7
@@ -482,22 +483,39 @@ jobs:
         run: |
           set -euo pipefail
           apk="flow-nightly-${GITHUB_RUN_NUMBER}.apk"
+          runs="nightly-note-runs.json"
           test -f "dist-nightly/$apk"
+          mkdir -p nightly-state
+          previous_run="$GITHUB_RUN_NUMBER"
+          if gh release view nightly >/dev/null 2>&1; then
+            assets="$(gh release view nightly --json assets --jq '.assets[].name')"
+            last_apk="$(printf '%s\n' "$assets" | grep -E '^flow-nightly-[0-9]+\.apk$' | head -n 1 || true)"
+            if [ -n "$last_apk" ]; then
+              previous_run="${last_apk#flow-nightly-}"
+              previous_run="${previous_run%.apk}"
+            fi
+            if printf '%s\n' "$assets" | grep -qx "$runs"; then
+              gh release download nightly -p "$runs" -D nightly-state --clobber
+            fi
+          fi
+          # Built before the tag moves, so a failure here leaves the previous nightly intact.
+          python3 .github/scripts/nightly_notes.py \
+            --intro "Built from ${GITHUB_SHA::7} by run ${GITHUB_RUN_NUMBER}. Installs next to the stable app as Flow Nightly and updates itself from here." \
+            --run "$GITHUB_RUN_NUMBER" --previous-run "$previous_run" \
+            --runs-in "nightly-state/$runs" --runs-out "dist-nightly/$runs" \
+            > nightly-body.md
           if gh release view nightly >/dev/null 2>&1; then
             gh api -X PATCH "repos/$GH_REPO/git/refs/tags/nightly" -f sha="$GITHUB_SHA" -F force=true >/dev/null
           else
             gh release create nightly --target "$GITHUB_SHA" --prerelease --latest=false \
               --title "Flow nightly" --notes "Rolling nightly build."
           fi
-          gh release upload nightly "dist-nightly/$apk" dist-nightly/checksums.txt --clobber
+          gh release upload nightly "dist-nightly/$apk" dist-nightly/checksums.txt "dist-nightly/$runs" --clobber
           for old in $(gh release view nightly --json assets --jq '.assets[].name'); do
-            if [ "$old" != "$apk" ] && [ "$old" != "checksums.txt" ]; then
+            if [ "$old" != "$apk" ] && [ "$old" != "checksums.txt" ] && [ "$old" != "$runs" ]; then
               gh release delete-asset nightly "$old" --yes
             fi
           done
-          python3 .github/scripts/nightly_notes.py \
-            --intro "Built from ${GITHUB_SHA::7} by run ${GITHUB_RUN_NUMBER}. Installs next to the stable app as Flow Nightly and updates itself from here." \
-            > nightly-body.md
           gh release edit nightly --prerelease --latest=false \
             --title "Flow nightly ${GITHUB_RUN_NUMBER}" \
             --notes-file nightly-body.md

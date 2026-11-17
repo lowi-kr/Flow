@@ -52,6 +52,8 @@ internal fun collaboratorRows(
     viewModel: QuickActionsViewModel,
 ): List<QuickActionRow> {
     val subscribedChannelIds = subscribedCollaboratorIds(collaborators, viewModel)
+    val bell = sharedSubscriptionBellViewModel()
+    val notifyingChannelIds by bell.notifyingChannelIds.collectAsStateWithLifecycle()
     val navigator = LocalMediaNavigator.current
     val fallbackName = stringResource(R.string.collaborator)
     val ringColor = MaterialTheme.colorScheme.surfaceContainerHigh
@@ -83,11 +85,31 @@ internal fun collaboratorRows(
                             val toggle = {
                                 viewModel.toggleSubscription(collaborator.channelId, collaborator.name, collaborator.thumbnailUrl)
                             }
+                            val isSubscribed = collaborator.channelId in subscribedChannelIds
+                            val organize =
+                                rememberChannelOrganizeActions(
+                                    target =
+                                        remember(collaborator) {
+                                            ChannelOrganizeTarget(
+                                                channelId = collaborator.channelId,
+                                                title = collaborator.name,
+                                                avatarUrl = collaborator.thumbnailUrl,
+                                                subscriberCountText = collaborator.subscriberCountText,
+                                            )
+                                        },
+                                    isSubscribed = isSubscribed,
+                                    beforeOpen = onOpened,
+                                )
                             FlowSubscribeButton(
-                                isSubscribed = collaborator.channelId in subscribedChannelIds,
+                                isSubscribed = isSubscribed,
                                 onSubscribeClick = toggle,
                                 onUnsubscribeClick = toggle,
+                                isNotificationsEnabled = collaborator.channelId in notifyingChannelIds,
+                                onNotificationChange = { bell.setNotifications(collaborator.channelId, it) },
                                 size = FlowSubscribeButtonSize.Compact,
+                                showSubscribedLabel = false,
+                                onAddNote = organize.onAddNote,
+                                onManageGroups = organize.onManageGroups,
                             )
                         }
                     } else {

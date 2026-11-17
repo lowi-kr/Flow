@@ -10,6 +10,8 @@ import io.github.aedev.flow.R
 import io.github.aedev.flow.data.model.Channel
 import io.github.aedev.flow.data.model.Playlist
 import io.github.aedev.flow.data.model.Video
+import io.github.aedev.flow.data.profile.StoreScope
+import io.github.aedev.flow.data.wellbeing.DailyLimitStore
 import io.github.aedev.flow.ui.theme.CustomTheme
 import io.github.aedev.flow.ui.theme.ThemeMode
 import io.github.aedev.flow.ui.theme.ThemeVariant
@@ -20,7 +22,7 @@ import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.map
 import javax.inject.Inject
 
-val Context.dataStore: DataStore<Preferences> by safePreferencesDataStore(name = "flow_preferences")
+val Context.dataStore: DataStore<Preferences> by safePreferencesDataStore(name = "flow_preferences", scope = StoreScope.PROFILE_SETTINGS)
 
 class LocalDataManager
     @Inject
@@ -43,7 +45,6 @@ class LocalDataManager
             private val TRENDING_REGION = stringPreferencesKey("trending_region")
             private val LAST_UPDATE_CHECK = stringPreferencesKey("last_update_check")
             private val UPDATE_SKIPPED_VERSION = stringPreferencesKey("update_skipped_version")
-            private val UPDATE_PROMPTED_VERSION = stringPreferencesKey("update_prompted_version")
             private val UPDATE_NOTIFIED_VERSION = stringPreferencesKey("update_notified_version")
             private val BEDTIME_REMINDER =
                 androidx.datastore.preferences.core
@@ -77,10 +78,67 @@ class LocalDataManager
             private val SYSTEM_LIGHT_THEME_MODE = stringPreferencesKey("system_light_theme_mode")
             private val SYSTEM_DARK_THEME_MODE = stringPreferencesKey("system_dark_theme_mode")
             private val SYSTEM_DARK_THEME_VARIANT = stringPreferencesKey("system_dark_theme_variant")
+            private val SKELETON_GRADIENT = booleanPreferencesKey("skeleton_gradient")
+            private val MARQUEE_ENABLED = booleanPreferencesKey("marquee_enabled")
+            private val CLASSIC_LOADING_INDICATOR = booleanPreferencesKey("classic_loading_indicator")
 
             val AUTO_BACKUP_LAST_RUN =
                 androidx.datastore.preferences.core
                     .longPreferencesKey("auto_backup_last_run")
+
+            /** Keys kept in the device store and shared by every profile; see DevicePreferencesStore.kt. */
+            internal val DEVICE_KEY_NAMES =
+                setOf(
+                    LAST_UPDATE_CHECK.name,
+                    UPDATE_SKIPPED_VERSION.name,
+                    UPDATE_NOTIFIED_VERSION.name,
+                    AUTO_BACKUP_LAST_RUN.name,
+                )
+
+            /** Theme names restore rebuilds itself, normalising old theme modes and folding legacy palettes into one theme. */
+            private val ThemeRestoreNames =
+                setOf(
+                    THEME_MODE.name,
+                    THEME_VARIANT.name,
+                    ACCENT_COLOR.name,
+                    CUSTOM_THEME_COLORS.name,
+                    CUSTOM_THEME_PALETTES.name,
+                    CUSTOM_THEMES.name,
+                    ACTIVE_CUSTOM_THEME.name,
+                    SYSTEM_LIGHT_THEME_MODE.name,
+                    SYSTEM_DARK_THEME_MODE.name,
+                    SYSTEM_DARK_THEME_VARIANT.name,
+                )
+
+            /**
+             * The settings this store carries in a backup and takes back on restore. Every key the
+             * code declares is either here or in [NOT_BACKED_UP], and `SettingsBackupCoverageTest`
+             * fails otherwise; a key an older version left in the file belongs to neither and stays.
+             */
+            internal val BACKED_UP_NAMES: Set<String> =
+                ThemeRestoreNames +
+                    setOf(
+                        BEDTIME_REMINDER.name,
+                        BEDTIME_START_HOUR.name,
+                        BEDTIME_START_MINUTE.name,
+                        BEDTIME_END_HOUR.name,
+                        BEDTIME_END_MINUTE.name,
+                        BREAK_REMINDER.name,
+                        BREAK_FREQUENCY.name,
+                        SKELETON_GRADIENT.name,
+                        MARQUEE_ENABLED.name,
+                        CLASSIC_LOADING_INDICATOR.name,
+                    ) +
+                    DailyLimitStore.SETTING_NAMES
+
+            /** Keys in this store a backup leaves out, each with the reason. */
+            internal val NOT_BACKED_UP: Map<String, String> =
+                listOf(SUBSCRIPTIONS, WATCH_HISTORY, LIKED_VIDEOS, PLAYLISTS, SEARCH_HISTORY)
+                    .associate { it.name to "legacy library copy; the backup carries the library itself" } +
+                    listOf(VIDEO_QUALITY_WIFI, VIDEO_QUALITY_CELLULAR, BACKGROUND_PLAY, TRENDING_REGION)
+                        .associate { it.name to "legacy; the player settings own these names now" } +
+                    DEVICE_KEY_NAMES.associateWith { "device state, kept in the device store" } +
+                    DailyLimitStore.TALLY_NAMES.associateWith { "today's watch time, not a setting" }
         }
 
         enum class AutoBackupFrequency { NONE, DAILY, WEEKLY, MONTHLY }
@@ -89,32 +147,26 @@ class LocalDataManager
 
         // Update Settings
         val lastUpdateCheck: Flow<Long> =
-            context.dataStore.data.map { prefs ->
+            context.devicePreferencesDataStore.data.map { prefs ->
                 prefs[LAST_UPDATE_CHECK]?.toLongOrNull() ?: 0L
             }
 
         suspend fun setLastUpdateCheck(timestamp: Long) {
-            context.dataStore.edit { prefs ->
+            context.devicePreferencesDataStore.edit { prefs ->
                 prefs[LAST_UPDATE_CHECK] = timestamp.toString()
             }
         }
 
-        val skippedUpdateVersion: Flow<String?> = context.dataStore.data.map { it[UPDATE_SKIPPED_VERSION] }
+        val skippedUpdateVersion: Flow<String?> = context.devicePreferencesDataStore.data.map { it[UPDATE_SKIPPED_VERSION] }
 
         suspend fun setSkippedUpdateVersion(version: String) {
-            context.dataStore.edit { it[UPDATE_SKIPPED_VERSION] = version }
+            context.devicePreferencesDataStore.edit { it[UPDATE_SKIPPED_VERSION] = version }
         }
 
-        val promptedUpdateVersion: Flow<String?> = context.dataStore.data.map { it[UPDATE_PROMPTED_VERSION] }
-
-        suspend fun setPromptedUpdateVersion(version: String) {
-            context.dataStore.edit { it[UPDATE_PROMPTED_VERSION] = version }
-        }
-
-        val notifiedUpdateVersion: Flow<String?> = context.dataStore.data.map { it[UPDATE_NOTIFIED_VERSION] }
+        val notifiedUpdateVersion: Flow<String?> = context.devicePreferencesDataStore.data.map { it[UPDATE_NOTIFIED_VERSION] }
 
         suspend fun setNotifiedUpdateVersion(version: String) {
-            context.dataStore.edit { it[UPDATE_NOTIFIED_VERSION] = version }
+            context.devicePreferencesDataStore.edit { it[UPDATE_NOTIFIED_VERSION] = version }
         }
 
         // Theme Settings
@@ -127,6 +179,24 @@ class LocalDataManager
             context.dataStore.edit { prefs ->
                 prefs[THEME_MODE] = mode.canonicalFamily().name
             }
+        }
+
+        val skeletonGradient: Flow<Boolean> = context.dataStore.data.map { prefs -> prefs[SKELETON_GRADIENT] ?: false }
+
+        val marqueeEnabled: Flow<Boolean> = context.dataStore.data.map { prefs -> prefs[MARQUEE_ENABLED] ?: true }
+
+        suspend fun setMarqueeEnabled(enabled: Boolean) {
+            context.dataStore.edit { prefs -> prefs[MARQUEE_ENABLED] = enabled }
+        }
+
+        suspend fun setSkeletonGradient(enabled: Boolean) {
+            context.dataStore.edit { prefs -> prefs[SKELETON_GRADIENT] = enabled }
+        }
+
+        val classicLoadingIndicator: Flow<Boolean> = context.dataStore.data.map { prefs -> prefs[CLASSIC_LOADING_INDICATOR] ?: false }
+
+        suspend fun setClassicLoadingIndicator(enabled: Boolean) {
+            context.dataStore.edit { prefs -> prefs[CLASSIC_LOADING_INDICATOR] = enabled }
         }
 
         val themeVariant: Flow<ThemeVariant> =
@@ -508,31 +578,14 @@ class LocalDataManager
 
         suspend fun getExportData(): SettingsBackup {
             val prefs = context.dataStore.data.first()
-            val strings = mutableMapOf<String, String>()
-            val booleans = mutableMapOf<String, Boolean>()
-            val ints = mutableMapOf<String, Int>()
-            val floats = mutableMapOf<String, Float>()
-            val longs = mutableMapOf<String, Long>()
-
-            prefs.asMap().entries.forEach { (key, value) ->
-                val name = key.name
-                if (name == "theme_mode" || name == "theme_variant" || name == "accent_color" ||
-                    name == "custom_theme_colors" || name == "custom_theme_palettes_v2" ||
-                    name == "custom_themes" || name == "custom_theme_id" ||
-                    name == "system_light_theme_mode" || name == "system_dark_theme_mode" ||
-                    name == "system_dark_theme_variant" ||
-                    name == "bedtime_reminder" || name == "break_reminder" ||
-                    name.startsWith("bedtime_") || name == "break_frequency"
-                ) {
-                    when (value) {
-                        is String -> strings[name] = value
-                        is Boolean -> booleans[name] = value
-                        is Int -> ints[name] = value
-                        is Float -> floats[name] = value
-                        is Long -> longs[name] = value
-                    }
-                }
-            }
+            val exported =
+                settingsBackupOf(
+                    prefs
+                        .asMap()
+                        .mapKeys { (key, _) -> key.name }
+                        .filterKeys { it in BACKED_UP_NAMES },
+                )
+            val strings = exported.strings.toMutableMap()
 
             strings[THEME_MODE.name] = parseThemeMode(prefs[THEME_MODE], ThemeMode.SYSTEM).name
             strings[THEME_VARIANT.name] =
@@ -545,7 +598,7 @@ class LocalDataManager
             strings[SYSTEM_DARK_THEME_VARIANT.name] =
                 parseThemeVariant(prefs[SYSTEM_DARK_THEME_VARIANT], systemDarkFallbackVariant(prefs[SYSTEM_DARK_THEME_MODE])).name
             strings[CUSTOM_THEMES.name] = CustomThemeCodec.encodeList(readCustomThemes(prefs))
-            return SettingsBackup(strings, booleans, ints, floats, longs)
+            return exported.copy(strings = strings)
         }
 
         suspend fun restoreData(backup: SettingsBackup) {
@@ -589,22 +642,7 @@ class LocalDataManager
                     prefs[CUSTOM_THEMES] = CustomThemeCodec.encodeList(merged.take(CustomTheme.MAX_COUNT))
                 }
                 backup.strings["custom_theme_id"]?.let { prefs[ACTIVE_CUSTOM_THEME] = it }
-                backup.booleans.forEach { (k, v) ->
-                    if (k == "bedtime_reminder" || k == "break_reminder") {
-                        prefs[
-                            androidx.datastore.preferences.core
-                                .booleanPreferencesKey(k),
-                        ] = v
-                    }
-                }
-                backup.ints.forEach { (k, v) ->
-                    if (k.startsWith("bedtime_") || k == "break_frequency") {
-                        prefs[
-                            androidx.datastore.preferences.core
-                                .intPreferencesKey(k),
-                        ] = v
-                    }
-                }
+                prefs.putAll(backup.filterNames { it in BACKED_UP_NAMES && it !in ThemeRestoreNames })
             }
         }
 
@@ -618,12 +656,12 @@ class LocalDataManager
         }
 
         val autoBackupLastRun: Flow<Long> =
-            context.dataStore.data.map { prefs ->
+            context.devicePreferencesDataStore.data.map { prefs ->
                 prefs[AUTO_BACKUP_LAST_RUN] ?: 0L
             }
 
         suspend fun setAutoBackupLastRun(timestamp: Long) {
-            context.dataStore.edit { prefs ->
+            context.devicePreferencesDataStore.edit { prefs ->
                 prefs[AUTO_BACKUP_LAST_RUN] = timestamp
             }
         }

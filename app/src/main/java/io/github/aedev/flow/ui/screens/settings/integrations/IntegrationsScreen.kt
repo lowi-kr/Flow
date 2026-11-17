@@ -12,6 +12,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.res.stringResource
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
@@ -26,9 +27,9 @@ import io.github.aedev.flow.ui.screens.settings.index.DestinationIndex
 import io.github.aedev.flow.ui.screens.settings.index.IntegrationsIndex
 
 /**
- * The outside services Flow can talk to: SponsorBlock, DeArrow, Return YouTube Dislike and, in
- * builds that include it, Discord Rich Presence. Each service's first row is its own switch, and
- * the rows that depend on it wait for it.
+ * The outside services Flow can talk to: SponsorBlock, DeArrow, the AiSList channel list, Return
+ * YouTube Dislike and, in builds that include it, Discord Rich Presence. Each service's first row
+ * is its own switch, and the rows that depend on it wait for it.
  */
 @Composable
 internal fun IntegrationsScreen(
@@ -41,8 +42,24 @@ internal fun IntegrationsScreen(
     val submitButton by viewModel.submitButton.collectAsStateWithLifecycle()
     val userId by viewModel.userId.collectAsStateWithLifecycle()
     val segments by viewModel.segments.collectAsStateWithLifecycle()
+    val skipButtonStyle by viewModel.skipButtonStyle.collectAsStateWithLifecycle()
     val deArrow by viewModel.deArrow.collectAsStateWithLifecycle()
+    val deArrowRandomFrame by viewModel.deArrowRandomFrame.collectAsStateWithLifecycle()
+    val deArrowThumbnailsOnly by viewModel.deArrowThumbnailsOnly.collectAsStateWithLifecycle()
     val discordState by viewModel.discordState.collectAsStateWithLifecycle()
+    val aiListBlock by viewModel.aiListBlock.collectAsStateWithLifecycle()
+    val aiListWarn by viewModel.aiListWarn.collectAsStateWithLifecycle()
+    val aiListStatus by viewModel.aiListStatus.collectAsStateWithLifecycle()
+    val aiMusic by viewModel.aiMusic.collectAsStateWithLifecycle()
+    val aiListStatusText = aiListStatusText(isOn = aiListBlock || aiListWarn || aiMusic, status = aiListStatus)
+    val aiListStatusTitle = stringResource(R.string.ai_list_status_title)
+    val aiListSource by viewModel.aiListSource.collectAsStateWithLifecycle()
+    val aiReport by viewModel.aiReport.collectAsStateWithLifecycle()
+    val aiReportName by viewModel.aiReportName.collectAsStateWithLifecycle()
+    val aiListSourceInput by viewModel.aiListSourceInput.collectAsStateWithLifecycle()
+    val aiListSourceLabel = if (aiListSource.isDefault) stringResource(R.string.ai_list_source_default) else aiListSource.host
+    val aiReportNameLabel = aiReportName.ifBlank { stringResource(R.string.ai_report_name_unset) }
+    val uriHandler = LocalUriHandler.current
     val snackbarHostState = remember { SnackbarHostState() }
     var dialog by rememberSaveable { mutableStateOf<IntegrationsDialog?>(null) }
     var colourCategory by rememberSaveable { mutableStateOf<String?>(null) }
@@ -63,6 +80,8 @@ internal fun IntegrationsScreen(
             submitButton = submitButton,
             userId = userId,
             segments = segments,
+            skipButtonStyle = skipButtonStyle,
+            onPickSkipButtonStyle = { dialog = IntegrationsDialog.SKIP_BUTTON_STYLE },
             onEditUserId = { dialog = IntegrationsDialog.USER_ID },
             onPickColour = { colourCategory = it },
         )
@@ -75,9 +94,33 @@ internal fun IntegrationsScreen(
         }
         group(key = "integrations.dearrow.group", header = R.string.player_settings_dearrow) {
             switch(IntegrationsIndex.deArrow, viewModel.deArrow, viewModel::setDeArrow, icon = Icons.Outlined.AutoFixHigh)
-            switch(IntegrationsIndex.deArrowRandomFrame, viewModel.deArrowRandomFrame, viewModel::setDeArrowRandomFrame, enabled = deArrow)
+            // With thumbnails only, a frame is the only fallback left, so the row reads on; the stored value is kept.
+            switch(
+                IntegrationsIndex.deArrowRandomFrame,
+                checked = deArrowRandomFrame || deArrowThumbnailsOnly,
+                onCheckedChange = viewModel::setDeArrowRandomFrame,
+                enabled = deArrow && !deArrowThumbnailsOnly,
+            )
+            switch(
+                IntegrationsIndex.deArrowThumbnailsOnly,
+                viewModel.deArrowThumbnailsOnly,
+                viewModel::setDeArrowThumbnailsOnly,
+                enabled = deArrow,
+            )
             switch(IntegrationsIndex.deArrowBadge, viewModel.deArrowBadge, viewModel::setDeArrowBadge, enabled = deArrow)
         }
+        aiListSection(
+            viewModel = viewModel,
+            statusTitle = aiListStatusTitle,
+            statusText = aiListStatusText,
+            musicOn = aiMusic,
+            sourceLabel = aiListSourceLabel,
+            reportName = aiReportNameLabel,
+            reportEnabled = aiReport,
+            onOpenSource = { url -> runCatching { uriHandler.openUri(url) } },
+            onEditServer = { dialog = IntegrationsDialog.AI_LIST_SOURCE },
+            onEditReportName = { dialog = IntegrationsDialog.AI_REPORT_NAME },
+        )
         group(key = "integrations.dislikes.group", header = R.string.player_settings_rytd_title) {
             switch(IntegrationsIndex.dislikes, viewModel.dislikes, viewModel::setDislikes, icon = Icons.Outlined.ThumbDownOffAlt)
         }
@@ -95,6 +138,9 @@ internal fun IntegrationsScreen(
     IntegrationsDialogs(
         dialog = dialog,
         userId = userId,
+        skipButtonStyle = skipButtonStyle,
+        aiListSourceInput = aiListSourceInput,
+        aiReportName = aiReportName,
         viewModel = viewModel,
         onDismiss = { dialog = null },
     )

@@ -12,6 +12,7 @@ import androidx.media3.common.util.UnstableApi
 import androidx.media3.session.DefaultMediaNotificationProvider
 import androidx.media3.session.MediaSession
 import androidx.media3.session.MediaSessionService
+import dagger.hilt.android.EntryPointAccessors
 import io.github.aedev.flow.R
 import io.github.aedev.flow.notification.NotificationHelper
 import io.github.aedev.flow.player.EnhancedPlayerManager
@@ -138,10 +139,7 @@ class VideoPlayerService : MediaSessionService() {
         startId: Int,
     ): Int {
         val startResult = super.onStartCommand(intent, flags, startId)
-        FlowCrashHandler.recordPhase(
-            "video-service",
-            "onStartCommand action=${intent?.action} startId=$startId",
-        )
+        FlowCrashHandler.recordPhase("video-service", "onStartCommand action=${intent?.action}")
         serviceLog("onStartCommand action=${intent?.action}")
 
         when (intent?.action) {
@@ -154,7 +152,12 @@ class VideoPlayerService : MediaSessionService() {
     }
 
     override fun onTaskRemoved(rootIntent: Intent?) {
-        serviceLog("onTaskRemoved pip=${GlobalPlayerState.isInPipMode.value}")
+        val root = rootIntent?.component?.className
+        if (isSideTaskRemoval(root)) {
+            serviceLog("onTaskRemoved ignored, side task $root")
+            return
+        }
+        serviceLog("onTaskRemoved root=$root pip=${GlobalPlayerState.isInPipMode.value}")
         if (GlobalPlayerState.isInPipMode.value) {
             GlobalPlayerState.requestDismiss()
             EnhancedPlayerManager.getInstance().stop()
@@ -163,8 +166,13 @@ class VideoPlayerService : MediaSessionService() {
             return
         }
 
+        val keepPlayingAfterSwipe =
+            EntryPointAccessors
+                .fromApplication(applicationContext, PlaybackServiceEntryPoint::class.java)
+                .lifecyclePlaybackPreferences()
+                .settings.keepPlayingAfterSwipe
         val player = EnhancedPlayerManager.getInstance().getPlayer()
-        if (player?.keepsPlayingOnTaskRemoved(isPlaybackOngoing()) == true) return
+        if (player?.keepsPlayingOnTaskRemoved(keepPlayingAfterSwipe, isPlaybackOngoing()) == true) return
 
         EnhancedPlayerManager.getInstance().stop()
         releaseLocks()

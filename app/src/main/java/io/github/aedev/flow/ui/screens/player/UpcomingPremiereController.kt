@@ -3,6 +3,7 @@ package io.github.aedev.flow.ui.screens.player
 import android.content.Context
 import io.github.aedev.flow.data.local.PlayerPreferences
 import io.github.aedev.flow.data.model.Video
+import io.github.aedev.flow.notification.UpcomingReminder
 import io.github.aedev.flow.notification.UpcomingVideoReminderWorker
 import io.github.aedev.flow.player.GlobalPlayerState
 import io.github.aedev.flow.player.error.PlayerDiagnostics
@@ -39,7 +40,7 @@ internal class UpcomingPremiereController(
     private val probe: UpcomingPremiereProbe,
     private val scope: CoroutineScope,
     private val isLoadCurrent: (Long) -> Boolean,
-    private val armMetadata: (videoId: String, channelId: String?) -> Unit,
+    private val armMetadata: (videoId: String) -> Unit,
 ) {
     /** Mirrors the stored reminder ids onto the video the screen currently holds. */
     fun collectReminderState() {
@@ -60,7 +61,7 @@ internal class UpcomingPremiereController(
     ): Boolean {
         val releaseTimeMs = UpcomingPremierePolicy.releaseTimeFor(video) ?: return false
         uiState.update { UpcomingPremierePolicy.applyTo(it, video, releaseTimeMs, preserveQueueTitle) }
-        armMetadata(video.id, video.channelId)
+        armMetadata(video.id)
         return true
     }
 
@@ -71,7 +72,7 @@ internal class UpcomingPremiereController(
                 ?.takeIf { it.id == videoId && it.isUpcoming }
                 ?.let(UpcomingPremierePolicy::releaseTimeFor) ?: return false
         uiState.update { it.applyCachedUpcoming(releaseTimeMs) }
-        armMetadata(videoId, uiState.value.cachedVideo?.channelId)
+        armMetadata(videoId)
         return true
     }
 
@@ -131,6 +132,9 @@ internal class UpcomingPremiereController(
             val enableReminder = !state.isUpcomingReminderSet
             playerPreferences.setUpcomingVideoReminder(video.id, enableReminder)
             if (enableReminder) {
+                playerPreferences.saveUpcomingReminder(
+                    UpcomingReminder(video.id, releaseTimeMs, video.title, video.channelName, video.thumbnailUrl),
+                )
                 UpcomingVideoReminderWorker.scheduleReminder(
                     context = context,
                     videoId = video.id,

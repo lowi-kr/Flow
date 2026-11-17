@@ -8,6 +8,7 @@ import io.github.aedev.flow.data.music.PlaylistRepository
 import io.github.aedev.flow.data.music.model.MusicArtist
 import io.github.aedev.flow.data.music.model.MusicItemType
 import io.github.aedev.flow.data.music.model.MusicTrack
+import io.github.aedev.flow.data.profile.ProfileFiles
 import io.github.aedev.flow.innertube.YouTube
 import io.github.aedev.flow.innertube.models.AlbumItem
 import io.github.aedev.flow.innertube.models.PlaylistItem
@@ -64,7 +65,7 @@ class MusicRecommendationAlgorithm
         }
 
         private val cachePrefs by lazy {
-            context.getSharedPreferences("music_home_cache_prefs", Context.MODE_PRIVATE)
+            context.getSharedPreferences(ProfileFiles.sharedPreferencesName(context, "music_home_cache_prefs"), Context.MODE_PRIVATE)
         }
 
         private fun currentLocaleKey(): String =
@@ -169,6 +170,12 @@ class MusicRecommendationAlgorithm
                 }
                 return@withContext emptyList<MusicSection>() to null
             }
+
+        /** One chip's own page. Throws on failure so the caller can offer a retry. */
+        suspend fun loadHomeChipPage(endpoint: io.github.aedev.flow.innertube.models.BrowseEndpoint): Pair<List<MusicSection>, String?> {
+            val homePage = youTube.home(browseId = endpoint.browseId, params = endpoint.params).getOrThrow()
+            return parseHomeSections(homePage) to homePage.continuation
+        }
 
         private suspend fun fetchAndCacheHome(): Pair<List<MusicSection>, String?> {
             try {

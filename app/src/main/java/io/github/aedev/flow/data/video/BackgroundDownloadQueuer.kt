@@ -77,20 +77,23 @@ class BackgroundDownloadQueuer
 
         /**
          * Downloads a playlist as one item saved in its own folder. [complete] says [videos] is the
-         * whole list, so anything no longer in it can be marked as removed from the playlist.
+         * whole list, so anything no longer in it can be marked as removed from the playlist. Only
+         * the [picked] videos are downloaded; the rest stay out of the collection until picked.
          */
         fun queueCollection(
             spec: CollectionSpec,
             videos: List<Video>,
             complete: Boolean,
+            picked: Set<String>,
         ) {
             val byId = videos.associateBy { it.id }
-            runCollection(spec, videos.map { it.id }, complete) { id, _ ->
+            val collectionId = collections.storedId(spec)
+            runCollection(spec, videos.map { it.id }, complete, picked) { id, _ ->
                 val video = byId.getValue(id)
                 if (video.isMusic) {
-                    controller.enqueue(video.toMusicTrack().toDownloadRequest(collectionId = spec.id)).toQueueOutcome()
+                    controller.enqueue(video.toMusicTrack().toDownloadRequest(collectionId = collectionId)).toQueueOutcome()
                 } else {
-                    controller.enqueue(video.toDownloadRequest(collectionId = spec.id)).toQueueOutcome()
+                    controller.enqueue(video.toDownloadRequest(collectionId = collectionId)).toQueueOutcome()
                 }
             }
         }
@@ -103,11 +106,12 @@ class BackgroundDownloadQueuer
         ) {
             val byId = tracks.associateBy { it.videoId }
             val isAlbum = spec.kind == DownloadCollectionKind.MUSIC_ALBUM
+            val collectionId = collections.storedId(spec)
             runCollection(spec, tracks.map { it.videoId }, complete) { id, position ->
                 controller
                     .enqueue(
                         byId.getValue(id).toDownloadRequest(
-                            collectionId = spec.id,
+                            collectionId = collectionId,
                             trackNumber = if (isAlbum) position + 1 else null,
                             trackTotal = if (isAlbum) byId.size else null,
                             albumArtist = spec.author.takeIf { isAlbum },
@@ -120,12 +124,13 @@ class BackgroundDownloadQueuer
             spec: CollectionSpec,
             ids: List<String>,
             complete: Boolean,
+            picked: Set<String>? = null,
             work: suspend (id: String, position: Int) -> QueueOutcome,
         ) {
             if (_batches.value[spec.id]?.isFinished == false) return
             scope.launch {
                 val positions = ids.distinct().withIndex().associate { (index, id) -> id to index }
-                val toQueue = collections.prepare(spec, ids, complete)
+                val toQueue = collections.prepare(spec, ids, complete, picked)
                 runBatch(spec.id, toQueue, allowEmpty = true) { id -> work(id, positions.getValue(id)) }
             }
         }

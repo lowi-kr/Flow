@@ -24,6 +24,7 @@ import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -36,12 +37,15 @@ import io.github.aedev.flow.R
 import io.github.aedev.flow.data.model.Channel
 import io.github.aedev.flow.data.model.Video
 import io.github.aedev.flow.ui.components.shared.ChannelAvatarImage
+import io.github.aedev.flow.ui.components.shared.ChannelOrganizeActions
 import io.github.aedev.flow.ui.components.shared.FlowSubscribeButton
 import io.github.aedev.flow.ui.components.shared.FlowSubscribeButtonSize
 import io.github.aedev.flow.ui.components.shared.MediaArtworkTint
 import io.github.aedev.flow.ui.components.shared.card.MediaVideoCard
 import io.github.aedev.flow.ui.components.shared.feedStripCardWidth
+import io.github.aedev.flow.ui.components.shared.rememberChannelOrganizeActions
 import io.github.aedev.flow.ui.components.shared.rememberMediaArtworkTint
+import io.github.aedev.flow.ui.components.shared.toOrganizeTarget
 import io.github.aedev.flow.utils.formatSubscriberCount
 
 /**
@@ -56,11 +60,18 @@ fun SearchChannelHeroCard(
     onSubscribeToggle: () -> Unit,
     onClick: () -> Unit,
     modifier: Modifier = Modifier,
+    isNotificationsEnabled: Boolean = false,
+    onNotificationChange: ((Boolean) -> Unit)? = null,
     latestTitle: String? = null,
     latestVideos: List<Video> = emptyList(),
     onVideoClick: (Video) -> Unit = {},
 ) {
-    val tint = rememberMediaArtworkTint(channel.thumbnailUrl)
+    val tint = rememberMediaArtworkTint(channel.thumbnailUrl, followsSetting = false)
+    val organize =
+        rememberChannelOrganizeActions(
+            target = remember(channel) { channel.takeUnless { it.isMusic }?.toOrganizeTarget() },
+            isSubscribed = isSubscribed,
+        )
 
     Surface(
         modifier = modifier.fillMaxWidth().padding(horizontal = CardMargin, vertical = CardGap),
@@ -94,6 +105,9 @@ fun SearchChannelHeroCard(
                         ChannelActions(
                             isSubscribed = isSubscribed,
                             onSubscribeToggle = onSubscribeToggle,
+                            isNotificationsEnabled = isNotificationsEnabled,
+                            onNotificationChange = onNotificationChange,
+                            organize = organize,
                             onOpen = onClick,
                             tint = tint,
                             modifier = Modifier.width(InlineActionsColumn),
@@ -105,6 +119,9 @@ fun SearchChannelHeroCard(
                     ChannelActions(
                         isSubscribed = isSubscribed,
                         onSubscribeToggle = onSubscribeToggle,
+                        isNotificationsEnabled = isNotificationsEnabled,
+                        onNotificationChange = onNotificationChange,
+                        organize = organize,
                         onOpen = onClick,
                         tint = tint,
                         modifier = Modifier.fillMaxWidth().padding(horizontal = CardHorizontalPadding),
@@ -171,6 +188,9 @@ private fun ChannelIdentity(
 private fun ChannelActions(
     isSubscribed: Boolean,
     onSubscribeToggle: () -> Unit,
+    isNotificationsEnabled: Boolean,
+    onNotificationChange: ((Boolean) -> Unit)?,
+    organize: ChannelOrganizeActions,
     onOpen: () -> Unit,
     tint: MediaArtworkTint,
     modifier: Modifier = Modifier,
@@ -184,6 +204,10 @@ private fun ChannelActions(
             isSubscribed = isSubscribed,
             onSubscribeClick = onSubscribeToggle,
             onUnsubscribeClick = onSubscribeToggle,
+            isNotificationsEnabled = isNotificationsEnabled,
+            onNotificationChange = onNotificationChange,
+            onAddNote = organize.onAddNote,
+            onManageGroups = organize.onManageGroups,
             size = FlowSubscribeButtonSize.Wide,
             tint = tint,
             modifier = if (isSubscribed) Modifier else Modifier.weight(1f),

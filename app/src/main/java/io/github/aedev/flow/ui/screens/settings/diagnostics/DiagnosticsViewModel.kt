@@ -6,7 +6,13 @@ import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
 import io.github.aedev.flow.data.local.PlayerPreferences
+import io.github.aedev.flow.data.profile.ActiveProfile
+import io.github.aedev.flow.data.profile.ProfileRegistryState
+import io.github.aedev.flow.data.profile.ProfileRepository
+import io.github.aedev.flow.data.profile.ProfileSwitcher
+import io.github.aedev.flow.data.profile.SlicePart
 import io.github.aedev.flow.data.recommendation.snapshot.HomeSnapshotStore
+import io.github.aedev.flow.player.error.PlaybackErrorLog
 import io.github.aedev.flow.player.stream.ResetYouTubeSession
 import io.github.aedev.flow.ui.screens.settings.SettingsViewModel
 import io.github.aedev.flow.utils.DeviceInfo
@@ -27,6 +33,9 @@ class DiagnosticsViewModel
         private val preferences: PlayerPreferences,
         private val snapshots: HomeSnapshotStore,
         private val resetYouTubeSession: ResetYouTubeSession,
+        private val profiles: ProfileRepository,
+        private val switcher: ProfileSwitcher,
+        private val playbackErrors: PlaybackErrorLog,
     ) : SettingsViewModel() {
         val device: DeviceInfo by lazy { FlowDiagnostics.deviceInfo(context) }
 
@@ -67,7 +76,8 @@ class DiagnosticsViewModel
                     .getOrDefault(false)
             }
 
-        suspend fun report(): String = withContext(Dispatchers.IO) { FlowDiagnostics.buildFullReport(context, sessionText) }
+        suspend fun report(): String =
+            withContext(Dispatchers.IO) { FlowDiagnostics.buildFullReport(context, sessionText, playbackErrors.recent()) }
 
         fun clearCrashes() =
             write {
@@ -76,4 +86,18 @@ class DiagnosticsViewModel
             }
 
         suspend fun resetSession() = resetYouTubeSession()
+
+        val profileState: StateFlow<ProfileRegistryState?> = profiles.state.asState(null)
+        val runningProfileId: String = ActiveProfile.get(context).id
+
+        fun addProfile(
+            name: String,
+            copy: Set<SlicePart> = emptySet(),
+        ) = write { profiles.create(name, copy = copy) }
+
+        fun deleteProfile(id: String) = write { profiles.delete(id) }
+
+        fun setRunningProfilePhoto(source: Uri) = write { profiles.setPhoto(runningProfileId, source) }
+
+        fun switchProfile(id: String) = write { switcher.switchTo(id) }
     }

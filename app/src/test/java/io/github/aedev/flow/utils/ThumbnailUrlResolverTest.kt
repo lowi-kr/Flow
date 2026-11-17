@@ -1,6 +1,7 @@
 package io.github.aedev.flow.utils
 
 import com.google.common.truth.Truth.assertThat
+import io.github.aedev.flow.data.local.ThumbnailQuality
 import org.junit.Test
 
 class ThumbnailUrlResolverTest {
@@ -127,6 +128,9 @@ class ThumbnailUrlResolverTest {
     private companion object {
         const val VIDEO_ID = "dQw4w9WgXcQ"
         const val OTHER_ID = "aBcDeFgHiJk"
+        const val POST_IMAGE_BASE =
+            "https://yt3.ggpht.com/ONbcNR93C-Al2A8iKSYb4dkPTUHgd9cR4evpGn5ShzF2JNZasMRpNXyWQr0YaU2-SAsgxfrMj_5RkA"
+        const val POST_IMAGE = "$POST_IMAGE_BASE=s1080-c-fcrop64=1,00001ba6ffffe872-rw-nd-v1"
     }
 
     @Test
@@ -136,5 +140,79 @@ class ThumbnailUrlResolverTest {
         assertThat(ThumbnailUrlResolver.isUnusableChannelAvatar("https://i.ytimg.com/vi/93iYf9wp7Qw/hqdefault.jpg")).isTrue()
         assertThat(ThumbnailUrlResolver.isUnusableChannelAvatar("https://yt3.ggpht.com/abc=s176-c-k-c0x00ffffff-no-rj")).isFalse()
         assertThat(ThumbnailUrlResolver.isUnusableChannelAvatar("")).isFalse()
+    }
+
+    @Test
+    fun `post image keeps the feed crop by default`() {
+        assertThat(ThumbnailUrlResolver.resolveCommunityPostImage(POST_IMAGE))
+            .isEqualTo("$POST_IMAGE_BASE=w2048-c-fcrop64=1,00001ba6ffffe872-rw-nd-v1")
+    }
+
+    @Test
+    fun `uncropped post image drops the crop and every other option`() {
+        assertThat(ThumbnailUrlResolver.resolveCommunityPostImage(POST_IMAGE, uncropped = true))
+            .isEqualTo("$POST_IMAGE_BASE=w2048")
+    }
+
+    @Test
+    fun `uncropped post image without options gains only a width`() {
+        assertThat(ThumbnailUrlResolver.resolveCommunityPostImage("//yt3.ggpht.com/abc", uncropped = true))
+            .isEqualTo("https://yt3.ggpht.com/abc=w2048")
+    }
+
+    @Test
+    fun `youtube frames replace the uploader's thumbnail tiers at each quality`() {
+        fun frames(quality: ThumbnailQuality) =
+            ThumbnailUrlResolver.youtubeFrameCandidates("abc123", quality).map { it.substringAfterLast('/') }
+
+        assertThat(frames(ThumbnailQuality.HIGH)).containsExactly("maxres2.jpg", "sd2.jpg", "hq2.jpg").inOrder()
+        assertThat(frames(ThumbnailQuality.MEDIUM)).containsExactly("sd2.jpg", "hq2.jpg").inOrder()
+        assertThat(frames(ThumbnailQuality.LOW)).containsExactly("mq2.jpg", "hq2.jpg").inOrder()
+        assertThat(frames(ThumbnailQuality.OFF)).isEmpty()
+    }
+
+    @Test
+    fun `a DeArrow frame falls back to youtube frames, never the uploader's thumbnail`() {
+        val dearrow = "https://dearrow-thumb.ajay.app/api/v1/getThumbnail?videoID=abc123&time=12.5"
+
+        val candidates =
+            ThumbnailUrlResolver.resolveVideoThumbnailCandidates(
+                "abc123",
+                dearrow,
+                ThumbnailQuality.HIGH,
+                youTubeFrames = true,
+            )
+
+        assertThat(candidates)
+            .containsExactly(
+                dearrow,
+                "https://i.ytimg.com/vi/abc123/maxres2.jpg",
+                "https://i.ytimg.com/vi/abc123/sd2.jpg",
+                "https://i.ytimg.com/vi/abc123/hq2.jpg",
+                "https://i.ytimg.com/vi/abc123/hqdefault.jpg",
+            ).inOrder()
+    }
+
+    @Test
+    fun `the uploader's thumbnail is only the last resort when youtube frames are wanted`() {
+        val candidates =
+            ThumbnailUrlResolver.resolveVideoThumbnailCandidates(
+                "abc123",
+                "https://i.ytimg.com/vi/abc123/hq720.jpg",
+                ThumbnailQuality.MEDIUM,
+                youTubeFrames = true,
+            )
+
+        assertThat(candidates)
+            .containsExactly(
+                "https://i.ytimg.com/vi/abc123/sd2.jpg",
+                "https://i.ytimg.com/vi/abc123/hq2.jpg",
+                "https://i.ytimg.com/vi/abc123/hqdefault.jpg",
+            ).inOrder()
+    }
+
+    @Test
+    fun `local videos get no youtube frames`() {
+        assertThat(ThumbnailUrlResolver.youtubeFrameCandidates("local_42")).isEmpty()
     }
 }

@@ -23,6 +23,8 @@ import io.github.aedev.flow.player.config.PlayerConfig
 object LoadControlFactory {
     private const val TAG = "LoadControlFactory"
     private const val BYTES_PER_MB = 1024L * 1024L
+    private const val SKIP_TAIL_START_MS = 250
+    private const val SKIP_TAIL_SPARE_MS = 3_000
     private val StockMaxBufferMs = BufferProfile.entries.maxOf { it.maxBuffer }
 
     /**
@@ -126,20 +128,34 @@ object LoadControlFactory {
         )
 
     /**
-     * Music service: audio-only, so a long window costs little memory and a low playback threshold
-     * gets the first note out quickly. No back buffer, and no byte cap — the duration window is the
-     * only budget it needs.
+     * Music: a low playback threshold gets the first note out quickly. With [wholeSong] the song loads
+     * to its end and what has played is kept, both inside one byte cap, so a seek either way stays in
+     * memory (#2167). Without it, the lean 30 s window with no back buffer.
      */
-    fun forMusic(): DefaultLoadControl =
+    fun forMusic(wholeSong: Boolean = false): DefaultLoadControl =
         build(
             minMs = PlayerConfig.MUSIC_MIN_BUFFER_MS,
-            maxMs = PlayerConfig.MUSIC_MAX_BUFFER_MS,
+            maxMs = if (wholeSong) PlayerConfig.MUSIC_WHOLE_SONG_BUFFER_MS else PlayerConfig.MUSIC_MAX_BUFFER_MS,
             playbackMs = PlayerConfig.MUSIC_BUFFER_FOR_PLAYBACK_MS,
+            rebufferMs = PlayerConfig.MUSIC_BUFFER_FOR_REBUFFER_MS,
+            backBufferMs = if (wholeSong) PlayerConfig.MUSIC_BACK_BUFFER_MS else 0,
+            retainBackBufferFromKeyframe = wholeSong,
+            targetBufferBytes = if (wholeSong) PlayerConfig.MUSIC_TARGET_BUFFER_BYTES else C.LENGTH_UNSET,
+        )
+
+    /** A skipped song's tail plays for moments, so it starts on little audio and loads no more than it will play. */
+    fun forSkipTail(overlapMs: Long): DefaultLoadControl {
+        val keepMs = overlapMs.toInt() + SKIP_TAIL_SPARE_MS
+        return build(
+            minMs = keepMs,
+            maxMs = keepMs,
+            playbackMs = SKIP_TAIL_START_MS,
             rebufferMs = PlayerConfig.MUSIC_BUFFER_FOR_REBUFFER_MS,
             backBufferMs = 0,
             retainBackBufferFromKeyframe = false,
             targetBufferBytes = C.LENGTH_UNSET,
         )
+    }
 
     /**
      * @param targetBufferBytes `C.LENGTH_UNSET` lets `DefaultLoadControl` derive the cap from the

@@ -58,6 +58,27 @@ object ThumbnailUrlResolver {
             ThumbnailQuality.OFF -> emptyList()
         }
 
+    /**
+     * YouTube's automatic middle frame (`2.jpg`, about half way in) in the viewer's tier, best first:
+     * a still from the video, never the uploader's thumbnail. Every video has `hq2`.
+     */
+    fun youtubeFrameCandidates(
+        videoId: String,
+        quality: ThumbnailQuality = ThumbnailQuality.HIGH,
+        portrait: Boolean = false,
+    ): List<String> {
+        val id = videoId.trim()
+        if (id.isEmpty() || LocalMediaIds.isLocal(id)) return emptyList()
+        val tiers =
+            when (quality) {
+                ThumbnailQuality.HIGH -> listOf("maxres2", "sd2", "hq2")
+                ThumbnailQuality.MEDIUM -> listOf("sd2", "hq2")
+                ThumbnailQuality.LOW -> if (portrait) listOf("hq2") else listOf("mq2", "hq2")
+                ThumbnailQuality.OFF -> emptyList()
+            }
+        return tiers.map { tier -> "https://i.ytimg.com/vi/$id/$tier.jpg" }
+    }
+
     /** A cover stored on the device: a download's saved thumbnail, or a MediaStore item. */
     fun isDeviceUri(url: String): Boolean = url.startsWith("file:") || url.startsWith("content:") || url.startsWith("/")
 
@@ -66,10 +87,18 @@ object ThumbnailUrlResolver {
         rawUrl: String?,
         quality: ThumbnailQuality = ThumbnailQuality.HIGH,
         portrait: Boolean = false,
+        youTubeFrames: Boolean = false,
     ): List<String> {
         val raw = rawUrl?.trim().orEmpty()
         val resolvedVideoId = resolveYoutubeThumbnailVideoId(videoId, raw)
-        val youtubeCandidates = youtubeThumbnailCandidates(resolvedVideoId, quality, portrait)
+        val youtubeCandidates =
+            if (youTubeFrames) {
+                // Live and upcoming videos have no frames yet; only they ever reach the last entry.
+                youtubeFrameCandidates(resolvedVideoId, quality, portrait) +
+                    youtubeThumbnailCandidates(resolvedVideoId, quality, portrait).takeLast(1)
+            } else {
+                youtubeThumbnailCandidates(resolvedVideoId, quality, portrait)
+            }
 
         val candidates =
             when {
@@ -195,9 +224,15 @@ object ThumbnailUrlResolver {
         return "$baseUrl=s$size"
     }
 
+    /**
+     * A post image on Google's image CDN at [targetWidth]. Its URLs also carry the crop YouTube made for
+     * the feed (`-c-fcrop64=…`); [uncropped] drops every option but the width, which serves the whole
+     * image at its own shape.
+     */
     fun resolveCommunityPostImage(
         rawUrl: String?,
         targetWidth: Int = 2048,
+        uncropped: Boolean = false,
     ): String {
         val raw =
             rawUrl?.trim().orEmpty().let { url ->
@@ -208,9 +243,11 @@ object ThumbnailUrlResolver {
         val isGoogleCdn = raw.contains("googleusercontent.com") || raw.contains("ggpht.com")
         if (!isGoogleCdn) return raw
 
-        val sizeParamRegex = Regex("""=([wsh])\d+""")
-        sizeParamRegex.find(raw)?.let { match ->
-            return raw.replaceFirst(match.value, "=w$targetWidth")
+        if (!uncropped) {
+            val sizeParamRegex = Regex("""=([wsh])\d+""")
+            sizeParamRegex.find(raw)?.let { match ->
+                return raw.replaceFirst(match.value, "=w$targetWidth")
+            }
         }
         val paramStart = googleCdnParamStartPattern.find(raw)?.range?.first
         val baseUrl = if (paramStart != null) raw.substring(0, paramStart) else raw

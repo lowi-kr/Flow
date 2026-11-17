@@ -39,7 +39,9 @@ import io.github.aedev.flow.ui.components.search.SearchShortsGrid
 import io.github.aedev.flow.ui.components.shared.FeedGridSkeleton
 import io.github.aedev.flow.ui.components.shared.FlowEmptyState
 import io.github.aedev.flow.ui.components.shared.FlowErrorState
+import io.github.aedev.flow.ui.components.shared.SubscriptionBellViewModel
 import io.github.aedev.flow.ui.components.shared.quickactions.QuickActionsViewModel
+import io.github.aedev.flow.ui.components.shared.sharedSubscriptionBellViewModel
 import io.github.aedev.flow.utils.YouTubeLink
 import io.github.aedev.flow.utils.parseYouTubeLink
 
@@ -54,15 +56,23 @@ internal fun rememberSearchSubmitter(
     viewModel: SearchViewModel,
     state: SearchScreenState,
     quickActions: QuickActionsViewModel,
+    onNewSearch: ((String, SearchFilter) -> Unit)? = null,
 ): (String, SearchFilter) -> Unit {
     val mediaNavigator = LocalMediaNavigator.current
-    return remember(viewModel, state, quickActions, mediaNavigator) {
+    return remember(viewModel, state, quickActions, mediaNavigator, onNewSearch) {
         { raw, filters ->
             val text = raw.trim()
             val link = parseYouTubeLink(text)
             val search: (String) -> Unit = { query ->
-                state.onSubmit(query)
-                viewModel.submit(query, filters)
+                val shown = viewModel.uiState.value.query
+                if (onNewSearch == null || shown.isBlank() || query.trim() == shown.trim()) {
+                    state.onSubmit(query)
+                    viewModel.submit(query, filters)
+                } else {
+                    // A new search gets its own page; this one goes back to its own results for Back to find.
+                    state.returnTo(shown)
+                    onNewSearch(query, filters)
+                }
             }
             when {
                 text.isEmpty() -> Unit
@@ -95,8 +105,10 @@ internal fun ColumnScope.SearchResultsBody(
     dismissKeyboard: () -> Unit,
     maxAutoColumns: Int = FEED_MAX_AUTO_COLUMNS,
     minCellWidth: Dp = FeedCardMinWidth,
+    bell: SubscriptionBellViewModel = sharedSubscriptionBellViewModel(),
 ) {
     val subscribedIds by quickActions.subscribedChannelIds.collectAsStateWithLifecycle()
+    val notifyingIds by bell.notifyingChannelIds.collectAsStateWithLifecycle()
     val currentOnVideoClick by rememberUpdatedState(onVideoClick)
 
     SearchFilterBar(
@@ -110,7 +122,7 @@ internal fun ColumnScope.SearchResultsBody(
     BoxWithConstraints(modifier = Modifier.weight(1f)) {
         val feedLayout = rememberFeedGridLayout(maxWidth, feedColumns, maxAutoColumns, minCellWidth)
         val actions =
-            remember(feedLayout, subscribedIds) {
+            remember(feedLayout, subscribedIds, notifyingIds) {
                 SearchResultActions(
                     onVideoClick = { currentOnVideoClick(it) },
                     onShortsClick = { shelf, tapped ->
@@ -123,6 +135,9 @@ internal fun ColumnScope.SearchResultsBody(
                     onSubscribeToggle = { channel ->
                         quickActions.toggleSubscription(channel.id, channel.name, channel.thumbnailUrl)
                     },
+                    isNotifying = { it in notifyingIds },
+                    onNotificationChange = { channel, enabled -> bell.setNotifications(channel.id, enabled) },
+                    onPostClick = viewModel.postComments::open,
                 )
             }
 
