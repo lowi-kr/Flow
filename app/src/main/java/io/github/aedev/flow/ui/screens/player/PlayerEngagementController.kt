@@ -1,8 +1,8 @@
-package io.github.aedev.flow.ui.screens.player
+package com.arubr.smsvcodes.ui.screens.player
 
-import io.github.aedev.flow.data.engagement.VideoEngagementUseCase
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.ui.screens.player.state.VideoPlayerUiState
+import com.arubr.smsvcodes.data.engagement.VideoEngagementUseCase
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.ui.screens.player.state.VideoPlayerUiState
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.MutableStateFlow

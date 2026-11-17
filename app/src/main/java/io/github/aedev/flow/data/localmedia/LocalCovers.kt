@@ -1,4 +1,4 @@
-package io.github.aedev.flow.data.localmedia
+package com.arubr.smsvcodes.data.localmedia
 
 import android.content.Context
 import android.graphics.Bitmap
@@ -12,8 +12,8 @@ import androidx.media3.common.MediaItem
 import androidx.media3.common.Metadata
 import androidx.media3.common.util.UnstableApi
 import androidx.media3.inspector.MetadataRetriever
-import io.github.aedev.flow.data.video.downloader.tags.coverPicture
-import io.github.aedev.flow.data.video.downloader.tags.metadataEntries
+import com.arubr.smsvcodes.data.video.downloader.tags.coverPicture
+import com.arubr.smsvcodes.data.video.downloader.tags.metadataEntries
 import java.io.ByteArrayOutputStream
 import java.io.File
 import java.util.concurrent.TimeUnit

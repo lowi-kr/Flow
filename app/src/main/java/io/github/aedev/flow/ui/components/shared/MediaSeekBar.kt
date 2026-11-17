@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.shared
+package com.arubr.smsvcodes.ui.components.shared
 
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.Spring
@@ -37,8 +37,8 @@ import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.data.model.SponsorBlockSegment
-import io.github.aedev.flow.ui.theme.PlayerScrimContent
+import com.arubr.smsvcodes.data.model.SponsorBlockSegment
+import com.arubr.smsvcodes.ui.theme.PlayerScrimContent
 import org.schabi.newpipe.extractor.stream.StreamSegment
 
 private val EdgeAlignedHeight = 14.dp

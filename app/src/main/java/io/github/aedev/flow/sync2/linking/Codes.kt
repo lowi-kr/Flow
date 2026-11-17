@@ -1,10 +1,10 @@
-package io.github.aedev.flow.sync2.linking
+package com.arubr.smsvcodes.sync2.linking
 
-import io.github.aedev.flow.sync.crypto.SyncBytes
-import io.github.aedev.flow.sync.crypto.SyncCrypto
-import io.github.aedev.flow.sync2.crypto.agreementPublicKey
-import io.github.aedev.flow.sync2.crypto.pairingCommit
-import io.github.aedev.flow.sync2.engine.LinkedException
+import com.arubr.smsvcodes.sync.crypto.SyncBytes
+import com.arubr.smsvcodes.sync.crypto.SyncCrypto
+import com.arubr.smsvcodes.sync2.crypto.agreementPublicKey
+import com.arubr.smsvcodes.sync2.crypto.pairingCommit
+import com.arubr.smsvcodes.sync2.engine.LinkedException
 import kotlinx.serialization.SerializationException
 import java.util.concurrent.atomic.AtomicBoolean
 

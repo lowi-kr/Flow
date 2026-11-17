@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.shared
+package com.arubr.smsvcodes.ui.components.shared
 
 import android.graphics.Bitmap
 import androidx.compose.animation.animateColorAsState

@@ -1,8 +1,8 @@
-package io.github.aedev.flow.ui.screens.subscriptions
+package com.arubr.smsvcodes.ui.screens.subscriptions
 
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.data.model.Channel
-import io.github.aedev.flow.data.model.SubscriptionGroup
+import com.arubr.smsvcodes.data.model.Channel
+import com.arubr.smsvcodes.data.model.SubscriptionGroup
 import org.junit.Test
 
 /** The optional Ungrouped chip (#1640): what it covers, where it sits, and when it shows. */

@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.shared
+package com.arubr.smsvcodes.ui.components.shared
 
 import androidx.activity.ComponentActivity
 import androidx.compose.runtime.Composable
@@ -10,9 +10,9 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.data.local.dao.SubscriptionGroupDao
-import io.github.aedev.flow.data.model.toUiModel
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.data.local.dao.SubscriptionGroupDao
+import com.arubr.smsvcodes.data.model.toUiModel
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow

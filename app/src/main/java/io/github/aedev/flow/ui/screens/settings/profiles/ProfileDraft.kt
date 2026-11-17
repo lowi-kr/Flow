@@ -1,8 +1,8 @@
-package io.github.aedev.flow.ui.screens.settings.profiles
+package com.arubr.smsvcodes.ui.screens.settings.profiles
 
 import android.net.Uri
-import io.github.aedev.flow.data.profile.ProfileAvatar
-import io.github.aedev.flow.data.profile.SlicePart
+import com.arubr.smsvcodes.data.profile.ProfileAvatar
+import com.arubr.smsvcodes.data.profile.SlicePart
 
 internal const val PROFILE_NAME_MAX_LENGTH = 24
 

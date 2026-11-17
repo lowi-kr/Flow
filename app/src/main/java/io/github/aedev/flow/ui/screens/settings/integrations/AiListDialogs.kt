@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.settings.integrations
+package com.arubr.smsvcodes.ui.screens.settings.integrations
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -16,8 +16,8 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.ui.components.shared.FlowAlertDialog
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.ui.components.shared.FlowAlertDialog
 
 private val FieldSpacing = 8.dp
 

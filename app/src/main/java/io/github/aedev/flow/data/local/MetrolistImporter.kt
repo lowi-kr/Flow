@@ -1,14 +1,14 @@
-package io.github.aedev.flow.data.local
+package com.arubr.smsvcodes.data.local
 
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteException
 import android.net.Uri
 import androidx.room.withTransaction
-import io.github.aedev.flow.data.local.entity.PlaylistEntity
-import io.github.aedev.flow.data.local.entity.PlaylistVideoCrossRef
-import io.github.aedev.flow.data.local.entity.VideoEntity
-import io.github.aedev.flow.utils.ThumbnailUrlResolver
+import com.arubr.smsvcodes.data.local.entity.PlaylistEntity
+import com.arubr.smsvcodes.data.local.entity.PlaylistVideoCrossRef
+import com.arubr.smsvcodes.data.local.entity.VideoEntity
+import com.arubr.smsvcodes.utils.ThumbnailUrlResolver
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 

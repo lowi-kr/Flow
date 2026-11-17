@@ -1,7 +1,7 @@
-package io.github.aedev.flow.data.subscriptions
+package com.arubr.smsvcodes.data.subscriptions
 
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.data.model.SubscriptionGroup
+import com.arubr.smsvcodes.data.model.SubscriptionGroup
 import org.junit.Test
 
 /** What the All chip covers once groups are hidden or kept out of it (#1387). */

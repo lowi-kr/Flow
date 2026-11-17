@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.musicplayer.queue
+package com.arubr.smsvcodes.ui.components.musicplayer.queue
 
 /** What a queue row's menu offers on a remote, which can't swipe or drag the row. */
 internal enum class QueueRowMenuAction {

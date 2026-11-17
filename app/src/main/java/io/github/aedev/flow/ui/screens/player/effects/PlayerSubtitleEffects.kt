@@ -1,9 +1,9 @@
-package io.github.aedev.flow.ui.screens.player.effects
+package com.arubr.smsvcodes.ui.screens.player.effects
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
-import io.github.aedev.flow.ui.components.videoplayer.subtitle.SubtitleStyle
-import io.github.aedev.flow.ui.screens.player.state.PlayerScreenState
+import com.arubr.smsvcodes.ui.components.videoplayer.subtitle.SubtitleStyle
+import com.arubr.smsvcodes.ui.screens.player.state.PlayerScreenState
 
 /**
  * Mirrors the persisted subtitle style onto the screen state. Which track plays, including turning

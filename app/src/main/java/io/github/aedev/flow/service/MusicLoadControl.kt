@@ -1,4 +1,4 @@
-package io.github.aedev.flow.service
+package com.arubr.smsvcodes.service
 
 import androidx.annotation.OptIn
 import androidx.media3.common.Timeline
@@ -10,7 +10,7 @@ import androidx.media3.exoplayer.source.MediaSource
 import androidx.media3.exoplayer.source.TrackGroupArray
 import androidx.media3.exoplayer.trackselection.ExoTrackSelection
 import androidx.media3.exoplayer.upstream.Allocator
-import io.github.aedev.flow.player.config.PlayerConfig
+import com.arubr.smsvcodes.player.config.PlayerConfig
 
 /**
  * The music player's load control: [base] loads the whole song, and while [savesData] is on it stops at

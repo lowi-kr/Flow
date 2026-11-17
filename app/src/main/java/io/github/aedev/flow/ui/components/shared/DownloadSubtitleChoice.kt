@@ -1,13 +1,13 @@
-package io.github.aedev.flow.ui.components.shared
+package com.arubr.smsvcodes.ui.components.shared
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.res.stringResource
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.data.video.downloader.request.DownloadSubtitle
-import io.github.aedev.flow.player.state.SubtitleOption
-import io.github.aedev.flow.player.state.SubtitleOrigin
-import io.github.aedev.flow.player.stream.CaptionTrackResolver
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.data.video.downloader.request.DownloadSubtitle
+import com.arubr.smsvcodes.player.state.SubtitleOption
+import com.arubr.smsvcodes.player.state.SubtitleOrigin
+import com.arubr.smsvcodes.player.stream.CaptionTrackResolver
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob

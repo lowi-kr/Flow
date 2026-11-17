@@ -1,8 +1,8 @@
-package io.github.aedev.flow.player.crossfade
+package com.arubr.smsvcodes.player.crossfade
 
 import androidx.media3.common.C
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.data.local.CrossfadeCurve
+import com.arubr.smsvcodes.data.local.CrossfadeCurve
 import org.junit.Test
 
 class CrossfadePolicyTest {

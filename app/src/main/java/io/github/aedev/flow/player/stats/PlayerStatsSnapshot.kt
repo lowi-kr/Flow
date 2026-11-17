@@ -1,8 +1,8 @@
-package io.github.aedev.flow.player.stats
+package com.arubr.smsvcodes.player.stats
 
 import androidx.annotation.StringRes
 import androidx.compose.runtime.Immutable
-import io.github.aedev.flow.R
+import com.arubr.smsvcodes.R
 import java.math.BigDecimal
 import java.math.RoundingMode
 import java.util.Locale

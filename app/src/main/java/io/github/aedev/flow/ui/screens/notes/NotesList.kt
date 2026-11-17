@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.notes
+package com.arubr.smsvcodes.ui.screens.notes
 
 import android.text.format.DateUtils
 import androidx.compose.foundation.combinedClickable
@@ -33,19 +33,19 @@ import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.notes.Note
-import io.github.aedev.flow.data.notes.NoteKind
-import io.github.aedev.flow.data.notes.NoteMoments
-import io.github.aedev.flow.ui.components.layout.flowContentPadding
-import io.github.aedev.flow.ui.components.shared.ChannelAvatarImage
-import io.github.aedev.flow.ui.components.shared.FlowConnectedToggleGroup
-import io.github.aedev.flow.ui.components.shared.FlowEmptyState
-import io.github.aedev.flow.ui.components.shared.FlowLoadingIndicator
-import io.github.aedev.flow.ui.components.shared.FlowSearchField
-import io.github.aedev.flow.ui.components.shared.FlowToggleOption
-import io.github.aedev.flow.ui.components.shared.MediaThumbnail
-import io.github.aedev.flow.utils.formatDurationMillis
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.notes.Note
+import com.arubr.smsvcodes.data.notes.NoteKind
+import com.arubr.smsvcodes.data.notes.NoteMoments
+import com.arubr.smsvcodes.ui.components.layout.flowContentPadding
+import com.arubr.smsvcodes.ui.components.shared.ChannelAvatarImage
+import com.arubr.smsvcodes.ui.components.shared.FlowConnectedToggleGroup
+import com.arubr.smsvcodes.ui.components.shared.FlowEmptyState
+import com.arubr.smsvcodes.ui.components.shared.FlowLoadingIndicator
+import com.arubr.smsvcodes.ui.components.shared.FlowSearchField
+import com.arubr.smsvcodes.ui.components.shared.FlowToggleOption
+import com.arubr.smsvcodes.ui.components.shared.MediaThumbnail
+import com.arubr.smsvcodes.utils.formatDurationMillis
 
 private const val LIST_MOMENTS = 3
 private const val PREVIEW_LINES = 2

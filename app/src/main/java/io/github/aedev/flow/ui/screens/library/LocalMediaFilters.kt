@@ -1,9 +1,9 @@
-package io.github.aedev.flow.ui.screens.library
+package com.arubr.smsvcodes.ui.screens.library
 
 import androidx.annotation.StringRes
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.localmedia.LocalMediaItem
-import io.github.aedev.flow.utils.searchWords
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.localmedia.LocalMediaItem
+import com.arubr.smsvcodes.utils.searchWords
 
 private const val MINUTE_MS = 60_000L
 private const val SHORT_MAX_MS = 4 * MINUTE_MS

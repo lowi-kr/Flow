@@ -1,8 +1,8 @@
-package io.github.aedev.flow.ui.screens.categories
+package com.arubr.smsvcodes.ui.screens.categories
 
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.innertube.pages.explore.ExploreDestination
-import io.github.aedev.flow.innertube.pages.explore.ExploreSectionKind
+import com.arubr.smsvcodes.innertube.pages.explore.ExploreDestination
+import com.arubr.smsvcodes.innertube.pages.explore.ExploreSectionKind
 import org.junit.Test
 
 class CategoriesSectionPolicyTest {

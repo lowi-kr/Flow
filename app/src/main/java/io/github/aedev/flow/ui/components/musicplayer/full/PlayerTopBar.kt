@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.musicplayer.full
+package com.arubr.smsvcodes.ui.components.musicplayer.full
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -20,12 +20,12 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import io.github.aedev.flow.R
-import io.github.aedev.flow.ui.components.shared.FlowConnectedToggleGroup
-import io.github.aedev.flow.ui.components.shared.FlowToggleOption
-import io.github.aedev.flow.ui.screens.music.MusicCastViewModel
-import io.github.aedev.flow.ui.screens.playon.LocalPlayOn
-import io.github.aedev.flow.ui.screens.playon.PlayOnButton
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.ui.components.shared.FlowConnectedToggleGroup
+import com.arubr.smsvcodes.ui.components.shared.FlowToggleOption
+import com.arubr.smsvcodes.ui.screens.music.MusicCastViewModel
+import com.arubr.smsvcodes.ui.screens.playon.LocalPlayOn
+import com.arubr.smsvcodes.ui.screens.playon.PlayOnButton
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

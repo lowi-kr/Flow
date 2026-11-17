@@ -1,4 +1,4 @@
-package io.github.aedev.flow.player
+package com.arubr.smsvcodes.player
 
 import android.content.ComponentName
 import android.content.Context
@@ -15,17 +15,17 @@ import androidx.media3.session.MediaController
 import androidx.media3.session.SessionToken
 import com.google.common.util.concurrent.ListenableFuture
 import com.google.common.util.concurrent.MoreExecutors
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.local.AudioSettingsPersistence
-import io.github.aedev.flow.data.local.QueuePersistence
-import io.github.aedev.flow.data.localmedia.LocalMediaIds
-import io.github.aedev.flow.data.music.model.MusicArtist
-import io.github.aedev.flow.data.music.model.MusicTrack
-import io.github.aedev.flow.player.error.PlayerDiagnostics
-import io.github.aedev.flow.player.musicvideo.MusicVideoItems
-import io.github.aedev.flow.player.musicvideo.MusicVideoPlanner
-import io.github.aedev.flow.service.Media3MusicService
-import io.github.aedev.flow.utils.await
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.local.AudioSettingsPersistence
+import com.arubr.smsvcodes.data.local.QueuePersistence
+import com.arubr.smsvcodes.data.localmedia.LocalMediaIds
+import com.arubr.smsvcodes.data.music.model.MusicArtist
+import com.arubr.smsvcodes.data.music.model.MusicTrack
+import com.arubr.smsvcodes.player.error.PlayerDiagnostics
+import com.arubr.smsvcodes.player.musicvideo.MusicVideoItems
+import com.arubr.smsvcodes.player.musicvideo.MusicVideoPlanner
+import com.arubr.smsvcodes.service.Media3MusicService
+import com.arubr.smsvcodes.utils.await
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.CoroutineScope
@@ -271,7 +271,7 @@ object EnhancedMusicPlayerManager {
         // 2. Resolve (using MusicPlayerUtils)
         return try {
             val playbackData =
-                io.github.aedev.flow.utils.MusicPlayerUtils
+                com.arubr.smsvcodes.utils.MusicPlayerUtils
                     .playerResponseForPlayback(videoId)
                     .getOrNull()
             val url = playbackData?.streamUrl

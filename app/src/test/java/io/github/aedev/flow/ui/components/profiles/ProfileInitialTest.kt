@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.profiles
+package com.arubr.smsvcodes.ui.components.profiles
 
 import com.google.common.truth.Truth.assertThat
 import org.junit.Test

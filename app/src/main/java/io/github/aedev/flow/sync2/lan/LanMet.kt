@@ -1,4 +1,4 @@
-package io.github.aedev.flow.sync2.lan
+package com.arubr.smsvcodes.sync2.lan
 
 import android.content.Context
 import android.util.Log
@@ -8,8 +8,8 @@ import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.longPreferencesKey
 import androidx.datastore.preferences.core.stringPreferencesKey
 import dagger.hilt.android.qualifiers.ApplicationContext
-import io.github.aedev.flow.data.local.safePreferencesDataStore
-import io.github.aedev.flow.data.profile.StoreScope
+import com.arubr.smsvcodes.data.local.safePreferencesDataStore
+import com.arubr.smsvcodes.data.profile.StoreScope
 import kotlinx.coroutines.flow.first
 import java.io.IOException
 import javax.inject.Inject

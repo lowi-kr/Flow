@@ -1,4 +1,4 @@
-package io.github.aedev.flow.innertube.pages
+package com.arubr.smsvcodes.innertube.pages
 
 import android.icu.text.CompactDecimalFormat
 import android.icu.util.ULocale

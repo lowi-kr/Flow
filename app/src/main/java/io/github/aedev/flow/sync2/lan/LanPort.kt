@@ -1,10 +1,10 @@
-package io.github.aedev.flow.sync2.lan
+package com.arubr.smsvcodes.sync2.lan
 
 import android.content.Context
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.intPreferencesKey
-import io.github.aedev.flow.sync.transport.WsServer
-import io.github.aedev.flow.sync2.device.linkedDeviceDataStore
+import com.arubr.smsvcodes.sync.transport.WsServer
+import com.arubr.smsvcodes.sync2.device.linkedDeviceDataStore
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.first
 import java.net.ServerSocket

@@ -1,4 +1,4 @@
-package io.github.aedev.flow.sync2.lan
+package com.arubr.smsvcodes.sync2.lan
 
 import android.content.Context
 import android.net.ConnectivityManager

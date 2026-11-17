@@ -1,7 +1,7 @@
-package io.github.aedev.flow.ui.components.musicplayer.queue
+package com.arubr.smsvcodes.ui.components.musicplayer.queue
 
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.data.music.model.MusicTrack
+import com.arubr.smsvcodes.data.music.model.MusicTrack
 import io.mockk.every
 import io.mockk.mockk
 import org.junit.Test

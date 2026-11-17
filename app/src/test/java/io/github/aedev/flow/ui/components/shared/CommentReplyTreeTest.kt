@@ -1,7 +1,7 @@
-package io.github.aedev.flow.ui.components.shared
+package com.arubr.smsvcodes.ui.components.shared
 
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.data.model.Comment
+import com.arubr.smsvcodes.data.model.Comment
 import org.junit.Test
 
 /**

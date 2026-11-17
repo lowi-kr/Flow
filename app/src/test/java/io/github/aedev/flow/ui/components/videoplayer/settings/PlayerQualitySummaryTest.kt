@@ -1,7 +1,7 @@
-package io.github.aedev.flow.ui.components.videoplayer.settings
+package com.arubr.smsvcodes.ui.components.videoplayer.settings
 
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.player.QualityOption
+import com.arubr.smsvcodes.player.QualityOption
 import org.junit.Test
 
 class PlayerQualitySummaryTest {

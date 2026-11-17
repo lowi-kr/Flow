@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.settings.downloads
+package com.arubr.smsvcodes.ui.screens.settings.downloads
 
 import android.text.format.Formatter
 import androidx.compose.foundation.background
@@ -39,15 +39,15 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.local.MediaCacheSizes
-import io.github.aedev.flow.data.repository.MediaCacheType
-import io.github.aedev.flow.data.repository.MediaCacheUsage
-import io.github.aedev.flow.ui.components.settings.SettingsListScope
-import io.github.aedev.flow.ui.components.shared.FlowChoice
-import io.github.aedev.flow.ui.components.shared.FlowChoiceDialog
-import io.github.aedev.flow.ui.components.shared.FlowNavRow
-import io.github.aedev.flow.ui.screens.settings.index.DownloadsIndex
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.local.MediaCacheSizes
+import com.arubr.smsvcodes.data.repository.MediaCacheType
+import com.arubr.smsvcodes.data.repository.MediaCacheUsage
+import com.arubr.smsvcodes.ui.components.settings.SettingsListScope
+import com.arubr.smsvcodes.ui.components.shared.FlowChoice
+import com.arubr.smsvcodes.ui.components.shared.FlowChoiceDialog
+import com.arubr.smsvcodes.ui.components.shared.FlowNavRow
+import com.arubr.smsvcodes.ui.screens.settings.index.DownloadsIndex
 
 private val UsageSpacing = 8.dp
 private val BarHeight = 8.dp

@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.shared
+package com.arubr.smsvcodes.ui.components.shared
 
 import androidx.compose.animation.animateContentSize
 import androidx.compose.foundation.background
@@ -44,9 +44,9 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.model.Comment
-import io.github.aedev.flow.utils.formatLikeCount
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.model.Comment
+import com.arubr.smsvcodes.utils.formatLikeCount
 
 /** Centre of the parent avatar: the row's start padding plus half the 40 dp avatar, less the line. */
 private val ThreadLineStart = 35.dp

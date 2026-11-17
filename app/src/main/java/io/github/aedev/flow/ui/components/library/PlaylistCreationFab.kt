@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.library
+package com.arubr.smsvcodes.ui.components.library
 
 import androidx.activity.compose.BackHandler
 import androidx.compose.material.icons.Icons
@@ -25,7 +25,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.rememberVectorPainter
 import androidx.compose.ui.res.stringResource
-import io.github.aedev.flow.R
+import com.arubr.smsvcodes.R
 
 internal enum class PlaylistCreationTarget {
     Video,

@@ -1,9 +1,9 @@
-package io.github.aedev.flow.player
+package com.arubr.smsvcodes.player
 
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.player.VideoSessionControls.LoopTarget
-import io.github.aedev.flow.player.VideoSessionControls.Repeat
-import io.github.aedev.flow.player.VideoSessionControls.State
+import com.arubr.smsvcodes.player.VideoSessionControls.LoopTarget
+import com.arubr.smsvcodes.player.VideoSessionControls.Repeat
+import com.arubr.smsvcodes.player.VideoSessionControls.State
 import org.junit.Test
 
 class VideoSessionControlsTest {

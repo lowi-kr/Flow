@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.musicplayer.lyrics
+package com.arubr.smsvcodes.ui.components.musicplayer.lyrics
 
 import android.os.Build
 import android.widget.Toast
@@ -50,16 +50,16 @@ import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.ui.components.shared.FittedShareCard
-import io.github.aedev.flow.ui.components.shared.FlowActionButtonPair
-import io.github.aedev.flow.ui.components.shared.FlowColorSwatch
-import io.github.aedev.flow.ui.components.shared.FlowConnectedToggleGroup
-import io.github.aedev.flow.ui.components.shared.FlowPairAction
-import io.github.aedev.flow.ui.components.shared.FlowToggleOption
-import io.github.aedev.flow.ui.components.shared.rememberMediaPalette
-import io.github.aedev.flow.ui.utils.captureInto
-import io.github.aedev.flow.utils.copyPlainText
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.ui.components.shared.FittedShareCard
+import com.arubr.smsvcodes.ui.components.shared.FlowActionButtonPair
+import com.arubr.smsvcodes.ui.components.shared.FlowColorSwatch
+import com.arubr.smsvcodes.ui.components.shared.FlowConnectedToggleGroup
+import com.arubr.smsvcodes.ui.components.shared.FlowPairAction
+import com.arubr.smsvcodes.ui.components.shared.FlowToggleOption
+import com.arubr.smsvcodes.ui.components.shared.rememberMediaPalette
+import com.arubr.smsvcodes.ui.utils.captureInto
+import com.arubr.smsvcodes.utils.copyPlainText
 import kotlinx.coroutines.launch
 
 private val EdgePadding = 16.dp

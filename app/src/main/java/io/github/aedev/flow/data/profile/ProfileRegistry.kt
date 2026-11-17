@@ -1,4 +1,4 @@
-package io.github.aedev.flow.data.profile
+package com.arubr.smsvcodes.data.profile
 
 import android.content.Context
 import android.util.Log
@@ -7,7 +7,7 @@ import androidx.datastore.core.DataStore
 import androidx.datastore.core.DataStoreFactory
 import androidx.datastore.core.Serializer
 import androidx.datastore.core.handlers.ReplaceFileCorruptionHandler
-import io.github.aedev.flow.R
+import com.arubr.smsvcodes.R
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob

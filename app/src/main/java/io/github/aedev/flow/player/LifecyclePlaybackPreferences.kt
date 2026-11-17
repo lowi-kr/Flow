@@ -1,8 +1,8 @@
-package io.github.aedev.flow.player
+package com.arubr.smsvcodes.player
 
-import io.github.aedev.flow.data.local.DEFAULT_BACKGROUND_PLAY_ENABLED
-import io.github.aedev.flow.data.local.DEFAULT_KEEP_PLAYING_AFTER_SWIPE
-import io.github.aedev.flow.data.local.PlayerPreferences
+import com.arubr.smsvcodes.data.local.DEFAULT_BACKGROUND_PLAY_ENABLED
+import com.arubr.smsvcodes.data.local.DEFAULT_KEEP_PLAYING_AFTER_SWIPE
+import com.arubr.smsvcodes.data.local.PlayerPreferences
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.combine

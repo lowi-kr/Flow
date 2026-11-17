@@ -1,9 +1,9 @@
-package io.github.aedev.flow.sync2.engine
+package com.arubr.smsvcodes.sync2.engine
 
-import io.github.aedev.flow.sync2.data.LinkedDatabase
-import io.github.aedev.flow.sync2.data.toEntries
-import io.github.aedev.flow.sync2.roster.Role
-import io.github.aedev.flow.sync2.roster.replayRoster
+import com.arubr.smsvcodes.sync2.data.LinkedDatabase
+import com.arubr.smsvcodes.sync2.data.toEntries
+import com.arubr.smsvcodes.sync2.roster.Role
+import com.arubr.smsvcodes.sync2.roster.replayRoster
 import kotlinx.serialization.builtins.MapSerializer
 import kotlinx.serialization.builtins.serializer
 import kotlinx.serialization.json.Json

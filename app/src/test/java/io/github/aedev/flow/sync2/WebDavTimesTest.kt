@@ -1,9 +1,9 @@
-package io.github.aedev.flow.sync2
+package com.arubr.smsvcodes.sync2
 
-import io.github.aedev.flow.sync2.store.DavTimes
-import io.github.aedev.flow.sync2.store.deviceTimes
-import io.github.aedev.flow.sync2.store.httpDate
-import io.github.aedev.flow.sync2.store.readDavTimes
+import com.arubr.smsvcodes.sync2.store.DavTimes
+import com.arubr.smsvcodes.sync2.store.deviceTimes
+import com.arubr.smsvcodes.sync2.store.httpDate
+import com.arubr.smsvcodes.sync2.store.readDavTimes
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertNull

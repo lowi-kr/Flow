@@ -1,20 +1,20 @@
-package io.github.aedev.flow.ui.screens.player
+package com.arubr.smsvcodes.ui.screens.player
 
-import io.github.aedev.flow.data.local.VideoQuality
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.player.PlayerChannelMetadataPolicy
-import io.github.aedev.flow.player.stream.CaptionTrackResolver
-import io.github.aedev.flow.player.stream.InnerTubeStreamBridge
-import io.github.aedev.flow.player.stream.InnerTubeVideoStreamExtractor
-import io.github.aedev.flow.player.stream.ResolvedCaption
-import io.github.aedev.flow.player.stream.ResolvedPlayback
-import io.github.aedev.flow.player.stream.ServicePlaybackStreamSelector
-import io.github.aedev.flow.player.stream.StreamProcessor
-import io.github.aedev.flow.player.stream.StreamSizeEstimator
-import io.github.aedev.flow.player.stream.VideoQualityOptions
-import io.github.aedev.flow.ui.screens.player.state.blankVideo
-import io.github.aedev.flow.utils.OriginalTextPolicy
-import io.github.aedev.flow.utils.ThumbnailUrlResolver
+import com.arubr.smsvcodes.data.local.VideoQuality
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.player.PlayerChannelMetadataPolicy
+import com.arubr.smsvcodes.player.stream.CaptionTrackResolver
+import com.arubr.smsvcodes.player.stream.InnerTubeStreamBridge
+import com.arubr.smsvcodes.player.stream.InnerTubeVideoStreamExtractor
+import com.arubr.smsvcodes.player.stream.ResolvedCaption
+import com.arubr.smsvcodes.player.stream.ResolvedPlayback
+import com.arubr.smsvcodes.player.stream.ServicePlaybackStreamSelector
+import com.arubr.smsvcodes.player.stream.StreamProcessor
+import com.arubr.smsvcodes.player.stream.StreamSizeEstimator
+import com.arubr.smsvcodes.player.stream.VideoQualityOptions
+import com.arubr.smsvcodes.ui.screens.player.state.blankVideo
+import com.arubr.smsvcodes.utils.OriginalTextPolicy
+import com.arubr.smsvcodes.utils.ThumbnailUrlResolver
 import org.schabi.newpipe.extractor.stream.AudioStream
 import org.schabi.newpipe.extractor.stream.VideoStream
 

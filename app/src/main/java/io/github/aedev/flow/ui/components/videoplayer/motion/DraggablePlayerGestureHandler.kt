@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.videoplayer.motion
+package com.arubr.smsvcodes.ui.components.videoplayer.motion
 
 import androidx.compose.foundation.gestures.awaitEachGesture
 import androidx.compose.foundation.gestures.awaitFirstDown
@@ -11,10 +11,10 @@ import androidx.compose.ui.input.pointer.PointerInputChange
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.input.pointer.positionChange
 import androidx.compose.ui.input.pointer.util.VelocityTracker
-import io.github.aedev.flow.ui.components.videoplayer.MiniPlayerCorner
-import io.github.aedev.flow.ui.components.videoplayer.MiniPlayerTuckSide
-import io.github.aedev.flow.ui.components.videoplayer.PlayerDraggableState
-import io.github.aedev.flow.ui.components.videoplayer.canSwipeUpToFullscreen
+import com.arubr.smsvcodes.ui.components.videoplayer.MiniPlayerCorner
+import com.arubr.smsvcodes.ui.components.videoplayer.MiniPlayerTuckSide
+import com.arubr.smsvcodes.ui.components.videoplayer.PlayerDraggableState
+import com.arubr.smsvcodes.ui.components.videoplayer.canSwipeUpToFullscreen
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.delay

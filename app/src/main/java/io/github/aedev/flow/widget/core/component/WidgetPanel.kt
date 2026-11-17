@@ -1,4 +1,4 @@
-package io.github.aedev.flow.widget.core.component
+package com.arubr.smsvcodes.widget.core.component
 
 import androidx.annotation.DrawableRes
 import androidx.compose.runtime.Composable
@@ -10,7 +10,7 @@ import androidx.glance.action.clickable
 import androidx.glance.appwidget.components.Scaffold
 import androidx.glance.appwidget.components.TitleBar
 import androidx.glance.layout.RowScope
-import io.github.aedev.flow.widget.core.theme.WidgetDimens
+import com.arubr.smsvcodes.widget.core.theme.WidgetDimens
 
 /** A titled content widget on Glance's own Scaffold and TitleBar, which carry the launcher's corners. */
 @Composable

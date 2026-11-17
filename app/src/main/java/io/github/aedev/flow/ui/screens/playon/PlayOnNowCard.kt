@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.playon
+package com.arubr.smsvcodes.ui.screens.playon
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -27,15 +27,15 @@ import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.local.SliderStyle
-import io.github.aedev.flow.sync2.live.LiveMessage
-import io.github.aedev.flow.ui.components.musicplayer.common.rememberSplitTransport
-import io.github.aedev.flow.ui.components.musicplayer.controls.ExpressivePlayerSlider
-import io.github.aedev.flow.ui.components.musicplayer.controls.expressiveSliderSpec
-import io.github.aedev.flow.ui.components.shared.FlowEmptyState
-import io.github.aedev.flow.ui.components.shared.MediaPlaybackControls
-import io.github.aedev.flow.ui.components.shared.deviceKindIcon
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.local.SliderStyle
+import com.arubr.smsvcodes.sync2.live.LiveMessage
+import com.arubr.smsvcodes.ui.components.musicplayer.common.rememberSplitTransport
+import com.arubr.smsvcodes.ui.components.musicplayer.controls.ExpressivePlayerSlider
+import com.arubr.smsvcodes.ui.components.musicplayer.controls.expressiveSliderSpec
+import com.arubr.smsvcodes.ui.components.shared.FlowEmptyState
+import com.arubr.smsvcodes.ui.components.shared.MediaPlaybackControls
+import com.arubr.smsvcodes.ui.components.shared.deviceKindIcon
 
 private val CardPadding = 16.dp
 private val ArtHeight = 72.dp

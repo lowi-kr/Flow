@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.home
+package com.arubr.smsvcodes.ui.screens.home
 
 import android.os.SystemClock
 import androidx.activity.compose.ReportDrawnWhen
@@ -25,15 +25,15 @@ import androidx.lifecycle.compose.LifecycleStartEffect
 import androidx.lifecycle.compose.LocalLifecycleOwner
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.repeatOnLifecycle
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.data.shorts.queue.ShortsQueueSource
-import io.github.aedev.flow.ui.TabScrollEventBus
-import io.github.aedev.flow.ui.components.FeedGridLayout
-import io.github.aedev.flow.ui.components.shared.FeedGridSkeleton
-import io.github.aedev.flow.ui.components.shared.FlowErrorState
-import io.github.aedev.flow.ui.screens.home.chips.HomeChipContent
-import io.github.aedev.flow.ui.screens.home.chips.HomeChipsState
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.data.shorts.queue.ShortsQueueSource
+import com.arubr.smsvcodes.ui.TabScrollEventBus
+import com.arubr.smsvcodes.ui.components.FeedGridLayout
+import com.arubr.smsvcodes.ui.components.shared.FeedGridSkeleton
+import com.arubr.smsvcodes.ui.components.shared.FlowErrorState
+import com.arubr.smsvcodes.ui.screens.home.chips.HomeChipContent
+import com.arubr.smsvcodes.ui.screens.home.chips.HomeChipsState
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.distinctUntilChanged

@@ -1,8 +1,8 @@
-package io.github.aedev.flow.notification
+package com.arubr.smsvcodes.notification
 
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.model.Video
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.model.Video
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.test.runTest
 import org.junit.Test

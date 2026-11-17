@@ -1,13 +1,13 @@
-package io.github.aedev.flow.ui.screens.playlists
+package com.arubr.smsvcodes.ui.screens.playlists
 
 import androidx.lifecycle.ViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.data.music.model.MusicTrack
-import io.github.aedev.flow.data.newmusic.InnertubeMusicService
-import io.github.aedev.flow.data.repository.RemotePlaylistPage
-import io.github.aedev.flow.data.repository.YouTubePlaylistRepository
-import io.github.aedev.flow.data.repository.walkPlaylistPages
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.data.music.model.MusicTrack
+import com.arubr.smsvcodes.data.newmusic.InnertubeMusicService
+import com.arubr.smsvcodes.data.repository.RemotePlaylistPage
+import com.arubr.smsvcodes.data.repository.YouTubePlaylistRepository
+import com.arubr.smsvcodes.data.repository.walkPlaylistPages
 import javax.inject.Inject
 
 /** A playlist a link plays from, positioned at the video the link names. */

@@ -1,6 +1,6 @@
-package io.github.aedev.flow.ui.screens.playon
+package com.arubr.smsvcodes.ui.screens.playon
 
-import io.github.aedev.flow.sync2.live.LivePeer
+import com.arubr.smsvcodes.sync2.live.LivePeer
 
 /**
  * A device's `now` counts as current this long after it arrived. A playing device repeats it every

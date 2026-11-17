@@ -1,14 +1,14 @@
-package io.github.aedev.flow.ui.screens.player.stage
+package com.arubr.smsvcodes.ui.screens.player.stage
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.Immutable
 import androidx.compose.runtime.remember
-import io.github.aedev.flow.ui.components.videoplayer.ambient.AmbientFrameHolder
-import io.github.aedev.flow.ui.components.videoplayer.ambient.AmbientStatusBarGlow
-import io.github.aedev.flow.ui.components.videoplayer.motion.collapsingGroundAlpha
-import io.github.aedev.flow.ui.screens.player.state.PlayerLayoutMode
-import io.github.aedev.flow.ui.screens.player.state.VideoPlayerPreferencesState
-import io.github.aedev.flow.ui.utils.rememberPowerSaveMode
+import com.arubr.smsvcodes.ui.components.videoplayer.ambient.AmbientFrameHolder
+import com.arubr.smsvcodes.ui.components.videoplayer.ambient.AmbientStatusBarGlow
+import com.arubr.smsvcodes.ui.components.videoplayer.motion.collapsingGroundAlpha
+import com.arubr.smsvcodes.ui.screens.player.state.PlayerLayoutMode
+import com.arubr.smsvcodes.ui.screens.player.state.VideoPlayerPreferencesState
+import com.arubr.smsvcodes.ui.utils.rememberPowerSaveMode
 
 /**
  * The player's ambient light: the one frame every surface reads, and whether the page around the

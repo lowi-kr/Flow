@@ -1,7 +1,7 @@
-package io.github.aedev.flow.ui.components.music.search
+package com.arubr.smsvcodes.ui.components.music.search
 
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.innertube.YouTube.SearchFilter
+import com.arubr.smsvcodes.innertube.YouTube.SearchFilter
 import org.junit.Test
 
 class MusicSearchFiltersTest {

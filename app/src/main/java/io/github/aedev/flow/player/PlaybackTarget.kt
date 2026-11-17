@@ -1,9 +1,9 @@
-package io.github.aedev.flow.player
+package com.arubr.smsvcodes.player
 
 import kotlinx.coroutines.flow.MutableStateFlow
 
 /** Marks the app's own controller of the music session, so the session tells its requests from others'. */
-const val APP_CONTROLLER_HINT = "io.github.aedev.flow.APP_CONTROLLER"
+const val APP_CONTROLLER_HINT = "com.arubr.smsvcodes.APP_CONTROLLER"
 
 /** Another device the app's playback goes to while the user drives it from here ("Play on"). */
 interface RemotePlayer {

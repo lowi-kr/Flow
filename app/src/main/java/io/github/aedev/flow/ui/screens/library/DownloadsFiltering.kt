@@ -1,9 +1,9 @@
-package io.github.aedev.flow.ui.screens.library
+package com.arubr.smsvcodes.ui.screens.library
 
 import androidx.annotation.StringRes
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.music.DownloadedTrack
-import io.github.aedev.flow.data.video.DownloadedVideo
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.music.DownloadedTrack
+import com.arubr.smsvcodes.data.video.DownloadedVideo
 
 /** How the Downloads lists are ordered. */
 enum class DownloadSort(

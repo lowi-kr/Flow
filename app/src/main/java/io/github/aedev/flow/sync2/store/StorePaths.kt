@@ -1,6 +1,6 @@
-package io.github.aedev.flow.sync2.store
+package com.arubr.smsvcodes.sync2.store
 
-import io.github.aedev.flow.sync.crypto.SyncBytes
+import com.arubr.smsvcodes.sync.crypto.SyncBytes
 
 private fun hex(
     value: Long,

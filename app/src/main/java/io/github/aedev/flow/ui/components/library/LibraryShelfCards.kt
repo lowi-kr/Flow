@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.library
+package com.arubr.smsvcodes.ui.components.library
 
 import androidx.compose.foundation.LocalIndication
 import androidx.compose.foundation.background
@@ -31,14 +31,14 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.ui.components.shared.DurationBadge
-import io.github.aedev.flow.ui.components.shared.MediaIconBadge
-import io.github.aedev.flow.ui.components.shared.VideoThumbnailImage
-import io.github.aedev.flow.ui.components.shared.feedStripCardWidth
-import io.github.aedev.flow.ui.components.shared.focusLift
-import io.github.aedev.flow.ui.components.shared.onMenuKey
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.ui.components.shared.DurationBadge
+import com.arubr.smsvcodes.ui.components.shared.MediaIconBadge
+import com.arubr.smsvcodes.ui.components.shared.VideoThumbnailImage
+import com.arubr.smsvcodes.ui.components.shared.feedStripCardWidth
+import com.arubr.smsvcodes.ui.components.shared.focusLift
+import com.arubr.smsvcodes.ui.components.shared.onMenuKey
 
 internal val LibraryShelfCardWidth = 220.dp
 internal val LibraryShelfArtworkHeight = LibraryShelfCardWidth * 9f / 16f

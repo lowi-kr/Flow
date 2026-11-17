@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.tv.components
+package com.arubr.smsvcodes.ui.tv.components
 
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.layout.Box
@@ -9,7 +9,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
-import io.github.aedev.flow.ui.components.shared.FlowSheetPresenter
+import com.arubr.smsvcodes.ui.components.shared.FlowSheetPresenter
 
 /**
  * Opens the shared media sheets (quick actions, Save, the music menus) as a [TvSidePanelSurface] in

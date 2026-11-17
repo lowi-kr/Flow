@@ -1,10 +1,10 @@
-package io.github.aedev.flow.ui.components.library
+package com.arubr.smsvcodes.ui.components.library
 
 import androidx.annotation.StringRes
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.innertube.YouTube
-import io.github.aedev.flow.utils.relativedate.RelativeUploadDateParser
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.innertube.YouTube
+import com.arubr.smsvcodes.utils.relativedate.RelativeUploadDateParser
 
 private const val TIMESTAMP_TOLERANCE_MS = 30L * 60L * 1000L
 

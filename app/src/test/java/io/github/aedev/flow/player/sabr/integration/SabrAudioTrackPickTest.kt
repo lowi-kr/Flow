@@ -1,7 +1,7 @@
-package io.github.aedev.flow.player.sabr.integration
+package com.arubr.smsvcodes.player.sabr.integration
 
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.innertube.models.response.PlayerResponse
+import com.arubr.smsvcodes.innertube.models.response.PlayerResponse
 import org.junit.Test
 
 class SabrAudioTrackPickTest {

@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.player.effects
+package com.arubr.smsvcodes.ui.screens.player.effects
 
 import android.app.Activity
 import android.content.Context

@@ -1,8 +1,8 @@
-package io.github.aedev.flow.player.stream
+package com.arubr.smsvcodes.player.stream
 
-import io.github.aedev.flow.utils.cipher.CipherDeobfuscator
-import io.github.aedev.flow.utils.cipher.PlayerJsFetcher
-import io.github.aedev.flow.utils.potoken.WebPoTokenSession
+import com.arubr.smsvcodes.utils.cipher.CipherDeobfuscator
+import com.arubr.smsvcodes.utils.cipher.PlayerJsFetcher
+import com.arubr.smsvcodes.utils.potoken.WebPoTokenSession
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import javax.inject.Inject

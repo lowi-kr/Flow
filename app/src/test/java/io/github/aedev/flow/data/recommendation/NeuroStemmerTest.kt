@@ -4,12 +4,12 @@
  * This file is part of Flow (https://github.com/Flow-Tube/Flow).
  */
 
-package io.github.aedev.flow.data.recommendation
+package com.arubr.smsvcodes.data.recommendation
 
 import com.google.common.truth.Truth.assertThat
 import com.google.common.truth.Truth.assertWithMessage
-import io.github.aedev.flow.data.recommendation.eval.NeuroLearningBenchmark
-import io.github.aedev.flow.data.recommendation.eval.RealTitleCorpus
+import com.arubr.smsvcodes.data.recommendation.eval.NeuroLearningBenchmark
+import com.arubr.smsvcodes.data.recommendation.eval.RealTitleCorpus
 import org.junit.Test
 import java.io.File
 import java.util.concurrent.Executors

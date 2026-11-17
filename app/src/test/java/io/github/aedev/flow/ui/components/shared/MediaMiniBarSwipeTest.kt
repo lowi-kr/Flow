@@ -1,7 +1,7 @@
-package io.github.aedev.flow.ui.components.shared
+package com.arubr.smsvcodes.ui.components.shared
 
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.data.local.MiniBarSwipeAction
+import com.arubr.smsvcodes.data.local.MiniBarSwipeAction
 import org.junit.Test
 
 class MediaMiniBarSwipeTest {

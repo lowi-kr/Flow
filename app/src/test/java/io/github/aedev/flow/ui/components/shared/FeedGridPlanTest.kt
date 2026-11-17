@@ -1,14 +1,14 @@
-package io.github.aedev.flow.ui.components.shared
+package com.arubr.smsvcodes.ui.components.shared
 
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.data.local.HomeFeedColumns
-import io.github.aedev.flow.ui.components.FEED_MAX_AUTO_COLUMNS
-import io.github.aedev.flow.ui.components.feedGridLayoutFor
-import io.github.aedev.flow.ui.components.shared.card.VideoCardDefaults
-import io.github.aedev.flow.ui.components.shared.card.VideoCardDensity
+import com.arubr.smsvcodes.data.local.HomeFeedColumns
+import com.arubr.smsvcodes.ui.components.FEED_MAX_AUTO_COLUMNS
+import com.arubr.smsvcodes.ui.components.feedGridLayoutFor
+import com.arubr.smsvcodes.ui.components.shared.card.VideoCardDefaults
+import com.arubr.smsvcodes.ui.components.shared.card.VideoCardDensity
 import org.junit.Test
 
 /**

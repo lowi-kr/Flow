@@ -1,9 +1,9 @@
-package io.github.aedev.flow.data.video
+package com.arubr.smsvcodes.data.video
 
-import io.github.aedev.flow.data.local.MusicAudioQuality
-import io.github.aedev.flow.innertube.models.response.PlayerResponse.StreamingData.Format
-import io.github.aedev.flow.player.stream.VideoCodecUtils
-import io.github.aedev.flow.player.stream.preferNonDrc
+import com.arubr.smsvcodes.data.local.MusicAudioQuality
+import com.arubr.smsvcodes.innertube.models.response.PlayerResponse.StreamingData.Format
+import com.arubr.smsvcodes.player.stream.VideoCodecUtils
+import com.arubr.smsvcodes.player.stream.preferNonDrc
 import java.util.Locale
 import kotlin.math.abs
 

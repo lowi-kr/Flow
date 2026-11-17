@@ -1,13 +1,13 @@
-package io.github.aedev.flow.ui.components.shared
+package com.arubr.smsvcodes.ui.components.shared
 
 import android.text.format.Formatter
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.video.DownloadStreamPolicy
-import io.github.aedev.flow.innertube.models.response.PlayerResponse
-import io.github.aedev.flow.player.stream.VideoCodecUtils
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.video.DownloadStreamPolicy
+import com.arubr.smsvcodes.innertube.models.response.PlayerResponse
+import com.arubr.smsvcodes.player.stream.VideoCodecUtils
 
 /**
  * Approximate download size for one quality, or null when no estimate is available — the caller

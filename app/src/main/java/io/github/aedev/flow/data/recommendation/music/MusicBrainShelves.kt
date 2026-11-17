@@ -1,7 +1,7 @@
-package io.github.aedev.flow.data.recommendation.music
+package com.arubr.smsvcodes.data.recommendation.music
 
-import io.github.aedev.flow.data.music.model.MusicTrack
-import io.github.aedev.flow.data.music.model.audioMusicOnly
+import com.arubr.smsvcodes.data.music.model.MusicTrack
+import com.arubr.smsvcodes.data.music.model.audioMusicOnly
 
 /** The On Repeat shelf as the Music page, its widget and its shuffle all show it. */
 suspend fun MusicBrainEngine.onRepeatShelf(): List<MusicTrack> = heavyRotationTracks(ON_REPEAT_POOL).audioMusicOnly()

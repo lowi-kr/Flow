@@ -1,4 +1,4 @@
-package io.github.aedev.flow.player.dlna
+package com.arubr.smsvcodes.player.dlna
 
 /**
  * Represents a DLNA/UPnP AV renderer (e.g., a smart TV or media player) discovered

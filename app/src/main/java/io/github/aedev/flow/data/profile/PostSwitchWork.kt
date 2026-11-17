@@ -1,9 +1,9 @@
-package io.github.aedev.flow.data.profile
+package com.arubr.smsvcodes.data.profile
 
 import android.content.Context
 import dagger.hilt.android.qualifiers.ApplicationContext
-import io.github.aedev.flow.widget.core.FlowWidgets
-import io.github.aedev.flow.widget.core.refresh.WidgetContentSync
+import com.arubr.smsvcodes.widget.core.FlowWidgets
+import com.arubr.smsvcodes.widget.core.refresh.WidgetContentSync
 import javax.inject.Inject
 import javax.inject.Singleton
 

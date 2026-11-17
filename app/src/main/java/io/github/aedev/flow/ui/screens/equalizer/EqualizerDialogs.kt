@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.equalizer
+package com.arubr.smsvcodes.ui.screens.equalizer
 
 import androidx.annotation.StringRes
 import androidx.compose.foundation.layout.Arrangement
@@ -19,12 +19,12 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.audio.eq.EqFilterMath
-import io.github.aedev.flow.data.audio.eq.EqLimits
-import io.github.aedev.flow.ui.components.equalizer.EqResponseGraph
-import io.github.aedev.flow.ui.components.equalizer.formatGain
-import io.github.aedev.flow.ui.components.shared.FlowAlertDialog
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.audio.eq.EqFilterMath
+import com.arubr.smsvcodes.data.audio.eq.EqLimits
+import com.arubr.smsvcodes.ui.components.equalizer.EqResponseGraph
+import com.arubr.smsvcodes.ui.components.equalizer.formatGain
+import com.arubr.smsvcodes.ui.components.shared.FlowAlertDialog
 
 private val PreviewHeight = 96.dp
 private val PasteFieldMinHeight = 160.dp

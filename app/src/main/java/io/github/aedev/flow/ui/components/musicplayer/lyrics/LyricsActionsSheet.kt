@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.musicplayer.lyrics
+package com.arubr.smsvcodes.ui.components.musicplayer.lyrics
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.PaddingValues
@@ -49,22 +49,22 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.local.LYRICS_ALIGN_CENTER
-import io.github.aedev.flow.data.local.LYRICS_ALIGN_LEFT
-import io.github.aedev.flow.data.local.LYRICS_ALIGN_RIGHT
-import io.github.aedev.flow.data.local.LyricsAnimationStyle
-import io.github.aedev.flow.data.local.LyricsBackgroundStyle
-import io.github.aedev.flow.data.local.LyricsGlow
-import io.github.aedev.flow.ui.components.shared.FlowAlertDialog
-import io.github.aedev.flow.ui.components.shared.FlowChoice
-import io.github.aedev.flow.ui.components.shared.FlowChoiceDialog
-import io.github.aedev.flow.ui.components.shared.FlowNavRow
-import io.github.aedev.flow.ui.components.shared.FlowSectionHeader
-import io.github.aedev.flow.ui.components.shared.FlowSwitchRow
-import io.github.aedev.flow.ui.components.shared.quickactions.QuickActionRow
-import io.github.aedev.flow.ui.components.shared.quickactions.QuickActionsGroup
-import io.github.aedev.flow.ui.components.shared.quickactions.QuickActionsSheet
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.local.LYRICS_ALIGN_CENTER
+import com.arubr.smsvcodes.data.local.LYRICS_ALIGN_LEFT
+import com.arubr.smsvcodes.data.local.LYRICS_ALIGN_RIGHT
+import com.arubr.smsvcodes.data.local.LyricsAnimationStyle
+import com.arubr.smsvcodes.data.local.LyricsBackgroundStyle
+import com.arubr.smsvcodes.data.local.LyricsGlow
+import com.arubr.smsvcodes.ui.components.shared.FlowAlertDialog
+import com.arubr.smsvcodes.ui.components.shared.FlowChoice
+import com.arubr.smsvcodes.ui.components.shared.FlowChoiceDialog
+import com.arubr.smsvcodes.ui.components.shared.FlowNavRow
+import com.arubr.smsvcodes.ui.components.shared.FlowSectionHeader
+import com.arubr.smsvcodes.ui.components.shared.FlowSwitchRow
+import com.arubr.smsvcodes.ui.components.shared.quickactions.QuickActionRow
+import com.arubr.smsvcodes.ui.components.shared.quickactions.QuickActionsGroup
+import com.arubr.smsvcodes.ui.components.shared.quickactions.QuickActionsSheet
 import java.util.Locale
 
 @Composable

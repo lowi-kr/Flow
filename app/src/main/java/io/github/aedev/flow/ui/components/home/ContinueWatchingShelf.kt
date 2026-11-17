@@ -1,6 +1,6 @@
 @file:OptIn(androidx.compose.foundation.ExperimentalFoundationApi::class)
 
-package io.github.aedev.flow.ui.components.home
+package com.arubr.smsvcodes.ui.components.home
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -32,25 +32,25 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.local.VideoHistoryEntry
-import io.github.aedev.flow.data.model.VideoCollaborator
-import io.github.aedev.flow.data.model.distinctByNonBlankKey
-import io.github.aedev.flow.data.model.hasLikelyCollaborationByline
-import io.github.aedev.flow.data.model.toVideo
-import io.github.aedev.flow.data.repository.VideoCollaboratorResolver
-import io.github.aedev.flow.ui.components.shared.MediaTextBadge
-import io.github.aedev.flow.ui.components.shared.VideoThumbnailImage
-import io.github.aedev.flow.ui.components.shared.WatchProgressBar
-import io.github.aedev.flow.ui.components.shared.card.rememberCollaboratorChannelDisplayName
-import io.github.aedev.flow.ui.components.shared.dpadFocusGroup
-import io.github.aedev.flow.ui.components.shared.dpadReturnFocus
-import io.github.aedev.flow.ui.components.shared.focusLift
-import io.github.aedev.flow.ui.components.shared.onMenuKey
-import io.github.aedev.flow.ui.components.shared.pressScale
-import io.github.aedev.flow.ui.components.shared.quickactions.VideoQuickActionsBottomSheet
-import io.github.aedev.flow.ui.components.shared.skipDpadFocus
-import io.github.aedev.flow.ui.components.shared.thumbnailGradientOverlay
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.local.VideoHistoryEntry
+import com.arubr.smsvcodes.data.model.VideoCollaborator
+import com.arubr.smsvcodes.data.model.distinctByNonBlankKey
+import com.arubr.smsvcodes.data.model.hasLikelyCollaborationByline
+import com.arubr.smsvcodes.data.model.toVideo
+import com.arubr.smsvcodes.data.repository.VideoCollaboratorResolver
+import com.arubr.smsvcodes.ui.components.shared.MediaTextBadge
+import com.arubr.smsvcodes.ui.components.shared.VideoThumbnailImage
+import com.arubr.smsvcodes.ui.components.shared.WatchProgressBar
+import com.arubr.smsvcodes.ui.components.shared.card.rememberCollaboratorChannelDisplayName
+import com.arubr.smsvcodes.ui.components.shared.dpadFocusGroup
+import com.arubr.smsvcodes.ui.components.shared.dpadReturnFocus
+import com.arubr.smsvcodes.ui.components.shared.focusLift
+import com.arubr.smsvcodes.ui.components.shared.onMenuKey
+import com.arubr.smsvcodes.ui.components.shared.pressScale
+import com.arubr.smsvcodes.ui.components.shared.quickactions.VideoQuickActionsBottomSheet
+import com.arubr.smsvcodes.ui.components.shared.skipDpadFocus
+import com.arubr.smsvcodes.ui.components.shared.thumbnailGradientOverlay
 
 object ContinueWatchingShelfDefaults {
     val CardWidth: Dp = 350.dp

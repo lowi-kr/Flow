@@ -1,7 +1,7 @@
-package io.github.aedev.flow.data.comments
+package com.arubr.smsvcodes.data.comments
 
-import io.github.aedev.flow.data.model.Comment
-import io.github.aedev.flow.innertube.pages.VideoCommentSort
+import com.arubr.smsvcodes.data.model.Comment
+import com.arubr.smsvcodes.innertube.pages.VideoCommentSort
 
 /**
  * One page of comments, the continuation that loads the next one, and the orders the section offers.

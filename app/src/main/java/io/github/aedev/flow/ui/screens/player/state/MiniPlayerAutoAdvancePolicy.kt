@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.player.state
+package com.arubr.smsvcodes.ui.screens.player.state
 
 /*
  * Where the player sheet goes when a new video arrives. A video that starts by itself while the

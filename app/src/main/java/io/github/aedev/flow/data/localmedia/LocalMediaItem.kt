@@ -1,8 +1,8 @@
-package io.github.aedev.flow.data.localmedia
+package com.arubr.smsvcodes.data.localmedia
 
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.data.music.model.MusicTrack
-import io.github.aedev.flow.utils.foldForSearch
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.data.music.model.MusicTrack
+import com.arubr.smsvcodes.utils.foldForSearch
 
 /** A video or song file on the device, as MediaStore describes it. */
 data class LocalMediaItem(

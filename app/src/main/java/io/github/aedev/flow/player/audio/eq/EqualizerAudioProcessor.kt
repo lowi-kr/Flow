@@ -1,12 +1,12 @@
-package io.github.aedev.flow.player.audio.eq
+package com.arubr.smsvcodes.player.audio.eq
 
 import androidx.media3.common.C
 import androidx.media3.common.audio.AudioProcessor
 import androidx.media3.common.audio.BaseAudioProcessor
 import androidx.media3.common.util.UnstableApi
-import io.github.aedev.flow.data.audio.eq.EqFilterMath
-import io.github.aedev.flow.data.audio.eq.EqProcessingSpec
-import io.github.aedev.flow.data.audio.eq.EqSpatialSound
+import com.arubr.smsvcodes.data.audio.eq.EqFilterMath
+import com.arubr.smsvcodes.data.audio.eq.EqProcessingSpec
+import com.arubr.smsvcodes.data.audio.eq.EqSpatialSound
 import java.nio.ByteBuffer
 import kotlin.math.abs
 import kotlin.math.pow

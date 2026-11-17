@@ -1,12 +1,12 @@
-package io.github.aedev.flow.ui.screens.player.effects
+package com.arubr.smsvcodes.ui.screens.player.effects
 
 import androidx.compose.runtime.*
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.data.model.bestThumbnailUrl
-import io.github.aedev.flow.data.model.uploaderChannelId
-import io.github.aedev.flow.ui.screens.player.VideoPlayerViewModel
-import io.github.aedev.flow.ui.screens.player.state.VideoPlayerUiState
-import io.github.aedev.flow.utils.ThumbnailUrlResolver
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.data.model.bestThumbnailUrl
+import com.arubr.smsvcodes.data.model.uploaderChannelId
+import com.arubr.smsvcodes.ui.screens.player.VideoPlayerViewModel
+import com.arubr.smsvcodes.ui.screens.player.state.VideoPlayerUiState
+import com.arubr.smsvcodes.utils.ThumbnailUrlResolver
 import kotlinx.coroutines.delay
 import org.schabi.newpipe.extractor.stream.StreamType
 

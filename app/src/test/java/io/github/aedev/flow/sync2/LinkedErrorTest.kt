@@ -1,12 +1,12 @@
-package io.github.aedev.flow.sync2
+package com.arubr.smsvcodes.sync2
 
-import io.github.aedev.flow.sync2.crypto.ProtocolError
-import io.github.aedev.flow.sync2.crypto.ProtocolException
-import io.github.aedev.flow.sync2.device.DamagedKeysException
-import io.github.aedev.flow.sync2.engine.LinkedException
-import io.github.aedev.flow.sync2.service.LinkedError
-import io.github.aedev.flow.sync2.service.linkedError
-import io.github.aedev.flow.sync2.store.StoreException
+import com.arubr.smsvcodes.sync2.crypto.ProtocolError
+import com.arubr.smsvcodes.sync2.crypto.ProtocolException
+import com.arubr.smsvcodes.sync2.device.DamagedKeysException
+import com.arubr.smsvcodes.sync2.engine.LinkedException
+import com.arubr.smsvcodes.sync2.service.LinkedError
+import com.arubr.smsvcodes.sync2.service.linkedError
+import com.arubr.smsvcodes.sync2.store.StoreException
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue

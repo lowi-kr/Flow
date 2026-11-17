@@ -1,15 +1,15 @@
-package io.github.aedev.flow.sync2
+package com.arubr.smsvcodes.sync2
 
 import android.app.Application
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import io.github.aedev.flow.sync.crypto.SyncBytes
-import io.github.aedev.flow.sync2.crypto.recoveryKeys
-import io.github.aedev.flow.sync2.crypto.recoverySecret
-import io.github.aedev.flow.sync2.engine.Session
-import io.github.aedev.flow.sync2.linking.DeviceMeta
-import io.github.aedev.flow.sync2.linking.createGroup
-import io.github.aedev.flow.sync2.roster.Role
-import io.github.aedev.flow.sync2.store.ServerStore
+import com.arubr.smsvcodes.sync.crypto.SyncBytes
+import com.arubr.smsvcodes.sync2.crypto.recoveryKeys
+import com.arubr.smsvcodes.sync2.crypto.recoverySecret
+import com.arubr.smsvcodes.sync2.engine.Session
+import com.arubr.smsvcodes.sync2.linking.DeviceMeta
+import com.arubr.smsvcodes.sync2.linking.createGroup
+import com.arubr.smsvcodes.sync2.roster.Role
+import com.arubr.smsvcodes.sync2.store.ServerStore
 import io.ktor.server.request.path
 import io.ktor.server.request.receiveText
 import io.ktor.server.response.respondBytes

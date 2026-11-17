@@ -1,8 +1,8 @@
-package io.github.aedev.flow.ui.screens.music
+package com.arubr.smsvcodes.ui.screens.music
 
-import io.github.aedev.flow.data.local.PlaylistRepository
-import io.github.aedev.flow.data.music.model.PlaylistDetails
-import io.github.aedev.flow.ui.screens.music.collection.toStoredVideo
+import com.arubr.smsvcodes.data.local.PlaylistRepository
+import com.arubr.smsvcodes.data.music.model.PlaylistDetails
+import com.arubr.smsvcodes.ui.screens.music.collection.toStoredVideo
 
 /** Saves an album or playlist to the library with its tracks, so it plays offline from the library. */
 internal suspend fun PlaylistRepository.saveMusicCollection(details: PlaylistDetails) {

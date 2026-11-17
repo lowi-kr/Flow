@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.sync.linked
+package com.arubr.smsvcodes.ui.screens.sync.linked
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -9,14 +9,14 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.res.stringResource
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import io.github.aedev.flow.R
-import io.github.aedev.flow.sync2.data.LAN_STORE
-import io.github.aedev.flow.sync2.data.WEBDAV_STORE
-import io.github.aedev.flow.sync2.service.LinkPhase
-import io.github.aedev.flow.ui.components.profiles.ProfileSwitchViewModel
-import io.github.aedev.flow.ui.components.profiles.SwitchRefusals
-import io.github.aedev.flow.ui.screens.sync.SyncActionRow
-import io.github.aedev.flow.ui.screens.sync.SyncScanContent
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.sync2.data.LAN_STORE
+import com.arubr.smsvcodes.sync2.data.WEBDAV_STORE
+import com.arubr.smsvcodes.sync2.service.LinkPhase
+import com.arubr.smsvcodes.ui.components.profiles.ProfileSwitchViewModel
+import com.arubr.smsvcodes.ui.components.profiles.SwitchRefusals
+import com.arubr.smsvcodes.ui.screens.sync.SyncActionRow
+import com.arubr.smsvcodes.ui.screens.sync.SyncScanContent
 import kotlinx.coroutines.delay
 
 private const val REQUEST_POLL_MS = 3_000L

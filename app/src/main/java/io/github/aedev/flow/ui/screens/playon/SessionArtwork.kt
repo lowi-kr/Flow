@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.playon
+package com.arubr.smsvcodes.ui.screens.playon
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -16,8 +16,8 @@ import androidx.compose.ui.geometry.isSpecified
 import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.layout.ContentScale
 import coil3.compose.AsyncImage
-import io.github.aedev.flow.sync2.live.LiveMessage
-import io.github.aedev.flow.ui.components.shared.VideoThumbnailImage
+import com.arubr.smsvcodes.sync2.live.LiveMessage
+import com.arubr.smsvcodes.ui.components.shared.VideoThumbnailImage
 
 /** Album art is square until it loads and shows its own shape. */
 private const val ALBUM_RATIO = 1f

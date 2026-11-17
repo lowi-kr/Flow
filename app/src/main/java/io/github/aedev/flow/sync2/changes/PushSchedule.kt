@@ -1,4 +1,4 @@
-package io.github.aedev.flow.sync2.changes
+package com.arubr.smsvcodes.sync2.changes
 
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.first

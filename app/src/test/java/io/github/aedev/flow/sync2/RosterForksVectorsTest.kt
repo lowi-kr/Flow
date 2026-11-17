@@ -1,10 +1,10 @@
-package io.github.aedev.flow.sync2
+package com.arubr.smsvcodes.sync2
 
-import io.github.aedev.flow.sync2.roster.Entry
-import io.github.aedev.flow.sync2.roster.Settlement
-import io.github.aedev.flow.sync2.roster.entryHash
-import io.github.aedev.flow.sync2.roster.parseEntry
-import io.github.aedev.flow.sync2.roster.settleRoster
+import com.arubr.smsvcodes.sync2.roster.Entry
+import com.arubr.smsvcodes.sync2.roster.Settlement
+import com.arubr.smsvcodes.sync2.roster.entryHash
+import com.arubr.smsvcodes.sync2.roster.parseEntry
+import com.arubr.smsvcodes.sync2.roster.settleRoster
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonArray
 import kotlinx.serialization.json.JsonElement

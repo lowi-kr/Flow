@@ -4,9 +4,9 @@
  * This file is part of Flow (https://github.com/Flow-Tube/Flow).
  */
 
-package io.github.aedev.flow.data.recommendation.music
+package com.arubr.smsvcodes.data.recommendation.music
 
-import io.github.aedev.flow.data.music.model.MusicTrack
+import com.arubr.smsvcodes.data.music.model.MusicTrack
 
 /**
  * The Quick Picks lane model, ported from the desktop composer: several

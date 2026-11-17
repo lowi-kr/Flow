@@ -1,11 +1,11 @@
-package io.github.aedev.flow.ui.components.shared.quickactions
+package com.arubr.smsvcodes.ui.components.shared.quickactions
 
 import androidx.annotation.StringRes
-import io.github.aedev.flow.data.local.LikedVideoInfo
-import io.github.aedev.flow.data.local.entity.PlaylistVideoCrossRef
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.player.EnhancedMusicPlayerManager
-import io.github.aedev.flow.player.RemovedQueueEntry
+import com.arubr.smsvcodes.data.local.LikedVideoInfo
+import com.arubr.smsvcodes.data.local.entity.PlaylistVideoCrossRef
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.player.EnhancedMusicPlayerManager
+import com.arubr.smsvcodes.player.RemovedQueueEntry
 
 /**
  * A confirmation for the app's snackbar: [text] formatted with [arg], or [plainText] already

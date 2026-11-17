@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.shared
+package com.arubr.smsvcodes.ui.components.shared
 
 import android.text.style.URLSpan
 import androidx.compose.ui.graphics.Color
@@ -8,12 +8,12 @@ import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.core.text.HtmlCompat
-import io.github.aedev.flow.ui.theme.DescriptionLinkBlue
-import io.github.aedev.flow.utils.RICH_TEXT_CHANNEL
-import io.github.aedev.flow.utils.RICH_TEXT_HASHTAG
-import io.github.aedev.flow.utils.RICH_TEXT_SEEK
-import io.github.aedev.flow.utils.RICH_TEXT_URL
-import io.github.aedev.flow.utils.RICH_TEXT_VIDEO
+import com.arubr.smsvcodes.ui.theme.DescriptionLinkBlue
+import com.arubr.smsvcodes.utils.RICH_TEXT_CHANNEL
+import com.arubr.smsvcodes.utils.RICH_TEXT_HASHTAG
+import com.arubr.smsvcodes.utils.RICH_TEXT_SEEK
+import com.arubr.smsvcodes.utils.RICH_TEXT_URL
+import com.arubr.smsvcodes.utils.RICH_TEXT_VIDEO
 
 fun parseHtmlDescription(
     rawHtml: String,

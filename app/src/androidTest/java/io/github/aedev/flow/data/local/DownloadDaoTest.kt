@@ -1,13 +1,13 @@
-package io.github.aedev.flow.data.local
+package com.arubr.smsvcodes.data.local
 
 import android.database.sqlite.SQLiteConstraintException
 import androidx.room.Room
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
-import io.github.aedev.flow.data.local.entity.DownloadEntity
-import io.github.aedev.flow.data.local.entity.DownloadFileType
-import io.github.aedev.flow.data.local.entity.DownloadItemEntity
-import io.github.aedev.flow.data.local.entity.DownloadItemStatus
+import com.arubr.smsvcodes.data.local.entity.DownloadEntity
+import com.arubr.smsvcodes.data.local.entity.DownloadFileType
+import com.arubr.smsvcodes.data.local.entity.DownloadItemEntity
+import com.arubr.smsvcodes.data.local.entity.DownloadItemStatus
 import kotlinx.coroutines.test.runTest
 import org.junit.After
 import org.junit.Assert.assertEquals

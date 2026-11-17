@@ -5,7 +5,7 @@
  * Test-source-set only — never shipped in the APK.
  */
 
-package io.github.aedev.flow.data.recommendation.eval
+package com.arubr.smsvcodes.data.recommendation.eval
 
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonArray

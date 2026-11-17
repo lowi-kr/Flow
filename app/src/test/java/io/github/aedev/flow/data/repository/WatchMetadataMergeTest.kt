@@ -1,8 +1,8 @@
-package io.github.aedev.flow.data.repository
+package com.arubr.smsvcodes.data.repository
 
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.innertube.models.response.WatchMetadataResponse
-import io.github.aedev.flow.utils.parseToTimestamp
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.innertube.models.response.WatchMetadataResponse
+import com.arubr.smsvcodes.utils.parseToTimestamp
 import kotlinx.serialization.json.Json
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNotNull

@@ -1,7 +1,7 @@
-package io.github.aedev.flow.ui.components.videoplayer.controls
+package com.arubr.smsvcodes.ui.components.videoplayer.controls
 
-import io.github.aedev.flow.data.model.SponsorBlockSegment
-import io.github.aedev.flow.innertube.models.response.VideoHeatmap
+import com.arubr.smsvcodes.data.model.SponsorBlockSegment
+import com.arubr.smsvcodes.innertube.models.response.VideoHeatmap
 import org.schabi.newpipe.extractor.stream.StreamSegment
 
 /** What the seek read-out can say about the moment being scrubbed to, beyond the timestamp. */

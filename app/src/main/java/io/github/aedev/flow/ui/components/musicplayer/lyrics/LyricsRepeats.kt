@@ -1,6 +1,6 @@
-package io.github.aedev.flow.ui.components.musicplayer.lyrics
+package com.arubr.smsvcodes.ui.components.musicplayer.lyrics
 
-import io.github.aedev.flow.data.lyrics.LyricsEntry
+import com.arubr.smsvcodes.data.lyrics.LyricsEntry
 
 /**
  * How many lines in a row, ending at [index], are the same words: 1 for a line that doesn't repeat

@@ -1,10 +1,10 @@
-package io.github.aedev.flow.ui.screens.player.state
+package com.arubr.smsvcodes.ui.screens.player.state
 
 import com.google.common.truth.Truth.assertThat
 import com.google.common.truth.Truth.assertWithMessage
-import io.github.aedev.flow.ui.components.shared.CommentSortFilter
-import io.github.aedev.flow.ui.components.videoplayer.settings.PlayerSettingsPage
-import io.github.aedev.flow.ui.components.videoplayer.subtitle.SubtitleStyle
+import com.arubr.smsvcodes.ui.components.shared.CommentSortFilter
+import com.arubr.smsvcodes.ui.components.videoplayer.settings.PlayerSettingsPage
+import com.arubr.smsvcodes.ui.components.videoplayer.subtitle.SubtitleStyle
 import org.junit.Test
 
 /**

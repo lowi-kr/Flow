@@ -1,9 +1,9 @@
-package io.github.aedev.flow.innertube.pages
+package com.arubr.smsvcodes.innertube.pages
 
-import io.github.aedev.flow.innertube.models.MusicResponsiveListItemRenderer
-import io.github.aedev.flow.innertube.models.response.BrowseResponse
-import io.github.aedev.flow.innertube.models.response.NextResponse
-import io.github.aedev.flow.innertube.models.response.SearchResponse
+import com.arubr.smsvcodes.innertube.models.MusicResponsiveListItemRenderer
+import com.arubr.smsvcodes.innertube.models.response.BrowseResponse
+import com.arubr.smsvcodes.innertube.models.response.NextResponse
+import com.arubr.smsvcodes.innertube.models.response.SearchResponse
 import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.json.Json
 

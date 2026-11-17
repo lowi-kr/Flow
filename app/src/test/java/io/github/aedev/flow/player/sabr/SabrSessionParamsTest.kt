@@ -1,8 +1,8 @@
-package io.github.aedev.flow.player.sabr
+package com.arubr.smsvcodes.player.sabr
 
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.player.sabr.core.SabrStreamController
-import io.github.aedev.flow.player.sabr.core.SabrCpn
+import com.arubr.smsvcodes.player.sabr.core.SabrStreamController
+import com.arubr.smsvcodes.player.sabr.core.SabrCpn
 import org.junit.Test
 
 /**

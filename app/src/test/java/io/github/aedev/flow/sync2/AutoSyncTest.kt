@@ -1,9 +1,9 @@
-package io.github.aedev.flow.sync2
+package com.arubr.smsvcodes.sync2
 
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.sync2.service.SyncTrigger
-import io.github.aedev.flow.sync2.service.runs
-import io.github.aedev.flow.sync2.service.workerTrigger
+import com.arubr.smsvcodes.sync2.service.SyncTrigger
+import com.arubr.smsvcodes.sync2.service.runs
+import com.arubr.smsvcodes.sync2.service.workerTrigger
 import org.junit.Test
 
 class AutoSyncTest {

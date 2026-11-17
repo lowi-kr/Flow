@@ -1,9 +1,9 @@
-package io.github.aedev.flow.player.sabr
+package com.arubr.smsvcodes.player.sabr
 
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.player.sabr.core.SabrSessionState
-import io.github.aedev.flow.player.sabr.proto.FormatBufferedRange
-import io.github.aedev.flow.player.sabr.proto.FormatId
+import com.arubr.smsvcodes.player.sabr.core.SabrSessionState
+import com.arubr.smsvcodes.player.sabr.proto.FormatBufferedRange
+import com.arubr.smsvcodes.player.sabr.proto.FormatId
 import org.junit.Test
 
 class SabrPlayerResponseReloadTest {

@@ -1,7 +1,7 @@
-package io.github.aedev.flow.ui.screens.music.collection
+package com.arubr.smsvcodes.ui.screens.music.collection
 
-import io.github.aedev.flow.data.music.model.MusicTrack
-import io.github.aedev.flow.data.music.model.PlaylistDetails
+import com.arubr.smsvcodes.data.music.model.MusicTrack
+import com.arubr.smsvcodes.data.music.model.PlaylistDetails
 import java.time.Duration
 
 /** How long a saved copy checked against every page stays trusted before it is checked again. */

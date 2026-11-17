@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.settings.about
+package com.arubr.smsvcodes.ui.screens.settings.about
 
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.PathFillType

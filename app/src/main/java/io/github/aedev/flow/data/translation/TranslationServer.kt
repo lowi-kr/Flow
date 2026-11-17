@@ -1,4 +1,4 @@
-package io.github.aedev.flow.data.translation
+package com.arubr.smsvcodes.data.translation
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable

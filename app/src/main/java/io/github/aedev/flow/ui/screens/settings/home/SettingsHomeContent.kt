@@ -1,25 +1,25 @@
-package io.github.aedev.flow.ui.screens.settings.home
+package com.arubr.smsvcodes.ui.screens.settings.home
 
 import androidx.compose.runtime.Immutable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.focus.FocusRequester
 import androidx.compose.ui.focus.focusRequester
 import androidx.compose.ui.res.stringResource
-import io.github.aedev.flow.BuildConfig
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.recommendation.FlowPersona
-import io.github.aedev.flow.ui.components.settings.SettingsDestination
-import io.github.aedev.flow.ui.components.settings.SettingsGroupScope
-import io.github.aedev.flow.ui.components.settings.SettingsListScope
-import io.github.aedev.flow.ui.components.settings.SettingsTarget
-import io.github.aedev.flow.ui.components.settings.nav
-import io.github.aedev.flow.ui.components.settings.switch
-import io.github.aedev.flow.ui.components.shared.DeepFlowState
-import io.github.aedev.flow.ui.components.shared.FlowNavRow
-import io.github.aedev.flow.ui.components.shared.FlowSwitchRow
-import io.github.aedev.flow.ui.components.shared.deepFlowStatus
-import io.github.aedev.flow.ui.screens.settings.index.DestinationIndex
-import io.github.aedev.flow.ui.screens.settings.index.HomeIndex
+import com.arubr.smsvcodes.BuildConfig
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.recommendation.FlowPersona
+import com.arubr.smsvcodes.ui.components.settings.SettingsDestination
+import com.arubr.smsvcodes.ui.components.settings.SettingsGroupScope
+import com.arubr.smsvcodes.ui.components.settings.SettingsListScope
+import com.arubr.smsvcodes.ui.components.settings.SettingsTarget
+import com.arubr.smsvcodes.ui.components.settings.nav
+import com.arubr.smsvcodes.ui.components.settings.switch
+import com.arubr.smsvcodes.ui.components.shared.DeepFlowState
+import com.arubr.smsvcodes.ui.components.shared.FlowNavRow
+import com.arubr.smsvcodes.ui.components.shared.FlowSwitchRow
+import com.arubr.smsvcodes.ui.components.shared.deepFlowStatus
+import com.arubr.smsvcodes.ui.screens.settings.index.DestinationIndex
+import com.arubr.smsvcodes.ui.screens.settings.index.HomeIndex
 
 @Immutable
 internal data class SettingsHomeState(

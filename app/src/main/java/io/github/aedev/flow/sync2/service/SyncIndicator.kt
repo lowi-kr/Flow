@@ -1,4 +1,4 @@
-package io.github.aedev.flow.sync2.service
+package com.arubr.smsvcodes.sync2.service
 
 import android.app.Notification
 import android.content.Context
@@ -8,9 +8,9 @@ import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import androidx.work.ForegroundInfo
 import dagger.hilt.android.qualifiers.ApplicationContext
-import io.github.aedev.flow.R
-import io.github.aedev.flow.notification.NotificationHelper
-import io.github.aedev.flow.sync.transport.SyncForegroundService
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.notification.NotificationHelper
+import com.arubr.smsvcodes.sync.transport.SyncForegroundService
 import javax.inject.Inject
 import javax.inject.Singleton
 

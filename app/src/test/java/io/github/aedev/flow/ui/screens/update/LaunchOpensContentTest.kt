@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.update
+package com.arubr.smsvcodes.ui.screens.update
 
 import android.content.Intent
 import com.google.common.truth.Truth.assertThat

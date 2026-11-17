@@ -1,7 +1,7 @@
-package io.github.aedev.flow.notification
+package com.arubr.smsvcodes.notification
 
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.data.local.LocalDataManager.AutoBackupType
+import com.arubr.smsvcodes.data.local.LocalDataManager.AutoBackupType
 import org.junit.Test
 
 class AutoBackupTypeTest {

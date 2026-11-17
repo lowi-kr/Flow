@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.shared
+package com.arubr.smsvcodes.ui.components.shared
 
 import android.content.ClipData
 import android.content.ClipboardManager
@@ -28,23 +28,23 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.model.RichTextTarget
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.data.model.plainRichText
-import io.github.aedev.flow.data.translation.TitledTranslation
-import io.github.aedev.flow.data.translation.splitTitle
-import io.github.aedev.flow.data.translation.titledText
-import io.github.aedev.flow.innertube.pages.VideoDescriptionPage
-import io.github.aedev.flow.ui.components.layout.navigation.LocalMediaNavigator
-import io.github.aedev.flow.ui.components.shared.FlowBottomSheet
-import io.github.aedev.flow.ui.components.shared.FlowSheetHeader
-import io.github.aedev.flow.ui.components.shared.card.LocalVideoCardPreferences
-import io.github.aedev.flow.ui.components.shared.defaultSheetExpandedHeight
-import io.github.aedev.flow.ui.components.shared.rememberFlowBottomSheetState
-import io.github.aedev.flow.ui.components.shared.rememberRichTextInlineContent
-import io.github.aedev.flow.ui.openYouTubeUrl
-import io.github.aedev.flow.utils.toAnnotatedString
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.model.RichTextTarget
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.data.model.plainRichText
+import com.arubr.smsvcodes.data.translation.TitledTranslation
+import com.arubr.smsvcodes.data.translation.splitTitle
+import com.arubr.smsvcodes.data.translation.titledText
+import com.arubr.smsvcodes.innertube.pages.VideoDescriptionPage
+import com.arubr.smsvcodes.ui.components.layout.navigation.LocalMediaNavigator
+import com.arubr.smsvcodes.ui.components.shared.FlowBottomSheet
+import com.arubr.smsvcodes.ui.components.shared.FlowSheetHeader
+import com.arubr.smsvcodes.ui.components.shared.card.LocalVideoCardPreferences
+import com.arubr.smsvcodes.ui.components.shared.defaultSheetExpandedHeight
+import com.arubr.smsvcodes.ui.components.shared.rememberFlowBottomSheetState
+import com.arubr.smsvcodes.ui.components.shared.rememberRichTextInlineContent
+import com.arubr.smsvcodes.ui.openYouTubeUrl
+import com.arubr.smsvcodes.utils.toAnnotatedString
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalLayoutApi::class)

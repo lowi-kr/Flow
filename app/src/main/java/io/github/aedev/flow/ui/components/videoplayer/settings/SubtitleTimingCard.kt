@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.videoplayer.settings
+package com.arubr.smsvcodes.ui.components.videoplayer.settings
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -20,9 +20,9 @@ import androidx.compose.ui.hapticfeedback.HapticFeedbackType
 import androidx.compose.ui.platform.LocalHapticFeedback
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.ui.components.shared.FlowRowGroup
-import io.github.aedev.flow.ui.components.shared.flowRowGroupShape
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.ui.components.shared.FlowRowGroup
+import com.arubr.smsvcodes.ui.components.shared.flowRowGroupShape
 import java.text.DecimalFormat
 import kotlin.math.abs
 

@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.shared
+package com.arubr.smsvcodes.ui.components.shared
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -31,9 +31,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.model.Comment
-import io.github.aedev.flow.data.model.distinctByNonBlankKey
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.model.Comment
+import com.arubr.smsvcodes.data.model.distinctByNonBlankKey
 import kotlinx.coroutines.flow.drop
 
 @Composable

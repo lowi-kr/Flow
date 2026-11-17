@@ -1,4 +1,4 @@
-package io.github.aedev.flow.sync2.data
+package com.arubr.smsvcodes.sync2.data
 
 import android.content.Context
 import androidx.room.Room
@@ -9,9 +9,9 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
-import io.github.aedev.flow.data.profile.ProfileFiles
-import io.github.aedev.flow.data.profile.StoreScope
-import io.github.aedev.flow.sync2.store.LocalStore
+import com.arubr.smsvcodes.data.profile.ProfileFiles
+import com.arubr.smsvcodes.data.profile.StoreScope
+import com.arubr.smsvcodes.sync2.store.LocalStore
 import java.io.File
 import javax.inject.Singleton
 

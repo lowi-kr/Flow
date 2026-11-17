@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.settings.integrations
+package com.arubr.smsvcodes.ui.screens.settings.integrations
 
 import androidx.annotation.StringRes
 import androidx.compose.foundation.background
@@ -40,16 +40,16 @@ import androidx.compose.ui.semantics.role
 import androidx.compose.ui.semantics.selected
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.local.SponsorBlockSkipButtonStyle
-import io.github.aedev.flow.ui.components.shared.FlowAlertDialog
-import io.github.aedev.flow.ui.components.shared.FlowChoice
-import io.github.aedev.flow.ui.components.shared.FlowChoiceDialog
-import io.github.aedev.flow.ui.components.shared.FlowColorPickerDialog
-import io.github.aedev.flow.ui.theme.SponsorBlockSegmentPresets
-import io.github.aedev.flow.ui.theme.defaultSponsorBlockColor
-import io.github.aedev.flow.utils.sponsorCategoryLabelRes
-import io.github.aedev.flow.utils.toHexRgb
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.local.SponsorBlockSkipButtonStyle
+import com.arubr.smsvcodes.ui.components.shared.FlowAlertDialog
+import com.arubr.smsvcodes.ui.components.shared.FlowChoice
+import com.arubr.smsvcodes.ui.components.shared.FlowChoiceDialog
+import com.arubr.smsvcodes.ui.components.shared.FlowColorPickerDialog
+import com.arubr.smsvcodes.ui.theme.SponsorBlockSegmentPresets
+import com.arubr.smsvcodes.ui.theme.defaultSponsorBlockColor
+import com.arubr.smsvcodes.utils.sponsorCategoryLabelRes
+import com.arubr.smsvcodes.utils.toHexRgb
 
 private val PresetSize = 32.dp
 private val PresetBorder = 1.dp

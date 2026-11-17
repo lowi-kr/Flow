@@ -1,4 +1,4 @@
-package io.github.aedev.flow.data.update
+package com.arubr.smsvcodes.data.update
 
 /** Where the download of one release stands, as the update page and its notification show it. */
 sealed interface UpdateDownload {

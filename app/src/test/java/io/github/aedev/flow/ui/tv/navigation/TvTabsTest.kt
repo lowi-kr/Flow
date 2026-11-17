@@ -1,8 +1,8 @@
-package io.github.aedev.flow.ui.tv.navigation
+package com.arubr.smsvcodes.ui.tv.navigation
 
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.ui.components.layout.navigation.FlowTab
-import io.github.aedev.flow.ui.components.layout.navigation.NavigationVisibility
+import com.arubr.smsvcodes.ui.components.layout.navigation.FlowTab
+import com.arubr.smsvcodes.ui.components.layout.navigation.NavigationVisibility
 import org.junit.Test
 
 class TvTabsTest {

@@ -1,7 +1,7 @@
-package io.github.aedev.flow.data.notes
+package com.arubr.smsvcodes.data.notes
 
-import io.github.aedev.flow.utils.formatDurationMillis
-import io.github.aedev.flow.utils.parseTimestampMs
+import com.arubr.smsvcodes.utils.formatDurationMillis
+import com.arubr.smsvcodes.utils.parseTimestampMs
 
 /** A time written in a note: where it sits in the text, where it points in the video, and the words after it. */
 data class NoteMoment(

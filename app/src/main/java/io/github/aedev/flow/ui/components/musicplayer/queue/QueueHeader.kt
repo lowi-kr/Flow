@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.musicplayer.queue
+package com.arubr.smsvcodes.ui.components.musicplayer.queue
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -28,8 +28,8 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.player.RepeatMode
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.player.RepeatMode
 
 /** Title, track count, Select, and the shuffle and repeat pair shared by the sheet and the side pane. */
 @Composable

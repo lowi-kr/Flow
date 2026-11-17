@@ -1,7 +1,7 @@
-package io.github.aedev.flow.ui.components.shared
+package com.arubr.smsvcodes.ui.components.shared
 
-import io.github.aedev.flow.data.model.Comment
-import io.github.aedev.flow.data.model.RichTextTarget
+import com.arubr.smsvcodes.data.model.Comment
+import com.arubr.smsvcodes.data.model.RichTextTarget
 
 private const val MILLIS_PER_SECOND = 1_000L
 private const val MARK_MERGE_FRACTION = 0.004f

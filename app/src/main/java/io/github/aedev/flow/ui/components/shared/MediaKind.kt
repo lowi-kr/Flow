@@ -1,11 +1,11 @@
-package io.github.aedev.flow.ui.components.shared
+package com.arubr.smsvcodes.ui.components.shared
 
 import androidx.annotation.StringRes
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.MusicNote
 import androidx.compose.material.icons.outlined.VideoLibrary
 import androidx.compose.ui.graphics.vector.ImageVector
-import io.github.aedev.flow.R
+import com.arubr.smsvcodes.R
 
 enum class MediaKind(
     @param:StringRes val labelRes: Int,

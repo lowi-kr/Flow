@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.sync
+package com.arubr.smsvcodes.ui.screens.sync
 
 import android.Manifest
 import android.content.pm.PackageManager
@@ -47,9 +47,9 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.unit.dp
 import androidx.core.content.ContextCompat
-import io.github.aedev.flow.R
-import io.github.aedev.flow.ui.components.shared.FlowSwitchRow
-import io.github.aedev.flow.utils.readPlainText
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.ui.components.shared.FlowSwitchRow
+import com.arubr.smsvcodes.utils.readPlainText
 import kotlinx.coroutines.launch
 
 /**

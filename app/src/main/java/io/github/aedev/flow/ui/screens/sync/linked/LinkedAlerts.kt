@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.sync.linked
+package com.arubr.smsvcodes.ui.screens.sync.linked
 
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material.icons.Icons
@@ -18,10 +18,10 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
-import io.github.aedev.flow.R
-import io.github.aedev.flow.sync2.service.LinkedError
-import io.github.aedev.flow.ui.components.settings.SettingsNotice
-import io.github.aedev.flow.ui.screens.sync.SyncActionRow
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.sync2.service.LinkedError
+import com.arubr.smsvcodes.ui.components.settings.SettingsNotice
+import com.arubr.smsvcodes.ui.screens.sync.SyncActionRow
 
 /**
  * Everything on the group that waits for the user, at the top of the page in one card shape: a

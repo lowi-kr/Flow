@@ -1,6 +1,6 @@
-package io.github.aedev.flow.ui.components.videoplayer.settings
+package com.arubr.smsvcodes.ui.components.videoplayer.settings
 
-import io.github.aedev.flow.player.QualityOption
+import com.arubr.smsvcodes.player.QualityOption
 
 /** The resolution part of an option's label: "1080p60" from "1080p60 VP9". */
 internal fun QualityOption.resolutionLabel(): String = label.substringBefore(' ').takeIf { it.isNotBlank() } ?: "${height}p"

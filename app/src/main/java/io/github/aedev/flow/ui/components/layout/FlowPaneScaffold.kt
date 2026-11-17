@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.layout
+package com.arubr.smsvcodes.ui.components.layout
 
 import androidx.compose.material3.adaptive.ExperimentalMaterial3AdaptiveApi
 import androidx.compose.material3.adaptive.WindowAdaptiveInfo
@@ -9,7 +9,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.window.core.layout.WindowSizeClass
 import androidx.window.core.layout.computeWindowSizeClass
-import io.github.aedev.flow.ui.utils.flowWindowDpSize
+import com.arubr.smsvcodes.ui.utils.flowWindowDpSize
 
 /**
  * The library's [androidx.compose.material3.adaptive.currentWindowAdaptiveInfo] (or its V2 form

@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.subscriptions
+package com.arubr.smsvcodes.ui.screens.subscriptions
 
 import android.net.Uri
 import androidx.activity.compose.BackHandler
@@ -43,16 +43,16 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.local.HomeFeedColumns
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.data.model.Channel
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.data.shorts.queue.ShortsQueueSource
-import io.github.aedev.flow.ui.components.layout.LocalFlowBottomInsets
-import io.github.aedev.flow.ui.components.layout.floatAboveBottomChrome
-import io.github.aedev.flow.ui.components.layout.topbar.FlowSearchTopBar
-import io.github.aedev.flow.ui.components.layout.topbar.FlowTopBar
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.local.HomeFeedColumns
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.data.model.Channel
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.data.shorts.queue.ShortsQueueSource
+import com.arubr.smsvcodes.ui.components.layout.LocalFlowBottomInsets
+import com.arubr.smsvcodes.ui.components.layout.floatAboveBottomChrome
+import com.arubr.smsvcodes.ui.components.layout.topbar.FlowSearchTopBar
+import com.arubr.smsvcodes.ui.components.layout.topbar.FlowTopBar
 import kotlinx.coroutines.launch
 
 @Composable

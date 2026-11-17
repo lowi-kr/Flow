@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.home
+package com.arubr.smsvcodes.ui.screens.home
 
 /**
  * What Home does with the channels the viewer follows. With subscriptions on Home they are fetched

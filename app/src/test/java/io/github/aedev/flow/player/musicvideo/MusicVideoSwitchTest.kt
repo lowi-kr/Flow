@@ -1,12 +1,12 @@
-package io.github.aedev.flow.player.musicvideo
+package com.arubr.smsvcodes.player.musicvideo
 
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.music.model.MusicArtist
-import io.github.aedev.flow.data.music.model.MusicTrack
-import io.github.aedev.flow.data.music.video.MusicVideoVersions
-import io.github.aedev.flow.innertube.models.Artist
-import io.github.aedev.flow.innertube.models.SongItem
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.music.model.MusicArtist
+import com.arubr.smsvcodes.data.music.model.MusicTrack
+import com.arubr.smsvcodes.data.music.video.MusicVideoVersions
+import com.arubr.smsvcodes.innertube.models.Artist
+import com.arubr.smsvcodes.innertube.models.SongItem
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.Job

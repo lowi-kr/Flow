@@ -1,6 +1,6 @@
 @file:OptIn(ExperimentalMaterial3Api::class)
 
-package io.github.aedev.flow.ui.screens.settings.appearance.player
+package com.arubr.smsvcodes.ui.screens.settings.appearance.player
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -38,15 +38,15 @@ import androidx.compose.ui.hapticfeedback.HapticFeedbackType
 import androidx.compose.ui.platform.LocalHapticFeedback
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.local.MAX_MINI_BAR_BUTTONS
-import io.github.aedev.flow.data.local.MiniBarButton
-import io.github.aedev.flow.ui.components.musicplayer.mini.icon
-import io.github.aedev.flow.ui.components.musicplayer.mini.labelRes
-import io.github.aedev.flow.ui.components.shared.FlowSheetHeader
-import io.github.aedev.flow.ui.components.shared.FlowSwitch
-import io.github.aedev.flow.ui.components.shared.MediaMiniBarDefaults
-import io.github.aedev.flow.ui.components.shared.rememberFlowSheetState
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.local.MAX_MINI_BAR_BUTTONS
+import com.arubr.smsvcodes.data.local.MiniBarButton
+import com.arubr.smsvcodes.ui.components.musicplayer.mini.icon
+import com.arubr.smsvcodes.ui.components.musicplayer.mini.labelRes
+import com.arubr.smsvcodes.ui.components.shared.FlowSheetHeader
+import com.arubr.smsvcodes.ui.components.shared.FlowSwitch
+import com.arubr.smsvcodes.ui.components.shared.MediaMiniBarDefaults
+import com.arubr.smsvcodes.ui.components.shared.rememberFlowSheetState
 import sh.calvin.reorderable.ReorderableItem
 import sh.calvin.reorderable.rememberReorderableLazyListState
 

@@ -1,6 +1,6 @@
-package io.github.aedev.flow.data.shorts
+package com.arubr.smsvcodes.data.shorts
 
-import io.github.aedev.flow.data.local.PlayerPreferences
+import com.arubr.smsvcodes.data.local.PlayerPreferences
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.first

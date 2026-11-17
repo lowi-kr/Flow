@@ -1,11 +1,11 @@
-package io.github.aedev.flow.data.paging
+package com.arubr.smsvcodes.data.paging
 
-import io.github.aedev.flow.data.local.WatchState
-import io.github.aedev.flow.data.local.WatchedThreshold
-import io.github.aedev.flow.data.local.dao.WatchProgress
-import io.github.aedev.flow.data.local.isWatched
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.data.shorts.isShortComplete
+import com.arubr.smsvcodes.data.local.WatchState
+import com.arubr.smsvcodes.data.local.WatchedThreshold
+import com.arubr.smsvcodes.data.local.dao.WatchProgress
+import com.arubr.smsvcodes.data.local.isWatched
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.data.shorts.isShortComplete
 
 /** Answers which of a page's videos the user has watched, from one history read for just those ids. */
 fun interface WatchedVideoLookup {

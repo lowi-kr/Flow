@@ -1,9 +1,9 @@
-package io.github.aedev.flow.ui.screens.home.chips
+package com.arubr.smsvcodes.ui.screens.home.chips
 
-import io.github.aedev.flow.data.local.VideoHistoryEntry
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.data.recommendation.InterestChip
-import io.github.aedev.flow.data.recommendation.NeuroScoring
+import com.arubr.smsvcodes.data.local.VideoHistoryEntry
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.data.recommendation.InterestChip
+import com.arubr.smsvcodes.data.recommendation.NeuroScoring
 
 /** Tuning for the Home chips, in one place. */
 internal object HomeChipParams {

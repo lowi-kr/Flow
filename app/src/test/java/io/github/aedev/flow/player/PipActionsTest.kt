@@ -1,4 +1,4 @@
-package io.github.aedev.flow.player
+package com.arubr.smsvcodes.player
 
 import org.junit.Assert.assertEquals
 import org.junit.Test

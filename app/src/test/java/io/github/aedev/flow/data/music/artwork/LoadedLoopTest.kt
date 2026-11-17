@@ -1,4 +1,4 @@
-package io.github.aedev.flow.data.music.artwork
+package com.arubr.smsvcodes.data.music.artwork
 
 import com.google.common.truth.Truth.assertThat
 import org.junit.Test

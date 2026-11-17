@@ -1,14 +1,14 @@
-package io.github.aedev.flow.sync2
+package com.arubr.smsvcodes.sync2
 
 import android.app.Application
 import android.content.Context
 import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import io.github.aedev.flow.sync2.data.LinkedDatabase
-import io.github.aedev.flow.sync2.device.DeviceKeys
-import io.github.aedev.flow.sync2.service.LinkedReset
-import io.github.aedev.flow.sync2.service.LinkedSync
-import io.github.aedev.flow.sync2.service.SyncIndicator
+import com.arubr.smsvcodes.sync2.data.LinkedDatabase
+import com.arubr.smsvcodes.sync2.device.DeviceKeys
+import com.arubr.smsvcodes.sync2.service.LinkedReset
+import com.arubr.smsvcodes.sync2.service.LinkedSync
+import com.arubr.smsvcodes.sync2.service.SyncIndicator
 import io.mockk.coEvery
 import io.mockk.every
 import io.mockk.mockk

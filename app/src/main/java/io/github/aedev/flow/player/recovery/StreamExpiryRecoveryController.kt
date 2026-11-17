@@ -1,7 +1,7 @@
-package io.github.aedev.flow.player.recovery
+package com.arubr.smsvcodes.player.recovery
 
-import io.github.aedev.flow.player.error.StreamExpiryRetryLimiter
-import io.github.aedev.flow.player.error.StreamFailureContext
+import com.arubr.smsvcodes.player.error.StreamExpiryRetryLimiter
+import com.arubr.smsvcodes.player.error.StreamFailureContext
 
 /**
  * Decides what the player does each time a video's streams are refused or expire and could not be

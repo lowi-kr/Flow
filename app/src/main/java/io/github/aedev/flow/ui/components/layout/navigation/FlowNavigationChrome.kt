@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.layout.navigation
+package com.arubr.smsvcodes.ui.components.layout.navigation
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.fadeIn
@@ -30,13 +30,13 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
 import androidx.window.core.layout.WindowSizeClass
-import io.github.aedev.flow.data.local.NavBarLook
-import io.github.aedev.flow.data.local.NavBarScroll
-import io.github.aedev.flow.data.local.NavBarStyle
-import io.github.aedev.flow.ui.utils.LocalWindowIsLandscape
-import io.github.aedev.flow.ui.utils.LocalWindowSizeClass
-import io.github.aedev.flow.ui.utils.isExpandedWidth
-import io.github.aedev.flow.ui.utils.isMediumHeight
+import com.arubr.smsvcodes.data.local.NavBarLook
+import com.arubr.smsvcodes.data.local.NavBarScroll
+import com.arubr.smsvcodes.data.local.NavBarStyle
+import com.arubr.smsvcodes.ui.utils.LocalWindowIsLandscape
+import com.arubr.smsvcodes.ui.utils.LocalWindowSizeClass
+import com.arubr.smsvcodes.ui.utils.isExpandedWidth
+import com.arubr.smsvcodes.ui.utils.isMediumHeight
 import kotlin.math.roundToInt
 
 const val FLOW_NAV_BAR_TAG = "flow_nav_bar"

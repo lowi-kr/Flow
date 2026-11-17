@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.shared.quickactions
+package com.arubr.smsvcodes.ui.components.shared.quickactions
 
 import android.app.Application
 import android.view.KeyEvent
@@ -18,8 +18,8 @@ import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performKeyPress
 import androidx.compose.ui.test.requestFocus
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import io.github.aedev.flow.ui.components.shared.FlowSheetPresenter
-import io.github.aedev.flow.ui.components.shared.LocalFlowSheetPresenter
+import com.arubr.smsvcodes.ui.components.shared.FlowSheetPresenter
+import com.arubr.smsvcodes.ui.components.shared.LocalFlowSheetPresenter
 import org.junit.Assert.assertEquals
 import org.junit.Rule
 import org.junit.Test

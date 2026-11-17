@@ -1,4 +1,4 @@
-package io.github.aedev.flow.data.audio.eq
+package com.arubr.smsvcodes.data.audio.eq
 
 import android.content.Context
 import android.util.Log
@@ -6,8 +6,8 @@ import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.floatPreferencesKey
 import androidx.datastore.preferences.core.stringPreferencesKey
 import dagger.hilt.android.qualifiers.ApplicationContext
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.local.audioSettingsDataStore
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.local.audioSettingsDataStore
 import kotlinx.coroutines.flow.first
 import kotlinx.serialization.json.Json
 import java.util.UUID

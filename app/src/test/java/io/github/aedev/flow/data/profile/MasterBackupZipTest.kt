@@ -1,4 +1,4 @@
-package io.github.aedev.flow.data.profile
+package com.arubr.smsvcodes.data.profile
 
 import com.google.common.truth.Truth.assertThat
 import kotlinx.serialization.json.Json

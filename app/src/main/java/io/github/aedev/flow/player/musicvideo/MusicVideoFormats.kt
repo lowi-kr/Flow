@@ -1,7 +1,7 @@
-package io.github.aedev.flow.player.musicvideo
+package com.arubr.smsvcodes.player.musicvideo
 
-import io.github.aedev.flow.innertube.models.response.PlayerResponse
-import io.github.aedev.flow.player.stream.VideoCodecUtils
+import com.arubr.smsvcodes.innertube.models.response.PlayerResponse
+import com.arubr.smsvcodes.player.stream.VideoCodecUtils
 
 /**
  * The picture stream for a song shown in the music player. The video fills only the artwork box,

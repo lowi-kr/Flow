@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.search
+package com.arubr.smsvcodes.ui.screens.search
 
 import android.app.Activity
 import android.content.ActivityNotFoundException
@@ -30,23 +30,23 @@ import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.paging.compose.collectAsLazyPagingItems
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.local.SearchFilter
-import io.github.aedev.flow.data.local.availableWith
-import io.github.aedev.flow.data.model.Channel
-import io.github.aedev.flow.data.model.Playlist
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.data.paging.SearchResultItem
-import io.github.aedev.flow.data.shorts.queue.ShortsQueueSource
-import io.github.aedev.flow.ui.OnTabReselected
-import io.github.aedev.flow.ui.components.layout.navigation.FlowTab
-import io.github.aedev.flow.ui.components.search.SearchFilterDialog
-import io.github.aedev.flow.ui.components.search.SearchSuggestionsPanel
-import io.github.aedev.flow.ui.components.search.SearchTopBar
-import io.github.aedev.flow.ui.components.search.SearchTopBarActions
-import io.github.aedev.flow.ui.components.shared.MediaPostCommentsSheet
-import io.github.aedev.flow.ui.components.shared.quickactions.QuickActionsViewModel
-import io.github.aedev.flow.ui.components.shared.quickactions.sharedQuickActionsViewModel
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.local.SearchFilter
+import com.arubr.smsvcodes.data.local.availableWith
+import com.arubr.smsvcodes.data.model.Channel
+import com.arubr.smsvcodes.data.model.Playlist
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.data.paging.SearchResultItem
+import com.arubr.smsvcodes.data.shorts.queue.ShortsQueueSource
+import com.arubr.smsvcodes.ui.OnTabReselected
+import com.arubr.smsvcodes.ui.components.layout.navigation.FlowTab
+import com.arubr.smsvcodes.ui.components.search.SearchFilterDialog
+import com.arubr.smsvcodes.ui.components.search.SearchSuggestionsPanel
+import com.arubr.smsvcodes.ui.components.search.SearchTopBar
+import com.arubr.smsvcodes.ui.components.search.SearchTopBarActions
+import com.arubr.smsvcodes.ui.components.shared.MediaPostCommentsSheet
+import com.arubr.smsvcodes.ui.components.shared.quickactions.QuickActionsViewModel
+import com.arubr.smsvcodes.ui.components.shared.quickactions.sharedQuickActionsViewModel
 
 /**
  * The route: a bar, then either what the user might be looking for or what they found.

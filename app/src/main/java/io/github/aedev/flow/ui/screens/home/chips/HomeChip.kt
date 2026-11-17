@@ -1,7 +1,7 @@
-package io.github.aedev.flow.ui.screens.home.chips
+package com.arubr.smsvcodes.ui.screens.home.chips
 
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.data.recommendation.InterestChip
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.data.recommendation.InterestChip
 
 /** One chip above the Home feed. [key] is stable across loads and survives process death. */
 internal sealed interface HomeChip {

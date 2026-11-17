@@ -1,10 +1,10 @@
-package io.github.aedev.flow.ui.screens.player
+package com.arubr.smsvcodes.ui.screens.player
 
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.data.model.LiveChatMessage
-import io.github.aedev.flow.data.repository.LiveChatRepository.ReplayMessage
-import io.github.aedev.flow.data.repository.LiveChatRepository.ReplayPage
-import io.github.aedev.flow.ui.screens.player.ChatReplayTimeline.Fetch
+import com.arubr.smsvcodes.data.model.LiveChatMessage
+import com.arubr.smsvcodes.data.repository.LiveChatRepository.ReplayMessage
+import com.arubr.smsvcodes.data.repository.LiveChatRepository.ReplayPage
+import com.arubr.smsvcodes.ui.screens.player.ChatReplayTimeline.Fetch
 import org.junit.Test
 
 class ChatReplayTimelineTest {

@@ -1,7 +1,7 @@
-package io.github.aedev.flow.data.subscriptions
+package com.arubr.smsvcodes.data.subscriptions
 
-import io.github.aedev.flow.data.local.entity.SubscriptionFeedEntity
-import io.github.aedev.flow.data.model.Video
+import com.arubr.smsvcodes.data.local.entity.SubscriptionFeedEntity
+import com.arubr.smsvcodes.data.model.Video
 
 /**
  * The stored reel verdicts a refresh may reuse instead of asking a channel's Shorts tab again.

@@ -1,4 +1,4 @@
-package io.github.aedev.flow.sync2.engine
+package com.arubr.smsvcodes.sync2.engine
 
 /** Why a linked-devices action stopped, beyond store and protocol errors. */
 sealed class LinkedException(

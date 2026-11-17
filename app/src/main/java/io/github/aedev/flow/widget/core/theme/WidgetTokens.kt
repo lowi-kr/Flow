@@ -1,4 +1,4 @@
-package io.github.aedev.flow.widget.core.theme
+package com.arubr.smsvcodes.widget.core.theme
 
 import android.content.Context
 import android.os.Build
@@ -11,7 +11,7 @@ import androidx.glance.text.FontWeight
 import androidx.glance.text.TextAlign
 import androidx.glance.text.TextStyle
 import androidx.glance.unit.ColorProvider
-import io.github.aedev.flow.ui.theme.Typography
+import com.arubr.smsvcodes.ui.theme.Typography
 import androidx.compose.ui.text.TextStyle as ComposeTextStyle
 import androidx.compose.ui.text.font.FontWeight as ComposeFontWeight
 

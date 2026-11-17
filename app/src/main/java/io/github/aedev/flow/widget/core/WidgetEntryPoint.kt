@@ -1,16 +1,16 @@
-package io.github.aedev.flow.widget.core
+package com.arubr.smsvcodes.widget.core
 
 import android.content.Context
 import dagger.hilt.EntryPoint
 import dagger.hilt.InstallIn
 import dagger.hilt.android.EntryPointAccessors
 import dagger.hilt.components.SingletonComponent
-import io.github.aedev.flow.widget.core.refresh.WidgetContentSync
-import io.github.aedev.flow.widget.downloads.DownloadsSource
-import io.github.aedev.flow.widget.onrepeat.OnRepeatSource
-import io.github.aedev.flow.widget.playlist.PlaylistWidgetSource
-import io.github.aedev.flow.widget.recent.RecentlyPlayedSource
-import io.github.aedev.flow.widget.week.WeekSource
+import com.arubr.smsvcodes.widget.core.refresh.WidgetContentSync
+import com.arubr.smsvcodes.widget.downloads.DownloadsSource
+import com.arubr.smsvcodes.widget.onrepeat.OnRepeatSource
+import com.arubr.smsvcodes.widget.playlist.PlaylistWidgetSource
+import com.arubr.smsvcodes.widget.recent.RecentlyPlayedSource
+import com.arubr.smsvcodes.widget.week.WeekSource
 
 /**
  * Glance widgets can't use constructor injection (the framework instantiates them),

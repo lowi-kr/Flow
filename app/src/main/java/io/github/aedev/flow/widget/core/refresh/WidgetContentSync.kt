@@ -1,4 +1,4 @@
-package io.github.aedev.flow.widget.core.refresh
+package com.arubr.smsvcodes.widget.core.refresh
 
 import android.content.Context
 import android.util.Log
@@ -8,13 +8,13 @@ import androidx.glance.appwidget.GlanceAppWidget
 import androidx.glance.appwidget.GlanceAppWidgetManager
 import androidx.glance.appwidget.updateAll
 import dagger.hilt.android.qualifiers.ApplicationContext
-import io.github.aedev.flow.data.local.safePreferencesDataStore
-import io.github.aedev.flow.data.profile.StoreScope
-import io.github.aedev.flow.widget.downloads.DownloadsSource
-import io.github.aedev.flow.widget.onrepeat.OnRepeatSource
-import io.github.aedev.flow.widget.playlist.PlaylistWidgetSource
-import io.github.aedev.flow.widget.recent.RecentlyPlayedSource
-import io.github.aedev.flow.widget.week.WeekSource
+import com.arubr.smsvcodes.data.local.safePreferencesDataStore
+import com.arubr.smsvcodes.data.profile.StoreScope
+import com.arubr.smsvcodes.widget.downloads.DownloadsSource
+import com.arubr.smsvcodes.widget.onrepeat.OnRepeatSource
+import com.arubr.smsvcodes.widget.playlist.PlaylistWidgetSource
+import com.arubr.smsvcodes.widget.recent.RecentlyPlayedSource
+import com.arubr.smsvcodes.widget.week.WeekSource
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -45,7 +45,7 @@ private val Context.widgetContentStore by safePreferencesDataStore(name = "widge
  * Re-renders a content widget when what it draws has changed, and only while one is placed.
  *
  * The last signature each kind was rendered with is persisted, for the same reason the theme's is
- * ([io.github.aedev.flow.widget.core.FlowWidgets]): a process start must not re-render every placed
+ * ([com.arubr.smsvcodes.widget.core.FlowWidgets]): a process start must not re-render every placed
  * widget for nothing, since each render holds a Glance session that taxes the app's frames.
  */
 @Singleton
@@ -77,7 +77,7 @@ class WidgetContentSync
             if (sources.any { isPlaced(it) }) ensureStarted()
         }
 
-        /** The widgets that redraw through this sync rather than through [io.github.aedev.flow.widget.core.FlowWidgets]. */
+        /** The widgets that redraw through this sync rather than through [com.arubr.smsvcodes.widget.core.FlowWidgets]. */
         val widgets: Set<KClass<out GlanceAppWidget>> get() = sources.mapTo(HashSet()) { it.widget::class }
 
         /** After a profile switch: what was rendered belongs to the previous profile, so every placed content widget draws again. */

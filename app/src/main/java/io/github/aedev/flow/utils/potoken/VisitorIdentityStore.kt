@@ -1,10 +1,10 @@
-package io.github.aedev.flow.utils.potoken
+package com.arubr.smsvcodes.utils.potoken
 
 import android.content.Context
 import android.content.SharedPreferences
 import android.net.ConnectivityManager
 import dagger.hilt.android.qualifiers.ApplicationContext
-import io.github.aedev.flow.data.profile.ProfileFiles
+import com.arubr.smsvcodes.data.profile.ProfileFiles
 import javax.inject.Inject
 import javax.inject.Singleton
 

@@ -1,7 +1,7 @@
-package io.github.aedev.flow.data.playlist
+package com.arubr.smsvcodes.data.playlist
 
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.data.model.PlaylistInfo
+import com.arubr.smsvcodes.data.model.PlaylistInfo
 import org.junit.Test
 
 class PlaylistListOrderTest {

@@ -1,8 +1,8 @@
-package io.github.aedev.flow.ui.screens.shorts
+package com.arubr.smsvcodes.ui.screens.shorts
 
 import android.content.Context
-import io.github.aedev.flow.data.local.VideoQuality
-import io.github.aedev.flow.utils.NetworkState
+import com.arubr.smsvcodes.data.local.VideoQuality
+import com.arubr.smsvcodes.utils.NetworkState
 
 /**
  * The height a Short is resolved at.

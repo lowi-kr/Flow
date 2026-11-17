@@ -1,13 +1,13 @@
-package io.github.aedev.flow.data.scrobble
+package com.arubr.smsvcodes.data.scrobble
 
 import android.content.Context
 import android.util.Log
 import dagger.hilt.android.qualifiers.ApplicationContext
-import io.github.aedev.flow.BuildConfig
-import io.github.aedev.flow.data.local.PrivacyGate
-import io.github.aedev.flow.data.localmedia.LocalMediaIds
-import io.github.aedev.flow.data.music.model.MusicTrack
-import io.github.aedev.flow.network.ProxyAwareClient
+import com.arubr.smsvcodes.BuildConfig
+import com.arubr.smsvcodes.data.local.PrivacyGate
+import com.arubr.smsvcodes.data.localmedia.LocalMediaIds
+import com.arubr.smsvcodes.data.music.model.MusicTrack
+import com.arubr.smsvcodes.network.ProxyAwareClient
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob

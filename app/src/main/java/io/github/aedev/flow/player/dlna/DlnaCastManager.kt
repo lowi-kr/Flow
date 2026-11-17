@@ -1,8 +1,8 @@
-package io.github.aedev.flow.player.dlna
+package com.arubr.smsvcodes.player.dlna
 
 import android.content.Context
 import android.util.Log
-import io.github.aedev.flow.player.stream.VideoCodecUtils
+import com.arubr.smsvcodes.player.stream.VideoCodecUtils
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers

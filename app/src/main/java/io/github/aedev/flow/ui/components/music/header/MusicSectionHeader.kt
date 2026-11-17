@@ -4,7 +4,7 @@
  * This file is part of Flow (https://github.com/Flow-Tube/Flow).
  */
 
-package io.github.aedev.flow.ui.components.music.header
+package com.arubr.smsvcodes.ui.components.music.header
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -34,8 +34,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.ui.theme.Dimensions
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.ui.theme.Dimensions
 
 /**
  * Trailing affordance of a music section header. Each shelf offers at most one.

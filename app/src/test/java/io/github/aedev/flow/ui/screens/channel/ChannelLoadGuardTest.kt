@@ -1,7 +1,7 @@
-package io.github.aedev.flow.ui.screens.channel
+package com.arubr.smsvcodes.ui.screens.channel
 
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.innertube.pages.channel.ChannelHeader
+import com.arubr.smsvcodes.innertube.pages.channel.ChannelHeader
 import org.junit.Test
 
 class ChannelLoadGuardTest {

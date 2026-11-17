@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.settings.profiles
+package com.arubr.smsvcodes.ui.screens.settings.profiles
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.material.icons.Icons
@@ -25,18 +25,18 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.profile.Profile
-import io.github.aedev.flow.data.profile.ProfileRegistry
-import io.github.aedev.flow.data.profile.displayName
-import io.github.aedev.flow.ui.components.profiles.ProfileAvatar
-import io.github.aedev.flow.ui.components.settings.SettingsDestination
-import io.github.aedev.flow.ui.components.settings.SettingsPage
-import io.github.aedev.flow.ui.components.settings.SettingsTarget
-import io.github.aedev.flow.ui.components.settings.nav
-import io.github.aedev.flow.ui.components.settings.notice
-import io.github.aedev.flow.ui.components.settings.switch
-import io.github.aedev.flow.ui.screens.settings.index.ProfilesIndex
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.profile.Profile
+import com.arubr.smsvcodes.data.profile.ProfileRegistry
+import com.arubr.smsvcodes.data.profile.displayName
+import com.arubr.smsvcodes.ui.components.profiles.ProfileAvatar
+import com.arubr.smsvcodes.ui.components.settings.SettingsDestination
+import com.arubr.smsvcodes.ui.components.settings.SettingsPage
+import com.arubr.smsvcodes.ui.components.settings.SettingsTarget
+import com.arubr.smsvcodes.ui.components.settings.nav
+import com.arubr.smsvcodes.ui.components.settings.notice
+import com.arubr.smsvcodes.ui.components.settings.switch
+import com.arubr.smsvcodes.ui.screens.settings.index.ProfilesIndex
 
 private sealed interface ProfileAction {
     val id: String

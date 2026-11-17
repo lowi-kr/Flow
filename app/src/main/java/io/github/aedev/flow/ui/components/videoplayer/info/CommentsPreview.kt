@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.videoplayer.info
+package com.arubr.smsvcodes.ui.components.videoplayer.info
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -18,8 +18,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
-import io.github.aedev.flow.R
-import io.github.aedev.flow.utils.formatRichText
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.utils.formatRichText
 
 private const val DISABLED_CONTENT_ALPHA = 0.38f
 private val DisabledIconSize = 18.dp

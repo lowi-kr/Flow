@@ -1,9 +1,9 @@
-package io.github.aedev.flow.ui.screens.settings.index
+package com.arubr.smsvcodes.ui.screens.settings.index
 
-import io.github.aedev.flow.R
-import io.github.aedev.flow.ui.components.settings.SettingAvailability
-import io.github.aedev.flow.ui.components.settings.SettingEntry
-import io.github.aedev.flow.ui.components.settings.SettingsDestination
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.ui.components.settings.SettingAvailability
+import com.arubr.smsvcodes.ui.components.settings.SettingEntry
+import com.arubr.smsvcodes.ui.components.settings.SettingsDestination
 
 /** Options that live directly on the settings list rather than on a page of their own. */
 internal object HomeIndex {

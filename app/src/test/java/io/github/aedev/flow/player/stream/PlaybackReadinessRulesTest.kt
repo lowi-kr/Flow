@@ -1,10 +1,10 @@
-package io.github.aedev.flow.player.stream
+package com.arubr.smsvcodes.player.stream
 
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.innertube.models.ResponseContext
-import io.github.aedev.flow.innertube.models.YouTubeClient
-import io.github.aedev.flow.innertube.models.response.PlayerResponse
-import io.github.aedev.flow.player.sabr.integration.SabrStreamInfo
+import com.arubr.smsvcodes.innertube.models.ResponseContext
+import com.arubr.smsvcodes.innertube.models.YouTubeClient
+import com.arubr.smsvcodes.innertube.models.response.PlayerResponse
+import com.arubr.smsvcodes.player.sabr.integration.SabrStreamInfo
 import org.junit.Test
 
 /**

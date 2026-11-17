@@ -1,11 +1,11 @@
-package io.github.aedev.flow.data.audio.eq
+package com.arubr.smsvcodes.data.audio.eq
 
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.data.audio.eq.EqFilterType.HIGH_PASS
-import io.github.aedev.flow.data.audio.eq.EqFilterType.HIGH_SHELF
-import io.github.aedev.flow.data.audio.eq.EqFilterType.LOW_PASS
-import io.github.aedev.flow.data.audio.eq.EqFilterType.LOW_SHELF
-import io.github.aedev.flow.data.audio.eq.EqFilterType.PEAK
+import com.arubr.smsvcodes.data.audio.eq.EqFilterType.HIGH_PASS
+import com.arubr.smsvcodes.data.audio.eq.EqFilterType.HIGH_SHELF
+import com.arubr.smsvcodes.data.audio.eq.EqFilterType.LOW_PASS
+import com.arubr.smsvcodes.data.audio.eq.EqFilterType.LOW_SHELF
+import com.arubr.smsvcodes.data.audio.eq.EqFilterType.PEAK
 import org.junit.Test
 
 class EqFilterMathTest {

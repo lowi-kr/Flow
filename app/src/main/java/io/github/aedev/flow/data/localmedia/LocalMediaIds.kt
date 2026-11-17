@@ -1,4 +1,4 @@
-package io.github.aedev.flow.data.localmedia
+package com.arubr.smsvcodes.data.localmedia
 
 import android.content.ContentUris
 import android.net.Uri

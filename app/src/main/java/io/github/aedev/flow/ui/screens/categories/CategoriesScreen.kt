@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.categories
+package com.arubr.smsvcodes.ui.screens.categories
 
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.layout.BoxWithConstraints
@@ -28,25 +28,25 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.paging.compose.collectAsLazyPagingItems
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.local.HomeFeedColumns
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.innertube.pages.explore.ExploreSectionKind
-import io.github.aedev.flow.ui.OnTabReselected
-import io.github.aedev.flow.ui.components.categories.CategoryChartGrid
-import io.github.aedev.flow.ui.components.categories.CategoryPagedGrid
-import io.github.aedev.flow.ui.components.categories.CategoryShelfPage
-import io.github.aedev.flow.ui.components.categories.CategorySubTabMenu
-import io.github.aedev.flow.ui.components.categories.CategoryTabBar
-import io.github.aedev.flow.ui.components.layout.navigation.FlowTab
-import io.github.aedev.flow.ui.components.layout.topbar.FlowTopBar
-import io.github.aedev.flow.ui.components.rememberFeedGridLayout
-import io.github.aedev.flow.ui.components.shared.FeedGridSkeleton
-import io.github.aedev.flow.ui.components.shared.FlowChoice
-import io.github.aedev.flow.ui.components.shared.FlowChoiceDialog
-import io.github.aedev.flow.ui.components.shared.FlowErrorState
-import io.github.aedev.flow.utils.RegionCatalog
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.local.HomeFeedColumns
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.innertube.pages.explore.ExploreSectionKind
+import com.arubr.smsvcodes.ui.OnTabReselected
+import com.arubr.smsvcodes.ui.components.categories.CategoryChartGrid
+import com.arubr.smsvcodes.ui.components.categories.CategoryPagedGrid
+import com.arubr.smsvcodes.ui.components.categories.CategoryShelfPage
+import com.arubr.smsvcodes.ui.components.categories.CategorySubTabMenu
+import com.arubr.smsvcodes.ui.components.categories.CategoryTabBar
+import com.arubr.smsvcodes.ui.components.layout.navigation.FlowTab
+import com.arubr.smsvcodes.ui.components.layout.topbar.FlowTopBar
+import com.arubr.smsvcodes.ui.components.rememberFeedGridLayout
+import com.arubr.smsvcodes.ui.components.shared.FeedGridSkeleton
+import com.arubr.smsvcodes.ui.components.shared.FlowChoice
+import com.arubr.smsvcodes.ui.components.shared.FlowChoiceDialog
+import com.arubr.smsvcodes.ui.components.shared.FlowErrorState
+import com.arubr.smsvcodes.utils.RegionCatalog
 
 /**
  * Explore: one tab per YouTube destination, each rendering whichever of the three shapes its source

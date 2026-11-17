@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.musicplayer.full
+package com.arubr.smsvcodes.ui.components.musicplayer.full
 
 import android.view.LayoutInflater
 import android.view.View
@@ -44,9 +44,9 @@ import androidx.media3.exoplayer.ExoPlayer
 import androidx.media3.exoplayer.source.DefaultMediaSourceFactory
 import androidx.media3.ui.AspectRatioFrameLayout
 import androidx.media3.ui.PlayerView
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.music.model.MusicTrack
-import io.github.aedev.flow.ui.screens.music.AnimatedArtworkViewModel
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.music.model.MusicTrack
+import com.arubr.smsvcodes.ui.screens.music.AnimatedArtworkViewModel
 import kotlinx.coroutines.delay
 
 /** How long a hidden loop keeps its decoder, so a quick swipe back resumes at once. */

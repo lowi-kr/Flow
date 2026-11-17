@@ -1,21 +1,21 @@
-package io.github.aedev.flow.ui.screens.player.effects
+package com.arubr.smsvcodes.ui.screens.player.effects
 
 import android.content.Context
 import android.widget.Toast
 import androidx.compose.runtime.*
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.rememberUpdatedState
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.player.EnhancedPlayerManager
-import io.github.aedev.flow.player.state.SubtitleLoadFailure
-import io.github.aedev.flow.player.state.SubtitleOption
-import io.github.aedev.flow.ui.screens.player.VideoPlayerViewModel
-import io.github.aedev.flow.ui.screens.player.state.PlayerScreenState
-import io.github.aedev.flow.ui.screens.player.state.SubtitleSelection
-import io.github.aedev.flow.ui.screens.player.state.VideoPlayerUiState
-import io.github.aedev.flow.utils.NetworkState
-import io.github.aedev.flow.utils.sponsorCategoryLabelRes
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.player.EnhancedPlayerManager
+import com.arubr.smsvcodes.player.state.SubtitleLoadFailure
+import com.arubr.smsvcodes.player.state.SubtitleOption
+import com.arubr.smsvcodes.ui.screens.player.VideoPlayerViewModel
+import com.arubr.smsvcodes.ui.screens.player.state.PlayerScreenState
+import com.arubr.smsvcodes.ui.screens.player.state.SubtitleSelection
+import com.arubr.smsvcodes.ui.screens.player.state.VideoPlayerUiState
+import com.arubr.smsvcodes.utils.NetworkState
+import com.arubr.smsvcodes.utils.sponsorCategoryLabelRes
 import kotlinx.coroutines.delay
 
 @Composable

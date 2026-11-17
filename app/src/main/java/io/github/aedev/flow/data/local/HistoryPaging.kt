@@ -1,8 +1,8 @@
-package io.github.aedev.flow.data.local
+package com.arubr.smsvcodes.data.local
 
-import io.github.aedev.flow.data.local.dao.WatchHistoryDao
-import io.github.aedev.flow.data.local.dao.WatchProgress
-import io.github.aedev.flow.data.local.entity.WatchHistoryEntity
+import com.arubr.smsvcodes.data.local.dao.WatchHistoryDao
+import com.arubr.smsvcodes.data.local.dao.WatchProgress
+import com.arubr.smsvcodes.data.local.entity.WatchHistoryEntity
 
 internal const val HISTORY_PAGE_SIZE = 500
 internal const val PROGRESS_PAGE_SIZE = 2_000

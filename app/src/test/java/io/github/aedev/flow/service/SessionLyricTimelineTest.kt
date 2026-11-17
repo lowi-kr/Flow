@@ -1,9 +1,9 @@
-package io.github.aedev.flow.service
+package com.arubr.smsvcodes.service
 
 import com.google.common.collect.Range
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.data.lyrics.LyricsEntry
-import io.github.aedev.flow.data.lyrics.WordTimestamp
+import com.arubr.smsvcodes.data.lyrics.LyricsEntry
+import com.arubr.smsvcodes.data.lyrics.WordTimestamp
 import org.junit.Test
 
 class SessionLyricTimelineTest {

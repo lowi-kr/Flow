@@ -1,4 +1,4 @@
-package io.github.aedev.flow.service
+package com.arubr.smsvcodes.service
 
 import android.app.ActivityManager
 import android.app.PendingIntent
@@ -46,65 +46,65 @@ import com.google.common.util.concurrent.Futures
 import com.google.common.util.concurrent.ListenableFuture
 import com.google.common.util.concurrent.SettableFuture
 import dagger.hilt.android.AndroidEntryPoint
-import io.github.aedev.flow.MainActivity
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.audio.eq.EqualizerRepository
-import io.github.aedev.flow.data.download.DownloadUtil
-import io.github.aedev.flow.data.download.LegacySongDownloads
-import io.github.aedev.flow.data.local.BufferProfile
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.data.local.QueuePersistence
-import io.github.aedev.flow.data.localmedia.LocalLyricsReader
-import io.github.aedev.flow.data.localmedia.LocalMediaIds
-import io.github.aedev.flow.data.music.YouTubeMusicService
-import io.github.aedev.flow.data.music.model.MusicTrack
-import io.github.aedev.flow.data.newmusic.InnertubeMusicService
-import io.github.aedev.flow.data.profile.ActiveProfile
-import io.github.aedev.flow.data.profile.ProfileSwitchGate
-import io.github.aedev.flow.data.recommendation.music.MusicBrainEngine
-import io.github.aedev.flow.data.scrobble.ScrobbleRules
-import io.github.aedev.flow.extensions.setOffloadEnabled
-import io.github.aedev.flow.innertube.YouTube
-import io.github.aedev.flow.innertube.models.WatchEndpoint
-import io.github.aedev.flow.player.LifecyclePlaybackPreferences
-import io.github.aedev.flow.player.MusicFailureStreak
-import io.github.aedev.flow.player.MusicLoadErrorPolicy
-import io.github.aedev.flow.player.MusicPauseLog
-import io.github.aedev.flow.player.MusicPlaybackDiagnostics
-import io.github.aedev.flow.player.MusicPlaybackRecoveryPlanner
-import io.github.aedev.flow.player.MusicQueuePlanner
-import io.github.aedev.flow.player.MusicRadioPlanner
-import io.github.aedev.flow.player.MusicResumeTracker
-import io.github.aedev.flow.player.MutePausePolicy
-import io.github.aedev.flow.player.PlaylistQueueOrder
-import io.github.aedev.flow.player.audio.AudioSessionAnnouncer
-import io.github.aedev.flow.player.audio.AudioSessionRegistry
-import io.github.aedev.flow.player.audio.LoudnessGain
-import io.github.aedev.flow.player.audio.eq.EqualizerAudioProcessor
-import io.github.aedev.flow.player.audio.shouldHandleAudioFocus
-import io.github.aedev.flow.player.crossfade.CrossfadePolicy
-import io.github.aedev.flow.player.crossfade.MusicCrossfader
-import io.github.aedev.flow.player.datasource.YouTubeHttpDataSource
-import io.github.aedev.flow.player.error.PlaybackErrorLog
-import io.github.aedev.flow.player.error.PlayerDiagnostics
-import io.github.aedev.flow.player.error.StreamDenialClassifier
-import io.github.aedev.flow.player.error.StreamDenialKind
-import io.github.aedev.flow.player.factory.LoadControlFactory
-import io.github.aedev.flow.player.isVideoListItem
-import io.github.aedev.flow.player.musicvideo.MusicMediaSourceFactory
-import io.github.aedev.flow.player.musicvideo.MusicVideoFormats
-import io.github.aedev.flow.player.musicvideo.MusicVideoSwitch
-import io.github.aedev.flow.player.restoredMusicQueue
-import io.github.aedev.flow.player.sessionArtworkBitmapLoader
-import io.github.aedev.flow.player.stream.ClientGateTracker
-import io.github.aedev.flow.player.stream.PlaybackBlock
-import io.github.aedev.flow.service.auto.AutoBrowseTree
-import io.github.aedev.flow.service.auto.AutoLibrary
-import io.github.aedev.flow.service.auto.AutoLibraryBrowser
-import io.github.aedev.flow.utils.MusicPlayerUtils
-import io.github.aedev.flow.utils.NetworkConnectivityObserver
-import io.github.aedev.flow.utils.NetworkState
-import io.github.aedev.flow.utils.potoken.WebPoTokenSession
+import com.arubr.smsvcodes.MainActivity
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.audio.eq.EqualizerRepository
+import com.arubr.smsvcodes.data.download.DownloadUtil
+import com.arubr.smsvcodes.data.download.LegacySongDownloads
+import com.arubr.smsvcodes.data.local.BufferProfile
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.data.local.QueuePersistence
+import com.arubr.smsvcodes.data.localmedia.LocalLyricsReader
+import com.arubr.smsvcodes.data.localmedia.LocalMediaIds
+import com.arubr.smsvcodes.data.music.YouTubeMusicService
+import com.arubr.smsvcodes.data.music.model.MusicTrack
+import com.arubr.smsvcodes.data.newmusic.InnertubeMusicService
+import com.arubr.smsvcodes.data.profile.ActiveProfile
+import com.arubr.smsvcodes.data.profile.ProfileSwitchGate
+import com.arubr.smsvcodes.data.recommendation.music.MusicBrainEngine
+import com.arubr.smsvcodes.data.scrobble.ScrobbleRules
+import com.arubr.smsvcodes.extensions.setOffloadEnabled
+import com.arubr.smsvcodes.innertube.YouTube
+import com.arubr.smsvcodes.innertube.models.WatchEndpoint
+import com.arubr.smsvcodes.player.LifecyclePlaybackPreferences
+import com.arubr.smsvcodes.player.MusicFailureStreak
+import com.arubr.smsvcodes.player.MusicLoadErrorPolicy
+import com.arubr.smsvcodes.player.MusicPauseLog
+import com.arubr.smsvcodes.player.MusicPlaybackDiagnostics
+import com.arubr.smsvcodes.player.MusicPlaybackRecoveryPlanner
+import com.arubr.smsvcodes.player.MusicQueuePlanner
+import com.arubr.smsvcodes.player.MusicRadioPlanner
+import com.arubr.smsvcodes.player.MusicResumeTracker
+import com.arubr.smsvcodes.player.MutePausePolicy
+import com.arubr.smsvcodes.player.PlaylistQueueOrder
+import com.arubr.smsvcodes.player.audio.AudioSessionAnnouncer
+import com.arubr.smsvcodes.player.audio.AudioSessionRegistry
+import com.arubr.smsvcodes.player.audio.LoudnessGain
+import com.arubr.smsvcodes.player.audio.eq.EqualizerAudioProcessor
+import com.arubr.smsvcodes.player.audio.shouldHandleAudioFocus
+import com.arubr.smsvcodes.player.crossfade.CrossfadePolicy
+import com.arubr.smsvcodes.player.crossfade.MusicCrossfader
+import com.arubr.smsvcodes.player.datasource.YouTubeHttpDataSource
+import com.arubr.smsvcodes.player.error.PlaybackErrorLog
+import com.arubr.smsvcodes.player.error.PlayerDiagnostics
+import com.arubr.smsvcodes.player.error.StreamDenialClassifier
+import com.arubr.smsvcodes.player.error.StreamDenialKind
+import com.arubr.smsvcodes.player.factory.LoadControlFactory
+import com.arubr.smsvcodes.player.isVideoListItem
+import com.arubr.smsvcodes.player.musicvideo.MusicMediaSourceFactory
+import com.arubr.smsvcodes.player.musicvideo.MusicVideoFormats
+import com.arubr.smsvcodes.player.musicvideo.MusicVideoSwitch
+import com.arubr.smsvcodes.player.restoredMusicQueue
+import com.arubr.smsvcodes.player.sessionArtworkBitmapLoader
+import com.arubr.smsvcodes.player.stream.ClientGateTracker
+import com.arubr.smsvcodes.player.stream.PlaybackBlock
+import com.arubr.smsvcodes.service.auto.AutoBrowseTree
+import com.arubr.smsvcodes.service.auto.AutoLibrary
+import com.arubr.smsvcodes.service.auto.AutoLibraryBrowser
+import com.arubr.smsvcodes.utils.MusicPlayerUtils
+import com.arubr.smsvcodes.utils.NetworkConnectivityObserver
+import com.arubr.smsvcodes.utils.NetworkState
+import com.arubr.smsvcodes.utils.potoken.WebPoTokenSession
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
@@ -275,25 +275,25 @@ class Media3MusicService : MediaLibraryService() {
     lateinit var legacySongs: LegacySongDownloads
 
     @Inject
-    lateinit var widgetPublisher: io.github.aedev.flow.widget.nowplaying.NowPlayingWidgetPublisher
+    lateinit var widgetPublisher: com.arubr.smsvcodes.widget.nowplaying.NowPlayingWidgetPublisher
 
     @Inject
     lateinit var musicBrain: MusicBrainEngine
 
     @Inject
-    lateinit var scrobbler: io.github.aedev.flow.data.scrobble.Scrobbler
+    lateinit var scrobbler: com.arubr.smsvcodes.data.scrobble.Scrobbler
 
     @Inject
     lateinit var videoSwitch: MusicVideoSwitch
 
     @Inject
-    lateinit var crossfadePause: io.github.aedev.flow.player.crossfade.CrossfadeSessionPause
+    lateinit var crossfadePause: com.arubr.smsvcodes.player.crossfade.CrossfadeSessionPause
 
     private val prefs by lazy { PlayerPreferences(this) }
     private val lockScreenPlayer by lazy { LockScreenPlayerLauncher(this) }
 
     @Inject
-    lateinit var widgetContentSync: dagger.Lazy<io.github.aedev.flow.widget.core.refresh.WidgetContentSync>
+    lateinit var widgetContentSync: dagger.Lazy<com.arubr.smsvcodes.widget.core.refresh.WidgetContentSync>
 
     @Inject
     lateinit var equalizerRepository: EqualizerRepository
@@ -306,7 +306,7 @@ class Media3MusicService : MediaLibraryService() {
     lateinit var autoLibrary: AutoLibrary
 
     @Inject
-    lateinit var musicDownloads: io.github.aedev.flow.data.music.DownloadManager
+    lateinit var musicDownloads: com.arubr.smsvcodes.data.music.DownloadManager
 
     private val autoBrowser by lazy { AutoLibraryBrowser(this, lifecycleScope, autoLibrary) }
 
@@ -317,13 +317,13 @@ class Media3MusicService : MediaLibraryService() {
     lateinit var musicResume: MusicResumeTracker
 
     @Inject
-    lateinit var lyricsHelper: io.github.aedev.flow.data.lyrics.LyricsHelper
+    lateinit var lyricsHelper: com.arubr.smsvcodes.data.lyrics.LyricsHelper
 
     @Inject
     lateinit var localLyrics: LocalLyricsReader
 
     @Inject
-    lateinit var videoLyricsTiming: io.github.aedev.flow.data.lyrics.MusicVideoLyricsTiming
+    lateinit var videoLyricsTiming: com.arubr.smsvcodes.data.lyrics.MusicVideoLyricsTiming
 
     private var sessionLyrics: SessionLyrics? = null
 
@@ -361,7 +361,7 @@ class Media3MusicService : MediaLibraryService() {
         }
 
         lifecycleScope.launch {
-            io.github.aedev.flow.player.EnhancedMusicPlayerManager.isLiked.collectLatest {
+            com.arubr.smsvcodes.player.EnhancedMusicPlayerManager.isLiked.collectLatest {
                 updateNotification()
                 if (::player.isInitialized) widgetPublisher.publish(player)
             }
@@ -383,7 +383,7 @@ class Media3MusicService : MediaLibraryService() {
             }
         }
         lifecycleScope.launch {
-            var lastQuality: io.github.aedev.flow.data.local.MusicAudioQuality? = null
+            var lastQuality: com.arubr.smsvcodes.data.local.MusicAudioQuality? = null
             prefs.musicAudioQuality.collect { quality ->
                 val previous = lastQuality
                 lastQuality = quality
@@ -449,7 +449,7 @@ class Media3MusicService : MediaLibraryService() {
             durationMs = player.duration.takeIf { it != C.TIME_UNSET } ?: 0L,
             speed = player.playbackParameters.speed,
             showsVideo = C.TRACK_TYPE_VIDEO !in player.trackSelectionParameters.disabledTrackTypes,
-            pausesAtEndOfSong = io.github.aedev.flow.player.SleepTimerManager.pauseAtEndOfMedia,
+            pausesAtEndOfSong = com.arubr.smsvcodes.player.SleepTimerManager.pauseAtEndOfMedia,
             nextIsSameAlbum = next != null && sameAlbum(player.currentMediaItem?.mediaId, next.mediaId),
             keepAlbumsGapless = settings.keepAlbumsGapless,
         )
@@ -459,7 +459,7 @@ class Media3MusicService : MediaLibraryService() {
         currentId: String?,
         nextId: String,
     ): Boolean {
-        val queue = io.github.aedev.flow.player.EnhancedMusicPlayerManager.queue.value
+        val queue = com.arubr.smsvcodes.player.EnhancedMusicPlayerManager.queue.value
         val current = queue.firstOrNull { it.videoId == currentId } ?: return false
         val next = queue.firstOrNull { it.videoId == nextId } ?: return false
         return (current.albumId != null && current.albumId == next.albumId) || (current.album.isNotBlank() && current.album == next.album)
@@ -479,7 +479,7 @@ class Media3MusicService : MediaLibraryService() {
         try {
             downloadUtil.clearUrlCache()
             MusicPlayerUtils.clearPlaybackCache()
-            io.github.aedev.flow.player.EnhancedMusicPlayerManager
+            com.arubr.smsvcodes.player.EnhancedMusicPlayerManager
                 .clearUrlCache()
         } catch (e: Exception) {
             Log.w(TAG, "Failed to clear caches on quality change: ${e.message}")
@@ -625,7 +625,7 @@ class Media3MusicService : MediaLibraryService() {
                     updateNotification()
                     // A connected app rearranges the queue it shows; without one (a media button
                     // started the service), this order is the only one, so rearrange it here.
-                    val appConnected = io.github.aedev.flow.player.EnhancedMusicPlayerManager.playerInstance.value != null
+                    val appConnected = com.arubr.smsvcodes.player.EnhancedMusicPlayerManager.playerInstance.value != null
                     if (shuffleModeEnabled && !applyingSavedShuffle && !appConnected) shuffleFromCurrentItem()
                 }
 
@@ -876,7 +876,7 @@ class Media3MusicService : MediaLibraryService() {
 
     private fun resolveLearnTrack(mediaId: String?): MusicTrack? {
         if (mediaId.isNullOrBlank()) return null
-        val manager = io.github.aedev.flow.player.EnhancedMusicPlayerManager
+        val manager = com.arubr.smsvcodes.player.EnhancedMusicPlayerManager
         return manager.queue.value.firstOrNull { it.videoId == mediaId }
             ?: manager.currentTrack.value?.takeIf { it.videoId == mediaId }
             ?: manager.automixItems.value.firstOrNull { it.videoId == mediaId }
@@ -903,7 +903,7 @@ class Media3MusicService : MediaLibraryService() {
         learnTrack = listenTrack(mediaId)
         // Pin the genre context too — it belongs to the queue this track started in.
         learnGenre =
-            io.github.aedev.flow.player.EnhancedMusicPlayerManager
+            com.arubr.smsvcodes.player.EnhancedMusicPlayerManager
                 .playContextGenre
         learnFromVideoList =
             ::player.isInitialized && player.currentMediaItem?.takeIf { it.mediaId == mediaId }?.isVideoListItem == true
@@ -964,8 +964,8 @@ class Media3MusicService : MediaLibraryService() {
         musicBrain.onListenSessionAsync(track, playedMs.toDouble() / durationMs, pinnedGenre, playedMs)
         if (!alreadyScrobbled) scrobbler.onListened(track, durationMs, playedMs, startedAtMs)
         widgetContentSync.get().run {
-            request(io.github.aedev.flow.widget.core.refresh.WidgetContentKey.ON_REPEAT)
-            request(io.github.aedev.flow.widget.core.refresh.WidgetContentKey.WEEK)
+            request(com.arubr.smsvcodes.widget.core.refresh.WidgetContentKey.ON_REPEAT)
+            request(com.arubr.smsvcodes.widget.core.refresh.WidgetContentKey.WEEK)
         }
     }
 
@@ -1137,7 +1137,7 @@ class Media3MusicService : MediaLibraryService() {
             Log.e(TAG, "Failed to clear decryption cache for $mediaId", e)
         }
         try {
-            io.github.aedev.flow.player.EnhancedMusicPlayerManager
+            com.arubr.smsvcodes.player.EnhancedMusicPlayerManager
                 .invalidateResolvedStream(mediaId)
         } catch (e: Exception) {
             Log.e(TAG, "Failed to clear resolved stream cache for $mediaId", e)
@@ -1252,7 +1252,7 @@ class Media3MusicService : MediaLibraryService() {
                 try {
                     downloadUtil.invalidateUrlCache(mediaId)
                     MusicPlayerUtils.forceRefreshForVideo(mediaId)
-                    io.github.aedev.flow.player.EnhancedMusicPlayerManager
+                    com.arubr.smsvcodes.player.EnhancedMusicPlayerManager
                         .invalidateResolvedStream(mediaId)
                     player.stop()
                     if (refreshStreamMediaItem(failed)) {
@@ -1405,7 +1405,7 @@ class Media3MusicService : MediaLibraryService() {
     }
 
     private fun notifyMusicWarning(message: String) {
-        io.github.aedev.flow.player.EnhancedMusicPlayerManager
+        com.arubr.smsvcodes.player.EnhancedMusicPlayerManager
             .showPlaybackWarning(message)
     }
 
@@ -1418,7 +1418,7 @@ class Media3MusicService : MediaLibraryService() {
             player.stop()
             player.clearMediaItems()
         }
-        io.github.aedev.flow.player.EnhancedMusicPlayerManager
+        com.arubr.smsvcodes.player.EnhancedMusicPlayerManager
             .onServiceStopped()
         releaseLocks()
         stopSelf()
@@ -1448,7 +1448,7 @@ class Media3MusicService : MediaLibraryService() {
     private fun initializeSession() {
         val intent =
             Intent(this, MainActivity::class.java).apply {
-                action = "io.github.aedev.flow.action.OPEN_MUSIC_PLAYER"
+                action = "com.arubr.smsvcodes.action.OPEN_MUSIC_PLAYER"
                 flags = Intent.FLAG_ACTIVITY_SINGLE_TOP or Intent.FLAG_ACTIVITY_CLEAR_TOP
                 putExtra("open_music_player", true)
             }
@@ -1661,7 +1661,7 @@ class Media3MusicService : MediaLibraryService() {
      * radio) or just an in-queue skip routed through playTrack (extend only).
      */
     private fun onQueueContextChanged(playingId: String) {
-        val manager = io.github.aedev.flow.player.EnhancedMusicPlayerManager
+        val manager = com.arubr.smsvcodes.player.EnhancedMusicPlayerManager
         // A swapped-in video belongs to its song's queue context and seeds the radio as that song.
         val currentId = videoSwitch.listenId(playingId)
         val queueIds = manager.queue.value.map { videoSwitch.listenId(it.videoId) }
@@ -1693,7 +1693,7 @@ class Media3MusicService : MediaLibraryService() {
     private fun startRadio(seedId: String) {
         automixJob?.cancel()
         radioTopUpJob?.cancel()
-        io.github.aedev.flow.player.EnhancedMusicPlayerManager
+        com.arubr.smsvcodes.player.EnhancedMusicPlayerManager
             .setRadioLoading(true)
         automixJob =
             lifecycleScope.launch(Dispatchers.IO) {
@@ -1738,12 +1738,12 @@ class Media3MusicService : MediaLibraryService() {
                     val ranked =
                         musicBrain.sequenceRadioBatch(
                             musicBrain.rankTracks(mapped, "radio"),
-                            io.github.aedev.flow.player.EnhancedMusicPlayerManager.currentTrack.value,
+                            com.arubr.smsvcodes.player.EnhancedMusicPlayerManager.currentTrack.value,
                             MusicRadioPlanner.MAX_POOL_SIZE,
                         )
                     Log.d(TAG, "Radio seeded from $seedId: ${ranked.size} tracks, continuation=${radioContinuation != null}")
                     if (ranked.isNotEmpty()) {
-                        io.github.aedev.flow.player.EnhancedMusicPlayerManager
+                        com.arubr.smsvcodes.player.EnhancedMusicPlayerManager
                             .updateAutomixItems(ranked)
                         // The queue may already be short (or ended) by the time the
                         // seed arrives — move pool tracks into it right away.
@@ -1754,7 +1754,7 @@ class Media3MusicService : MediaLibraryService() {
                 } catch (e: Exception) {
                     Log.e(TAG, "Error seeding radio", e)
                 } finally {
-                    io.github.aedev.flow.player.EnhancedMusicPlayerManager
+                    com.arubr.smsvcodes.player.EnhancedMusicPlayerManager
                         .setRadioLoading(false)
                 }
             }
@@ -1766,7 +1766,7 @@ class Media3MusicService : MediaLibraryService() {
      * nothing the user sees is replaced — and refills the pool in the background.
      */
     private fun maybeExtendRadio() {
-        val manager = io.github.aedev.flow.player.EnhancedMusicPlayerManager
+        val manager = com.arubr.smsvcodes.player.EnhancedMusicPlayerManager
         if (!radioAutoplayEnabled && !manager.radioStationActive.value) return
         if (!::player.isInitialized) return
         // Repeat already produces an endless queue — matching desktop.
@@ -1809,12 +1809,12 @@ class Media3MusicService : MediaLibraryService() {
     /** Fetch the next radio page and APPEND it to the pool — never replaces. */
     private fun extendRadioPool() {
         if (radioTopUpJob?.isActive == true) return
-        io.github.aedev.flow.player.EnhancedMusicPlayerManager
+        com.arubr.smsvcodes.player.EnhancedMusicPlayerManager
             .setRadioLoading(true)
         radioTopUpJob =
             lifecycleScope.launch(Dispatchers.IO) {
                 try {
-                    val manager = io.github.aedev.flow.player.EnhancedMusicPlayerManager
+                    val manager = com.arubr.smsvcodes.player.EnhancedMusicPlayerManager
                     val endpoint = radioEndpoint
                     val continuation = radioContinuation
                     val page =
@@ -1858,7 +1858,7 @@ class Media3MusicService : MediaLibraryService() {
                 } catch (e: Exception) {
                     Log.w(TAG, "Radio top-up failed: ${e.message}")
                 } finally {
-                    io.github.aedev.flow.player.EnhancedMusicPlayerManager
+                    com.arubr.smsvcodes.player.EnhancedMusicPlayerManager
                         .setRadioLoading(false)
                 }
             }
@@ -1867,7 +1867,7 @@ class Media3MusicService : MediaLibraryService() {
     private fun updateNotification() {
         if (!::mediaLibrarySession.isInitialized) return
 
-        val isLiked = io.github.aedev.flow.player.EnhancedMusicPlayerManager.isLiked.value
+        val isLiked = com.arubr.smsvcodes.player.EnhancedMusicPlayerManager.isLiked.value
 
         val likeButton =
             CommandButton
@@ -2053,7 +2053,7 @@ class Media3MusicService : MediaLibraryService() {
             if (session.isCar(controller)) {
                 MusicServiceState.carConnected()
                 sessionLyrics?.carChanged()
-                io.github.aedev.flow.player.EnhancedMusicPlayerManager
+                com.arubr.smsvcodes.player.EnhancedMusicPlayerManager
                     .initialize(applicationContext, musicDownloads::isDownloaded)
             }
             val validCommands =
@@ -2113,7 +2113,7 @@ class Media3MusicService : MediaLibraryService() {
             args: Bundle,
         ): ListenableFuture<SessionResult> {
             if (customCommand.customAction == ACTION_TOGGLE_LIKE) {
-                io.github.aedev.flow.player.EnhancedMusicPlayerManager
+                com.arubr.smsvcodes.player.EnhancedMusicPlayerManager
                     .emitToggleLikeEvent()
                 return Futures.immediateFuture(SessionResult(SessionResult.RESULT_SUCCESS))
             }

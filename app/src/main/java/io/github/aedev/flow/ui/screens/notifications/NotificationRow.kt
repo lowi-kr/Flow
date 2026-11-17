@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.notifications
+package com.arubr.smsvcodes.ui.screens.notifications
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -37,9 +37,9 @@ import androidx.compose.ui.semantics.stateDescription
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.local.entity.NotificationEntity
-import io.github.aedev.flow.ui.components.shared.MediaThumbnail
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.local.entity.NotificationEntity
+import com.arubr.smsvcodes.ui.components.shared.MediaThumbnail
 import kotlinx.coroutines.launch
 
 private val ThumbnailWidth = 120.dp

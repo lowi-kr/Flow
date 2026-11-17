@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.layout.navigation
+package com.arubr.smsvcodes.ui.components.layout.navigation
 
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.DropdownMenuGroup

@@ -10,8 +10,8 @@ export ANDROID_SERIAL
 OLD_APK=$1
 NEW_APK=$2
 DATA_TAR=$3
-PKG=${PKG:-io.github.aedev.flow.debug}
-RECEIVER=io.github.aedev.flow.data.profile.ProfileProbeReceiver
+PKG=${PKG:-com.arubr.smsvcodes.debug}
+RECEIVER=com.arubr.smsvcodes.data.profile.ProfileProbeReceiver
 WORK=$(mktemp -d)
 trap 'rm -rf "$WORK"' EXIT
 FAILURES=0
@@ -69,7 +69,7 @@ fail() {
 }
 
 launch() {
-    adb shell am start -n "$PKG/io.github.aedev.flow.MainActivity" >/dev/null
+    adb shell am start -n "$PKG/com.arubr.smsvcodes.MainActivity" >/dev/null
     sleep 20
     if [ -n "$(adb shell pidof "$PKG" | tr -d '\r')" ]; then pass "$1 is running"; else fail "$1 is not running"; fi
     adb shell am force-stop "$PKG"
@@ -184,7 +184,7 @@ if [ "$1" -gt 0 ] && [ "$2" = 0 ]; then pass "$1 device settings copied with the
 check_crashes
 
 echo "Second profile, then downgrade while it is active"
-adb shell am start -n "$PKG/io.github.aedev.flow.MainActivity" >/dev/null
+adb shell am start -n "$PKG/com.arubr.smsvcodes.MainActivity" >/dev/null
 sleep 10
 adb shell am broadcast -n "$PKG/$RECEIVER" --es op create --es name Second >/dev/null
 sleep 3
@@ -208,7 +208,7 @@ check_crashes
 
 echo "Upgrade again"
 adb install -r "$NEW_APK" >/dev/null
-adb shell am start -n "$PKG/io.github.aedev.flow.MainActivity" >/dev/null
+adb shell am start -n "$PKG/com.arubr.smsvcodes.MainActivity" >/dev/null
 sleep 20
 if [ "$(registry_field 'd["activeId"]')" = "$SECOND" ] && [ -n "$(adb shell pidof "$PKG" | tr -d '\r')" ]; then pass "the new build opens Second again"; else fail "the new build didn't come back to Second"; fi
 check_crashes

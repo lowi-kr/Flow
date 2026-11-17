@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.musicplayer.lyrics
+package com.arubr.smsvcodes.ui.components.musicplayer.lyrics
 
 import android.graphics.Bitmap
 import androidx.compose.animation.Crossfade

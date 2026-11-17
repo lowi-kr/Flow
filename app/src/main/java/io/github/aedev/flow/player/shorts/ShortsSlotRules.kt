@@ -1,4 +1,4 @@
-package io.github.aedev.flow.player.shorts
+package com.arubr.smsvcodes.player.shorts
 
 /**
  * How a content index maps onto one of the pool's fixed player slots, and who is allowed to touch it.

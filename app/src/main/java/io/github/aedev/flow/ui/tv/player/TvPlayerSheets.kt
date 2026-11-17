@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.tv.player
+package com.arubr.smsvcodes.ui.tv.player
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.EnterExitState
@@ -17,24 +17,24 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.player.EnhancedPlayerState
-import io.github.aedev.flow.ui.screens.player.VideoPlayerViewModel
-import io.github.aedev.flow.ui.screens.player.dialogs.PlayerChaptersSheetHost
-import io.github.aedev.flow.ui.screens.player.dialogs.PlayerCommentsPanelHost
-import io.github.aedev.flow.ui.screens.player.dialogs.PlayerDescriptionSheetHost
-import io.github.aedev.flow.ui.screens.player.dialogs.PlayerLiveChatColumn
-import io.github.aedev.flow.ui.screens.player.dialogs.PlayerQueueSheetHost
-import io.github.aedev.flow.ui.screens.player.dialogs.PlayerSettingsSheetHost
-import io.github.aedev.flow.ui.screens.player.dialogs.PlayerSleepTimerSheetHost
-import io.github.aedev.flow.ui.screens.player.dialogs.PlayerTranscriptSheetHost
-import io.github.aedev.flow.ui.screens.player.state.PlayerCommentsUiState
-import io.github.aedev.flow.ui.screens.player.state.PlayerScreenState
-import io.github.aedev.flow.ui.screens.player.state.PlayerSheet
-import io.github.aedev.flow.ui.screens.player.state.VideoPlayerPreferencesState
-import io.github.aedev.flow.ui.screens.player.state.VideoPlayerUiState
-import io.github.aedev.flow.ui.screens.player.state.hasTranscriptTrack
-import io.github.aedev.flow.ui.tv.components.TvSidePanelSurface
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.player.EnhancedPlayerState
+import com.arubr.smsvcodes.ui.screens.player.VideoPlayerViewModel
+import com.arubr.smsvcodes.ui.screens.player.dialogs.PlayerChaptersSheetHost
+import com.arubr.smsvcodes.ui.screens.player.dialogs.PlayerCommentsPanelHost
+import com.arubr.smsvcodes.ui.screens.player.dialogs.PlayerDescriptionSheetHost
+import com.arubr.smsvcodes.ui.screens.player.dialogs.PlayerLiveChatColumn
+import com.arubr.smsvcodes.ui.screens.player.dialogs.PlayerQueueSheetHost
+import com.arubr.smsvcodes.ui.screens.player.dialogs.PlayerSettingsSheetHost
+import com.arubr.smsvcodes.ui.screens.player.dialogs.PlayerSleepTimerSheetHost
+import com.arubr.smsvcodes.ui.screens.player.dialogs.PlayerTranscriptSheetHost
+import com.arubr.smsvcodes.ui.screens.player.state.PlayerCommentsUiState
+import com.arubr.smsvcodes.ui.screens.player.state.PlayerScreenState
+import com.arubr.smsvcodes.ui.screens.player.state.PlayerSheet
+import com.arubr.smsvcodes.ui.screens.player.state.VideoPlayerPreferencesState
+import com.arubr.smsvcodes.ui.screens.player.state.VideoPlayerUiState
+import com.arubr.smsvcodes.ui.screens.player.state.hasTranscriptTrack
+import com.arubr.smsvcodes.ui.tv.components.TvSidePanelSurface
 import kotlinx.coroutines.launch
 
 /**

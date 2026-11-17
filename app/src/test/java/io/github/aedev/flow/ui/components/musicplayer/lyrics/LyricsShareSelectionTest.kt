@@ -1,6 +1,6 @@
-package io.github.aedev.flow.ui.components.musicplayer.lyrics
+package com.arubr.smsvcodes.ui.components.musicplayer.lyrics
 
-import io.github.aedev.flow.data.lyrics.LyricsEntry
+import com.arubr.smsvcodes.data.lyrics.LyricsEntry
 import org.junit.Assert.assertEquals
 import org.junit.Test
 

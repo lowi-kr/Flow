@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.settings.topics
+package com.arubr.smsvcodes.ui.screens.settings.topics
 
 import androidx.annotation.StringRes
 import androidx.compose.foundation.layout.Arrangement

@@ -1,8 +1,8 @@
-package io.github.aedev.flow.ui.screens.home
+package com.arubr.smsvcodes.ui.screens.home
 
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.data.recommendation.FlowPersona
-import io.github.aedev.flow.data.recommendation.UserBrain
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.data.recommendation.FlowPersona
+import com.arubr.smsvcodes.data.recommendation.UserBrain
 import kotlinx.coroutines.flow.map
 
 // Format signals often tied to low-effort feed filler. NOT a blocklist: they only demote

@@ -1,9 +1,9 @@
-package io.github.aedev.flow.ui.screens.sync.linked
+package com.arubr.smsvcodes.ui.screens.sync.linked
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.res.stringResource
-import io.github.aedev.flow.R
-import io.github.aedev.flow.sync2.service.LinkedError
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.sync2.service.LinkedError
 
 @Composable
 internal fun LinkedError.message(): String =

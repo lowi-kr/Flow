@@ -1,11 +1,11 @@
-package io.github.aedev.flow.ui.screens.music
+package com.arubr.smsvcodes.ui.screens.music
 
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.data.music.model.MusicItemType
-import io.github.aedev.flow.data.music.model.MusicTrack
-import io.github.aedev.flow.data.recommendation.MusicSection
-import io.github.aedev.flow.innertube.models.BrowseEndpoint
-import io.github.aedev.flow.innertube.pages.HomePage
+import com.arubr.smsvcodes.data.music.model.MusicItemType
+import com.arubr.smsvcodes.data.music.model.MusicTrack
+import com.arubr.smsvcodes.data.recommendation.MusicSection
+import com.arubr.smsvcodes.innertube.models.BrowseEndpoint
+import com.arubr.smsvcodes.innertube.pages.HomePage
 import kotlinx.coroutines.CompletableDeferred
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.StandardTestDispatcher

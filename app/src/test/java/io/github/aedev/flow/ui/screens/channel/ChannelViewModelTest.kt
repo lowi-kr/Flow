@@ -1,13 +1,13 @@
-package io.github.aedev.flow.ui.screens.channel
+package com.arubr.smsvcodes.ui.screens.channel
 
 import android.content.Context
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.data.contentfilter.aislist.AiListMatcher
-import io.github.aedev.flow.data.contentfilter.aislist.AiListRepository
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.data.local.SubscriptionRepository
-import io.github.aedev.flow.data.notes.NotesRepository
-import io.github.aedev.flow.innertube.pages.channel.ChannelTabKind
+import com.arubr.smsvcodes.data.contentfilter.aislist.AiListMatcher
+import com.arubr.smsvcodes.data.contentfilter.aislist.AiListRepository
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.data.local.SubscriptionRepository
+import com.arubr.smsvcodes.data.notes.NotesRepository
+import com.arubr.smsvcodes.innertube.pages.channel.ChannelTabKind
 import io.mockk.coEvery
 import io.mockk.coVerify
 import io.mockk.every

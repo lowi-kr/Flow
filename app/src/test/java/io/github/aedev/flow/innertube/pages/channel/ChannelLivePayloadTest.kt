@@ -1,8 +1,8 @@
-package io.github.aedev.flow.innertube.pages.channel
+package com.arubr.smsvcodes.innertube.pages.channel
 
-import io.github.aedev.flow.innertube.pages.renderer.FeedItem
-import io.github.aedev.flow.innertube.pages.renderer.FeedItemOwner
-import io.github.aedev.flow.innertube.pages.renderer.FeedShelfStyle
+import com.arubr.smsvcodes.innertube.pages.renderer.FeedItem
+import com.arubr.smsvcodes.innertube.pages.renderer.FeedItemOwner
+import com.arubr.smsvcodes.innertube.pages.renderer.FeedShelfStyle
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonElement
 import org.junit.Assert.assertEquals

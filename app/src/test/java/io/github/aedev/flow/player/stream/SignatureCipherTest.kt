@@ -1,4 +1,4 @@
-package io.github.aedev.flow.player.stream
+package com.arubr.smsvcodes.player.stream
 
 import com.google.common.truth.Truth.assertThat
 import org.junit.Test

@@ -1,4 +1,4 @@
-package io.github.aedev.flow.player.datasource
+package com.arubr.smsvcodes.player.datasource
 
 import android.content.Context
 import android.util.Log
@@ -6,8 +6,8 @@ import androidx.media3.common.util.UnstableApi
 import androidx.media3.datasource.DataSource
 import androidx.media3.datasource.DataSpec
 import androidx.media3.datasource.HttpDataSource
-import io.github.aedev.flow.innertube.YouTube
-import io.github.aedev.flow.player.error.StreamDenialClassifier
+import com.arubr.smsvcodes.innertube.YouTube
+import com.arubr.smsvcodes.player.error.StreamDenialClassifier
 import java.io.File
 
 /**

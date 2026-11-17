@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.videoplayer.controls
+package com.arubr.smsvcodes.ui.components.videoplayer.controls
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -24,11 +24,11 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.ui.theme.PlayerScrimContent
-import io.github.aedev.flow.ui.theme.PlayerScrimPanel
-import io.github.aedev.flow.ui.theme.defaultSponsorBlockColor
-import io.github.aedev.flow.utils.formatDuration
-import io.github.aedev.flow.utils.sponsorCategoryLabelRes
+import com.arubr.smsvcodes.ui.theme.PlayerScrimContent
+import com.arubr.smsvcodes.ui.theme.PlayerScrimPanel
+import com.arubr.smsvcodes.ui.theme.defaultSponsorBlockColor
+import com.arubr.smsvcodes.utils.formatDuration
+import com.arubr.smsvcodes.utils.sponsorCategoryLabelRes
 
 private val ScrubChipHeight: Dp = 24.dp
 private val ScrubChipSpacing: Dp = 6.dp

@@ -1,13 +1,13 @@
-package io.github.aedev.flow.data.music.artwork
+package com.arubr.smsvcodes.data.music.artwork
 
 import android.content.Context
 import dagger.hilt.android.qualifiers.ApplicationContext
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.data.music.model.MusicTrack
-import io.github.aedev.flow.innertube.YouTube
-import io.github.aedev.flow.innertube.models.SongItem
-import io.github.aedev.flow.network.ProxyAwareClient
-import io.github.aedev.flow.utils.PerformanceDispatcher
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.data.music.model.MusicTrack
+import com.arubr.smsvcodes.innertube.YouTube
+import com.arubr.smsvcodes.innertube.models.SongItem
+import com.arubr.smsvcodes.network.ProxyAwareClient
+import com.arubr.smsvcodes.utils.PerformanceDispatcher
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock

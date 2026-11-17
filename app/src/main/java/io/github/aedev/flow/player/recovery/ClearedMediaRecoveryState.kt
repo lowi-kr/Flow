@@ -1,4 +1,4 @@
-package io.github.aedev.flow.player.recovery
+package com.arubr.smsvcodes.player.recovery
 
 internal data class ClearedMediaRecoverySnapshot(
     val videoId: String,

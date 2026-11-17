@@ -1,12 +1,12 @@
-package io.github.aedev.flow.ui.screens.home.chips
+package com.arubr.smsvcodes.ui.screens.home.chips
 
 import androidx.lifecycle.SavedStateHandle
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.data.local.HomeFeedCacheFilters
-import io.github.aedev.flow.data.recommendation.FeedExclusions
-import io.github.aedev.flow.data.repository.YouTubeRepository
-import io.github.aedev.flow.data.subscriptions.SubscriptionFeedRepository
-import io.github.aedev.flow.ui.screens.home.HomeFeedSources
+import com.arubr.smsvcodes.data.local.HomeFeedCacheFilters
+import com.arubr.smsvcodes.data.recommendation.FeedExclusions
+import com.arubr.smsvcodes.data.repository.YouTubeRepository
+import com.arubr.smsvcodes.data.subscriptions.SubscriptionFeedRepository
+import com.arubr.smsvcodes.ui.screens.home.HomeFeedSources
 import io.mockk.coVerify
 import io.mockk.mockk
 import kotlinx.coroutines.test.StandardTestDispatcher

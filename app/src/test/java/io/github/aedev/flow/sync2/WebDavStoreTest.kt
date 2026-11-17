@@ -1,9 +1,9 @@
-package io.github.aedev.flow.sync2
+package com.arubr.smsvcodes.sync2
 
 import android.app.Application
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import io.github.aedev.flow.sync2.store.StoreException
-import io.github.aedev.flow.sync2.store.WebDavStore
+import com.arubr.smsvcodes.sync2.store.StoreException
+import com.arubr.smsvcodes.sync2.store.WebDavStore
 import io.ktor.http.HttpMethod
 import io.ktor.http.HttpStatusCode
 import io.ktor.server.request.httpMethod

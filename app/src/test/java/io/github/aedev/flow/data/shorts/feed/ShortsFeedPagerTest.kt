@@ -1,6 +1,6 @@
-package io.github.aedev.flow.data.shorts.feed
+package com.arubr.smsvcodes.data.shorts.feed
 
-import io.github.aedev.flow.data.model.ShortVideo
+import com.arubr.smsvcodes.data.model.ShortVideo
 import kotlinx.coroutines.runBlocking
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse

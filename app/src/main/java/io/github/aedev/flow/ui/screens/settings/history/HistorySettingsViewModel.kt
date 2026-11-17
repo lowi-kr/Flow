@@ -1,10 +1,10 @@
-package io.github.aedev.flow.ui.screens.settings.history
+package com.arubr.smsvcodes.ui.screens.settings.history
 
 import dagger.hilt.android.lifecycle.HiltViewModel
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.data.local.SearchHistoryRepository
-import io.github.aedev.flow.data.stats.VideoStatsRecorder
-import io.github.aedev.flow.ui.screens.settings.SettingsViewModel
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.data.local.SearchHistoryRepository
+import com.arubr.smsvcodes.data.stats.VideoStatsRecorder
+import com.arubr.smsvcodes.ui.screens.settings.SettingsViewModel
 import javax.inject.Inject
 
 @HiltViewModel

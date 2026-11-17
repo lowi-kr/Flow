@@ -1,8 +1,8 @@
-package io.github.aedev.flow.ui.components.library
+package com.arubr.smsvcodes.ui.components.library
 
 import android.content.Context
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.playlist.PlaylistImport
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.playlist.PlaylistImport
 
 /** What to tell the viewer after an import, from the Playlists screen or a file opened in Flow. */
 internal fun PlaylistImport.message(context: Context): String =

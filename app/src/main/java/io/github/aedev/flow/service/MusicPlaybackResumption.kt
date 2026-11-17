@@ -1,12 +1,12 @@
-package io.github.aedev.flow.service
+package com.arubr.smsvcodes.service
 
 import androidx.annotation.OptIn
 import androidx.media3.common.MediaItem
 import androidx.media3.common.util.UnstableApi
 import androidx.media3.session.MediaSession
-import io.github.aedev.flow.player.RestoredMusicQueue
-import io.github.aedev.flow.player.musicAudioUri
-import io.github.aedev.flow.player.musicMediaItem
+import com.arubr.smsvcodes.player.RestoredMusicQueue
+import com.arubr.smsvcodes.player.musicAudioUri
+import com.arubr.smsvcodes.player.musicMediaItem
 
 /**
  * The saved music queue as Media3 playback resumption wants it, so the system media controls and a

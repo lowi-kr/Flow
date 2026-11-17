@@ -1,6 +1,6 @@
-package io.github.aedev.flow.data.lyrics
+package com.arubr.smsvcodes.data.lyrics
 
-import io.github.aedev.flow.BuildConfig
+import com.arubr.smsvcodes.BuildConfig
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import kotlinx.serialization.Serializable

@@ -1,4 +1,4 @@
-package io.github.aedev.flow.di
+package com.arubr.smsvcodes.di
 
 import android.content.Context
 import dagger.Module
@@ -6,10 +6,10 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
-import io.github.aedev.flow.data.local.AppDatabase
-import io.github.aedev.flow.data.local.dao.NotificationDao
-import io.github.aedev.flow.data.local.dao.PlaylistDao
-import io.github.aedev.flow.data.local.dao.VideoDao
+import com.arubr.smsvcodes.data.local.AppDatabase
+import com.arubr.smsvcodes.data.local.dao.NotificationDao
+import com.arubr.smsvcodes.data.local.dao.PlaylistDao
+import com.arubr.smsvcodes.data.local.dao.VideoDao
 import javax.inject.Qualifier
 import javax.inject.Singleton
 
@@ -58,55 +58,55 @@ object DatabaseModule {
     @Provides
     fun provideNoteDao(
         @ProfileDb database: AppDatabase,
-    ): io.github.aedev.flow.data.local.dao.NoteDao = database.noteDao()
+    ): com.arubr.smsvcodes.data.local.dao.NoteDao = database.noteDao()
 
     @Provides
     fun provideCacheDao(
         @ProfileDb database: AppDatabase,
-    ): io.github.aedev.flow.data.local.dao.CacheDao = database.cacheDao()
+    ): com.arubr.smsvcodes.data.local.dao.CacheDao = database.cacheDao()
 
     @Provides
     fun provideHomeFeedCacheDao(
         @ProfileDb database: AppDatabase,
-    ): io.github.aedev.flow.data.local.dao.HomeFeedCacheDao = database.homeFeedCacheDao()
+    ): com.arubr.smsvcodes.data.local.dao.HomeFeedCacheDao = database.homeFeedCacheDao()
 
     @Provides
     fun provideDownloadDao(
         @DeviceDb database: AppDatabase,
-    ): io.github.aedev.flow.data.local.dao.DownloadDao = database.downloadDao()
+    ): com.arubr.smsvcodes.data.local.dao.DownloadDao = database.downloadDao()
 
     @Provides
     fun provideDownloadCollectionDao(
         @DeviceDb database: AppDatabase,
-    ): io.github.aedev.flow.data.local.dao.DownloadCollectionDao = database.downloadCollectionDao()
+    ): com.arubr.smsvcodes.data.local.dao.DownloadCollectionDao = database.downloadCollectionDao()
 
     @Provides
     fun provideRecognitionHistoryDao(
         @ProfileDb database: AppDatabase,
-    ): io.github.aedev.flow.data.local.dao.RecognitionHistoryDao = database.recognitionHistoryDao()
+    ): com.arubr.smsvcodes.data.local.dao.RecognitionHistoryDao = database.recognitionHistoryDao()
 
     @Provides
     fun provideSubscriptionGroupDao(
         @ProfileDb database: AppDatabase,
-    ): io.github.aedev.flow.data.local.dao.SubscriptionGroupDao = database.subscriptionGroupDao()
+    ): com.arubr.smsvcodes.data.local.dao.SubscriptionGroupDao = database.subscriptionGroupDao()
 
     @Provides
     fun provideWatchHistoryDao(
         @ProfileDb database: AppDatabase,
-    ): io.github.aedev.flow.data.local.dao.WatchHistoryDao = database.watchHistoryDao()
+    ): com.arubr.smsvcodes.data.local.dao.WatchHistoryDao = database.watchHistoryDao()
 
     @Provides
     fun provideSyncLogDao(
         @ProfileDb database: AppDatabase,
-    ): io.github.aedev.flow.data.local.dao.SyncLogDao = database.syncLogDao()
+    ): com.arubr.smsvcodes.data.local.dao.SyncLogDao = database.syncLogDao()
 
     @Provides
     fun provideSyncPeerDao(
         @ProfileDb database: AppDatabase,
-    ): io.github.aedev.flow.data.local.dao.SyncPeerDao = database.syncPeerDao()
+    ): com.arubr.smsvcodes.data.local.dao.SyncPeerDao = database.syncPeerDao()
 
     @Provides
     fun provideMusicGraphDao(
         @ProfileDb database: AppDatabase,
-    ): io.github.aedev.flow.data.local.dao.MusicGraphDao = database.musicGraphDao()
+    ): com.arubr.smsvcodes.data.local.dao.MusicGraphDao = database.musicGraphDao()
 }

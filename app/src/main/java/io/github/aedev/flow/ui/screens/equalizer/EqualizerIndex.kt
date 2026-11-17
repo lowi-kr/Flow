@@ -1,8 +1,8 @@
-package io.github.aedev.flow.ui.screens.equalizer
+package com.arubr.smsvcodes.ui.screens.equalizer
 
-import io.github.aedev.flow.R
-import io.github.aedev.flow.ui.components.settings.SettingEntry
-import io.github.aedev.flow.ui.components.settings.SettingsDestination
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.ui.components.settings.SettingEntry
+import com.arubr.smsvcodes.ui.components.settings.SettingsDestination
 
 /** The equalizer options Settings can find and mark as new. */
 internal object EqualizerIndex {

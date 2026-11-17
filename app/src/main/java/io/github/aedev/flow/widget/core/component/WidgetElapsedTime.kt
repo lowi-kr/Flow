@@ -1,4 +1,4 @@
-package io.github.aedev.flow.widget.core.component
+package com.arubr.smsvcodes.widget.core.component
 
 import android.os.Build
 import android.util.TypedValue
@@ -10,8 +10,8 @@ import androidx.glance.LocalContext
 import androidx.glance.appwidget.AndroidRemoteViews
 import androidx.glance.text.Text
 import androidx.glance.text.TextStyle
-import io.github.aedev.flow.R
-import io.github.aedev.flow.utils.formatDurationMillis
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.utils.formatDurationMillis
 
 /**
  * Elapsed playback time. While playing it is a platform Chronometer the launcher advances each

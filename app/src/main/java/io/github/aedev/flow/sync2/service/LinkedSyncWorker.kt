@@ -1,4 +1,4 @@
-package io.github.aedev.flow.sync2.service
+package com.arubr.smsvcodes.sync2.service
 
 import android.content.Context
 import androidx.work.Constraints
@@ -17,9 +17,9 @@ import dagger.hilt.EntryPoint
 import dagger.hilt.InstallIn
 import dagger.hilt.android.EntryPointAccessors
 import dagger.hilt.components.SingletonComponent
-import io.github.aedev.flow.data.profile.ProfileWork
-import io.github.aedev.flow.sync2.data.LinkedDatabase
-import io.github.aedev.flow.sync2.lan.LanSync
+import com.arubr.smsvcodes.data.profile.ProfileWork
+import com.arubr.smsvcodes.sync2.data.LinkedDatabase
+import com.arubr.smsvcodes.sync2.lan.LanSync
 import java.util.concurrent.TimeUnit
 
 /** Opening the app syncs at most this often; the periodic run doesn't wait for it. */

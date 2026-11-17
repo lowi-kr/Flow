@@ -1,6 +1,6 @@
-package io.github.aedev.flow.innertube.pages.renderer
+package com.arubr.smsvcodes.innertube.pages.renderer
 
-import io.github.aedev.flow.innertube.models.response.WatchMetadataResponse
+import com.arubr.smsvcodes.innertube.models.response.WatchMetadataResponse
 import kotlinx.serialization.json.Json
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertTrue

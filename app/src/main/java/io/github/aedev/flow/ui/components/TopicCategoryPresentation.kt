@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components
+package com.arubr.smsvcodes.ui.components
 
 import androidx.annotation.StringRes
 import androidx.compose.material.icons.Icons
@@ -14,8 +14,8 @@ import androidx.compose.material.icons.outlined.Science
 import androidx.compose.material.icons.outlined.SportsEsports
 import androidx.compose.material.icons.outlined.Terminal
 import androidx.compose.ui.graphics.vector.ImageVector
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.recommendation.NeuroTopicCatalog
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.recommendation.NeuroTopicCatalog
 
 fun topicCategoryIcon(iconKey: String): ImageVector =
     when (iconKey) {

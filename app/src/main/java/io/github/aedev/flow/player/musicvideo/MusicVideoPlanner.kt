@@ -1,6 +1,6 @@
-package io.github.aedev.flow.player.musicvideo
+package com.arubr.smsvcodes.player.musicvideo
 
-import io.github.aedev.flow.data.music.model.MusicTrack
+import com.arubr.smsvcodes.data.music.model.MusicTrack
 
 /** The Song/Video switch's decisions, kept apart from the player so they can be tested alone. */
 internal object MusicVideoPlanner {

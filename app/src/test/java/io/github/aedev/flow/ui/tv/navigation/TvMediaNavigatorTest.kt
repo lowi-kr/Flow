@@ -1,11 +1,11 @@
-package io.github.aedev.flow.ui.tv.navigation
+package com.arubr.smsvcodes.ui.tv.navigation
 
 import android.net.Uri
 import androidx.navigation.NavBackStackEntry
 import androidx.navigation.NavHostController
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.ui.components.settings.SettingsDestination
-import io.github.aedev.flow.ui.components.settings.SettingsTarget
+import com.arubr.smsvcodes.ui.components.settings.SettingsDestination
+import com.arubr.smsvcodes.ui.components.settings.SettingsTarget
 import io.mockk.every
 import io.mockk.mockk
 import io.mockk.mockkStatic

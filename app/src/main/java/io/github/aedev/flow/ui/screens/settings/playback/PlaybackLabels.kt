@@ -1,14 +1,14 @@
-package io.github.aedev.flow.ui.screens.settings.playback
+package com.arubr.smsvcodes.ui.screens.settings.playback
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.local.SpeedSwipeSide
-import io.github.aedev.flow.player.stream.CaptionTrackResolver
-import io.github.aedev.flow.ui.components.shared.playbackSpeedLabel
-import io.github.aedev.flow.utils.LanguageCatalog
-import io.github.aedev.flow.utils.formatMultiplierLabel
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.local.SpeedSwipeSide
+import com.arubr.smsvcodes.player.stream.CaptionTrackResolver
+import com.arubr.smsvcodes.ui.components.shared.playbackSpeedLabel
+import com.arubr.smsvcodes.utils.LanguageCatalog
+import com.arubr.smsvcodes.utils.formatMultiplierLabel
 
 @Composable
 internal fun countdownLabel(seconds: Int): String =

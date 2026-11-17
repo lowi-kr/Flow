@@ -1,7 +1,7 @@
-package io.github.aedev.flow.data.profile
+package com.arubr.smsvcodes.data.profile
 
 import android.content.Context
-import io.github.aedev.flow.R
+import com.arubr.smsvcodes.R
 
 /**
  * One-time sync (FLOW-SYNC/1) belongs to Default: it carries no profile link, so another profile syncing under the

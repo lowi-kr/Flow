@@ -1,4 +1,4 @@
-package io.github.aedev.flow.player.stream
+package com.arubr.smsvcodes.player.stream
 
 import kotlin.math.abs
 

@@ -1,7 +1,7 @@
-package io.github.aedev.flow.data.localmedia
+package com.arubr.smsvcodes.data.localmedia
 
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.player.stream.CaptionFormat
+import com.arubr.smsvcodes.player.stream.CaptionFormat
 import org.junit.Test
 import java.nio.charset.Charset
 

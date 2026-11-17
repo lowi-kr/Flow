@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.videoplayer
+package com.arubr.smsvcodes.ui.components.videoplayer
 
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.foundation.background
@@ -24,15 +24,15 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
-import io.github.aedev.flow.R
-import io.github.aedev.flow.player.AutoplayCountdownState
-import io.github.aedev.flow.ui.components.shared.thumbnailUrlOrNull
-import io.github.aedev.flow.ui.theme.PlayerScrimContent
-import io.github.aedev.flow.ui.theme.PlayerScrimContentDisabled
-import io.github.aedev.flow.ui.theme.PlayerScrimMiniTopButton
-import io.github.aedev.flow.ui.theme.PlayerScrimPanel
-import io.github.aedev.flow.ui.utils.LocalWindowSizeClass
-import io.github.aedev.flow.ui.utils.isMediumWidth
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.player.AutoplayCountdownState
+import com.arubr.smsvcodes.ui.components.shared.thumbnailUrlOrNull
+import com.arubr.smsvcodes.ui.theme.PlayerScrimContent
+import com.arubr.smsvcodes.ui.theme.PlayerScrimContentDisabled
+import com.arubr.smsvcodes.ui.theme.PlayerScrimMiniTopButton
+import com.arubr.smsvcodes.ui.theme.PlayerScrimPanel
+import com.arubr.smsvcodes.ui.utils.LocalWindowSizeClass
+import com.arubr.smsvcodes.ui.utils.isMediumWidth
 
 /**
  * The autoplay countdown as the mini player shows it, in place of the mini controls: the next

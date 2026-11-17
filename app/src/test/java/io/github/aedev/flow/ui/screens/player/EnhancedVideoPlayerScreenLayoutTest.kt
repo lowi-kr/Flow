@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.player
+package com.arubr.smsvcodes.ui.screens.player
 
 import android.app.Application
 import android.content.Context
@@ -20,12 +20,12 @@ import androidx.media3.common.util.UnstableApi
 import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.R
-import io.github.aedev.flow.ui.components.videoplayer.settings.PlayerSettingsPage
-import io.github.aedev.flow.ui.screens.player.state.PlayerScreenState
-import io.github.aedev.flow.ui.screens.player.state.PlayerSheet
-import io.github.aedev.flow.ui.screens.player.state.rememberVideoPlayerPreferences
-import io.github.aedev.flow.ui.utils.ProvideWindowSizeClass
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.ui.components.videoplayer.settings.PlayerSettingsPage
+import com.arubr.smsvcodes.ui.screens.player.state.PlayerScreenState
+import com.arubr.smsvcodes.ui.screens.player.state.PlayerSheet
+import com.arubr.smsvcodes.ui.screens.player.state.rememberVideoPlayerPreferences
+import com.arubr.smsvcodes.ui.utils.ProvideWindowSizeClass
 import kotlinx.coroutines.flow.MutableStateFlow
 import org.junit.Rule
 import org.junit.Test
@@ -35,7 +35,7 @@ import org.robolectric.annotation.Config
 /**
  * Pins which detail layout [EnhancedVideoPlayerScreen] picks for each window class. The window is
  * shaped through Robolectric qualifiers and classified by the real
- * [io.github.aedev.flow.ui.utils.ProvideWindowSizeClass], the same provider MainActivity installs,
+ * [com.arubr.smsvcodes.ui.utils.ProvideWindowSizeClass], the same provider MainActivity installs,
  * so the size class under test is the one the app would compute.
  *
  * Related videos are deliberately absent: the grid-versus-list choice is covered by

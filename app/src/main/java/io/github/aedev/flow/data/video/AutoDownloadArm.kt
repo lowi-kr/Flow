@@ -1,6 +1,6 @@
-package io.github.aedev.flow.data.video
+package com.arubr.smsvcodes.data.video
 
-import io.github.aedev.flow.data.model.Video
+import com.arubr.smsvcodes.data.model.Video
 
 /** How a load resolved, as far as an automatic download cares. */
 enum class AutoDownloadResolution {

@@ -1,8 +1,8 @@
-package io.github.aedev.flow.data.notes
+package com.arubr.smsvcodes.data.notes
 
-import io.github.aedev.flow.data.local.dao.NoteDao
-import io.github.aedev.flow.data.local.entity.NoteEntity
-import io.github.aedev.flow.data.model.Video
+import com.arubr.smsvcodes.data.local.dao.NoteDao
+import com.arubr.smsvcodes.data.local.entity.NoteEntity
+import com.arubr.smsvcodes.data.model.Video
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 import javax.inject.Inject

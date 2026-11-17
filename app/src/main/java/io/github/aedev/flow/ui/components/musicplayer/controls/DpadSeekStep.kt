@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.musicplayer.controls
+package com.arubr.smsvcodes.ui.components.musicplayer.controls
 
 /** The remote's Left and Right on a focused seek bar: the seek-seconds setting per press, three times that while held. */
 object DpadSeekStep {

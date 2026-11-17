@@ -1,7 +1,7 @@
-package io.github.aedev.flow.utils.cipher
+package com.arubr.smsvcodes.utils.cipher
 
 import android.util.Log
-import io.github.aedev.flow.network.ProxyAwareClient
+import com.arubr.smsvcodes.network.ProxyAwareClient
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Deferred
 import kotlinx.coroutines.Dispatchers

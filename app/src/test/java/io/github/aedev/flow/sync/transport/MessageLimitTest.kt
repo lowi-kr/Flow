@@ -1,4 +1,4 @@
-package io.github.aedev.flow.sync.transport
+package com.arubr.smsvcodes.sync.transport
 
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.runBlocking

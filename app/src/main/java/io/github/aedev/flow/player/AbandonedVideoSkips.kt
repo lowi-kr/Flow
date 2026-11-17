@@ -1,4 +1,4 @@
-package io.github.aedev.flow.player
+package com.arubr.smsvcodes.player
 
 private const val MAX_CONSECUTIVE_SKIPS = 2
 

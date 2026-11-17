@@ -2,15 +2,15 @@
 // This implementation was based on metrolist's (https://github.com/MetrolistGroup/Metrolist)
 // ==================================================================================================
 
-package io.github.aedev.flow.data.lyrics.kugou
+package com.arubr.smsvcodes.data.lyrics.kugou
 
 import com.google.gson.Gson
-import io.github.aedev.flow.data.lyrics.LyricsMatching
-import io.github.aedev.flow.data.lyrics.LyricsNotFoundException
-import io.github.aedev.flow.data.lyrics.kugou.models.DownloadLyricsResponse
-import io.github.aedev.flow.data.lyrics.kugou.models.Keyword
-import io.github.aedev.flow.data.lyrics.kugou.models.SearchLyricsResponse
-import io.github.aedev.flow.data.lyrics.kugou.models.SearchSongResponse
+import com.arubr.smsvcodes.data.lyrics.LyricsMatching
+import com.arubr.smsvcodes.data.lyrics.LyricsNotFoundException
+import com.arubr.smsvcodes.data.lyrics.kugou.models.DownloadLyricsResponse
+import com.arubr.smsvcodes.data.lyrics.kugou.models.Keyword
+import com.arubr.smsvcodes.data.lyrics.kugou.models.SearchLyricsResponse
+import com.arubr.smsvcodes.data.lyrics.kugou.models.SearchSongResponse
 import kotlinx.coroutines.currentCoroutineContext
 import kotlinx.coroutines.ensureActive
 import okhttp3.OkHttpClient

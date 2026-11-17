@@ -1,8 +1,8 @@
-package io.github.aedev.flow.innertube.pages.renderer
+package com.arubr.smsvcodes.innertube.pages.renderer
 
-import io.github.aedev.flow.data.model.Channel
-import io.github.aedev.flow.data.model.Playlist
-import io.github.aedev.flow.data.model.Video
+import com.arubr.smsvcodes.data.model.Channel
+import com.arubr.smsvcodes.data.model.Playlist
+import com.arubr.smsvcodes.data.model.Video
 
 /** Lockups carry no byline and continuations carry no header, so the caller threads this forward. */
 data class FeedItemOwner(

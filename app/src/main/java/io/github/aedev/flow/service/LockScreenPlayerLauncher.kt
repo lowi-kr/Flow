@@ -1,4 +1,4 @@
-package io.github.aedev.flow.service
+package com.arubr.smsvcodes.service
 
 import android.content.BroadcastReceiver
 import android.content.Context
@@ -7,7 +7,7 @@ import android.content.IntentFilter
 import android.provider.Settings
 import android.util.Log
 import androidx.core.content.ContextCompat
-import io.github.aedev.flow.ui.screens.lockscreen.LockScreenPlayerActivity
+import com.arubr.smsvcodes.ui.screens.lockscreen.LockScreenPlayerActivity
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow

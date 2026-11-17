@@ -1,6 +1,6 @@
-package io.github.aedev.flow.ui.components.musicplayer.lyrics
+package com.arubr.smsvcodes.ui.components.musicplayer.lyrics
 
-import io.github.aedev.flow.data.lyrics.LyricsEntry
+import com.arubr.smsvcodes.data.lyrics.LyricsEntry
 
 internal const val MAX_SHARE_LINES = 5
 

@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.library
+package com.arubr.smsvcodes.ui.screens.library
 
 import android.app.Activity
 import android.net.Uri
@@ -44,26 +44,26 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.LifecycleResumeEffect
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.localmedia.LocalMediaItem
-import io.github.aedev.flow.data.localmedia.toMusicTrack
-import io.github.aedev.flow.data.localmedia.toVideo
-import io.github.aedev.flow.ui.components.layout.topbar.FlowTopBar
-import io.github.aedev.flow.ui.components.library.LibraryKindHeader
-import io.github.aedev.flow.ui.components.library.LibrarySelection
-import io.github.aedev.flow.ui.components.shared.FlowErrorState
-import io.github.aedev.flow.ui.components.shared.FlowLoadingIndicator
-import io.github.aedev.flow.ui.components.shared.FlowSelectionAction
-import io.github.aedev.flow.ui.components.shared.FlowSelectionToolbar
-import io.github.aedev.flow.ui.components.shared.FlowSidePanes
-import io.github.aedev.flow.ui.components.shared.MediaKind
-import io.github.aedev.flow.ui.components.shared.dismissKeyboardOnPress
-import io.github.aedev.flow.ui.components.shared.flowGridColumns
-import io.github.aedev.flow.ui.components.shared.quickactions.QuickActionUndo
-import io.github.aedev.flow.ui.components.shared.quickactions.sharedQuickActionsViewModel
-import io.github.aedev.flow.ui.components.shared.rememberFlowPaneState
-import io.github.aedev.flow.ui.components.shared.shareMediaFiles
-import io.github.aedev.flow.ui.screens.music.sharedMusicPlayerViewModel
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.localmedia.LocalMediaItem
+import com.arubr.smsvcodes.data.localmedia.toMusicTrack
+import com.arubr.smsvcodes.data.localmedia.toVideo
+import com.arubr.smsvcodes.ui.components.layout.topbar.FlowTopBar
+import com.arubr.smsvcodes.ui.components.library.LibraryKindHeader
+import com.arubr.smsvcodes.ui.components.library.LibrarySelection
+import com.arubr.smsvcodes.ui.components.shared.FlowErrorState
+import com.arubr.smsvcodes.ui.components.shared.FlowLoadingIndicator
+import com.arubr.smsvcodes.ui.components.shared.FlowSelectionAction
+import com.arubr.smsvcodes.ui.components.shared.FlowSelectionToolbar
+import com.arubr.smsvcodes.ui.components.shared.FlowSidePanes
+import com.arubr.smsvcodes.ui.components.shared.MediaKind
+import com.arubr.smsvcodes.ui.components.shared.dismissKeyboardOnPress
+import com.arubr.smsvcodes.ui.components.shared.flowGridColumns
+import com.arubr.smsvcodes.ui.components.shared.quickactions.QuickActionUndo
+import com.arubr.smsvcodes.ui.components.shared.quickactions.sharedQuickActionsViewModel
+import com.arubr.smsvcodes.ui.components.shared.rememberFlowPaneState
+import com.arubr.smsvcodes.ui.components.shared.shareMediaFiles
+import com.arubr.smsvcodes.ui.screens.music.sharedMusicPlayerViewModel
 
 private val FolderPaneWidth = 360.dp
 

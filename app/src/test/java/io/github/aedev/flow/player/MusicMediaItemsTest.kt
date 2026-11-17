@@ -1,8 +1,8 @@
-package io.github.aedev.flow.player
+package com.arubr.smsvcodes.player
 
 import android.net.Uri
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.data.music.model.MusicTrack
+import com.arubr.smsvcodes.data.music.model.MusicTrack
 import io.mockk.mockk
 import org.junit.Test
 

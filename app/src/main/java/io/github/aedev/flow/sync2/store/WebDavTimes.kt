@@ -1,4 +1,4 @@
-package io.github.aedev.flow.sync2.store
+package com.arubr.smsvcodes.sync2.store
 
 import org.xmlpull.v1.XmlPullParser
 import java.time.ZonedDateTime

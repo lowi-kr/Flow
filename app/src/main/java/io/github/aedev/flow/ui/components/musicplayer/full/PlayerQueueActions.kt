@@ -1,14 +1,14 @@
-package io.github.aedev.flow.ui.components.musicplayer.full
+package com.arubr.smsvcodes.ui.components.musicplayer.full
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.platform.LocalResources
 import androidx.compose.ui.res.stringResource
-import io.github.aedev.flow.R
-import io.github.aedev.flow.ui.components.musicplayer.queue.QueueActions
-import io.github.aedev.flow.ui.components.shared.quickactions.QuickActionUndo
-import io.github.aedev.flow.ui.components.shared.quickactions.sharedQuickActionsViewModel
-import io.github.aedev.flow.ui.screens.music.MusicPlayerViewModel
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.ui.components.musicplayer.queue.QueueActions
+import com.arubr.smsvcodes.ui.components.shared.quickactions.QuickActionUndo
+import com.arubr.smsvcodes.ui.components.shared.quickactions.sharedQuickActionsViewModel
+import com.arubr.smsvcodes.ui.screens.music.MusicPlayerViewModel
 
 /** What the player's queue does with its rows; removals are announced, with undo for a single song. */
 @Composable

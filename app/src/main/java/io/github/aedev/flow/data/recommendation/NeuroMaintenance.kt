@@ -8,7 +8,7 @@
  * explicitly credit "Flow Android Client" and link back to the original repository.
  */
 
-package io.github.aedev.flow.data.recommendation
+package com.arubr.smsvcodes.data.recommendation
 
 /**
  * One-time brain maintenance migrations. Pure — no Context, no state — so the

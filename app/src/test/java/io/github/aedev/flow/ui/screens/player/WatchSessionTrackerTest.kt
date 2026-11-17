@@ -1,15 +1,15 @@
-package io.github.aedev.flow.ui.screens.player
+package com.arubr.smsvcodes.ui.screens.player
 
 import android.content.Context
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.data.local.HomeFeedCacheRepository
-import io.github.aedev.flow.data.local.ViewHistory
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.data.recommendation.FlowNeuroEngine
-import io.github.aedev.flow.data.recommendation.InteractionType
-import io.github.aedev.flow.data.repository.YouTubeRepository
-import io.github.aedev.flow.data.stats.ViewFormat
-import io.github.aedev.flow.player.state.PlaybackCompletion
+import com.arubr.smsvcodes.data.local.HomeFeedCacheRepository
+import com.arubr.smsvcodes.data.local.ViewHistory
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.data.recommendation.FlowNeuroEngine
+import com.arubr.smsvcodes.data.recommendation.InteractionType
+import com.arubr.smsvcodes.data.repository.YouTubeRepository
+import com.arubr.smsvcodes.data.stats.ViewFormat
+import com.arubr.smsvcodes.player.state.PlaybackCompletion
 import io.mockk.Runs
 import io.mockk.coEvery
 import io.mockk.coVerify
@@ -44,7 +44,7 @@ class WatchSessionTrackerTest {
     private val viewHistory: ViewHistory = mockk(relaxed = true)
     private val repository: YouTubeRepository = mockk(relaxed = true)
     private val homeFeedCacheRepository: HomeFeedCacheRepository = mockk(relaxed = true)
-    private val videoStats: io.github.aedev.flow.data.stats.VideoStatsRecorder = mockk(relaxed = true)
+    private val videoStats: com.arubr.smsvcodes.data.stats.VideoStatsRecorder = mockk(relaxed = true)
     private var clockMs = 0L
     private val trackerScope = CoroutineScope(testDispatcher)
 
@@ -175,7 +175,7 @@ class WatchSessionTrackerTest {
     fun `a checkpoint sends the view once and the rest of the time at the end`() =
         runTest(testDispatcher) {
             val tracker = tracker()
-            val events = mutableListOf<io.github.aedev.flow.data.stats.ViewEvent>()
+            val events = mutableListOf<com.arubr.smsvcodes.data.stats.ViewEvent>()
             every { videoStats.onView(capture(events), any()) } just Runs
 
             tracker.report("v1", positionMs = 0L)

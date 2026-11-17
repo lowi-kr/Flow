@@ -1,12 +1,12 @@
-package io.github.aedev.flow.ui.screens.player.state
+package com.arubr.smsvcodes.ui.screens.player.state
 
 import androidx.compose.foundation.lazy.LazyListState
 import androidx.compose.runtime.*
-import io.github.aedev.flow.ui.components.shared.CommentSortFilter
-import io.github.aedev.flow.ui.components.shared.CommentThreadState
-import io.github.aedev.flow.ui.components.videoplayer.overlay.ChapterSkipFeedback
-import io.github.aedev.flow.ui.components.videoplayer.settings.PlayerSettingsPage
-import io.github.aedev.flow.ui.components.videoplayer.subtitle.SubtitleStyle
+import com.arubr.smsvcodes.ui.components.shared.CommentSortFilter
+import com.arubr.smsvcodes.ui.components.shared.CommentThreadState
+import com.arubr.smsvcodes.ui.components.videoplayer.overlay.ChapterSkipFeedback
+import com.arubr.smsvcodes.ui.components.videoplayer.settings.PlayerSettingsPage
+import com.arubr.smsvcodes.ui.components.videoplayer.subtitle.SubtitleStyle
 
 // Every property is snapshot state, so composables taking this instance can skip on identity.
 @Stable
@@ -203,7 +203,7 @@ class PlayerScreenState {
 fun rememberPlayerScreenState(): PlayerScreenState = remember { PlayerScreenState() }
 
 internal fun transcriptTrackUrl(
-    playerState: io.github.aedev.flow.player.EnhancedPlayerState,
+    playerState: com.arubr.smsvcodes.player.EnhancedPlayerState,
     screenState: PlayerScreenState,
     prefs: VideoPlayerPreferencesState,
     appLanguage: String?,
@@ -218,5 +218,5 @@ internal fun transcriptTrackUrl(
             appLanguage = appLanguage,
         )?.url
 
-internal fun hasTranscriptTrack(playerState: io.github.aedev.flow.player.EnhancedPlayerState): Boolean =
+internal fun hasTranscriptTrack(playerState: com.arubr.smsvcodes.player.EnhancedPlayerState): Boolean =
     playerState.availableSubtitles.any(TranscriptTrackChoice::isReadable)

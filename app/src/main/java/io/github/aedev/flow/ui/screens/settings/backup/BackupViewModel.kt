@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.settings.backup
+package com.arubr.smsvcodes.ui.screens.settings.backup
 
 import android.content.Context
 import android.content.Intent
@@ -6,15 +6,15 @@ import android.net.Uri
 import android.provider.DocumentsContract
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
-import io.github.aedev.flow.data.backup.BackupCoordinator
-import io.github.aedev.flow.data.local.LocalDataManager
-import io.github.aedev.flow.data.local.LocalDataManager.AutoBackupFrequency
-import io.github.aedev.flow.data.local.LocalDataManager.AutoBackupType
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.data.profile.ProfileRepository
-import io.github.aedev.flow.notification.AutoBackupWorker
-import io.github.aedev.flow.notification.periodDays
-import io.github.aedev.flow.ui.screens.settings.SettingsViewModel
+import com.arubr.smsvcodes.data.backup.BackupCoordinator
+import com.arubr.smsvcodes.data.local.LocalDataManager
+import com.arubr.smsvcodes.data.local.LocalDataManager.AutoBackupFrequency
+import com.arubr.smsvcodes.data.local.LocalDataManager.AutoBackupType
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.data.profile.ProfileRepository
+import com.arubr.smsvcodes.notification.AutoBackupWorker
+import com.arubr.smsvcodes.notification.periodDays
+import com.arubr.smsvcodes.ui.screens.settings.SettingsViewModel
 import kotlinx.coroutines.flow.map
 import javax.inject.Inject
 

@@ -1,10 +1,10 @@
-package io.github.aedev.flow.ui.tv.navigation
+package com.arubr.smsvcodes.ui.tv.navigation
 
 import android.net.Uri
-import io.github.aedev.flow.innertube.pages.MoodAndGenres
-import io.github.aedev.flow.ui.components.settings.SettingsTarget
-import io.github.aedev.flow.ui.components.shared.MediaKind
-import io.github.aedev.flow.ui.screens.music.collection.MUSIC_COLLECTION_ARG as COLLECTION_ROUTE_ARG
+import com.arubr.smsvcodes.innertube.pages.MoodAndGenres
+import com.arubr.smsvcodes.ui.components.settings.SettingsTarget
+import com.arubr.smsvcodes.ui.components.shared.MediaKind
+import com.arubr.smsvcodes.ui.screens.music.collection.MUSIC_COLLECTION_ARG as COLLECTION_ROUTE_ARG
 
 /** Detail routes layered over the rail's root destinations. */
 object TvRoutes {

@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.musicplayer.lyrics
+package com.arubr.smsvcodes.ui.components.musicplayer.lyrics
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -44,8 +44,8 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
 import coil3.request.ImageRequest
-import io.github.aedev.flow.R
-import io.github.aedev.flow.ui.components.shared.FlowLogo
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.ui.components.shared.FlowLogo
 
 private val CardPadding = 24.dp
 private val CardSpacing = 14.dp

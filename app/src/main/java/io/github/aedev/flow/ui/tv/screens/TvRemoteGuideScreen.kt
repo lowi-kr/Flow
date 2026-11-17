@@ -1,15 +1,15 @@
-package io.github.aedev.flow.ui.tv.screens
+package com.arubr.smsvcodes.ui.tv.screens
 
 import androidx.annotation.StringRes
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.res.stringResource
-import io.github.aedev.flow.R
-import io.github.aedev.flow.ui.components.settings.SettingAvailability
-import io.github.aedev.flow.ui.components.settings.SettingEntry
-import io.github.aedev.flow.ui.components.settings.SettingsDestination
-import io.github.aedev.flow.ui.components.settings.SettingsListScope
-import io.github.aedev.flow.ui.components.settings.SettingsPage
-import io.github.aedev.flow.ui.components.settings.info
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.ui.components.settings.SettingAvailability
+import com.arubr.smsvcodes.ui.components.settings.SettingEntry
+import com.arubr.smsvcodes.ui.components.settings.SettingsDestination
+import com.arubr.smsvcodes.ui.components.settings.SettingsListScope
+import com.arubr.smsvcodes.ui.components.settings.SettingsPage
+import com.arubr.smsvcodes.ui.components.settings.info
 
 private class TvGuideEntry(
     @StringRes val keyRes: Int,

@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.videoplayer.controls
+package com.arubr.smsvcodes.ui.components.videoplayer.controls
 
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.animation.fadeIn
@@ -37,12 +37,12 @@ import androidx.compose.ui.hapticfeedback.HapticFeedbackType
 import androidx.compose.ui.platform.LocalHapticFeedback
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.ui.components.shared.FlowLoadingIndicator
-import io.github.aedev.flow.ui.components.shared.pressScale
-import io.github.aedev.flow.ui.theme.PlayerScrimAffordance
-import io.github.aedev.flow.ui.theme.PlayerScrimContent
-import io.github.aedev.flow.ui.theme.PlayerScrimContentDisabled
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.ui.components.shared.FlowLoadingIndicator
+import com.arubr.smsvcodes.ui.components.shared.pressScale
+import com.arubr.smsvcodes.ui.theme.PlayerScrimAffordance
+import com.arubr.smsvcodes.ui.theme.PlayerScrimContent
+import com.arubr.smsvcodes.ui.theme.PlayerScrimContentDisabled
 
 private enum class TransportIcon { Buffering, Replay, Pause, Play }
 

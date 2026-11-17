@@ -1,4 +1,4 @@
-package io.github.aedev.flow.data.profile
+package com.arubr.smsvcodes.data.profile
 
 /**
  * Who owns a store's data, which decides where [ProfileFiles] puts it. Default keeps today's path for every scope;

@@ -1,7 +1,7 @@
-package io.github.aedev.flow.ui.screens.player
+package com.arubr.smsvcodes.ui.screens.player
 
-import io.github.aedev.flow.data.video.AutoDownloadResolution
-import io.github.aedev.flow.ui.screens.player.VideoPlayerViewModelHarness.Companion.video
+import com.arubr.smsvcodes.data.video.AutoDownloadResolution
+import com.arubr.smsvcodes.ui.screens.player.VideoPlayerViewModelHarness.Companion.video
 import io.mockk.verify
 import io.mockk.verifyOrder
 import kotlinx.coroutines.Dispatchers

@@ -1,14 +1,14 @@
-package io.github.aedev.flow.widget.week
+package com.arubr.smsvcodes.widget.week
 
 import androidx.glance.appwidget.GlanceAppWidget
-import io.github.aedev.flow.data.recommendation.music.MusicBrainEngine
-import io.github.aedev.flow.data.stats.RecapAggregates
-import io.github.aedev.flow.data.stats.RecapImageResolver
-import io.github.aedev.flow.data.stats.RecapPeriod
-import io.github.aedev.flow.data.stats.VideoStatsRecorder
-import io.github.aedev.flow.data.stats.withImages
-import io.github.aedev.flow.widget.core.refresh.WidgetContentKey
-import io.github.aedev.flow.widget.core.refresh.WidgetContentSource
+import com.arubr.smsvcodes.data.recommendation.music.MusicBrainEngine
+import com.arubr.smsvcodes.data.stats.RecapAggregates
+import com.arubr.smsvcodes.data.stats.RecapImageResolver
+import com.arubr.smsvcodes.data.stats.RecapPeriod
+import com.arubr.smsvcodes.data.stats.VideoStatsRecorder
+import com.arubr.smsvcodes.data.stats.withImages
+import com.arubr.smsvcodes.widget.core.refresh.WidgetContentKey
+import com.arubr.smsvcodes.widget.core.refresh.WidgetContentSource
 import kotlinx.coroutines.flow.Flow
 import java.time.LocalDate
 import java.time.YearMonth

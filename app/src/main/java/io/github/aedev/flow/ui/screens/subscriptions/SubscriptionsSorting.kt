@@ -1,9 +1,9 @@
-package io.github.aedev.flow.ui.screens.subscriptions
+package com.arubr.smsvcodes.ui.screens.subscriptions
 
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.local.dao.WatchHistoryDao
-import io.github.aedev.flow.data.model.Channel
-import io.github.aedev.flow.data.model.Video
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.local.dao.WatchHistoryDao
+import com.arubr.smsvcodes.data.model.Channel
+import com.arubr.smsvcodes.data.model.Video
 
 internal fun SubscriptionSortMode.labelRes(): Int =
     when (this) {

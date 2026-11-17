@@ -1,11 +1,11 @@
-package io.github.aedev.flow.data.contentfilter.aislist
+package com.arubr.smsvcodes.data.contentfilter.aislist
 
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.data.music.model.ArtistDetails
-import io.github.aedev.flow.data.music.model.MusicArtist
-import io.github.aedev.flow.data.music.model.MusicPlaylist
-import io.github.aedev.flow.data.music.model.MusicTrack
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.data.music.model.ArtistDetails
+import com.arubr.smsvcodes.data.music.model.MusicArtist
+import com.arubr.smsvcodes.data.music.model.MusicPlaylist
+import com.arubr.smsvcodes.data.music.model.MusicTrack
 import org.junit.Test
 
 class AiListMatcherTest {

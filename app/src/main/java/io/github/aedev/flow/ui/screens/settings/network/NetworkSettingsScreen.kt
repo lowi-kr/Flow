@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.settings.network
+package com.arubr.smsvcodes.ui.screens.settings.network
 
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -37,17 +37,17 @@ import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import io.github.aedev.flow.R
-import io.github.aedev.flow.network.AppProxyType
-import io.github.aedev.flow.ui.components.settings.SettingEntry
-import io.github.aedev.flow.ui.components.settings.SettingsGroupScope
-import io.github.aedev.flow.ui.components.settings.SettingsPage
-import io.github.aedev.flow.ui.components.settings.info
-import io.github.aedev.flow.ui.components.settings.notice
-import io.github.aedev.flow.ui.components.settings.switch
-import io.github.aedev.flow.ui.components.settings.toggleGroup
-import io.github.aedev.flow.ui.components.shared.FlowToggleOption
-import io.github.aedev.flow.ui.screens.settings.index.NetworkIndex
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.network.AppProxyType
+import com.arubr.smsvcodes.ui.components.settings.SettingEntry
+import com.arubr.smsvcodes.ui.components.settings.SettingsGroupScope
+import com.arubr.smsvcodes.ui.components.settings.SettingsPage
+import com.arubr.smsvcodes.ui.components.settings.info
+import com.arubr.smsvcodes.ui.components.settings.notice
+import com.arubr.smsvcodes.ui.components.settings.switch
+import com.arubr.smsvcodes.ui.components.settings.toggleGroup
+import com.arubr.smsvcodes.ui.components.shared.FlowToggleOption
+import com.arubr.smsvcodes.ui.screens.settings.index.NetworkIndex
 import kotlinx.coroutines.launch
 
 private val FieldPadding = 12.dp

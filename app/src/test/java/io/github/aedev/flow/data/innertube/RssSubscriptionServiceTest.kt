@@ -1,15 +1,15 @@
-package io.github.aedev.flow.data.innertube
+package com.arubr.smsvcodes.data.innertube
 
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.data.shorts.ChannelReelIndex
-import io.github.aedev.flow.data.subscriptions.ChannelRssClient
-import io.github.aedev.flow.data.subscriptions.ChannelRssEntry
-import io.github.aedev.flow.data.subscriptions.ChannelRssFeed
-import io.github.aedev.flow.data.subscriptions.ChannelUploads
-import io.github.aedev.flow.data.subscriptions.ChannelUploadsClient
-import io.github.aedev.flow.innertube.pages.renderer.FeedItemOwner
-import io.github.aedev.flow.utils.formatYouTubeRelativeTime
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.data.shorts.ChannelReelIndex
+import com.arubr.smsvcodes.data.subscriptions.ChannelRssClient
+import com.arubr.smsvcodes.data.subscriptions.ChannelRssEntry
+import com.arubr.smsvcodes.data.subscriptions.ChannelRssFeed
+import com.arubr.smsvcodes.data.subscriptions.ChannelUploads
+import com.arubr.smsvcodes.data.subscriptions.ChannelUploadsClient
+import com.arubr.smsvcodes.innertube.pages.renderer.FeedItemOwner
+import com.arubr.smsvcodes.utils.formatYouTubeRelativeTime
 import io.mockk.coEvery
 import io.mockk.coVerify
 import io.mockk.every
@@ -392,6 +392,6 @@ class RssSubscriptionServiceTest {
         }
 
     private companion object {
-        const val FORMAT_UTILS = "io.github.aedev.flow.utils.FormatUtilsKt"
+        const val FORMAT_UTILS = "com.arubr.smsvcodes.utils.FormatUtilsKt"
     }
 }

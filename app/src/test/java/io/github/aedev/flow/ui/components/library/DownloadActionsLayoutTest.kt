@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.library
+package com.arubr.smsvcodes.ui.components.library
 
 import androidx.compose.ui.unit.dp
 import org.junit.Assert.assertFalse

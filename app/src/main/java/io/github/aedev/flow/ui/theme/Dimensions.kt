@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.theme
+package com.arubr.smsvcodes.ui.theme
 
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp

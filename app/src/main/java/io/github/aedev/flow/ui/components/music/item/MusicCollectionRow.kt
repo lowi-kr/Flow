@@ -4,7 +4,7 @@
  * This file is part of Flow (https://github.com/Flow-Tube/Flow).
  */
 
-package io.github.aedev.flow.ui.components.music.item
+package com.arubr.smsvcodes.ui.components.music.item
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.combinedClickable
@@ -32,18 +32,18 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.contentfilter.aislist.AiVerdict
-import io.github.aedev.flow.innertube.models.AlbumItem
-import io.github.aedev.flow.innertube.models.ArtistItem
-import io.github.aedev.flow.innertube.models.PlaylistItem
-import io.github.aedev.flow.innertube.models.SongItem
-import io.github.aedev.flow.innertube.models.YTItem
-import io.github.aedev.flow.ui.components.shared.card.LocalAiListMatcher
-import io.github.aedev.flow.ui.components.shared.flowArtistShape
-import io.github.aedev.flow.ui.components.shared.onMenuKey
-import io.github.aedev.flow.ui.screens.music.aiCreditedIds
-import io.github.aedev.flow.ui.screens.music.convertSongToMusicTrack
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.contentfilter.aislist.AiVerdict
+import com.arubr.smsvcodes.innertube.models.AlbumItem
+import com.arubr.smsvcodes.innertube.models.ArtistItem
+import com.arubr.smsvcodes.innertube.models.PlaylistItem
+import com.arubr.smsvcodes.innertube.models.SongItem
+import com.arubr.smsvcodes.innertube.models.YTItem
+import com.arubr.smsvcodes.ui.components.shared.card.LocalAiListMatcher
+import com.arubr.smsvcodes.ui.components.shared.flowArtistShape
+import com.arubr.smsvcodes.ui.components.shared.onMenuKey
+import com.arubr.smsvcodes.ui.screens.music.aiCreditedIds
+import com.arubr.smsvcodes.ui.screens.music.convertSongToMusicTrack
 
 /**
  * List-shaped row for any InnerTube item. Songs are handed to [MusicTrackItem] so a song looks the

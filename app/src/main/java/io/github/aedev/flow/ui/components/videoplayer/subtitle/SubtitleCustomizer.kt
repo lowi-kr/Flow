@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.videoplayer.subtitle
+package com.arubr.smsvcodes.ui.components.videoplayer.subtitle
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -30,15 +30,15 @@ import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.media3.common.text.Cue
-import io.github.aedev.flow.R
-import io.github.aedev.flow.ui.components.shared.FlowColorPickerDialog
-import io.github.aedev.flow.ui.components.shared.FlowConnectedToggleGroup
-import io.github.aedev.flow.ui.components.shared.FlowFilterChip
-import io.github.aedev.flow.ui.components.shared.FlowSwitch
-import io.github.aedev.flow.ui.components.shared.FlowToggleOption
-import io.github.aedev.flow.ui.theme.SubtitleBackgroundSwatches
-import io.github.aedev.flow.ui.theme.SubtitleEdgeSwatches
-import io.github.aedev.flow.ui.theme.SubtitleTextSwatches
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.ui.components.shared.FlowColorPickerDialog
+import com.arubr.smsvcodes.ui.components.shared.FlowConnectedToggleGroup
+import com.arubr.smsvcodes.ui.components.shared.FlowFilterChip
+import com.arubr.smsvcodes.ui.components.shared.FlowSwitch
+import com.arubr.smsvcodes.ui.components.shared.FlowToggleOption
+import com.arubr.smsvcodes.ui.theme.SubtitleBackgroundSwatches
+import com.arubr.smsvcodes.ui.theme.SubtitleEdgeSwatches
+import com.arubr.smsvcodes.ui.theme.SubtitleTextSwatches
 
 private enum class ColorTarget { TEXT, BACKGROUND, WINDOW, EDGE }
 

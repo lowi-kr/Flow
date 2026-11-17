@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.sync
+package com.arubr.smsvcodes.ui.screens.sync
 
 import android.app.Application
 import android.content.Context
@@ -10,7 +10,7 @@ import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performTextInput
 import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import io.github.aedev.flow.R
+import com.arubr.smsvcodes.R
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith

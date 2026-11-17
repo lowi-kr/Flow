@@ -1,4 +1,4 @@
-package io.github.aedev.flow.data.shorts.feed
+package com.arubr.smsvcodes.data.shorts.feed
 
 /**
  * How many of a page's [slots] each lane may take. SUBSCRIPTIONS is a cap, never a floor; the

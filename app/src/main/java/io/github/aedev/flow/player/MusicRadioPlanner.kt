@@ -1,8 +1,8 @@
-package io.github.aedev.flow.player
+package com.arubr.smsvcodes.player
 
-import io.github.aedev.flow.data.localmedia.LocalMediaIds
-import io.github.aedev.flow.data.music.model.MusicTrack
-import io.github.aedev.flow.data.recommendation.music.primaryArtistKey
+import com.arubr.smsvcodes.data.localmedia.LocalMediaIds
+import com.arubr.smsvcodes.data.music.model.MusicTrack
+import com.arubr.smsvcodes.data.recommendation.music.primaryArtistKey
 
 /**
  * Decides whether a playlist change opens a new radio session or continues the current one.

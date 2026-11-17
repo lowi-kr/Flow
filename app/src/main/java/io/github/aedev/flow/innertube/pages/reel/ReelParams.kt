@@ -1,7 +1,7 @@
-package io.github.aedev.flow.innertube.pages.reel
+package com.arubr.smsvcodes.innertube.pages.reel
 
-import io.github.aedev.flow.innertube.YouTubeSearchParams
-import io.github.aedev.flow.utils.protobuf.ProtobufWriter
+import com.arubr.smsvcodes.innertube.YouTubeSearchParams
+import com.arubr.smsvcodes.utils.protobuf.ProtobufWriter
 import java.util.Base64
 
 internal object ReelParams {

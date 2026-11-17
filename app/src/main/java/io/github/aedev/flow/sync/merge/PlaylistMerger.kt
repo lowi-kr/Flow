@@ -1,7 +1,7 @@
-package io.github.aedev.flow.sync.merge
+package com.arubr.smsvcodes.sync.merge
 
-import io.github.aedev.flow.sync.canonical.CanonicalPlaylist
-import io.github.aedev.flow.sync.canonical.CanonicalPlaylistItem
+import com.arubr.smsvcodes.sync.canonical.CanonicalPlaylist
+import com.arubr.smsvcodes.sync.canonical.CanonicalPlaylistItem
 
 /**
  * Playlist merge. Playlists are matched by `syncId` (the mapper is responsible for

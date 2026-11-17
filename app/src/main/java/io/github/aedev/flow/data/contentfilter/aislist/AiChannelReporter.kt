@@ -1,9 +1,9 @@
-package io.github.aedev.flow.data.contentfilter.aislist
+package com.arubr.smsvcodes.data.contentfilter.aislist
 
-import io.github.aedev.flow.BuildConfig
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.innertube.YouTube
+import com.arubr.smsvcodes.BuildConfig
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.innertube.YouTube
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.first

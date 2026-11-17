@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.shared
+package com.arubr.smsvcodes.ui.components.shared
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -42,23 +42,23 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.data.local.HomeFeedColumns
-import io.github.aedev.flow.data.model.Channel
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.innertube.pages.renderer.CommunityPost
-import io.github.aedev.flow.innertube.pages.renderer.FeedItem
-import io.github.aedev.flow.innertube.pages.renderer.FeedShelf
-import io.github.aedev.flow.innertube.pages.renderer.FeedShelfStyle
-import io.github.aedev.flow.ui.components.FEED_MAX_AUTO_COLUMNS
-import io.github.aedev.flow.ui.components.FeedGridLayout
-import io.github.aedev.flow.ui.components.PlaylistCard
-import io.github.aedev.flow.ui.components.PlaylistCardLayout
-import io.github.aedev.flow.ui.components.feedCardsFormGrid
-import io.github.aedev.flow.ui.components.feedShelfPreviewCount
-import io.github.aedev.flow.ui.components.rememberFeedGridLayout
-import io.github.aedev.flow.ui.components.shared.card.MediaVideoCard
-import io.github.aedev.flow.ui.components.shared.card.VideoCardDensity
-import io.github.aedev.flow.ui.components.shared.card.VideoCardLayout
+import com.arubr.smsvcodes.data.local.HomeFeedColumns
+import com.arubr.smsvcodes.data.model.Channel
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.innertube.pages.renderer.CommunityPost
+import com.arubr.smsvcodes.innertube.pages.renderer.FeedItem
+import com.arubr.smsvcodes.innertube.pages.renderer.FeedShelf
+import com.arubr.smsvcodes.innertube.pages.renderer.FeedShelfStyle
+import com.arubr.smsvcodes.ui.components.FEED_MAX_AUTO_COLUMNS
+import com.arubr.smsvcodes.ui.components.FeedGridLayout
+import com.arubr.smsvcodes.ui.components.PlaylistCard
+import com.arubr.smsvcodes.ui.components.PlaylistCardLayout
+import com.arubr.smsvcodes.ui.components.feedCardsFormGrid
+import com.arubr.smsvcodes.ui.components.feedShelfPreviewCount
+import com.arubr.smsvcodes.ui.components.rememberFeedGridLayout
+import com.arubr.smsvcodes.ui.components.shared.card.MediaVideoCard
+import com.arubr.smsvcodes.ui.components.shared.card.VideoCardDensity
+import com.arubr.smsvcodes.ui.components.shared.card.VideoCardLayout
 
 @Composable
 internal fun ShelfItem(

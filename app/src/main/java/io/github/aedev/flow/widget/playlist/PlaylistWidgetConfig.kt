@@ -1,4 +1,4 @@
-package io.github.aedev.flow.widget.playlist
+package com.arubr.smsvcodes.widget.playlist
 
 import android.content.Context
 import androidx.datastore.preferences.core.Preferences

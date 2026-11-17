@@ -1,10 +1,10 @@
-package io.github.aedev.flow.ui.screens.onboarding
+package com.arubr.smsvcodes.ui.screens.onboarding
 
 import androidx.annotation.StringRes
 import androidx.compose.runtime.Immutable
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.backup.ImportSource
-import io.github.aedev.flow.data.model.Channel
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.backup.ImportSource
+import com.arubr.smsvcodes.data.model.Channel
 
 internal const val MIN_TOPICS = 3
 internal const val STAGGER_DELAY_MS = 50L

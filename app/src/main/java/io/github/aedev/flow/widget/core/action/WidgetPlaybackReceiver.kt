@@ -1,4 +1,4 @@
-package io.github.aedev.flow.widget.core.action
+package com.arubr.smsvcodes.widget.core.action
 
 import android.app.PendingIntent
 import android.content.BroadcastReceiver
@@ -7,7 +7,7 @@ import android.content.Intent
 import androidx.media3.common.Player
 import androidx.media3.common.util.UnstableApi
 import androidx.media3.common.util.Util
-import io.github.aedev.flow.data.profile.ProfileSwitchGate
+import com.arubr.smsvcodes.data.profile.ProfileSwitchGate
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
@@ -17,9 +17,9 @@ import kotlinx.coroutines.launch
 enum class WidgetPlaybackCommand(
     val action: String,
 ) {
-    PLAY_PAUSE("io.github.aedev.flow.widget.PLAY_PAUSE"),
-    NEXT("io.github.aedev.flow.widget.NEXT"),
-    PREVIOUS("io.github.aedev.flow.widget.PREVIOUS"),
+    PLAY_PAUSE("com.arubr.smsvcodes.widget.PLAY_PAUSE"),
+    NEXT("com.arubr.smsvcodes.widget.NEXT"),
+    PREVIOUS("com.arubr.smsvcodes.widget.PREVIOUS"),
     ;
 
     @OptIn(UnstableApi::class)

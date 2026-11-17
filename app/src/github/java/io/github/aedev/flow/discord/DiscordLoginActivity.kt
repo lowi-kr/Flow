@@ -1,4 +1,4 @@
-package io.github.aedev.flow.discord
+package com.arubr.smsvcodes.discord
 
 import android.annotation.SuppressLint
 import android.graphics.Color
@@ -57,7 +57,7 @@ class DiscordLoginActivity : ComponentActivity() {
 
     override fun onDestroy() {
         if (!completed && isFinishing) {
-            DiscordLoginBroker.fail(getString(io.github.aedev.flow.R.string.discord_error_login_cancelled))
+            DiscordLoginBroker.fail(getString(com.arubr.smsvcodes.R.string.discord_error_login_cancelled))
         }
         clearLoginSession()
         super.onDestroy()

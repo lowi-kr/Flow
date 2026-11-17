@@ -1,4 +1,4 @@
-package io.github.aedev.flow.service
+package com.arubr.smsvcodes.service
 
 import android.content.BroadcastReceiver
 import android.content.Context
@@ -11,18 +11,18 @@ import androidx.media3.common.C
 import androidx.media3.common.MediaItem
 import androidx.media3.common.PlaybackParameters
 import androidx.media3.common.Player
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.localmedia.LocalLyricsReader
-import io.github.aedev.flow.data.localmedia.LocalMediaIds
-import io.github.aedev.flow.data.localmedia.lrcOffsetMs
-import io.github.aedev.flow.data.lyrics.LyricsEntry
-import io.github.aedev.flow.data.lyrics.LyricsHelper
-import io.github.aedev.flow.data.lyrics.LyricsLoadPolicy
-import io.github.aedev.flow.data.lyrics.LyricsUtils
-import io.github.aedev.flow.data.lyrics.MusicVideoLyricsTiming
-import io.github.aedev.flow.data.lyrics.ShownLyrics
-import io.github.aedev.flow.player.PlaybackTarget
-import io.github.aedev.flow.utils.NetworkState
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.localmedia.LocalLyricsReader
+import com.arubr.smsvcodes.data.localmedia.LocalMediaIds
+import com.arubr.smsvcodes.data.localmedia.lrcOffsetMs
+import com.arubr.smsvcodes.data.lyrics.LyricsEntry
+import com.arubr.smsvcodes.data.lyrics.LyricsHelper
+import com.arubr.smsvcodes.data.lyrics.LyricsLoadPolicy
+import com.arubr.smsvcodes.data.lyrics.LyricsUtils
+import com.arubr.smsvcodes.data.lyrics.MusicVideoLyricsTiming
+import com.arubr.smsvcodes.data.lyrics.ShownLyrics
+import com.arubr.smsvcodes.player.PlaybackTarget
+import com.arubr.smsvcodes.utils.NetworkState
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers

@@ -1,7 +1,7 @@
-package io.github.aedev.flow.player
+package com.arubr.smsvcodes.player
 
-import io.github.aedev.flow.data.local.QueuePersistence
-import io.github.aedev.flow.data.music.model.MusicTrack
+import com.arubr.smsvcodes.data.local.QueuePersistence
+import com.arubr.smsvcodes.data.music.model.MusicTrack
 
 /** What a saved music queue comes back as after the process was gone. */
 internal data class RestoredMusicQueue(

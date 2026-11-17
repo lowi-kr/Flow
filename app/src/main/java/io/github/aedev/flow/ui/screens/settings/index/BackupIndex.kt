@@ -1,11 +1,11 @@
-package io.github.aedev.flow.ui.screens.settings.index
+package com.arubr.smsvcodes.ui.screens.settings.index
 
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.backup.ExportKind
-import io.github.aedev.flow.data.backup.ImportKind
-import io.github.aedev.flow.ui.components.settings.SettingEntry
-import io.github.aedev.flow.ui.components.settings.SettingsDestination
-import io.github.aedev.flow.ui.components.settings.SettingsTabs
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.backup.ExportKind
+import com.arubr.smsvcodes.data.backup.ImportKind
+import com.arubr.smsvcodes.ui.components.settings.SettingEntry
+import com.arubr.smsvcodes.ui.components.settings.SettingsDestination
+import com.arubr.smsvcodes.ui.components.settings.SettingsTabs
 
 internal object BackupIndex {
     private val page = SettingsDestination.BACKUP

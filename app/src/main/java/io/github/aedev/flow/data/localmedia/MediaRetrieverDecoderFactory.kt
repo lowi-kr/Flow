@@ -1,11 +1,11 @@
-package io.github.aedev.flow.data.localmedia
+package com.arubr.smsvcodes.data.localmedia
 
 import coil3.ImageLoader
 import coil3.decode.DecodeResult
 import coil3.decode.Decoder
 import coil3.fetch.SourceFetchResult
 import coil3.request.Options
-import io.github.aedev.flow.utils.PerformanceDispatcher
+import com.arubr.smsvcodes.utils.PerformanceDispatcher
 import kotlinx.coroutines.withContext
 
 /** Runs a `MediaMetadataRetriever`-backed Coil decoder on [PerformanceDispatcher.mediaRetriever]. */

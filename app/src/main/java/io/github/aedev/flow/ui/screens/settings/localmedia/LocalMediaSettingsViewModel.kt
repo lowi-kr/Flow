@@ -1,11 +1,11 @@
-package io.github.aedev.flow.ui.screens.settings.localmedia
+package com.arubr.smsvcodes.ui.screens.settings.localmedia
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
-import io.github.aedev.flow.data.localmedia.LocalMediaPreferences
-import io.github.aedev.flow.data.localmedia.LocalMediaRepository
-import io.github.aedev.flow.data.localmedia.LocalMediaSettings
+import com.arubr.smsvcodes.data.localmedia.LocalMediaPreferences
+import com.arubr.smsvcodes.data.localmedia.LocalMediaRepository
+import com.arubr.smsvcodes.data.localmedia.LocalMediaSettings
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.combine

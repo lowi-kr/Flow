@@ -1,8 +1,8 @@
-package io.github.aedev.flow.data.local
+package com.arubr.smsvcodes.data.local
 
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
-import io.github.aedev.flow.data.local.entity.DownloadEntity
+import com.arubr.smsvcodes.data.local.entity.DownloadEntity
 import kotlinx.coroutines.test.runTest
 import org.junit.After
 import org.junit.Assert.assertEquals

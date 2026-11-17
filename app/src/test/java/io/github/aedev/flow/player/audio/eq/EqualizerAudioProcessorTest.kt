@@ -1,11 +1,11 @@
-package io.github.aedev.flow.player.audio.eq
+package com.arubr.smsvcodes.player.audio.eq
 
 import androidx.media3.common.C
 import androidx.media3.common.audio.AudioProcessor
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.data.audio.eq.EqBand
-import io.github.aedev.flow.data.audio.eq.EqProcessingSpec
-import io.github.aedev.flow.data.audio.eq.EqSpatialSound
+import com.arubr.smsvcodes.data.audio.eq.EqBand
+import com.arubr.smsvcodes.data.audio.eq.EqProcessingSpec
+import com.arubr.smsvcodes.data.audio.eq.EqSpatialSound
 import org.junit.Test
 import java.nio.ByteBuffer
 import java.nio.ByteOrder

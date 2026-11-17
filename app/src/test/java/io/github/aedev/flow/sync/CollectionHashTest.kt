@@ -1,7 +1,7 @@
-package io.github.aedev.flow.sync
+package com.arubr.smsvcodes.sync
 
-import io.github.aedev.flow.sync.protocol.CollectionWire
-import io.github.aedev.flow.sync.protocol.SyncSerialization
+import com.arubr.smsvcodes.sync.protocol.CollectionWire
+import com.arubr.smsvcodes.sync.protocol.SyncSerialization
 import org.junit.Assert.assertEquals
 import org.junit.Test
 

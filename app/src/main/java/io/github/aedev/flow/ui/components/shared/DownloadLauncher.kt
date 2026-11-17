@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.shared
+package com.arubr.smsvcodes.ui.components.shared
 
 import android.content.Context
 import android.os.Environment
@@ -9,20 +9,20 @@ import dagger.hilt.EntryPoint
 import dagger.hilt.InstallIn
 import dagger.hilt.android.EntryPointAccessors
 import dagger.hilt.components.SingletonComponent
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.data.local.entity.DownloadFileType
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.data.video.DownloadStreamPolicy
-import io.github.aedev.flow.data.video.VideoDownloadManager
-import io.github.aedev.flow.data.video.downloader.request.DownloadRequest
-import io.github.aedev.flow.data.video.downloader.request.DownloadSubtitle
-import io.github.aedev.flow.data.video.downloader.request.toDownloadRequest
-import io.github.aedev.flow.data.video.downloader.work.DownloadController
-import io.github.aedev.flow.data.video.downloader.work.EnqueueOutcome
-import io.github.aedev.flow.data.video.storage.DownloadFiles
-import io.github.aedev.flow.innertube.models.response.PlayerResponse
-import io.github.aedev.flow.utils.PerformanceDispatcher
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.data.local.entity.DownloadFileType
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.data.video.DownloadStreamPolicy
+import com.arubr.smsvcodes.data.video.VideoDownloadManager
+import com.arubr.smsvcodes.data.video.downloader.request.DownloadRequest
+import com.arubr.smsvcodes.data.video.downloader.request.DownloadSubtitle
+import com.arubr.smsvcodes.data.video.downloader.request.toDownloadRequest
+import com.arubr.smsvcodes.data.video.downloader.work.DownloadController
+import com.arubr.smsvcodes.data.video.downloader.work.EnqueueOutcome
+import com.arubr.smsvcodes.data.video.storage.DownloadFiles
+import com.arubr.smsvcodes.innertube.models.response.PlayerResponse
+import com.arubr.smsvcodes.utils.PerformanceDispatcher
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.withContext
 

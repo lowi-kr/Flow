@@ -1,9 +1,9 @@
-package io.github.aedev.flow.innertube.pages
+package com.arubr.smsvcodes.innertube.pages
 
-import io.github.aedev.flow.innertube.models.BrowseEndpoint
-import io.github.aedev.flow.innertube.models.GridRenderer
-import io.github.aedev.flow.innertube.models.MusicNavigationButtonRenderer
-import io.github.aedev.flow.innertube.models.SectionListRenderer
+import com.arubr.smsvcodes.innertube.models.BrowseEndpoint
+import com.arubr.smsvcodes.innertube.models.GridRenderer
+import com.arubr.smsvcodes.innertube.models.MusicNavigationButtonRenderer
+import com.arubr.smsvcodes.innertube.models.SectionListRenderer
 
 data class MoodAndGenres(
     val title: String,

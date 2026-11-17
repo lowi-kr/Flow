@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.shared.card
+package com.arubr.smsvcodes.ui.components.shared.card
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -15,10 +15,10 @@ import androidx.compose.ui.layout.Layout
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.ui.components.shared.ChannelAvatarStack
-import io.github.aedev.flow.ui.components.shared.LocalDpadNavigation
-import io.github.aedev.flow.ui.components.shared.videoMetadataLine
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.ui.components.shared.ChannelAvatarStack
+import com.arubr.smsvcodes.ui.components.shared.LocalDpadNavigation
+import com.arubr.smsvcodes.ui.components.shared.videoMetadataLine
 
 /**
  * The thumbnail across the full width with the details beneath: feeds and grids. A dense card has no

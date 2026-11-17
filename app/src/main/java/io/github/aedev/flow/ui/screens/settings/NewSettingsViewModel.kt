@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.settings
+package com.arubr.smsvcodes.ui.screens.settings
 
 import android.os.Build
 import androidx.compose.runtime.Composable
@@ -7,12 +7,12 @@ import androidx.compose.runtime.remember
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import dagger.hilt.android.lifecycle.HiltViewModel
-import io.github.aedev.flow.BuildConfig
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.ui.components.shared.LocalDpadNavigation
-import io.github.aedev.flow.ui.screens.settings.index.DestinationIndex
-import io.github.aedev.flow.ui.screens.settings.index.NewSettingsPolicy
-import io.github.aedev.flow.ui.screens.settings.index.SettingsIndex
+import com.arubr.smsvcodes.BuildConfig
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.ui.components.shared.LocalDpadNavigation
+import com.arubr.smsvcodes.ui.screens.settings.index.DestinationIndex
+import com.arubr.smsvcodes.ui.screens.settings.index.NewSettingsPolicy
+import com.arubr.smsvcodes.ui.screens.settings.index.SettingsIndex
 import kotlinx.coroutines.flow.combine
 import java.time.LocalDate
 import javax.inject.Inject

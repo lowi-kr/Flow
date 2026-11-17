@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.music.collection
+package com.arubr.smsvcodes.ui.screens.music.collection
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -29,21 +29,21 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.music.model.MusicPlaylist
-import io.github.aedev.flow.data.music.model.MusicTrack
-import io.github.aedev.flow.ui.components.layout.flowBottomContentPadding
-import io.github.aedev.flow.ui.components.music.item.MusicItemDensity
-import io.github.aedev.flow.ui.components.music.item.MusicTrackItem
-import io.github.aedev.flow.ui.components.music.section.MusicCollectionShelf
-import io.github.aedev.flow.ui.components.shared.FlowEmptyState
-import io.github.aedev.flow.ui.components.shared.FlowSegmentedGap
-import io.github.aedev.flow.ui.components.shared.FlowSpinner
-import io.github.aedev.flow.ui.components.shared.ReorderHandle
-import io.github.aedev.flow.ui.components.shared.flowSegmentShape
-import io.github.aedev.flow.ui.components.shared.reorderHandleDrag
-import io.github.aedev.flow.ui.components.shared.reorderLift
-import io.github.aedev.flow.ui.theme.Dimensions
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.music.model.MusicPlaylist
+import com.arubr.smsvcodes.data.music.model.MusicTrack
+import com.arubr.smsvcodes.ui.components.layout.flowBottomContentPadding
+import com.arubr.smsvcodes.ui.components.music.item.MusicItemDensity
+import com.arubr.smsvcodes.ui.components.music.item.MusicTrackItem
+import com.arubr.smsvcodes.ui.components.music.section.MusicCollectionShelf
+import com.arubr.smsvcodes.ui.components.shared.FlowEmptyState
+import com.arubr.smsvcodes.ui.components.shared.FlowSegmentedGap
+import com.arubr.smsvcodes.ui.components.shared.FlowSpinner
+import com.arubr.smsvcodes.ui.components.shared.ReorderHandle
+import com.arubr.smsvcodes.ui.components.shared.flowSegmentShape
+import com.arubr.smsvcodes.ui.components.shared.reorderHandleDrag
+import com.arubr.smsvcodes.ui.components.shared.reorderLift
+import com.arubr.smsvcodes.ui.theme.Dimensions
 import sh.calvin.reorderable.ReorderableItem
 import sh.calvin.reorderable.ReorderableLazyListState
 

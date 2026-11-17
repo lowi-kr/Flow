@@ -1,4 +1,4 @@
-package io.github.aedev.flow.widget.core.component
+package com.arubr.smsvcodes.widget.core.component
 
 import android.app.PendingIntent
 import android.os.Build
@@ -28,10 +28,10 @@ import androidx.glance.layout.Spacer
 import androidx.glance.layout.height
 import androidx.glance.layout.size
 import androidx.glance.layout.width
-import io.github.aedev.flow.R
-import io.github.aedev.flow.widget.core.action.ToggleLikeAction
-import io.github.aedev.flow.widget.core.action.WidgetPlaybackCommand
-import io.github.aedev.flow.widget.core.theme.WidgetDimens
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.widget.core.action.ToggleLikeAction
+import com.arubr.smsvcodes.widget.core.action.WidgetPlaybackCommand
+import com.arubr.smsvcodes.widget.core.theme.WidgetDimens
 
 /** The resting shape of a pressable button; each squares off further while it is pressed. */
 enum class WidgetButtonShape(

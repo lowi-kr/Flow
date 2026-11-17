@@ -1,4 +1,4 @@
-package io.github.aedev.flow.data.video.downloader.work
+package com.arubr.smsvcodes.data.video.downloader.work
 
 import android.app.Notification
 import android.app.NotificationChannel
@@ -9,8 +9,8 @@ import android.content.Intent
 import android.text.format.Formatter
 import androidx.core.app.NotificationCompat
 import dagger.hilt.android.qualifiers.ApplicationContext
-import io.github.aedev.flow.MainActivity
-import io.github.aedev.flow.R
+import com.arubr.smsvcodes.MainActivity
+import com.arubr.smsvcodes.R
 import java.util.concurrent.ConcurrentHashMap
 import javax.inject.Inject
 import javax.inject.Singleton

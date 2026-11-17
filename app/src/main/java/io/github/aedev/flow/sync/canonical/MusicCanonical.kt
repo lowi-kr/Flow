@@ -1,4 +1,4 @@
-package io.github.aedev.flow.sync.canonical
+package com.arubr.smsvcodes.sync.canonical
 
 import kotlinx.serialization.Serializable
 

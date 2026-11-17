@@ -1,12 +1,12 @@
-package io.github.aedev.flow.data.music.artwork
+package com.arubr.smsvcodes.data.music.artwork
 
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.data.music.model.MusicArtist
-import io.github.aedev.flow.data.music.model.MusicTrack
-import io.github.aedev.flow.innertube.models.Album
-import io.github.aedev.flow.innertube.models.Artist
-import io.github.aedev.flow.innertube.models.SongItem
-import io.github.aedev.flow.innertube.models.WatchEndpoint.WatchEndpointMusicSupportedConfigs.WatchEndpointMusicConfig.Companion.MUSIC_VIDEO_TYPE_ATV
+import com.arubr.smsvcodes.data.music.model.MusicArtist
+import com.arubr.smsvcodes.data.music.model.MusicTrack
+import com.arubr.smsvcodes.innertube.models.Album
+import com.arubr.smsvcodes.innertube.models.Artist
+import com.arubr.smsvcodes.innertube.models.SongItem
+import com.arubr.smsvcodes.innertube.models.WatchEndpoint.WatchEndpointMusicSupportedConfigs.WatchEndpointMusicConfig.Companion.MUSIC_VIDEO_TYPE_ATV
 import kotlinx.coroutines.test.runTest
 import org.junit.Test
 import java.io.IOException

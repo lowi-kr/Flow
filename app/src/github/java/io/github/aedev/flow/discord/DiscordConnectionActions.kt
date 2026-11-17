@@ -1,4 +1,4 @@
-package io.github.aedev.flow.discord
+package com.arubr.smsvcodes.discord
 
 internal suspend fun retryDiscordConnection(
     transport: DiscordPresenceTransport,

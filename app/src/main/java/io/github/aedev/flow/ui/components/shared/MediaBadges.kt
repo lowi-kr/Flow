@@ -4,7 +4,7 @@
  * This file is part of Flow (https://github.com/Flow-Tube/Flow).
  */
 
-package io.github.aedev.flow.ui.components.shared
+package com.arubr.smsvcodes.ui.components.shared
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
@@ -25,11 +25,11 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.ui.theme.ArtworkLiveBadge
-import io.github.aedev.flow.ui.theme.ArtworkScrimContent
-import io.github.aedev.flow.ui.theme.artworkScrim
-import io.github.aedev.flow.utils.formatDuration
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.ui.theme.ArtworkLiveBadge
+import com.arubr.smsvcodes.ui.theme.ArtworkScrimContent
+import com.arubr.smsvcodes.ui.theme.artworkScrim
+import com.arubr.smsvcodes.utils.formatDuration
 
 private val BadgeSpacing = 4.dp
 private val BadgeHorizontalPadding = 5.dp

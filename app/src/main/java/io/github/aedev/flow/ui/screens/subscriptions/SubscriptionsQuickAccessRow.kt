@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.subscriptions
+package com.arubr.smsvcodes.ui.screens.subscriptions
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -20,9 +20,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.model.Channel
-import io.github.aedev.flow.ui.components.shared.dpadFocusGroup
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.model.Channel
+import com.arubr.smsvcodes.ui.components.shared.dpadFocusGroup
 
 private val RowHorizontalPadding = 12.dp
 private val AvatarSpacing = 12.dp

@@ -1,4 +1,4 @@
-package io.github.aedev.flow.data.lyrics
+package com.arubr.smsvcodes.data.lyrics
 
 /**
  * Which song changes may look up lyrics online. With "load lyrics only when opened" off, every one does, so the

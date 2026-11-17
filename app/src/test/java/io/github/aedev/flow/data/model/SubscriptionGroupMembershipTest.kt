@@ -1,6 +1,6 @@
-package io.github.aedev.flow.data.model
+package com.arubr.smsvcodes.data.model
 
-import io.github.aedev.flow.data.local.entity.SubscriptionGroupEntity
+import com.arubr.smsvcodes.data.local.entity.SubscriptionGroupEntity
 import org.junit.Assert.assertEquals
 import org.junit.Test
 

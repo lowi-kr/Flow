@@ -1,9 +1,9 @@
-package io.github.aedev.flow.data.comments
+package com.arubr.smsvcodes.data.comments
 
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.data.model.Comment
-import io.github.aedev.flow.data.repository.YouTubeRepository
-import io.github.aedev.flow.innertube.pages.VideoCommentSort
+import com.arubr.smsvcodes.data.model.Comment
+import com.arubr.smsvcodes.data.repository.YouTubeRepository
+import com.arubr.smsvcodes.innertube.pages.VideoCommentSort
 import io.mockk.coEvery
 import io.mockk.coVerify
 import io.mockk.mockk

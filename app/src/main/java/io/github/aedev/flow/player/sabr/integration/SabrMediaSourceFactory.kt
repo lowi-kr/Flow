@@ -1,4 +1,4 @@
-package io.github.aedev.flow.player.sabr.integration
+package com.arubr.smsvcodes.player.sabr.integration
 
 import android.net.Uri
 import android.util.Log
@@ -9,13 +9,13 @@ import androidx.media3.common.util.UnstableApi
 import androidx.media3.exoplayer.source.MediaSource
 import androidx.media3.exoplayer.source.MergingMediaSource
 import androidx.media3.exoplayer.source.ProgressiveMediaSource
-import io.github.aedev.flow.innertube.models.YouTubeClient
-import io.github.aedev.flow.player.sabr.core.SabrCpn
-import io.github.aedev.flow.player.sabr.core.SabrSessionState
-import io.github.aedev.flow.player.sabr.core.SabrStreamController
-import io.github.aedev.flow.player.sabr.network.SabrDataSource
-import io.github.aedev.flow.player.stream.InnerTubeVideoStreamExtractor
-import io.github.aedev.flow.player.stream.VideoCodecUtils
+import com.arubr.smsvcodes.innertube.models.YouTubeClient
+import com.arubr.smsvcodes.player.sabr.core.SabrCpn
+import com.arubr.smsvcodes.player.sabr.core.SabrSessionState
+import com.arubr.smsvcodes.player.sabr.core.SabrStreamController
+import com.arubr.smsvcodes.player.sabr.network.SabrDataSource
+import com.arubr.smsvcodes.player.stream.InnerTubeVideoStreamExtractor
+import com.arubr.smsvcodes.player.stream.VideoCodecUtils
 
 @UnstableApi
 object SabrMediaSourceFactory {

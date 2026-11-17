@@ -1,9 +1,9 @@
-package io.github.aedev.flow.ui
+package com.arubr.smsvcodes.ui
 
-import io.github.aedev.flow.ui.components.layout.navigation.FlowTab
-import io.github.aedev.flow.ui.components.layout.navigation.NavigationVisibility
-import io.github.aedev.flow.ui.components.layout.navigation.visibleFlowTabs
-import io.github.aedev.flow.ui.screens.update.UPDATE_ROUTE
+import com.arubr.smsvcodes.ui.components.layout.navigation.FlowTab
+import com.arubr.smsvcodes.ui.components.layout.navigation.NavigationVisibility
+import com.arubr.smsvcodes.ui.components.layout.navigation.visibleFlowTabs
+import com.arubr.smsvcodes.ui.screens.update.UPDATE_ROUTE
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertNull
@@ -212,7 +212,7 @@ class NavigationDestinationsTest {
     fun everySearchPageIsTheSearchTab() {
         assertEquals(
             FlowTab.Search,
-            flowTabForDestination(io.github.aedev.flow.ui.screens.search.SEARCH_ROUTE_PATTERN, shortsSourceArg = null),
+            flowTabForDestination(com.arubr.smsvcodes.ui.screens.search.SEARCH_ROUTE_PATTERN, shortsSourceArg = null),
         )
     }
 }

@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.videoplayer.controls
+package com.arubr.smsvcodes.ui.components.videoplayer.controls
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.core.FiniteAnimationSpec
@@ -12,8 +12,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.layout
 import androidx.compose.ui.unit.Dp
-import io.github.aedev.flow.data.local.IdleProgressBar
-import io.github.aedev.flow.ui.components.shared.RestTrackHeight
+import com.arubr.smsvcodes.data.local.IdleProgressBar
+import com.arubr.smsvcodes.ui.components.shared.RestTrackHeight
 
 /**
  * The thin progress bar the portrait player keeps while its controls are hidden (#1550).

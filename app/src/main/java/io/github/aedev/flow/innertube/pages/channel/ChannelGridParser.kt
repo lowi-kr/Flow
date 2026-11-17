@@ -1,15 +1,15 @@
-package io.github.aedev.flow.innertube.pages.channel
+package com.arubr.smsvcodes.innertube.pages.channel
 
-import io.github.aedev.flow.innertube.pages.arrayOrNull
-import io.github.aedev.flow.innertube.pages.objectOrNull
-import io.github.aedev.flow.innertube.pages.renderer.FeedItemOwner
-import io.github.aedev.flow.innertube.pages.renderer.distinctKey
-import io.github.aedev.flow.innertube.pages.renderer.findRenderers
-import io.github.aedev.flow.innertube.pages.renderer.largestImageUrl
-import io.github.aedev.flow.innertube.pages.renderer.toFeedItem
-import io.github.aedev.flow.innertube.pages.renderer.toFeedShelves
-import io.github.aedev.flow.innertube.pages.stringOrNull
-import io.github.aedev.flow.innertube.pages.youtubeText
+import com.arubr.smsvcodes.innertube.pages.arrayOrNull
+import com.arubr.smsvcodes.innertube.pages.objectOrNull
+import com.arubr.smsvcodes.innertube.pages.renderer.FeedItemOwner
+import com.arubr.smsvcodes.innertube.pages.renderer.distinctKey
+import com.arubr.smsvcodes.innertube.pages.renderer.findRenderers
+import com.arubr.smsvcodes.innertube.pages.renderer.largestImageUrl
+import com.arubr.smsvcodes.innertube.pages.renderer.toFeedItem
+import com.arubr.smsvcodes.innertube.pages.renderer.toFeedShelves
+import com.arubr.smsvcodes.innertube.pages.stringOrNull
+import com.arubr.smsvcodes.innertube.pages.youtubeText
 import kotlinx.serialization.json.JsonElement
 
 /**

@@ -1,4 +1,4 @@
-package io.github.aedev.flow.data.recommendation
+package com.arubr.smsvcodes.data.recommendation
 
 /**
  * Keeps the engine's own bookkeeping from a Deep Flow session off disk. The session's feed memory,

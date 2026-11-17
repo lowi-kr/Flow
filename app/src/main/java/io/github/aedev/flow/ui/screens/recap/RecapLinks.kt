@@ -1,9 +1,9 @@
-package io.github.aedev.flow.ui.screens.recap
+package com.arubr.smsvcodes.ui.screens.recap
 
-import io.github.aedev.flow.data.localmedia.LocalMediaIds
-import io.github.aedev.flow.data.stats.RankedItem
-import io.github.aedev.flow.data.stats.RankedKind
-import io.github.aedev.flow.utils.YouTubeLink
+import com.arubr.smsvcodes.data.localmedia.LocalMediaIds
+import com.arubr.smsvcodes.data.stats.RankedItem
+import com.arubr.smsvcodes.data.stats.RankedKind
+import com.arubr.smsvcodes.utils.YouTubeLink
 
 /** Where tapping a ranked row goes; null for rows with no page, such as topics or name-only artists. */
 internal fun RankedItem.link(): YouTubeLink? {

@@ -4,7 +4,7 @@
  * This file is part of Flow (https://github.com/Flow-Tube/Flow).
  */
 
-package io.github.aedev.flow.ui.components.music.section
+package com.arubr.smsvcodes.ui.components.music.section
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -32,30 +32,30 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.music.model.DailyDiscoverItem
-import io.github.aedev.flow.data.music.model.MusicItemType
-import io.github.aedev.flow.data.music.model.MusicPlaylist
-import io.github.aedev.flow.data.music.model.MusicTrack
-import io.github.aedev.flow.innertube.pages.HomePage
-import io.github.aedev.flow.innertube.pages.MoodAndGenres
-import io.github.aedev.flow.ui.components.currentGridThumbnailHeight
-import io.github.aedev.flow.ui.components.music.card.MusicHeroCard
-import io.github.aedev.flow.ui.components.music.common.MusicMoodButton
-import io.github.aedev.flow.ui.components.music.common.MusicMoodTone
-import io.github.aedev.flow.ui.components.music.common.MusicThumbnail
-import io.github.aedev.flow.ui.components.music.header.MusicSectionAction
-import io.github.aedev.flow.ui.components.music.header.MusicSectionHeader
-import io.github.aedev.flow.ui.components.music.item.MusicCollectionCard
-import io.github.aedev.flow.ui.components.music.item.MusicItemDensity
-import io.github.aedev.flow.ui.components.music.item.MusicTrackItem
-import io.github.aedev.flow.ui.components.shared.ChartRankBadge
-import io.github.aedev.flow.ui.components.shared.FlowFilterChip
-import io.github.aedev.flow.ui.components.shared.flowArtistShape
-import io.github.aedev.flow.ui.components.shared.flowGridCellWidth
-import io.github.aedev.flow.ui.components.shared.flowGridColumns
-import io.github.aedev.flow.ui.components.shared.flowLaneItemWidth
-import io.github.aedev.flow.ui.theme.Dimensions
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.music.model.DailyDiscoverItem
+import com.arubr.smsvcodes.data.music.model.MusicItemType
+import com.arubr.smsvcodes.data.music.model.MusicPlaylist
+import com.arubr.smsvcodes.data.music.model.MusicTrack
+import com.arubr.smsvcodes.innertube.pages.HomePage
+import com.arubr.smsvcodes.innertube.pages.MoodAndGenres
+import com.arubr.smsvcodes.ui.components.currentGridThumbnailHeight
+import com.arubr.smsvcodes.ui.components.music.card.MusicHeroCard
+import com.arubr.smsvcodes.ui.components.music.common.MusicMoodButton
+import com.arubr.smsvcodes.ui.components.music.common.MusicMoodTone
+import com.arubr.smsvcodes.ui.components.music.common.MusicThumbnail
+import com.arubr.smsvcodes.ui.components.music.header.MusicSectionAction
+import com.arubr.smsvcodes.ui.components.music.header.MusicSectionHeader
+import com.arubr.smsvcodes.ui.components.music.item.MusicCollectionCard
+import com.arubr.smsvcodes.ui.components.music.item.MusicItemDensity
+import com.arubr.smsvcodes.ui.components.music.item.MusicTrackItem
+import com.arubr.smsvcodes.ui.components.shared.ChartRankBadge
+import com.arubr.smsvcodes.ui.components.shared.FlowFilterChip
+import com.arubr.smsvcodes.ui.components.shared.flowArtistShape
+import com.arubr.smsvcodes.ui.components.shared.flowGridCellWidth
+import com.arubr.smsvcodes.ui.components.shared.flowGridColumns
+import com.arubr.smsvcodes.ui.components.shared.flowLaneItemWidth
+import com.arubr.smsvcodes.ui.theme.Dimensions
 
 private val ArtistPortraitSize = 84.dp
 private val SeedThumbnailSize = 40.dp

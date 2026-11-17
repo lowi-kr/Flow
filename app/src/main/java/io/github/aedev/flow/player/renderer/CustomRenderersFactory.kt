@@ -1,4 +1,4 @@
-package io.github.aedev.flow.player.renderer
+package com.arubr.smsvcodes.player.renderer
 
 import android.content.Context
 import android.os.Handler
@@ -17,10 +17,10 @@ import androidx.media3.exoplayer.video.MediaCodecVideoRenderer
 import androidx.media3.exoplayer.video.VideoRendererEventListener
 import androidx.media3.extractor.text.DefaultSubtitleParserFactory
 import androidx.media3.extractor.text.SubtitleDecoder
-import io.github.aedev.flow.player.config.PlayerConfig
-import io.github.aedev.flow.player.renderer.subtitle.DelayedSubtitleDecoder
-import io.github.aedev.flow.player.renderer.subtitle.Srv3SubtitleParser
-import io.github.aedev.flow.player.subtitle.SubtitleDelay
+import com.arubr.smsvcodes.player.config.PlayerConfig
+import com.arubr.smsvcodes.player.renderer.subtitle.DelayedSubtitleDecoder
+import com.arubr.smsvcodes.player.renderer.subtitle.Srv3SubtitleParser
+import com.arubr.smsvcodes.player.subtitle.SubtitleDelay
 import java.util.ArrayList
 
 /**

@@ -1,4 +1,4 @@
-package io.github.aedev.flow.data.video.downloader.tags
+package com.arubr.smsvcodes.data.video.downloader.tags
 
 import android.content.Context
 import android.media.MediaMetadataRetriever
@@ -10,7 +10,7 @@ import androidx.media3.common.Metadata
 import androidx.media3.common.util.UnstableApi
 import androidx.media3.inspector.MetadataRetriever
 import dagger.hilt.android.qualifiers.ApplicationContext
-import io.github.aedev.flow.utils.await
+import com.arubr.smsvcodes.utils.await
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext

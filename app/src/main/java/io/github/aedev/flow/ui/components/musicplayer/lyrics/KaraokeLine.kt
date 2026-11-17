@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.musicplayer.lyrics
+package com.arubr.smsvcodes.ui.components.musicplayer.lyrics
 
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.LinearEasing
@@ -37,10 +37,10 @@ import androidx.compose.ui.text.rememberTextMeasurer
 import androidx.compose.ui.text.style.ResolvedTextDirection
 import androidx.compose.ui.unit.Constraints
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.data.local.LyricsAnimationStyle
-import io.github.aedev.flow.data.local.LyricsGlow
-import io.github.aedev.flow.data.lyrics.WordTimestamp
-import io.github.aedev.flow.player.EnhancedMusicPlayerManager
+import com.arubr.smsvcodes.data.local.LyricsAnimationStyle
+import com.arubr.smsvcodes.data.local.LyricsGlow
+import com.arubr.smsvcodes.data.lyrics.WordTimestamp
+import com.arubr.smsvcodes.player.EnhancedMusicPlayerManager
 import kotlinx.coroutines.isActive
 import kotlin.math.roundToInt
 

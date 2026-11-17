@@ -1,4 +1,4 @@
-package io.github.aedev.flow.network
+package com.arubr.smsvcodes.network
 
 import okhttp3.OkHttpClient
 

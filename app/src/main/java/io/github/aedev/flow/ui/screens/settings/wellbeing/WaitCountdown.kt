@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.settings.wellbeing
+package com.arubr.smsvcodes.ui.screens.settings.wellbeing
 
 import android.os.SystemClock
 import androidx.compose.runtime.Composable

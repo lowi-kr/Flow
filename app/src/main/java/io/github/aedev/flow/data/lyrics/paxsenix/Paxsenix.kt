@@ -2,18 +2,18 @@
 // This implementation was based on metrolist's (https://github.com/MetrolistGroup/Metrolist)
 // ==================================================================================================
 
-package io.github.aedev.flow.data.lyrics.paxsenix
+package com.arubr.smsvcodes.data.lyrics.paxsenix
 
 import android.util.Log
 import com.google.gson.Gson
-import io.github.aedev.flow.BuildConfig
-import io.github.aedev.flow.data.lyrics.LyricsMatching
-import io.github.aedev.flow.data.lyrics.LyricsNotFoundException
-import io.github.aedev.flow.data.lyrics.LyricsSourceBusyException
-import io.github.aedev.flow.data.lyrics.TTMLParser
-import io.github.aedev.flow.data.lyrics.paxsenix.models.AppleMusicSearchResponse
-import io.github.aedev.flow.data.lyrics.paxsenix.models.LyricsResponse
-import io.github.aedev.flow.data.lyrics.paxsenix.models.SearchResult
+import com.arubr.smsvcodes.BuildConfig
+import com.arubr.smsvcodes.data.lyrics.LyricsMatching
+import com.arubr.smsvcodes.data.lyrics.LyricsNotFoundException
+import com.arubr.smsvcodes.data.lyrics.LyricsSourceBusyException
+import com.arubr.smsvcodes.data.lyrics.TTMLParser
+import com.arubr.smsvcodes.data.lyrics.paxsenix.models.AppleMusicSearchResponse
+import com.arubr.smsvcodes.data.lyrics.paxsenix.models.LyricsResponse
+import com.arubr.smsvcodes.data.lyrics.paxsenix.models.SearchResult
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.currentCoroutineContext
 import kotlinx.coroutines.ensureActive

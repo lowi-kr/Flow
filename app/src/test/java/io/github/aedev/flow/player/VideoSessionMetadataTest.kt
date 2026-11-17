@@ -1,6 +1,6 @@
-package io.github.aedev.flow.player
+package com.arubr.smsvcodes.player
 
-import io.github.aedev.flow.data.model.Video
+import com.arubr.smsvcodes.data.model.Video
 import org.junit.Assert.assertEquals
 import org.junit.Test
 

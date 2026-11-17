@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.musicplayer.queue
+package com.arubr.smsvcodes.ui.components.musicplayer.queue
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.outlined.PlaylistPlay
@@ -9,8 +9,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.Immutable
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.local.QueueSwipeAction
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.local.QueueSwipeAction
 
 /** What a swipe on a queue or radio row does. Queue rows take theirs from settings; radio rows are fixed. */
 internal enum class QueueRowSwipe {

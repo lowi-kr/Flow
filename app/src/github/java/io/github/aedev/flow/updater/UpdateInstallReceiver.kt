@@ -1,4 +1,4 @@
-package io.github.aedev.flow.updater
+package com.arubr.smsvcodes.updater
 
 import android.content.BroadcastReceiver
 import android.content.Context
@@ -7,7 +7,7 @@ import android.content.pm.PackageInstaller
 import android.util.Log
 import androidx.core.content.IntentCompat
 import dagger.hilt.android.AndroidEntryPoint
-import io.github.aedev.flow.data.update.InstallEvent
+import com.arubr.smsvcodes.data.update.InstallEvent
 import javax.inject.Inject
 
 /** Receives the installer session's result: shows the system confirmation, or records a cancel or failure. */

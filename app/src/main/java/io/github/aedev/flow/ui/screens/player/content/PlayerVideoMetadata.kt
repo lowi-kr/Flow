@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.player.content
+package com.arubr.smsvcodes.ui.screens.player.content
 
 import android.content.Context
 import androidx.compose.runtime.Composable
@@ -6,19 +6,19 @@ import androidx.compose.runtime.Immutable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.produceState
 import androidx.compose.runtime.remember
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.data.model.VideoCollaborator
-import io.github.aedev.flow.data.model.needsCollaboratorResolution
-import io.github.aedev.flow.data.model.toVideo
-import io.github.aedev.flow.data.model.uploadDateMillis
-import io.github.aedev.flow.data.repository.VideoCollaboratorResolver
-import io.github.aedev.flow.ui.components.rememberDeArrowResult
-import io.github.aedev.flow.ui.components.shared.card.LocalVideoCardPreferences
-import io.github.aedev.flow.ui.components.shared.card.rememberKnownOriginalTitle
-import io.github.aedev.flow.ui.components.shared.rememberDateDisplaySettings
-import io.github.aedev.flow.ui.screens.player.state.VideoPlayerUiState
-import io.github.aedev.flow.utils.DateContext
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.data.model.VideoCollaborator
+import com.arubr.smsvcodes.data.model.needsCollaboratorResolution
+import com.arubr.smsvcodes.data.model.toVideo
+import com.arubr.smsvcodes.data.model.uploadDateMillis
+import com.arubr.smsvcodes.data.repository.VideoCollaboratorResolver
+import com.arubr.smsvcodes.ui.components.rememberDeArrowResult
+import com.arubr.smsvcodes.ui.components.shared.card.LocalVideoCardPreferences
+import com.arubr.smsvcodes.ui.components.shared.card.rememberKnownOriginalTitle
+import com.arubr.smsvcodes.ui.components.shared.rememberDateDisplaySettings
+import com.arubr.smsvcodes.ui.screens.player.state.VideoPlayerUiState
+import com.arubr.smsvcodes.utils.DateContext
 import org.schabi.newpipe.extractor.stream.StreamType
 
 /**

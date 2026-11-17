@@ -1,6 +1,6 @@
-package io.github.aedev.flow.service
+package com.arubr.smsvcodes.service
 
-import io.github.aedev.flow.data.localmedia.LocalMediaIds
+import com.arubr.smsvcodes.data.localmedia.LocalMediaIds
 
 /**
  * Whether the next song's lyrics are worth fetching before it starts. Skipped songs cost one lookup

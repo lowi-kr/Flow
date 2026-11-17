@@ -4,12 +4,12 @@
  * This file is part of Flow (https://github.com/Flow-Tube/Flow).
  */
 
-package io.github.aedev.flow.data.recommendation
+package com.arubr.smsvcodes.data.recommendation
 
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.data.subscriptions.ChannelUploadsClient
-import io.github.aedev.flow.innertube.pages.renderer.FeedItemOwner
-import io.github.aedev.flow.utils.PerformanceDispatcher
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.data.subscriptions.ChannelUploadsClient
+import com.arubr.smsvcodes.innertube.pages.renderer.FeedItemOwner
+import com.arubr.smsvcodes.utils.PerformanceDispatcher
 import kotlinx.coroutines.async
 import kotlinx.coroutines.awaitAll
 import kotlinx.coroutines.coroutineScope

@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.musicplayer.queue
+package com.arubr.smsvcodes.ui.components.musicplayer.queue
 
 import androidx.compose.foundation.layout.size
 import androidx.compose.material.icons.Icons
@@ -16,13 +16,13 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.stringResource
 import coil3.compose.AsyncImage
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.music.model.MusicTrack
-import io.github.aedev.flow.ui.components.shared.quickactions.QuickActionsDefaults
-import io.github.aedev.flow.ui.components.shared.quickactions.QuickActionsGroup
-import io.github.aedev.flow.ui.components.shared.quickactions.QuickActionsHeader
-import io.github.aedev.flow.ui.components.shared.quickactions.QuickActionsSheet
-import io.github.aedev.flow.ui.components.shared.quickactions.actionRow
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.music.model.MusicTrack
+import com.arubr.smsvcodes.ui.components.shared.quickactions.QuickActionsDefaults
+import com.arubr.smsvcodes.ui.components.shared.quickactions.QuickActionsGroup
+import com.arubr.smsvcodes.ui.components.shared.quickactions.QuickActionsHeader
+import com.arubr.smsvcodes.ui.components.shared.quickactions.QuickActionsSheet
+import com.arubr.smsvcodes.ui.components.shared.quickactions.actionRow
 
 /** A queue row's actions as a menu, for the remote's Menu key or a held OK. */
 @Composable

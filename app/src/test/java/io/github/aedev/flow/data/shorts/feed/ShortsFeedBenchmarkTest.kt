@@ -1,4 +1,4 @@
-package io.github.aedev.flow.data.shorts.feed
+package com.arubr.smsvcodes.data.shorts.feed
 
 import kotlinx.coroutines.runBlocking
 import org.junit.Assert.assertEquals

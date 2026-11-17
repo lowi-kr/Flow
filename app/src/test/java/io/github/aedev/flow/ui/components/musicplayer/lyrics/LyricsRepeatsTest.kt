@@ -1,7 +1,7 @@
-package io.github.aedev.flow.ui.components.musicplayer.lyrics
+package com.arubr.smsvcodes.ui.components.musicplayer.lyrics
 
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.data.lyrics.LyricsEntry
+import com.arubr.smsvcodes.data.lyrics.LyricsEntry
 import org.junit.Test
 
 class LyricsRepeatsTest {

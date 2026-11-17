@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.videoplayer.ambient
+package com.arubr.smsvcodes.ui.components.videoplayer.ambient
 
 import androidx.compose.animation.core.Animatable
 import androidx.compose.foundation.layout.Box
@@ -18,7 +18,7 @@ import androidx.compose.ui.graphics.FilterQuality
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.layout.onSizeChanged
 import androidx.compose.ui.unit.IntSize
-import io.github.aedev.flow.ui.theme.PlayerGround
+import com.arubr.smsvcodes.ui.theme.PlayerGround
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.collectLatest
 import kotlin.math.roundToInt

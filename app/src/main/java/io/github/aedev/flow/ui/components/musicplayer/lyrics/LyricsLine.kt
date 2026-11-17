@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.musicplayer.lyrics
+package com.arubr.smsvcodes.ui.components.musicplayer.lyrics
 
 import android.graphics.RenderEffect
 import android.os.Build
@@ -51,10 +51,10 @@ import androidx.compose.ui.text.style.LineHeightStyle
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.local.LyricsAnimationStyle
-import io.github.aedev.flow.data.local.LyricsGlow
-import io.github.aedev.flow.data.lyrics.LyricsEntry
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.local.LyricsAnimationStyle
+import com.arubr.smsvcodes.data.local.LyricsGlow
+import com.arubr.smsvcodes.data.lyrics.LyricsEntry
 import kotlin.math.PI
 import kotlin.math.abs
 import kotlin.math.roundToInt

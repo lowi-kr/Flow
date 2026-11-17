@@ -1,4 +1,4 @@
-package io.github.aedev.flow.benchmark
+package com.arubr.smsvcodes.benchmark
 
 import androidx.benchmark.macro.MacrobenchmarkScope
 import androidx.benchmark.macro.junit4.BaselineProfileRule
@@ -80,7 +80,7 @@ class BaselineProfileGenerator {
 
     private companion object {
         // Home is the journey: a fresh profiling install would otherwise open onboarding.
-        const val BYPASS_ONBOARDING = "io.github.aedev.flow.extra.BENCHMARK_BYPASS_ONBOARDING"
+        const val BYPASS_ONBOARDING = "com.arubr.smsvcodes.extra.BENCHMARK_BYPASS_ONBOARDING"
         const val UI_SETTLE_MS = 1_500L
         const val CONTENT_TIMEOUT_MS = 10_000L
     }

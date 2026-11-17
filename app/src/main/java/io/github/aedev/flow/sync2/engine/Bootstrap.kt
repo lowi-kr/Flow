@@ -1,18 +1,18 @@
-package io.github.aedev.flow.sync2.engine
+package com.arubr.smsvcodes.sync2.engine
 
-import io.github.aedev.flow.sync.crypto.SyncBytes
-import io.github.aedev.flow.sync2.changes.IncomingBatch
-import io.github.aedev.flow.sync2.changes.parseBatch
-import io.github.aedev.flow.sync2.crypto.ProtocolError
-import io.github.aedev.flow.sync2.crypto.ProtocolException
-import io.github.aedev.flow.sync2.crypto.decodePayload
-import io.github.aedev.flow.sync2.crypto.openBlob
-import io.github.aedev.flow.sync2.crypto.purposeKey
-import io.github.aedev.flow.sync2.crypto.reject
-import io.github.aedev.flow.sync2.store.ObjectType
-import io.github.aedev.flow.sync2.store.ParsedObject
-import io.github.aedev.flow.sync2.store.StorePaths
-import io.github.aedev.flow.sync2.store.StreamPosition
+import com.arubr.smsvcodes.sync.crypto.SyncBytes
+import com.arubr.smsvcodes.sync2.changes.IncomingBatch
+import com.arubr.smsvcodes.sync2.changes.parseBatch
+import com.arubr.smsvcodes.sync2.crypto.ProtocolError
+import com.arubr.smsvcodes.sync2.crypto.ProtocolException
+import com.arubr.smsvcodes.sync2.crypto.decodePayload
+import com.arubr.smsvcodes.sync2.crypto.openBlob
+import com.arubr.smsvcodes.sync2.crypto.purposeKey
+import com.arubr.smsvcodes.sync2.crypto.reject
+import com.arubr.smsvcodes.sync2.store.ObjectType
+import com.arubr.smsvcodes.sync2.store.ParsedObject
+import com.arubr.smsvcodes.sync2.store.StorePaths
+import com.arubr.smsvcodes.sync2.store.StreamPosition
 import java.security.MessageDigest
 
 /** The snapshots a device starts from: their records by writer, and where each log goes on. */

@@ -1,13 +1,13 @@
-package io.github.aedev.flow.ui.screens.settings.network
+package com.arubr.smsvcodes.ui.screens.settings.network
 
 import androidx.compose.runtime.Immutable
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.network.AppProxyConfig
-import io.github.aedev.flow.network.AppProxyType
-import io.github.aedev.flow.network.VpnStateMonitor
-import io.github.aedev.flow.ui.screens.settings.SettingsViewModel
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.network.AppProxyConfig
+import com.arubr.smsvcodes.network.AppProxyType
+import com.arubr.smsvcodes.network.VpnStateMonitor
+import com.arubr.smsvcodes.ui.screens.settings.SettingsViewModel
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted

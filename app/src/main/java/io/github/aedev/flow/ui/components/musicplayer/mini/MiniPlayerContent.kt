@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.musicplayer.mini
+package com.arubr.smsvcodes.ui.components.musicplayer.mini
 
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.AnimationVector1D
@@ -53,18 +53,18 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.local.MiniBarButton
-import io.github.aedev.flow.data.local.MiniCoverTap
-import io.github.aedev.flow.data.music.model.MusicTrack
-import io.github.aedev.flow.player.EnhancedMusicPlayerManager
-import io.github.aedev.flow.ui.components.musicplayer.lyrics.SYNCED_LINE_UNSUNG_ALPHA
-import io.github.aedev.flow.ui.components.musicplayer.lyrics.SyncedLines
-import io.github.aedev.flow.ui.components.musicplayer.lyrics.SyncedLyricLine
-import io.github.aedev.flow.ui.components.shared.MediaPlayPauseButton
-import io.github.aedev.flow.ui.components.shared.titleMarquee
-import io.github.aedev.flow.ui.screens.playon.LocalPlayOn
-import io.github.aedev.flow.ui.screens.playon.PlayOnButton
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.local.MiniBarButton
+import com.arubr.smsvcodes.data.local.MiniCoverTap
+import com.arubr.smsvcodes.data.music.model.MusicTrack
+import com.arubr.smsvcodes.player.EnhancedMusicPlayerManager
+import com.arubr.smsvcodes.ui.components.musicplayer.lyrics.SYNCED_LINE_UNSUNG_ALPHA
+import com.arubr.smsvcodes.ui.components.musicplayer.lyrics.SyncedLines
+import com.arubr.smsvcodes.ui.components.musicplayer.lyrics.SyncedLyricLine
+import com.arubr.smsvcodes.ui.components.shared.MediaPlayPauseButton
+import com.arubr.smsvcodes.ui.components.shared.titleMarquee
+import com.arubr.smsvcodes.ui.screens.playon.LocalPlayOn
+import com.arubr.smsvcodes.ui.screens.playon.PlayOnButton
 import kotlinx.coroutines.flow.conflate
 import kotlin.math.abs
 

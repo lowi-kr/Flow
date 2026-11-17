@@ -1,7 +1,7 @@
-package io.github.aedev.flow.ui.screens.settings.index
+package com.arubr.smsvcodes.ui.screens.settings.index
 
-import io.github.aedev.flow.ui.components.settings.SettingEntry
-import io.github.aedev.flow.ui.screens.equalizer.EqualizerIndex
+import com.arubr.smsvcodes.ui.components.settings.SettingEntry
+import com.arubr.smsvcodes.ui.screens.equalizer.EqualizerIndex
 
 /** Every option in Settings, in the order the pages show them. */
 internal object SettingsIndex {

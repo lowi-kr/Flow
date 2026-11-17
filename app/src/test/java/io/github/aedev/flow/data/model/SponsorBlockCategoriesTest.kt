@@ -1,7 +1,7 @@
-package io.github.aedev.flow.data.model
+package com.arubr.smsvcodes.data.model
 
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.data.local.SponsorBlockAction
+import com.arubr.smsvcodes.data.local.SponsorBlockAction
 import org.junit.Test
 import java.io.File
 

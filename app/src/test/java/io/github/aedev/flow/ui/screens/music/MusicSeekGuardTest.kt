@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.music
+package com.arubr.smsvcodes.ui.screens.music
 
 import com.google.common.truth.Truth.assertThat
 import org.junit.Test

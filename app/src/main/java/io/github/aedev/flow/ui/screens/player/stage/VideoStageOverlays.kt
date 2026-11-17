@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.player.stage
+package com.arubr.smsvcodes.ui.screens.player.stage
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.fadeIn
@@ -37,15 +37,15 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.ui.components.videoplayer.UpcomingVideoOverlay
-import io.github.aedev.flow.ui.components.videoplayer.gesture.PlayerSpeedBoost
-import io.github.aedev.flow.ui.components.videoplayer.overlay.PaidPromotionChip
-import io.github.aedev.flow.ui.components.videoplayer.overlay.PlayerGestureOverlays
-import io.github.aedev.flow.ui.components.videoplayer.overlay.cutoutTopInset
-import io.github.aedev.flow.ui.theme.PlayerScrim
-import io.github.aedev.flow.ui.theme.PlayerScrimContent
-import io.github.aedev.flow.ui.theme.PlayerScrimPanel
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.ui.components.videoplayer.UpcomingVideoOverlay
+import com.arubr.smsvcodes.ui.components.videoplayer.gesture.PlayerSpeedBoost
+import com.arubr.smsvcodes.ui.components.videoplayer.overlay.PaidPromotionChip
+import com.arubr.smsvcodes.ui.components.videoplayer.overlay.PlayerGestureOverlays
+import com.arubr.smsvcodes.ui.components.videoplayer.overlay.cutoutTopInset
+import com.arubr.smsvcodes.ui.theme.PlayerScrim
+import com.arubr.smsvcodes.ui.theme.PlayerScrimContent
+import com.arubr.smsvcodes.ui.theme.PlayerScrimPanel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.first
 import java.util.Locale

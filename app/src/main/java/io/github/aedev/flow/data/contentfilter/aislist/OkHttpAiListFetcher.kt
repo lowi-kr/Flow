@@ -1,6 +1,6 @@
-package io.github.aedev.flow.data.contentfilter.aislist
+package com.arubr.smsvcodes.data.contentfilter.aislist
 
-import io.github.aedev.flow.BuildConfig
+import com.arubr.smsvcodes.BuildConfig
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import okhttp3.CacheControl

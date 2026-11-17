@@ -1,4 +1,4 @@
-package io.github.aedev.flow.platform
+package com.arubr.smsvcodes.platform
 
 import android.content.ComponentName
 import android.content.Context
@@ -6,8 +6,8 @@ import android.content.pm.PackageManager
 import android.content.pm.PackageManager.ComponentEnabledSetting
 import android.os.Build
 import dagger.hilt.android.qualifiers.ApplicationContext
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.util.AppIcons
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.util.AppIcons
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.withContext

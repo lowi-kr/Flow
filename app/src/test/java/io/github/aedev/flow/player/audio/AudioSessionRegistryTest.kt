@@ -1,4 +1,4 @@
-package io.github.aedev.flow.player.audio
+package com.arubr.smsvcodes.player.audio
 
 import android.media.audiofx.AudioEffect
 import com.google.common.truth.Truth.assertThat

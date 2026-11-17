@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.recap
+package com.arubr.smsvcodes.ui.screens.recap
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -28,16 +28,16 @@ import androidx.compose.ui.unit.dp
 import androidx.core.os.ConfigurationCompat
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.stats.RecapPeriod
-import io.github.aedev.flow.data.stats.RecapSummary
-import io.github.aedev.flow.ui.components.layout.flowBottomContentPadding
-import io.github.aedev.flow.ui.components.layout.topbar.FlowTopBar
-import io.github.aedev.flow.ui.components.shared.FlowConnectedToggleGroup
-import io.github.aedev.flow.ui.components.shared.FlowEmptyState
-import io.github.aedev.flow.ui.components.shared.FlowFilterChip
-import io.github.aedev.flow.ui.components.shared.FlowLoadingIndicator
-import io.github.aedev.flow.ui.components.shared.FlowToggleOption
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.stats.RecapPeriod
+import com.arubr.smsvcodes.data.stats.RecapSummary
+import com.arubr.smsvcodes.ui.components.layout.flowBottomContentPadding
+import com.arubr.smsvcodes.ui.components.layout.topbar.FlowTopBar
+import com.arubr.smsvcodes.ui.components.shared.FlowConnectedToggleGroup
+import com.arubr.smsvcodes.ui.components.shared.FlowEmptyState
+import com.arubr.smsvcodes.ui.components.shared.FlowFilterChip
+import com.arubr.smsvcodes.ui.components.shared.FlowLoadingIndicator
+import com.arubr.smsvcodes.ui.components.shared.FlowToggleOption
 import java.time.format.TextStyle
 import java.util.Locale
 

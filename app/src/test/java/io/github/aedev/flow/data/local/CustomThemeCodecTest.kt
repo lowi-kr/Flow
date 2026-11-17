@@ -1,12 +1,12 @@
-package io.github.aedev.flow.data.local
+package com.arubr.smsvcodes.data.local
 
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.toArgb
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.ui.theme.CustomTheme
-import io.github.aedev.flow.ui.theme.FlowPalettes
-import io.github.aedev.flow.ui.theme.ThemeMode
-import io.github.aedev.flow.ui.theme.ThemeVariant
+import com.arubr.smsvcodes.ui.theme.CustomTheme
+import com.arubr.smsvcodes.ui.theme.FlowPalettes
+import com.arubr.smsvcodes.ui.theme.ThemeMode
+import com.arubr.smsvcodes.ui.theme.ThemeVariant
 import org.junit.Test
 
 class CustomThemeCodecTest {

@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.library
+package com.arubr.smsvcodes.ui.components.library
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.LocalIndication
@@ -17,8 +17,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.ui.components.shared.focusLift
-import io.github.aedev.flow.ui.components.shared.onMenuKey
+import com.arubr.smsvcodes.ui.components.shared.focusLift
+import com.arubr.smsvcodes.ui.components.shared.onMenuKey
 
 /**
  * A video in a library grid on wide windows: its [thumbnail] over the title, [subtitle] and

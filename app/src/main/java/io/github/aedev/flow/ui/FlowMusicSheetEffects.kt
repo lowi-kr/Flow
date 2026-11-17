@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui
+package com.arubr.smsvcodes.ui
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -7,9 +7,9 @@ import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import io.github.aedev.flow.data.music.model.MusicTrack
-import io.github.aedev.flow.player.EnhancedMusicPlayerManager
-import io.github.aedev.flow.ui.components.musicplayer.sheet.MusicPlayerSheetState
+import com.arubr.smsvcodes.data.music.model.MusicTrack
+import com.arubr.smsvcodes.player.EnhancedMusicPlayerManager
+import com.arubr.smsvcodes.ui.components.musicplayer.sheet.MusicPlayerSheetState
 
 /**
  * Keeps the music sheet in step with the rest of the shell: which song is loaded, whether a video

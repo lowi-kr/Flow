@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.settings.integrations
+package com.arubr.smsvcodes.ui.screens.settings.integrations
 
 import androidx.annotation.StringRes
 import androidx.compose.foundation.background
@@ -24,21 +24,21 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.local.SponsorBlockAction
-import io.github.aedev.flow.data.local.SponsorBlockSkipButtonStyle
-import io.github.aedev.flow.data.model.SponsorBlockCategories
-import io.github.aedev.flow.ui.components.settings.SettingsListScope
-import io.github.aedev.flow.ui.components.settings.choice
-import io.github.aedev.flow.ui.components.settings.switch
-import io.github.aedev.flow.ui.components.shared.FlowChoice
-import io.github.aedev.flow.ui.components.shared.FlowChoiceDialog
-import io.github.aedev.flow.ui.components.shared.FlowNavRow
-import io.github.aedev.flow.ui.components.shared.LocalDpadNavigation
-import io.github.aedev.flow.ui.components.shared.skipDpadFocus
-import io.github.aedev.flow.ui.screens.settings.index.IntegrationsIndex
-import io.github.aedev.flow.ui.theme.defaultSponsorBlockColor
-import io.github.aedev.flow.utils.sponsorCategoryLabelRes
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.local.SponsorBlockAction
+import com.arubr.smsvcodes.data.local.SponsorBlockSkipButtonStyle
+import com.arubr.smsvcodes.data.model.SponsorBlockCategories
+import com.arubr.smsvcodes.ui.components.settings.SettingsListScope
+import com.arubr.smsvcodes.ui.components.settings.choice
+import com.arubr.smsvcodes.ui.components.settings.switch
+import com.arubr.smsvcodes.ui.components.shared.FlowChoice
+import com.arubr.smsvcodes.ui.components.shared.FlowChoiceDialog
+import com.arubr.smsvcodes.ui.components.shared.FlowNavRow
+import com.arubr.smsvcodes.ui.components.shared.LocalDpadNavigation
+import com.arubr.smsvcodes.ui.components.shared.skipDpadFocus
+import com.arubr.smsvcodes.ui.screens.settings.index.IntegrationsIndex
+import com.arubr.smsvcodes.ui.theme.defaultSponsorBlockColor
+import com.arubr.smsvcodes.utils.sponsorCategoryLabelRes
 
 private val SwatchSize = 24.dp
 private val SwatchBorder = 1.dp

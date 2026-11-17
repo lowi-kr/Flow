@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.shorts
+package com.arubr.smsvcodes.ui.screens.shorts
 
 import androidx.compose.foundation.pager.PagerState
 import androidx.compose.runtime.Composable
@@ -6,10 +6,10 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.player.shorts.ShortsPlayerPool
-import io.github.aedev.flow.ui.components.shared.MediaKeyAction
-import io.github.aedev.flow.ui.components.shared.mediaKeyboardShortcuts
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.player.shorts.ShortsPlayerPool
+import com.arubr.smsvcodes.ui.components.shared.MediaKeyAction
+import com.arubr.smsvcodes.ui.components.shared.mediaKeyboardShortcuts
 import kotlinx.coroutines.launch
 
 /**

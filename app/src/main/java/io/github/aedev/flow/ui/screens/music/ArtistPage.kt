@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.music
+package com.arubr.smsvcodes.ui.screens.music
 
 import android.widget.Toast
 import androidx.compose.foundation.layout.PaddingValues
@@ -34,28 +34,28 @@ import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.music.model.ArtistDetails
-import io.github.aedev.flow.data.music.model.MusicPlaylist
-import io.github.aedev.flow.data.music.model.MusicTrack
-import io.github.aedev.flow.data.recommendation.music.MusicArtistInsights
-import io.github.aedev.flow.ui.LocalStatusBarHero
-import io.github.aedev.flow.ui.components.layout.flowBottomContentPadding
-import io.github.aedev.flow.ui.components.music.common.rememberMusicCollectionColorScheme
-import io.github.aedev.flow.ui.components.music.detail.ArtistBio
-import io.github.aedev.flow.ui.components.music.detail.ArtistHero
-import io.github.aedev.flow.ui.components.music.detail.ArtistQueue
-import io.github.aedev.flow.ui.components.music.detail.MusicHeroTopBar
-import io.github.aedev.flow.ui.components.music.detail.artistHeroPhotoHeight
-import io.github.aedev.flow.ui.components.music.header.MusicSectionAction
-import io.github.aedev.flow.ui.components.music.header.MusicSectionHeader
-import io.github.aedev.flow.ui.components.music.item.MusicCollectionCard
-import io.github.aedev.flow.ui.components.music.section.MusicArtistShelf
-import io.github.aedev.flow.ui.components.music.section.MusicCollectionShelf
-import io.github.aedev.flow.ui.components.music.section.MusicShelf
-import io.github.aedev.flow.ui.components.music.sheet.LocalMusicMenus
-import io.github.aedev.flow.ui.components.music.sheet.toCollectionActionItem
-import io.github.aedev.flow.ui.components.shared.dpadDownTo
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.music.model.ArtistDetails
+import com.arubr.smsvcodes.data.music.model.MusicPlaylist
+import com.arubr.smsvcodes.data.music.model.MusicTrack
+import com.arubr.smsvcodes.data.recommendation.music.MusicArtistInsights
+import com.arubr.smsvcodes.ui.LocalStatusBarHero
+import com.arubr.smsvcodes.ui.components.layout.flowBottomContentPadding
+import com.arubr.smsvcodes.ui.components.music.common.rememberMusicCollectionColorScheme
+import com.arubr.smsvcodes.ui.components.music.detail.ArtistBio
+import com.arubr.smsvcodes.ui.components.music.detail.ArtistHero
+import com.arubr.smsvcodes.ui.components.music.detail.ArtistQueue
+import com.arubr.smsvcodes.ui.components.music.detail.MusicHeroTopBar
+import com.arubr.smsvcodes.ui.components.music.detail.artistHeroPhotoHeight
+import com.arubr.smsvcodes.ui.components.music.header.MusicSectionAction
+import com.arubr.smsvcodes.ui.components.music.header.MusicSectionHeader
+import com.arubr.smsvcodes.ui.components.music.item.MusicCollectionCard
+import com.arubr.smsvcodes.ui.components.music.section.MusicArtistShelf
+import com.arubr.smsvcodes.ui.components.music.section.MusicCollectionShelf
+import com.arubr.smsvcodes.ui.components.music.section.MusicShelf
+import com.arubr.smsvcodes.ui.components.music.sheet.LocalMusicMenus
+import com.arubr.smsvcodes.ui.components.music.sheet.toCollectionActionItem
+import com.arubr.smsvcodes.ui.components.shared.dpadDownTo
 import kotlinx.coroutines.launch
 
 private const val TOP_TRACKS_SHOWN = 5

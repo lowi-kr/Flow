@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.musicplayer.controls
+package com.arubr.smsvcodes.ui.components.musicplayer.controls
 
 /**
  * Where a wavy seek bar's two parts sit, in the track's own pixels. M3's Slider insets its track by

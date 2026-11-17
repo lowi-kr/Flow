@@ -1,4 +1,4 @@
-package io.github.aedev.flow.innertube.models
+package com.arubr.smsvcodes.innertube.models
 
 
 import kotlinx.serialization.SerialName
@@ -152,7 +152,7 @@ data class YouTubeDataPage(
                                     @Serializable
                                     data class Thumbnail(
                                         @SerialName("thumbnails")
-                                        val thumbnails: List<io.github.aedev.flow.innertube.models.Thumbnail>? = null,
+                                        val thumbnails: List<com.arubr.smsvcodes.innertube.models.Thumbnail>? = null,
                                     )
 
                                     @Serializable

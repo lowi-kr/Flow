@@ -13,7 +13,7 @@
  * related list added.
  */
 
-package io.github.aedev.flow.utils.relativedate
+package com.arubr.smsvcodes.utils.relativedate
 
 internal enum class RelativeDateUnit(
     val millis: Long,

@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.subscriptions
+package com.arubr.smsvcodes.ui.screens.subscriptions
 
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -10,8 +10,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.innertube.SubscriptionRefreshStage
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.innertube.SubscriptionRefreshStage
 
 private val StatusHorizontalPadding = 12.dp
 private val ProgressVerticalPadding = 4.dp

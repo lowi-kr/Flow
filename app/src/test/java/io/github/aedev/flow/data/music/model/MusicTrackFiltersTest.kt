@@ -1,4 +1,4 @@
-package io.github.aedev.flow.data.music.model
+package com.arubr.smsvcodes.data.music.model
 
 import org.junit.Assert.assertEquals
 import org.junit.Test

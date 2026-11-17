@@ -1,4 +1,4 @@
-package io.github.aedev.flow.innertube.models
+package com.arubr.smsvcodes.innertube.models
 
 import kotlinx.serialization.Serializable
 
@@ -12,7 +12,7 @@ import kotlinx.serialization.Serializable
  * ANDROID_VR/IOS URL, which is a claim GVS checks and rejects.
  */
 enum class AttestationPlatform {
-    /** BotGuard — Flow mints these in [io.github.aedev.flow.utils.potoken.PoTokenWebView]. */
+    /** BotGuard — Flow mints these in [com.arubr.smsvcodes.utils.potoken.PoTokenWebView]. */
     WEB,
 
     /** DroidGuard, inside Google Play Services. Not reachable from a third-party app. */

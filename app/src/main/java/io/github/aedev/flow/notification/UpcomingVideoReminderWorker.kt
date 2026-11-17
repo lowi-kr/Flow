@@ -1,4 +1,4 @@
-package io.github.aedev.flow.notification
+package com.arubr.smsvcodes.notification
 
 import android.content.Context
 import androidx.work.CoroutineWorker
@@ -7,9 +7,9 @@ import androidx.work.ExistingWorkPolicy
 import androidx.work.OneTimeWorkRequestBuilder
 import androidx.work.WorkManager
 import androidx.work.WorkerParameters
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.data.profile.ActiveProfile
-import io.github.aedev.flow.data.profile.ProfileWork
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.data.profile.ActiveProfile
+import com.arubr.smsvcodes.data.profile.ProfileWork
 import java.util.concurrent.TimeUnit
 
 class UpcomingVideoReminderWorker(

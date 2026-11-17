@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.sync.linked
+package com.arubr.smsvcodes.ui.screens.sync.linked
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -16,10 +16,10 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.sync2.service.LinkedError
-import io.github.aedev.flow.ui.screens.sync.SyncActionRow
-import io.github.aedev.flow.ui.screens.sync.SyncStepHeader
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.sync2.service.LinkedError
+import com.arubr.smsvcodes.ui.screens.sync.SyncActionRow
+import com.arubr.smsvcodes.ui.screens.sync.SyncStepHeader
 
 /**
  * A linked device's group, laid out like a Settings page: what needs an answer, where it syncs and

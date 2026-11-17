@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.player.effects
+package com.arubr.smsvcodes.ui.screens.player.effects
 
 import android.app.Activity
 import android.content.Context
@@ -7,13 +7,13 @@ import android.util.Log
 import androidx.compose.runtime.*
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.player.BackgroundPlaybackPolicy
-import io.github.aedev.flow.player.EnhancedPlayerManager
-import io.github.aedev.flow.player.GlobalPlayerState
-import io.github.aedev.flow.player.PictureInPictureHelper
-import io.github.aedev.flow.player.videoHandlesPipNext
-import io.github.aedev.flow.ui.screens.player.VideoPlayerViewModel
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.player.BackgroundPlaybackPolicy
+import com.arubr.smsvcodes.player.EnhancedPlayerManager
+import com.arubr.smsvcodes.player.GlobalPlayerState
+import com.arubr.smsvcodes.player.PictureInPictureHelper
+import com.arubr.smsvcodes.player.videoHandlesPipNext
+import com.arubr.smsvcodes.ui.screens.player.VideoPlayerViewModel
 
 private const val TAG = "PipModeHandler"
 

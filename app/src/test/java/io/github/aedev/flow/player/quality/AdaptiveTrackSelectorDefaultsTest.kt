@@ -1,10 +1,10 @@
-package io.github.aedev.flow.player.quality
+package com.arubr.smsvcodes.player.quality
 
 import androidx.media3.common.util.UnstableApi
 import androidx.media3.exoplayer.trackselection.DefaultTrackSelector
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.player.config.VideoSizeCap
-import io.github.aedev.flow.player.config.adaptiveTrackSelectorDefaults
+import com.arubr.smsvcodes.player.config.VideoSizeCap
+import com.arubr.smsvcodes.player.config.adaptiveTrackSelectorDefaults
 import org.junit.Test
 
 @UnstableApi

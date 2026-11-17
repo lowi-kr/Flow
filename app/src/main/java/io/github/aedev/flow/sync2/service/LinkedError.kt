@@ -1,9 +1,9 @@
-package io.github.aedev.flow.sync2.service
+package com.arubr.smsvcodes.sync2.service
 
-import io.github.aedev.flow.sync2.crypto.ProtocolError
-import io.github.aedev.flow.sync2.crypto.ProtocolException
-import io.github.aedev.flow.sync2.engine.LinkedException
-import io.github.aedev.flow.sync2.store.StoreException
+import com.arubr.smsvcodes.sync2.crypto.ProtocolError
+import com.arubr.smsvcodes.sync2.crypto.ProtocolException
+import com.arubr.smsvcodes.sync2.engine.LinkedException
+import com.arubr.smsvcodes.sync2.store.StoreException
 
 /** Why a linked-devices action failed, as the UI tells the user. */
 enum class LinkedError(

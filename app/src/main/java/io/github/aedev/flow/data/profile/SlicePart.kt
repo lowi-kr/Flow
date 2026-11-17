@@ -1,7 +1,7 @@
-package io.github.aedev.flow.data.profile
+package com.arubr.smsvcodes.data.profile
 
-import io.github.aedev.flow.data.local.BackupData
-import io.github.aedev.flow.data.local.SettingsBackup
+import com.arubr.smsvcodes.data.local.BackupData
+import com.arubr.smsvcodes.data.local.SettingsBackup
 
 /** What a new profile can copy from the running one. */
 enum class SlicePart {

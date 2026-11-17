@@ -1,4 +1,4 @@
-package io.github.aedev.flow.widget.core.component
+package com.arubr.smsvcodes.widget.core.component
 
 import android.content.Context
 import android.content.res.ColorStateList

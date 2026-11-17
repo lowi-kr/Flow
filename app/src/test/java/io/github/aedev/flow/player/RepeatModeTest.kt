@@ -1,4 +1,4 @@
-package io.github.aedev.flow.player
+package com.arubr.smsvcodes.player
 
 import androidx.media3.common.Player
 import com.google.common.truth.Truth.assertThat

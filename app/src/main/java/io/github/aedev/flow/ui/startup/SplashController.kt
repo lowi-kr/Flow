@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.startup
+package com.arubr.smsvcodes.ui.startup
 
 import android.app.Activity
 import android.os.Build

@@ -1,11 +1,11 @@
-package io.github.aedev.flow.ui.screens.settings.taste
+package com.arubr.smsvcodes.ui.screens.settings.taste
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
-import io.github.aedev.flow.data.recommendation.music.FavouriteArtistCatalog
-import io.github.aedev.flow.data.recommendation.music.FavouriteArtistPicker
-import io.github.aedev.flow.data.recommendation.music.FavouriteArtistsStore
+import com.arubr.smsvcodes.data.recommendation.music.FavouriteArtistCatalog
+import com.arubr.smsvcodes.data.recommendation.music.FavouriteArtistPicker
+import com.arubr.smsvcodes.data.recommendation.music.FavouriteArtistsStore
 import javax.inject.Inject
 
 @HiltViewModel

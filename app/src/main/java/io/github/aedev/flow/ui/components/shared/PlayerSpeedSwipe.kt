@@ -1,9 +1,9 @@
-package io.github.aedev.flow.ui.components.shared
+package com.arubr.smsvcodes.ui.components.shared
 
 import androidx.compose.ui.hapticfeedback.HapticFeedback
 import androidx.compose.ui.hapticfeedback.HapticFeedbackType
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.data.local.SpeedSwipeSide
+import com.arubr.smsvcodes.data.local.SpeedSwipeSide
 import kotlin.math.ceil
 import kotlin.math.floor
 import kotlin.math.round

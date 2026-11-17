@@ -1,4 +1,4 @@
-package io.github.aedev.flow.data.local
+package com.arubr.smsvcodes.data.local
 
 /** How much each on-disk cache may hold, as read from the size settings. */
 data class MediaCacheLimits(

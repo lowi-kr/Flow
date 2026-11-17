@@ -1,9 +1,9 @@
-package io.github.aedev.flow.sync.merge
+package com.arubr.smsvcodes.sync.merge
 
-import io.github.aedev.flow.sync.canonical.BrainCounters
-import io.github.aedev.flow.sync.canonical.CanonicalBrain
-import io.github.aedev.flow.sync.canonical.CanonicalMusicBrain
-import io.github.aedev.flow.sync.canonical.GCounter
+import com.arubr.smsvcodes.sync.canonical.BrainCounters
+import com.arubr.smsvcodes.sync.canonical.CanonicalBrain
+import com.arubr.smsvcodes.sync.canonical.CanonicalMusicBrain
+import com.arubr.smsvcodes.sync.canonical.GCounter
 
 /**
  * Who may write a G-Counter entry. Each device is the only writer of its own entry, so after a

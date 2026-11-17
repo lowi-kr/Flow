@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.home
+package com.arubr.smsvcodes.ui.screens.home
 
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse

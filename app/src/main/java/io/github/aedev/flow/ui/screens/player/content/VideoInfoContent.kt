@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.player.content
+package com.arubr.smsvcodes.ui.screens.player.content
 
 import android.content.ClipData
 import android.content.ClipboardManager
@@ -14,24 +14,24 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.res.stringResource
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.localmedia.LocalMediaIds
-import io.github.aedev.flow.data.model.Comment
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.player.EnhancedPlayerManager
-import io.github.aedev.flow.ui.components.shared.FlowNoteEditorDialog
-import io.github.aedev.flow.ui.components.shared.SaveVideoSheet
-import io.github.aedev.flow.ui.components.shared.rememberVideoShareAction
-import io.github.aedev.flow.ui.components.shared.shareMediaFiles
-import io.github.aedev.flow.ui.components.shared.subscribedCollaboratorIds
-import io.github.aedev.flow.ui.components.videoplayer.info.CommentsPreview
-import io.github.aedev.flow.ui.components.videoplayer.info.VideoInfoSection
-import io.github.aedev.flow.ui.screens.player.VideoPlayerViewModel
-import io.github.aedev.flow.ui.screens.player.state.PlayerCommentsUiState
-import io.github.aedev.flow.ui.screens.player.state.PlayerScreenState
-import io.github.aedev.flow.ui.screens.player.state.PlayerSheet
-import io.github.aedev.flow.ui.screens.player.state.VideoPlayerUiState
-import io.github.aedev.flow.utils.youtubeWatchUrl
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.localmedia.LocalMediaIds
+import com.arubr.smsvcodes.data.model.Comment
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.player.EnhancedPlayerManager
+import com.arubr.smsvcodes.ui.components.shared.FlowNoteEditorDialog
+import com.arubr.smsvcodes.ui.components.shared.SaveVideoSheet
+import com.arubr.smsvcodes.ui.components.shared.rememberVideoShareAction
+import com.arubr.smsvcodes.ui.components.shared.shareMediaFiles
+import com.arubr.smsvcodes.ui.components.shared.subscribedCollaboratorIds
+import com.arubr.smsvcodes.ui.components.videoplayer.info.CommentsPreview
+import com.arubr.smsvcodes.ui.components.videoplayer.info.VideoInfoSection
+import com.arubr.smsvcodes.ui.screens.player.VideoPlayerViewModel
+import com.arubr.smsvcodes.ui.screens.player.state.PlayerCommentsUiState
+import com.arubr.smsvcodes.ui.screens.player.state.PlayerScreenState
+import com.arubr.smsvcodes.ui.screens.player.state.PlayerSheet
+import com.arubr.smsvcodes.ui.screens.player.state.VideoPlayerUiState
+import com.arubr.smsvcodes.utils.youtubeWatchUrl
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 
@@ -207,7 +207,7 @@ internal fun VideoInfoContent(
     )
 
     if (uiState.isLiveChatAvailable) {
-        io.github.aedev.flow.ui.components.videoplayer.sheet.LiveChatPreview(
+        com.arubr.smsvcodes.ui.components.videoplayer.sheet.LiveChatPreview(
             onClick = { screenState.open(PlayerSheet.LiveChat()) },
             isReplay = !uiState.isLive,
         )

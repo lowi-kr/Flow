@@ -1,8 +1,8 @@
-package io.github.aedev.flow.data.video.downloader.work
+package com.arubr.smsvcodes.data.video.downloader.work
 
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.data.local.dao.QueuedDownload
-import io.github.aedev.flow.data.local.entity.DownloadItemStatus
+import com.arubr.smsvcodes.data.local.dao.QueuedDownload
+import com.arubr.smsvcodes.data.local.entity.DownloadItemStatus
 import org.junit.Test
 
 class DownloadQueuePlanTest {

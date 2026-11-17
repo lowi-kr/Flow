@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.music.sheet
+package com.arubr.smsvcodes.ui.components.music.sheet
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.ChevronRight
@@ -8,21 +8,21 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.produceState
 import androidx.compose.ui.res.stringResource
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.music.model.MusicArtist
-import io.github.aedev.flow.data.music.model.MusicTrack
-import io.github.aedev.flow.data.newmusic.MusicArtistLookup
-import io.github.aedev.flow.player.EnhancedMusicPlayerManager
-import io.github.aedev.flow.ui.components.layout.navigation.LocalMediaNavigator
-import io.github.aedev.flow.ui.components.shared.ChannelAvatarStack
-import io.github.aedev.flow.ui.components.shared.FlowNavRow
-import io.github.aedev.flow.ui.components.shared.quickactions.QuickActionRow
-import io.github.aedev.flow.ui.components.shared.quickactions.QuickActionsDefaults
-import io.github.aedev.flow.ui.components.shared.quickactions.QuickActionsGroup
-import io.github.aedev.flow.ui.components.shared.quickactions.QuickActionsPageHeader
-import io.github.aedev.flow.ui.components.shared.quickactions.QuickActionsSheet
-import io.github.aedev.flow.ui.components.shared.quickactions.QuickActionsViewModel
-import io.github.aedev.flow.ui.components.shared.quickactions.sharedQuickActionsViewModel
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.music.model.MusicArtist
+import com.arubr.smsvcodes.data.music.model.MusicTrack
+import com.arubr.smsvcodes.data.newmusic.MusicArtistLookup
+import com.arubr.smsvcodes.player.EnhancedMusicPlayerManager
+import com.arubr.smsvcodes.ui.components.layout.navigation.LocalMediaNavigator
+import com.arubr.smsvcodes.ui.components.shared.ChannelAvatarStack
+import com.arubr.smsvcodes.ui.components.shared.FlowNavRow
+import com.arubr.smsvcodes.ui.components.shared.quickactions.QuickActionRow
+import com.arubr.smsvcodes.ui.components.shared.quickactions.QuickActionsDefaults
+import com.arubr.smsvcodes.ui.components.shared.quickactions.QuickActionsGroup
+import com.arubr.smsvcodes.ui.components.shared.quickactions.QuickActionsPageHeader
+import com.arubr.smsvcodes.ui.components.shared.quickactions.QuickActionsSheet
+import com.arubr.smsvcodes.ui.components.shared.quickactions.QuickActionsViewModel
+import com.arubr.smsvcodes.ui.components.shared.quickactions.sharedQuickActionsViewModel
 
 /** The song's artists with ids, or its channel when the source named no artist. */
 internal fun MusicTrack.menuArtists(): List<MusicArtist> =

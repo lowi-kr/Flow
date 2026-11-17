@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.tv.navigation
+package com.arubr.smsvcodes.ui.tv.navigation
 
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
@@ -10,29 +10,29 @@ import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.data.music.DownloadedTrack
-import io.github.aedev.flow.data.music.model.toMusicTrack
-import io.github.aedev.flow.data.music.model.toVideo
-import io.github.aedev.flow.data.video.DownloadedVideo
-import io.github.aedev.flow.ui.components.layout.navigation.FlowTab
-import io.github.aedev.flow.ui.components.shared.MediaKind
-import io.github.aedev.flow.ui.screens.channel.ChannelScreen
-import io.github.aedev.flow.ui.screens.history.HistoryScreen
-import io.github.aedev.flow.ui.screens.home.HomeViewModel
-import io.github.aedev.flow.ui.screens.library.DownloadsScreen
-import io.github.aedev.flow.ui.screens.music.MusicPlayerViewModel
-import io.github.aedev.flow.ui.screens.music.MusicViewModel
-import io.github.aedev.flow.ui.screens.playlists.PlaylistDetailScreen
-import io.github.aedev.flow.ui.screens.playlists.PlaylistsScreen
-import io.github.aedev.flow.ui.screens.search.SearchViewModel
-import io.github.aedev.flow.ui.screens.subscriptions.SubscriptionsViewModel
-import io.github.aedev.flow.ui.tv.components.TvScreenFrame
-import io.github.aedev.flow.ui.tv.screens.TvHomeScreen
-import io.github.aedev.flow.ui.tv.screens.TvLibraryScreen
-import io.github.aedev.flow.ui.tv.screens.TvSearchScreen
-import io.github.aedev.flow.ui.tv.screens.TvSubscriptionsScreen
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.data.music.DownloadedTrack
+import com.arubr.smsvcodes.data.music.model.toMusicTrack
+import com.arubr.smsvcodes.data.music.model.toVideo
+import com.arubr.smsvcodes.data.video.DownloadedVideo
+import com.arubr.smsvcodes.ui.components.layout.navigation.FlowTab
+import com.arubr.smsvcodes.ui.components.shared.MediaKind
+import com.arubr.smsvcodes.ui.screens.channel.ChannelScreen
+import com.arubr.smsvcodes.ui.screens.history.HistoryScreen
+import com.arubr.smsvcodes.ui.screens.home.HomeViewModel
+import com.arubr.smsvcodes.ui.screens.library.DownloadsScreen
+import com.arubr.smsvcodes.ui.screens.music.MusicPlayerViewModel
+import com.arubr.smsvcodes.ui.screens.music.MusicViewModel
+import com.arubr.smsvcodes.ui.screens.playlists.PlaylistDetailScreen
+import com.arubr.smsvcodes.ui.screens.playlists.PlaylistsScreen
+import com.arubr.smsvcodes.ui.screens.search.SearchViewModel
+import com.arubr.smsvcodes.ui.screens.subscriptions.SubscriptionsViewModel
+import com.arubr.smsvcodes.ui.tv.components.TvScreenFrame
+import com.arubr.smsvcodes.ui.tv.screens.TvHomeScreen
+import com.arubr.smsvcodes.ui.tv.screens.TvLibraryScreen
+import com.arubr.smsvcodes.ui.tv.screens.TvSearchScreen
+import com.arubr.smsvcodes.ui.tv.screens.TvSubscriptionsScreen
 
 /** Top-level TV navigation graph plus detail routes (channel, …). */
 @androidx.annotation.OptIn(UnstableApi::class)

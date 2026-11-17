@@ -1,4 +1,4 @@
-package io.github.aedev.flow.data.scrobble
+package com.arubr.smsvcodes.data.scrobble
 
 import android.content.Context
 import androidx.work.BackoffPolicy
@@ -13,7 +13,7 @@ import dagger.hilt.EntryPoint
 import dagger.hilt.InstallIn
 import dagger.hilt.android.EntryPointAccessors
 import dagger.hilt.components.SingletonComponent
-import io.github.aedev.flow.data.profile.ProfileWork
+import com.arubr.smsvcodes.data.profile.ProfileWork
 import java.util.concurrent.TimeUnit
 
 /** Sends the queued listens once there is a connection, retrying with backoff while a service is down. */

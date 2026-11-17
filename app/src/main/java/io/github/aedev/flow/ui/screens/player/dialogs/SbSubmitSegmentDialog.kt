@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.player.dialogs
+package com.arubr.smsvcodes.ui.screens.player.dialogs
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.icons.Icons
@@ -11,14 +11,14 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.data.model.SponsorBlockCategories
-import io.github.aedev.flow.data.repository.SponsorBlockRepository
-import io.github.aedev.flow.ui.components.shared.FlowDialogDefaults
-import io.github.aedev.flow.utils.formatDurationMillis
-import io.github.aedev.flow.utils.parseTimestampMs
-import io.github.aedev.flow.utils.sponsorCategoryLabelRes
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.data.model.SponsorBlockCategories
+import com.arubr.smsvcodes.data.repository.SponsorBlockRepository
+import com.arubr.smsvcodes.ui.components.shared.FlowDialogDefaults
+import com.arubr.smsvcodes.utils.formatDurationMillis
+import com.arubr.smsvcodes.utils.parseTimestampMs
+import com.arubr.smsvcodes.utils.sponsorCategoryLabelRes
 import kotlinx.coroutines.launch
 
 /**

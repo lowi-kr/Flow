@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.videoplayer.sheet
+package com.arubr.smsvcodes.ui.components.videoplayer.sheet
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
@@ -39,15 +39,15 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.ui.components.shared.FlowReorderButtons
-import io.github.aedev.flow.ui.components.shared.LocalDpadNavigation
-import io.github.aedev.flow.ui.components.shared.MediaThumbnail
-import io.github.aedev.flow.ui.components.shared.ReorderHandle
-import io.github.aedev.flow.ui.components.shared.card.LocalVideoCardPreferences
-import io.github.aedev.flow.ui.components.shared.onMenuKey
-import io.github.aedev.flow.ui.components.shared.quickactions.VideoQuickActionsBottomSheet
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.ui.components.shared.FlowReorderButtons
+import com.arubr.smsvcodes.ui.components.shared.LocalDpadNavigation
+import com.arubr.smsvcodes.ui.components.shared.MediaThumbnail
+import com.arubr.smsvcodes.ui.components.shared.ReorderHandle
+import com.arubr.smsvcodes.ui.components.shared.card.LocalVideoCardPreferences
+import com.arubr.smsvcodes.ui.components.shared.onMenuKey
+import com.arubr.smsvcodes.ui.components.shared.quickactions.VideoQuickActionsBottomSheet
 
 private val ThumbnailWidth: Dp = 112.dp
 private val HandleTouchSize: Dp = 48.dp

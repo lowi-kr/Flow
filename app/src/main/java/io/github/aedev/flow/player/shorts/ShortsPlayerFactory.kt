@@ -1,4 +1,4 @@
-package io.github.aedev.flow.player.shorts
+package com.arubr.smsvcodes.player.shorts
 
 import android.content.Context
 import android.util.Log
@@ -20,13 +20,13 @@ import androidx.media3.exoplayer.source.DefaultMediaSourceFactory
 import androidx.media3.exoplayer.trackselection.AdaptiveTrackSelection
 import androidx.media3.exoplayer.trackselection.DefaultTrackSelector
 import androidx.media3.session.MediaSession
-import io.github.aedev.flow.player.MediaButtonSessionCallback
-import io.github.aedev.flow.player.analytics.PlaybackAnalyticsLogger
-import io.github.aedev.flow.player.audio.eq.EqualizerAudioProcessor
-import io.github.aedev.flow.player.config.PlayerConfig
-import io.github.aedev.flow.player.config.VideoSizeCap
-import io.github.aedev.flow.player.datasource.YouTubeHttpDataSource
-import io.github.aedev.flow.player.factory.LoadControlFactory
+import com.arubr.smsvcodes.player.MediaButtonSessionCallback
+import com.arubr.smsvcodes.player.analytics.PlaybackAnalyticsLogger
+import com.arubr.smsvcodes.player.audio.eq.EqualizerAudioProcessor
+import com.arubr.smsvcodes.player.config.PlayerConfig
+import com.arubr.smsvcodes.player.config.VideoSizeCap
+import com.arubr.smsvcodes.player.datasource.YouTubeHttpDataSource
+import com.arubr.smsvcodes.player.factory.LoadControlFactory
 
 /** Builds what the Shorts pool runs on: its players, the cached data source and the one media session. */
 @OptIn(UnstableApi::class)

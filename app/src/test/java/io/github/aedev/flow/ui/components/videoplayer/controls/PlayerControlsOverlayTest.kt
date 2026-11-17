@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.videoplayer.controls
+package com.arubr.smsvcodes.ui.components.videoplayer.controls
 
 import android.app.Application
 import android.content.Context
@@ -17,7 +17,7 @@ import androidx.compose.ui.unit.dp
 import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.R
+import com.arubr.smsvcodes.R
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith

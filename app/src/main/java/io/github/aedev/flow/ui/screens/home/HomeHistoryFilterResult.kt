@@ -1,9 +1,9 @@
-package io.github.aedev.flow.ui.screens.home
+package com.arubr.smsvcodes.ui.screens.home
 
-import io.github.aedev.flow.data.local.VideoHistoryEntry
-import io.github.aedev.flow.data.local.WatchedThreshold
-import io.github.aedev.flow.data.local.isWatched
-import io.github.aedev.flow.data.shorts.isShortComplete
+import com.arubr.smsvcodes.data.local.VideoHistoryEntry
+import com.arubr.smsvcodes.data.local.WatchedThreshold
+import com.arubr.smsvcodes.data.local.isWatched
+import com.arubr.smsvcodes.data.shorts.isShortComplete
 
 internal data class HomeHistoryFilterResult(
     val watchedVideoIds: Set<String>,

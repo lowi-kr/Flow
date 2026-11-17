@@ -1,11 +1,11 @@
-package io.github.aedev.flow.widget.onrepeat
+package com.arubr.smsvcodes.widget.onrepeat
 
 import androidx.glance.appwidget.GlanceAppWidget
-import io.github.aedev.flow.data.music.model.MusicTrack
-import io.github.aedev.flow.data.recommendation.music.MusicBrainEngine
-import io.github.aedev.flow.data.recommendation.music.onRepeatShelf
-import io.github.aedev.flow.widget.core.refresh.WidgetContentKey
-import io.github.aedev.flow.widget.core.refresh.WidgetContentSource
+import com.arubr.smsvcodes.data.music.model.MusicTrack
+import com.arubr.smsvcodes.data.recommendation.music.MusicBrainEngine
+import com.arubr.smsvcodes.data.recommendation.music.onRepeatShelf
+import com.arubr.smsvcodes.widget.core.refresh.WidgetContentKey
+import com.arubr.smsvcodes.widget.core.refresh.WidgetContentSource
 import javax.inject.Inject
 import javax.inject.Singleton
 

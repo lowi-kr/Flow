@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.settings.history
+package com.arubr.smsvcodes.ui.screens.settings.history
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.outlined.ManageSearch
@@ -20,15 +20,15 @@ import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import io.github.aedev.flow.R
-import io.github.aedev.flow.ui.components.settings.SettingsPage
-import io.github.aedev.flow.ui.components.settings.choice
-import io.github.aedev.flow.ui.components.settings.nav
-import io.github.aedev.flow.ui.components.settings.switch
-import io.github.aedev.flow.ui.components.shared.FlowAlertDialog
-import io.github.aedev.flow.ui.components.shared.FlowChoice
-import io.github.aedev.flow.ui.components.shared.FlowChoiceDialog
-import io.github.aedev.flow.ui.screens.settings.index.HistoryIndex
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.ui.components.settings.SettingsPage
+import com.arubr.smsvcodes.ui.components.settings.choice
+import com.arubr.smsvcodes.ui.components.settings.nav
+import com.arubr.smsvcodes.ui.components.settings.switch
+import com.arubr.smsvcodes.ui.components.shared.FlowAlertDialog
+import com.arubr.smsvcodes.ui.components.shared.FlowChoice
+import com.arubr.smsvcodes.ui.components.shared.FlowChoiceDialog
+import com.arubr.smsvcodes.ui.screens.settings.index.HistoryIndex
 
 private enum class HistoryDialog { MAX_SIZE, RETENTION, CLEAR }
 

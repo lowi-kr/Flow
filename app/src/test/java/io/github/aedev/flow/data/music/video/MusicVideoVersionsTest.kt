@@ -1,10 +1,10 @@
-package io.github.aedev.flow.data.music.video
+package com.arubr.smsvcodes.data.music.video
 
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.data.music.model.MusicArtist
-import io.github.aedev.flow.data.music.model.MusicTrack
-import io.github.aedev.flow.innertube.models.Artist
-import io.github.aedev.flow.innertube.models.SongItem
+import com.arubr.smsvcodes.data.music.model.MusicArtist
+import com.arubr.smsvcodes.data.music.model.MusicTrack
+import com.arubr.smsvcodes.innertube.models.Artist
+import com.arubr.smsvcodes.innertube.models.SongItem
 import kotlinx.coroutines.test.runTest
 import org.junit.Test
 import java.io.IOException

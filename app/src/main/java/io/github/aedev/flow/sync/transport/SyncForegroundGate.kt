@@ -1,4 +1,4 @@
-package io.github.aedev.flow.sync.transport
+package com.arubr.smsvcodes.sync.transport
 
 /**
  * Orders stop requests against the service's own start. Android kills the app when a service started

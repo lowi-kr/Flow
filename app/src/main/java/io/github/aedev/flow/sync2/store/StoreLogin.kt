@@ -1,6 +1,6 @@
-package io.github.aedev.flow.sync2.store
+package com.arubr.smsvcodes.sync2.store
 
-import io.github.aedev.flow.sync.protocol.SyncSerialization
+import com.arubr.smsvcodes.sync.protocol.SyncSerialization
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.buildJsonObject
 import kotlinx.serialization.json.contentOrNull

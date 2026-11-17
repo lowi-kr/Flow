@@ -1,4 +1,4 @@
-package io.github.aedev.flow.data.profile
+package com.arubr.smsvcodes.data.profile
 
 import android.content.Context
 import android.os.Build

@@ -1,6 +1,6 @@
-package io.github.aedev.flow.sync2
+package com.arubr.smsvcodes.sync2
 
-import io.github.aedev.flow.sync2.live.LiveMessage
+import com.arubr.smsvcodes.sync2.live.LiveMessage
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue

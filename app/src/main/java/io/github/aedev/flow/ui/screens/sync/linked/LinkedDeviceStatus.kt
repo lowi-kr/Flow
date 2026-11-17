@@ -1,7 +1,7 @@
-package io.github.aedev.flow.ui.screens.sync.linked
+package com.arubr.smsvcodes.ui.screens.sync.linked
 
-import io.github.aedev.flow.sync2.live.LivePeer
-import io.github.aedev.flow.sync2.service.LinkedDevice
+import com.arubr.smsvcodes.sync2.live.LivePeer
+import com.arubr.smsvcodes.sync2.service.LinkedDevice
 
 /** What the live channel says of a device that can be reached now: the title it plays, if it plays. */
 internal data class DevicePresence(

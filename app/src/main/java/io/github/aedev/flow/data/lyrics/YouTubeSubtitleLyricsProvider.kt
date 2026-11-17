@@ -2,9 +2,9 @@
 // This implementation was based on metrolist's (https://github.com/MetrolistGroup/Metrolist)
 // ==================================================================================================
 
-package io.github.aedev.flow.data.lyrics
+package com.arubr.smsvcodes.data.lyrics
 
-import io.github.aedev.flow.innertube.YouTube
+import com.arubr.smsvcodes.innertube.YouTube
 import io.ktor.client.plugins.ClientRequestException
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext

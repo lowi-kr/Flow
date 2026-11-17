@@ -1,8 +1,8 @@
-package io.github.aedev.flow.sync2.store
+package com.arubr.smsvcodes.sync2.store
 
-import io.github.aedev.flow.sync.crypto.SyncBytes
-import io.github.aedev.flow.sync2.roster.Entry
-import io.github.aedev.flow.sync2.roster.entryHash
+import com.arubr.smsvcodes.sync.crypto.SyncBytes
+import com.arubr.smsvcodes.sync2.roster.Entry
+import com.arubr.smsvcodes.sync2.roster.entryHash
 
 /**
  * The store a session works on: what this device holds, with the group's shared store, when it has

@@ -1,10 +1,10 @@
-package io.github.aedev.flow.widget.recent
+package com.arubr.smsvcodes.widget.recent
 
 import androidx.glance.appwidget.GlanceAppWidget
-import io.github.aedev.flow.data.local.VideoHistoryEntry
-import io.github.aedev.flow.data.local.ViewHistory
-import io.github.aedev.flow.widget.core.refresh.WidgetContentKey
-import io.github.aedev.flow.widget.core.refresh.WidgetContentSource
+import com.arubr.smsvcodes.data.local.VideoHistoryEntry
+import com.arubr.smsvcodes.data.local.ViewHistory
+import com.arubr.smsvcodes.widget.core.refresh.WidgetContentKey
+import com.arubr.smsvcodes.widget.core.refresh.WidgetContentSource
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.map

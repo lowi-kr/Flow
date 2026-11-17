@@ -1,4 +1,4 @@
-package io.github.aedev.flow.data.update
+package com.arubr.smsvcodes.data.update
 
 /** Where the installer session for a downloaded update stands. */
 sealed interface InstallPhase {

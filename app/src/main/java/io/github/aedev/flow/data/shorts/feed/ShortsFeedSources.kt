@@ -1,15 +1,15 @@
-package io.github.aedev.flow.data.shorts.feed
+package com.arubr.smsvcodes.data.shorts.feed
 
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.data.local.SubscriptionRepository
-import io.github.aedev.flow.data.model.ShortVideo
-import io.github.aedev.flow.data.model.toShortVideo
-import io.github.aedev.flow.data.shorts.ChannelShortsFeed
-import io.github.aedev.flow.data.shorts.queue.subscriptionReelChannelOrder
-import io.github.aedev.flow.data.shorts.sliceFrom
-import io.github.aedev.flow.data.subscriptions.SubscriptionFeedRepository
-import io.github.aedev.flow.innertube.YouTube
-import io.github.aedev.flow.innertube.pages.reel.ReelSequencePage
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.data.local.SubscriptionRepository
+import com.arubr.smsvcodes.data.model.ShortVideo
+import com.arubr.smsvcodes.data.model.toShortVideo
+import com.arubr.smsvcodes.data.shorts.ChannelShortsFeed
+import com.arubr.smsvcodes.data.shorts.queue.subscriptionReelChannelOrder
+import com.arubr.smsvcodes.data.shorts.sliceFrom
+import com.arubr.smsvcodes.data.subscriptions.SubscriptionFeedRepository
+import com.arubr.smsvcodes.innertube.YouTube
+import com.arubr.smsvcodes.innertube.pages.reel.ReelSequencePage
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.sync.Semaphore
 import kotlinx.coroutines.sync.withPermit

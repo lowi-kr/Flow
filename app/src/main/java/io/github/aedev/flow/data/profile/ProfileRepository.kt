@@ -1,9 +1,9 @@
-package io.github.aedev.flow.data.profile
+package com.arubr.smsvcodes.data.profile
 
 import android.content.Context
 import android.net.Uri
 import dagger.hilt.android.qualifiers.ApplicationContext
-import io.github.aedev.flow.data.video.downloader.collection.DownloadedCollections
+import com.arubr.smsvcodes.data.video.downloader.collection.DownloadedCollections
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.first

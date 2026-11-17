@@ -1,4 +1,4 @@
-package io.github.aedev.flow.data.video
+package com.arubr.smsvcodes.data.video
 
 import android.content.Context
 import android.graphics.Bitmap
@@ -10,15 +10,15 @@ import android.provider.MediaStore
 import android.util.Log
 import androidx.annotation.RequiresApi
 import dagger.hilt.android.qualifiers.ApplicationContext
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.data.local.dao.DownloadDao
-import io.github.aedev.flow.data.local.entity.DownloadItemStatus
-import io.github.aedev.flow.data.video.VideoDownloadManager.Companion.VIDEO_DIR
-import io.github.aedev.flow.data.video.downloader.tags.DownloadTagReader
-import io.github.aedev.flow.data.video.storage.DownloadCovers
-import io.github.aedev.flow.data.video.storage.DownloadFiles
-import io.github.aedev.flow.data.video.storage.DownloadTree
-import io.github.aedev.flow.data.video.storage.StorageAccess
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.data.local.dao.DownloadDao
+import com.arubr.smsvcodes.data.local.entity.DownloadItemStatus
+import com.arubr.smsvcodes.data.video.VideoDownloadManager.Companion.VIDEO_DIR
+import com.arubr.smsvcodes.data.video.downloader.tags.DownloadTagReader
+import com.arubr.smsvcodes.data.video.storage.DownloadCovers
+import com.arubr.smsvcodes.data.video.storage.DownloadFiles
+import com.arubr.smsvcodes.data.video.storage.DownloadTree
+import com.arubr.smsvcodes.data.video.storage.StorageAccess
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.first

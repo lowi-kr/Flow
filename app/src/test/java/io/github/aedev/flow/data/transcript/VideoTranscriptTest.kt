@@ -1,4 +1,4 @@
-package io.github.aedev.flow.data.transcript
+package com.arubr.smsvcodes.data.transcript
 
 import com.google.common.truth.Truth.assertThat
 import org.junit.Test

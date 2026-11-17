@@ -1,9 +1,9 @@
-package io.github.aedev.flow.ui.startup
+package com.arubr.smsvcodes.ui.startup
 
 import androidx.compose.ui.graphics.Color
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.R
-import io.github.aedev.flow.util.AppIcons
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.util.AppIcons
 import org.junit.Test
 
 class SplashThemesTest {

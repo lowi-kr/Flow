@@ -4,7 +4,7 @@
  * This file is part of Flow (https://github.com/Flow-Tube/Flow).
  */
 
-package io.github.aedev.flow.ui.components.shared
+package com.arubr.smsvcodes.ui.components.shared
 
 import android.app.Application
 import androidx.compose.ui.test.DeviceConfigurationOverride
@@ -15,11 +15,11 @@ import androidx.compose.ui.unit.dp
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.window.core.layout.WindowSizeClass
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.ui.utils.LocalWindowSizeClass
-import io.github.aedev.flow.ui.utils.ProvideWindowSizeClass
-import io.github.aedev.flow.ui.utils.isExpandedWidth
-import io.github.aedev.flow.ui.utils.isMediumHeight
-import io.github.aedev.flow.ui.utils.isMediumWidth
+import com.arubr.smsvcodes.ui.utils.LocalWindowSizeClass
+import com.arubr.smsvcodes.ui.utils.ProvideWindowSizeClass
+import com.arubr.smsvcodes.ui.utils.isExpandedWidth
+import com.arubr.smsvcodes.ui.utils.isMediumHeight
+import com.arubr.smsvcodes.ui.utils.isMediumWidth
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith

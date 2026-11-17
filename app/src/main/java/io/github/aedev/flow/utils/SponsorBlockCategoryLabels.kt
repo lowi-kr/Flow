@@ -1,6 +1,6 @@
-package io.github.aedev.flow.utils
+package com.arubr.smsvcodes.utils
 
-import io.github.aedev.flow.R
+import com.arubr.smsvcodes.R
 
 /** The display name for a SponsorBlock category id, or null for one this build does not name. */
 fun sponsorCategoryLabelRes(category: String): Int? =

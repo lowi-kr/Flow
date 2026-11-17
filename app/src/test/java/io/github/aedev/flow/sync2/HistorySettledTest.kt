@@ -1,7 +1,7 @@
-package io.github.aedev.flow.sync2
+package com.arubr.smsvcodes.sync2
 
-import io.github.aedev.flow.sync2.changes.PlayerItem
-import io.github.aedev.flow.sync2.changes.historySettled
+import com.arubr.smsvcodes.sync2.changes.PlayerItem
+import com.arubr.smsvcodes.sync2.changes.historySettled
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue
 import org.junit.Test

@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.musicplayer.queue
+package com.arubr.smsvcodes.ui.components.musicplayer.queue
 
 import com.google.common.truth.Truth.assertThat
 import org.junit.Test

@@ -1,30 +1,30 @@
-package io.github.aedev.flow.data.newmusic
+package com.arubr.smsvcodes.data.newmusic
 
-import io.github.aedev.flow.data.music.model.ArtistDetails
-import io.github.aedev.flow.data.music.model.MusicArtist
-import io.github.aedev.flow.data.music.model.MusicCharts
-import io.github.aedev.flow.data.music.model.MusicPlaylist
-import io.github.aedev.flow.data.music.model.MusicTextLink
-import io.github.aedev.flow.data.music.model.MusicTrack
-import io.github.aedev.flow.data.music.model.PlaylistDetails
-import io.github.aedev.flow.data.music.model.RelatedMusic
-import io.github.aedev.flow.innertube.YouTube
-import io.github.aedev.flow.innertube.YouTube.SearchFilter
-import io.github.aedev.flow.innertube.models.AlbumItem
-import io.github.aedev.flow.innertube.models.ArtistItem
-import io.github.aedev.flow.innertube.models.PlaylistItem
-import io.github.aedev.flow.innertube.models.SearchSuggestions
-import io.github.aedev.flow.innertube.models.SongItem
-import io.github.aedev.flow.innertube.models.WatchEndpoint
-import io.github.aedev.flow.innertube.models.YTItem
-import io.github.aedev.flow.innertube.models.YouTubeLocale
-import io.github.aedev.flow.innertube.pages.AlbumPage
-import io.github.aedev.flow.innertube.pages.ArtistSectionKind
-import io.github.aedev.flow.innertube.pages.ChartsPage
-import io.github.aedev.flow.innertube.pages.ExplorePage
-import io.github.aedev.flow.innertube.pages.MoodAndGenres
-import io.github.aedev.flow.innertube.pages.RelatedShelfType
-import io.github.aedev.flow.innertube.pages.SearchSummaryPage
+import com.arubr.smsvcodes.data.music.model.ArtistDetails
+import com.arubr.smsvcodes.data.music.model.MusicArtist
+import com.arubr.smsvcodes.data.music.model.MusicCharts
+import com.arubr.smsvcodes.data.music.model.MusicPlaylist
+import com.arubr.smsvcodes.data.music.model.MusicTextLink
+import com.arubr.smsvcodes.data.music.model.MusicTrack
+import com.arubr.smsvcodes.data.music.model.PlaylistDetails
+import com.arubr.smsvcodes.data.music.model.RelatedMusic
+import com.arubr.smsvcodes.innertube.YouTube
+import com.arubr.smsvcodes.innertube.YouTube.SearchFilter
+import com.arubr.smsvcodes.innertube.models.AlbumItem
+import com.arubr.smsvcodes.innertube.models.ArtistItem
+import com.arubr.smsvcodes.innertube.models.PlaylistItem
+import com.arubr.smsvcodes.innertube.models.SearchSuggestions
+import com.arubr.smsvcodes.innertube.models.SongItem
+import com.arubr.smsvcodes.innertube.models.WatchEndpoint
+import com.arubr.smsvcodes.innertube.models.YTItem
+import com.arubr.smsvcodes.innertube.models.YouTubeLocale
+import com.arubr.smsvcodes.innertube.pages.AlbumPage
+import com.arubr.smsvcodes.innertube.pages.ArtistSectionKind
+import com.arubr.smsvcodes.innertube.pages.ChartsPage
+import com.arubr.smsvcodes.innertube.pages.ExplorePage
+import com.arubr.smsvcodes.innertube.pages.MoodAndGenres
+import com.arubr.smsvcodes.innertube.pages.RelatedShelfType
+import com.arubr.smsvcodes.innertube.pages.SearchSummaryPage
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
@@ -147,7 +147,7 @@ object InnertubeMusicService {
                 result
                     .getOrNull()
                     ?.items
-                    ?.filterIsInstance<io.github.aedev.flow.innertube.models.PlaylistItem>()
+                    ?.filterIsInstance<com.arubr.smsvcodes.innertube.models.PlaylistItem>()
                     ?.map { convertPlaylistToMusicPlaylist(it) } ?: emptyList()
             } catch (e: Exception) {
                 e.printStackTrace()
@@ -388,13 +388,13 @@ object InnertubeMusicService {
             try {
                 val result =
                     YouTube.artistItems(
-                        io.github.aedev.flow.innertube.models
+                        com.arubr.smsvcodes.innertube.models
                             .BrowseEndpoint(browseId, params),
                     )
                 result
                     .getOrNull()
                     ?.items
-                    ?.filterIsInstance<io.github.aedev.flow.innertube.models.AlbumItem>()
+                    ?.filterIsInstance<com.arubr.smsvcodes.innertube.models.AlbumItem>()
                     ?.map { convertAlbumToPlaylist(it) } ?: emptyList()
             } catch (e: Exception) {
                 e.printStackTrace()
@@ -441,7 +441,7 @@ object InnertubeMusicService {
         }
 
     private fun convertAlbumToPlaylist(
-        item: io.github.aedev.flow.innertube.models.AlbumItem,
+        item: com.arubr.smsvcodes.innertube.models.AlbumItem,
         fallbackArtistId: String? = null,
         fallbackArtistName: String? = null,
     ): MusicPlaylist =
@@ -456,7 +456,7 @@ object InnertubeMusicService {
             authorName = item.artists?.firstOrNull()?.name ?: fallbackArtistName,
         )
 
-    private fun convertPlaylistToMusicPlaylist(item: io.github.aedev.flow.innertube.models.PlaylistItem): MusicPlaylist =
+    private fun convertPlaylistToMusicPlaylist(item: com.arubr.smsvcodes.innertube.models.PlaylistItem): MusicPlaylist =
         MusicPlaylist(
             id = item.id ?: "",
             title = item.title ?: "",
@@ -467,7 +467,7 @@ object InnertubeMusicService {
             authorName = item.author?.name,
         )
 
-    private fun convertArtistItemToDetails(item: io.github.aedev.flow.innertube.models.ArtistItem): ArtistDetails =
+    private fun convertArtistItemToDetails(item: com.arubr.smsvcodes.innertube.models.ArtistItem): ArtistDetails =
         ArtistDetails(
             name = item.title ?: "",
             channelId = item.id ?: "",
@@ -504,7 +504,7 @@ object InnertubeMusicService {
             }
         }
 
-    suspend fun getMediaInfo(videoId: String): io.github.aedev.flow.innertube.models.MediaInfo? =
+    suspend fun getMediaInfo(videoId: String): com.arubr.smsvcodes.innertube.models.MediaInfo? =
         withContext(Dispatchers.IO) {
             try {
                 YouTube.getMediaInfo(videoId).getOrNull()

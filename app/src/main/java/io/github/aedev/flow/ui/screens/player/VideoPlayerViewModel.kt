@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.player
+package com.arubr.smsvcodes.ui.screens.player
 
 import android.content.Context
 import android.util.Log
@@ -6,36 +6,36 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
-import io.github.aedev.flow.data.engagement.FeedInvalidationBus
-import io.github.aedev.flow.data.engagement.VideoEngagementUseCase
-import io.github.aedev.flow.data.local.*
-import io.github.aedev.flow.data.localmedia.LocalMediaDetails
-import io.github.aedev.flow.data.localmedia.LocalMediaIds
-import io.github.aedev.flow.data.model.Comment
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.data.profile.BeforeProfileSwitch
-import io.github.aedev.flow.data.repository.SponsorBlockRepository
-import io.github.aedev.flow.data.repository.YouTubeRepository
-import io.github.aedev.flow.data.transcript.TranscriptRepository
-import io.github.aedev.flow.data.video.AutoDownloadTrigger
-import io.github.aedev.flow.data.video.VideoDownloadManager
-import io.github.aedev.flow.data.video.VideoQueueStore
-import io.github.aedev.flow.di.IoDispatcher
-import io.github.aedev.flow.di.NetworkIoDispatcher
-import io.github.aedev.flow.innertube.pages.VideoCommentSort
-import io.github.aedev.flow.innertube.pages.VideoDescriptionPage
-import io.github.aedev.flow.player.EnhancedMusicPlayerManager
-import io.github.aedev.flow.player.EnhancedPlayerManager
-import io.github.aedev.flow.player.GlobalPlayerState
-import io.github.aedev.flow.player.LifecyclePlaybackPreferences
-import io.github.aedev.flow.player.MiniPlayerExpansionState
-import io.github.aedev.flow.player.PlaybackTarget
-import io.github.aedev.flow.player.state.EnhancedPlayerState
-import io.github.aedev.flow.player.stream.PlaybackLoadResolver
-import io.github.aedev.flow.player.stream.ResetYouTubeSession
-import io.github.aedev.flow.player.stream.UpcomingPremiereProbe
-import io.github.aedev.flow.ui.screens.player.state.*
-import io.github.aedev.flow.utils.NetworkState
+import com.arubr.smsvcodes.data.engagement.FeedInvalidationBus
+import com.arubr.smsvcodes.data.engagement.VideoEngagementUseCase
+import com.arubr.smsvcodes.data.local.*
+import com.arubr.smsvcodes.data.localmedia.LocalMediaDetails
+import com.arubr.smsvcodes.data.localmedia.LocalMediaIds
+import com.arubr.smsvcodes.data.model.Comment
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.data.profile.BeforeProfileSwitch
+import com.arubr.smsvcodes.data.repository.SponsorBlockRepository
+import com.arubr.smsvcodes.data.repository.YouTubeRepository
+import com.arubr.smsvcodes.data.transcript.TranscriptRepository
+import com.arubr.smsvcodes.data.video.AutoDownloadTrigger
+import com.arubr.smsvcodes.data.video.VideoDownloadManager
+import com.arubr.smsvcodes.data.video.VideoQueueStore
+import com.arubr.smsvcodes.di.IoDispatcher
+import com.arubr.smsvcodes.di.NetworkIoDispatcher
+import com.arubr.smsvcodes.innertube.pages.VideoCommentSort
+import com.arubr.smsvcodes.innertube.pages.VideoDescriptionPage
+import com.arubr.smsvcodes.player.EnhancedMusicPlayerManager
+import com.arubr.smsvcodes.player.EnhancedPlayerManager
+import com.arubr.smsvcodes.player.GlobalPlayerState
+import com.arubr.smsvcodes.player.LifecyclePlaybackPreferences
+import com.arubr.smsvcodes.player.MiniPlayerExpansionState
+import com.arubr.smsvcodes.player.PlaybackTarget
+import com.arubr.smsvcodes.player.state.EnhancedPlayerState
+import com.arubr.smsvcodes.player.stream.PlaybackLoadResolver
+import com.arubr.smsvcodes.player.stream.ResetYouTubeSession
+import com.arubr.smsvcodes.player.stream.UpcomingPremiereProbe
+import com.arubr.smsvcodes.ui.screens.player.state.*
+import com.arubr.smsvcodes.utils.NetworkState
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.FlowPreview
 import kotlinx.coroutines.flow.*
@@ -67,21 +67,21 @@ class VideoPlayerViewModel
         private val transcriptRepository: TranscriptRepository,
         private val viewHistory: ViewHistory,
         private val engagement: VideoEngagementUseCase,
-        private val playlistRepository: io.github.aedev.flow.data.local.PlaylistRepository,
+        private val playlistRepository: com.arubr.smsvcodes.data.local.PlaylistRepository,
         private val playerPreferences: PlayerPreferences,
         private val videoDownloadManager: VideoDownloadManager,
         private val videoQueueStore: VideoQueueStore,
         private val watchLaterCleanup: WatchLaterCleanup,
-        private val offlineSubtitleStore: io.github.aedev.flow.data.video.OfflineSubtitleStore,
-        private val localSubtitles: io.github.aedev.flow.data.localmedia.LocalSubtitles,
+        private val offlineSubtitleStore: com.arubr.smsvcodes.data.video.OfflineSubtitleStore,
+        private val localSubtitles: com.arubr.smsvcodes.data.localmedia.LocalSubtitles,
         private val sponsorBlockRepository: SponsorBlockRepository,
-        private val liveChatRepository: io.github.aedev.flow.data.repository.LiveChatRepository,
+        private val liveChatRepository: com.arubr.smsvcodes.data.repository.LiveChatRepository,
         private val homeFeedCacheRepository: HomeFeedCacheRepository,
         private val playerManager: EnhancedPlayerManager,
         private val upcomingPremiereProbe: UpcomingPremiereProbe,
         private val playbackResolver: PlaybackLoadResolver,
-        notesRepository: io.github.aedev.flow.data.notes.NotesRepository,
-        private val videoStats: io.github.aedev.flow.data.stats.VideoStatsRecorder,
+        notesRepository: com.arubr.smsvcodes.data.notes.NotesRepository,
+        private val videoStats: com.arubr.smsvcodes.data.stats.VideoStatsRecorder,
         private val localMediaDetails: LocalMediaDetails,
         private val lifecyclePlayback: LifecyclePlaybackPreferences,
         private val autoDownload: AutoDownloadTrigger,

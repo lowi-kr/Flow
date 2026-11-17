@@ -1,4 +1,4 @@
-package io.github.aedev.flow.sync2.data
+package com.arubr.smsvcodes.sync2.data
 
 import androidx.room.AutoMigration
 import androidx.room.ColumnInfo

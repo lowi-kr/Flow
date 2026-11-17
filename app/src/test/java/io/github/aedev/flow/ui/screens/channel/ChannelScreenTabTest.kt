@@ -1,9 +1,9 @@
-package io.github.aedev.flow.ui.screens.channel
+package com.arubr.smsvcodes.ui.screens.channel
 
-import io.github.aedev.flow.innertube.pages.channel.ChannelHeader
-import io.github.aedev.flow.innertube.pages.channel.ChannelLink
-import io.github.aedev.flow.innertube.pages.channel.ChannelTabDescriptor
-import io.github.aedev.flow.innertube.pages.channel.ChannelTabKind
+import com.arubr.smsvcodes.innertube.pages.channel.ChannelHeader
+import com.arubr.smsvcodes.innertube.pages.channel.ChannelLink
+import com.arubr.smsvcodes.innertube.pages.channel.ChannelTabDescriptor
+import com.arubr.smsvcodes.innertube.pages.channel.ChannelTabKind
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue

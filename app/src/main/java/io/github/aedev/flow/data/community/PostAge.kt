@@ -1,6 +1,6 @@
-package io.github.aedev.flow.data.community
+package com.arubr.smsvcodes.data.community
 
-import io.github.aedev.flow.utils.relativedate.RelativeUploadDateParser
+import com.arubr.smsvcodes.utils.relativedate.RelativeUploadDateParser
 import java.time.Duration
 
 /** How old a community post is, read from the relative time YouTube prints on it ("3 days ago (edited)"). */

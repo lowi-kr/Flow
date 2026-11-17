@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.settings
+package com.arubr.smsvcodes.ui.components.settings
 
 import androidx.compose.animation.core.Animatable
 import androidx.compose.foundation.layout.Box

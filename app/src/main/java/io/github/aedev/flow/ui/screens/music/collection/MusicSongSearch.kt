@@ -1,9 +1,9 @@
-package io.github.aedev.flow.ui.screens.music.collection
+package com.arubr.smsvcodes.ui.screens.music.collection
 
 import android.util.Log
-import io.github.aedev.flow.data.music.YouTubeMusicService
-import io.github.aedev.flow.data.music.model.MusicTrack
-import io.github.aedev.flow.utils.PerformanceDispatcher
+import com.arubr.smsvcodes.data.music.YouTubeMusicService
+import com.arubr.smsvcodes.data.music.model.MusicTrack
+import com.arubr.smsvcodes.utils.PerformanceDispatcher
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay

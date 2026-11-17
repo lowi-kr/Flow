@@ -1,4 +1,4 @@
-package io.github.aedev.flow.player.renderer.subtitle
+package com.arubr.smsvcodes.player.renderer.subtitle
 
 import androidx.annotation.OptIn
 import androidx.media3.common.text.Cue
@@ -6,7 +6,7 @@ import androidx.media3.common.util.UnstableApi
 import androidx.media3.extractor.text.SimpleSubtitleDecoder
 import androidx.media3.extractor.text.Subtitle
 import androidx.media3.extractor.text.SubtitleParser
-import io.github.aedev.flow.player.subtitle.SubtitleDelay
+import com.arubr.smsvcodes.player.subtitle.SubtitleDelay
 
 /**
  * Decodes a caption track with a Media3 [SubtitleParser] for the legacy text renderer, shifting it

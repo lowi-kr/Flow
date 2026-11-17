@@ -1,4 +1,4 @@
-package io.github.aedev.flow.utils
+package com.arubr.smsvcodes.utils
 
 private const val HEX_RADIX = 16
 private const val RGB_DIGITS = 6

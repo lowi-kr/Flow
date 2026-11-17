@@ -1,8 +1,8 @@
-package io.github.aedev.flow.player.dlna
+package com.arubr.smsvcodes.player.dlna
 
-import io.github.aedev.flow.innertube.models.response.PlayerResponse
-import io.github.aedev.flow.player.RepeatMode
-import io.github.aedev.flow.player.stream.preferNonDrc
+import com.arubr.smsvcodes.innertube.models.response.PlayerResponse
+import com.arubr.smsvcodes.player.RepeatMode
+import com.arubr.smsvcodes.player.stream.preferNonDrc
 
 /** What a renderer reported when the phone last asked: its transport state and where it was, in ms. */
 internal data class CastStatus(

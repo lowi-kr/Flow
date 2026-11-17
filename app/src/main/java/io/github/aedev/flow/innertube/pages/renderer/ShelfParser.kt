@@ -1,9 +1,9 @@
-package io.github.aedev.flow.innertube.pages.renderer
+package com.arubr.smsvcodes.innertube.pages.renderer
 
-import io.github.aedev.flow.innertube.pages.arrayOrNull
-import io.github.aedev.flow.innertube.pages.objectOrNull
-import io.github.aedev.flow.innertube.pages.stringOrNull
-import io.github.aedev.flow.innertube.pages.youtubeText
+import com.arubr.smsvcodes.innertube.pages.arrayOrNull
+import com.arubr.smsvcodes.innertube.pages.objectOrNull
+import com.arubr.smsvcodes.innertube.pages.stringOrNull
+import com.arubr.smsvcodes.innertube.pages.youtubeText
 import kotlinx.serialization.json.JsonElement
 import kotlinx.serialization.json.JsonObject
 

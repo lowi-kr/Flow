@@ -1,7 +1,7 @@
-package io.github.aedev.flow.data.local
+package com.arubr.smsvcodes.data.local
 
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.data.local.dao.WatchProgress
+import com.arubr.smsvcodes.data.local.dao.WatchProgress
 import org.junit.Test
 
 /** #979: every watched video filter reads [WatchedThreshold.isWatched] rather than restating it in SQL. */

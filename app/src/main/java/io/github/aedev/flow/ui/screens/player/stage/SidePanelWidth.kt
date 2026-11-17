@@ -1,8 +1,8 @@
-package io.github.aedev.flow.ui.screens.player.stage
+package com.arubr.smsvcodes.ui.screens.player.stage
 
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.data.local.FullscreenSidePanelWidth
+import com.arubr.smsvcodes.data.local.FullscreenSidePanelWidth
 
 private val DefaultPanelCap = 420.dp
 private val PanelFloor = 240.dp

@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.tv.screens
+package com.arubr.smsvcodes.ui.tv.screens
 
 import android.app.Activity
 import androidx.activity.compose.BackHandler
@@ -27,13 +27,13 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.profile.Profile
-import io.github.aedev.flow.data.profile.displayName
-import io.github.aedev.flow.ui.components.profiles.ProfileAvatar
-import io.github.aedev.flow.ui.components.profiles.ProfileSwitchViewModel
-import io.github.aedev.flow.ui.components.settings.SettingsDestination
-import io.github.aedev.flow.ui.components.settings.SettingsTarget
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.profile.Profile
+import com.arubr.smsvcodes.data.profile.displayName
+import com.arubr.smsvcodes.ui.components.profiles.ProfileAvatar
+import com.arubr.smsvcodes.ui.components.profiles.ProfileSwitchViewModel
+import com.arubr.smsvcodes.ui.components.settings.SettingsDestination
+import com.arubr.smsvcodes.ui.components.settings.SettingsTarget
 
 private val CardAvatarSize = 96.dp
 private val CardSpacing = 28.dp

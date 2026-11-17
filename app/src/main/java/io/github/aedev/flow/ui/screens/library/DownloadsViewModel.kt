@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.library
+package com.arubr.smsvcodes.ui.screens.library
 
 import android.content.Context
 import android.content.Intent
@@ -9,24 +9,24 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.data.local.dao.DownloadCollectionSummary
-import io.github.aedev.flow.data.local.entity.DownloadFileType
-import io.github.aedev.flow.data.local.entity.DownloadItemStatus
-import io.github.aedev.flow.data.local.entity.DownloadWithItems
-import io.github.aedev.flow.data.music.DownloadedTrack
-import io.github.aedev.flow.data.video.DownloadProgressUpdate
-import io.github.aedev.flow.data.video.DownloadRecoveryScanner
-import io.github.aedev.flow.data.video.DownloadedVideo
-import io.github.aedev.flow.data.video.VideoDownloadManager
-import io.github.aedev.flow.data.video.downloader.collection.DownloadedCollections
-import io.github.aedev.flow.data.video.downloader.work.DownloadController
-import io.github.aedev.flow.data.video.storage.DownloadFiles
-import io.github.aedev.flow.data.video.storage.DownloadLocation
-import io.github.aedev.flow.data.video.storage.StorageAccess
-import io.github.aedev.flow.data.video.storage.deleteRequestFor
-import io.github.aedev.flow.data.video.storage.lostDownloadTree
-import io.github.aedev.flow.di.ApplicationScope
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.data.local.dao.DownloadCollectionSummary
+import com.arubr.smsvcodes.data.local.entity.DownloadFileType
+import com.arubr.smsvcodes.data.local.entity.DownloadItemStatus
+import com.arubr.smsvcodes.data.local.entity.DownloadWithItems
+import com.arubr.smsvcodes.data.music.DownloadedTrack
+import com.arubr.smsvcodes.data.video.DownloadProgressUpdate
+import com.arubr.smsvcodes.data.video.DownloadRecoveryScanner
+import com.arubr.smsvcodes.data.video.DownloadedVideo
+import com.arubr.smsvcodes.data.video.VideoDownloadManager
+import com.arubr.smsvcodes.data.video.downloader.collection.DownloadedCollections
+import com.arubr.smsvcodes.data.video.downloader.work.DownloadController
+import com.arubr.smsvcodes.data.video.storage.DownloadFiles
+import com.arubr.smsvcodes.data.video.storage.DownloadLocation
+import com.arubr.smsvcodes.data.video.storage.StorageAccess
+import com.arubr.smsvcodes.data.video.storage.deleteRequestFor
+import com.arubr.smsvcodes.data.video.storage.lostDownloadTree
+import com.arubr.smsvcodes.di.ApplicationScope
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -48,7 +48,7 @@ import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
-import io.github.aedev.flow.data.music.DownloadManager as MusicDownloadManager
+import com.arubr.smsvcodes.data.music.DownloadManager as MusicDownloadManager
 
 @OptIn(ExperimentalCoroutinesApi::class)
 @HiltViewModel

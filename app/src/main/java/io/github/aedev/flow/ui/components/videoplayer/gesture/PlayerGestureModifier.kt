@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.videoplayer.gesture
+package com.arubr.smsvcodes.ui.components.videoplayer.gesture
 
 import android.app.Activity
 import android.media.AudioManager
@@ -12,9 +12,9 @@ import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.platform.LocalHapticFeedback
 import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.data.local.DEFAULT_SPEED_SWIPE_STEP
-import io.github.aedev.flow.data.local.DoubleTapSeekZone
-import io.github.aedev.flow.data.local.SpeedSwipeSide
+import com.arubr.smsvcodes.data.local.DEFAULT_SPEED_SWIPE_STEP
+import com.arubr.smsvcodes.data.local.DoubleTapSeekZone
+import com.arubr.smsvcodes.data.local.SpeedSwipeSide
 import kotlinx.coroutines.CoroutineScope
 
 private val MinSideEdgeIgnore = 24.dp

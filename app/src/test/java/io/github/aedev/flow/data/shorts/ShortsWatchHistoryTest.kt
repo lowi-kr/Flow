@@ -1,9 +1,9 @@
-package io.github.aedev.flow.data.shorts
+package com.arubr.smsvcodes.data.shorts
 
-import io.github.aedev.flow.data.local.ViewHistory
-import io.github.aedev.flow.data.local.WatchedThreshold
-import io.github.aedev.flow.data.local.dao.WatchProgress
-import io.github.aedev.flow.data.model.ShortVideo
+import com.arubr.smsvcodes.data.local.ViewHistory
+import com.arubr.smsvcodes.data.local.WatchedThreshold
+import com.arubr.smsvcodes.data.local.dao.WatchProgress
+import com.arubr.smsvcodes.data.model.ShortVideo
 import io.mockk.coEvery
 import io.mockk.coVerify
 import io.mockk.mockk

@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.settings.profiles
+package com.arubr.smsvcodes.ui.screens.settings.profiles
 
 import android.net.Uri
 import androidx.compose.foundation.layout.Arrangement
@@ -28,14 +28,14 @@ import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.profile.Profile
-import io.github.aedev.flow.data.profile.ProfileAvatar
-import io.github.aedev.flow.ui.components.profiles.ProfileAvatar
-import io.github.aedev.flow.ui.components.shared.FlowColorSwatch
-import io.github.aedev.flow.ui.components.shared.FlowColorSwatchDefaults
-import io.github.aedev.flow.ui.theme.ProfileColors
-import io.github.aedev.flow.ui.theme.profileTones
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.profile.Profile
+import com.arubr.smsvcodes.data.profile.ProfileAvatar
+import com.arubr.smsvcodes.ui.components.profiles.ProfileAvatar
+import com.arubr.smsvcodes.ui.components.shared.FlowColorSwatch
+import com.arubr.smsvcodes.ui.components.shared.FlowColorSwatchDefaults
+import com.arubr.smsvcodes.ui.theme.ProfileColors
+import com.arubr.smsvcodes.ui.theme.profileTones
 
 private val PickerSpacing = 10.dp
 

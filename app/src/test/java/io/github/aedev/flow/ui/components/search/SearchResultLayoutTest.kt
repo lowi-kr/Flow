@@ -1,12 +1,12 @@
-package io.github.aedev.flow.ui.components.search
+package com.arubr.smsvcodes.ui.components.search
 
 import androidx.compose.ui.unit.dp
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.data.local.HomeFeedColumns
-import io.github.aedev.flow.ui.components.FEED_MAX_AUTO_COLUMNS
-import io.github.aedev.flow.ui.components.feedGridLayoutFor
-import io.github.aedev.flow.ui.components.partialRowIndices
-import io.github.aedev.flow.ui.components.shared.feedStripCardWidth
+import com.arubr.smsvcodes.data.local.HomeFeedColumns
+import com.arubr.smsvcodes.ui.components.FEED_MAX_AUTO_COLUMNS
+import com.arubr.smsvcodes.ui.components.feedGridLayoutFor
+import com.arubr.smsvcodes.ui.components.partialRowIndices
+import com.arubr.smsvcodes.ui.components.shared.feedStripCardWidth
 import org.junit.Test
 
 /**

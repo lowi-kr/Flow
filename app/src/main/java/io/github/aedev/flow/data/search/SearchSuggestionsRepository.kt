@@ -1,7 +1,7 @@
-package io.github.aedev.flow.data.search
+package com.arubr.smsvcodes.data.search
 
-import io.github.aedev.flow.innertube.YouTube
-import io.github.aedev.flow.innertube.pages.search.SearchSuggestion
+import com.arubr.smsvcodes.innertube.YouTube
+import com.arubr.smsvcodes.innertube.pages.search.SearchSuggestion
 import javax.inject.Inject
 import javax.inject.Singleton
 

@@ -1,8 +1,8 @@
-package io.github.aedev.flow.ui.theme
+package com.arubr.smsvcodes.ui.theme
 
 import androidx.compose.ui.text.font.FontFamily
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.data.local.CustomFontStore
+import com.arubr.smsvcodes.data.local.CustomFontStore
 import org.junit.Rule
 import org.junit.Test
 import org.junit.rules.TemporaryFolder

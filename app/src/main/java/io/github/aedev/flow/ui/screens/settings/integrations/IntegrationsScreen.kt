@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.settings.integrations
+package com.arubr.smsvcodes.ui.screens.settings.integrations
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.AutoFixHigh
@@ -16,15 +16,15 @@ import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.res.stringResource
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import io.github.aedev.flow.BuildConfig
-import io.github.aedev.flow.R
-import io.github.aedev.flow.ui.components.settings.SettingsDestination
-import io.github.aedev.flow.ui.components.settings.SettingsPage
-import io.github.aedev.flow.ui.components.settings.SettingsTarget
-import io.github.aedev.flow.ui.components.settings.nav
-import io.github.aedev.flow.ui.components.settings.switch
-import io.github.aedev.flow.ui.screens.settings.index.DestinationIndex
-import io.github.aedev.flow.ui.screens.settings.index.IntegrationsIndex
+import com.arubr.smsvcodes.BuildConfig
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.ui.components.settings.SettingsDestination
+import com.arubr.smsvcodes.ui.components.settings.SettingsPage
+import com.arubr.smsvcodes.ui.components.settings.SettingsTarget
+import com.arubr.smsvcodes.ui.components.settings.nav
+import com.arubr.smsvcodes.ui.components.settings.switch
+import com.arubr.smsvcodes.ui.screens.settings.index.DestinationIndex
+import com.arubr.smsvcodes.ui.screens.settings.index.IntegrationsIndex
 
 /**
  * The outside services Flow can talk to: SponsorBlock, DeArrow, the AiSList channel list, Return

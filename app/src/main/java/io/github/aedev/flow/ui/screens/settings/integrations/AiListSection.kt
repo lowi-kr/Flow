@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.settings.integrations
+package com.arubr.smsvcodes.ui.screens.settings.integrations
 
 import android.text.format.DateUtils
 import androidx.compose.material.icons.Icons
@@ -8,13 +8,13 @@ import androidx.compose.material.icons.outlined.Flag
 import androidx.compose.material.icons.outlined.MusicOff
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.res.stringResource
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.contentfilter.aislist.AiListStatus
-import io.github.aedev.flow.ui.components.settings.SettingsListScope
-import io.github.aedev.flow.ui.components.settings.info
-import io.github.aedev.flow.ui.components.settings.nav
-import io.github.aedev.flow.ui.components.settings.switch
-import io.github.aedev.flow.ui.screens.settings.index.IntegrationsIndex
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.contentfilter.aislist.AiListStatus
+import com.arubr.smsvcodes.ui.components.settings.SettingsListScope
+import com.arubr.smsvcodes.ui.components.settings.info
+import com.arubr.smsvcodes.ui.components.settings.nav
+import com.arubr.smsvcodes.ui.components.settings.switch
+import com.arubr.smsvcodes.ui.screens.settings.index.IntegrationsIndex
 import java.text.NumberFormat
 
 private const val AISLIST_HOMEPAGE = "https://aisloplist.com"

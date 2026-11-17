@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.subscriptions
+package com.arubr.smsvcodes.ui.screens.subscriptions
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -53,17 +53,17 @@ import androidx.compose.ui.semantics.customActions
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.model.Channel
-import io.github.aedev.flow.data.model.SubscriptionGroup
-import io.github.aedev.flow.ui.components.shared.ChannelAvatarImage
-import io.github.aedev.flow.ui.components.shared.FlowAlertDialog
-import io.github.aedev.flow.ui.components.shared.FlowReorderButtons
-import io.github.aedev.flow.ui.components.shared.FlowSearchField
-import io.github.aedev.flow.ui.components.shared.FlowSwitchRow
-import io.github.aedev.flow.ui.components.shared.LocalDpadNavigation
-import io.github.aedev.flow.ui.components.shared.ReorderHandle
-import io.github.aedev.flow.ui.utils.flowWindowDpSize
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.model.Channel
+import com.arubr.smsvcodes.data.model.SubscriptionGroup
+import com.arubr.smsvcodes.ui.components.shared.ChannelAvatarImage
+import com.arubr.smsvcodes.ui.components.shared.FlowAlertDialog
+import com.arubr.smsvcodes.ui.components.shared.FlowReorderButtons
+import com.arubr.smsvcodes.ui.components.shared.FlowSearchField
+import com.arubr.smsvcodes.ui.components.shared.FlowSwitchRow
+import com.arubr.smsvcodes.ui.components.shared.LocalDpadNavigation
+import com.arubr.smsvcodes.ui.components.shared.ReorderHandle
+import com.arubr.smsvcodes.ui.utils.flowWindowDpSize
 import sh.calvin.reorderable.ReorderableItem
 import sh.calvin.reorderable.rememberReorderableLazyListState
 

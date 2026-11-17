@@ -1,6 +1,6 @@
-package io.github.aedev.flow.player.crossfade
+package com.arubr.smsvcodes.player.crossfade
 
-import io.github.aedev.flow.data.local.CrossfadeCurve
+import com.arubr.smsvcodes.data.local.CrossfadeCurve
 import kotlin.math.PI
 import kotlin.math.abs
 import kotlin.math.cos

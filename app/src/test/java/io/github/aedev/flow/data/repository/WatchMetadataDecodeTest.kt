@@ -1,7 +1,7 @@
-package io.github.aedev.flow.data.repository
+package com.arubr.smsvcodes.data.repository
 
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.innertube.models.response.WatchMetadataResponse
+import com.arubr.smsvcodes.innertube.models.response.WatchMetadataResponse
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonPrimitive
 import org.junit.Test

@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.musicplayer.mini
+package com.arubr.smsvcodes.ui.components.musicplayer.mini
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
@@ -34,21 +34,21 @@ import androidx.compose.ui.hapticfeedback.HapticFeedbackType
 import androidx.compose.ui.platform.LocalHapticFeedback
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.local.MiniBarButton
-import io.github.aedev.flow.data.local.MiniLongPress
-import io.github.aedev.flow.data.music.model.MusicTrack
-import io.github.aedev.flow.player.EnhancedMusicPlayerManager
-import io.github.aedev.flow.player.RepeatMode
-import io.github.aedev.flow.ui.components.music.sheet.MusicQuickActionsSheet
-import io.github.aedev.flow.ui.components.music.sheet.SaveSongSheet
-import io.github.aedev.flow.ui.components.musicplayer.sheet.AudioSettingsSheet
-import io.github.aedev.flow.ui.components.musicplayer.sheet.MusicPlayerSheetState
-import io.github.aedev.flow.ui.components.musicplayer.sheet.PlayerPanel
-import io.github.aedev.flow.ui.components.shared.MediaPlayPauseButton
-import io.github.aedev.flow.ui.components.shared.MediaSleepTimerSheet
-import io.github.aedev.flow.ui.screens.music.MusicPlayerViewModel
-import io.github.aedev.flow.ui.screens.music.sharedMusicPlayerViewModel
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.local.MiniBarButton
+import com.arubr.smsvcodes.data.local.MiniLongPress
+import com.arubr.smsvcodes.data.music.model.MusicTrack
+import com.arubr.smsvcodes.player.EnhancedMusicPlayerManager
+import com.arubr.smsvcodes.player.RepeatMode
+import com.arubr.smsvcodes.ui.components.music.sheet.MusicQuickActionsSheet
+import com.arubr.smsvcodes.ui.components.music.sheet.SaveSongSheet
+import com.arubr.smsvcodes.ui.components.musicplayer.sheet.AudioSettingsSheet
+import com.arubr.smsvcodes.ui.components.musicplayer.sheet.MusicPlayerSheetState
+import com.arubr.smsvcodes.ui.components.musicplayer.sheet.PlayerPanel
+import com.arubr.smsvcodes.ui.components.shared.MediaPlayPauseButton
+import com.arubr.smsvcodes.ui.components.shared.MediaSleepTimerSheet
+import com.arubr.smsvcodes.ui.screens.music.MusicPlayerViewModel
+import com.arubr.smsvcodes.ui.screens.music.sharedMusicPlayerViewModel
 import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.map
 

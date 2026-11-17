@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.home.chips
+package com.arubr.smsvcodes.ui.screens.home.chips
 
 import androidx.annotation.StringRes
 import androidx.compose.foundation.layout.Arrangement
@@ -20,8 +20,8 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.ui.components.shared.FlowFilterChip
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.ui.components.shared.FlowFilterChip
 import kotlin.math.roundToInt
 
 private val ChipRowHeight = 48.dp
@@ -72,7 +72,7 @@ internal fun HomeChipRow(
     }
 }
 
-/** The name of a theme chip's YouTube category ([io.github.aedev.flow.data.recommendation.NeuroCategories]). */
+/** The name of a theme chip's YouTube category ([com.arubr.smsvcodes.data.recommendation.NeuroCategories]). */
 @StringRes
 private fun themeLabel(category: String): Int? =
     when (category) {

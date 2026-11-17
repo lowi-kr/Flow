@@ -1,12 +1,12 @@
-package io.github.aedev.flow.ui.screens.settings.downloads
+package com.arubr.smsvcodes.ui.screens.settings.downloads
 
 import dagger.hilt.android.lifecycle.HiltViewModel
-import io.github.aedev.flow.data.local.MediaCacheSizes
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.data.repository.MediaCacheRepository
-import io.github.aedev.flow.data.repository.MediaCacheType
-import io.github.aedev.flow.data.repository.MediaCacheUsage
-import io.github.aedev.flow.ui.screens.settings.SettingsViewModel
+import com.arubr.smsvcodes.data.local.MediaCacheSizes
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.data.repository.MediaCacheRepository
+import com.arubr.smsvcodes.data.repository.MediaCacheType
+import com.arubr.smsvcodes.data.repository.MediaCacheUsage
+import com.arubr.smsvcodes.ui.screens.settings.SettingsViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow

@@ -1,4 +1,4 @@
-package io.github.aedev.flow.utils.cipher
+package com.arubr.smsvcodes.utils.cipher
 
 import com.google.common.truth.Truth.assertThat
 import org.junit.Test

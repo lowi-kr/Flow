@@ -1,12 +1,12 @@
-package io.github.aedev.flow.ui.screens.settings.notifications
+package com.arubr.smsvcodes.ui.screens.settings.notifications
 
 import android.content.Context
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.notification.BackgroundWorkPolicy
-import io.github.aedev.flow.notification.SubscriptionCheckWorker
-import io.github.aedev.flow.ui.screens.settings.SettingsViewModel
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.notification.BackgroundWorkPolicy
+import com.arubr.smsvcodes.notification.SubscriptionCheckWorker
+import com.arubr.smsvcodes.ui.screens.settings.SettingsViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow

@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.player.stage
+package com.arubr.smsvcodes.ui.screens.player.stage
 
 import android.widget.Toast
 import androidx.compose.foundation.layout.WindowInsets
@@ -10,22 +10,22 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.media3.common.util.UnstableApi
-import io.github.aedev.flow.R
-import io.github.aedev.flow.player.EnhancedPlayerManager
-import io.github.aedev.flow.player.PictureInPictureHelper
-import io.github.aedev.flow.player.SleepTimerManager
-import io.github.aedev.flow.player.dlna.DlnaCastManager
-import io.github.aedev.flow.ui.components.videoplayer.controls.PlayerControlActions
-import io.github.aedev.flow.ui.components.videoplayer.controls.PlayerControlsOverlay
-import io.github.aedev.flow.ui.components.videoplayer.controls.PlayerControlsUiState
-import io.github.aedev.flow.ui.components.videoplayer.controls.resolvePlayerQualityLabel
-import io.github.aedev.flow.ui.components.videoplayer.overlay.AutoplayCountdownOverlay
-import io.github.aedev.flow.ui.components.videoplayer.placedWhen
-import io.github.aedev.flow.ui.components.videoplayer.settings.PlayerSettingsPage
-import io.github.aedev.flow.ui.screens.player.state.PlayerSheet
-import io.github.aedev.flow.ui.screens.player.state.SubtitleSelection
-import io.github.aedev.flow.ui.screens.player.state.hasVisibleQueue
-import io.github.aedev.flow.ui.screens.player.state.seekBarCommentMarks
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.player.EnhancedPlayerManager
+import com.arubr.smsvcodes.player.PictureInPictureHelper
+import com.arubr.smsvcodes.player.SleepTimerManager
+import com.arubr.smsvcodes.player.dlna.DlnaCastManager
+import com.arubr.smsvcodes.ui.components.videoplayer.controls.PlayerControlActions
+import com.arubr.smsvcodes.ui.components.videoplayer.controls.PlayerControlsOverlay
+import com.arubr.smsvcodes.ui.components.videoplayer.controls.PlayerControlsUiState
+import com.arubr.smsvcodes.ui.components.videoplayer.controls.resolvePlayerQualityLabel
+import com.arubr.smsvcodes.ui.components.videoplayer.overlay.AutoplayCountdownOverlay
+import com.arubr.smsvcodes.ui.components.videoplayer.placedWhen
+import com.arubr.smsvcodes.ui.components.videoplayer.settings.PlayerSettingsPage
+import com.arubr.smsvcodes.ui.screens.player.state.PlayerSheet
+import com.arubr.smsvcodes.ui.screens.player.state.SubtitleSelection
+import com.arubr.smsvcodes.ui.screens.player.state.hasVisibleQueue
+import com.arubr.smsvcodes.ui.screens.player.state.seekBarCommentMarks
 
 /** The transport controls the expanded player mounts once its surfaces are at rest. */
 @UnstableApi

@@ -1,4 +1,4 @@
-package io.github.aedev.flow.sync2.crypto
+package com.arubr.smsvcodes.sync2.crypto
 
 import org.bouncycastle.math.ec.rfc7748.X25519
 import org.bouncycastle.math.ec.rfc8032.Ed25519

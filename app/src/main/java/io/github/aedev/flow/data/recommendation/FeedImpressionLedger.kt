@@ -1,4 +1,4 @@
-package io.github.aedev.flow.data.recommendation
+package com.arubr.smsvcodes.data.recommendation
 
 /**
  * Which of the cards just seen count as a new sighting. A card counts again once [RECOUNT_WINDOW_MS] has

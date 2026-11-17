@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.lockscreen
+package com.arubr.smsvcodes.ui.screens.lockscreen
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.gestures.Orientation
@@ -41,19 +41,19 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.LifecycleStartEffect
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.local.MusicPlayerBackgroundStyle
-import io.github.aedev.flow.data.music.model.MusicTrack
-import io.github.aedev.flow.player.EnhancedMusicPlayerManager
-import io.github.aedev.flow.player.RepeatMode
-import io.github.aedev.flow.ui.components.musicplayer.common.rememberMusicPlayerAppearance
-import io.github.aedev.flow.ui.components.musicplayer.controls.PlayerProgressSlider
-import io.github.aedev.flow.ui.components.musicplayer.controls.PlayerSegmentInnerShape
-import io.github.aedev.flow.ui.components.musicplayer.controls.PlayerSegmentLeadingShape
-import io.github.aedev.flow.ui.components.musicplayer.controls.PlayerSegmentTrailingShape
-import io.github.aedev.flow.ui.components.musicplayer.controls.PlayerToggleButton
-import io.github.aedev.flow.ui.components.musicplayer.full.PlayerBackground
-import io.github.aedev.flow.ui.components.shared.MediaPlaybackControls
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.local.MusicPlayerBackgroundStyle
+import com.arubr.smsvcodes.data.music.model.MusicTrack
+import com.arubr.smsvcodes.player.EnhancedMusicPlayerManager
+import com.arubr.smsvcodes.player.RepeatMode
+import com.arubr.smsvcodes.ui.components.musicplayer.common.rememberMusicPlayerAppearance
+import com.arubr.smsvcodes.ui.components.musicplayer.controls.PlayerProgressSlider
+import com.arubr.smsvcodes.ui.components.musicplayer.controls.PlayerSegmentInnerShape
+import com.arubr.smsvcodes.ui.components.musicplayer.controls.PlayerSegmentLeadingShape
+import com.arubr.smsvcodes.ui.components.musicplayer.controls.PlayerSegmentTrailingShape
+import com.arubr.smsvcodes.ui.components.musicplayer.controls.PlayerToggleButton
+import com.arubr.smsvcodes.ui.components.musicplayer.full.PlayerBackground
+import com.arubr.smsvcodes.ui.components.shared.MediaPlaybackControls
 
 private val UnlockDistance = 96.dp
 private val ActionGroupHeight = 42.dp

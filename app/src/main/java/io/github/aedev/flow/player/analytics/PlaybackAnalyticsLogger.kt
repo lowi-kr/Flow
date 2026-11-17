@@ -1,10 +1,10 @@
-package io.github.aedev.flow.player.analytics
+package com.arubr.smsvcodes.player.analytics
 
 import androidx.media3.common.Format
 import androidx.media3.common.util.UnstableApi
 import androidx.media3.exoplayer.DecoderReuseEvaluation
 import androidx.media3.exoplayer.analytics.AnalyticsListener
-import io.github.aedev.flow.player.error.PlayerDiagnostics
+import com.arubr.smsvcodes.player.error.PlayerDiagnostics
 import kotlin.math.roundToInt
 
 @UnstableApi

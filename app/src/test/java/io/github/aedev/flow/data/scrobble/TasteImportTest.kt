@@ -1,10 +1,10 @@
-package io.github.aedev.flow.data.scrobble
+package com.arubr.smsvcodes.data.scrobble
 
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.data.recommendation.music.FavouriteArtist
-import io.github.aedev.flow.data.recommendation.music.FavouriteArtistCatalog
-import io.github.aedev.flow.data.recommendation.music.FavouriteArtistsStore
-import io.github.aedev.flow.utils.PerformanceDispatcher
+import com.arubr.smsvcodes.data.recommendation.music.FavouriteArtist
+import com.arubr.smsvcodes.data.recommendation.music.FavouriteArtistCatalog
+import com.arubr.smsvcodes.data.recommendation.music.FavouriteArtistsStore
+import com.arubr.smsvcodes.utils.PerformanceDispatcher
 import io.mockk.coEvery
 import io.mockk.coVerify
 import io.mockk.every

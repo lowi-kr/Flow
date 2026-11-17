@@ -1,8 +1,8 @@
-package io.github.aedev.flow.ui.components.shared.card
+package com.arubr.smsvcodes.ui.components.shared.card
 
-import io.github.aedev.flow.data.localmedia.LocalMediaIds
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.ui.components.DeArrowLookup
+import com.arubr.smsvcodes.data.localmedia.LocalMediaIds
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.ui.components.DeArrowLookup
 
 /** What a card's thumbnail loads: [url] null holds the empty container, [youTubeFrames] as in [VideoCardState]. */
 internal data class CardThumbnail(

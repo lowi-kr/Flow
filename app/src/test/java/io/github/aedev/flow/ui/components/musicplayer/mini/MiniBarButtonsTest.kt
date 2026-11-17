@@ -1,7 +1,7 @@
-package io.github.aedev.flow.ui.components.musicplayer.mini
+package com.arubr.smsvcodes.ui.components.musicplayer.mini
 
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.data.local.MiniBarButton
+import com.arubr.smsvcodes.data.local.MiniBarButton
 import org.junit.Test
 
 class MiniBarButtonsTest {

@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.subscriptions
+package com.arubr.smsvcodes.ui.screens.subscriptions
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.PaddingValues
@@ -25,18 +25,18 @@ import androidx.paging.LoadState
 import androidx.paging.compose.collectAsLazyPagingItems
 import androidx.paging.compose.itemContentType
 import androidx.paging.compose.itemKey
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.model.Channel
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.ui.components.layout.flowBottomContentPadding
-import io.github.aedev.flow.ui.components.shared.FeedPagingFooter
-import io.github.aedev.flow.ui.components.shared.FlowEmptyState
-import io.github.aedev.flow.ui.components.shared.FlowErrorState
-import io.github.aedev.flow.ui.components.shared.FlowLoadingIndicator
-import io.github.aedev.flow.ui.components.shared.FlowPullToRefreshBox
-import io.github.aedev.flow.ui.components.shared.MediaPostCard
-import io.github.aedev.flow.ui.components.shared.MediaPostCommentsSheet
-import io.github.aedev.flow.ui.components.shared.rememberPostShareAction
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.model.Channel
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.ui.components.layout.flowBottomContentPadding
+import com.arubr.smsvcodes.ui.components.shared.FeedPagingFooter
+import com.arubr.smsvcodes.ui.components.shared.FlowEmptyState
+import com.arubr.smsvcodes.ui.components.shared.FlowErrorState
+import com.arubr.smsvcodes.ui.components.shared.FlowLoadingIndicator
+import com.arubr.smsvcodes.ui.components.shared.FlowPullToRefreshBox
+import com.arubr.smsvcodes.ui.components.shared.MediaPostCard
+import com.arubr.smsvcodes.ui.components.shared.MediaPostCommentsSheet
+import com.arubr.smsvcodes.ui.components.shared.rememberPostShareAction
 
 private val PostsMaxWidth = 760.dp
 private val StatePadding = 48.dp

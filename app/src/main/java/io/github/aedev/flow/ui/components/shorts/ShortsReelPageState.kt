@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.shorts
+package com.arubr.smsvcodes.ui.components.shorts
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.Immutable
@@ -9,8 +9,8 @@ import androidx.compose.runtime.mutableFloatStateOf
 import androidx.compose.runtime.mutableLongStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.data.local.ShortsPlayerUiMode
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.data.local.ShortsPlayerUiMode
 
 internal const val SHORTS_PLAYBACK_LOOP = "loop"
 internal const val SHORTS_PLAYBACK_AUTO_NEXT = "auto_next"

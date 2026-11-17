@@ -1,7 +1,7 @@
-package io.github.aedev.flow.data.video.downloader.request
+package com.arubr.smsvcodes.data.video.downloader.request
 
-import io.github.aedev.flow.data.video.downloader.tags.DownloadKind
-import io.github.aedev.flow.data.video.downloader.tags.DownloadTags
+import com.arubr.smsvcodes.data.video.downloader.tags.DownloadKind
+import com.arubr.smsvcodes.data.video.downloader.tags.DownloadTags
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.builtins.ListSerializer
 import kotlinx.serialization.json.Json

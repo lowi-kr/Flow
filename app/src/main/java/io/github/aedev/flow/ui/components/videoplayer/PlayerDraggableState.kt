@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.videoplayer
+package com.arubr.smsvcodes.ui.components.videoplayer
 
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.AnimationVector1D
@@ -13,14 +13,14 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.geometry.Rect
 import coil3.memory.MemoryCache
-import io.github.aedev.flow.ui.components.videoplayer.motion.DraggablePlayerMotionController
-import io.github.aedev.flow.ui.components.videoplayer.motion.cornerTargetX
-import io.github.aedev.flow.ui.components.videoplayer.motion.cornerTargetY
-import io.github.aedev.flow.ui.components.videoplayer.motion.miniResizeSpringSpec
-import io.github.aedev.flow.ui.components.videoplayer.motion.playerCollapseSpringSpec
-import io.github.aedev.flow.ui.components.videoplayer.motion.playerOpenSpringSpec
-import io.github.aedev.flow.ui.components.videoplayer.motion.portraitFullscreenSettleSpec
-import io.github.aedev.flow.ui.components.videoplayer.motion.withSteadyFrames
+import com.arubr.smsvcodes.ui.components.videoplayer.motion.DraggablePlayerMotionController
+import com.arubr.smsvcodes.ui.components.videoplayer.motion.cornerTargetX
+import com.arubr.smsvcodes.ui.components.videoplayer.motion.cornerTargetY
+import com.arubr.smsvcodes.ui.components.videoplayer.motion.miniResizeSpringSpec
+import com.arubr.smsvcodes.ui.components.videoplayer.motion.playerCollapseSpringSpec
+import com.arubr.smsvcodes.ui.components.videoplayer.motion.playerOpenSpringSpec
+import com.arubr.smsvcodes.ui.components.videoplayer.motion.portraitFullscreenSettleSpec
+import com.arubr.smsvcodes.ui.components.videoplayer.motion.withSteadyFrames
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.CoroutineStart
 import kotlinx.coroutines.Job

@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.settings.wellbeing
+package com.arubr.smsvcodes.ui.screens.settings.wellbeing
 
 import android.os.SystemClock
 import androidx.activity.compose.BackHandler
@@ -31,12 +31,12 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.wellbeing.DailyLimitPolicy
-import io.github.aedev.flow.data.wellbeing.DailyLimitStore
-import io.github.aedev.flow.data.wellbeing.DailyTally
-import io.github.aedev.flow.notification.DailyLimitGuard
-import io.github.aedev.flow.ui.components.stats.spentTimeLabel
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.wellbeing.DailyLimitPolicy
+import com.arubr.smsvcodes.data.wellbeing.DailyLimitStore
+import com.arubr.smsvcodes.data.wellbeing.DailyTally
+import com.arubr.smsvcodes.notification.DailyLimitGuard
+import com.arubr.smsvcodes.ui.components.stats.spentTimeLabel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow

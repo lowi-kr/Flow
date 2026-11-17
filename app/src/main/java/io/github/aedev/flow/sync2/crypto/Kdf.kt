@@ -1,6 +1,6 @@
-package io.github.aedev.flow.sync2.crypto
+package com.arubr.smsvcodes.sync2.crypto
 
-import io.github.aedev.flow.sync.crypto.SyncCrypto
+import com.arubr.smsvcodes.sync.crypto.SyncCrypto
 import java.nio.ByteBuffer
 import java.security.MessageDigest
 

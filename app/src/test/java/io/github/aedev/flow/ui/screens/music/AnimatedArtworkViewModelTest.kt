@@ -1,12 +1,12 @@
-package io.github.aedev.flow.ui.screens.music
+package com.arubr.smsvcodes.ui.screens.music
 
 import android.content.Context
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.data.music.artwork.AnimatedArtworkRepository
-import io.github.aedev.flow.data.music.artwork.AnimatedLoop
-import io.github.aedev.flow.data.music.model.MusicTrack
-import io.github.aedev.flow.utils.NetworkState
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.data.music.artwork.AnimatedArtworkRepository
+import com.arubr.smsvcodes.data.music.artwork.AnimatedLoop
+import com.arubr.smsvcodes.data.music.model.MusicTrack
+import com.arubr.smsvcodes.utils.NetworkState
 import io.mockk.coEvery
 import io.mockk.coVerify
 import io.mockk.every

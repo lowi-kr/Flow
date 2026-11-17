@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.tv.player
+package com.arubr.smsvcodes.ui.tv.player
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -15,11 +15,11 @@ import androidx.compose.ui.focus.FocusRequester
 import androidx.compose.ui.focus.focusRequester
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.ui.components.shared.card.MediaVideoCard
-import io.github.aedev.flow.ui.components.shared.dpadFocusGroup
-import io.github.aedev.flow.ui.tv.focus.ProvideTvRowPivot
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.ui.components.shared.card.MediaVideoCard
+import com.arubr.smsvcodes.ui.components.shared.dpadFocusGroup
+import com.arubr.smsvcodes.ui.tv.focus.ProvideTvRowPivot
 
 /** Three cards across and the edge of a fourth, so the row reads as one that scrolls on. */
 private const val UP_NEXT_CARD_FRACTION = 0.31f

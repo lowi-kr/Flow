@@ -1,15 +1,15 @@
-package io.github.aedev.flow.sync2.live
+package com.arubr.smsvcodes.sync2.live
 
 import android.content.Context
 import android.media.AudioManager
 import androidx.annotation.MainThread
 import dagger.hilt.android.qualifiers.ApplicationContext
-import io.github.aedev.flow.data.profile.ActiveProfile
-import io.github.aedev.flow.player.EnhancedMusicPlayerManager
-import io.github.aedev.flow.player.EnhancedPlayerManager
-import io.github.aedev.flow.player.GlobalPlayerState
-import io.github.aedev.flow.player.PlaybackTarget
-import io.github.aedev.flow.sync2.data.LinkedDatabase
+import com.arubr.smsvcodes.data.profile.ActiveProfile
+import com.arubr.smsvcodes.player.EnhancedMusicPlayerManager
+import com.arubr.smsvcodes.player.EnhancedPlayerManager
+import com.arubr.smsvcodes.player.GlobalPlayerState
+import com.arubr.smsvcodes.player.PlaybackTarget
+import com.arubr.smsvcodes.sync2.data.LinkedDatabase
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.delay

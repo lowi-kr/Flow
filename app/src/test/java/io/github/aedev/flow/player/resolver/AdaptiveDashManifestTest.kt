@@ -1,4 +1,4 @@
-package io.github.aedev.flow.player.resolver
+package com.arubr.smsvcodes.player.resolver
 
 import androidx.media3.common.C
 import androidx.media3.common.MimeTypes
@@ -6,8 +6,8 @@ import androidx.media3.exoplayer.dash.manifest.DashManifest
 import androidx.media3.exoplayer.dash.manifest.RangedUri
 import androidx.media3.exoplayer.dash.manifest.Representation
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.player.quality.LadderTestStreams.h264
-import io.github.aedev.flow.player.quality.LadderTestStreams.vp9
+import com.arubr.smsvcodes.player.quality.LadderTestStreams.h264
+import com.arubr.smsvcodes.player.quality.LadderTestStreams.vp9
 import org.junit.Test
 import org.schabi.newpipe.extractor.stream.VideoStream
 import org.w3c.dom.Element

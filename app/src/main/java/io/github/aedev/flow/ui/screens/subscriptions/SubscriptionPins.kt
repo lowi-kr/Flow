@@ -1,6 +1,6 @@
-package io.github.aedev.flow.ui.screens.subscriptions
+package com.arubr.smsvcodes.ui.screens.subscriptions
 
-import io.github.aedev.flow.data.model.Channel
+import com.arubr.smsvcodes.data.model.Channel
 
 /** The pinned channel ids kept in one preference, in pin order (#1776). */
 internal fun parsePinnedChannels(stored: String?): List<String> =

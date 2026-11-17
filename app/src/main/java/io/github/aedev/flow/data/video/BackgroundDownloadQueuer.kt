@@ -1,14 +1,14 @@
-package io.github.aedev.flow.data.video
+package com.arubr.smsvcodes.data.video
 
-import io.github.aedev.flow.data.local.entity.DownloadCollectionKind
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.data.music.model.MusicTrack
-import io.github.aedev.flow.data.music.model.toMusicTrack
-import io.github.aedev.flow.data.video.downloader.collection.CollectionSpec
-import io.github.aedev.flow.data.video.downloader.collection.DownloadedCollections
-import io.github.aedev.flow.data.video.downloader.request.toDownloadRequest
-import io.github.aedev.flow.data.video.downloader.work.DownloadController
-import io.github.aedev.flow.data.video.downloader.work.EnqueueOutcome
+import com.arubr.smsvcodes.data.local.entity.DownloadCollectionKind
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.data.music.model.MusicTrack
+import com.arubr.smsvcodes.data.music.model.toMusicTrack
+import com.arubr.smsvcodes.data.video.downloader.collection.CollectionSpec
+import com.arubr.smsvcodes.data.video.downloader.collection.DownloadedCollections
+import com.arubr.smsvcodes.data.video.downloader.request.toDownloadRequest
+import com.arubr.smsvcodes.data.video.downloader.work.DownloadController
+import com.arubr.smsvcodes.data.video.downloader.work.EnqueueOutcome
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob

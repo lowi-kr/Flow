@@ -1,14 +1,14 @@
-package io.github.aedev.flow.ui.screens.settings
+package com.arubr.smsvcodes.ui.screens.settings
 
-import io.github.aedev.flow.ui.screens.settings.about.parseChangelog
-import io.github.aedev.flow.ui.screens.settings.about.sectionTitle
-import io.github.aedev.flow.ui.screens.settings.about.sortedChangelogs
-import io.github.aedev.flow.ui.screens.settings.diagnostics.LOG_CHUNK_LINES
-import io.github.aedev.flow.ui.screens.settings.diagnostics.LogLevel
-import io.github.aedev.flow.ui.screens.settings.diagnostics.LogState
-import io.github.aedev.flow.ui.screens.settings.diagnostics.crashLevel
-import io.github.aedev.flow.ui.screens.settings.diagnostics.logcatLevel
-import io.github.aedev.flow.ui.screens.settings.diagnostics.parseLog
+import com.arubr.smsvcodes.ui.screens.settings.about.parseChangelog
+import com.arubr.smsvcodes.ui.screens.settings.about.sectionTitle
+import com.arubr.smsvcodes.ui.screens.settings.about.sortedChangelogs
+import com.arubr.smsvcodes.ui.screens.settings.diagnostics.LOG_CHUNK_LINES
+import com.arubr.smsvcodes.ui.screens.settings.diagnostics.LogLevel
+import com.arubr.smsvcodes.ui.screens.settings.diagnostics.LogState
+import com.arubr.smsvcodes.ui.screens.settings.diagnostics.crashLevel
+import com.arubr.smsvcodes.ui.screens.settings.diagnostics.logcatLevel
+import com.arubr.smsvcodes.ui.screens.settings.diagnostics.parseLog
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNull
 import org.junit.Assert.assertTrue
@@ -29,7 +29,7 @@ class DiagnosticsAndAboutTest {
     fun `crash reports mark rules and exceptions`() {
         assertEquals(LogLevel.HEADING, crashLevel("====="))
         assertEquals(LogLevel.ERROR, crashLevel("java.lang.IllegalStateException: boom"))
-        assertEquals(LogLevel.INFO, crashLevel("    at io.github.aedev.flow.Main.run(Main.kt:1)"))
+        assertEquals(LogLevel.INFO, crashLevel("    at com.arubr.smsvcodes.Main.run(Main.kt:1)"))
     }
 
     @Test

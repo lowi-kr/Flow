@@ -1,8 +1,8 @@
-package io.github.aedev.flow.sync2
+package com.arubr.smsvcodes.sync2
 
 import androidx.datastore.preferences.core.mutablePreferencesOf
-import io.github.aedev.flow.sync2.lan.metIn
-import io.github.aedev.flow.sync2.lan.noteMet
+import com.arubr.smsvcodes.sync2.lan.metIn
+import com.arubr.smsvcodes.sync2.lan.noteMet
 import org.junit.Assert.assertEquals
 import org.junit.Test
 

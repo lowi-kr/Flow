@@ -1,10 +1,10 @@
-package io.github.aedev.flow.ui.components.shared.card
+package com.arubr.smsvcodes.ui.components.shared.card
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.data.model.Video
+import com.arubr.smsvcodes.data.model.Video
 
 enum class VideoCardLayout {
     /** The thumbnail across the full width with the details beneath. */
@@ -47,7 +47,7 @@ object VideoCardDefaults {
  * [showChannel] hides the avatar and channel name where the screen already names the channel.
  * [useInternalPadding] insets a stacked card; container-padded grids pass false. [thumbnailWidth]
  * sizes a row's thumbnail, so a row the grid could not fill still lines up with the cards above it.
- * [density] is the grid's [io.github.aedev.flow.ui.components.FeedGridLayout.cardDensity].
+ * [density] is the grid's [com.arubr.smsvcodes.ui.components.FeedGridLayout.cardDensity].
  * [reason] is a short line under the details saying why the feed shows this video; null shows none.
  * [whyShown] says why a feed shows this video, on the menu's Details page.
  */

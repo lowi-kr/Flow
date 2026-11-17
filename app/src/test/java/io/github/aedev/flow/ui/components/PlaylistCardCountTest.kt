@@ -1,7 +1,7 @@
-package io.github.aedev.flow.ui.components
+package com.arubr.smsvcodes.ui.components
 
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.data.model.Playlist
+import com.arubr.smsvcodes.data.model.Playlist
 import org.junit.Test
 
 class PlaylistCardCountTest {

@@ -1,4 +1,4 @@
-package io.github.aedev.flow.data.lyrics
+package com.arubr.smsvcodes.data.lyrics
 
 /**
  * The order lyrics providers are tried in, as saved in settings. A provider the saved order has

@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.recap
+package com.arubr.smsvcodes.ui.screens.recap
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -18,18 +18,18 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.stats.ActivityPattern
-import io.github.aedev.flow.data.stats.RecapInsight
-import io.github.aedev.flow.data.stats.RecapPeriod
-import io.github.aedev.flow.data.stats.RecapSummary
-import io.github.aedev.flow.ui.components.stats.StatBarStrip
-import io.github.aedev.flow.ui.components.stats.StatBigNumber
-import io.github.aedev.flow.ui.components.stats.StatCalendar
-import io.github.aedev.flow.ui.components.stats.StatCard
-import io.github.aedev.flow.ui.components.stats.StatClock
-import io.github.aedev.flow.ui.components.stats.rememberStatEntrance
-import io.github.aedev.flow.ui.components.stats.spentTimeLabel
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.stats.ActivityPattern
+import com.arubr.smsvcodes.data.stats.RecapInsight
+import com.arubr.smsvcodes.data.stats.RecapPeriod
+import com.arubr.smsvcodes.data.stats.RecapSummary
+import com.arubr.smsvcodes.ui.components.stats.StatBarStrip
+import com.arubr.smsvcodes.ui.components.stats.StatBigNumber
+import com.arubr.smsvcodes.ui.components.stats.StatCalendar
+import com.arubr.smsvcodes.ui.components.stats.StatCard
+import com.arubr.smsvcodes.ui.components.stats.StatClock
+import com.arubr.smsvcodes.ui.components.stats.rememberStatEntrance
+import com.arubr.smsvcodes.ui.components.stats.spentTimeLabel
 import java.time.DayOfWeek
 import java.time.YearMonth
 import java.time.format.DateTimeFormatter

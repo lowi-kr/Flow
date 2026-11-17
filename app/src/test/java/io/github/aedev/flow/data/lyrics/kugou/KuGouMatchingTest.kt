@@ -1,9 +1,9 @@
-package io.github.aedev.flow.data.lyrics.kugou
+package com.arubr.smsvcodes.data.lyrics.kugou
 
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.data.lyrics.LyricsMatching
-import io.github.aedev.flow.data.lyrics.kugou.models.SearchLyricsResponse
-import io.github.aedev.flow.data.lyrics.kugou.models.SearchSongResponse
+import com.arubr.smsvcodes.data.lyrics.LyricsMatching
+import com.arubr.smsvcodes.data.lyrics.kugou.models.SearchLyricsResponse
+import com.arubr.smsvcodes.data.lyrics.kugou.models.SearchSongResponse
 import org.junit.Test
 
 class KuGouMatchingTest {

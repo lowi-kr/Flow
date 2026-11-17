@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.musicplayer.sheet
+package com.arubr.smsvcodes.ui.components.musicplayer.sheet
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -6,17 +6,17 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.res.stringResource
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.local.MiniBarSwipeAction
-import io.github.aedev.flow.data.music.model.MusicTrack
-import io.github.aedev.flow.player.EnhancedMusicPlayerManager
-import io.github.aedev.flow.ui.components.shared.MediaMiniBarSwipeReveal
-import io.github.aedev.flow.ui.components.shared.MiniBarReveal
-import io.github.aedev.flow.ui.components.shared.MiniBarSwipeCommit
-import io.github.aedev.flow.ui.components.shared.MiniBarSwipeMotion
-import io.github.aedev.flow.ui.components.shared.icon
-import io.github.aedev.flow.ui.components.shared.isDestructive
-import io.github.aedev.flow.ui.components.shared.labelRes
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.local.MiniBarSwipeAction
+import com.arubr.smsvcodes.data.music.model.MusicTrack
+import com.arubr.smsvcodes.player.EnhancedMusicPlayerManager
+import com.arubr.smsvcodes.ui.components.shared.MediaMiniBarSwipeReveal
+import com.arubr.smsvcodes.ui.components.shared.MiniBarReveal
+import com.arubr.smsvcodes.ui.components.shared.MiniBarSwipeCommit
+import com.arubr.smsvcodes.ui.components.shared.MiniBarSwipeMotion
+import com.arubr.smsvcodes.ui.components.shared.icon
+import com.arubr.smsvcodes.ui.components.shared.isDestructive
+import com.arubr.smsvcodes.ui.components.shared.labelRes
 
 /** The music bar acts on Close, Next and Previous; any other action set for the swipe closes it. */
 private val MiniBarSwipeAction.forMusic: MiniBarSwipeAction

@@ -1,8 +1,8 @@
-package io.github.aedev.flow.ui.components.profiles
+package com.arubr.smsvcodes.ui.components.profiles
 
 import androidx.annotation.StringRes
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.profile.SwitchRefusal
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.profile.SwitchRefusal
 
 /** What to tell someone whose switch didn't happen. */
 @StringRes

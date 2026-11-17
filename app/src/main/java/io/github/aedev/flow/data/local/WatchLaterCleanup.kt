@@ -1,7 +1,7 @@
-package io.github.aedev.flow.data.local
+package com.arubr.smsvcodes.data.local
 
-import io.github.aedev.flow.data.local.entity.PlaylistVideoCrossRef
-import io.github.aedev.flow.data.model.Video
+import com.arubr.smsvcodes.data.local.entity.PlaylistVideoCrossRef
+import com.arubr.smsvcodes.data.model.Video
 import kotlinx.coroutines.flow.first
 import javax.inject.Inject
 import javax.inject.Singleton

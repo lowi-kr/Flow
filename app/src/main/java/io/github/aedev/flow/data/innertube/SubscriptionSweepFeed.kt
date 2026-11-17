@@ -1,7 +1,7 @@
-package io.github.aedev.flow.data.innertube
+package com.arubr.smsvcodes.data.innertube
 
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.utils.ThumbnailUrlResolver
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.utils.ThumbnailUrlResolver
 
 /** Merge regular and shorts lists with independent caps, sorted by date. */
 internal fun buildSweepFeed(

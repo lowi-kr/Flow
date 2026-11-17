@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.musicplayer.sheet
+package com.arubr.smsvcodes.ui.components.musicplayer.sheet
 
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.AnimationVector1D
@@ -21,7 +21,7 @@ import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.unit.Density
 import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.util.lerp
-import io.github.aedev.flow.ui.components.shared.MediaMiniBarBounds
+import com.arubr.smsvcodes.ui.components.shared.MediaMiniBarBounds
 import kotlinx.coroutines.delay
 
 /**

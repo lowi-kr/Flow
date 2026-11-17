@@ -1,4 +1,4 @@
-package io.github.aedev.flow.sync2.crypto
+package com.arubr.smsvcodes.sync2.crypto
 
 /** The mDNS TXT tag for one hour; members check the previous, current and next hour. */
 fun lanTag(

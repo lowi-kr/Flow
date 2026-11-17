@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.profiles
+package com.arubr.smsvcodes.ui.components.profiles
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.core.MutableTransitionState
@@ -36,21 +36,21 @@ import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.IntSize
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.profile.Profile
-import io.github.aedev.flow.data.profile.ProfileRegistry
-import io.github.aedev.flow.data.profile.displayName
-import io.github.aedev.flow.ui.components.layout.LocalFlowSnackbarHostState
-import io.github.aedev.flow.ui.components.settings.SettingsDestination
-import io.github.aedev.flow.ui.components.settings.SettingsTarget
-import io.github.aedev.flow.ui.components.shared.FlowNavRow
-import io.github.aedev.flow.ui.components.shared.FlowRowGroup
-import io.github.aedev.flow.ui.components.shared.FlowSectionHeader
-import io.github.aedev.flow.ui.components.shared.FlowSegmentedGap
-import io.github.aedev.flow.ui.components.shared.flowRowGroupShape
-import io.github.aedev.flow.ui.components.shared.quickactions.QuickActionRow
-import io.github.aedev.flow.ui.components.shared.quickactions.QuickActionsGroup
-import io.github.aedev.flow.ui.components.shared.quickactions.QuickActionsSheet
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.profile.Profile
+import com.arubr.smsvcodes.data.profile.ProfileRegistry
+import com.arubr.smsvcodes.data.profile.displayName
+import com.arubr.smsvcodes.ui.components.layout.LocalFlowSnackbarHostState
+import com.arubr.smsvcodes.ui.components.settings.SettingsDestination
+import com.arubr.smsvcodes.ui.components.settings.SettingsTarget
+import com.arubr.smsvcodes.ui.components.shared.FlowNavRow
+import com.arubr.smsvcodes.ui.components.shared.FlowRowGroup
+import com.arubr.smsvcodes.ui.components.shared.FlowSectionHeader
+import com.arubr.smsvcodes.ui.components.shared.FlowSegmentedGap
+import com.arubr.smsvcodes.ui.components.shared.flowRowGroupShape
+import com.arubr.smsvcodes.ui.components.shared.quickactions.QuickActionRow
+import com.arubr.smsvcodes.ui.components.shared.quickactions.QuickActionsGroup
+import com.arubr.smsvcodes.ui.components.shared.quickactions.QuickActionsSheet
 
 private val TopBarAvatarSize = 32.dp
 private val FooterPadding = 20.dp

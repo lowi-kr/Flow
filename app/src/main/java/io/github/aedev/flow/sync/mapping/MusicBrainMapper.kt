@@ -1,12 +1,12 @@
-package io.github.aedev.flow.sync.mapping
+package com.arubr.smsvcodes.sync.mapping
 
-import io.github.aedev.flow.data.recommendation.music.MusicBrainStorage
-import io.github.aedev.flow.sync.canonical.CanonicalMusicAffinity
-import io.github.aedev.flow.sync.canonical.CanonicalMusicBrain
-import io.github.aedev.flow.sync.canonical.CanonicalMusicTrackMeta
-import io.github.aedev.flow.sync.canonical.GCounter
-import io.github.aedev.flow.sync.canonical.Lww
-import io.github.aedev.flow.sync.merge.MusicBrainCrdtState
+import com.arubr.smsvcodes.data.recommendation.music.MusicBrainStorage
+import com.arubr.smsvcodes.sync.canonical.CanonicalMusicAffinity
+import com.arubr.smsvcodes.sync.canonical.CanonicalMusicBrain
+import com.arubr.smsvcodes.sync.canonical.CanonicalMusicTrackMeta
+import com.arubr.smsvcodes.sync.canonical.GCounter
+import com.arubr.smsvcodes.sync.canonical.Lww
+import com.arubr.smsvcodes.sync.merge.MusicBrainCrdtState
 import kotlinx.serialization.json.Json
 
 /**

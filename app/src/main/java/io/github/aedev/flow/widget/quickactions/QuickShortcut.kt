@@ -1,11 +1,11 @@
-package io.github.aedev.flow.widget.quickactions
+package com.arubr.smsvcodes.widget.quickactions
 
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.core.stringPreferencesKey
-import io.github.aedev.flow.R
-import io.github.aedev.flow.widget.core.action.WidgetDeepLink
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.widget.core.action.WidgetDeepLink
 
 /** A page the Quick Actions widget can jump to. [key] is persisted per widget, so it never changes. */
 enum class QuickShortcut(

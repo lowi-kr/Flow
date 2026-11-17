@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.music.collection
+package com.arubr.smsvcodes.ui.screens.music.collection
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.CheckBox
@@ -10,9 +10,9 @@ import androidx.compose.material3.IconButton
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
-import io.github.aedev.flow.R
-import io.github.aedev.flow.ui.components.layout.topbar.FlowSearchTopBar
-import io.github.aedev.flow.ui.components.layout.topbar.FlowTopBar
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.ui.components.layout.topbar.FlowSearchTopBar
+import com.arubr.smsvcodes.ui.components.layout.topbar.FlowTopBar
 
 /** What the top bar is doing: showing the page, searching it, or counting a selection. */
 internal class CollectionTopBarState(

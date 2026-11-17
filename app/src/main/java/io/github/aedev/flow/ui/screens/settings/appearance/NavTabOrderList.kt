@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.settings.appearance
+package com.arubr.smsvcodes.ui.screens.settings.appearance
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -33,13 +33,13 @@ import androidx.compose.ui.semantics.CustomAccessibilityAction
 import androidx.compose.ui.semantics.customActions
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.local.DEFAULT_NAV_TAB_ORDER
-import io.github.aedev.flow.ui.components.layout.navigation.FlowTab
-import io.github.aedev.flow.ui.components.layout.navigation.icon
-import io.github.aedev.flow.ui.components.shared.FlowReorderButtons
-import io.github.aedev.flow.ui.components.shared.LocalDpadNavigation
-import io.github.aedev.flow.ui.components.shared.ReorderHandle
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.local.DEFAULT_NAV_TAB_ORDER
+import com.arubr.smsvcodes.ui.components.layout.navigation.FlowTab
+import com.arubr.smsvcodes.ui.components.layout.navigation.icon
+import com.arubr.smsvcodes.ui.components.shared.FlowReorderButtons
+import com.arubr.smsvcodes.ui.components.shared.LocalDpadNavigation
+import com.arubr.smsvcodes.ui.components.shared.ReorderHandle
 import sh.calvin.reorderable.ReorderableColumn
 
 private val SectionPadding = 16.dp

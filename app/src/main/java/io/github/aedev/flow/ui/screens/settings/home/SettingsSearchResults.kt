@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.settings.home
+package com.arubr.smsvcodes.ui.screens.settings.home
 
 import android.content.res.Resources
 import android.os.Build
@@ -9,18 +9,18 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
-import io.github.aedev.flow.BuildConfig
-import io.github.aedev.flow.R
-import io.github.aedev.flow.ui.components.settings.LocalNewSettings
-import io.github.aedev.flow.ui.components.settings.SettingEntry
-import io.github.aedev.flow.ui.components.settings.SettingsDestination
-import io.github.aedev.flow.ui.components.settings.SettingsListScope
-import io.github.aedev.flow.ui.components.shared.FlowEmptyState
-import io.github.aedev.flow.ui.components.shared.FlowNavRow
-import io.github.aedev.flow.ui.components.shared.LocalDpadNavigation
-import io.github.aedev.flow.ui.screens.settings.index.DestinationIndex
-import io.github.aedev.flow.ui.screens.settings.index.SearchableSetting
-import io.github.aedev.flow.ui.screens.settings.index.SettingsIndex
+import com.arubr.smsvcodes.BuildConfig
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.ui.components.settings.LocalNewSettings
+import com.arubr.smsvcodes.ui.components.settings.SettingEntry
+import com.arubr.smsvcodes.ui.components.settings.SettingsDestination
+import com.arubr.smsvcodes.ui.components.settings.SettingsListScope
+import com.arubr.smsvcodes.ui.components.shared.FlowEmptyState
+import com.arubr.smsvcodes.ui.components.shared.FlowNavRow
+import com.arubr.smsvcodes.ui.components.shared.LocalDpadNavigation
+import com.arubr.smsvcodes.ui.screens.settings.index.DestinationIndex
+import com.arubr.smsvcodes.ui.screens.settings.index.SearchableSetting
+import com.arubr.smsvcodes.ui.screens.settings.index.SettingsIndex
 
 private const val BREADCRUMB_SEPARATOR = " › "
 

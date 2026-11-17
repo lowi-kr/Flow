@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.playon
+package com.arubr.smsvcodes.ui.screens.playon
 
 import android.text.format.DateUtils
 import androidx.compose.foundation.layout.Arrangement
@@ -28,13 +28,13 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.ui.components.PlayingWaveform
-import io.github.aedev.flow.ui.components.shared.FlowNavRow
-import io.github.aedev.flow.ui.components.shared.FlowSpinner
-import io.github.aedev.flow.ui.components.shared.deviceKindIcon
-import io.github.aedev.flow.ui.components.shared.quickactions.QuickActionRow
-import io.github.aedev.flow.ui.components.shared.quickactions.QuickActionsGroup
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.ui.components.PlayingWaveform
+import com.arubr.smsvcodes.ui.components.shared.FlowNavRow
+import com.arubr.smsvcodes.ui.components.shared.FlowSpinner
+import com.arubr.smsvcodes.ui.components.shared.deviceKindIcon
+import com.arubr.smsvcodes.ui.components.shared.quickactions.QuickActionRow
+import com.arubr.smsvcodes.ui.components.shared.quickactions.QuickActionsGroup
 
 private val TileSize = 48.dp
 private val TileIconSize = 24.dp

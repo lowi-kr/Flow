@@ -1,8 +1,8 @@
-package io.github.aedev.flow.ui.components.videoplayer.motion
+package com.arubr.smsvcodes.ui.components.videoplayer.motion
 
-import io.github.aedev.flow.player.sanitizeDisplayAspectRatio
-import io.github.aedev.flow.ui.components.videoplayer.MiniPlayerCorner
-import io.github.aedev.flow.ui.components.videoplayer.SheetOpenOrigin
+import com.arubr.smsvcodes.player.sanitizeDisplayAspectRatio
+import com.arubr.smsvcodes.ui.components.videoplayer.MiniPlayerCorner
+import com.arubr.smsvcodes.ui.components.videoplayer.SheetOpenOrigin
 
 private const val WIDE_MODE_SCALE_THRESHOLD = 1.5f
 private const val SIXTEEN_NINE = 16f / 9f

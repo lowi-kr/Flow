@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui
+package com.arubr.smsvcodes.ui
 
 /**
  * The restored mini player setting is about a session brought back from last time. A song already

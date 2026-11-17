@@ -4,10 +4,10 @@
  * This file is part of Flow (https://github.com/Flow-Tube/Flow).
  */
 
-package io.github.aedev.flow.ui.screens.home
+package com.arubr.smsvcodes.ui.screens.home
 
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.data.model.Video
+import com.arubr.smsvcodes.data.model.Video
 import org.junit.Test
 
 /** Home reads subscriptions from the local store and adds the network top-up below the viewport. */

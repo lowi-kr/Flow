@@ -1,4 +1,4 @@
-package io.github.aedev.flow.data.local
+package com.arubr.smsvcodes.data.local
 
 import android.content.Context
 import androidx.datastore.core.DataMigration
@@ -6,8 +6,8 @@ import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.MutablePreferences
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.core.booleanPreferencesKey
-import io.github.aedev.flow.data.profile.ProfileFiles
-import io.github.aedev.flow.data.profile.StoreScope
+import com.arubr.smsvcodes.data.profile.ProfileFiles
+import com.arubr.smsvcodes.data.profile.StoreScope
 import kotlinx.coroutines.flow.first
 import java.io.File
 import java.io.IOException

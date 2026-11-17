@@ -1,4 +1,4 @@
-package io.github.aedev.flow.innertube.pages.explore
+package com.arubr.smsvcodes.innertube.pages.explore
 
 /**
  * The surfaces that replaced the Trending page.

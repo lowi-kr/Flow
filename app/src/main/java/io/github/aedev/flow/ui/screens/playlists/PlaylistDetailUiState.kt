@@ -1,9 +1,9 @@
-package io.github.aedev.flow.ui.screens.playlists
+package com.arubr.smsvcodes.ui.screens.playlists
 
 import androidx.annotation.PluralsRes
 import androidx.annotation.StringRes
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.ui.components.shared.quickactions.QuickActionUndo
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.ui.components.shared.quickactions.QuickActionUndo
 
 data class PlaylistUiMessage(
     @param:StringRes val stringRes: Int = 0,

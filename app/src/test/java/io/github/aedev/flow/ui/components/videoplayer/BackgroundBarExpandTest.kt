@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.videoplayer
+package com.arubr.smsvcodes.ui.components.videoplayer
 
 import androidx.compose.ui.geometry.Rect
 import com.google.common.truth.Truth.assertThat

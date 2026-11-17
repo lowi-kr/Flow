@@ -1,8 +1,8 @@
-package io.github.aedev.flow.ui.components.videoplayer.motion
+package com.arubr.smsvcodes.ui.components.videoplayer.motion
 
 import androidx.compose.ui.geometry.Rect
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.ui.components.videoplayer.SheetOpenOrigin
+import com.arubr.smsvcodes.ui.components.videoplayer.SheetOpenOrigin
 import org.junit.Test
 
 class SheetMorphTest {

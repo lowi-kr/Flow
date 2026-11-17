@@ -1,7 +1,7 @@
-package io.github.aedev.flow.sync2
+package com.arubr.smsvcodes.sync2
 
 import androidx.sqlite.SQLiteConnection
-import io.github.aedev.flow.sync2.data.ForgetHeldOnReset
+import com.arubr.smsvcodes.sync2.data.ForgetHeldOnReset
 import io.mockk.mockk
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue

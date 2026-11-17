@@ -1,4 +1,4 @@
-package io.github.aedev.flow.updater
+package com.arubr.smsvcodes.updater
 
 import android.app.PendingIntent
 import android.content.Context
@@ -13,11 +13,11 @@ import androidx.work.WorkManager
 import androidx.work.WorkerParameters
 import androidx.work.workDataOf
 import dagger.hilt.android.EntryPointAccessors
-import io.github.aedev.flow.MainActivity
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.update.UpdateEntryPoint
-import io.github.aedev.flow.data.update.UpdateFailure
-import io.github.aedev.flow.notification.NotificationHelper
+import com.arubr.smsvcodes.MainActivity
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.update.UpdateEntryPoint
+import com.arubr.smsvcodes.data.update.UpdateFailure
+import com.arubr.smsvcodes.notification.NotificationHelper
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.currentCoroutineContext
 import kotlinx.coroutines.ensureActive

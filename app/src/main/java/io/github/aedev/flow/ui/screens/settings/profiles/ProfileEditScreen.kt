@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.settings.profiles
+package com.arubr.smsvcodes.ui.screens.settings.profiles
 
 import android.net.Uri
 import androidx.activity.compose.rememberLauncherForActivityResult
@@ -27,17 +27,17 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.profile.Profile
-import io.github.aedev.flow.data.profile.ProfileAvatar
-import io.github.aedev.flow.data.profile.SlicePart
-import io.github.aedev.flow.data.profile.displayName
-import io.github.aedev.flow.ui.components.profiles.profilePhotoRequest
-import io.github.aedev.flow.ui.components.settings.SettingsPage
-import io.github.aedev.flow.ui.components.shared.FlowConnectedToggleGroup
-import io.github.aedev.flow.ui.components.shared.FlowSwitchRow
-import io.github.aedev.flow.ui.components.shared.FlowToggleOption
-import io.github.aedev.flow.ui.components.shared.LocalDpadNavigation
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.profile.Profile
+import com.arubr.smsvcodes.data.profile.ProfileAvatar
+import com.arubr.smsvcodes.data.profile.SlicePart
+import com.arubr.smsvcodes.data.profile.displayName
+import com.arubr.smsvcodes.ui.components.profiles.profilePhotoRequest
+import com.arubr.smsvcodes.ui.components.settings.SettingsPage
+import com.arubr.smsvcodes.ui.components.shared.FlowConnectedToggleGroup
+import com.arubr.smsvcodes.ui.components.shared.FlowSwitchRow
+import com.arubr.smsvcodes.ui.components.shared.FlowToggleOption
+import com.arubr.smsvcodes.ui.components.shared.LocalDpadNavigation
 
 private val PreviewSize = 88.dp
 private val ButtonSpacing = 8.dp

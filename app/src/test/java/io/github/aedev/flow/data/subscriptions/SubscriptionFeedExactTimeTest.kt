@@ -1,7 +1,7 @@
-package io.github.aedev.flow.data.subscriptions
+package com.arubr.smsvcodes.data.subscriptions
 
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.data.model.Video
+import com.arubr.smsvcodes.data.model.Video
 import org.junit.Test
 
 /** The exact-time flag travels with the timestamp it describes, and only with that one. */

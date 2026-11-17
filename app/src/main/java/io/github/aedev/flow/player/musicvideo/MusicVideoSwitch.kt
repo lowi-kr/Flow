@@ -1,14 +1,14 @@
-package io.github.aedev.flow.player.musicvideo
+package com.arubr.smsvcodes.player.musicvideo
 
 import android.content.Context
 import androidx.annotation.StringRes
 import dagger.hilt.android.qualifiers.ApplicationContext
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.localmedia.LocalMediaIds
-import io.github.aedev.flow.data.music.model.MusicTrack
-import io.github.aedev.flow.data.music.video.MusicVideoVersions
-import io.github.aedev.flow.player.EnhancedMusicPlayerManager
-import io.github.aedev.flow.utils.MusicPlayerUtils
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.localmedia.LocalMediaIds
+import com.arubr.smsvcodes.data.music.model.MusicTrack
+import com.arubr.smsvcodes.data.music.video.MusicVideoVersions
+import com.arubr.smsvcodes.player.EnhancedMusicPlayerManager
+import com.arubr.smsvcodes.utils.MusicPlayerUtils
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.Flow

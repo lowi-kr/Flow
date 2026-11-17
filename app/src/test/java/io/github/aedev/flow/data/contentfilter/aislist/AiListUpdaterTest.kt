@@ -1,8 +1,8 @@
-package io.github.aedev.flow.data.contentfilter.aislist
+package com.arubr.smsvcodes.data.contentfilter.aislist
 
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.sync2.crypto.sign
-import io.github.aedev.flow.sync2.crypto.signingPublicKey
+import com.arubr.smsvcodes.sync2.crypto.sign
+import com.arubr.smsvcodes.sync2.crypto.signingPublicKey
 import kotlinx.coroutines.test.runTest
 import kotlinx.serialization.json.JsonArray
 import kotlinx.serialization.json.JsonObject

@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.music
+package com.arubr.smsvcodes.ui.screens.music
 
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyListScope
@@ -7,16 +7,16 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.music.model.MusicPlaylist
-import io.github.aedev.flow.data.music.model.MusicTrack
-import io.github.aedev.flow.data.recommendation.music.MusicArtistInsights
-import io.github.aedev.flow.ui.components.music.header.MusicSectionAction
-import io.github.aedev.flow.ui.components.music.item.MusicTrackItem
-import io.github.aedev.flow.ui.components.shared.FlowSegmentedGap
-import io.github.aedev.flow.ui.components.shared.flowSegmentShape
-import io.github.aedev.flow.ui.theme.Dimensions
-import io.github.aedev.flow.utils.formatViewCount
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.music.model.MusicPlaylist
+import com.arubr.smsvcodes.data.music.model.MusicTrack
+import com.arubr.smsvcodes.data.recommendation.music.MusicArtistInsights
+import com.arubr.smsvcodes.ui.components.music.header.MusicSectionAction
+import com.arubr.smsvcodes.ui.components.music.item.MusicTrackItem
+import com.arubr.smsvcodes.ui.components.shared.FlowSegmentedGap
+import com.arubr.smsvcodes.ui.components.shared.flowSegmentShape
+import com.arubr.smsvcodes.ui.theme.Dimensions
+import com.arubr.smsvcodes.utils.formatViewCount
 
 internal fun LazyListScope.segmentedTracks(
     id: String,

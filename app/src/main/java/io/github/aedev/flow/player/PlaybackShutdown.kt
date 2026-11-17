@@ -1,9 +1,9 @@
-package io.github.aedev.flow.player
+package com.arubr.smsvcodes.player
 
 import android.app.ActivityManager
 import android.content.Context
-import io.github.aedev.flow.service.HeadphoneResume
-import io.github.aedev.flow.service.MusicServiceState
+import com.arubr.smsvcodes.service.HeadphoneResume
+import com.arubr.smsvcodes.service.MusicServiceState
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.withTimeoutOrNull
 

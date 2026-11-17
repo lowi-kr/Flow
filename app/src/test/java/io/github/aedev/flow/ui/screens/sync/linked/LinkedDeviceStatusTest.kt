@@ -1,8 +1,8 @@
-package io.github.aedev.flow.ui.screens.sync.linked
+package com.arubr.smsvcodes.ui.screens.sync.linked
 
-import io.github.aedev.flow.sync2.live.LiveMessage
-import io.github.aedev.flow.sync2.live.LivePeer
-import io.github.aedev.flow.sync2.service.LinkedDevice
+import com.arubr.smsvcodes.sync2.live.LiveMessage
+import com.arubr.smsvcodes.sync2.live.LivePeer
+import com.arubr.smsvcodes.sync2.service.LinkedDevice
 import org.junit.Assert.assertEquals
 import org.junit.Test
 

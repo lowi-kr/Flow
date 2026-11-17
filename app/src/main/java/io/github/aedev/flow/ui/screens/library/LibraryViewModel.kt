@@ -1,23 +1,23 @@
-package io.github.aedev.flow.ui.screens.library
+package com.arubr.smsvcodes.ui.screens.library
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
-import io.github.aedev.flow.data.local.LikedVideosRepository
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.data.local.PlaylistRepository
-import io.github.aedev.flow.data.local.ViewHistory
-import io.github.aedev.flow.data.model.toVideo
-import io.github.aedev.flow.data.notes.NotesRepository
-import io.github.aedev.flow.data.playlist.sortedFor
-import io.github.aedev.flow.data.shorts.ShortsContentFilter
-import io.github.aedev.flow.data.stats.RecapPeriod
-import io.github.aedev.flow.data.stats.RecapReadiness
-import io.github.aedev.flow.data.video.VideoDownloadManager
-import io.github.aedev.flow.ui.components.library.LIBRARY_SHELF_ITEM_LIMIT
-import io.github.aedev.flow.ui.components.library.LibraryMediaItem
-import io.github.aedev.flow.ui.components.library.LibrarySection
-import io.github.aedev.flow.ui.components.library.toLibraryMediaItem
+import com.arubr.smsvcodes.data.local.LikedVideosRepository
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.data.local.PlaylistRepository
+import com.arubr.smsvcodes.data.local.ViewHistory
+import com.arubr.smsvcodes.data.model.toVideo
+import com.arubr.smsvcodes.data.notes.NotesRepository
+import com.arubr.smsvcodes.data.playlist.sortedFor
+import com.arubr.smsvcodes.data.shorts.ShortsContentFilter
+import com.arubr.smsvcodes.data.stats.RecapPeriod
+import com.arubr.smsvcodes.data.stats.RecapReadiness
+import com.arubr.smsvcodes.data.video.VideoDownloadManager
+import com.arubr.smsvcodes.ui.components.library.LIBRARY_SHELF_ITEM_LIMIT
+import com.arubr.smsvcodes.ui.components.library.LibraryMediaItem
+import com.arubr.smsvcodes.ui.components.library.LibrarySection
+import com.arubr.smsvcodes.ui.components.library.toLibraryMediaItem
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -31,7 +31,7 @@ import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 import javax.inject.Inject
-import io.github.aedev.flow.data.music.DownloadManager as MusicDownloadManager
+import com.arubr.smsvcodes.data.music.DownloadManager as MusicDownloadManager
 
 internal data class LibraryCounts(
     val history: Int,

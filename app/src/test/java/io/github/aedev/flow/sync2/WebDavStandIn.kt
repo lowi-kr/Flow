@@ -1,8 +1,8 @@
-package io.github.aedev.flow.sync2
+package com.arubr.smsvcodes.sync2
 
-import io.github.aedev.flow.sync.crypto.SyncBytes
-import io.github.aedev.flow.sync2.crypto.sha256
-import io.github.aedev.flow.sync2.store.WebDavStore
+import com.arubr.smsvcodes.sync.crypto.SyncBytes
+import com.arubr.smsvcodes.sync2.crypto.sha256
+import com.arubr.smsvcodes.sync2.store.WebDavStore
 import io.ktor.http.ContentType
 import io.ktor.http.HttpStatusCode
 import io.ktor.server.request.httpMethod

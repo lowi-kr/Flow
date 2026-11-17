@@ -1,10 +1,10 @@
-package io.github.aedev.flow.ui.tv.navigation
+package com.arubr.smsvcodes.ui.tv.navigation
 
 import androidx.compose.runtime.Immutable
-import io.github.aedev.flow.ui.components.layout.navigation.FlowTab
-import io.github.aedev.flow.ui.components.layout.navigation.NavigationVisibility
-import io.github.aedev.flow.ui.components.layout.navigation.resolveDefaultFlowTab
-import io.github.aedev.flow.ui.components.layout.navigation.visibleFlowTabs
+import com.arubr.smsvcodes.ui.components.layout.navigation.FlowTab
+import com.arubr.smsvcodes.ui.components.layout.navigation.NavigationVisibility
+import com.arubr.smsvcodes.ui.components.layout.navigation.resolveDefaultFlowTab
+import com.arubr.smsvcodes.ui.components.layout.navigation.visibleFlowTabs
 
 /** The rail's foot: Settings is a TV root destination, not a tab the user orders. */
 const val TV_SETTINGS_ROUTE = "settings"

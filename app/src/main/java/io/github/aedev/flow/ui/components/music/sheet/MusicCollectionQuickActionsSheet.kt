@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.music.sheet
+package com.arubr.smsvcodes.ui.components.music.sheet
 
 import android.content.Intent
 import androidx.compose.material.icons.Icons
@@ -17,26 +17,26 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import io.github.aedev.flow.R
-import io.github.aedev.flow.ui.components.layout.navigation.LocalMediaNavigator
-import io.github.aedev.flow.ui.components.shared.ArtworkThumbnail
-import io.github.aedev.flow.ui.components.shared.FlowNavRow
-import io.github.aedev.flow.ui.components.shared.quickactions.QuickActionRow
-import io.github.aedev.flow.ui.components.shared.quickactions.QuickActionsDefaults
-import io.github.aedev.flow.ui.components.shared.quickactions.QuickActionsGroup
-import io.github.aedev.flow.ui.components.shared.quickactions.QuickActionsHeader
-import io.github.aedev.flow.ui.components.shared.quickactions.QuickActionsPrimaryGroup
-import io.github.aedev.flow.ui.components.shared.quickactions.QuickActionsSheet
-import io.github.aedev.flow.ui.components.shared.quickactions.QuickActionsViewModel
-import io.github.aedev.flow.ui.components.shared.quickactions.QuickPrimaryAction
-import io.github.aedev.flow.ui.components.shared.quickactions.actionRow
-import io.github.aedev.flow.ui.components.shared.quickactions.sharedQuickActionsViewModel
-import io.github.aedev.flow.ui.components.shared.rememberShareLinksWithoutText
-import io.github.aedev.flow.ui.screens.music.CollectionPlayMode
-import io.github.aedev.flow.ui.screens.music.MusicCollectionActionsViewModel
-import io.github.aedev.flow.ui.screens.music.MusicPlayerViewModel
-import io.github.aedev.flow.ui.screens.music.sharedMusicPlayerViewModel
-import io.github.aedev.flow.utils.shareLink
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.ui.components.layout.navigation.LocalMediaNavigator
+import com.arubr.smsvcodes.ui.components.shared.ArtworkThumbnail
+import com.arubr.smsvcodes.ui.components.shared.FlowNavRow
+import com.arubr.smsvcodes.ui.components.shared.quickactions.QuickActionRow
+import com.arubr.smsvcodes.ui.components.shared.quickactions.QuickActionsDefaults
+import com.arubr.smsvcodes.ui.components.shared.quickactions.QuickActionsGroup
+import com.arubr.smsvcodes.ui.components.shared.quickactions.QuickActionsHeader
+import com.arubr.smsvcodes.ui.components.shared.quickactions.QuickActionsPrimaryGroup
+import com.arubr.smsvcodes.ui.components.shared.quickactions.QuickActionsSheet
+import com.arubr.smsvcodes.ui.components.shared.quickactions.QuickActionsViewModel
+import com.arubr.smsvcodes.ui.components.shared.quickactions.QuickPrimaryAction
+import com.arubr.smsvcodes.ui.components.shared.quickactions.actionRow
+import com.arubr.smsvcodes.ui.components.shared.quickactions.sharedQuickActionsViewModel
+import com.arubr.smsvcodes.ui.components.shared.rememberShareLinksWithoutText
+import com.arubr.smsvcodes.ui.screens.music.CollectionPlayMode
+import com.arubr.smsvcodes.ui.screens.music.MusicCollectionActionsViewModel
+import com.arubr.smsvcodes.ui.screens.music.MusicPlayerViewModel
+import com.arubr.smsvcodes.ui.screens.music.sharedMusicPlayerViewModel
+import com.arubr.smsvcodes.utils.shareLink
 
 /** An album or playlist's menu: play, shuffle or start a radio from it, keep it, share it or open it. */
 @Composable

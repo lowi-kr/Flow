@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.channel
+package com.arubr.smsvcodes.ui.components.channel
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -35,11 +35,11 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.innertube.pages.channel.ChannelFilterGroup
-import io.github.aedev.flow.ui.components.shared.FlowDropdownFilterChip
-import io.github.aedev.flow.ui.components.shared.FlowFilterChip
-import io.github.aedev.flow.ui.components.shared.FlowSearchField
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.innertube.pages.channel.ChannelFilterGroup
+import com.arubr.smsvcodes.ui.components.shared.FlowDropdownFilterChip
+import com.arubr.smsvcodes.ui.components.shared.FlowFilterChip
+import com.arubr.smsvcodes.ui.components.shared.FlowSearchField
 
 /**
  * A tab's filter bar. YouTube ships two controls here and they are not interchangeable: a sort menu

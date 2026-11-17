@@ -1,4 +1,4 @@
-package io.github.aedev.flow.service
+package com.arubr.smsvcodes.service
 
 import androidx.annotation.OptIn
 import androidx.media3.common.ForwardingSimpleBasePlayer
@@ -7,9 +7,9 @@ import androidx.media3.common.util.UnstableApi
 import androidx.media3.session.MediaSession
 import com.google.common.util.concurrent.Futures
 import com.google.common.util.concurrent.ListenableFuture
-import io.github.aedev.flow.player.APP_CONTROLLER_HINT
-import io.github.aedev.flow.player.PlaybackTarget
-import io.github.aedev.flow.player.RemotePlayer
+import com.arubr.smsvcodes.player.APP_CONTROLLER_HINT
+import com.arubr.smsvcodes.player.PlaybackTarget
+import com.arubr.smsvcodes.player.RemotePlayer
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 

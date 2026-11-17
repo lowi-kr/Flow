@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.library
+package com.arubr.smsvcodes.ui.screens.library
 
 import android.text.format.Formatter
 import androidx.compose.foundation.layout.Arrangement
@@ -12,11 +12,11 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.ui.components.layout.flowBottomContentPadding
-import io.github.aedev.flow.ui.components.shared.FlowNavRow
-import io.github.aedev.flow.ui.components.shared.FlowSegmentedGap
-import io.github.aedev.flow.ui.components.shared.flowRowGroupShape
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.ui.components.layout.flowBottomContentPadding
+import com.arubr.smsvcodes.ui.components.shared.FlowNavRow
+import com.arubr.smsvcodes.ui.components.shared.FlowSegmentedGap
+import com.arubr.smsvcodes.ui.components.shared.flowRowGroupShape
 
 /** A folder on the settings row kit: its name, how many files and how much space, selected when open. */
 @Composable

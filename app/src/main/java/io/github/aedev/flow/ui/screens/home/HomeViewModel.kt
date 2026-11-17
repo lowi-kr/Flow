@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.home
+package com.arubr.smsvcodes.ui.screens.home
 
 import android.content.Context
 import android.util.Log
@@ -7,38 +7,38 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.engagement.FeedInvalidationBus
-import io.github.aedev.flow.data.feed.FeedPrefetchQueue
-import io.github.aedev.flow.data.feed.FeedPrefetchRequest
-import io.github.aedev.flow.data.local.CachedHomeVideo
-import io.github.aedev.flow.data.local.HomeFeedCacheFilters
-import io.github.aedev.flow.data.local.HomeFeedCacheRepository
-import io.github.aedev.flow.data.local.SubscriptionRepository
-import io.github.aedev.flow.data.local.ViewHistory
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.data.model.toVideo
-import io.github.aedev.flow.data.recommendation.ChannelMemoryRepository
-import io.github.aedev.flow.data.recommendation.FeedExclusions
-import io.github.aedev.flow.data.recommendation.FlowNeuroEngine
-import io.github.aedev.flow.data.recommendation.GraphSeedInput
-import io.github.aedev.flow.data.recommendation.NeighbourChannel
-import io.github.aedev.flow.data.recommendation.NeighbourChannelsRepository
-import io.github.aedev.flow.data.recommendation.NeuroScoring
-import io.github.aedev.flow.data.recommendation.RankTrace
-import io.github.aedev.flow.data.recommendation.UserBrain
-import io.github.aedev.flow.data.repository.YouTubeRepository
-import io.github.aedev.flow.data.repository.needsChannelMetadata
-import io.github.aedev.flow.data.shorts.ShortsFeedRepository
-import io.github.aedev.flow.data.subscriptions.HomeSubscriptionUploads
-import io.github.aedev.flow.innertube.pages.renderer.FeedItemOwner
-import io.github.aedev.flow.ui.screens.home.chips.ChipFeedContext
-import io.github.aedev.flow.ui.screens.home.chips.HomeChip
-import io.github.aedev.flow.ui.screens.home.chips.HomeChipFeeds
-import io.github.aedev.flow.ui.screens.home.chips.HomeChipsState
-import io.github.aedev.flow.utils.PerformanceDispatcher
-import io.github.aedev.flow.utils.ThumbnailUrlResolver
-import io.github.aedev.flow.utils.traced
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.engagement.FeedInvalidationBus
+import com.arubr.smsvcodes.data.feed.FeedPrefetchQueue
+import com.arubr.smsvcodes.data.feed.FeedPrefetchRequest
+import com.arubr.smsvcodes.data.local.CachedHomeVideo
+import com.arubr.smsvcodes.data.local.HomeFeedCacheFilters
+import com.arubr.smsvcodes.data.local.HomeFeedCacheRepository
+import com.arubr.smsvcodes.data.local.SubscriptionRepository
+import com.arubr.smsvcodes.data.local.ViewHistory
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.data.model.toVideo
+import com.arubr.smsvcodes.data.recommendation.ChannelMemoryRepository
+import com.arubr.smsvcodes.data.recommendation.FeedExclusions
+import com.arubr.smsvcodes.data.recommendation.FlowNeuroEngine
+import com.arubr.smsvcodes.data.recommendation.GraphSeedInput
+import com.arubr.smsvcodes.data.recommendation.NeighbourChannel
+import com.arubr.smsvcodes.data.recommendation.NeighbourChannelsRepository
+import com.arubr.smsvcodes.data.recommendation.NeuroScoring
+import com.arubr.smsvcodes.data.recommendation.RankTrace
+import com.arubr.smsvcodes.data.recommendation.UserBrain
+import com.arubr.smsvcodes.data.repository.YouTubeRepository
+import com.arubr.smsvcodes.data.repository.needsChannelMetadata
+import com.arubr.smsvcodes.data.shorts.ShortsFeedRepository
+import com.arubr.smsvcodes.data.subscriptions.HomeSubscriptionUploads
+import com.arubr.smsvcodes.innertube.pages.renderer.FeedItemOwner
+import com.arubr.smsvcodes.ui.screens.home.chips.ChipFeedContext
+import com.arubr.smsvcodes.ui.screens.home.chips.HomeChip
+import com.arubr.smsvcodes.ui.screens.home.chips.HomeChipFeeds
+import com.arubr.smsvcodes.ui.screens.home.chips.HomeChipsState
+import com.arubr.smsvcodes.utils.PerformanceDispatcher
+import com.arubr.smsvcodes.utils.ThumbnailUrlResolver
+import com.arubr.smsvcodes.utils.traced
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.CoroutineStart
 import kotlinx.coroutines.FlowPreview
@@ -91,10 +91,10 @@ class HomeViewModel
     constructor(
         private val repository: YouTubeRepository,
         private val subscriptionRepository: SubscriptionRepository,
-        private val subscriptionFeedRepository: io.github.aedev.flow.data.subscriptions.SubscriptionFeedRepository,
+        private val subscriptionFeedRepository: com.arubr.smsvcodes.data.subscriptions.SubscriptionFeedRepository,
         private val shortsRepository: ShortsFeedRepository,
-        private val playerPreferences: io.github.aedev.flow.data.local.PlayerPreferences,
-        private val shortsQueueHandoff: io.github.aedev.flow.data.shorts.queue.ShortsQueueHandoff,
+        private val playerPreferences: com.arubr.smsvcodes.data.local.PlayerPreferences,
+        private val shortsQueueHandoff: com.arubr.smsvcodes.data.shorts.queue.ShortsQueueHandoff,
         private val feedSources: HomeFeedSources,
         private val homeSubscriptionUploads: HomeSubscriptionUploads,
         private val persistentHomeFeedCache: HomeFeedCacheRepository,
@@ -107,8 +107,8 @@ class HomeViewModel
         @ApplicationContext private val appContext: Context,
     ) : ViewModel() {
         fun shortsShelfSource(
-            shelf: List<io.github.aedev.flow.data.model.Video>,
-            tapped: io.github.aedev.flow.data.model.Video,
+            shelf: List<com.arubr.smsvcodes.data.model.Video>,
+            tapped: com.arubr.smsvcodes.data.model.Video,
         ) = shortsQueueHandoff.sourceForShelf(shelf, tapped)
 
         companion object {

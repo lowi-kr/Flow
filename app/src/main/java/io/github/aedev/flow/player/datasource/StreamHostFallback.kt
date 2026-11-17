@@ -1,4 +1,4 @@
-package io.github.aedev.flow.player.datasource
+package com.arubr.smsvcodes.player.datasource
 
 import java.net.URI
 import java.net.URLDecoder

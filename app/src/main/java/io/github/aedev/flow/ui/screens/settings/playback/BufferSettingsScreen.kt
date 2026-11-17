@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.settings.playback
+package com.arubr.smsvcodes.ui.screens.settings.playback
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -6,21 +6,21 @@ import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.local.BufferProfile
-import io.github.aedev.flow.player.cache.DiskReadAheadPolicy
-import io.github.aedev.flow.player.config.PlayerConfig
-import io.github.aedev.flow.ui.components.settings.SettingEntry
-import io.github.aedev.flow.ui.components.settings.SettingsFootnote
-import io.github.aedev.flow.ui.components.settings.SettingsGroupScope
-import io.github.aedev.flow.ui.components.settings.SettingsPage
-import io.github.aedev.flow.ui.components.settings.SettingsTarget
-import io.github.aedev.flow.ui.components.settings.nav
-import io.github.aedev.flow.ui.components.settings.option
-import io.github.aedev.flow.ui.components.settings.slider
-import io.github.aedev.flow.ui.components.settings.switch
-import io.github.aedev.flow.ui.screens.settings.index.BufferIndex
-import io.github.aedev.flow.ui.screens.settings.index.DownloadsIndex
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.local.BufferProfile
+import com.arubr.smsvcodes.player.cache.DiskReadAheadPolicy
+import com.arubr.smsvcodes.player.config.PlayerConfig
+import com.arubr.smsvcodes.ui.components.settings.SettingEntry
+import com.arubr.smsvcodes.ui.components.settings.SettingsFootnote
+import com.arubr.smsvcodes.ui.components.settings.SettingsGroupScope
+import com.arubr.smsvcodes.ui.components.settings.SettingsPage
+import com.arubr.smsvcodes.ui.components.settings.SettingsTarget
+import com.arubr.smsvcodes.ui.components.settings.nav
+import com.arubr.smsvcodes.ui.components.settings.option
+import com.arubr.smsvcodes.ui.components.settings.slider
+import com.arubr.smsvcodes.ui.components.settings.switch
+import com.arubr.smsvcodes.ui.screens.settings.index.BufferIndex
+import com.arubr.smsvcodes.ui.screens.settings.index.DownloadsIndex
 import java.util.Locale
 import kotlin.math.roundToInt
 

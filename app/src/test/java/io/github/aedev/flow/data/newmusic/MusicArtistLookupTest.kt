@@ -1,6 +1,6 @@
-package io.github.aedev.flow.data.newmusic
+package com.arubr.smsvcodes.data.newmusic
 
-import io.github.aedev.flow.data.music.model.MusicArtist
+import com.arubr.smsvcodes.data.music.model.MusicArtist
 import kotlinx.coroutines.async
 import kotlinx.coroutines.awaitAll
 import kotlinx.coroutines.delay

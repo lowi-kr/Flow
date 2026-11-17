@@ -1,11 +1,11 @@
-package io.github.aedev.flow.ui.screens.notes
+package com.arubr.smsvcodes.ui.screens.notes
 
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.data.notes.Note
-import io.github.aedev.flow.data.notes.NoteKind
-import io.github.aedev.flow.utils.filterBySearch
-import io.github.aedev.flow.utils.foldForSearch
-import io.github.aedev.flow.utils.youtubeWatchUrl
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.data.notes.Note
+import com.arubr.smsvcodes.data.notes.NoteKind
+import com.arubr.smsvcodes.utils.filterBySearch
+import com.arubr.smsvcodes.utils.foldForSearch
+import com.arubr.smsvcodes.utils.youtubeWatchUrl
 
 internal enum class NotesFilter { All, Videos, Channels }
 

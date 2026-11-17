@@ -1,4 +1,4 @@
-package io.github.aedev.flow.data.local
+package com.arubr.smsvcodes.data.local
 
 /** How large a video thumbnail is fetched. HIGH is what every card loaded before this was a choice. */
 enum class ThumbnailQuality {

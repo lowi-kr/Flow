@@ -1,9 +1,9 @@
-package io.github.aedev.flow.data.translation
+package com.arubr.smsvcodes.data.translation
 
 import androidx.collection.LruCache
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.innertube.YouTube
-import io.github.aedev.flow.utils.PerformanceDispatcher
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.innertube.YouTube
+import com.arubr.smsvcodes.utils.PerformanceDispatcher
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.withContext
 import okhttp3.OkHttpClient

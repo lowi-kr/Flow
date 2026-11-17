@@ -1,6 +1,6 @@
-package io.github.aedev.flow.ui.components.musicplayer.lyrics
+package com.arubr.smsvcodes.ui.components.musicplayer.lyrics
 
-import io.github.aedev.flow.data.lyrics.WordTimestamp
+import com.arubr.smsvcodes.data.lyrics.WordTimestamp
 import java.text.Normalizer
 
 /** Roughly how long a sung syllable lasts; spreads a short line's fill when its end is unknown. */

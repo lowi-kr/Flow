@@ -1,18 +1,18 @@
-package io.github.aedev.flow.sync2.store
+package com.arubr.smsvcodes.sync2.store
 
-import io.github.aedev.flow.sync2.crypto.BOX_OVERHEAD
-import io.github.aedev.flow.sync2.crypto.ProtocolError
-import io.github.aedev.flow.sync2.crypto.Purpose
-import io.github.aedev.flow.sync2.crypto.open
-import io.github.aedev.flow.sync2.crypto.reject
-import io.github.aedev.flow.sync2.crypto.seal
-import io.github.aedev.flow.sync2.crypto.sealWithSalt
-import io.github.aedev.flow.sync2.crypto.sha256
-import io.github.aedev.flow.sync2.crypto.sign
-import io.github.aedev.flow.sync2.crypto.tag
-import io.github.aedev.flow.sync2.crypto.u32
-import io.github.aedev.flow.sync2.crypto.u64
-import io.github.aedev.flow.sync2.crypto.verify
+import com.arubr.smsvcodes.sync2.crypto.BOX_OVERHEAD
+import com.arubr.smsvcodes.sync2.crypto.ProtocolError
+import com.arubr.smsvcodes.sync2.crypto.Purpose
+import com.arubr.smsvcodes.sync2.crypto.open
+import com.arubr.smsvcodes.sync2.crypto.reject
+import com.arubr.smsvcodes.sync2.crypto.seal
+import com.arubr.smsvcodes.sync2.crypto.sealWithSalt
+import com.arubr.smsvcodes.sync2.crypto.sha256
+import com.arubr.smsvcodes.sync2.crypto.sign
+import com.arubr.smsvcodes.sync2.crypto.tag
+import com.arubr.smsvcodes.sync2.crypto.u32
+import com.arubr.smsvcodes.sync2.crypto.u64
+import com.arubr.smsvcodes.sync2.crypto.verify
 import java.nio.ByteBuffer
 import java.security.MessageDigest
 

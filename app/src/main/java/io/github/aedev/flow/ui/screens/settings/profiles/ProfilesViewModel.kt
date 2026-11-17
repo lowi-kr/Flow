@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.settings.profiles
+package com.arubr.smsvcodes.ui.screens.settings.profiles
 
 import android.content.Context
 import android.net.Uri
@@ -6,16 +6,16 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
-import io.github.aedev.flow.data.profile.ActiveProfile
-import io.github.aedev.flow.data.profile.CreateResult
-import io.github.aedev.flow.data.profile.Profile
-import io.github.aedev.flow.data.profile.ProfileAvatar
-import io.github.aedev.flow.data.profile.ProfileRegistryState
-import io.github.aedev.flow.data.profile.ProfileRepository
-import io.github.aedev.flow.data.profile.ProfileSwitcher
-import io.github.aedev.flow.data.profile.SwitchRefusal
-import io.github.aedev.flow.data.profile.SwitchResult
-import io.github.aedev.flow.sync2.service.LinkedProfiles
+import com.arubr.smsvcodes.data.profile.ActiveProfile
+import com.arubr.smsvcodes.data.profile.CreateResult
+import com.arubr.smsvcodes.data.profile.Profile
+import com.arubr.smsvcodes.data.profile.ProfileAvatar
+import com.arubr.smsvcodes.data.profile.ProfileRegistryState
+import com.arubr.smsvcodes.data.profile.ProfileRepository
+import com.arubr.smsvcodes.data.profile.ProfileSwitcher
+import com.arubr.smsvcodes.data.profile.SwitchRefusal
+import com.arubr.smsvcodes.data.profile.SwitchResult
+import com.arubr.smsvcodes.sync2.service.LinkedProfiles
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted

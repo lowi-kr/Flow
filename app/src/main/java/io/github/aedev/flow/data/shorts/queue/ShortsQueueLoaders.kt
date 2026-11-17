@@ -1,14 +1,14 @@
-package io.github.aedev.flow.data.shorts.queue
+package com.arubr.smsvcodes.data.shorts.queue
 
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.data.local.PlaylistRepository
-import io.github.aedev.flow.data.model.ShortVideo
-import io.github.aedev.flow.data.model.toShortVideo
-import io.github.aedev.flow.data.recommendation.FeedExclusions
-import io.github.aedev.flow.data.shorts.ShortsFeedRepository
-import io.github.aedev.flow.data.shorts.spreadChannels
-import io.github.aedev.flow.data.subscriptions.SubscriptionFeedRepository
-import io.github.aedev.flow.data.subscriptions.SubscriptionWatchedVideos
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.data.local.PlaylistRepository
+import com.arubr.smsvcodes.data.model.ShortVideo
+import com.arubr.smsvcodes.data.model.toShortVideo
+import com.arubr.smsvcodes.data.recommendation.FeedExclusions
+import com.arubr.smsvcodes.data.shorts.ShortsFeedRepository
+import com.arubr.smsvcodes.data.shorts.spreadChannels
+import com.arubr.smsvcodes.data.subscriptions.SubscriptionFeedRepository
+import com.arubr.smsvcodes.data.subscriptions.SubscriptionWatchedVideos
 import kotlinx.coroutines.flow.first
 
 /**

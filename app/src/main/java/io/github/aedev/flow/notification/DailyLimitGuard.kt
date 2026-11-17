@@ -1,4 +1,4 @@
-package io.github.aedev.flow.notification
+package com.arubr.smsvcodes.notification
 
 import android.content.Context
 import android.os.SystemClock
@@ -8,17 +8,17 @@ import androidx.lifecycle.ProcessLifecycleOwner
 import androidx.media3.common.util.UnstableApi
 import dagger.Lazy
 import dagger.hilt.android.qualifiers.ApplicationContext
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.wellbeing.DailyLimitPolicy
-import io.github.aedev.flow.data.wellbeing.DailyLimitSettings
-import io.github.aedev.flow.data.wellbeing.DailyLimitStore
-import io.github.aedev.flow.data.wellbeing.DailyTally
-import io.github.aedev.flow.di.ApplicationScope
-import io.github.aedev.flow.player.EnhancedMusicPlayerManager
-import io.github.aedev.flow.player.EnhancedPlayerManager
-import io.github.aedev.flow.player.shorts.ShortsPlayerPool
-import io.github.aedev.flow.service.MusicServiceState
-import io.github.aedev.flow.ui.screens.settings.wellbeing.millisUntilNextDay
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.wellbeing.DailyLimitPolicy
+import com.arubr.smsvcodes.data.wellbeing.DailyLimitSettings
+import com.arubr.smsvcodes.data.wellbeing.DailyLimitStore
+import com.arubr.smsvcodes.data.wellbeing.DailyTally
+import com.arubr.smsvcodes.di.ApplicationScope
+import com.arubr.smsvcodes.player.EnhancedMusicPlayerManager
+import com.arubr.smsvcodes.player.EnhancedPlayerManager
+import com.arubr.smsvcodes.player.shorts.ShortsPlayerPool
+import com.arubr.smsvcodes.service.MusicServiceState
+import com.arubr.smsvcodes.ui.screens.settings.wellbeing.millisUntilNextDay
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.NonCancellable

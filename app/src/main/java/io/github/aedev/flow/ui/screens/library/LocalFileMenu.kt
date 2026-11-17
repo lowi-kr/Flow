@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.library
+package com.arubr.smsvcodes.ui.screens.library
 
 import android.content.Context
 import android.media.MediaExtractor
@@ -22,20 +22,20 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.localmedia.LocalMediaItem
-import io.github.aedev.flow.ui.components.shared.ArtworkThumbnail
-import io.github.aedev.flow.ui.components.shared.quickactions.MediaDetailRows
-import io.github.aedev.flow.ui.components.shared.quickactions.QuickActionsDefaults
-import io.github.aedev.flow.ui.components.shared.quickactions.QuickActionsGroup
-import io.github.aedev.flow.ui.components.shared.quickactions.QuickActionsHeader
-import io.github.aedev.flow.ui.components.shared.quickactions.QuickActionsPageHeader
-import io.github.aedev.flow.ui.components.shared.quickactions.QuickActionsPrimaryGroup
-import io.github.aedev.flow.ui.components.shared.quickactions.QuickActionsSheet
-import io.github.aedev.flow.ui.components.shared.quickactions.QuickPrimaryAction
-import io.github.aedev.flow.ui.components.shared.quickactions.actionRow
-import io.github.aedev.flow.utils.formatDurationMillis
-import io.github.aedev.flow.utils.formatYouTubeRelativeTime
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.localmedia.LocalMediaItem
+import com.arubr.smsvcodes.ui.components.shared.ArtworkThumbnail
+import com.arubr.smsvcodes.ui.components.shared.quickactions.MediaDetailRows
+import com.arubr.smsvcodes.ui.components.shared.quickactions.QuickActionsDefaults
+import com.arubr.smsvcodes.ui.components.shared.quickactions.QuickActionsGroup
+import com.arubr.smsvcodes.ui.components.shared.quickactions.QuickActionsHeader
+import com.arubr.smsvcodes.ui.components.shared.quickactions.QuickActionsPageHeader
+import com.arubr.smsvcodes.ui.components.shared.quickactions.QuickActionsPrimaryGroup
+import com.arubr.smsvcodes.ui.components.shared.quickactions.QuickActionsSheet
+import com.arubr.smsvcodes.ui.components.shared.quickactions.QuickPrimaryAction
+import com.arubr.smsvcodes.ui.components.shared.quickactions.actionRow
+import com.arubr.smsvcodes.utils.formatDurationMillis
+import com.arubr.smsvcodes.utils.formatYouTubeRelativeTime
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 

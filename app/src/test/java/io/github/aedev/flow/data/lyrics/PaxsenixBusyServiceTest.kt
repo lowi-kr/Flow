@@ -1,7 +1,7 @@
-package io.github.aedev.flow.data.lyrics
+package com.arubr.smsvcodes.data.lyrics
 
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.data.lyrics.paxsenix.Paxsenix
+import com.arubr.smsvcodes.data.lyrics.paxsenix.Paxsenix
 import kotlinx.coroutines.CompletableDeferred
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job

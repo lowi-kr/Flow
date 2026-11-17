@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.music.sheet
+package com.arubr.smsvcodes.ui.components.music.sheet
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.PlaylistAdd
@@ -13,12 +13,12 @@ import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.music.model.MusicTrack
-import io.github.aedev.flow.ui.components.shared.CollectionEditDialog
-import io.github.aedev.flow.ui.components.shared.CollectionSheetEntry
-import io.github.aedev.flow.ui.components.shared.SaveToCollectionSheet
-import io.github.aedev.flow.ui.screens.music.SaveSongViewModel
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.music.model.MusicTrack
+import com.arubr.smsvcodes.ui.components.shared.CollectionEditDialog
+import com.arubr.smsvcodes.ui.components.shared.CollectionSheetEntry
+import com.arubr.smsvcodes.ui.components.shared.SaveToCollectionSheet
+import com.arubr.smsvcodes.ui.screens.music.SaveSongViewModel
 
 /** Saves [track] to your music playlists, showing the ones that already hold it. */
 @Composable

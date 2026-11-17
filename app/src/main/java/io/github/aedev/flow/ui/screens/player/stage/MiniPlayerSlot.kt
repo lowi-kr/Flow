@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.player.stage
+package com.arubr.smsvcodes.ui.screens.player.stage
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -15,12 +15,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import io.github.aedev.flow.R
-import io.github.aedev.flow.player.EnhancedPlayerManager
-import io.github.aedev.flow.ui.components.videoplayer.MiniPlayerControls
-import io.github.aedev.flow.ui.components.videoplayer.MiniPlayerCountdown
-import io.github.aedev.flow.ui.theme.PlayerScrim
-import io.github.aedev.flow.ui.theme.PlayerScrimContent
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.player.EnhancedPlayerManager
+import com.arubr.smsvcodes.ui.components.videoplayer.MiniPlayerControls
+import com.arubr.smsvcodes.ui.components.videoplayer.MiniPlayerCountdown
+import com.arubr.smsvcodes.ui.theme.PlayerScrim
+import com.arubr.smsvcodes.ui.theme.PlayerScrimContent
 
 /** The controls the collapsed player draws over the mini video surface, or the autoplay countdown while one runs. */
 @Composable

@@ -1,4 +1,4 @@
-package io.github.aedev.flow.applock
+package com.arubr.smsvcodes.applock
 
 import android.os.Build
 import java.util.concurrent.TimeUnit

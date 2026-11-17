@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.settings.playback
+package com.arubr.smsvcodes.ui.screens.settings.playback
 
 import android.content.Intent
 import android.net.Uri
@@ -15,10 +15,10 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.lifecycle.compose.LifecycleResumeEffect
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import io.github.aedev.flow.R
-import io.github.aedev.flow.ui.components.settings.isNew
-import io.github.aedev.flow.ui.components.shared.FlowSwitchRow
-import io.github.aedev.flow.ui.screens.settings.index.PlaybackIndex
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.ui.components.settings.isNew
+import com.arubr.smsvcodes.ui.components.shared.FlowSwitchRow
+import com.arubr.smsvcodes.ui.screens.settings.index.PlaybackIndex
 import kotlinx.coroutines.flow.StateFlow
 
 /**

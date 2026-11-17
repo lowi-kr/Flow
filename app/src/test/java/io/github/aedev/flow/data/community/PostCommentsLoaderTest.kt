@@ -1,9 +1,9 @@
-package io.github.aedev.flow.data.community
+package com.arubr.smsvcodes.data.community
 
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.data.model.Comment
-import io.github.aedev.flow.innertube.pages.renderer.CommunityCommentsPage
-import io.github.aedev.flow.innertube.pages.renderer.CommunityPost
+import com.arubr.smsvcodes.data.model.Comment
+import com.arubr.smsvcodes.innertube.pages.renderer.CommunityCommentsPage
+import com.arubr.smsvcodes.innertube.pages.renderer.CommunityPost
 import kotlinx.coroutines.CompletableDeferred
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.StandardTestDispatcher

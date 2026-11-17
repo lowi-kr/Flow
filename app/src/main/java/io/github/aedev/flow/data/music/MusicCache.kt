@@ -1,6 +1,6 @@
-package io.github.aedev.flow.data.music
+package com.arubr.smsvcodes.data.music
 
-import io.github.aedev.flow.data.music.model.MusicTrack
+import com.arubr.smsvcodes.data.music.model.MusicTrack
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
 import java.util.concurrent.ConcurrentHashMap

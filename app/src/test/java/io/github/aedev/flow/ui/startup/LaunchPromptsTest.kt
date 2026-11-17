@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.startup
+package com.arubr.smsvcodes.ui.startup
 
 import com.google.common.truth.Truth.assertThat
 import kotlinx.coroutines.async

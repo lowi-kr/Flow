@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.subscriptions
+package com.arubr.smsvcodes.ui.screens.subscriptions
 
 import android.app.Application
 import android.content.Context
@@ -26,8 +26,8 @@ import androidx.compose.ui.unit.dp
 import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.model.Channel
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.model.Channel
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith

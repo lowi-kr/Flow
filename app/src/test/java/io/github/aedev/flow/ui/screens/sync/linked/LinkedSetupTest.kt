@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.sync.linked
+package com.arubr.smsvcodes.ui.screens.sync.linked
 
 import android.app.Application
 import android.content.Context
@@ -19,9 +19,9 @@ import androidx.compose.ui.test.performSemanticsAction
 import androidx.compose.ui.test.performTextInput
 import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import io.github.aedev.flow.R
-import io.github.aedev.flow.sync2.linking.RestoreDevice
-import io.github.aedev.flow.sync2.service.LinkedError
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.sync2.linking.RestoreDevice
+import com.arubr.smsvcodes.sync2.service.LinkedError
 import org.junit.Assert.assertEquals
 import org.junit.Rule
 import org.junit.Test

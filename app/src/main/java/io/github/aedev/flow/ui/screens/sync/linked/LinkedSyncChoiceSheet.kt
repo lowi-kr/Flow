@@ -1,17 +1,17 @@
-package io.github.aedev.flow.ui.screens.sync.linked
+package com.arubr.smsvcodes.ui.screens.sync.linked
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.res.stringResource
-import io.github.aedev.flow.R
-import io.github.aedev.flow.ui.components.shared.FlowSheetHeader
-import io.github.aedev.flow.ui.components.shared.FlowSwitchRow
-import io.github.aedev.flow.ui.components.shared.quickactions.QuickActionRow
-import io.github.aedev.flow.ui.components.shared.quickactions.QuickActionsGroup
-import io.github.aedev.flow.ui.components.shared.quickactions.QuickActionsSheet
-import io.github.aedev.flow.ui.screens.sync.COLLECTION_KEYS
-import io.github.aedev.flow.ui.screens.sync.collectionDescription
-import io.github.aedev.flow.ui.screens.sync.collectionIcon
-import io.github.aedev.flow.ui.screens.sync.collectionLabel
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.ui.components.shared.FlowSheetHeader
+import com.arubr.smsvcodes.ui.components.shared.FlowSwitchRow
+import com.arubr.smsvcodes.ui.components.shared.quickactions.QuickActionRow
+import com.arubr.smsvcodes.ui.components.shared.quickactions.QuickActionsGroup
+import com.arubr.smsvcodes.ui.components.shared.quickactions.QuickActionsSheet
+import com.arubr.smsvcodes.ui.screens.sync.COLLECTION_KEYS
+import com.arubr.smsvcodes.ui.screens.sync.collectionDescription
+import com.arubr.smsvcodes.ui.screens.sync.collectionIcon
+import com.arubr.smsvcodes.ui.screens.sync.collectionLabel
 
 /** A switch per collection: off leaves it out of what this device sends and takes in. */
 @Composable

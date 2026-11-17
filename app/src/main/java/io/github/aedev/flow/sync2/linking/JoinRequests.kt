@@ -1,9 +1,9 @@
-package io.github.aedev.flow.sync2.linking
+package com.arubr.smsvcodes.sync2.linking
 
-import io.github.aedev.flow.sync.crypto.SyncBytes
-import io.github.aedev.flow.sync.crypto.SyncCrypto
-import io.github.aedev.flow.sync2.engine.LinkedException
-import io.github.aedev.flow.sync2.store.ServerStore
+import com.arubr.smsvcodes.sync.crypto.SyncBytes
+import com.arubr.smsvcodes.sync.crypto.SyncCrypto
+import com.arubr.smsvcodes.sync2.engine.LinkedException
+import com.arubr.smsvcodes.sync2.store.ServerStore
 import kotlinx.coroutines.delay
 
 private const val POLL_MS = 2_000L

@@ -1,13 +1,13 @@
-package io.github.aedev.flow.ui.screens.player.stage
+package com.arubr.smsvcodes.ui.screens.player.stage
 
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.data.local.FullscreenSidePanelWidth
-import io.github.aedev.flow.data.local.FullscreenSidePanelWidth.DEFAULT
-import io.github.aedev.flow.data.local.FullscreenSidePanelWidth.NARROW
-import io.github.aedev.flow.data.local.FullscreenSidePanelWidth.SMALL
-import io.github.aedev.flow.data.local.FullscreenSidePanelWidth.WIDE
+import com.arubr.smsvcodes.data.local.FullscreenSidePanelWidth
+import com.arubr.smsvcodes.data.local.FullscreenSidePanelWidth.DEFAULT
+import com.arubr.smsvcodes.data.local.FullscreenSidePanelWidth.NARROW
+import com.arubr.smsvcodes.data.local.FullscreenSidePanelWidth.SMALL
+import com.arubr.smsvcodes.data.local.FullscreenSidePanelWidth.WIDE
 import org.junit.Test
 
 class SidePanelWidthTest {

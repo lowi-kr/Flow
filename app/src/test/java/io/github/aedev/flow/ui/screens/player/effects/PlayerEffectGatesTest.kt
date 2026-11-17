@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.player.effects
+package com.arubr.smsvcodes.ui.screens.player.effects
 
 import android.app.Application
 import androidx.compose.runtime.CompositionLocalProvider
@@ -12,12 +12,12 @@ import androidx.lifecycle.LifecycleRegistry
 import androidx.lifecycle.compose.LocalLifecycleOwner
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.player.EnhancedPlayerManager
-import io.github.aedev.flow.ui.screens.player.VideoPlayerViewModel
-import io.github.aedev.flow.ui.screens.player.fakeUiState
-import io.github.aedev.flow.ui.screens.player.fakeVideo
-import io.github.aedev.flow.ui.screens.player.relaxedVideoPlayerViewModel
-import io.github.aedev.flow.ui.screens.player.state.PlayerScreenState
+import com.arubr.smsvcodes.player.EnhancedPlayerManager
+import com.arubr.smsvcodes.ui.screens.player.VideoPlayerViewModel
+import com.arubr.smsvcodes.ui.screens.player.fakeUiState
+import com.arubr.smsvcodes.ui.screens.player.fakeVideo
+import com.arubr.smsvcodes.ui.screens.player.relaxedVideoPlayerViewModel
+import com.arubr.smsvcodes.ui.screens.player.state.PlayerScreenState
 import io.mockk.every
 import io.mockk.mockk
 import io.mockk.mockkObject

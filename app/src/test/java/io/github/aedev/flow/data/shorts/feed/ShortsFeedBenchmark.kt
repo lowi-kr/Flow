@@ -1,9 +1,9 @@
-package io.github.aedev.flow.data.shorts.feed
+package com.arubr.smsvcodes.data.shorts.feed
 
-import io.github.aedev.flow.data.model.ShortVideo
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.data.recommendation.ShortsSeedInput
-import io.github.aedev.flow.data.recommendation.ShortsSeedSource
+import com.arubr.smsvcodes.data.model.ShortVideo
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.data.recommendation.ShortsSeedInput
+import com.arubr.smsvcodes.data.recommendation.ShortsSeedSource
 import java.util.concurrent.atomic.AtomicInteger
 import kotlin.random.Random
 

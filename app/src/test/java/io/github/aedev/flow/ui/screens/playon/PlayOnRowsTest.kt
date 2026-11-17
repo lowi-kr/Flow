@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.playon
+package com.arubr.smsvcodes.ui.screens.playon
 
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse

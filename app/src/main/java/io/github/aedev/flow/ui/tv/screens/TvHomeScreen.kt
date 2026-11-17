@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.tv.screens
+package com.arubr.smsvcodes.ui.tv.screens
 
 import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.foundation.layout.Column
@@ -14,15 +14,15 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.ui.components.rememberFeedGridLayout
-import io.github.aedev.flow.ui.components.shared.dpadFocusGroup
-import io.github.aedev.flow.ui.screens.home.HomeFeedBody
-import io.github.aedev.flow.ui.screens.home.HomeFeedEffects
-import io.github.aedev.flow.ui.screens.home.HomeViewModel
-import io.github.aedev.flow.ui.screens.home.chips.HomeChipRow
-import io.github.aedev.flow.ui.screens.home.rememberHomeGridStates
-import io.github.aedev.flow.ui.tv.theme.LocalTvDimens
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.ui.components.rememberFeedGridLayout
+import com.arubr.smsvcodes.ui.components.shared.dpadFocusGroup
+import com.arubr.smsvcodes.ui.screens.home.HomeFeedBody
+import com.arubr.smsvcodes.ui.screens.home.HomeFeedEffects
+import com.arubr.smsvcodes.ui.screens.home.HomeViewModel
+import com.arubr.smsvcodes.ui.screens.home.chips.HomeChipRow
+import com.arubr.smsvcodes.ui.screens.home.rememberHomeGridStates
+import com.arubr.smsvcodes.ui.tv.theme.LocalTvDimens
 
 /** Grid cells sit edge to edge and each card insets itself, so this much of the margin is already there. */
 private val CardInset = 16.dp

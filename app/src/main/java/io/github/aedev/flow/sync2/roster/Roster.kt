@@ -1,15 +1,15 @@
-package io.github.aedev.flow.sync2.roster
+package com.arubr.smsvcodes.sync2.roster
 
-import io.github.aedev.flow.sync.crypto.SyncBytes
-import io.github.aedev.flow.sync.protocol.SyncSerialization
-import io.github.aedev.flow.sync2.crypto.ProtocolError
-import io.github.aedev.flow.sync2.crypto.groupId
-import io.github.aedev.flow.sync2.crypto.isValidSigningKey
-import io.github.aedev.flow.sync2.crypto.memberId
-import io.github.aedev.flow.sync2.crypto.reject
-import io.github.aedev.flow.sync2.crypto.sha256
-import io.github.aedev.flow.sync2.crypto.tag
-import io.github.aedev.flow.sync2.crypto.verify
+import com.arubr.smsvcodes.sync.crypto.SyncBytes
+import com.arubr.smsvcodes.sync.protocol.SyncSerialization
+import com.arubr.smsvcodes.sync2.crypto.ProtocolError
+import com.arubr.smsvcodes.sync2.crypto.groupId
+import com.arubr.smsvcodes.sync2.crypto.isValidSigningKey
+import com.arubr.smsvcodes.sync2.crypto.memberId
+import com.arubr.smsvcodes.sync2.crypto.reject
+import com.arubr.smsvcodes.sync2.crypto.sha256
+import com.arubr.smsvcodes.sync2.crypto.tag
+import com.arubr.smsvcodes.sync2.crypto.verify
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.SerializationException

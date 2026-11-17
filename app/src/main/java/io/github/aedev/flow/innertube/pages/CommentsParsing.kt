@@ -1,14 +1,14 @@
-package io.github.aedev.flow.innertube.pages
+package com.arubr.smsvcodes.innertube.pages
 
-import io.github.aedev.flow.data.model.Comment
-import io.github.aedev.flow.data.model.CommentImage
-import io.github.aedev.flow.data.model.RichText
-import io.github.aedev.flow.data.model.RichTextEmoji
-import io.github.aedev.flow.data.model.RichTextHighlight
-import io.github.aedev.flow.data.model.RichTextSpan
-import io.github.aedev.flow.data.model.RichTextTarget
-import io.github.aedev.flow.utils.YouTubeLink
-import io.github.aedev.flow.utils.youTubeBrowseLink
+import com.arubr.smsvcodes.data.model.Comment
+import com.arubr.smsvcodes.data.model.CommentImage
+import com.arubr.smsvcodes.data.model.RichText
+import com.arubr.smsvcodes.data.model.RichTextEmoji
+import com.arubr.smsvcodes.data.model.RichTextHighlight
+import com.arubr.smsvcodes.data.model.RichTextSpan
+import com.arubr.smsvcodes.data.model.RichTextTarget
+import com.arubr.smsvcodes.utils.YouTubeLink
+import com.arubr.smsvcodes.utils.youTubeBrowseLink
 import kotlinx.serialization.json.JsonElement
 import kotlinx.serialization.json.JsonObject
 import kotlinx.serialization.json.JsonPrimitive

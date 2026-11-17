@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.musicplayer.sheet
+package com.arubr.smsvcodes.ui.components.musicplayer.sheet
 
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.AnimationSpec
@@ -9,8 +9,8 @@ import androidx.compose.animation.core.spring
 import androidx.compose.animation.core.tween
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
-import io.github.aedev.flow.ui.components.musicplayer.motion.MusicSheetMotionController
-import io.github.aedev.flow.ui.components.musicplayer.motion.musicSheetSettleSpring
+import com.arubr.smsvcodes.ui.components.musicplayer.motion.MusicSheetMotionController
+import com.arubr.smsvcodes.ui.components.musicplayer.motion.musicSheetSettleSpring
 import kotlinx.coroutines.launch
 
 /** Moves the sheet to whatever anchor it was last asked for, with the overshoot or squash of that move. */

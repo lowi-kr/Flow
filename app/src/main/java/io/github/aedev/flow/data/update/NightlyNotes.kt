@@ -1,4 +1,4 @@
-package io.github.aedev.flow.data.update
+package com.arubr.smsvcodes.data.update
 
 private val RunHeading = Regex("""^#\s+Run\s+(\d+)\s*$""")
 private val SectionHeading = Regex("""^##\s+(.+?)\s*$""")

@@ -1,7 +1,7 @@
-package io.github.aedev.flow.sync2.linking
+package com.arubr.smsvcodes.sync2.linking
 
-import io.github.aedev.flow.sync.protocol.SyncSerialization
-import io.github.aedev.flow.sync2.roster.Entry
+import com.arubr.smsvcodes.sync.protocol.SyncSerialization
+import com.arubr.smsvcodes.sync2.roster.Entry
 import kotlinx.serialization.KSerializer
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable

@@ -1,10 +1,10 @@
-package io.github.aedev.flow.ui.components.shared
+package com.arubr.smsvcodes.ui.components.shared
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.local.DEEP_FLOW_NEVER_EXPIRES_HOURS
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.local.DEEP_FLOW_NEVER_EXPIRES_HOURS
 import java.time.Duration
 import java.time.Instant
 

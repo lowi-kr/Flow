@@ -1,6 +1,6 @@
-package io.github.aedev.flow.data.recommendation
+package com.arubr.smsvcodes.data.recommendation
 
-import io.github.aedev.flow.data.recommendation.FeedImpressionLedger.RECOUNT_WINDOW_MS
+import com.arubr.smsvcodes.data.recommendation.FeedImpressionLedger.RECOUNT_WINDOW_MS
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertTrue
 import org.junit.Test

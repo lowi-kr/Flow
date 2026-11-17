@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.videoplayer.subtitle
+package com.arubr.smsvcodes.ui.components.videoplayer.subtitle
 
 /** The part of the player, in dp, where the picture is drawn and captions are laid out. */
 internal data class SubtitleArea(

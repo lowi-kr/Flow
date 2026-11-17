@@ -1,4 +1,4 @@
-package io.github.aedev.flow.data.recommendation
+package com.arubr.smsvcodes.data.recommendation
 
 import android.content.Context
 import android.util.Log
@@ -6,8 +6,8 @@ import androidx.datastore.core.DataStore
 import androidx.datastore.core.DataStoreFactory
 import androidx.datastore.core.Serializer
 import dagger.hilt.android.qualifiers.ApplicationContext
-import io.github.aedev.flow.data.profile.ProfileFiles
-import io.github.aedev.flow.data.profile.StoreScope
+import com.arubr.smsvcodes.data.profile.ProfileFiles
+import com.arubr.smsvcodes.data.profile.StoreScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.withContext

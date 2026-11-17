@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.lockscreen
+package com.arubr.smsvcodes.ui.screens.lockscreen
 
 import android.app.KeyguardManager
 import android.content.BroadcastReceiver
@@ -18,12 +18,12 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import dagger.hilt.android.AndroidEntryPoint
-import io.github.aedev.flow.data.local.AppFontPreferences
-import io.github.aedev.flow.data.local.LocalDataManager
-import io.github.aedev.flow.player.EnhancedMusicPlayerManager
-import io.github.aedev.flow.service.LockScreenPlayerLauncher
-import io.github.aedev.flow.ui.startup.FlowTheme
-import io.github.aedev.flow.ui.startup.themeSettings
+import com.arubr.smsvcodes.data.local.AppFontPreferences
+import com.arubr.smsvcodes.data.local.LocalDataManager
+import com.arubr.smsvcodes.player.EnhancedMusicPlayerManager
+import com.arubr.smsvcodes.service.LockScreenPlayerLauncher
+import com.arubr.smsvcodes.ui.startup.FlowTheme
+import com.arubr.smsvcodes.ui.startup.themeSettings
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.launch
 import javax.inject.Inject

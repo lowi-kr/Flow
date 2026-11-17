@@ -1,4 +1,4 @@
-package io.github.aedev.flow.data.video.downloader.work
+package com.arubr.smsvcodes.data.video.downloader.work
 
 /**
  * Watches a transfer's byte count on each progress tick and calls [onStall] once it has not moved

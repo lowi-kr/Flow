@@ -1,11 +1,11 @@
-package io.github.aedev.flow.data.music.video
+package com.arubr.smsvcodes.data.music.video
 
-import io.github.aedev.flow.data.music.model.MusicTrack
-import io.github.aedev.flow.data.music.model.musicArtistKey
-import io.github.aedev.flow.data.music.model.musicTitleKey
-import io.github.aedev.flow.innertube.models.SongItem
-import io.github.aedev.flow.innertube.models.WatchEndpoint.WatchEndpointMusicSupportedConfigs.WatchEndpointMusicConfig.Companion.MUSIC_VIDEO_TYPE_OMV
-import io.github.aedev.flow.utils.foldForSearch
+import com.arubr.smsvcodes.data.music.model.MusicTrack
+import com.arubr.smsvcodes.data.music.model.musicArtistKey
+import com.arubr.smsvcodes.data.music.model.musicTitleKey
+import com.arubr.smsvcodes.innertube.models.SongItem
+import com.arubr.smsvcodes.innertube.models.WatchEndpoint.WatchEndpointMusicSupportedConfigs.WatchEndpointMusicConfig.Companion.MUSIC_VIDEO_TYPE_OMV
+import com.arubr.smsvcodes.utils.foldForSearch
 
 /**
  * Picks a song's official music video out of a video search. Signed-out responses never carry

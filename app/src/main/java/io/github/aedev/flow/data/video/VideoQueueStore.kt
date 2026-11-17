@@ -1,12 +1,12 @@
-package io.github.aedev.flow.data.video
+package com.arubr.smsvcodes.data.video
 
 import android.content.Context
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.stringPreferencesKey
 import dagger.hilt.android.qualifiers.ApplicationContext
-import io.github.aedev.flow.data.local.safePreferencesDataStore
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.data.profile.StoreScope
+import com.arubr.smsvcodes.data.local.safePreferencesDataStore
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.data.profile.StoreScope
 import kotlinx.coroutines.flow.first
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json

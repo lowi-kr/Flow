@@ -1,14 +1,14 @@
-package io.github.aedev.flow.ui.screens.music
+package com.arubr.smsvcodes.ui.screens.music
 
-import io.github.aedev.flow.data.contentfilter.aislist.AiListMatcher
-import io.github.aedev.flow.data.contentfilter.aislist.AiListRepository
-import io.github.aedev.flow.data.local.PrivacyGate
-import io.github.aedev.flow.data.local.SearchHistoryRepository
-import io.github.aedev.flow.data.local.SearchHistoryScope
-import io.github.aedev.flow.data.local.SearchType
-import io.github.aedev.flow.data.music.DownloadManager
-import io.github.aedev.flow.data.newmusic.InnertubeMusicService
-import io.github.aedev.flow.innertube.YouTube
+import com.arubr.smsvcodes.data.contentfilter.aislist.AiListMatcher
+import com.arubr.smsvcodes.data.contentfilter.aislist.AiListRepository
+import com.arubr.smsvcodes.data.local.PrivacyGate
+import com.arubr.smsvcodes.data.local.SearchHistoryRepository
+import com.arubr.smsvcodes.data.local.SearchHistoryScope
+import com.arubr.smsvcodes.data.local.SearchType
+import com.arubr.smsvcodes.data.music.DownloadManager
+import com.arubr.smsvcodes.data.newmusic.InnertubeMusicService
+import com.arubr.smsvcodes.innertube.YouTube
 import io.mockk.coEvery
 import io.mockk.coVerify
 import io.mockk.every

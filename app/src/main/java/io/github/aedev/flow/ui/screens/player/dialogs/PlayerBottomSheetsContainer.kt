@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.player.dialogs
+package com.arubr.smsvcodes.ui.screens.player.dialogs
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.SmartDisplay
@@ -14,25 +14,25 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.model.Comment
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.player.EnhancedPlayerManager
-import io.github.aedev.flow.player.EnhancedPlayerState
-import io.github.aedev.flow.player.SleepTimerManager
-import io.github.aedev.flow.ui.components.shared.CommentSortFilter
-import io.github.aedev.flow.ui.components.shared.FlowAlertDialog
-import io.github.aedev.flow.ui.components.shared.FlowCommentsBottomSheet
-import io.github.aedev.flow.ui.components.videoplayer.sheet.FlowLiveChatBottomSheet
-import io.github.aedev.flow.ui.screens.player.VideoPlayerViewModel
-import io.github.aedev.flow.ui.screens.player.state.PlayerCommentsUiState
-import io.github.aedev.flow.ui.screens.player.state.PlayerScreenState
-import io.github.aedev.flow.ui.screens.player.state.PlayerSheet
-import io.github.aedev.flow.ui.screens.player.state.VideoPlayerPreferencesState
-import io.github.aedev.flow.ui.screens.player.state.VideoPlayerUiState
-import io.github.aedev.flow.ui.screens.player.state.hasTranscriptTrack
-import io.github.aedev.flow.ui.screens.player.state.rememberPlayerCommentsTimedFollow
-import io.github.aedev.flow.ui.screens.player.state.visibleComments
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.model.Comment
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.player.EnhancedPlayerManager
+import com.arubr.smsvcodes.player.EnhancedPlayerState
+import com.arubr.smsvcodes.player.SleepTimerManager
+import com.arubr.smsvcodes.ui.components.shared.CommentSortFilter
+import com.arubr.smsvcodes.ui.components.shared.FlowAlertDialog
+import com.arubr.smsvcodes.ui.components.shared.FlowCommentsBottomSheet
+import com.arubr.smsvcodes.ui.components.videoplayer.sheet.FlowLiveChatBottomSheet
+import com.arubr.smsvcodes.ui.screens.player.VideoPlayerViewModel
+import com.arubr.smsvcodes.ui.screens.player.state.PlayerCommentsUiState
+import com.arubr.smsvcodes.ui.screens.player.state.PlayerScreenState
+import com.arubr.smsvcodes.ui.screens.player.state.PlayerSheet
+import com.arubr.smsvcodes.ui.screens.player.state.VideoPlayerPreferencesState
+import com.arubr.smsvcodes.ui.screens.player.state.VideoPlayerUiState
+import com.arubr.smsvcodes.ui.screens.player.state.hasTranscriptTrack
+import com.arubr.smsvcodes.ui.screens.player.state.rememberPlayerCommentsTimedFollow
+import com.arubr.smsvcodes.ui.screens.player.state.visibleComments
 
 @Composable
 internal fun PlayerBottomSheetsContainer(

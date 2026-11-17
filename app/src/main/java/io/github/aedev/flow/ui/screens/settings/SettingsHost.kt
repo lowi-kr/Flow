@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.settings
+package com.arubr.smsvcodes.ui.screens.settings
 
 import androidx.activity.compose.BackHandler
 import androidx.compose.animation.AnimatedContent
@@ -28,14 +28,14 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.focus.FocusRequester
 import androidx.compose.ui.focus.focusRequester
 import androidx.compose.ui.focus.onFocusChanged
-import io.github.aedev.flow.ui.components.layout.rememberFlowPaneScaffoldDirective
-import io.github.aedev.flow.ui.components.settings.LocalNewSettings
-import io.github.aedev.flow.ui.components.settings.SettingsDestination
-import io.github.aedev.flow.ui.components.settings.SettingsTarget
-import io.github.aedev.flow.ui.components.shared.LocalDpadNavigation
-import io.github.aedev.flow.ui.components.shared.dpadFocusGroup
-import io.github.aedev.flow.ui.components.shared.dpadFocusOnEnter
-import io.github.aedev.flow.ui.screens.settings.home.SettingsHomeScreen
+import com.arubr.smsvcodes.ui.components.layout.rememberFlowPaneScaffoldDirective
+import com.arubr.smsvcodes.ui.components.settings.LocalNewSettings
+import com.arubr.smsvcodes.ui.components.settings.SettingsDestination
+import com.arubr.smsvcodes.ui.components.settings.SettingsTarget
+import com.arubr.smsvcodes.ui.components.shared.LocalDpadNavigation
+import com.arubr.smsvcodes.ui.components.shared.dpadFocusGroup
+import com.arubr.smsvcodes.ui.components.shared.dpadFocusOnEnter
+import com.arubr.smsvcodes.ui.screens.settings.home.SettingsHomeScreen
 import kotlinx.coroutines.launch
 
 /**

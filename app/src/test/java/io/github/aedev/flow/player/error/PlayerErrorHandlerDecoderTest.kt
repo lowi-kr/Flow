@@ -1,11 +1,11 @@
-package io.github.aedev.flow.player.error
+package com.arubr.smsvcodes.player.error
 
 import android.content.Context
 import androidx.media3.common.PlaybackException
 import androidx.media3.common.util.UnstableApi
 import androidx.media3.exoplayer.ExoPlayer
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.player.state.EnhancedPlayerState
+import com.arubr.smsvcodes.player.state.EnhancedPlayerState
 import io.mockk.mockk
 import io.mockk.verify
 import kotlinx.coroutines.flow.MutableStateFlow

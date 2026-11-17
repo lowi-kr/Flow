@@ -1,8 +1,8 @@
-package io.github.aedev.flow.sync2.lan
+package com.arubr.smsvcodes.sync2.lan
 
-import io.github.aedev.flow.sync.transport.SyncConnection
-import io.github.aedev.flow.sync2.engine.LinkedException
-import io.github.aedev.flow.sync2.engine.Session
+import com.arubr.smsvcodes.sync.transport.SyncConnection
+import com.arubr.smsvcodes.sync2.engine.LinkedException
+import com.arubr.smsvcodes.sync2.engine.Session
 import kotlinx.coroutines.sync.Semaphore
 
 /** Connections that haven't finished their hello. Far more than a group has members. */

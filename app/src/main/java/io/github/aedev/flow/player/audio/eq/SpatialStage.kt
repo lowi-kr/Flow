@@ -1,6 +1,6 @@
-package io.github.aedev.flow.player.audio.eq
+package com.arubr.smsvcodes.player.audio.eq
 
-import io.github.aedev.flow.data.audio.eq.EqSpatialSound
+import com.arubr.smsvcodes.data.audio.eq.EqSpatialSound
 import kotlin.math.PI
 import kotlin.math.exp
 import kotlin.math.roundToInt

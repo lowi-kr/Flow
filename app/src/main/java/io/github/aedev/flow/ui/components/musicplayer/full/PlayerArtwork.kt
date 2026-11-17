@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.musicplayer.full
+package com.arubr.smsvcodes.ui.components.musicplayer.full
 
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.FastOutSlowInEasing
@@ -34,8 +34,8 @@ import coil3.request.ImageRequest
 import coil3.request.allowHardware
 import coil3.request.crossfade
 import coil3.size.Precision
-import io.github.aedev.flow.R
-import io.github.aedev.flow.ui.components.shared.SkipDirection
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.ui.components.shared.SkipDirection
 import kotlinx.coroutines.launch
 
 internal val PlayerArtworkCornerRadius = 12.dp

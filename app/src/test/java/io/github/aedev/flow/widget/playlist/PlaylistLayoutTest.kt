@@ -1,4 +1,4 @@
-package io.github.aedev.flow.widget.playlist
+package com.arubr.smsvcodes.widget.playlist
 
 import androidx.compose.ui.unit.DpSize
 import androidx.compose.ui.unit.dp

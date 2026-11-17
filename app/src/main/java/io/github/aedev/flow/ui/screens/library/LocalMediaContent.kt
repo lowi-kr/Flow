@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.library
+package com.arubr.smsvcodes.ui.screens.library
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -37,17 +37,17 @@ import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.localmedia.LocalMediaItem
-import io.github.aedev.flow.ui.components.layout.flowBottomContentPadding
-import io.github.aedev.flow.ui.components.library.LibrarySelection
-import io.github.aedev.flow.ui.components.library.libraryGridLayoutFor
-import io.github.aedev.flow.ui.components.shared.FlowEmptyState
-import io.github.aedev.flow.ui.components.shared.FlowPullToRefreshBox
-import io.github.aedev.flow.ui.components.shared.FlowSegmentedGap
-import io.github.aedev.flow.ui.components.shared.MediaKind
-import io.github.aedev.flow.ui.components.shared.MediaThumbnailDefaults
-import io.github.aedev.flow.ui.components.shared.animateMediaGridItem
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.localmedia.LocalMediaItem
+import com.arubr.smsvcodes.ui.components.layout.flowBottomContentPadding
+import com.arubr.smsvcodes.ui.components.library.LibrarySelection
+import com.arubr.smsvcodes.ui.components.library.libraryGridLayoutFor
+import com.arubr.smsvcodes.ui.components.shared.FlowEmptyState
+import com.arubr.smsvcodes.ui.components.shared.FlowPullToRefreshBox
+import com.arubr.smsvcodes.ui.components.shared.FlowSegmentedGap
+import com.arubr.smsvcodes.ui.components.shared.MediaKind
+import com.arubr.smsvcodes.ui.components.shared.MediaThumbnailDefaults
+import com.arubr.smsvcodes.ui.components.shared.animateMediaGridItem
 
 private val GridSpacing = 12.dp
 private val LaneCardWidth = 200.dp

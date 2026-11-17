@@ -1,10 +1,10 @@
-package io.github.aedev.flow.data.subscriptions
+package com.arubr.smsvcodes.data.subscriptions
 
 import android.util.Log
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.innertube.YouTube
-import io.github.aedev.flow.innertube.pages.channel.ChannelPage
-import io.github.aedev.flow.innertube.pages.renderer.FeedItem
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.innertube.YouTube
+import com.arubr.smsvcodes.innertube.pages.channel.ChannelPage
+import com.arubr.smsvcodes.innertube.pages.renderer.FeedItem
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.async
 import kotlinx.coroutines.awaitAll

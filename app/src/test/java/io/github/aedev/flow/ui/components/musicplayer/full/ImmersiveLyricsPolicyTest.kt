@@ -1,6 +1,6 @@
-package io.github.aedev.flow.ui.components.musicplayer.full
+package com.arubr.smsvcodes.ui.components.musicplayer.full
 
-import io.github.aedev.flow.data.local.MusicPlayerBackgroundStyle
+import com.arubr.smsvcodes.data.local.MusicPlayerBackgroundStyle
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue

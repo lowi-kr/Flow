@@ -1,7 +1,7 @@
-package io.github.aedev.flow.sync
+package com.arubr.smsvcodes.sync
 
-import io.github.aedev.flow.sync.canonical.OrSet
-import io.github.aedev.flow.sync.merge.BrainCrdtState
+import com.arubr.smsvcodes.sync.canonical.OrSet
+import com.arubr.smsvcodes.sync.merge.BrainCrdtState
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue

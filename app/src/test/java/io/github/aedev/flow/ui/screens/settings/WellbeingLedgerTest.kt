@@ -1,11 +1,11 @@
-package io.github.aedev.flow.ui.screens.settings
+package com.arubr.smsvcodes.ui.screens.settings
 
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.data.recommendation.music.MusicStatsStorage
-import io.github.aedev.flow.data.stats.RecapAggregates
-import io.github.aedev.flow.data.stats.VideoMonthRecord
-import io.github.aedev.flow.data.stats.VideoStatsSnapshot
-import io.github.aedev.flow.ui.screens.settings.wellbeing.summarizeLedgerTime
+import com.arubr.smsvcodes.data.recommendation.music.MusicStatsStorage
+import com.arubr.smsvcodes.data.stats.RecapAggregates
+import com.arubr.smsvcodes.data.stats.VideoMonthRecord
+import com.arubr.smsvcodes.data.stats.VideoStatsSnapshot
+import com.arubr.smsvcodes.ui.screens.settings.wellbeing.summarizeLedgerTime
 import org.junit.Test
 import java.time.LocalDate
 

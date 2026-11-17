@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.player.effects
+package com.arubr.smsvcodes.ui.screens.player.effects
 
 import android.os.SystemClock
 import androidx.compose.runtime.*
@@ -8,8 +8,8 @@ import androidx.lifecycle.repeatOnLifecycle
 import androidx.media3.common.C
 import androidx.media3.common.Player
 import androidx.media3.common.Timeline
-import io.github.aedev.flow.player.EnhancedPlayerManager
-import io.github.aedev.flow.ui.screens.player.state.PlayerScreenState
+import com.arubr.smsvcodes.player.EnhancedPlayerManager
+import com.arubr.smsvcodes.ui.screens.player.state.PlayerScreenState
 import kotlinx.coroutines.delay
 import kotlin.math.roundToLong
 

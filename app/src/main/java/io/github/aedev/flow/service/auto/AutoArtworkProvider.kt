@@ -1,4 +1,4 @@
-package io.github.aedev.flow.service.auto
+package com.arubr.smsvcodes.service.auto
 
 import android.content.ContentProvider
 import android.content.ContentValues
@@ -10,7 +10,7 @@ import android.os.ParcelFileDescriptor
 import android.util.Log
 import coil3.SingletonImageLoader
 import coil3.request.ImageRequest
-import io.github.aedev.flow.BuildConfig
+import com.arubr.smsvcodes.BuildConfig
 import kotlinx.coroutines.runBlocking
 import java.io.FileNotFoundException
 import java.net.URLDecoder

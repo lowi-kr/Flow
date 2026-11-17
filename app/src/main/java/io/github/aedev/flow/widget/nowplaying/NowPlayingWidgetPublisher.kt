@@ -1,4 +1,4 @@
-package io.github.aedev.flow.widget.nowplaying
+package com.arubr.smsvcodes.widget.nowplaying
 
 import android.content.Context
 import android.os.SystemClock
@@ -8,13 +8,13 @@ import androidx.media3.common.Player
 import androidx.media3.common.util.UnstableApi
 import androidx.media3.common.util.Util
 import dagger.hilt.android.qualifiers.ApplicationContext
-import io.github.aedev.flow.player.EnhancedMusicPlayerManager
-import io.github.aedev.flow.player.webArtworkUrl
-import io.github.aedev.flow.widget.core.state.NowPlayingSnapshot
-import io.github.aedev.flow.widget.core.state.clearNowPlayingSnapshot
-import io.github.aedev.flow.widget.core.state.markNowPlayingStopped
-import io.github.aedev.flow.widget.core.state.nowPlayingSnapshotFlow
-import io.github.aedev.flow.widget.core.state.writeNowPlayingSnapshot
+import com.arubr.smsvcodes.player.EnhancedMusicPlayerManager
+import com.arubr.smsvcodes.player.webArtworkUrl
+import com.arubr.smsvcodes.widget.core.state.NowPlayingSnapshot
+import com.arubr.smsvcodes.widget.core.state.clearNowPlayingSnapshot
+import com.arubr.smsvcodes.widget.core.state.markNowPlayingStopped
+import com.arubr.smsvcodes.widget.core.state.nowPlayingSnapshotFlow
+import com.arubr.smsvcodes.widget.core.state.writeNowPlayingSnapshot
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
@@ -113,7 +113,7 @@ class NowPlayingWidgetPublisher
 
         private suspend fun updatePlayerWidgets() {
             NowPlayingWidget().updateAll(context)
-            io.github.aedev.flow.widget.turntable
+            com.arubr.smsvcodes.widget.turntable
                 .TurntableWidget()
                 .updateAll(context)
         }

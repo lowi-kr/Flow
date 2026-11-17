@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.playon
+package com.arubr.smsvcodes.ui.screens.playon
 
 /** From this many offline devices on, they fold into one "Not available" row. */
 internal const val FOLD_OFFLINE_AT = 2

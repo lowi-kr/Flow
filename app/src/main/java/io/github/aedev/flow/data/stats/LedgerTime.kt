@@ -1,4 +1,4 @@
-package io.github.aedev.flow.data.stats
+package com.arubr.smsvcodes.data.stats
 
 import java.time.Instant
 import java.time.YearMonth

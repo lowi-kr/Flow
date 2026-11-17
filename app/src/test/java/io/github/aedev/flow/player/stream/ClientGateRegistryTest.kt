@@ -1,7 +1,7 @@
-package io.github.aedev.flow.player.stream
+package com.arubr.smsvcodes.player.stream
 
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.player.error.StreamDenialKind
+import com.arubr.smsvcodes.player.error.StreamDenialKind
 import org.junit.Test
 
 class ClientGateRegistryTest {

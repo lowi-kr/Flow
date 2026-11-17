@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.settings.playback
+package com.arubr.smsvcodes.ui.screens.settings.playback
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -11,11 +11,11 @@ import androidx.compose.ui.res.stringResource
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.LifecycleResumeEffect
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.local.SpeedSwipeSide
-import io.github.aedev.flow.notification.BackgroundWorkPolicy
-import io.github.aedev.flow.ui.components.settings.SettingsPage
-import io.github.aedev.flow.ui.components.settings.SettingsTarget
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.local.SpeedSwipeSide
+import com.arubr.smsvcodes.notification.BackgroundWorkPolicy
+import com.arubr.smsvcodes.ui.components.settings.SettingsPage
+import com.arubr.smsvcodes.ui.components.settings.SettingsTarget
 
 /** The pickers Player & playback opens over itself. */
 internal enum class PlaybackDialog {

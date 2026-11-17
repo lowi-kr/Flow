@@ -1,6 +1,6 @@
-package io.github.aedev.flow.ui.screens.subscriptions
+package com.arubr.smsvcodes.ui.screens.subscriptions
 
-import io.github.aedev.flow.data.model.SubscriptionGroup
+import com.arubr.smsvcodes.data.model.SubscriptionGroup
 
 /** The Ungrouped chip's selection value and row name. No typed group name can hold a NUL. */
 internal const val UNGROUPED_GROUP_KEY = "\u0000ungrouped"

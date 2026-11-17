@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.settings.taste
+package com.arubr.smsvcodes.ui.screens.settings.taste
 
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -14,18 +14,18 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import io.github.aedev.flow.R
-import io.github.aedev.flow.ui.components.settings.SettingsListScope
-import io.github.aedev.flow.ui.components.settings.SettingsPage
-import io.github.aedev.flow.ui.components.shared.ChannelOrganizeActions
-import io.github.aedev.flow.ui.components.shared.ChannelOrganizeTarget
-import io.github.aedev.flow.ui.components.shared.FlowEmptyState
-import io.github.aedev.flow.ui.components.shared.FlowLoadingIndicator
-import io.github.aedev.flow.ui.components.shared.FlowQuickSearchChips
-import io.github.aedev.flow.ui.components.shared.FlowSearchField
-import io.github.aedev.flow.ui.components.shared.MediaChannelSubscribeRow
-import io.github.aedev.flow.ui.components.shared.rememberChannelOrganizeActions
-import io.github.aedev.flow.utils.formatSubscriberCount
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.ui.components.settings.SettingsListScope
+import com.arubr.smsvcodes.ui.components.settings.SettingsPage
+import com.arubr.smsvcodes.ui.components.shared.ChannelOrganizeActions
+import com.arubr.smsvcodes.ui.components.shared.ChannelOrganizeTarget
+import com.arubr.smsvcodes.ui.components.shared.FlowEmptyState
+import com.arubr.smsvcodes.ui.components.shared.FlowLoadingIndicator
+import com.arubr.smsvcodes.ui.components.shared.FlowQuickSearchChips
+import com.arubr.smsvcodes.ui.components.shared.FlowSearchField
+import com.arubr.smsvcodes.ui.components.shared.MediaChannelSubscribeRow
+import com.arubr.smsvcodes.ui.components.shared.rememberChannelOrganizeActions
+import com.arubr.smsvcodes.utils.formatSubscriberCount
 
 private val LoadingHeight = 160.dp
 

@@ -1,4 +1,4 @@
-package io.github.aedev.flow.widget.core.component
+package com.arubr.smsvcodes.widget.core.component
 
 import android.graphics.Bitmap
 import androidx.annotation.DrawableRes
@@ -21,8 +21,8 @@ import androidx.glance.layout.padding
 import androidx.glance.layout.size
 import androidx.glance.layout.width
 import androidx.glance.text.Text
-import io.github.aedev.flow.widget.core.theme.WidgetDimens
-import io.github.aedev.flow.widget.core.theme.WidgetText
+import com.arubr.smsvcodes.widget.core.theme.WidgetDimens
+import com.arubr.smsvcodes.widget.core.theme.WidgetText
 
 /** One video or song as the list widgets draw it. [progress] is the watched share, when there is one. */
 data class WidgetMediaItem(

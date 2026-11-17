@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.library
+package com.arubr.smsvcodes.ui.components.library
 
 import androidx.annotation.StringRes
 import androidx.compose.foundation.background
@@ -28,9 +28,9 @@ import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.local.PlaylistSwipeAction
-import io.github.aedev.flow.data.local.PlaylistSwipes
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.local.PlaylistSwipeAction
+import com.arubr.smsvcodes.data.local.PlaylistSwipes
 import kotlinx.coroutines.launch
 
 private val SwipeLabelPadding = 24.dp

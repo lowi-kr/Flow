@@ -1,6 +1,6 @@
-package io.github.aedev.flow.player.recovery
+package com.arubr.smsvcodes.player.recovery
 
-import io.github.aedev.flow.player.stream.InnerTubeVideoStreamExtractor
+import com.arubr.smsvcodes.player.stream.InnerTubeVideoStreamExtractor
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Job

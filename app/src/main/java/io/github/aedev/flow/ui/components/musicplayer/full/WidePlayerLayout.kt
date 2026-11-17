@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.musicplayer.full
+package com.arubr.smsvcodes.ui.components.musicplayer.full
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -31,7 +31,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.min
-import io.github.aedev.flow.ui.components.layout.rememberFlowPaneScaffoldDirective
+import com.arubr.smsvcodes.ui.components.layout.rememberFlowPaneScaffoldDirective
 
 private val SidePaneWidth = 400.dp
 private val MainPanePadding = 32.dp

@@ -1,10 +1,10 @@
-package io.github.aedev.flow.sync
+package com.arubr.smsvcodes.sync
 
-import io.github.aedev.flow.sync.canonical.CanonicalPlaylist
-import io.github.aedev.flow.sync.canonical.CanonicalPlaylistItem
-import io.github.aedev.flow.sync.crypto.SyncBytes
-import io.github.aedev.flow.sync.crypto.SyncCrypto
-import io.github.aedev.flow.sync.protocol.SyncSerialization
+import com.arubr.smsvcodes.sync.canonical.CanonicalPlaylist
+import com.arubr.smsvcodes.sync.canonical.CanonicalPlaylistItem
+import com.arubr.smsvcodes.sync.crypto.SyncBytes
+import com.arubr.smsvcodes.sync.crypto.SyncCrypto
+import com.arubr.smsvcodes.sync.protocol.SyncSerialization
 import org.junit.Assert.assertEquals
 import org.junit.Test
 

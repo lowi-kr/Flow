@@ -1,9 +1,9 @@
-package io.github.aedev.flow.data.scrobble
+package com.arubr.smsvcodes.data.scrobble
 
-import io.github.aedev.flow.data.recommendation.music.FavouriteArtist
-import io.github.aedev.flow.data.recommendation.music.FavouriteArtistCatalog
-import io.github.aedev.flow.data.recommendation.music.FavouriteArtistsStore
-import io.github.aedev.flow.utils.PerformanceDispatcher
+import com.arubr.smsvcodes.data.recommendation.music.FavouriteArtist
+import com.arubr.smsvcodes.data.recommendation.music.FavouriteArtistCatalog
+import com.arubr.smsvcodes.data.recommendation.music.FavouriteArtistsStore
+import com.arubr.smsvcodes.utils.PerformanceDispatcher
 import kotlinx.coroutines.async
 import kotlinx.coroutines.awaitAll
 import kotlinx.coroutines.coroutineScope

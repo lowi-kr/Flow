@@ -4,7 +4,7 @@
  * This file is part of Flow (https://github.com/Flow-Tube/Flow).
  */
 
-package io.github.aedev.flow.ui.components.music.header
+package com.arubr.smsvcodes.ui.components.music.header
 
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -14,7 +14,7 @@ import androidx.compose.ui.test.onNodeWithContentDescription
 import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performClick
 import androidx.test.platform.app.InstrumentationRegistry
-import io.github.aedev.flow.R
+import com.arubr.smsvcodes.R
 import org.junit.Assert.assertEquals
 import org.junit.Rule
 import org.junit.Test

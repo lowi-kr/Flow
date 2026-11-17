@@ -1,9 +1,9 @@
-package io.github.aedev.flow.ui.screens.subscriptions
+package com.arubr.smsvcodes.ui.screens.subscriptions
 
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.data.recommendation.FeedExclusions
-import io.github.aedev.flow.data.subscriptions.withRelativeUploadDates
-import io.github.aedev.flow.data.subscriptions.withStableUploadSortKeys
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.data.recommendation.FeedExclusions
+import com.arubr.smsvcodes.data.subscriptions.withRelativeUploadDates
+import com.arubr.smsvcodes.data.subscriptions.withStableUploadSortKeys
 
 /** Everything that decides which cached feed rows the Subscriptions screen shows. */
 internal data class SubscriptionFeedFilters(

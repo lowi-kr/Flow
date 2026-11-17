@@ -4,13 +4,13 @@
  * This file is part of Flow (https://github.com/Flow-Tube/Flow).
  */
 
-package io.github.aedev.flow.ui.screens.home
+package com.arubr.smsvcodes.ui.screens.home
 
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.data.recommendation.FeedExclusions
-import io.github.aedev.flow.data.recommendation.GraphSeedInput
-import io.github.aedev.flow.data.recommendation.GraphSeedSource
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.data.recommendation.FeedExclusions
+import com.arubr.smsvcodes.data.recommendation.GraphSeedInput
+import com.arubr.smsvcodes.data.recommendation.GraphSeedSource
 import kotlinx.coroutines.test.runTest
 import org.junit.Test
 

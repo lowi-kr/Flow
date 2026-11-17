@@ -1,11 +1,11 @@
-package io.github.aedev.flow.data.local.dao
+package com.arubr.smsvcodes.data.local.dao
 
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import androidx.room.Transaction
-import io.github.aedev.flow.data.local.entity.VideoEntity
+import com.arubr.smsvcodes.data.local.entity.VideoEntity
 
 @Dao
 interface VideoDao {

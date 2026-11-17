@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.videoplayer.sheet
+package com.arubr.smsvcodes.ui.components.videoplayer.sheet
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -35,13 +35,13 @@ import androidx.compose.ui.unit.em
 import coil3.compose.AsyncImage
 import coil3.request.ImageRequest
 import coil3.request.crossfade
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.model.LiveChatMessage
-import io.github.aedev.flow.data.model.LiveChatMessageType
-import io.github.aedev.flow.data.model.LiveChatSegment
-import io.github.aedev.flow.data.model.distinctByNonBlankKey
-import io.github.aedev.flow.ui.theme.LiveChatMemberGreen
-import io.github.aedev.flow.ui.theme.LiveChatMemberSurface
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.model.LiveChatMessage
+import com.arubr.smsvcodes.data.model.LiveChatMessageType
+import com.arubr.smsvcodes.data.model.LiveChatSegment
+import com.arubr.smsvcodes.data.model.distinctByNonBlankKey
+import com.arubr.smsvcodes.ui.theme.LiveChatMemberGreen
+import com.arubr.smsvcodes.ui.theme.LiveChatMemberSurface
 import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.launch
 

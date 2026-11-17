@@ -1,11 +1,11 @@
-package io.github.aedev.flow.ui.components.music.sheet
+package com.arubr.smsvcodes.ui.components.music.sheet
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.platform.LocalContext
-import io.github.aedev.flow.data.music.model.MusicTrack
-import io.github.aedev.flow.ui.components.shared.rememberShareLinksWithoutText
-import io.github.aedev.flow.utils.shareSongIntent
+import com.arubr.smsvcodes.data.music.model.MusicTrack
+import com.arubr.smsvcodes.ui.components.shared.rememberShareLinksWithoutText
+import com.arubr.smsvcodes.utils.shareSongIntent
 
 /** Raises the system share sheet for a song, with the same message wherever it is shared from. */
 @Composable

@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.musicplayer.full
+package com.arubr.smsvcodes.ui.components.musicplayer.full
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
@@ -6,11 +6,11 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.player.PlayerHardwareController
-import io.github.aedev.flow.ui.components.shared.MediaKeyAction
-import io.github.aedev.flow.ui.components.shared.mediaKeyboardShortcuts
-import io.github.aedev.flow.ui.screens.music.MusicPlayerViewModel
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.player.PlayerHardwareController
+import com.arubr.smsvcodes.ui.components.shared.MediaKeyAction
+import com.arubr.smsvcodes.ui.components.shared.mediaKeyboardShortcuts
+import com.arubr.smsvcodes.ui.screens.music.MusicPlayerViewModel
 
 /** Keyboard shortcuts for the open music player. Seeks step by the double-tap seek setting, as on video. */
 @Composable

@@ -1,6 +1,6 @@
 @file:OptIn(ExperimentalMaterial3ExpressiveApi::class)
 
-package io.github.aedev.flow.ui.components.musicplayer.mini
+package com.arubr.smsvcodes.ui.components.musicplayer.mini
 
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -29,7 +29,7 @@ import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.semantics.clearAndSetSemantics
 import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.data.local.MiniBarProgress
+import com.arubr.smsvcodes.data.local.MiniBarProgress
 import kotlinx.coroutines.delay
 
 private const val FILL_ALPHA = 0.22f

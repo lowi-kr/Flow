@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui
+package com.arubr.smsvcodes.ui
 
 import android.content.ContentResolver
 import android.content.Intent
@@ -8,18 +8,18 @@ import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.core.content.IntentCompat
 import androidx.lifecycle.lifecycleScope
-import io.github.aedev.flow.R
-import io.github.aedev.flow.applock.AppLock
-import io.github.aedev.flow.data.playlist.PlaylistImport
-import io.github.aedev.flow.data.playlist.PlaylistTransfer
-import io.github.aedev.flow.data.profile.SwitchIntentQueue
-import io.github.aedev.flow.notification.NotificationHelper
-import io.github.aedev.flow.player.GlobalPlayerState
-import io.github.aedev.flow.ui.components.library.message
-import io.github.aedev.flow.ui.components.settings.SettingsDestination
-import io.github.aedev.flow.ui.components.settings.SettingsTarget
-import io.github.aedev.flow.ui.screens.update.UPDATE_ROUTE
-import io.github.aedev.flow.utils.PLAYLIST_FILE_MIME_TYPE
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.applock.AppLock
+import com.arubr.smsvcodes.data.playlist.PlaylistImport
+import com.arubr.smsvcodes.data.playlist.PlaylistTransfer
+import com.arubr.smsvcodes.data.profile.SwitchIntentQueue
+import com.arubr.smsvcodes.notification.NotificationHelper
+import com.arubr.smsvcodes.player.GlobalPlayerState
+import com.arubr.smsvcodes.ui.components.library.message
+import com.arubr.smsvcodes.ui.components.settings.SettingsDestination
+import com.arubr.smsvcodes.ui.components.settings.SettingsTarget
+import com.arubr.smsvcodes.ui.screens.update.UPDATE_ROUTE
+import com.arubr.smsvcodes.utils.PLAYLIST_FILE_MIME_TYPE
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
@@ -115,10 +115,10 @@ internal class IncomingIntents(
 
         val widgetRoute =
             intent.getStringExtra(
-                io.github.aedev.flow.widget.core.action.WidgetDeepLink.EXTRA_WIDGET_ROUTE,
+                com.arubr.smsvcodes.widget.core.action.WidgetDeepLink.EXTRA_WIDGET_ROUTE,
             )
         if (widgetRoute != null) {
-            intent.removeExtra(io.github.aedev.flow.widget.core.action.WidgetDeepLink.EXTRA_WIDGET_ROUTE)
+            intent.removeExtra(com.arubr.smsvcodes.widget.core.action.WidgetDeepLink.EXTRA_WIDGET_ROUTE)
             links.openRoute(widgetRoute)
             return
         }
@@ -157,6 +157,6 @@ internal class IncomingIntents(
     private companion object {
         /** The share-menu entry Download with Flow: an activity-alias of MainActivity in the manifest. */
         const val DOWNLOAD_SHARE_ALIAS = ".DownloadShareAlias"
-        const val STATE_INTENT_HELD = "io.github.aedev.flow.state.INTENT_HELD"
+        const val STATE_INTENT_HELD = "com.arubr.smsvcodes.state.INTENT_HELD"
     }
 }

@@ -1,6 +1,6 @@
-package io.github.aedev.flow.ui.components.videoplayer.motion
+package com.arubr.smsvcodes.ui.components.videoplayer.motion
 
-import io.github.aedev.flow.ui.components.videoplayer.PlayerDraggableState
+import com.arubr.smsvcodes.ui.components.videoplayer.PlayerDraggableState
 
 /**
  * The layout geometry the gesture handlers read at gesture time. Written from a `SideEffect` on

@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.settings.security
+package com.arubr.smsvcodes.ui.screens.settings.security
 
 import android.os.Build
 import androidx.compose.material.icons.Icons
@@ -16,16 +16,16 @@ import androidx.compose.ui.res.stringResource
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.LifecycleResumeEffect
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import io.github.aedev.flow.R
-import io.github.aedev.flow.applock.APP_LOCK_DELAYS_MINUTES
-import io.github.aedev.flow.applock.DEFAULT_APP_LOCK_DELAY_MINUTES
-import io.github.aedev.flow.ui.components.applock.rememberAppUnlock
-import io.github.aedev.flow.ui.components.settings.SettingsPage
-import io.github.aedev.flow.ui.components.settings.choice
-import io.github.aedev.flow.ui.components.settings.switch
-import io.github.aedev.flow.ui.components.shared.FlowChoice
-import io.github.aedev.flow.ui.components.shared.FlowChoiceDialog
-import io.github.aedev.flow.ui.screens.settings.index.SecurityIndex
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.applock.APP_LOCK_DELAYS_MINUTES
+import com.arubr.smsvcodes.applock.DEFAULT_APP_LOCK_DELAY_MINUTES
+import com.arubr.smsvcodes.ui.components.applock.rememberAppUnlock
+import com.arubr.smsvcodes.ui.components.settings.SettingsPage
+import com.arubr.smsvcodes.ui.components.settings.choice
+import com.arubr.smsvcodes.ui.components.settings.switch
+import com.arubr.smsvcodes.ui.components.shared.FlowChoice
+import com.arubr.smsvcodes.ui.components.shared.FlowChoiceDialog
+import com.arubr.smsvcodes.ui.screens.settings.index.SecurityIndex
 
 /**
  * The app lock. Turning it on or off asks for the phone's unlock first, and it needs a screen lock on

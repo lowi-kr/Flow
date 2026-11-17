@@ -1,11 +1,11 @@
-package io.github.aedev.flow.ui.components.shared
+package com.arubr.smsvcodes.ui.components.shared
 
 import android.content.Intent
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.platform.LocalContext
-import io.github.aedev.flow.R
-import io.github.aedev.flow.innertube.pages.renderer.CommunityPost
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.innertube.pages.renderer.CommunityPost
 
 /** Opens the share chooser with a community post's link. */
 @Composable

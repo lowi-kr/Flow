@@ -1,4 +1,4 @@
-package io.github.aedev.flow.utils
+package com.arubr.smsvcodes.utils
 
 import android.content.ActivityNotFoundException
 import android.content.Context
@@ -7,7 +7,7 @@ import android.content.pm.PackageManager
 import android.content.pm.ResolveInfo
 import android.os.Build
 import android.widget.Toast
-import io.github.aedev.flow.R
+import com.arubr.smsvcodes.R
 
 /**
  * Hands text to the translator app the viewer has installed. Android's Translate action comes

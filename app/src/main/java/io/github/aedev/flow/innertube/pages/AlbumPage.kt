@@ -1,16 +1,16 @@
-package io.github.aedev.flow.innertube.pages
+package com.arubr.smsvcodes.innertube.pages
 
-import io.github.aedev.flow.innertube.models.Album
-import io.github.aedev.flow.innertube.models.AlbumItem
-import io.github.aedev.flow.innertube.models.Artist
-import io.github.aedev.flow.innertube.models.MusicResponsiveHeaderRenderer
-import io.github.aedev.flow.innertube.models.MusicResponsiveListItemRenderer
-import io.github.aedev.flow.innertube.models.SongItem
-import io.github.aedev.flow.innertube.models.getItems
-import io.github.aedev.flow.innertube.models.oddElements
-import io.github.aedev.flow.innertube.models.response.BrowseResponse
-import io.github.aedev.flow.innertube.models.splitBySeparator
-import io.github.aedev.flow.innertube.utils.parseTime
+import com.arubr.smsvcodes.innertube.models.Album
+import com.arubr.smsvcodes.innertube.models.AlbumItem
+import com.arubr.smsvcodes.innertube.models.Artist
+import com.arubr.smsvcodes.innertube.models.MusicResponsiveHeaderRenderer
+import com.arubr.smsvcodes.innertube.models.MusicResponsiveListItemRenderer
+import com.arubr.smsvcodes.innertube.models.SongItem
+import com.arubr.smsvcodes.innertube.models.getItems
+import com.arubr.smsvcodes.innertube.models.oddElements
+import com.arubr.smsvcodes.innertube.models.response.BrowseResponse
+import com.arubr.smsvcodes.innertube.models.splitBySeparator
+import com.arubr.smsvcodes.innertube.utils.parseTime
 
 data class AlbumPage(
     val album: AlbumItem,

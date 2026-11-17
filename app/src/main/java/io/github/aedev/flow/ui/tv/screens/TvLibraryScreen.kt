@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.tv.screens
+package com.arubr.smsvcodes.ui.tv.screens
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.PaddingValues
@@ -13,20 +13,20 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.local.PlaylistRepository
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.data.music.DownloadedTrack
-import io.github.aedev.flow.data.music.model.MusicTrack
-import io.github.aedev.flow.data.video.DownloadedVideo
-import io.github.aedev.flow.ui.components.layout.flowBottomContentPadding
-import io.github.aedev.flow.ui.components.library.LibrarySection
-import io.github.aedev.flow.ui.components.shared.FlowEmptyState
-import io.github.aedev.flow.ui.components.shared.MediaKind
-import io.github.aedev.flow.ui.screens.library.LibraryViewModel
-import io.github.aedev.flow.ui.screens.library.libraryShelves
-import io.github.aedev.flow.ui.screens.library.visibleContentSections
-import io.github.aedev.flow.ui.tv.components.TvScreenFrame
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.local.PlaylistRepository
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.data.music.DownloadedTrack
+import com.arubr.smsvcodes.data.music.model.MusicTrack
+import com.arubr.smsvcodes.data.video.DownloadedVideo
+import com.arubr.smsvcodes.ui.components.layout.flowBottomContentPadding
+import com.arubr.smsvcodes.ui.components.library.LibrarySection
+import com.arubr.smsvcodes.ui.components.shared.FlowEmptyState
+import com.arubr.smsvcodes.ui.components.shared.MediaKind
+import com.arubr.smsvcodes.ui.screens.library.LibraryViewModel
+import com.arubr.smsvcodes.ui.screens.library.libraryShelves
+import com.arubr.smsvcodes.ui.screens.library.visibleContentSections
+import com.arubr.smsvcodes.ui.tv.components.TvScreenFrame
 
 /** Local media and saved Shorts stay off TV, as the July redesign decided. */
 private val NOT_ON_TV = setOf(LibrarySection.LOCAL_MEDIA, LibrarySection.SAVED_SHORTS)

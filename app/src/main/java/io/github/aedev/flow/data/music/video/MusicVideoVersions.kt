@@ -1,9 +1,9 @@
-package io.github.aedev.flow.data.music.video
+package com.arubr.smsvcodes.data.music.video
 
-import io.github.aedev.flow.data.music.model.MusicTrack
-import io.github.aedev.flow.innertube.YouTube
-import io.github.aedev.flow.innertube.models.SongItem
-import io.github.aedev.flow.utils.PerformanceDispatcher
+import com.arubr.smsvcodes.data.music.model.MusicTrack
+import com.arubr.smsvcodes.innertube.YouTube
+import com.arubr.smsvcodes.innertube.models.SongItem
+import com.arubr.smsvcodes.utils.PerformanceDispatcher
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
 import javax.inject.Singleton

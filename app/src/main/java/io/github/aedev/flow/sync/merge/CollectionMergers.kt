@@ -1,13 +1,13 @@
-package io.github.aedev.flow.sync.merge
+package com.arubr.smsvcodes.sync.merge
 
-import io.github.aedev.flow.sync.canonical.CanonicalGroupMember
-import io.github.aedev.flow.sync.canonical.CanonicalLike
-import io.github.aedev.flow.sync.canonical.CanonicalLikeMeta
-import io.github.aedev.flow.sync.canonical.CanonicalNote
-import io.github.aedev.flow.sync.canonical.CanonicalSetting
-import io.github.aedev.flow.sync.canonical.CanonicalSubscribedChannel
-import io.github.aedev.flow.sync.canonical.CanonicalSubscriptionGroup
-import io.github.aedev.flow.sync.canonical.CanonicalWatchHistory
+import com.arubr.smsvcodes.sync.canonical.CanonicalGroupMember
+import com.arubr.smsvcodes.sync.canonical.CanonicalLike
+import com.arubr.smsvcodes.sync.canonical.CanonicalLikeMeta
+import com.arubr.smsvcodes.sync.canonical.CanonicalNote
+import com.arubr.smsvcodes.sync.canonical.CanonicalSetting
+import com.arubr.smsvcodes.sync.canonical.CanonicalSubscribedChannel
+import com.arubr.smsvcodes.sync.canonical.CanonicalSubscriptionGroup
+import com.arubr.smsvcodes.sync.canonical.CanonicalWatchHistory
 
 /**
  * Per-collection merge functions. Each `merge(local, remote)` is commutative,

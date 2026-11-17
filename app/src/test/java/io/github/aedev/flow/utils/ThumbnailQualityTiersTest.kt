@@ -1,7 +1,7 @@
-package io.github.aedev.flow.utils
+package com.arubr.smsvcodes.utils
 
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.data.local.ThumbnailQuality
+import com.arubr.smsvcodes.data.local.ThumbnailQuality
 import org.junit.Test
 
 class ThumbnailQualityTiersTest {
@@ -75,7 +75,7 @@ class ThumbnailQualityTiersTest {
 
     @Test
     fun `off still shows a cover stored on the device`() {
-        val saved = "file:///data/user/0/io.github.aedev.flow/files/thumbs/$id.jpg"
+        val saved = "file:///data/user/0/com.arubr.smsvcodes/files/thumbs/$id.jpg"
         val mediaStore = "content://media/external/video/media/42"
 
         assertThat(ThumbnailUrlResolver.resolveVideoThumbnailCandidates(id, saved, ThumbnailQuality.OFF)).containsExactly(saved)

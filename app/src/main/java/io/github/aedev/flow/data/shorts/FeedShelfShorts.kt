@@ -1,7 +1,7 @@
-package io.github.aedev.flow.data.shorts
+package com.arubr.smsvcodes.data.shorts
 
-import io.github.aedev.flow.innertube.pages.renderer.FeedItem
-import io.github.aedev.flow.innertube.pages.renderer.FeedShelf
+import com.arubr.smsvcodes.innertube.pages.renderer.FeedItem
+import com.arubr.smsvcodes.innertube.pages.renderer.FeedShelf
 
 /**
  * The shelves with every Short taken out, for a viewer who switched Shorts off (#1507). A shelf

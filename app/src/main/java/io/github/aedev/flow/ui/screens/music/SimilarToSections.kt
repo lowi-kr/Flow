@@ -1,10 +1,10 @@
-package io.github.aedev.flow.ui.screens.music
+package com.arubr.smsvcodes.ui.screens.music
 
-import io.github.aedev.flow.data.music.model.ArtistDetails
-import io.github.aedev.flow.data.music.model.MusicItemType
-import io.github.aedev.flow.data.music.model.MusicPlaylist
-import io.github.aedev.flow.data.music.model.MusicTrack
-import io.github.aedev.flow.data.recommendation.MusicSection
+import com.arubr.smsvcodes.data.music.model.ArtistDetails
+import com.arubr.smsvcodes.data.music.model.MusicItemType
+import com.arubr.smsvcodes.data.music.model.MusicPlaylist
+import com.arubr.smsvcodes.data.music.model.MusicTrack
+import com.arubr.smsvcodes.data.recommendation.MusicSection
 import kotlin.random.Random
 
 internal data class SimilarToBlock(

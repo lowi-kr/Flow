@@ -4,7 +4,7 @@
  * This file is part of Flow (https://github.com/Flow-Tube/Flow).
  */
 
-package io.github.aedev.flow.ui.components.layout.navigation
+package com.arubr.smsvcodes.ui.components.layout.navigation
 
 import android.app.Application
 import androidx.compose.material3.MaterialTheme
@@ -20,8 +20,8 @@ import androidx.compose.ui.unit.dp
 import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.R
-import io.github.aedev.flow.ui.utils.ProvideWindowSizeClass
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.ui.utils.ProvideWindowSizeClass
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith

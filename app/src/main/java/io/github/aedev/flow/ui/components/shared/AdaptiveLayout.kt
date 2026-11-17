@@ -4,16 +4,16 @@
  * This file is part of Flow (https://github.com/Flow-Tube/Flow).
  */
 
-package io.github.aedev.flow.ui.components.shared
+package com.arubr.smsvcodes.ui.components.shared
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.ui.theme.Dimensions
-import io.github.aedev.flow.ui.utils.LocalWindowSizeClass
-import io.github.aedev.flow.ui.utils.flowWindowDpSize
-import io.github.aedev.flow.ui.utils.isExpandedWidth
-import io.github.aedev.flow.ui.utils.isMediumWidth
+import com.arubr.smsvcodes.ui.theme.Dimensions
+import com.arubr.smsvcodes.ui.utils.LocalWindowSizeClass
+import com.arubr.smsvcodes.ui.utils.flowWindowDpSize
+import com.arubr.smsvcodes.ui.utils.isExpandedWidth
+import com.arubr.smsvcodes.ui.utils.isMediumWidth
 
 /** Widest a single column of rows grows, so it stays readable on a tablet or an unfolded foldable. */
 val FlowMaxContentWidth: Dp = 720.dp

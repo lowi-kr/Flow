@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.musicplayer.queue
+package com.arubr.smsvcodes.ui.components.musicplayer.queue
 
 import androidx.activity.compose.BackHandler
 import androidx.compose.animation.core.Spring
@@ -56,13 +56,13 @@ import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.music.model.MusicTrack
-import io.github.aedev.flow.player.RepeatMode
-import io.github.aedev.flow.ui.components.layout.FlowBottomInsets
-import io.github.aedev.flow.ui.components.layout.LocalFlowBottomInsets
-import io.github.aedev.flow.ui.components.shared.FlowSelectionToolbar
-import io.github.aedev.flow.ui.components.shared.FlowSwitch
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.music.model.MusicTrack
+import com.arubr.smsvcodes.player.RepeatMode
+import com.arubr.smsvcodes.ui.components.layout.FlowBottomInsets
+import com.arubr.smsvcodes.ui.components.layout.LocalFlowBottomInsets
+import com.arubr.smsvcodes.ui.components.shared.FlowSelectionToolbar
+import com.arubr.smsvcodes.ui.components.shared.FlowSwitch
 import sh.calvin.reorderable.ReorderableItem
 import sh.calvin.reorderable.rememberReorderableLazyListState
 

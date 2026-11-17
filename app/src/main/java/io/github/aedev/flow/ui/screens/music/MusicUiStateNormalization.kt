@@ -1,13 +1,13 @@
-package io.github.aedev.flow.ui.screens.music
+package com.arubr.smsvcodes.ui.screens.music
 
-import io.github.aedev.flow.data.contentfilter.aislist.AiListMatcher
-import io.github.aedev.flow.data.model.distinctByNonBlankKeyOrSelf
-import io.github.aedev.flow.data.music.model.ArtistDetails
-import io.github.aedev.flow.data.music.model.MusicPlaylist
-import io.github.aedev.flow.data.music.model.MusicTrack
-import io.github.aedev.flow.data.recommendation.MusicSection
-import io.github.aedev.flow.data.recommendation.music.isHiddenArtist
-import io.github.aedev.flow.data.recommendation.music.isHiddenAuthor
+import com.arubr.smsvcodes.data.contentfilter.aislist.AiListMatcher
+import com.arubr.smsvcodes.data.model.distinctByNonBlankKeyOrSelf
+import com.arubr.smsvcodes.data.music.model.ArtistDetails
+import com.arubr.smsvcodes.data.music.model.MusicPlaylist
+import com.arubr.smsvcodes.data.music.model.MusicTrack
+import com.arubr.smsvcodes.data.recommendation.MusicSection
+import com.arubr.smsvcodes.data.recommendation.music.isHiddenArtist
+import com.arubr.smsvcodes.data.recommendation.music.isHiddenAuthor
 
 /**
  * Applies "not interested"/"don't recommend" feedback and the AI filter to every

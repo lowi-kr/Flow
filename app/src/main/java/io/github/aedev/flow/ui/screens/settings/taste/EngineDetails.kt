@@ -1,8 +1,8 @@
-package io.github.aedev.flow.ui.screens.settings.taste
+package com.arubr.smsvcodes.ui.screens.settings.taste
 
 import androidx.compose.runtime.Immutable
-import io.github.aedev.flow.data.recommendation.NeuroDiscovery
-import io.github.aedev.flow.data.recommendation.UserBrain
+import com.arubr.smsvcodes.data.recommendation.NeuroDiscovery
+import com.arubr.smsvcodes.data.recommendation.UserBrain
 
 /** Counts from the video engine's memory, for anyone debugging what it has learned. */
 @Immutable

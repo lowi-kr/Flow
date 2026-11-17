@@ -1,12 +1,12 @@
-package io.github.aedev.flow.ui.components.shared
+package com.arubr.smsvcodes.ui.components.shared
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.Folder
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.res.stringResource
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.model.SubscriptionGroup
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.model.SubscriptionGroup
 
 @Composable
 fun ChannelGroupSheet(

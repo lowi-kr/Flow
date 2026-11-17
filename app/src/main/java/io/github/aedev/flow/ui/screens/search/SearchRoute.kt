@@ -1,12 +1,12 @@
-package io.github.aedev.flow.ui.screens.search
+package com.arubr.smsvcodes.ui.screens.search
 
-import io.github.aedev.flow.data.local.ContentType
-import io.github.aedev.flow.data.local.Duration
-import io.github.aedev.flow.data.local.SearchFeature
-import io.github.aedev.flow.data.local.SearchFilter
-import io.github.aedev.flow.data.local.SortType
-import io.github.aedev.flow.data.local.UploadDate
-import io.github.aedev.flow.data.local.WatchState
+import com.arubr.smsvcodes.data.local.ContentType
+import com.arubr.smsvcodes.data.local.Duration
+import com.arubr.smsvcodes.data.local.SearchFeature
+import com.arubr.smsvcodes.data.local.SearchFilter
+import com.arubr.smsvcodes.data.local.SortType
+import com.arubr.smsvcodes.data.local.UploadDate
+import com.arubr.smsvcodes.data.local.WatchState
 import java.net.URLEncoder
 
 internal const val SEARCH_QUERY_ARG = "query"

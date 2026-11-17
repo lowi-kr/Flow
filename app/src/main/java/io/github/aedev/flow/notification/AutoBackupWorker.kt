@@ -1,4 +1,4 @@
-package io.github.aedev.flow.notification
+package com.arubr.smsvcodes.notification
 
 import android.app.NotificationChannel
 import android.app.NotificationManager
@@ -17,12 +17,12 @@ import dagger.hilt.EntryPoint
 import dagger.hilt.InstallIn
 import dagger.hilt.android.EntryPointAccessors
 import dagger.hilt.components.SingletonComponent
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.local.BackupRepository
-import io.github.aedev.flow.data.local.LocalDataManager
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.data.profile.ActiveProfile
-import io.github.aedev.flow.data.profile.ProfileSlices
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.local.BackupRepository
+import com.arubr.smsvcodes.data.local.LocalDataManager
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.data.profile.ActiveProfile
+import com.arubr.smsvcodes.data.profile.ProfileSlices
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.withContext

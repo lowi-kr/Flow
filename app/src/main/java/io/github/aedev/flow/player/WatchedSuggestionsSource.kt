@@ -1,9 +1,9 @@
-package io.github.aedev.flow.player
+package com.arubr.smsvcodes.player
 
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.data.local.dao.WatchHistoryDao
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.data.paging.watchedVideoIds
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.data.local.dao.WatchHistoryDao
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.data.paging.watchedVideoIds
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.flow.first
 import javax.inject.Inject

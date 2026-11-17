@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.playon
+package com.arubr.smsvcodes.ui.screens.playon
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -35,11 +35,11 @@ import androidx.compose.ui.unit.Constraints
 import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import io.github.aedev.flow.R
-import io.github.aedev.flow.ui.RemoteSlot
-import io.github.aedev.flow.ui.components.shared.MediaMiniBarBounds
-import io.github.aedev.flow.ui.components.shared.MediaMiniBarDefaults
-import io.github.aedev.flow.ui.components.shared.MediaPlayPauseButton
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.ui.RemoteSlot
+import com.arubr.smsvcodes.ui.components.shared.MediaMiniBarBounds
+import com.arubr.smsvcodes.ui.components.shared.MediaMiniBarDefaults
+import com.arubr.smsvcodes.ui.components.shared.MediaPlayPauseButton
 import kotlin.math.roundToInt
 
 /** What "Play on" puts in the shell's mini player slot now. */

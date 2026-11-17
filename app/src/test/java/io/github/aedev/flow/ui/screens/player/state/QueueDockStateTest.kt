@@ -1,7 +1,7 @@
-package io.github.aedev.flow.ui.screens.player.state
+package com.arubr.smsvcodes.ui.screens.player.state
 
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.data.model.Video
+import com.arubr.smsvcodes.data.model.Video
 import org.junit.Test
 
 class QueueDockStateTest {

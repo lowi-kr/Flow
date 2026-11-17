@@ -1,7 +1,7 @@
-package io.github.aedev.flow.ui.screens.player
+package com.arubr.smsvcodes.ui.screens.player
 
-import io.github.aedev.flow.data.model.LiveChatMessage
-import io.github.aedev.flow.data.repository.LiveChatRepository
+import com.arubr.smsvcodes.data.model.LiveChatMessage
+import com.arubr.smsvcodes.data.repository.LiveChatRepository
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Job

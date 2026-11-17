@@ -1,8 +1,8 @@
-package io.github.aedev.flow.ui.theme
+package com.arubr.smsvcodes.ui.theme
 
 import androidx.annotation.StringRes
 import androidx.compose.runtime.Immutable
-import io.github.aedev.flow.R
+import com.arubr.smsvcodes.R
 
 /** A palette the user can pick, with its display name and one-line description. */
 @Immutable

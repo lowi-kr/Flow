@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.player.stage
+package com.arubr.smsvcodes.ui.screens.player.stage
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.BoxScope
@@ -21,11 +21,11 @@ import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.zIndex
-import io.github.aedev.flow.data.local.SponsorBlockSkipButtonStyle
-import io.github.aedev.flow.data.model.SponsorBlockSegment
-import io.github.aedev.flow.player.EnhancedPlayerManager
-import io.github.aedev.flow.ui.components.videoplayer.overlay.SponsorBlockSkipButton
-import io.github.aedev.flow.ui.components.videoplayer.placedWhen
+import com.arubr.smsvcodes.data.local.SponsorBlockSkipButtonStyle
+import com.arubr.smsvcodes.data.model.SponsorBlockSegment
+import com.arubr.smsvcodes.player.EnhancedPlayerManager
+import com.arubr.smsvcodes.ui.components.videoplayer.overlay.SponsorBlockSkipButton
+import com.arubr.smsvcodes.ui.components.videoplayer.placedWhen
 
 /** The floating skip button, laid over the video area only and never over the body below it. */
 @Composable

@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.layout.navigation
+package com.arubr.smsvcodes.ui.components.layout.navigation
 
 import androidx.window.core.layout.WindowSizeClass
 import androidx.window.core.layout.computeWindowSizeClass

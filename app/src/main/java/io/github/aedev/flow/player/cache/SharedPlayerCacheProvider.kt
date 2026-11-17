@@ -1,4 +1,4 @@
-package io.github.aedev.flow.player.cache
+package com.arubr.smsvcodes.player.cache
 
 import android.content.Context
 import android.util.Log
@@ -8,7 +8,7 @@ import androidx.media3.database.StandaloneDatabaseProvider
 import androidx.media3.datasource.cache.LeastRecentlyUsedCacheEvictor
 import androidx.media3.datasource.cache.NoOpCacheEvictor
 import androidx.media3.datasource.cache.SimpleCache
-import io.github.aedev.flow.player.config.PlayerConfig
+import com.arubr.smsvcodes.player.config.PlayerConfig
 import java.io.File
 
 /**

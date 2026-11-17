@@ -1,7 +1,7 @@
-package io.github.aedev.flow.data.profile
+package com.arubr.smsvcodes.data.profile
 
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.notification.UpcomingReminder
+import com.arubr.smsvcodes.notification.UpcomingReminder
 import org.junit.Test
 
 class ProfileWorkTest {

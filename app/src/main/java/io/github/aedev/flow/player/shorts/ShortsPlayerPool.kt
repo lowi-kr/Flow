@@ -1,4 +1,4 @@
-package io.github.aedev.flow.player.shorts
+package com.arubr.smsvcodes.player.shorts
 
 import android.content.Context
 import android.media.audiofx.AudioEffect
@@ -14,16 +14,16 @@ import androidx.media3.exoplayer.ExoPlayer
 import androidx.media3.exoplayer.trackselection.DefaultTrackSelector
 import androidx.media3.session.MediaSession
 import dagger.hilt.android.EntryPointAccessors
-import io.github.aedev.flow.data.local.DEFAULT_VIDEO_VOLUME_NORMALIZATION
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.data.model.ShortVideo
-import io.github.aedev.flow.player.audio.AudioEffectsEntryPoint
-import io.github.aedev.flow.player.audio.AudioSessionAnnouncer
-import io.github.aedev.flow.player.audio.LoudnessGain
-import io.github.aedev.flow.player.audio.eq.EqualizerAudioProcessor
-import io.github.aedev.flow.player.cache.PlayerCacheManager
-import io.github.aedev.flow.player.cache.SharedPlayerCacheProvider
-import io.github.aedev.flow.player.datasource.YouTubeHttpDataSource
+import com.arubr.smsvcodes.data.local.DEFAULT_VIDEO_VOLUME_NORMALIZATION
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.data.model.ShortVideo
+import com.arubr.smsvcodes.player.audio.AudioEffectsEntryPoint
+import com.arubr.smsvcodes.player.audio.AudioSessionAnnouncer
+import com.arubr.smsvcodes.player.audio.LoudnessGain
+import com.arubr.smsvcodes.player.audio.eq.EqualizerAudioProcessor
+import com.arubr.smsvcodes.player.cache.PlayerCacheManager
+import com.arubr.smsvcodes.player.cache.SharedPlayerCacheProvider
+import com.arubr.smsvcodes.player.datasource.YouTubeHttpDataSource
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob

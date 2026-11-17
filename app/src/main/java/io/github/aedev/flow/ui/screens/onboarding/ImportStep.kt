@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.onboarding
+package com.arubr.smsvcodes.ui.screens.onboarding
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -34,11 +34,11 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.backup.BackupOperation
-import io.github.aedev.flow.data.backup.ImportKind
-import io.github.aedev.flow.data.backup.ImportSource
-import io.github.aedev.flow.ui.components.shared.FlowProgressBanner
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.backup.BackupOperation
+import com.arubr.smsvcodes.data.backup.ImportKind
+import com.arubr.smsvcodes.data.backup.ImportSource
+import com.arubr.smsvcodes.ui.components.shared.FlowProgressBanner
 
 private val TileSpacing = 10.dp
 private val TilePadding = 16.dp

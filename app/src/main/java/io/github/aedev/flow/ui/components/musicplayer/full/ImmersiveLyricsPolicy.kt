@@ -1,6 +1,6 @@
-package io.github.aedev.flow.ui.components.musicplayer.full
+package com.arubr.smsvcodes.ui.components.musicplayer.full
 
-import io.github.aedev.flow.data.local.MusicPlayerBackgroundStyle
+import com.arubr.smsvcodes.data.local.MusicPlayerBackgroundStyle
 
 /** How dark the immersive cover goes behind lyrics shown in place, as the scrim's alpha. */
 internal const val IN_PLACE_LYRICS_DIM = 0.6f

@@ -1,9 +1,9 @@
-package io.github.aedev.flow.sync2
+package com.arubr.smsvcodes.sync2
 
-import io.github.aedev.flow.sync2.device.DamagedKeysException
-import io.github.aedev.flow.sync2.device.SecretSlot
-import io.github.aedev.flow.sync2.device.deviceKeys
-import io.github.aedev.flow.sync2.device.freshDeviceKeys
+import com.arubr.smsvcodes.sync2.device.DamagedKeysException
+import com.arubr.smsvcodes.sync2.device.SecretSlot
+import com.arubr.smsvcodes.sync2.device.deviceKeys
+import com.arubr.smsvcodes.sync2.device.freshDeviceKeys
 import kotlinx.coroutines.test.runTest
 import org.junit.Assert.assertArrayEquals
 import org.junit.Assert.assertEquals

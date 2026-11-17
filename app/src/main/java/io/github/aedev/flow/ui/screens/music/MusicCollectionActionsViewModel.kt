@@ -1,14 +1,14 @@
-package io.github.aedev.flow.ui.screens.music
+package com.arubr.smsvcodes.ui.screens.music
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.local.PlaylistRepository
-import io.github.aedev.flow.data.music.YouTubeMusicService
-import io.github.aedev.flow.data.music.model.MusicTrack
-import io.github.aedev.flow.data.music.model.PlaylistDetails
-import io.github.aedev.flow.ui.components.music.sheet.MusicCollectionActionItem
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.local.PlaylistRepository
+import com.arubr.smsvcodes.data.music.YouTubeMusicService
+import com.arubr.smsvcodes.data.music.model.MusicTrack
+import com.arubr.smsvcodes.data.music.model.PlaylistDetails
+import com.arubr.smsvcodes.ui.components.music.sheet.MusicCollectionActionItem
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow

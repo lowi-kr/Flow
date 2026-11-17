@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.sync.linked
+package com.arubr.smsvcodes.ui.screens.sync.linked
 
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.runtime.Composable
@@ -10,8 +10,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.compose.LocalLifecycleOwner
 import androidx.lifecycle.repeatOnLifecycle
 import dagger.hilt.android.lifecycle.HiltViewModel
-import io.github.aedev.flow.R
-import io.github.aedev.flow.sync2.service.LinkedSync
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.sync2.service.LinkedSync
 import javax.inject.Inject
 
 @HiltViewModel

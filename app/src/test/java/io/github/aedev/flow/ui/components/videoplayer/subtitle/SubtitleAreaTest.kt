@@ -1,8 +1,8 @@
-package io.github.aedev.flow.ui.components.videoplayer.subtitle
+package com.arubr.smsvcodes.ui.components.videoplayer.subtitle
 
 import androidx.media3.common.text.Cue
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.player.subtitle.toRollingCaptionText
+import com.arubr.smsvcodes.player.subtitle.toRollingCaptionText
 import org.junit.Test
 
 class SubtitleAreaTest {

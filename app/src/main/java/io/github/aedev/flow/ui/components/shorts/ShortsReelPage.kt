@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.shorts
+package com.arubr.smsvcodes.ui.components.shorts
 
 import android.view.ViewGroup
 import android.widget.FrameLayout
@@ -45,22 +45,22 @@ import androidx.compose.ui.zIndex
 import androidx.media3.common.Player
 import androidx.media3.common.VideoSize
 import androidx.media3.ui.PlayerView
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.model.ShortVideo
-import io.github.aedev.flow.data.model.toVideo
-import io.github.aedev.flow.player.GlobalPlayerState
-import io.github.aedev.flow.player.shorts.ShortsPlayerPool
-import io.github.aedev.flow.player.toDisplayAspectRatioOrNull
-import io.github.aedev.flow.ui.components.shared.MediaBufferingIndicator
-import io.github.aedev.flow.ui.components.shared.MediaSeekBar
-import io.github.aedev.flow.ui.components.shared.sharedSubscriptionBellViewModel
-import io.github.aedev.flow.ui.components.shared.toggleHapticType
-import io.github.aedev.flow.ui.components.videoplayer.ambient.VideoAmbientBackground
-import io.github.aedev.flow.ui.components.videoplayer.ambient.rememberAmbientFrame
-import io.github.aedev.flow.ui.components.videoplayer.overlay.SpeedBoostOverlay
-import io.github.aedev.flow.ui.screens.shorts.ShortsViewModel
-import io.github.aedev.flow.ui.theme.PlayerScrim
-import io.github.aedev.flow.utils.formatViewCount
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.model.ShortVideo
+import com.arubr.smsvcodes.data.model.toVideo
+import com.arubr.smsvcodes.player.GlobalPlayerState
+import com.arubr.smsvcodes.player.shorts.ShortsPlayerPool
+import com.arubr.smsvcodes.player.toDisplayAspectRatioOrNull
+import com.arubr.smsvcodes.ui.components.shared.MediaBufferingIndicator
+import com.arubr.smsvcodes.ui.components.shared.MediaSeekBar
+import com.arubr.smsvcodes.ui.components.shared.sharedSubscriptionBellViewModel
+import com.arubr.smsvcodes.ui.components.shared.toggleHapticType
+import com.arubr.smsvcodes.ui.components.videoplayer.ambient.VideoAmbientBackground
+import com.arubr.smsvcodes.ui.components.videoplayer.ambient.rememberAmbientFrame
+import com.arubr.smsvcodes.ui.components.videoplayer.overlay.SpeedBoostOverlay
+import com.arubr.smsvcodes.ui.screens.shorts.ShortsViewModel
+import com.arubr.smsvcodes.ui.theme.PlayerScrim
+import com.arubr.smsvcodes.utils.formatViewCount
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 

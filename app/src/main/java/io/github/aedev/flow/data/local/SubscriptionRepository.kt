@@ -1,4 +1,4 @@
-package io.github.aedev.flow.data.local
+package com.arubr.smsvcodes.data.local
 
 import android.content.Context
 import androidx.datastore.core.DataStore
@@ -6,10 +6,10 @@ import androidx.datastore.preferences.core.MutablePreferences
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.stringPreferencesKey
-import io.github.aedev.flow.data.engagement.FeedInvalidationBus
-import io.github.aedev.flow.data.local.AppDatabase
-import io.github.aedev.flow.data.profile.StoreScope
-import io.github.aedev.flow.utils.ThumbnailUrlResolver
+import com.arubr.smsvcodes.data.engagement.FeedInvalidationBus
+import com.arubr.smsvcodes.data.local.AppDatabase
+import com.arubr.smsvcodes.data.profile.StoreScope
+import com.arubr.smsvcodes.utils.ThumbnailUrlResolver
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.SharedFlow

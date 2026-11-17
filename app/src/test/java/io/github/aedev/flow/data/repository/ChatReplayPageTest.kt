@@ -1,7 +1,7 @@
-package io.github.aedev.flow.data.repository
+package com.arubr.smsvcodes.data.repository
 
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.innertube.models.response.GetLiveChatResponse
+import com.arubr.smsvcodes.innertube.models.response.GetLiveChatResponse
 import kotlinx.serialization.json.Json
 import org.junit.Test
 

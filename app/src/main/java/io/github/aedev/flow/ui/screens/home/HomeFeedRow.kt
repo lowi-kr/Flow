@@ -1,6 +1,6 @@
-package io.github.aedev.flow.ui.screens.home
+package com.arubr.smsvcodes.ui.screens.home
 
-import io.github.aedev.flow.data.model.Video
+import com.arubr.smsvcodes.data.model.Video
 
 /** One slot of the home grid: a video card, or one of the two shelves that own a whole row. */
 internal sealed interface HomeFeedRow {

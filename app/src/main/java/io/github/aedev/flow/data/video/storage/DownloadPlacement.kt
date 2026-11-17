@@ -1,13 +1,13 @@
-package io.github.aedev.flow.data.video.storage
+package com.arubr.smsvcodes.data.video.storage
 
 import android.content.Context
 import dagger.hilt.android.qualifiers.ApplicationContext
-import io.github.aedev.flow.data.local.dao.DownloadCollectionDao
-import io.github.aedev.flow.data.local.dao.DownloadDao
-import io.github.aedev.flow.data.local.entity.DownloadCollectionEntity
-import io.github.aedev.flow.data.local.entity.DownloadFileType
-import io.github.aedev.flow.data.video.VideoDownloadManager
-import io.github.aedev.flow.data.video.downloader.request.DownloadRequest
+import com.arubr.smsvcodes.data.local.dao.DownloadCollectionDao
+import com.arubr.smsvcodes.data.local.dao.DownloadDao
+import com.arubr.smsvcodes.data.local.entity.DownloadCollectionEntity
+import com.arubr.smsvcodes.data.local.entity.DownloadFileType
+import com.arubr.smsvcodes.data.video.VideoDownloadManager
+import com.arubr.smsvcodes.data.video.downloader.request.DownloadRequest
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
 import java.io.File

@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.videoplayer.motion
+package com.arubr.smsvcodes.ui.components.videoplayer.motion
 
 import com.google.common.truth.Truth.assertThat
 import org.junit.Test

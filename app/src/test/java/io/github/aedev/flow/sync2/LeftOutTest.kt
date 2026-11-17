@@ -1,9 +1,9 @@
-package io.github.aedev.flow.sync2
+package com.arubr.smsvcodes.sync2
 
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.sync.protocol.SyncCollection
-import io.github.aedev.flow.sync2.service.catchingUpAfter
-import io.github.aedev.flow.sync2.service.sendable
+import com.arubr.smsvcodes.sync.protocol.SyncCollection
+import com.arubr.smsvcodes.sync2.service.catchingUpAfter
+import com.arubr.smsvcodes.sync2.service.sendable
 import org.junit.Test
 
 class LeftOutTest {

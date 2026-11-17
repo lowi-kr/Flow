@@ -1,4 +1,4 @@
-package io.github.aedev.flow.data.update
+package com.arubr.smsvcodes.data.update
 
 import dagger.hilt.EntryPoint
 import dagger.hilt.InstallIn

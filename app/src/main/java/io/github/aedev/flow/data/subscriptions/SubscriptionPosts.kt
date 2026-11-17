@@ -1,7 +1,7 @@
-package io.github.aedev.flow.data.subscriptions
+package com.arubr.smsvcodes.data.subscriptions
 
-import io.github.aedev.flow.data.community.PostAge
-import io.github.aedev.flow.innertube.pages.renderer.CommunityPost
+import com.arubr.smsvcodes.data.community.PostAge
+import com.arubr.smsvcodes.innertube.pages.renderer.CommunityPost
 import java.time.Duration
 import java.util.concurrent.ConcurrentHashMap
 

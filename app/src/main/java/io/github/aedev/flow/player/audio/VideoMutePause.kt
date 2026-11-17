@@ -1,7 +1,7 @@
-package io.github.aedev.flow.player.audio
+package com.arubr.smsvcodes.player.audio
 
 import androidx.media3.common.Player
-import io.github.aedev.flow.player.MutePausePolicy
+import com.arubr.smsvcodes.player.MutePausePolicy
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.launch

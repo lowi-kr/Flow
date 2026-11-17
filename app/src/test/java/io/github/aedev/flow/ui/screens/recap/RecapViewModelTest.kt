@@ -1,16 +1,16 @@
-package io.github.aedev.flow.ui.screens.recap
+package com.arubr.smsvcodes.ui.screens.recap
 
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.data.local.SearchHistoryRepository
-import io.github.aedev.flow.data.recommendation.music.MusicBrainEngine
-import io.github.aedev.flow.data.recommendation.music.MusicStatsStorage
-import io.github.aedev.flow.data.recommendation.music.graph.MusicGraphStore
-import io.github.aedev.flow.data.stats.RecapImageResolver
-import io.github.aedev.flow.data.stats.RecapPeriod
-import io.github.aedev.flow.data.stats.VideoMonthRecord
-import io.github.aedev.flow.data.stats.VideoStatsRecorder
-import io.github.aedev.flow.data.stats.VideoStatsSnapshot
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.data.local.SearchHistoryRepository
+import com.arubr.smsvcodes.data.recommendation.music.MusicBrainEngine
+import com.arubr.smsvcodes.data.recommendation.music.MusicStatsStorage
+import com.arubr.smsvcodes.data.recommendation.music.graph.MusicGraphStore
+import com.arubr.smsvcodes.data.stats.RecapImageResolver
+import com.arubr.smsvcodes.data.stats.RecapPeriod
+import com.arubr.smsvcodes.data.stats.VideoMonthRecord
+import com.arubr.smsvcodes.data.stats.VideoStatsRecorder
+import com.arubr.smsvcodes.data.stats.VideoStatsSnapshot
 import io.mockk.coEvery
 import io.mockk.every
 import io.mockk.mockk

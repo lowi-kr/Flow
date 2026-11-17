@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.player
+package com.arubr.smsvcodes.ui.screens.player
 
 private const val RELATED_PREWARM_MIN_POSITION_MS = 20_000L
 private const val RELATED_PREWARM_MIN_PROGRESS = 0.35

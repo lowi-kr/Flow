@@ -1,8 +1,8 @@
-package io.github.aedev.flow.ui.components.shared
+package com.arubr.smsvcodes.ui.components.shared
 
 import androidx.compose.runtime.Immutable
-import io.github.aedev.flow.data.video.DownloadStreamPolicy
-import io.github.aedev.flow.innertube.models.response.PlayerResponse.StreamingData.Format
+import com.arubr.smsvcodes.data.video.DownloadStreamPolicy
+import com.arubr.smsvcodes.innertube.models.response.PlayerResponse.StreamingData.Format
 
 /** A codec, in SDR or HDR, that one resolution of the download sheet offers. */
 @Immutable

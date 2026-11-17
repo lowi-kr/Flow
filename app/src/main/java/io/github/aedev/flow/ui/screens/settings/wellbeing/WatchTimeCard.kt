@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.settings.wellbeing
+package com.arubr.smsvcodes.ui.screens.settings.wellbeing
 
 import androidx.compose.animation.animateColorAsState
 import androidx.compose.foundation.background
@@ -32,9 +32,9 @@ import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.ui.components.shared.FlowLoadingIndicator
-import io.github.aedev.flow.ui.components.stats.spentTimeLabel
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.ui.components.shared.FlowLoadingIndicator
+import com.arubr.smsvcodes.ui.components.stats.spentTimeLabel
 import java.time.LocalDate
 import java.time.format.TextStyle
 import java.util.Locale

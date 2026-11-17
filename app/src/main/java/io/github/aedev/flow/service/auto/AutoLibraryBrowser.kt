@@ -1,4 +1,4 @@
-package io.github.aedev.flow.service.auto
+package com.arubr.smsvcodes.service.auto
 
 import android.content.Context
 import android.os.Bundle
@@ -14,14 +14,14 @@ import com.google.common.collect.ImmutableList
 import com.google.common.util.concurrent.Futures
 import com.google.common.util.concurrent.ListenableFuture
 import com.google.common.util.concurrent.SettableFuture
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.music.model.MusicTrack
-import io.github.aedev.flow.data.recommendation.music.MusicTimeBucket
-import io.github.aedev.flow.player.EnhancedMusicPlayerManager
-import io.github.aedev.flow.player.musicAudioUri
-import io.github.aedev.flow.player.musicMediaItem
-import io.github.aedev.flow.ui.components.music.section.rotationTitleRes
-import io.github.aedev.flow.utils.PerformanceDispatcher
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.music.model.MusicTrack
+import com.arubr.smsvcodes.data.recommendation.music.MusicTimeBucket
+import com.arubr.smsvcodes.player.EnhancedMusicPlayerManager
+import com.arubr.smsvcodes.player.musicAudioUri
+import com.arubr.smsvcodes.player.musicMediaItem
+import com.arubr.smsvcodes.ui.components.music.section.rotationTitleRes
+import com.arubr.smsvcodes.utils.PerformanceDispatcher
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.CoroutineScope

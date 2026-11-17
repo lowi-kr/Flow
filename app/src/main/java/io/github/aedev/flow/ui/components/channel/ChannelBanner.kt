@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.channel
+package com.arubr.smsvcodes.ui.components.channel
 
 import android.util.Log
 import androidx.compose.foundation.background
@@ -13,8 +13,8 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
-import io.github.aedev.flow.R
-import io.github.aedev.flow.ui.components.shared.thumbnailUrlOrNull
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.ui.components.shared.thumbnailUrlOrNull
 
 internal const val CHANNEL_BANNER_ASPECT_RATIO = 1060f / 175f
 

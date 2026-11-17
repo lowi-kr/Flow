@@ -1,8 +1,8 @@
-package io.github.aedev.flow.sync2.engine
+package com.arubr.smsvcodes.sync2.engine
 
-import io.github.aedev.flow.sync2.roster.Entry
-import io.github.aedev.flow.sync2.roster.Op
-import io.github.aedev.flow.sync2.roster.entryHash
+import com.arubr.smsvcodes.sync2.roster.Entry
+import com.arubr.smsvcodes.sync2.roster.Op
+import com.arubr.smsvcodes.sync2.roster.entryHash
 
 private fun changedBy(entry: Entry): String? =
     when {

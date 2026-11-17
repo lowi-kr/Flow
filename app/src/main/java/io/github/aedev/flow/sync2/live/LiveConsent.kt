@@ -1,7 +1,7 @@
-package io.github.aedev.flow.sync2.live
+package com.arubr.smsvcodes.sync2.live
 
-import io.github.aedev.flow.sync2.data.ConsentRow
-import io.github.aedev.flow.sync2.data.LinkedDatabase
+import com.arubr.smsvcodes.sync2.data.ConsentRow
+import com.arubr.smsvcodes.sync2.data.LinkedDatabase
 import kotlinx.coroutines.CompletableDeferred
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow

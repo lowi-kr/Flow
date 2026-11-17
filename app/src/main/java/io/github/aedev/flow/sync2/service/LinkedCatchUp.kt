@@ -1,4 +1,4 @@
-package io.github.aedev.flow.sync2.service
+package com.arubr.smsvcodes.sync2.service
 
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Deferred

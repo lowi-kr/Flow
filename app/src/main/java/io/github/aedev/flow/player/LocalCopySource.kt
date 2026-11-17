@@ -1,4 +1,4 @@
-package io.github.aedev.flow.player
+package com.arubr.smsvcodes.player
 
 /** Finished downloads, so a queue that advances onto one plays the file instead of streaming it. */
 fun interface LocalCopySource {

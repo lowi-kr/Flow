@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.search
+package com.arubr.smsvcodes.ui.components.search
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -19,16 +19,16 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
-import io.github.aedev.flow.innertube.pages.renderer.CommunityPost
-import io.github.aedev.flow.innertube.pages.renderer.PostAttachment
-import io.github.aedev.flow.ui.components.shared.ChannelAvatarImage
-import io.github.aedev.flow.ui.components.shared.thumbnailUrlOrNull
+import com.arubr.smsvcodes.innertube.pages.renderer.CommunityPost
+import com.arubr.smsvcodes.innertube.pages.renderer.PostAttachment
+import com.arubr.smsvcodes.ui.components.shared.ChannelAvatarImage
+import com.arubr.smsvcodes.ui.components.shared.thumbnailUrlOrNull
 
 /**
  * One community post in the search strip, shaped like YouTube's: a fixed-width outlined card with
  * the author line, the text, and the attachment preview beside it.
  *
- * The full [io.github.aedev.flow.ui.components.shared.MediaPostCard] is a full-width reading
+ * The full [com.arubr.smsvcodes.ui.components.shared.MediaPostCard] is a full-width reading
  * surface with actions; neither fits a horizontally scrolling strip.
  */
 @Composable

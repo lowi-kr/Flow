@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.musicplayer.mini
+package com.arubr.smsvcodes.ui.components.musicplayer.mini
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.Immutable
@@ -6,17 +6,17 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.platform.LocalContext
-import io.github.aedev.flow.data.local.CoverShape
-import io.github.aedev.flow.data.local.DefaultCoverShapes
-import io.github.aedev.flow.data.local.DefaultMiniBarButtons
-import io.github.aedev.flow.data.local.MiniBarBackground
-import io.github.aedev.flow.data.local.MiniBarButton
-import io.github.aedev.flow.data.local.MiniBarProgress
-import io.github.aedev.flow.data.local.MiniCoverMotion
-import io.github.aedev.flow.data.local.MiniCoverShape
-import io.github.aedev.flow.data.local.MiniCoverTap
-import io.github.aedev.flow.data.local.MiniLongPress
-import io.github.aedev.flow.data.local.PlayerPreferences
+import com.arubr.smsvcodes.data.local.CoverShape
+import com.arubr.smsvcodes.data.local.DefaultCoverShapes
+import com.arubr.smsvcodes.data.local.DefaultMiniBarButtons
+import com.arubr.smsvcodes.data.local.MiniBarBackground
+import com.arubr.smsvcodes.data.local.MiniBarButton
+import com.arubr.smsvcodes.data.local.MiniBarProgress
+import com.arubr.smsvcodes.data.local.MiniCoverMotion
+import com.arubr.smsvcodes.data.local.MiniCoverShape
+import com.arubr.smsvcodes.data.local.MiniCoverTap
+import com.arubr.smsvcodes.data.local.MiniLongPress
+import com.arubr.smsvcodes.data.local.PlayerPreferences
 
 /** How the music mini player looks, as chosen in Appearance › Player. */
 @Immutable

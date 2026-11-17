@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.sync.linked
+package com.arubr.smsvcodes.ui.screens.sync.linked
 
 import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -11,15 +11,15 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.sync2.service.LinkPhase
-import io.github.aedev.flow.ui.screens.sync.QrCodeImage
-import io.github.aedev.flow.ui.screens.sync.SyncActionRow
-import io.github.aedev.flow.ui.screens.sync.SyncBusyContent
-import io.github.aedev.flow.ui.screens.sync.SyncCard
-import io.github.aedev.flow.ui.screens.sync.SyncFailedContent
-import io.github.aedev.flow.ui.screens.sync.SyncSasContent
-import io.github.aedev.flow.ui.screens.sync.SyncStepHeader
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.sync2.service.LinkPhase
+import com.arubr.smsvcodes.ui.screens.sync.QrCodeImage
+import com.arubr.smsvcodes.ui.screens.sync.SyncActionRow
+import com.arubr.smsvcodes.ui.screens.sync.SyncBusyContent
+import com.arubr.smsvcodes.ui.screens.sync.SyncCard
+import com.arubr.smsvcodes.ui.screens.sync.SyncFailedContent
+import com.arubr.smsvcodes.ui.screens.sync.SyncSasContent
+import com.arubr.smsvcodes.ui.screens.sync.SyncStepHeader
 
 /** Adding or joining a device: the code to show, the six digits to compare, and the outcome. */
 @Composable

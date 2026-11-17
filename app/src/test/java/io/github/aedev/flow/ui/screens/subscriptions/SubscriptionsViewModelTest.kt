@@ -1,21 +1,21 @@
-package io.github.aedev.flow.ui.screens.subscriptions
+package com.arubr.smsvcodes.ui.screens.subscriptions
 
 import androidx.lifecycle.ViewModelStore
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.data.local.AppDatabase
-import io.github.aedev.flow.data.local.ChannelSubscription
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.data.local.SubscriptionRepository
-import io.github.aedev.flow.data.local.ViewHistory
-import io.github.aedev.flow.data.local.dao.SubscriptionGroupDao
-import io.github.aedev.flow.data.local.entity.SubscriptionGroupEntity
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.data.recommendation.FeedExclusions
-import io.github.aedev.flow.data.recommendation.FlowNeuroEngine
-import io.github.aedev.flow.data.subscriptions.SubscriptionFeedRefreshProgress
-import io.github.aedev.flow.data.subscriptions.SubscriptionFeedRepository
-import io.github.aedev.flow.data.subscriptions.SubscriptionRefreshPlan
-import io.github.aedev.flow.data.subscriptions.SubscriptionWatchedVideos
+import com.arubr.smsvcodes.data.local.AppDatabase
+import com.arubr.smsvcodes.data.local.ChannelSubscription
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.data.local.SubscriptionRepository
+import com.arubr.smsvcodes.data.local.ViewHistory
+import com.arubr.smsvcodes.data.local.dao.SubscriptionGroupDao
+import com.arubr.smsvcodes.data.local.entity.SubscriptionGroupEntity
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.data.recommendation.FeedExclusions
+import com.arubr.smsvcodes.data.recommendation.FlowNeuroEngine
+import com.arubr.smsvcodes.data.subscriptions.SubscriptionFeedRefreshProgress
+import com.arubr.smsvcodes.data.subscriptions.SubscriptionFeedRepository
+import com.arubr.smsvcodes.data.subscriptions.SubscriptionRefreshPlan
+import com.arubr.smsvcodes.data.subscriptions.SubscriptionWatchedVideos
 import io.mockk.coEvery
 import io.mockk.coVerify
 import io.mockk.mockk
@@ -413,7 +413,7 @@ class SubscriptionsViewModelTest {
 
     private companion object {
         /**
-         * The ViewModel launches on [io.github.aedev.flow.utils.PerformanceDispatcher] rather than
+         * The ViewModel launches on [com.arubr.smsvcodes.utils.PerformanceDispatcher] rather than
          * on an injected dispatcher, so the test scheduler cannot join those coroutines. Verify
          * with a timeout instead of racing them.
          */

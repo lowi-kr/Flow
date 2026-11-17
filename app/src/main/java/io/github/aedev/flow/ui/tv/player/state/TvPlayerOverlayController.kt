@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.tv.player.state
+package com.arubr.smsvcodes.ui.tv.player.state
 
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow

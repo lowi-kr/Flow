@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.shared
+package com.arubr.smsvcodes.ui.components.shared
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -31,11 +31,11 @@ import androidx.compose.ui.text.TextRange
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.utils.parseHexColor
-import io.github.aedev.flow.utils.sanitizeHexInput
-import io.github.aedev.flow.utils.toHexArgb
-import io.github.aedev.flow.utils.toHexRgb
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.utils.parseHexColor
+import com.arubr.smsvcodes.utils.sanitizeHexInput
+import com.arubr.smsvcodes.utils.toHexArgb
+import com.arubr.smsvcodes.utils.toHexRgb
 import kotlin.math.roundToInt
 
 private val PreviewHeight = 56.dp

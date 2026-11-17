@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.videoplayer.sheet
+package com.arubr.smsvcodes.ui.components.videoplayer.sheet
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -30,16 +30,16 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.transcript.TranscriptCue
-import io.github.aedev.flow.player.state.SubtitleOption
-import io.github.aedev.flow.ui.components.shared.FlowBottomSheet
-import io.github.aedev.flow.ui.components.shared.FlowLoadingIndicator
-import io.github.aedev.flow.ui.components.shared.FlowSearchField
-import io.github.aedev.flow.ui.components.shared.FlowSheetHeader
-import io.github.aedev.flow.ui.components.shared.defaultSheetExpandedHeight
-import io.github.aedev.flow.ui.components.shared.rememberFlowBottomSheetState
-import io.github.aedev.flow.ui.components.shared.rememberMediaArtworkTint
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.transcript.TranscriptCue
+import com.arubr.smsvcodes.player.state.SubtitleOption
+import com.arubr.smsvcodes.ui.components.shared.FlowBottomSheet
+import com.arubr.smsvcodes.ui.components.shared.FlowLoadingIndicator
+import com.arubr.smsvcodes.ui.components.shared.FlowSearchField
+import com.arubr.smsvcodes.ui.components.shared.FlowSheetHeader
+import com.arubr.smsvcodes.ui.components.shared.defaultSheetExpandedHeight
+import com.arubr.smsvcodes.ui.components.shared.rememberFlowBottomSheetState
+import com.arubr.smsvcodes.ui.components.shared.rememberMediaArtworkTint
 
 private val EmptyStateHeight = 160.dp
 

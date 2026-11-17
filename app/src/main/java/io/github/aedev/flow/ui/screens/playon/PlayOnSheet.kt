@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.playon
+package com.arubr.smsvcodes.ui.screens.playon
 
 import android.widget.Toast
 import androidx.compose.foundation.layout.Column
@@ -26,10 +26,10 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import io.github.aedev.flow.R
-import io.github.aedev.flow.sync2.live.ConsentAnswer
-import io.github.aedev.flow.ui.components.shared.FlowSheetHeader
-import io.github.aedev.flow.ui.components.shared.quickactions.QuickActionsSheet
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.sync2.live.ConsentAnswer
+import com.arubr.smsvcodes.ui.components.shared.FlowSheetHeader
+import com.arubr.smsvcodes.ui.components.shared.quickactions.QuickActionsSheet
 
 private val SheetPadding = 16.dp
 

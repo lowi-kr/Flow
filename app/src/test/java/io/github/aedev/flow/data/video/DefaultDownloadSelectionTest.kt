@@ -1,4 +1,4 @@
-package io.github.aedev.flow.data.video
+package com.arubr.smsvcodes.data.video
 
 import com.google.common.truth.Truth.assertThat
 import org.junit.Test

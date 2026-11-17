@@ -1,6 +1,6 @@
-package io.github.aedev.flow.data.repository
+package com.arubr.smsvcodes.data.repository
 
-import io.github.aedev.flow.data.model.Video
+import com.arubr.smsvcodes.data.model.Video
 
 /** The videos a walk collected, and whether it reached the playlist's last page. */
 internal data class PlaylistWalk(

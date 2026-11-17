@@ -1,4 +1,4 @@
-package io.github.aedev.flow.player.cache
+package com.arubr.smsvcodes.player.cache
 
 import android.content.Context
 import android.net.ConnectivityManager
@@ -13,8 +13,8 @@ import androidx.media3.exoplayer.ExoPlayer
 import androidx.media3.exoplayer.analytics.AnalyticsListener
 import androidx.media3.exoplayer.source.LoadEventInfo
 import androidx.media3.exoplayer.source.MediaLoadData
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.utils.PerformanceDispatcher
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.utils.PerformanceDispatcher
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Job

@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.shared.card
+package com.arubr.smsvcodes.ui.components.shared.card
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -15,8 +15,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.ui.components.shared.MediaThumbnailDefaults
-import io.github.aedev.flow.ui.components.shared.ShimmerBone
+import com.arubr.smsvcodes.ui.components.shared.MediaThumbnailDefaults
+import com.arubr.smsvcodes.ui.components.shared.ShimmerBone
 
 private val TitleLineHeight = 16.dp
 private val MetaLineHeight = 12.dp

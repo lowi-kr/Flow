@@ -1,13 +1,13 @@
-package io.github.aedev.flow.ui.components.musicplayer.lyrics
+package com.arubr.smsvcodes.ui.components.musicplayer.lyrics
 
 import androidx.annotation.StringRes
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.local.LYRICS_ALIGN_CENTER
-import io.github.aedev.flow.data.local.LYRICS_ALIGN_LEFT
-import io.github.aedev.flow.data.local.LYRICS_ALIGN_RIGHT
-import io.github.aedev.flow.data.local.LyricsAnimationStyle
-import io.github.aedev.flow.data.local.LyricsBackgroundStyle
-import io.github.aedev.flow.data.local.LyricsGlow
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.local.LYRICS_ALIGN_CENTER
+import com.arubr.smsvcodes.data.local.LYRICS_ALIGN_LEFT
+import com.arubr.smsvcodes.data.local.LYRICS_ALIGN_RIGHT
+import com.arubr.smsvcodes.data.local.LyricsAnimationStyle
+import com.arubr.smsvcodes.data.local.LyricsBackgroundStyle
+import com.arubr.smsvcodes.data.local.LyricsGlow
 
 @StringRes
 internal fun lyricsAnimationLabel(style: LyricsAnimationStyle): Int =

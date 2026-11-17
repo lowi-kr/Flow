@@ -1,8 +1,8 @@
-package io.github.aedev.flow.ui.screens.player
+package com.arubr.smsvcodes.ui.screens.player
 
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.data.model.LiveChatMessage
-import io.github.aedev.flow.data.repository.LiveChatRepository
+import com.arubr.smsvcodes.data.model.LiveChatMessage
+import com.arubr.smsvcodes.data.repository.LiveChatRepository
 import io.mockk.coEvery
 import io.mockk.coVerify
 import io.mockk.mockk

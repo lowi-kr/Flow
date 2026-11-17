@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.videoplayer.sheet
+package com.arubr.smsvcodes.ui.components.videoplayer.sheet
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.PaddingValues
@@ -29,15 +29,15 @@ import androidx.compose.ui.platform.LocalHapticFeedback
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.ui.components.shared.FlowBottomSheet
-import io.github.aedev.flow.ui.components.shared.FlowSheetHeader
-import io.github.aedev.flow.ui.components.shared.defaultSheetExpandedHeight
-import io.github.aedev.flow.ui.components.shared.mediaLengthLabel
-import io.github.aedev.flow.ui.components.shared.rememberFlowBottomSheetState
-import io.github.aedev.flow.ui.components.shared.reorderHandleDrag
-import io.github.aedev.flow.ui.components.shared.reorderLift
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.ui.components.shared.FlowBottomSheet
+import com.arubr.smsvcodes.ui.components.shared.FlowSheetHeader
+import com.arubr.smsvcodes.ui.components.shared.defaultSheetExpandedHeight
+import com.arubr.smsvcodes.ui.components.shared.mediaLengthLabel
+import com.arubr.smsvcodes.ui.components.shared.rememberFlowBottomSheetState
+import com.arubr.smsvcodes.ui.components.shared.reorderHandleDrag
+import com.arubr.smsvcodes.ui.components.shared.reorderLift
 import sh.calvin.reorderable.ReorderableItem
 import sh.calvin.reorderable.rememberReorderableLazyListState
 

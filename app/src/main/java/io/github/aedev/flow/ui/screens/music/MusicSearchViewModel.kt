@@ -1,29 +1,29 @@
-package io.github.aedev.flow.ui.screens.music
+package com.arubr.smsvcodes.ui.screens.music
 
 import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.contentfilter.aislist.AiListRepository
-import io.github.aedev.flow.data.local.PrivacyGate
-import io.github.aedev.flow.data.local.SearchHistoryItem
-import io.github.aedev.flow.data.local.SearchHistoryRepository
-import io.github.aedev.flow.data.local.SearchHistoryScope
-import io.github.aedev.flow.data.local.SearchType
-import io.github.aedev.flow.data.model.distinctByNonBlankKey
-import io.github.aedev.flow.data.music.DownloadManager
-import io.github.aedev.flow.data.newmusic.InnertubeMusicService
-import io.github.aedev.flow.innertube.YouTube
-import io.github.aedev.flow.innertube.YouTube.SearchFilter
-import io.github.aedev.flow.innertube.models.SearchSuggestions
-import io.github.aedev.flow.innertube.models.YTItem
-import io.github.aedev.flow.innertube.pages.ArtistSectionKind
-import io.github.aedev.flow.innertube.pages.MoodAndGenres
-import io.github.aedev.flow.innertube.pages.SearchSummaryPage
-import io.github.aedev.flow.ui.components.search.recentOrMatching
-import io.github.aedev.flow.utils.PerformanceDispatcher
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.contentfilter.aislist.AiListRepository
+import com.arubr.smsvcodes.data.local.PrivacyGate
+import com.arubr.smsvcodes.data.local.SearchHistoryItem
+import com.arubr.smsvcodes.data.local.SearchHistoryRepository
+import com.arubr.smsvcodes.data.local.SearchHistoryScope
+import com.arubr.smsvcodes.data.local.SearchType
+import com.arubr.smsvcodes.data.model.distinctByNonBlankKey
+import com.arubr.smsvcodes.data.music.DownloadManager
+import com.arubr.smsvcodes.data.newmusic.InnertubeMusicService
+import com.arubr.smsvcodes.innertube.YouTube
+import com.arubr.smsvcodes.innertube.YouTube.SearchFilter
+import com.arubr.smsvcodes.innertube.models.SearchSuggestions
+import com.arubr.smsvcodes.innertube.models.YTItem
+import com.arubr.smsvcodes.innertube.pages.ArtistSectionKind
+import com.arubr.smsvcodes.innertube.pages.MoodAndGenres
+import com.arubr.smsvcodes.innertube.pages.SearchSummaryPage
+import com.arubr.smsvcodes.ui.components.search.recentOrMatching
+import com.arubr.smsvcodes.utils.PerformanceDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.FlowPreview
 import kotlinx.coroutines.Job
@@ -262,7 +262,7 @@ class MusicSearchViewModel
                             _uiState.update { state ->
                                 if (state.activeFilter == null) {
                                     val newSummary =
-                                        io.github.aedev.flow.innertube.pages.SearchSummary(
+                                        com.arubr.smsvcodes.innertube.pages.SearchSummary(
                                             title = context.getString(R.string.fallback_more_results),
                                             items = searchResult.items.distinctByStableIdentity(),
                                         )

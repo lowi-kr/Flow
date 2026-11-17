@@ -1,7 +1,7 @@
-package io.github.aedev.flow.service
+package com.arubr.smsvcodes.service
 
 import android.content.Context
-import io.github.aedev.flow.utils.PerformanceDispatcher
+import com.arubr.smsvcodes.utils.PerformanceDispatcher
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.launch

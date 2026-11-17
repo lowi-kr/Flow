@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.utils
+package com.arubr.smsvcodes.ui.utils
 
 import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.foundation.layout.fillMaxSize

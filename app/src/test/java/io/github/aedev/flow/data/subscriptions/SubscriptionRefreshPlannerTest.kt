@@ -1,6 +1,6 @@
-package io.github.aedev.flow.data.subscriptions
+package com.arubr.smsvcodes.data.subscriptions
 
-import io.github.aedev.flow.data.local.ChannelSubscription
+import com.arubr.smsvcodes.data.local.ChannelSubscription
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue

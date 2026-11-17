@@ -1,13 +1,13 @@
-package io.github.aedev.flow.data.profile
+package com.arubr.smsvcodes.data.profile
 
 import com.google.common.truth.Truth.assertThat
 import com.google.gson.GsonBuilder
-import io.github.aedev.flow.data.local.BackupData
-import io.github.aedev.flow.data.local.ChannelSubscription
-import io.github.aedev.flow.data.local.ContentPreferencesBackup
-import io.github.aedev.flow.data.local.SettingsBackup
-import io.github.aedev.flow.data.local.VideoHistoryEntry
-import io.github.aedev.flow.data.local.entity.SubscriptionGroupEntity
+import com.arubr.smsvcodes.data.local.BackupData
+import com.arubr.smsvcodes.data.local.ChannelSubscription
+import com.arubr.smsvcodes.data.local.ContentPreferencesBackup
+import com.arubr.smsvcodes.data.local.SettingsBackup
+import com.arubr.smsvcodes.data.local.VideoHistoryEntry
+import com.arubr.smsvcodes.data.local.entity.SubscriptionGroupEntity
 import org.junit.Test
 
 class SlicePartTest {

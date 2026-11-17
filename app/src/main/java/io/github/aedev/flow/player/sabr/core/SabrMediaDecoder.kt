@@ -1,4 +1,4 @@
-package io.github.aedev.flow.player.sabr.core
+package com.arubr.smsvcodes.player.sabr.core
 
 import org.brotli.dec.BrotliInputStream
 import java.io.ByteArrayInputStream

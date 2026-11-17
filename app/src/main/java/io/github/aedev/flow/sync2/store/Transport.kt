@@ -1,6 +1,6 @@
-package io.github.aedev.flow.sync2.store
+package com.arubr.smsvcodes.sync2.store
 
-import io.github.aedev.flow.sync.qr.LocalNetworkAddress
+import com.arubr.smsvcodes.sync.qr.LocalNetworkAddress
 import okhttp3.Dns
 import okhttp3.HttpUrl
 import okhttp3.OkHttpClient

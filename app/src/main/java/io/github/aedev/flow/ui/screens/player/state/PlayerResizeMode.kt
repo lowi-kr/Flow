@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.player.state
+package com.arubr.smsvcodes.ui.screens.player.state
 
 /** Media3 `AspectRatioFrameLayout` resize modes, in the order the fullscreen button cycles them. */
 internal object PlayerResizeMode {

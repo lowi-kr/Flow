@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.player.stage
+package com.arubr.smsvcodes.ui.screens.player.stage
 
 import androidx.activity.compose.BackHandler
 import androidx.compose.animation.core.Animatable
@@ -45,15 +45,15 @@ import androidx.compose.ui.layout.onSizeChanged
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.zIndex
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.ui.components.shared.ShimmerGridItem
-import io.github.aedev.flow.ui.components.shared.card.MediaVideoCard
-import io.github.aedev.flow.ui.screens.player.state.PlayerScreenState
-import io.github.aedev.flow.ui.screens.player.state.PlayerSheet
-import io.github.aedev.flow.ui.theme.PlayerScrimContent
-import io.github.aedev.flow.ui.theme.PlayerScrimContentSecondary
-import io.github.aedev.flow.ui.theme.PlayerScrimPanel
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.ui.components.shared.ShimmerGridItem
+import com.arubr.smsvcodes.ui.components.shared.card.MediaVideoCard
+import com.arubr.smsvcodes.ui.screens.player.state.PlayerScreenState
+import com.arubr.smsvcodes.ui.screens.player.state.PlayerSheet
+import com.arubr.smsvcodes.ui.theme.PlayerScrimContent
+import com.arubr.smsvcodes.ui.theme.PlayerScrimContentSecondary
+import com.arubr.smsvcodes.ui.theme.PlayerScrimPanel
 import kotlinx.coroutines.launch
 
 /** About two and a third cards across, so the row reads as one that scrolls on. */

@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.settings.diagnostics
+package com.arubr.smsvcodes.ui.screens.settings.diagnostics
 
 import android.net.Uri
 import androidx.activity.compose.rememberLauncherForActivityResult
@@ -13,14 +13,14 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.profile.Profile
-import io.github.aedev.flow.data.profile.ProfileRegistry
-import io.github.aedev.flow.data.profile.ProfileRegistryState
-import io.github.aedev.flow.data.profile.displayName
-import io.github.aedev.flow.ui.components.profiles.ProfileAvatar
-import io.github.aedev.flow.ui.components.settings.SettingsListScope
-import io.github.aedev.flow.ui.components.shared.FlowNavRow
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.profile.Profile
+import com.arubr.smsvcodes.data.profile.ProfileRegistry
+import com.arubr.smsvcodes.data.profile.ProfileRegistryState
+import com.arubr.smsvcodes.data.profile.displayName
+import com.arubr.smsvcodes.ui.components.profiles.ProfileAvatar
+import com.arubr.smsvcodes.ui.components.settings.SettingsListScope
+import com.arubr.smsvcodes.ui.components.shared.FlowNavRow
 
 /** Debug builds only, until the Profiles screens arrive: add, switch to and delete profiles. Kept out of settings search. */
 internal fun SettingsListScope.debugProfiles(

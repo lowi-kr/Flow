@@ -1,8 +1,8 @@
-package io.github.aedev.flow.data.local
+package com.arubr.smsvcodes.data.local
 
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.data.recommendation.FeedExclusions
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.data.recommendation.FeedExclusions
 import org.junit.Test
 
 class HomeFeedCacheRepositoryTest {

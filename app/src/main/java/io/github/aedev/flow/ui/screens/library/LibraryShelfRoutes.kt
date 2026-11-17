@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.library
+package com.arubr.smsvcodes.ui.screens.library
 
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.items
@@ -7,23 +7,23 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.model.PlaylistInfo
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.data.music.DownloadedTrack
-import io.github.aedev.flow.data.music.model.MusicTrack
-import io.github.aedev.flow.data.video.DownloadedVideo
-import io.github.aedev.flow.ui.components.PlaylistCard
-import io.github.aedev.flow.ui.components.PlaylistCardLayout
-import io.github.aedev.flow.ui.components.library.LibraryAlbumCard
-import io.github.aedev.flow.ui.components.library.LibraryEmptyShelf
-import io.github.aedev.flow.ui.components.library.LibraryMediaItem
-import io.github.aedev.flow.ui.components.library.LibraryMediaShelf
-import io.github.aedev.flow.ui.components.library.LibrarySection
-import io.github.aedev.flow.ui.components.library.LibraryShelf
-import io.github.aedev.flow.ui.components.library.LibraryShelfPlaceholder
-import io.github.aedev.flow.ui.components.library.LibraryShortsShelf
-import io.github.aedev.flow.ui.components.library.LibraryVideoCard
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.model.PlaylistInfo
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.data.music.DownloadedTrack
+import com.arubr.smsvcodes.data.music.model.MusicTrack
+import com.arubr.smsvcodes.data.video.DownloadedVideo
+import com.arubr.smsvcodes.ui.components.PlaylistCard
+import com.arubr.smsvcodes.ui.components.PlaylistCardLayout
+import com.arubr.smsvcodes.ui.components.library.LibraryAlbumCard
+import com.arubr.smsvcodes.ui.components.library.LibraryEmptyShelf
+import com.arubr.smsvcodes.ui.components.library.LibraryMediaItem
+import com.arubr.smsvcodes.ui.components.library.LibraryMediaShelf
+import com.arubr.smsvcodes.ui.components.library.LibrarySection
+import com.arubr.smsvcodes.ui.components.library.LibraryShelf
+import com.arubr.smsvcodes.ui.components.library.LibraryShelfPlaceholder
+import com.arubr.smsvcodes.ui.components.library.LibraryShortsShelf
+import com.arubr.smsvcodes.ui.components.library.LibraryVideoCard
 import kotlinx.coroutines.flow.StateFlow
 
 @Composable

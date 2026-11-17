@@ -1,4 +1,4 @@
-package io.github.aedev.flow.data.shorts.feed
+package com.arubr.smsvcodes.data.shorts.feed
 
 internal data class ShortsMixResult(
     val items: List<ShortsLaneItem>,

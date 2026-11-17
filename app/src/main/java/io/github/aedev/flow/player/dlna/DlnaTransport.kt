@@ -1,4 +1,4 @@
-package io.github.aedev.flow.player.dlna
+package com.arubr.smsvcodes.player.dlna
 
 import android.util.Log
 import okhttp3.MediaType.Companion.toMediaType

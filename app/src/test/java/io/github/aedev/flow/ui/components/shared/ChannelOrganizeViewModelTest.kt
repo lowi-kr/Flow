@@ -1,13 +1,13 @@
-package io.github.aedev.flow.ui.components.shared
+package com.arubr.smsvcodes.ui.components.shared
 
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.data.local.dao.SubscriptionGroupDao
-import io.github.aedev.flow.data.local.entity.SubscriptionGroupEntity
-import io.github.aedev.flow.data.notes.Note
-import io.github.aedev.flow.data.notes.NoteKind
-import io.github.aedev.flow.data.notes.NoteSubject
-import io.github.aedev.flow.data.notes.NotesRepository
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.data.local.dao.SubscriptionGroupDao
+import com.arubr.smsvcodes.data.local.entity.SubscriptionGroupEntity
+import com.arubr.smsvcodes.data.notes.Note
+import com.arubr.smsvcodes.data.notes.NoteKind
+import com.arubr.smsvcodes.data.notes.NoteSubject
+import com.arubr.smsvcodes.data.notes.NotesRepository
 import io.mockk.coEvery
 import io.mockk.coVerify
 import io.mockk.every

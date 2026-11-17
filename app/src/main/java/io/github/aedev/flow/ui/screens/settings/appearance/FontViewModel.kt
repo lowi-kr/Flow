@@ -1,12 +1,12 @@
-package io.github.aedev.flow.ui.screens.settings.appearance
+package com.arubr.smsvcodes.ui.screens.settings.appearance
 
 import android.net.Uri
 import dagger.hilt.android.lifecycle.HiltViewModel
-import io.github.aedev.flow.data.local.AppFontPreferences
-import io.github.aedev.flow.data.local.AppFontSelection
-import io.github.aedev.flow.data.local.FontImportResult
-import io.github.aedev.flow.ui.screens.settings.SettingsViewModel
-import io.github.aedev.flow.ui.theme.AppFont
+import com.arubr.smsvcodes.data.local.AppFontPreferences
+import com.arubr.smsvcodes.data.local.AppFontSelection
+import com.arubr.smsvcodes.data.local.FontImportResult
+import com.arubr.smsvcodes.ui.screens.settings.SettingsViewModel
+import com.arubr.smsvcodes.ui.theme.AppFont
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow

@@ -1,4 +1,4 @@
-package io.github.aedev.flow.data.localmedia
+package com.arubr.smsvcodes.data.localmedia
 
 private const val MEDIA_STORE_PREFIX = "content://media/"
 private const val VIDEO_MEDIA_PATH = "/video/media/"

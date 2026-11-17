@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.videoplayer
+package com.arubr.smsvcodes.ui.components.videoplayer
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -18,12 +18,12 @@ import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
-import io.github.aedev.flow.ui.components.videoplayer.motion.OpenOriginRect
-import io.github.aedev.flow.ui.components.videoplayer.motion.collapsingGroundAlpha
-import io.github.aedev.flow.ui.components.videoplayer.motion.openGroundCornerRadius
-import io.github.aedev.flow.ui.components.videoplayer.motion.openGroundRect
-import io.github.aedev.flow.ui.theme.PlayerGround
-import io.github.aedev.flow.ui.theme.PlayerScrimImmersiveBackdrop
+import com.arubr.smsvcodes.ui.components.videoplayer.motion.OpenOriginRect
+import com.arubr.smsvcodes.ui.components.videoplayer.motion.collapsingGroundAlpha
+import com.arubr.smsvcodes.ui.components.videoplayer.motion.openGroundCornerRadius
+import com.arubr.smsvcodes.ui.components.videoplayer.motion.openGroundRect
+import com.arubr.smsvcodes.ui.theme.PlayerGround
+import com.arubr.smsvcodes.ui.theme.PlayerScrimImmersiveBackdrop
 
 /**
  * Ground behind an immersive fullscreen player: a blurred, dimmed copy of the thumbnail fills the

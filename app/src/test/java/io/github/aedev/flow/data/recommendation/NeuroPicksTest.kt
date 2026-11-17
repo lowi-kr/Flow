@@ -4,10 +4,10 @@
  * This file is part of Flow (https://github.com/Flow-Tube/Flow).
  */
 
-package io.github.aedev.flow.data.recommendation
+package com.arubr.smsvcodes.data.recommendation
 
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.data.recommendation.eval.NeuroLearningBenchmark
+import com.arubr.smsvcodes.data.recommendation.eval.NeuroLearningBenchmark
 import kotlinx.coroutines.runBlocking
 import org.junit.Test
 

@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui
+package com.arubr.smsvcodes.ui
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -9,14 +9,14 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.navigation.NavController
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.data.local.SharedLinkAction
-import io.github.aedev.flow.player.EnhancedMusicPlayerManager
-import io.github.aedev.flow.player.GlobalPlayerState
-import io.github.aedev.flow.ui.components.shared.quickactions.QuickActionsViewModel
-import io.github.aedev.flow.ui.components.shared.quickactions.VideoQuickActionsBottomSheet
-import io.github.aedev.flow.ui.components.shared.quickactions.sharedQuickActionsViewModel
-import io.github.aedev.flow.utils.ThumbnailUrlResolver
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.data.local.SharedLinkAction
+import com.arubr.smsvcodes.player.EnhancedMusicPlayerManager
+import com.arubr.smsvcodes.player.GlobalPlayerState
+import com.arubr.smsvcodes.ui.components.shared.quickactions.QuickActionsViewModel
+import com.arubr.smsvcodes.ui.components.shared.quickactions.VideoQuickActionsBottomSheet
+import com.arubr.smsvcodes.ui.components.shared.quickactions.sharedQuickActionsViewModel
+import com.arubr.smsvcodes.utils.ThumbnailUrlResolver
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 

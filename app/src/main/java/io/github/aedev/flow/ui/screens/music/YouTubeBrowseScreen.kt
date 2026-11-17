@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.music
+package com.arubr.smsvcodes.ui.screens.music
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -23,26 +23,26 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
-import io.github.aedev.flow.R
-import io.github.aedev.flow.innertube.models.AlbumItem
-import io.github.aedev.flow.innertube.models.ArtistItem
-import io.github.aedev.flow.innertube.models.PlaylistItem
-import io.github.aedev.flow.innertube.models.SongItem
-import io.github.aedev.flow.ui.components.currentGridThumbnailHeight
-import io.github.aedev.flow.ui.components.layout.flowBottomContentPadding
-import io.github.aedev.flow.ui.components.layout.topbar.FlowTopBar
-import io.github.aedev.flow.ui.components.music.item.MusicCollectionCard
-import io.github.aedev.flow.ui.components.music.item.MusicItemDensity
-import io.github.aedev.flow.ui.components.music.item.MusicTrackItem
-import io.github.aedev.flow.ui.components.music.section.MusicShelf
-import io.github.aedev.flow.ui.components.music.section.MusicTrackShelf
-import io.github.aedev.flow.ui.components.shared.FlowEmptyState
-import io.github.aedev.flow.ui.components.shared.FlowErrorState
-import io.github.aedev.flow.ui.components.shared.ShimmerGridItem
-import io.github.aedev.flow.ui.components.shared.ShimmerHost
-import io.github.aedev.flow.ui.components.shared.ShimmerSectionTitle
-import io.github.aedev.flow.ui.components.shared.flowArtistShape
-import io.github.aedev.flow.ui.components.shared.flowLaneItemWidth
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.innertube.models.AlbumItem
+import com.arubr.smsvcodes.innertube.models.ArtistItem
+import com.arubr.smsvcodes.innertube.models.PlaylistItem
+import com.arubr.smsvcodes.innertube.models.SongItem
+import com.arubr.smsvcodes.ui.components.currentGridThumbnailHeight
+import com.arubr.smsvcodes.ui.components.layout.flowBottomContentPadding
+import com.arubr.smsvcodes.ui.components.layout.topbar.FlowTopBar
+import com.arubr.smsvcodes.ui.components.music.item.MusicCollectionCard
+import com.arubr.smsvcodes.ui.components.music.item.MusicItemDensity
+import com.arubr.smsvcodes.ui.components.music.item.MusicTrackItem
+import com.arubr.smsvcodes.ui.components.music.section.MusicShelf
+import com.arubr.smsvcodes.ui.components.music.section.MusicTrackShelf
+import com.arubr.smsvcodes.ui.components.shared.FlowEmptyState
+import com.arubr.smsvcodes.ui.components.shared.FlowErrorState
+import com.arubr.smsvcodes.ui.components.shared.ShimmerGridItem
+import com.arubr.smsvcodes.ui.components.shared.ShimmerHost
+import com.arubr.smsvcodes.ui.components.shared.ShimmerSectionTitle
+import com.arubr.smsvcodes.ui.components.shared.flowArtistShape
+import com.arubr.smsvcodes.ui.components.shared.flowLaneItemWidth
 
 private val BrowseRowMaxWidth = 360.dp
 private val BrowseRowPeek = 48.dp

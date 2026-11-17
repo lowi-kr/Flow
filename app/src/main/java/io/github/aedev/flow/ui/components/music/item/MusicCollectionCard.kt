@@ -4,7 +4,7 @@
  * This file is part of Flow (https://github.com/Flow-Tube/Flow).
  */
 
-package io.github.aedev.flow.ui.components.music.item
+package com.arubr.smsvcodes.ui.components.music.item
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.LocalIndication
@@ -39,15 +39,15 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
-import io.github.aedev.flow.R
-import io.github.aedev.flow.ui.components.currentGridThumbnailHeight
-import io.github.aedev.flow.ui.components.music.common.MusicNowPlayingOverlay
-import io.github.aedev.flow.ui.components.music.common.isTrackPlaying
-import io.github.aedev.flow.ui.components.shared.DownloadedBadge
-import io.github.aedev.flow.ui.components.shared.focusLift
-import io.github.aedev.flow.ui.components.shared.onMenuKey
-import io.github.aedev.flow.ui.components.shared.titleMarquee
-import io.github.aedev.flow.ui.components.shared.titleMarqueeOverflow
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.ui.components.currentGridThumbnailHeight
+import com.arubr.smsvcodes.ui.components.music.common.MusicNowPlayingOverlay
+import com.arubr.smsvcodes.ui.components.music.common.isTrackPlaying
+import com.arubr.smsvcodes.ui.components.shared.DownloadedBadge
+import com.arubr.smsvcodes.ui.components.shared.focusLift
+import com.arubr.smsvcodes.ui.components.shared.onMenuKey
+import com.arubr.smsvcodes.ui.components.shared.titleMarquee
+import com.arubr.smsvcodes.ui.components.shared.titleMarqueeOverflow
 
 /**
  * The single grid card for anything that is not a single track — albums, playlists, artists,

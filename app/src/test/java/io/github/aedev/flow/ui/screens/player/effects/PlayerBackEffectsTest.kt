@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.player.effects
+package com.arubr.smsvcodes.ui.screens.player.effects
 
 import android.app.Application
 import androidx.activity.BackEventCompat
@@ -9,9 +9,9 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.ui.components.videoplayer.PlayerDraggableState
-import io.github.aedev.flow.ui.components.videoplayer.PlayerSheetValue
-import io.github.aedev.flow.ui.screens.player.state.PlayerScreenState
+import com.arubr.smsvcodes.ui.components.videoplayer.PlayerDraggableState
+import com.arubr.smsvcodes.ui.components.videoplayer.PlayerSheetValue
+import com.arubr.smsvcodes.ui.screens.player.state.PlayerScreenState
 import kotlinx.coroutines.CompletableDeferred
 import kotlinx.coroutines.NonCancellable
 import kotlinx.coroutines.launch

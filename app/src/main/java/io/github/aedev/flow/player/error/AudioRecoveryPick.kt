@@ -1,6 +1,6 @@
-package io.github.aedev.flow.player.error
+package com.arubr.smsvcodes.player.error
 
-import io.github.aedev.flow.player.stream.StreamProcessor
+import com.arubr.smsvcodes.player.stream.StreamProcessor
 import org.schabi.newpipe.extractor.MediaFormat
 import org.schabi.newpipe.extractor.stream.AudioStream
 

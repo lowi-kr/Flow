@@ -1,4 +1,4 @@
-package io.github.aedev.flow.player.crossfade
+package com.arubr.smsvcodes.player.crossfade
 
 import android.os.Handler
 import android.os.Looper

@@ -1,9 +1,9 @@
-package io.github.aedev.flow.sync2.service
+package com.arubr.smsvcodes.sync2.service
 
 import android.content.Context
 import dagger.hilt.android.qualifiers.ApplicationContext
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.sync.protocol.SyncCollection
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.sync.protocol.SyncCollection
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.first
 import javax.inject.Inject

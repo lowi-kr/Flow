@@ -1,15 +1,15 @@
-package io.github.aedev.flow.ui.screens.player
+package com.arubr.smsvcodes.ui.screens.player
 
 import app.cash.turbine.test
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.data.music.model.MusicTrack
-import io.github.aedev.flow.player.EnhancedMusicPlayerManager
-import io.github.aedev.flow.player.GlobalPlayerState
-import io.github.aedev.flow.player.state.EnhancedPlayerState
-import io.github.aedev.flow.player.stream.InnerTubeVideoStreamExtractor
-import io.github.aedev.flow.ui.screens.player.VideoPlayerViewModelHarness.Companion.historyEntity
-import io.github.aedev.flow.ui.screens.player.VideoPlayerViewModelHarness.Companion.video
-import io.github.aedev.flow.ui.screens.player.state.VideoPlayerUiState
+import com.arubr.smsvcodes.data.music.model.MusicTrack
+import com.arubr.smsvcodes.player.EnhancedMusicPlayerManager
+import com.arubr.smsvcodes.player.GlobalPlayerState
+import com.arubr.smsvcodes.player.state.EnhancedPlayerState
+import com.arubr.smsvcodes.player.stream.InnerTubeVideoStreamExtractor
+import com.arubr.smsvcodes.ui.screens.player.VideoPlayerViewModelHarness.Companion.historyEntity
+import com.arubr.smsvcodes.ui.screens.player.VideoPlayerViewModelHarness.Companion.video
+import com.arubr.smsvcodes.ui.screens.player.state.VideoPlayerUiState
 import io.mockk.Called
 import io.mockk.coEvery
 import io.mockk.coVerify
@@ -95,7 +95,7 @@ class VideoPlayerViewModelEntryPointsTest {
             coEvery { harness.viewHistory.getLatestUnfinishedVideo() } returns entity
             val queue = listOf(video("a"), entity.toVideo(), video("b"))
             coEvery { harness.videoQueueStore.load() } returns
-                io.github.aedev.flow.data.video
+                com.arubr.smsvcodes.data.video
                     .SavedVideoQueue(queue, 1, "Weekend builds")
             val viewModel = newViewModel()
             advanceUntilIdle()

@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.musicplayer.lyrics
+package com.arubr.smsvcodes.ui.components.musicplayer.lyrics
 
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.animation.SizeTransform
@@ -37,13 +37,13 @@ import androidx.compose.ui.unit.LayoutDirection
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.compose.LocalLifecycleOwner
 import androidx.lifecycle.compose.currentStateAsState
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.local.LyricsAnimationStyle
-import io.github.aedev.flow.data.local.LyricsGlow
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.data.lyrics.LyricsEntry
-import io.github.aedev.flow.data.lyrics.LyricsUtils
-import io.github.aedev.flow.player.EnhancedMusicPlayerManager
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.local.LyricsAnimationStyle
+import com.arubr.smsvcodes.data.local.LyricsGlow
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.data.lyrics.LyricsEntry
+import com.arubr.smsvcodes.data.lyrics.LyricsUtils
+import com.arubr.smsvcodes.player.EnhancedMusicPlayerManager
 import kotlinx.coroutines.delay
 import kotlin.math.roundToInt
 

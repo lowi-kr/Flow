@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.player.stage
+package com.arubr.smsvcodes.ui.screens.player.stage
 
 import android.content.ClipData
 import androidx.compose.foundation.layout.BoxScope
@@ -17,11 +17,11 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.compose.LocalLifecycleOwner
 import androidx.lifecycle.repeatOnLifecycle
-import io.github.aedev.flow.player.stats.PlayerStatsFormatter
-import io.github.aedev.flow.player.stats.PlayerStatsSnapshot
-import io.github.aedev.flow.ui.components.videoplayer.controls.playerTopBarClearance
-import io.github.aedev.flow.ui.components.videoplayer.overlay.PlayerStatsOverlay
-import io.github.aedev.flow.ui.screens.player.PlayerStatsViewModel
+import com.arubr.smsvcodes.player.stats.PlayerStatsFormatter
+import com.arubr.smsvcodes.player.stats.PlayerStatsSnapshot
+import com.arubr.smsvcodes.ui.components.videoplayer.controls.playerTopBarClearance
+import com.arubr.smsvcodes.ui.components.videoplayer.overlay.PlayerStatsOverlay
+import com.arubr.smsvcodes.ui.screens.player.PlayerStatsViewModel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 

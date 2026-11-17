@@ -1,12 +1,12 @@
-package io.github.aedev.flow.data.video.downloader.subtitle
+package com.arubr.smsvcodes.data.video.downloader.subtitle
 
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.data.video.downloader.request.DownloadRequest
-import io.github.aedev.flow.data.video.downloader.request.DownloadSubtitle
-import io.github.aedev.flow.data.video.downloader.tags.DownloadKind
-import io.github.aedev.flow.data.video.downloader.tags.DownloadTags
-import io.github.aedev.flow.player.stream.CaptionFormat
-import io.github.aedev.flow.player.stream.ResolvedCaption
+import com.arubr.smsvcodes.data.video.downloader.request.DownloadRequest
+import com.arubr.smsvcodes.data.video.downloader.request.DownloadSubtitle
+import com.arubr.smsvcodes.data.video.downloader.tags.DownloadKind
+import com.arubr.smsvcodes.data.video.downloader.tags.DownloadTags
+import com.arubr.smsvcodes.player.stream.CaptionFormat
+import com.arubr.smsvcodes.player.stream.ResolvedCaption
 import org.junit.Test
 
 class DownloadSubtitlePickTest {

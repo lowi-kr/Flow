@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.donation
+package com.arubr.smsvcodes.ui.components.donation
 
 import java.util.concurrent.TimeUnit
 

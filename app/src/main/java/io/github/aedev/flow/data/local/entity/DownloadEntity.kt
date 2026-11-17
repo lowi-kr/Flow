@@ -1,9 +1,9 @@
-package io.github.aedev.flow.data.local.entity
+package com.arubr.smsvcodes.data.local.entity
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import io.github.aedev.flow.data.video.downloader.tags.DownloadKind
+import com.arubr.smsvcodes.data.video.downloader.tags.DownloadKind
 
 /**
  * Represents a downloaded media item (video or audio-only).

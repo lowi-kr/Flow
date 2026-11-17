@@ -1,4 +1,4 @@
-package io.github.aedev.flow.utils.cipher
+package com.arubr.smsvcodes.utils.cipher
 
 import android.util.Log
 import java.security.MessageDigest

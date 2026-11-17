@@ -1,4 +1,4 @@
-package io.github.aedev.flow.notification
+package com.arubr.smsvcodes.notification
 
 import android.content.Context
 import android.util.Log
@@ -17,17 +17,17 @@ import dagger.hilt.EntryPoint
 import dagger.hilt.InstallIn
 import dagger.hilt.android.EntryPointAccessors
 import dagger.hilt.components.SingletonComponent
-import io.github.aedev.flow.data.local.ChannelSubscription
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.data.local.SubscriptionRepository
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.data.profile.ProfileWork
-import io.github.aedev.flow.data.shorts.ChannelReelIndex
-import io.github.aedev.flow.data.subscriptions.ChannelRssClient
-import io.github.aedev.flow.data.subscriptions.ChannelRssParser
-import io.github.aedev.flow.data.subscriptions.SubscriptionFeedRepository
-import io.github.aedev.flow.data.subscriptions.fetchSubscriptionPlayerMetadata
-import io.github.aedev.flow.utils.PerformanceDispatcher
+import com.arubr.smsvcodes.data.local.ChannelSubscription
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.data.local.SubscriptionRepository
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.data.profile.ProfileWork
+import com.arubr.smsvcodes.data.shorts.ChannelReelIndex
+import com.arubr.smsvcodes.data.subscriptions.ChannelRssClient
+import com.arubr.smsvcodes.data.subscriptions.ChannelRssParser
+import com.arubr.smsvcodes.data.subscriptions.SubscriptionFeedRepository
+import com.arubr.smsvcodes.data.subscriptions.fetchSubscriptionPlayerMetadata
+import com.arubr.smsvcodes.utils.PerformanceDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
 import kotlinx.coroutines.awaitAll

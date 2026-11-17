@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.videoplayer.sheet
+package com.arubr.smsvcodes.ui.components.videoplayer.sheet
 
 /** How far past the tapped chapter's start playback must get before the position takes over. */
 internal const val CHAPTER_ARRIVAL_MARGIN_MS = 1_000L

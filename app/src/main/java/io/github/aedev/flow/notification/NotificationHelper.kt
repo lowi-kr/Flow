@@ -1,4 +1,4 @@
-package io.github.aedev.flow.notification
+package com.arubr.smsvcodes.notification
 
 import android.Manifest
 import android.app.NotificationChannel
@@ -20,15 +20,15 @@ import coil3.request.allowHardware
 import coil3.size.Precision
 import coil3.size.Scale
 import coil3.toBitmap
-import io.github.aedev.flow.BuildConfig
-import io.github.aedev.flow.MainActivity
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.local.AppDatabase
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.data.local.ThumbnailQuality
-import io.github.aedev.flow.data.local.entity.NotificationEntity
-import io.github.aedev.flow.data.profile.ActiveProfile
-import io.github.aedev.flow.data.update.AppRelease
+import com.arubr.smsvcodes.BuildConfig
+import com.arubr.smsvcodes.MainActivity
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.local.AppDatabase
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.data.local.ThumbnailQuality
+import com.arubr.smsvcodes.data.local.entity.NotificationEntity
+import com.arubr.smsvcodes.data.profile.ActiveProfile
+import com.arubr.smsvcodes.data.update.AppRelease
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.runBlocking
@@ -49,13 +49,13 @@ object NotificationHelper {
     const val CHANNEL_REMINDERS = "reminders_channel"
     const val CHANNEL_UPDATES = "updates_channel"
     const val CHANNEL_NEW_VERSION = "new_version_channel"
-    const val EXTRA_OPEN_UPDATE = "io.github.aedev.flow.extra.OPEN_UPDATE"
-    const val EXTRA_OPEN_LINKED = "io.github.aedev.flow.extra.OPEN_LINKED"
+    const val EXTRA_OPEN_UPDATE = "com.arubr.smsvcodes.extra.OPEN_UPDATE"
+    const val EXTRA_OPEN_LINKED = "com.arubr.smsvcodes.extra.OPEN_LINKED"
     private const val NOTIFICATION_JOIN_REQUEST = 9998
     const val CHANNEL_IMPORTS = "imports_channel"
 
     /** On every notification that belongs to one profile, so a tap left over from before a switch opens nothing of it. */
-    const val EXTRA_PROFILE_ID = "io.github.aedev.flow.extra.PROFILE_ID"
+    const val EXTRA_PROFILE_ID = "com.arubr.smsvcodes.extra.PROFILE_ID"
 
     /** Channels whose notifications show one profile's content; a switch clears them. */
     private val ProfileChannels =

@@ -1,22 +1,22 @@
-package io.github.aedev.flow.ui.screens.settings.appearance.player
+package com.arubr.smsvcodes.ui.screens.settings.appearance.player
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.Immutable
 import androidx.compose.ui.res.stringResource
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.local.LyricsAnimationStyle
-import io.github.aedev.flow.data.local.LyricsBackgroundStyle
-import io.github.aedev.flow.data.local.LyricsGlow
-import io.github.aedev.flow.ui.components.musicplayer.lyrics.LyricsAlignments
-import io.github.aedev.flow.ui.components.musicplayer.lyrics.lyricsAlignmentLabel
-import io.github.aedev.flow.ui.components.musicplayer.lyrics.lyricsAnimationLabel
-import io.github.aedev.flow.ui.components.musicplayer.lyrics.lyricsBackgroundLabel
-import io.github.aedev.flow.ui.components.musicplayer.lyrics.lyricsGlowLabel
-import io.github.aedev.flow.ui.components.settings.SettingsListScope
-import io.github.aedev.flow.ui.components.settings.switch
-import io.github.aedev.flow.ui.components.settings.toggleGroup
-import io.github.aedev.flow.ui.components.shared.FlowToggleOption
-import io.github.aedev.flow.ui.screens.settings.index.PlayerAppearanceIndex
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.local.LyricsAnimationStyle
+import com.arubr.smsvcodes.data.local.LyricsBackgroundStyle
+import com.arubr.smsvcodes.data.local.LyricsGlow
+import com.arubr.smsvcodes.ui.components.musicplayer.lyrics.LyricsAlignments
+import com.arubr.smsvcodes.ui.components.musicplayer.lyrics.lyricsAlignmentLabel
+import com.arubr.smsvcodes.ui.components.musicplayer.lyrics.lyricsAnimationLabel
+import com.arubr.smsvcodes.ui.components.musicplayer.lyrics.lyricsBackgroundLabel
+import com.arubr.smsvcodes.ui.components.musicplayer.lyrics.lyricsGlowLabel
+import com.arubr.smsvcodes.ui.components.settings.SettingsListScope
+import com.arubr.smsvcodes.ui.components.settings.switch
+import com.arubr.smsvcodes.ui.components.settings.toggleGroup
+import com.arubr.smsvcodes.ui.components.shared.FlowToggleOption
+import com.arubr.smsvcodes.ui.screens.settings.index.PlayerAppearanceIndex
 
 /** The choices the lyrics group offers, resolved once per screen. */
 @Immutable

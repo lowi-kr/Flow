@@ -4,7 +4,7 @@
  * This file is part of Flow (https://github.com/Flow-Tube/Flow).
  */
 
-package io.github.aedev.flow.ui.components.music.common
+package com.arubr.smsvcodes.ui.components.music.common
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -32,13 +32,13 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.music.model.MusicTrack
-import io.github.aedev.flow.ui.components.PlayingWaveform
-import io.github.aedev.flow.ui.theme.ArtworkScrimActive
-import io.github.aedev.flow.ui.theme.ArtworkScrimContent
-import io.github.aedev.flow.ui.theme.ArtworkScrimIndex
-import io.github.aedev.flow.ui.theme.Dimensions
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.music.model.MusicTrack
+import com.arubr.smsvcodes.ui.components.PlayingWaveform
+import com.arubr.smsvcodes.ui.theme.ArtworkScrimActive
+import com.arubr.smsvcodes.ui.theme.ArtworkScrimContent
+import com.arubr.smsvcodes.ui.theme.ArtworkScrimIndex
+import com.arubr.smsvcodes.ui.theme.Dimensions
 
 /**
  * The single artwork surface for the music library. [shape] covers the circular artist variant,

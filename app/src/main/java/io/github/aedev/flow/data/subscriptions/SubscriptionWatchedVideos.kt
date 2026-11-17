@@ -1,11 +1,11 @@
-package io.github.aedev.flow.data.subscriptions
+package com.arubr.smsvcodes.data.subscriptions
 
-import io.github.aedev.flow.data.local.AppDatabase
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.data.local.ViewHistory
-import io.github.aedev.flow.data.local.isWatched
-import io.github.aedev.flow.data.shorts.finishedShortIds
-import io.github.aedev.flow.di.DeviceDb
+import com.arubr.smsvcodes.data.local.AppDatabase
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.data.local.ViewHistory
+import com.arubr.smsvcodes.data.local.isWatched
+import com.arubr.smsvcodes.data.shorts.finishedShortIds
+import com.arubr.smsvcodes.di.DeviceDb
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.distinctUntilChanged

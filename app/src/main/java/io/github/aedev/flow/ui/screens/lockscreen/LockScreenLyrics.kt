@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.lockscreen
+package com.arubr.smsvcodes.ui.screens.lockscreen
 
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.heightIn
@@ -14,15 +14,15 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
-import io.github.aedev.flow.data.localmedia.LocalMediaIds
-import io.github.aedev.flow.data.lyrics.LyricsEntry
-import io.github.aedev.flow.data.lyrics.LyricsHelper
-import io.github.aedev.flow.data.lyrics.LyricsUtils
-import io.github.aedev.flow.data.music.model.MusicTrack
-import io.github.aedev.flow.player.EnhancedMusicPlayerManager
-import io.github.aedev.flow.ui.components.musicplayer.lyrics.SYNCED_LINE_UNSUNG_ALPHA
-import io.github.aedev.flow.ui.components.musicplayer.lyrics.SyncedLines
-import io.github.aedev.flow.ui.components.musicplayer.lyrics.SyncedLyricLine
+import com.arubr.smsvcodes.data.localmedia.LocalMediaIds
+import com.arubr.smsvcodes.data.lyrics.LyricsEntry
+import com.arubr.smsvcodes.data.lyrics.LyricsHelper
+import com.arubr.smsvcodes.data.lyrics.LyricsUtils
+import com.arubr.smsvcodes.data.music.model.MusicTrack
+import com.arubr.smsvcodes.player.EnhancedMusicPlayerManager
+import com.arubr.smsvcodes.ui.components.musicplayer.lyrics.SYNCED_LINE_UNSUNG_ALPHA
+import com.arubr.smsvcodes.ui.components.musicplayer.lyrics.SyncedLines
+import com.arubr.smsvcodes.ui.components.musicplayer.lyrics.SyncedLyricLine
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow

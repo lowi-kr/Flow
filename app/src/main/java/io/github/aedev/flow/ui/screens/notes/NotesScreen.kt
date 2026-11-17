@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.notes
+package com.arubr.smsvcodes.ui.screens.notes
 
 import android.content.ClipData
 import android.content.ClipboardManager
@@ -52,19 +52,19 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.data.notes.Note
-import io.github.aedev.flow.data.notes.NoteKind
-import io.github.aedev.flow.ui.components.layout.LocalFlowBottomInsets
-import io.github.aedev.flow.ui.components.layout.floatAboveBottomChrome
-import io.github.aedev.flow.ui.components.layout.navigation.LocalMediaNavigator
-import io.github.aedev.flow.ui.components.layout.rememberFlowPaneScaffoldDirective
-import io.github.aedev.flow.ui.components.layout.topbar.FlowTopBar
-import io.github.aedev.flow.ui.components.shared.FlowEmptyState
-import io.github.aedev.flow.ui.components.shared.FlowNoteEditorDialog
-import io.github.aedev.flow.ui.components.shared.FlowSelectionAction
-import io.github.aedev.flow.ui.components.shared.FlowSelectionToolbar
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.data.notes.Note
+import com.arubr.smsvcodes.data.notes.NoteKind
+import com.arubr.smsvcodes.ui.components.layout.LocalFlowBottomInsets
+import com.arubr.smsvcodes.ui.components.layout.floatAboveBottomChrome
+import com.arubr.smsvcodes.ui.components.layout.navigation.LocalMediaNavigator
+import com.arubr.smsvcodes.ui.components.layout.rememberFlowPaneScaffoldDirective
+import com.arubr.smsvcodes.ui.components.layout.topbar.FlowTopBar
+import com.arubr.smsvcodes.ui.components.shared.FlowEmptyState
+import com.arubr.smsvcodes.ui.components.shared.FlowNoteEditorDialog
+import com.arubr.smsvcodes.ui.components.shared.FlowSelectionAction
+import com.arubr.smsvcodes.ui.components.shared.FlowSelectionToolbar
 import kotlinx.coroutines.launch
 
 private val PaneCornerInset = 16.dp

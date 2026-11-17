@@ -1,6 +1,6 @@
 @file:OptIn(ExperimentalMaterial3ExpressiveApi::class)
 
-package io.github.aedev.flow.ui.components.musicplayer.full
+package com.arubr.smsvcodes.ui.components.musicplayer.full
 
 import androidx.compose.animation.Crossfade
 import androidx.compose.foundation.background
@@ -19,11 +19,11 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.clipToBounds
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.graphicsLayer
-import io.github.aedev.flow.data.local.CoverShape
-import io.github.aedev.flow.ui.components.musicplayer.lyrics.LyricsCoverLayer
-import io.github.aedev.flow.ui.components.musicplayer.lyrics.rememberLyricsCover
-import io.github.aedev.flow.ui.components.musicplayer.mini.coverPolygon
-import io.github.aedev.flow.ui.components.musicplayer.mini.rememberTrackCoverShapes
+import com.arubr.smsvcodes.data.local.CoverShape
+import com.arubr.smsvcodes.ui.components.musicplayer.lyrics.LyricsCoverLayer
+import com.arubr.smsvcodes.ui.components.musicplayer.lyrics.rememberLyricsCover
+import com.arubr.smsvcodes.ui.components.musicplayer.mini.coverPolygon
+import com.arubr.smsvcodes.ui.components.musicplayer.mini.rememberTrackCoverShapes
 
 private const val COVER_SCRIM_ALPHA = 0.4f
 private const val SHAPE_ALPHA = 0.5f

@@ -1,11 +1,11 @@
-package io.github.aedev.flow.innertube.pages.explore
+package com.arubr.smsvcodes.innertube.pages.explore
 
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.innertube.pages.channel.ChannelTabKind
-import io.github.aedev.flow.innertube.pages.channel.toChannelTabContent
-import io.github.aedev.flow.innertube.pages.renderer.FeedItem
-import io.github.aedev.flow.innertube.pages.renderer.FeedItemOwner
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.innertube.pages.channel.ChannelTabKind
+import com.arubr.smsvcodes.innertube.pages.channel.toChannelTabContent
+import com.arubr.smsvcodes.innertube.pages.renderer.FeedItem
+import com.arubr.smsvcodes.innertube.pages.renderer.FeedItemOwner
 import org.junit.Test
 
 /**

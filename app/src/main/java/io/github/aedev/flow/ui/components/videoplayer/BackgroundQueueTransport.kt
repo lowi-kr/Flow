@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.videoplayer
+package com.arubr.smsvcodes.ui.components.videoplayer
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -33,12 +33,12 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.compose.LocalLifecycleOwner
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.repeatOnLifecycle
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.local.MiniBarSwipeAction
-import io.github.aedev.flow.player.EnhancedPlayerManager
-import io.github.aedev.flow.ui.components.shared.MediaPlayPauseButton
-import io.github.aedev.flow.ui.components.shared.MediaSeekBar
-import io.github.aedev.flow.utils.formatDurationMillis
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.local.MiniBarSwipeAction
+import com.arubr.smsvcodes.player.EnhancedPlayerManager
+import com.arubr.smsvcodes.ui.components.shared.MediaPlayPauseButton
+import com.arubr.smsvcodes.ui.components.shared.MediaSeekBar
+import com.arubr.smsvcodes.utils.formatDurationMillis
 import kotlinx.coroutines.delay
 
 private const val PROGRESS_INTERVAL_MS = 1_000L

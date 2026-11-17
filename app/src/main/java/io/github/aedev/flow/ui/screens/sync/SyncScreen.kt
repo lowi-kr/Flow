@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.sync
+package com.arubr.smsvcodes.ui.screens.sync
 
 import androidx.activity.compose.BackHandler
 import androidx.compose.animation.AnimatedContent
@@ -32,15 +32,15 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import io.github.aedev.flow.R
-import io.github.aedev.flow.sync.SyncState
-import io.github.aedev.flow.sync.protocol.SyncRole
-import io.github.aedev.flow.ui.components.layout.LocalFlowBottomInsets
-import io.github.aedev.flow.ui.components.layout.topbar.FlowGlobalActionsMode
-import io.github.aedev.flow.ui.components.layout.topbar.FlowTopBar
-import io.github.aedev.flow.ui.components.settings.SettingsNotice
-import io.github.aedev.flow.ui.components.shared.dpadFocusOnEnter
-import io.github.aedev.flow.ui.screens.sync.linked.LinkedDevicesSection
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.sync.SyncState
+import com.arubr.smsvcodes.sync.protocol.SyncRole
+import com.arubr.smsvcodes.ui.components.layout.LocalFlowBottomInsets
+import com.arubr.smsvcodes.ui.components.layout.topbar.FlowGlobalActionsMode
+import com.arubr.smsvcodes.ui.components.layout.topbar.FlowTopBar
+import com.arubr.smsvcodes.ui.components.settings.SettingsNotice
+import com.arubr.smsvcodes.ui.components.shared.dpadFocusOnEnter
+import com.arubr.smsvcodes.ui.screens.sync.linked.LinkedDevicesSection
 
 /** Where the user is in the pre-session setup. Once a session starts, [SyncState] drives the UI. */
 private enum class Step {

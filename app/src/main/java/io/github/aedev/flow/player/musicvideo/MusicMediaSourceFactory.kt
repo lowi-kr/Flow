@@ -1,4 +1,4 @@
-package io.github.aedev.flow.player.musicvideo
+package com.arubr.smsvcodes.player.musicvideo
 
 import android.util.Log
 import androidx.media3.common.MediaItem
@@ -6,7 +6,7 @@ import androidx.media3.common.util.UnstableApi
 import androidx.media3.datasource.DataSource
 import androidx.media3.exoplayer.source.MediaSource
 import androidx.media3.exoplayer.source.MergingMediaSource
-import io.github.aedev.flow.utils.MusicPlayerUtils
+import com.arubr.smsvcodes.utils.MusicPlayerUtils
 
 /**
  * The music player's sources: the song's audio as always, joined by its picture for an item

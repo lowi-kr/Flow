@@ -1,10 +1,10 @@
-package io.github.aedev.flow.ui.screens.settings.appearance
+package com.arubr.smsvcodes.ui.screens.settings.appearance
 
 import androidx.annotation.StringRes
-import io.github.aedev.flow.R
-import io.github.aedev.flow.ui.theme.ThemeVariant
-import io.github.aedev.flow.util.AppIcons
-import io.github.aedev.flow.util.LauncherIcon
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.ui.theme.ThemeVariant
+import com.arubr.smsvcodes.util.AppIcons
+import com.arubr.smsvcodes.util.LauncherIcon
 
 @StringRes
 internal fun themeVariantLabel(variant: ThemeVariant): Int =

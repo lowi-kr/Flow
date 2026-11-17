@@ -1,4 +1,4 @@
-package io.github.aedev.flow.data.translation
+package com.arubr.smsvcodes.data.translation
 
 import com.google.common.truth.Truth.assertThat
 import okio.Buffer

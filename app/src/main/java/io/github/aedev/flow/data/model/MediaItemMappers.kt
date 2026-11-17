@@ -1,8 +1,8 @@
-package io.github.aedev.flow.data.model
+package com.arubr.smsvcodes.data.model
 
-import io.github.aedev.flow.data.local.LikedVideoInfo
-import io.github.aedev.flow.data.local.VideoHistoryEntry
-import io.github.aedev.flow.data.music.model.MusicTrack
+import com.arubr.smsvcodes.data.local.LikedVideoInfo
+import com.arubr.smsvcodes.data.local.VideoHistoryEntry
+import com.arubr.smsvcodes.data.music.model.MusicTrack
 
 private const val MILLIS_PER_SECOND = 1000L
 

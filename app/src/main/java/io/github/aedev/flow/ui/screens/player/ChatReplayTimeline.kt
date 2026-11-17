@@ -1,8 +1,8 @@
-package io.github.aedev.flow.ui.screens.player
+package com.arubr.smsvcodes.ui.screens.player
 
-import io.github.aedev.flow.data.model.LiveChatMessage
-import io.github.aedev.flow.data.repository.LiveChatRepository.ReplayMessage
-import io.github.aedev.flow.data.repository.LiveChatRepository.ReplayPage
+import com.arubr.smsvcodes.data.model.LiveChatMessage
+import com.arubr.smsvcodes.data.repository.LiveChatRepository.ReplayMessage
+import com.arubr.smsvcodes.data.repository.LiveChatRepository.ReplayPage
 
 /**
  * The fetched part of a finished stream's chat and which of it the video has reached.

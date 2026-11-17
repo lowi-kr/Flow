@@ -1,13 +1,13 @@
-package io.github.aedev.flow.sync2.linking
+package com.arubr.smsvcodes.sync2.linking
 
-import io.github.aedev.flow.sync.crypto.SyncBytes
-import io.github.aedev.flow.sync2.crypto.ProtocolException
-import io.github.aedev.flow.sync2.engine.LinkedException
-import io.github.aedev.flow.sync2.engine.Session
-import io.github.aedev.flow.sync2.roster.Entry
-import io.github.aedev.flow.sync2.roster.RosterState
-import io.github.aedev.flow.sync2.roster.applyEntry
-import io.github.aedev.flow.sync2.roster.openDeviceMeta
+import com.arubr.smsvcodes.sync.crypto.SyncBytes
+import com.arubr.smsvcodes.sync2.crypto.ProtocolException
+import com.arubr.smsvcodes.sync2.engine.LinkedException
+import com.arubr.smsvcodes.sync2.engine.Session
+import com.arubr.smsvcodes.sync2.roster.Entry
+import com.arubr.smsvcodes.sync2.roster.RosterState
+import com.arubr.smsvcodes.sync2.roster.applyEntry
+import com.arubr.smsvcodes.sync2.roster.openDeviceMeta
 
 /**
  * Device names and platforms, as the latest roster entry naming each device says. Names are only

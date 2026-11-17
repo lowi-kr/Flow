@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.utils
+package com.arubr.smsvcodes.ui.utils
 
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.LocalActivity

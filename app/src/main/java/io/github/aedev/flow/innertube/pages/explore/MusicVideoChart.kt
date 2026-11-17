@@ -1,8 +1,8 @@
-package io.github.aedev.flow.innertube.pages.explore
+package com.arubr.smsvcodes.innertube.pages.explore
 
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.innertube.models.PlaylistItem
-import io.github.aedev.flow.innertube.pages.ChartsPage
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.innertube.models.PlaylistItem
+import com.arubr.smsvcodes.innertube.pages.ChartsPage
 
 /** A country's trending music videos, in chart order, under the title YouTube gives the chart. */
 data class MusicVideoChart(

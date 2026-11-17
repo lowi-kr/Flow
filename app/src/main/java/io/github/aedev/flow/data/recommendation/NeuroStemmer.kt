@@ -4,7 +4,7 @@
  * This file is part of Flow (https://github.com/Flow-Tube/Flow).
  */
 
-package io.github.aedev.flow.data.recommendation
+package com.arubr.smsvcodes.data.recommendation
 
 import org.tartarus.snowball.SnowballStemmer
 import org.tartarus.snowball.ext.englishStemmer

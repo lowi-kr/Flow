@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.musicplayer.controls
+package com.arubr.smsvcodes.ui.components.musicplayer.controls
 
 import androidx.compose.animation.core.*
 import androidx.compose.foundation.border
@@ -20,10 +20,10 @@ import androidx.compose.ui.input.key.type
 import androidx.compose.ui.platform.LocalHapticFeedback
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.data.local.SliderStyle
-import io.github.aedev.flow.ui.components.musicplayer.common.formatTime
-import io.github.aedev.flow.ui.components.shared.LocalDpadNavigation
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.data.local.SliderStyle
+import com.arubr.smsvcodes.ui.components.musicplayer.common.formatTime
+import com.arubr.smsvcodes.ui.components.shared.LocalDpadNavigation
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch

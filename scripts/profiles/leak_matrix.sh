@@ -6,8 +6,8 @@
 set -eu
 : "${ANDROID_SERIAL:?Set ANDROID_SERIAL to the emulator to run on}"
 export ANDROID_SERIAL
-PKG=${PKG:-io.github.aedev.flow.debug}
-RECEIVER=io.github.aedev.flow.data.profile.ProfileProbeReceiver
+PKG=${PKG:-com.arubr.smsvcodes.debug}
+RECEIVER=com.arubr.smsvcodes.data.profile.ProfileProbeReceiver
 WORK=$(mktemp -d)
 trap 'rm -rf "$WORK"' EXIT
 FAILURES=0
@@ -107,7 +107,7 @@ check_written() {
 
 echo "Clearing $PKG on $ANDROID_SERIAL"
 adb shell pm clear "$PKG" >/dev/null
-adb shell am start -n "$PKG/io.github.aedev.flow.MainActivity" >/dev/null
+adb shell am start -n "$PKG/com.arubr.smsvcodes.MainActivity" >/dev/null
 sleep 8
 
 A=$(create LeakA)

@@ -1,11 +1,11 @@
-package io.github.aedev.flow.data.music.artwork
+package com.arubr.smsvcodes.data.music.artwork
 
-import io.github.aedev.flow.data.music.model.MusicTrack
-import io.github.aedev.flow.data.music.model.musicArtistKey
-import io.github.aedev.flow.data.music.model.musicBaseTitle
-import io.github.aedev.flow.data.music.model.musicTitleKey
-import io.github.aedev.flow.innertube.models.SongItem
-import io.github.aedev.flow.innertube.models.WatchEndpoint.WatchEndpointMusicSupportedConfigs.WatchEndpointMusicConfig.Companion.MUSIC_VIDEO_TYPE_ATV
+import com.arubr.smsvcodes.data.music.model.MusicTrack
+import com.arubr.smsvcodes.data.music.model.musicArtistKey
+import com.arubr.smsvcodes.data.music.model.musicBaseTitle
+import com.arubr.smsvcodes.data.music.model.musicTitleKey
+import com.arubr.smsvcodes.innertube.models.SongItem
+import com.arubr.smsvcodes.innertube.models.WatchEndpoint.WatchEndpointMusicSupportedConfigs.WatchEndpointMusicConfig.Companion.MUSIC_VIDEO_TYPE_ATV
 import kotlinx.serialization.Serializable
 
 /** What the artwork service answers: the matched song and, when its album has one, the loop. */

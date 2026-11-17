@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.videoplayer.subtitle
+package com.arubr.smsvcodes.ui.components.videoplayer.subtitle
 
 import android.graphics.Typeface
 import android.util.TypedValue
@@ -27,8 +27,8 @@ import androidx.media3.common.text.Cue
 import androidx.media3.common.text.CueGroup
 import androidx.media3.ui.CaptionStyleCompat
 import androidx.media3.ui.SubtitleView
-import io.github.aedev.flow.player.EnhancedPlayerManager
-import io.github.aedev.flow.player.subtitle.toRollingCaptionText
+import com.arubr.smsvcodes.player.EnhancedPlayerManager
+import com.arubr.smsvcodes.player.subtitle.toRollingCaptionText
 
 /**
  * Draws the player's captions with Media3's [SubtitleView], laid out over the picture rather than

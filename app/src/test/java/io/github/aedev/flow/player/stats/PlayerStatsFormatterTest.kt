@@ -1,7 +1,7 @@
-package io.github.aedev.flow.player.stats
+package com.arubr.smsvcodes.player.stats
 
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.R
+import com.arubr.smsvcodes.R
 import org.junit.Test
 
 class PlayerStatsFormatterTest {

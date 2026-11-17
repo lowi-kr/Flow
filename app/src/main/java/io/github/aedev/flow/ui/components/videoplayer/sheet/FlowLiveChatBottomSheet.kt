@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.videoplayer.sheet
+package com.arubr.smsvcodes.ui.components.videoplayer.sheet
 
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -9,12 +9,12 @@ import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.model.LiveChatMessage
-import io.github.aedev.flow.ui.components.shared.FlowBottomSheet
-import io.github.aedev.flow.ui.components.shared.FlowSheetHeader
-import io.github.aedev.flow.ui.components.shared.defaultSheetExpandedHeight
-import io.github.aedev.flow.ui.components.shared.rememberFlowBottomSheetState
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.model.LiveChatMessage
+import com.arubr.smsvcodes.ui.components.shared.FlowBottomSheet
+import com.arubr.smsvcodes.ui.components.shared.FlowSheetHeader
+import com.arubr.smsvcodes.ui.components.shared.defaultSheetExpandedHeight
+import com.arubr.smsvcodes.ui.components.shared.rememberFlowBottomSheetState
 
 // Draggable live-chat bottom sheet (portrait)
 @Composable

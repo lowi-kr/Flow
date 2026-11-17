@@ -1,7 +1,7 @@
-package io.github.aedev.flow.data.lyrics
+package com.arubr.smsvcodes.data.lyrics
 
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.data.lyrics.LyricsMatching.Song
+import com.arubr.smsvcodes.data.lyrics.LyricsMatching.Song
 import org.junit.Test
 
 class LrcRedLyricsProviderTest {

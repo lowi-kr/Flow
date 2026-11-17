@@ -1,6 +1,6 @@
-package io.github.aedev.flow.data.subscriptions
+package com.arubr.smsvcodes.data.subscriptions
 
-import io.github.aedev.flow.data.model.Video
+import com.arubr.smsvcodes.data.model.Video
 
 /** When each subscribed channel's page was last opened, kept in one preference as `id=millis` pairs (#1755). */
 internal fun parseChannelSeenAt(stored: String?): Map<String, Long> =

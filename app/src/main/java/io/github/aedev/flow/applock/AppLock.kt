@@ -1,4 +1,4 @@
-package io.github.aedev.flow.applock
+package com.arubr.smsvcodes.applock
 
 import android.app.KeyguardManager
 import android.content.Context
@@ -7,8 +7,8 @@ import androidx.lifecycle.DefaultLifecycleObserver
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.ProcessLifecycleOwner
 import dagger.hilt.android.qualifiers.ApplicationContext
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.di.ApplicationScope
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.di.ApplicationScope
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow

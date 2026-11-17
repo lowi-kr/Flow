@@ -1,6 +1,6 @@
-package io.github.aedev.flow.player.state
+package com.arubr.smsvcodes.player.state
 
-import io.github.aedev.flow.data.local.DEFAULT_VIDEO_VOLUME_NORMALIZATION
+import com.arubr.smsvcodes.data.local.DEFAULT_VIDEO_VOLUME_NORMALIZATION
 
 data class EnhancedPlayerState(
     val currentVideoId: String? = null,

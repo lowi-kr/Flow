@@ -1,14 +1,14 @@
-package io.github.aedev.flow.ui.screens.music
+package com.arubr.smsvcodes.ui.screens.music
 
 import android.content.Context
-import io.github.aedev.flow.data.local.LikedVideosRepository
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.data.music.DownloadManager
-import io.github.aedev.flow.data.music.PlaylistRepository
-import io.github.aedev.flow.data.music.model.MusicTrack
-import io.github.aedev.flow.data.recommendation.music.MusicBrainEngine
-import io.github.aedev.flow.data.scrobble.Scrobbler
-import io.github.aedev.flow.utils.PerformanceDispatcher
+import com.arubr.smsvcodes.data.local.LikedVideosRepository
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.data.music.DownloadManager
+import com.arubr.smsvcodes.data.music.PlaylistRepository
+import com.arubr.smsvcodes.data.music.model.MusicTrack
+import com.arubr.smsvcodes.data.recommendation.music.MusicBrainEngine
+import com.arubr.smsvcodes.data.scrobble.Scrobbler
+import com.arubr.smsvcodes.utils.PerformanceDispatcher
 import io.mockk.coVerify
 import io.mockk.every
 import io.mockk.mockk

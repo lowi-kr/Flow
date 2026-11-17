@@ -1,8 +1,8 @@
-package io.github.aedev.flow.data.video.downloader.collection
+package com.arubr.smsvcodes.data.video.downloader.collection
 
-import io.github.aedev.flow.data.local.entity.CollectionItemState
-import io.github.aedev.flow.data.local.entity.DownloadCollectionItemEntity
-import io.github.aedev.flow.data.local.entity.DownloadCollectionKind
+import com.arubr.smsvcodes.data.local.entity.CollectionItemState
+import com.arubr.smsvcodes.data.local.entity.DownloadCollectionItemEntity
+import com.arubr.smsvcodes.data.local.entity.DownloadCollectionKind
 
 /** A playlist or album as the page that downloads it describes it. */
 data class CollectionSpec(

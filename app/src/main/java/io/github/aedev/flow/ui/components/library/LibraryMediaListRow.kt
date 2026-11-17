@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.library
+package com.arubr.smsvcodes.ui.components.library
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -7,16 +7,16 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.Dp
-import io.github.aedev.flow.data.localmedia.LocalMediaIds
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.data.music.model.MusicTrack
-import io.github.aedev.flow.ui.components.music.item.MusicTrackItem
-import io.github.aedev.flow.ui.components.music.sheet.LocalMusicMenus
-import io.github.aedev.flow.ui.components.shared.MediaRow
-import io.github.aedev.flow.ui.components.shared.MediaThumbnail
-import io.github.aedev.flow.ui.components.shared.MediaThumbnailDefaults
-import io.github.aedev.flow.ui.components.shared.card.LocalVideoCardPreferences
-import io.github.aedev.flow.ui.components.shared.quickactions.VideoQuickActionsBottomSheet
+import com.arubr.smsvcodes.data.localmedia.LocalMediaIds
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.data.music.model.MusicTrack
+import com.arubr.smsvcodes.ui.components.music.item.MusicTrackItem
+import com.arubr.smsvcodes.ui.components.music.sheet.LocalMusicMenus
+import com.arubr.smsvcodes.ui.components.shared.MediaRow
+import com.arubr.smsvcodes.ui.components.shared.MediaThumbnail
+import com.arubr.smsvcodes.ui.components.shared.MediaThumbnailDefaults
+import com.arubr.smsvcodes.ui.components.shared.card.LocalVideoCardPreferences
+import com.arubr.smsvcodes.ui.components.shared.quickactions.VideoQuickActionsBottomSheet
 
 /**
  * A library entry as a row. Long press opens the item's menu, where [removeLabel] runs

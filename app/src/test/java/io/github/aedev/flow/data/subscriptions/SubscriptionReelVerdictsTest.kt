@@ -1,8 +1,8 @@
-package io.github.aedev.flow.data.subscriptions
+package com.arubr.smsvcodes.data.subscriptions
 
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.data.local.entity.SubscriptionFeedEntity
-import io.github.aedev.flow.data.model.Video
+import com.arubr.smsvcodes.data.local.entity.SubscriptionFeedEntity
+import com.arubr.smsvcodes.data.model.Video
 import org.junit.Test
 
 /** A reel verdict is reused only when a pass that read its channel in full stored it. */

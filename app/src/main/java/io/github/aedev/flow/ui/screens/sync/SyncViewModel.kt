@@ -1,15 +1,15 @@
-package io.github.aedev.flow.ui.screens.sync
+package com.arubr.smsvcodes.ui.screens.sync
 
 import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
-import io.github.aedev.flow.data.profile.ProfileRepository
-import io.github.aedev.flow.data.profile.SyncProfile
-import io.github.aedev.flow.sync.SyncManager
-import io.github.aedev.flow.sync.SyncState
-import io.github.aedev.flow.sync.protocol.SyncRole
+import com.arubr.smsvcodes.data.profile.ProfileRepository
+import com.arubr.smsvcodes.data.profile.SyncProfile
+import com.arubr.smsvcodes.sync.SyncManager
+import com.arubr.smsvcodes.sync.SyncState
+import com.arubr.smsvcodes.sync.protocol.SyncRole
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.map

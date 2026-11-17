@@ -1,16 +1,16 @@
-package io.github.aedev.flow.ui.components.categories
+package com.arubr.smsvcodes.ui.components.categories
 
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.lazy.grid.LazyGridState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.data.local.HomeFeedColumns
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.innertube.pages.renderer.FeedShelf
-import io.github.aedev.flow.ui.components.layout.flowBottomContentPadding
-import io.github.aedev.flow.ui.components.shared.FeedShelfActions
-import io.github.aedev.flow.ui.components.shared.FeedShelfSections
+import com.arubr.smsvcodes.data.local.HomeFeedColumns
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.innertube.pages.renderer.FeedShelf
+import com.arubr.smsvcodes.ui.components.layout.flowBottomContentPadding
+import com.arubr.smsvcodes.ui.components.shared.FeedShelfActions
+import com.arubr.smsvcodes.ui.components.shared.FeedShelfSections
 
 /**
  * A destination's landing page. Only shelves that can be opened get a chevron — the news

@@ -4,11 +4,11 @@
  * This file is part of Flow (https://github.com/Flow-Tube/Flow).
  */
 
-package io.github.aedev.flow.data.recommendation.snapshot
+package com.arubr.smsvcodes.data.recommendation.snapshot
 
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.data.recommendation.NeuroCategoryStore
-import io.github.aedev.flow.data.recommendation.NeuroCoWatchStore
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.data.recommendation.NeuroCategoryStore
+import com.arubr.smsvcodes.data.recommendation.NeuroCoWatchStore
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.JsonElement
 

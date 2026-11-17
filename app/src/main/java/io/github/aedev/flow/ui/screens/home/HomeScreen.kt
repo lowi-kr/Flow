@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.home
+package com.arubr.smsvcodes.ui.screens.home
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.BoxScope
@@ -39,22 +39,22 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.local.HomeFeedColumns
-import io.github.aedev.flow.data.local.HomeViewMode
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.data.local.VideoHistoryEntry
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.data.shorts.queue.ShortsQueueSource
-import io.github.aedev.flow.player.DeepFlowManager
-import io.github.aedev.flow.ui.TabScrollEventBus
-import io.github.aedev.flow.ui.components.layout.LocalFlowBottomInsets
-import io.github.aedev.flow.ui.components.layout.floatAboveBottomChrome
-import io.github.aedev.flow.ui.components.layout.navigation.FlowTab
-import io.github.aedev.flow.ui.components.layout.topbar.FlowTopBar
-import io.github.aedev.flow.ui.components.rememberFeedGridLayout
-import io.github.aedev.flow.ui.components.shared.FlowPullToRefreshBox
-import io.github.aedev.flow.ui.screens.home.chips.HomeChipRow
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.local.HomeFeedColumns
+import com.arubr.smsvcodes.data.local.HomeViewMode
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.data.local.VideoHistoryEntry
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.data.shorts.queue.ShortsQueueSource
+import com.arubr.smsvcodes.player.DeepFlowManager
+import com.arubr.smsvcodes.ui.TabScrollEventBus
+import com.arubr.smsvcodes.ui.components.layout.LocalFlowBottomInsets
+import com.arubr.smsvcodes.ui.components.layout.floatAboveBottomChrome
+import com.arubr.smsvcodes.ui.components.layout.navigation.FlowTab
+import com.arubr.smsvcodes.ui.components.layout.topbar.FlowTopBar
+import com.arubr.smsvcodes.ui.components.rememberFeedGridLayout
+import com.arubr.smsvcodes.ui.components.shared.FlowPullToRefreshBox
+import com.arubr.smsvcodes.ui.screens.home.chips.HomeChipRow
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 

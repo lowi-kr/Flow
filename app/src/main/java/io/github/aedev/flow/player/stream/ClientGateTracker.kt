@@ -1,8 +1,8 @@
-package io.github.aedev.flow.player.stream
+package com.arubr.smsvcodes.player.stream
 
-import io.github.aedev.flow.player.error.StreamDenialClassifier
-import io.github.aedev.flow.player.error.StreamDenialKind
-import io.github.aedev.flow.utils.potoken.WebPoTokenSession
+import com.arubr.smsvcodes.player.error.StreamDenialClassifier
+import com.arubr.smsvcodes.player.error.StreamDenialKind
+import com.arubr.smsvcodes.utils.potoken.WebPoTokenSession
 import java.util.concurrent.ConcurrentHashMap
 import java.util.concurrent.TimeUnit
 

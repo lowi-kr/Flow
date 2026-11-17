@@ -1,4 +1,4 @@
-package io.github.aedev.flow.widget.core.component
+package com.arubr.smsvcodes.widget.core.component
 
 import androidx.annotation.DrawableRes
 import androidx.compose.runtime.Composable
@@ -20,10 +20,10 @@ import androidx.glance.layout.height
 import androidx.glance.layout.padding
 import androidx.glance.layout.size
 import androidx.glance.text.Text
-import io.github.aedev.flow.widget.core.image.ShapeDecor
-import io.github.aedev.flow.widget.core.image.WidgetShape
-import io.github.aedev.flow.widget.core.theme.WidgetDimens
-import io.github.aedev.flow.widget.core.theme.WidgetText
+import com.arubr.smsvcodes.widget.core.image.ShapeDecor
+import com.arubr.smsvcodes.widget.core.image.WidgetShape
+import com.arubr.smsvcodes.widget.core.theme.WidgetDimens
+import com.arubr.smsvcodes.widget.core.theme.WidgetText
 
 /** An icon on the placeholder clover, one line of text, and either a button or a tappable whole. */
 @Composable

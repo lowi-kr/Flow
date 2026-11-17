@@ -1,16 +1,16 @@
-package io.github.aedev.flow.data.profile
+package com.arubr.smsvcodes.data.profile
 
 import android.content.Context
 import android.net.Uri
 import android.os.SystemClock
 import android.util.Log
 import dagger.hilt.android.qualifiers.ApplicationContext
-import io.github.aedev.flow.data.local.BackupRepository
-import io.github.aedev.flow.data.recommendation.music.FavouriteArtistsStore
-import io.github.aedev.flow.data.recommendation.music.MusicBrainEngine
-import io.github.aedev.flow.data.stats.RecapBackup
-import io.github.aedev.flow.data.stats.VideoStatsRecorder
-import io.github.aedev.flow.sync2.service.LinkedReset
+import com.arubr.smsvcodes.data.local.BackupRepository
+import com.arubr.smsvcodes.data.recommendation.music.FavouriteArtistsStore
+import com.arubr.smsvcodes.data.recommendation.music.MusicBrainEngine
+import com.arubr.smsvcodes.data.stats.RecapBackup
+import com.arubr.smsvcodes.data.stats.VideoStatsRecorder
+import com.arubr.smsvcodes.sync2.service.LinkedReset
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.withContext

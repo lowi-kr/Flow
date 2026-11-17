@@ -1,13 +1,13 @@
-package io.github.aedev.flow.player
+package com.arubr.smsvcodes.player
 
 import android.net.Uri
 import android.os.Bundle
 import androidx.media3.common.MediaItem
 import androidx.media3.common.MediaMetadata
-import io.github.aedev.flow.data.localmedia.LocalMediaIds
-import io.github.aedev.flow.data.music.model.MusicTrack
-import io.github.aedev.flow.player.musicvideo.MusicVideoItems
-import io.github.aedev.flow.service.auto.AutoArtworkProvider
+import com.arubr.smsvcodes.data.localmedia.LocalMediaIds
+import com.arubr.smsvcodes.data.music.model.MusicTrack
+import com.arubr.smsvcodes.player.musicvideo.MusicVideoItems
+import com.arubr.smsvcodes.service.auto.AutoArtworkProvider
 
 /**
  * The media item every music queue is built from, by the app and by playback resumption alike. A
@@ -40,7 +40,7 @@ internal fun musicMediaItem(
 }
 
 private const val MILLIS_PER_SECOND = 1000L
-private const val EXTRA_VIDEO_LIST_ITEM = "io.github.aedev.flow.VIDEO_LIST_ITEM"
+private const val EXTRA_VIDEO_LIST_ITEM = "com.arubr.smsvcodes.VIDEO_LIST_ITEM"
 
 /**
  * A video picked from a video playlist or Watch later in the car (#1657). It plays as audio, but it is

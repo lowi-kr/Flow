@@ -1,16 +1,16 @@
-package io.github.aedev.flow.ui.components.shared
+package com.arubr.smsvcodes.ui.components.shared
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.res.stringResource
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.utils.DateContext
-import io.github.aedev.flow.utils.DateDisplayMode
-import io.github.aedev.flow.utils.formatPremiereDate
-import io.github.aedev.flow.utils.formatScheduledStart
-import io.github.aedev.flow.utils.formatViewCount
-import io.github.aedev.flow.utils.upcomingReleaseMs
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.utils.DateContext
+import com.arubr.smsvcodes.utils.DateDisplayMode
+import com.arubr.smsvcodes.utils.formatPremiereDate
+import com.arubr.smsvcodes.utils.formatScheduledStart
+import com.arubr.smsvcodes.utils.formatViewCount
+import com.arubr.smsvcodes.utils.upcomingReleaseMs
 
 @Composable
 fun videoMetadataLine(

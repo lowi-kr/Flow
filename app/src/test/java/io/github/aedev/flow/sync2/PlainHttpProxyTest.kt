@@ -1,8 +1,8 @@
-package io.github.aedev.flow.sync2
+package com.arubr.smsvcodes.sync2
 
-import io.github.aedev.flow.sync2.linking.LanEndpoint
-import io.github.aedev.flow.sync2.linking.dial
-import io.github.aedev.flow.sync2.store.storeClient
+import com.arubr.smsvcodes.sync2.linking.LanEndpoint
+import com.arubr.smsvcodes.sync2.linking.dial
+import com.arubr.smsvcodes.sync2.store.storeClient
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.withContext

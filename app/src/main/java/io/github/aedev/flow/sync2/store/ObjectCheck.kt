@@ -1,10 +1,10 @@
-package io.github.aedev.flow.sync2.store
+package com.arubr.smsvcodes.sync2.store
 
-import io.github.aedev.flow.sync.crypto.SyncBytes
-import io.github.aedev.flow.sync2.crypto.ProtocolException
-import io.github.aedev.flow.sync2.crypto.sha256
-import io.github.aedev.flow.sync2.roster.Entry
-import io.github.aedev.flow.sync2.roster.replayRoster
+import com.arubr.smsvcodes.sync.crypto.SyncBytes
+import com.arubr.smsvcodes.sync2.crypto.ProtocolException
+import com.arubr.smsvcodes.sync2.crypto.sha256
+import com.arubr.smsvcodes.sync2.roster.Entry
+import com.arubr.smsvcodes.sync2.roster.replayRoster
 
 /** Whether [bytes] are the blob [path] names. */
 internal fun namesBlob(

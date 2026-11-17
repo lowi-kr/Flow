@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.settings
+package com.arubr.smsvcodes.ui.screens.settings
 
 import android.content.Intent
 import android.net.Uri
@@ -26,11 +26,11 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import io.github.aedev.flow.data.recommendation.FlowNeuroEngine
-import io.github.aedev.flow.ui.theme.ThemeMode
-import io.github.aedev.flow.ui.theme.extendedColors
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.data.local.VideoQuality
+import com.arubr.smsvcodes.data.recommendation.FlowNeuroEngine
+import com.arubr.smsvcodes.ui.theme.ThemeMode
+import com.arubr.smsvcodes.ui.theme.extendedColors
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.data.local.VideoQuality
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalLayoutApi::class, ExperimentalMaterial3Api::class)
@@ -45,10 +45,10 @@ fun SettingsScreen(
 ) {
     val context = LocalContext.current
     val coroutineScope = rememberCoroutineScope()
-    val searchHistoryRepo = remember { io.github.aedev.flow.data.local.SearchHistoryRepository(context) }
+    val searchHistoryRepo = remember { com.arubr.smsvcodes.data.local.SearchHistoryRepository(context) }
     val playerPreferences = remember { PlayerPreferences(context) }
-    val viewHistory = remember { io.github.aedev.flow.data.local.ViewHistory.getInstance(context) }
-    val backupRepo = remember { io.github.aedev.flow.data.local.BackupRepository(context) }
+    val viewHistory = remember { com.arubr.smsvcodes.data.local.ViewHistory.getInstance(context) }
+    val backupRepo = remember { com.arubr.smsvcodes.data.local.BackupRepository(context) }
     
     // Brain State
     var userBrain by remember { mutableStateOf<FlowNeuroEngine.UserBrain?>(null) }
@@ -561,10 +561,10 @@ fun SimpleConfirmDialog(title: String, text: String, onConfirm: () -> Unit, onDi
 }
     val context = LocalContext.current
     val coroutineScope = rememberCoroutineScope()
-    val searchHistoryRepo = remember { io.github.aedev.flow.data.local.SearchHistoryRepository(context) }
+    val searchHistoryRepo = remember { com.arubr.smsvcodes.data.local.SearchHistoryRepository(context) }
     val playerPreferences = remember { PlayerPreferences(context) }
-    val viewHistory = remember { io.github.aedev.flow.data.local.ViewHistory.getInstance(context) }
-    val backupRepo = remember { io.github.aedev.flow.data.local.BackupRepository(context) }
+    val viewHistory = remember { com.arubr.smsvcodes.data.local.ViewHistory.getInstance(context) }
+    val backupRepo = remember { com.arubr.smsvcodes.data.local.BackupRepository(context) }
     
     val exportLauncher = rememberLauncherForActivityResult(
         contract = ActivityResultContracts.CreateDocument("application/json"),

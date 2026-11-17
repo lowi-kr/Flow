@@ -1,8 +1,8 @@
-package io.github.aedev.flow.sync2
+package com.arubr.smsvcodes.sync2
 
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.sync2.live.LiveTransport
-import io.github.aedev.flow.sync2.live.deliverLive
+import com.arubr.smsvcodes.sync2.live.LiveTransport
+import com.arubr.smsvcodes.sync2.live.deliverLive
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.test.runTest
 import org.junit.Assert.assertThrows

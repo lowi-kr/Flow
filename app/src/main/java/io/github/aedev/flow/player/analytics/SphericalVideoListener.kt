@@ -1,4 +1,4 @@
-package io.github.aedev.flow.player.analytics
+package com.arubr.smsvcodes.player.analytics
 
 import androidx.media3.common.Format
 import androidx.media3.common.MediaItem

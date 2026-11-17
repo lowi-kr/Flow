@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.videoplayer.controls
+package com.arubr.smsvcodes.ui.components.videoplayer.controls
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.runtime.Composable

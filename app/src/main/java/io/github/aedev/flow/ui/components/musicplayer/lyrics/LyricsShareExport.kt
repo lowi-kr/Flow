@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.musicplayer.lyrics
+package com.arubr.smsvcodes.ui.components.musicplayer.lyrics
 
 import android.content.ClipData
 import android.content.Context
@@ -6,9 +6,9 @@ import android.content.Intent
 import android.net.Uri
 import androidx.compose.ui.graphics.ImageBitmap
 import androidx.compose.ui.graphics.asAndroidBitmap
-import io.github.aedev.flow.data.video.storage.DownloadNaming
-import io.github.aedev.flow.utils.sharedPngUri
-import io.github.aedev.flow.utils.writePngTo
+import com.arubr.smsvcodes.data.video.storage.DownloadNaming
+import com.arubr.smsvcodes.utils.sharedPngUri
+import com.arubr.smsvcodes.utils.writePngTo
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 

@@ -1,4 +1,4 @@
-package io.github.aedev.flow.utils
+package com.arubr.smsvcodes.utils
 
 import android.icu.text.CompactDecimalFormat
 import android.icu.text.RelativeDateTimeFormatter

@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.musicplayer.lyrics
+package com.arubr.smsvcodes.ui.components.musicplayer.lyrics
 
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.layout.Arrangement
@@ -28,13 +28,13 @@ import androidx.compose.ui.platform.LocalHapticFeedback
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.lyrics.LyricsEntry
-import io.github.aedev.flow.ui.components.shared.FlowActionButton
-import io.github.aedev.flow.ui.components.shared.FlowModalSheetDefaults
-import io.github.aedev.flow.ui.components.shared.FlowSheetHeader
-import io.github.aedev.flow.ui.components.shared.rememberFlowSheetState
-import io.github.aedev.flow.ui.components.shared.toggleHapticType
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.lyrics.LyricsEntry
+import com.arubr.smsvcodes.ui.components.shared.FlowActionButton
+import com.arubr.smsvcodes.ui.components.shared.FlowModalSheetDefaults
+import com.arubr.smsvcodes.ui.components.shared.FlowSheetHeader
+import com.arubr.smsvcodes.ui.components.shared.rememberFlowSheetState
+import com.arubr.smsvcodes.ui.components.shared.toggleHapticType
 import kotlinx.coroutines.launch
 
 private val EdgePadding = 16.dp

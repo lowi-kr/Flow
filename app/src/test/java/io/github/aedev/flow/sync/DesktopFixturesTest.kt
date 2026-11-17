@@ -1,9 +1,9 @@
-package io.github.aedev.flow.sync
+package com.arubr.smsvcodes.sync
 
-import io.github.aedev.flow.sync.canonical.CanonicalLike
-import io.github.aedev.flow.sync.canonical.CanonicalPlaylist
-import io.github.aedev.flow.sync.mapping.SettingsMapper
-import io.github.aedev.flow.sync.protocol.SyncSerialization
+import com.arubr.smsvcodes.sync.canonical.CanonicalLike
+import com.arubr.smsvcodes.sync.canonical.CanonicalPlaylist
+import com.arubr.smsvcodes.sync.mapping.SettingsMapper
+import com.arubr.smsvcodes.sync.protocol.SyncSerialization
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonArray
 import org.junit.Assert.assertEquals

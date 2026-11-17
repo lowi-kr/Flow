@@ -1,9 +1,9 @@
-package io.github.aedev.flow.data.repository
+package com.arubr.smsvcodes.data.repository
 
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.data.model.DeArrowContent
-import io.github.aedev.flow.data.model.DeArrowThumbnail
-import io.github.aedev.flow.data.model.DeArrowTitle
+import com.arubr.smsvcodes.data.model.DeArrowContent
+import com.arubr.smsvcodes.data.model.DeArrowThumbnail
+import com.arubr.smsvcodes.data.model.DeArrowTitle
 import okhttp3.HttpUrl.Companion.toHttpUrl
 import org.junit.Test
 

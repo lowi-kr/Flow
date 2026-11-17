@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.music.section
+package com.arubr.smsvcodes.ui.components.music.section
 
 enum class HomeSectionType {
     DAILY_DISCOVER,

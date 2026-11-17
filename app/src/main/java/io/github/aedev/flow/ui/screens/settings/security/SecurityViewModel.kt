@@ -1,10 +1,10 @@
-package io.github.aedev.flow.ui.screens.settings.security
+package com.arubr.smsvcodes.ui.screens.settings.security
 
 import dagger.hilt.android.lifecycle.HiltViewModel
-import io.github.aedev.flow.applock.AppLock
-import io.github.aedev.flow.applock.AppLockSettings
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.ui.screens.settings.SettingsViewModel
+import com.arubr.smsvcodes.applock.AppLock
+import com.arubr.smsvcodes.applock.AppLockSettings
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.ui.screens.settings.SettingsViewModel
 import kotlinx.coroutines.flow.StateFlow
 import javax.inject.Inject
 

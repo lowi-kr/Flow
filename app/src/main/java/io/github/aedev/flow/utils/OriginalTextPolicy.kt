@@ -1,6 +1,6 @@
-package io.github.aedev.flow.utils
+package com.arubr.smsvcodes.utils
 
-import io.github.aedev.flow.data.model.Video
+import com.arubr.smsvcodes.data.model.Video
 
 /**
  * YouTube translates titles and descriptions into the request language on every response except

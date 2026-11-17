@@ -1,8 +1,8 @@
-package io.github.aedev.flow.ui.screens.playon
+package com.arubr.smsvcodes.ui.screens.playon
 
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.sync2.live.LiveMessage
-import io.github.aedev.flow.sync2.live.LivePeer
+import com.arubr.smsvcodes.sync2.live.LiveMessage
+import com.arubr.smsvcodes.sync2.live.LivePeer
 import org.junit.Test
 
 class PlayingElsewhereTest {

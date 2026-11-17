@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.settings.widgets
+package com.arubr.smsvcodes.ui.screens.settings.widgets
 
 import android.appwidget.AppWidgetManager
 import androidx.compose.material3.SnackbarHostState
@@ -8,12 +8,12 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.glance.appwidget.GlanceAppWidgetManager
-import io.github.aedev.flow.R
-import io.github.aedev.flow.ui.components.settings.SettingsPage
-import io.github.aedev.flow.ui.components.settings.nav
-import io.github.aedev.flow.ui.components.settings.notice
-import io.github.aedev.flow.ui.screens.settings.index.WidgetsIndex
-import io.github.aedev.flow.widget.core.FlowWidgets
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.ui.components.settings.SettingsPage
+import com.arubr.smsvcodes.ui.components.settings.nav
+import com.arubr.smsvcodes.ui.components.settings.notice
+import com.arubr.smsvcodes.ui.screens.settings.index.WidgetsIndex
+import com.arubr.smsvcodes.widget.core.FlowWidgets
 import kotlinx.coroutines.launch
 
 /** Every Flow widget, each one tap from the launcher's own add-widget dialog. */

@@ -1,8 +1,8 @@
-package io.github.aedev.flow.ui.components.shared.card
+package com.arubr.smsvcodes.ui.components.shared.card
 
 import androidx.compose.runtime.Composable
-import io.github.aedev.flow.ui.components.shared.CollaboratorsBottomSheet
-import io.github.aedev.flow.ui.components.shared.quickactions.VideoQuickActionsBottomSheet
+import com.arubr.smsvcodes.ui.components.shared.CollaboratorsBottomSheet
+import com.arubr.smsvcodes.ui.components.shared.quickactions.VideoQuickActionsBottomSheet
 
 @Composable
 internal fun VideoCardSheets(

@@ -1,7 +1,7 @@
-package io.github.aedev.flow.platform
+package com.arubr.smsvcodes.platform
 
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.util.AppIcons
+import com.arubr.smsvcodes.util.AppIcons
 import org.junit.Test
 import org.w3c.dom.Element
 import java.io.File

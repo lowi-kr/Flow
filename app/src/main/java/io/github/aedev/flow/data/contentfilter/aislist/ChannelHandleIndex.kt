@@ -1,4 +1,4 @@
-package io.github.aedev.flow.data.contentfilter.aislist
+package com.arubr.smsvcodes.data.contentfilter.aislist
 
 import androidx.core.util.AtomicFile
 import kotlinx.coroutines.CoroutineScope

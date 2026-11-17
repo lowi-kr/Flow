@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.playon
+package com.arubr.smsvcodes.ui.screens.playon
 
 import android.app.Application
 import android.content.Context
@@ -9,10 +9,10 @@ import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performClick
 import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import io.github.aedev.flow.R
-import io.github.aedev.flow.sync2.live.LiveMessage
-import io.github.aedev.flow.sync2.live.LivePeer
-import io.github.aedev.flow.sync2.service.LinkedDevice
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.sync2.live.LiveMessage
+import com.arubr.smsvcodes.sync2.live.LivePeer
+import com.arubr.smsvcodes.sync2.service.LinkedDevice
 import org.junit.Assert.assertEquals
 import org.junit.Rule
 import org.junit.Test

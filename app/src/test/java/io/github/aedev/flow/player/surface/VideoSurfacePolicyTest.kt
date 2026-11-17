@@ -1,4 +1,4 @@
-package io.github.aedev.flow.player.surface
+package com.arubr.smsvcodes.player.surface
 
 import android.os.Build
 import androidx.media3.common.Player

@@ -1,6 +1,6 @@
 @file:OptIn(ExperimentalMaterial3ExpressiveApi::class)
 
-package io.github.aedev.flow.ui.screens.onboarding
+package com.arubr.smsvcodes.ui.screens.onboarding
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -37,9 +37,9 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.DpOffset
 import androidx.compose.ui.unit.dp
 import androidx.graphics.shapes.RoundedPolygon
-import io.github.aedev.flow.R
-import io.github.aedev.flow.ui.components.shared.FlowLogo
-import io.github.aedev.flow.ui.components.shared.FlowPopIn
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.ui.components.shared.FlowLogo
+import com.arubr.smsvcodes.ui.components.shared.FlowPopIn
 
 internal val HeroStageSize = 300.dp
 private val SatelliteIconSize = 24.dp

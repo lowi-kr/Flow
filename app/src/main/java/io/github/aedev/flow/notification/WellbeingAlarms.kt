@@ -1,7 +1,7 @@
-package io.github.aedev.flow.notification
+package com.arubr.smsvcodes.notification
 
 import android.content.Context
-import io.github.aedev.flow.data.local.LocalDataManager
+import com.arubr.smsvcodes.data.local.LocalDataManager
 import kotlinx.coroutines.flow.first
 
 /**

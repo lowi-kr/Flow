@@ -1,4 +1,4 @@
-package io.github.aedev.flow.data.subscriptions
+package com.arubr.smsvcodes.data.subscriptions
 
 import androidx.paging.PagingSource
 import androidx.paging.PagingState

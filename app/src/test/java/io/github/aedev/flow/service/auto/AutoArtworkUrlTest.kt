@@ -1,7 +1,7 @@
-package io.github.aedev.flow.service.auto
+package com.arubr.smsvcodes.service.auto
 
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.BuildConfig
+import com.arubr.smsvcodes.BuildConfig
 import org.junit.Test
 
 class AutoArtworkUrlTest {

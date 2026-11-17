@@ -1,18 +1,18 @@
-package io.github.aedev.flow.ui.components.profiles
+package com.arubr.smsvcodes.ui.components.profiles
 
 import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.data.profile.ActiveProfile
-import io.github.aedev.flow.data.profile.ProfileRegistryState
-import io.github.aedev.flow.data.profile.ProfileRepository
-import io.github.aedev.flow.data.profile.ProfileSwitcher
-import io.github.aedev.flow.data.profile.SwitchRefusal
-import io.github.aedev.flow.data.profile.SwitchResult
-import io.github.aedev.flow.ui.components.layout.topbar.TopBarAccountSettings
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.data.profile.ActiveProfile
+import com.arubr.smsvcodes.data.profile.ProfileRegistryState
+import com.arubr.smsvcodes.data.profile.ProfileRepository
+import com.arubr.smsvcodes.data.profile.ProfileSwitcher
+import com.arubr.smsvcodes.data.profile.SwitchRefusal
+import com.arubr.smsvcodes.data.profile.SwitchResult
+import com.arubr.smsvcodes.ui.components.layout.topbar.TopBarAccountSettings
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted

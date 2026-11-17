@@ -1,14 +1,14 @@
-package io.github.aedev.flow.ui.screens.notifications
+package com.arubr.smsvcodes.ui.screens.notifications
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.Lazy
 import dagger.hilt.android.lifecycle.HiltViewModel
-import io.github.aedev.flow.data.engagement.VideoFeedbackUseCase
-import io.github.aedev.flow.data.local.NotificationRepository
-import io.github.aedev.flow.data.local.entity.NotificationEntity
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.data.subscriptions.SubscriptionFeedRepository
+import com.arubr.smsvcodes.data.engagement.VideoFeedbackUseCase
+import com.arubr.smsvcodes.data.local.NotificationRepository
+import com.arubr.smsvcodes.data.local.entity.NotificationEntity
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.data.subscriptions.SubscriptionFeedRepository
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow

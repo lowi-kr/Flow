@@ -1,6 +1,6 @@
-package io.github.aedev.flow.data.subscriptions
+package com.arubr.smsvcodes.data.subscriptions
 
-import io.github.aedev.flow.data.model.SubscriptionGroup
+import com.arubr.smsvcodes.data.model.SubscriptionGroup
 
 /**
  * The channels the All chip shows, or null for every subscription (#1387).

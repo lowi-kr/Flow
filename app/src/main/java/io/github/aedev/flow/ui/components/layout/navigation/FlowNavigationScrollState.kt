@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.layout.navigation
+package com.arubr.smsvcodes.ui.components.layout.navigation
 
 import androidx.compose.animation.core.AnimationSpec
 import androidx.compose.animation.core.animate

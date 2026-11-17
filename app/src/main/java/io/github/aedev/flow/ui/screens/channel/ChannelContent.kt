@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.channel
+package com.arubr.smsvcodes.ui.screens.channel
 
 import androidx.compose.animation.core.animate
 import androidx.compose.foundation.ExperimentalFoundationApi
@@ -50,28 +50,28 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
 import androidx.paging.compose.collectAsLazyPagingItems
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.contentfilter.aislist.AiVerdict
-import io.github.aedev.flow.data.local.HomeFeedColumns
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.innertube.pages.channel.ChannelTabKind
-import io.github.aedev.flow.innertube.pages.renderer.CommunityPost
-import io.github.aedev.flow.innertube.pages.renderer.FeedShelf
-import io.github.aedev.flow.ui.components.channel.ChannelAboutSection
-import io.github.aedev.flow.ui.components.channel.ChannelCommunityPosts
-import io.github.aedev.flow.ui.components.channel.ChannelFilterBar
-import io.github.aedev.flow.ui.components.channel.ChannelHeaderSection
-import io.github.aedev.flow.ui.components.channel.ChannelReadingPane
-import io.github.aedev.flow.ui.components.channel.ChannelRow
-import io.github.aedev.flow.ui.components.channel.ChannelTabItems
-import io.github.aedev.flow.ui.components.channel.ChannelTabRow
-import io.github.aedev.flow.ui.components.channel.PostsPaneMaxWidth
-import io.github.aedev.flow.ui.components.layout.flowBottomContentPadding
-import io.github.aedev.flow.ui.components.shared.FeedShelfActions
-import io.github.aedev.flow.ui.components.shared.FeedShelfSections
-import io.github.aedev.flow.ui.components.shared.FeedShelfSlots
-import io.github.aedev.flow.ui.components.shared.LocalDpadNavigation
-import io.github.aedev.flow.ui.components.shared.MediaPostCard
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.contentfilter.aislist.AiVerdict
+import com.arubr.smsvcodes.data.local.HomeFeedColumns
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.innertube.pages.channel.ChannelTabKind
+import com.arubr.smsvcodes.innertube.pages.renderer.CommunityPost
+import com.arubr.smsvcodes.innertube.pages.renderer.FeedShelf
+import com.arubr.smsvcodes.ui.components.channel.ChannelAboutSection
+import com.arubr.smsvcodes.ui.components.channel.ChannelCommunityPosts
+import com.arubr.smsvcodes.ui.components.channel.ChannelFilterBar
+import com.arubr.smsvcodes.ui.components.channel.ChannelHeaderSection
+import com.arubr.smsvcodes.ui.components.channel.ChannelReadingPane
+import com.arubr.smsvcodes.ui.components.channel.ChannelRow
+import com.arubr.smsvcodes.ui.components.channel.ChannelTabItems
+import com.arubr.smsvcodes.ui.components.channel.ChannelTabRow
+import com.arubr.smsvcodes.ui.components.channel.PostsPaneMaxWidth
+import com.arubr.smsvcodes.ui.components.layout.flowBottomContentPadding
+import com.arubr.smsvcodes.ui.components.shared.FeedShelfActions
+import com.arubr.smsvcodes.ui.components.shared.FeedShelfSections
+import com.arubr.smsvcodes.ui.components.shared.FeedShelfSlots
+import com.arubr.smsvcodes.ui.components.shared.LocalDpadNavigation
+import com.arubr.smsvcodes.ui.components.shared.MediaPostCard
 import kotlinx.coroutines.launch
 import kotlin.math.roundToInt
 
@@ -91,7 +91,7 @@ internal fun ChannelContent(
     onEditNote: (() -> Unit)?,
     aiVerdict: AiVerdict,
     onShowAiChannel: () -> Unit,
-    onSubscribeChannel: (io.github.aedev.flow.data.model.Channel, Boolean) -> Unit,
+    onSubscribeChannel: (com.arubr.smsvcodes.data.model.Channel, Boolean) -> Unit,
     onVideoClick: (Video) -> Unit,
     onChannelClick: (String) -> Unit,
     onShortClick: (String) -> Unit,
@@ -116,7 +116,7 @@ internal fun ChannelContent(
     val context = androidx.compose.ui.platform.LocalContext.current
     val preferences =
         remember {
-            io.github.aedev.flow.data.local
+            com.arubr.smsvcodes.data.local
                 .PlayerPreferences(context)
         }
     val isGridView by preferences.channelIsGridView.collectAsState(initial = false)

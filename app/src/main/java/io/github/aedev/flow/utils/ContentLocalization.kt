@@ -1,8 +1,8 @@
-package io.github.aedev.flow.utils
+package com.arubr.smsvcodes.utils
 
-import io.github.aedev.flow.data.local.CONTENT_LANGUAGE_FOLLOW_APP
-import io.github.aedev.flow.innertube.models.YouTubeLocale
-import io.github.aedev.flow.innertube.models.normalizeYouTubeHostLanguage
+import com.arubr.smsvcodes.data.local.CONTENT_LANGUAGE_FOLLOW_APP
+import com.arubr.smsvcodes.innertube.models.YouTubeLocale
+import com.arubr.smsvcodes.innertube.models.normalizeYouTubeHostLanguage
 import org.schabi.newpipe.extractor.localization.ContentCountry
 import org.schabi.newpipe.extractor.localization.Localization
 import org.schabi.newpipe.extractor.localization.TimeAgoPatternsManager

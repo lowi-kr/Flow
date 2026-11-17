@@ -1,4 +1,4 @@
-package io.github.aedev.flow.service
+package com.arubr.smsvcodes.service
 
 import android.content.Context
 import androidx.annotation.OptIn
@@ -6,8 +6,8 @@ import androidx.media3.common.MediaItem
 import androidx.media3.common.Player
 import androidx.media3.common.util.UnstableApi
 import androidx.media3.exoplayer.ExoPlayer
-import io.github.aedev.flow.data.local.BufferProfile
-import io.github.aedev.flow.utils.NetworkState
+import com.arubr.smsvcodes.data.local.BufferProfile
+import com.arubr.smsvcodes.utils.NetworkState
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.launch

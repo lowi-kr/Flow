@@ -1,4 +1,4 @@
-package io.github.aedev.flow.data.local.dao
+package com.arubr.smsvcodes.data.local.dao
 
 /** A channel's avatar as a cached row recorded it. */
 data class ChannelAvatarRow(

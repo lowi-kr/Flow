@@ -1,9 +1,9 @@
-package io.github.aedev.flow.data.local.dao
+package com.arubr.smsvcodes.data.local.dao
 
 import androidx.room.*
-import io.github.aedev.flow.data.local.entity.PlaylistEntity
-import io.github.aedev.flow.data.local.entity.PlaylistVideoCrossRef
-import io.github.aedev.flow.data.local.entity.VideoEntity
+import com.arubr.smsvcodes.data.local.entity.PlaylistEntity
+import com.arubr.smsvcodes.data.local.entity.PlaylistVideoCrossRef
+import com.arubr.smsvcodes.data.local.entity.VideoEntity
 import kotlinx.coroutines.flow.Flow
 
 data class PlaylistWithCount(

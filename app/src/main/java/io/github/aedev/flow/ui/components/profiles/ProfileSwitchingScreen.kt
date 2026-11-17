@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.profiles
+package com.arubr.smsvcodes.ui.components.profiles
 
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.layout.Arrangement
@@ -20,11 +20,11 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.profile.Profile
-import io.github.aedev.flow.data.profile.ProfileSwitchGate
-import io.github.aedev.flow.data.profile.displayName
-import io.github.aedev.flow.ui.components.shared.FlowSpinner
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.profile.Profile
+import com.arubr.smsvcodes.data.profile.ProfileSwitchGate
+import com.arubr.smsvcodes.data.profile.displayName
+import com.arubr.smsvcodes.ui.components.shared.FlowSpinner
 
 private val SwitchingAvatarSize = 96.dp
 private val ContentSpacing = 24.dp

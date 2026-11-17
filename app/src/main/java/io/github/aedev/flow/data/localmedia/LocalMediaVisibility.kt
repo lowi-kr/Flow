@@ -1,4 +1,4 @@
-package io.github.aedev.flow.data.localmedia
+package com.arubr.smsvcodes.data.localmedia
 
 private const val MILLIS_PER_SECOND = 1_000L
 

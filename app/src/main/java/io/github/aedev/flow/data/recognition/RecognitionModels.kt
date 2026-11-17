@@ -1,4 +1,4 @@
-package io.github.aedev.flow.data.recognition
+package com.arubr.smsvcodes.data.recognition
 
 // Music recognizer is built based on Metrolist's implementation, view https://github.com/MetrolistGroup/Metrolist
 

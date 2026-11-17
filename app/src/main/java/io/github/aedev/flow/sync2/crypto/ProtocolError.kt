@@ -1,4 +1,4 @@
-package io.github.aedev.flow.sync2.crypto
+package com.arubr.smsvcodes.sync2.crypto
 
 /** Every way an object, key or message can be rejected; [code] matches the shared test vectors. */
 enum class ProtocolError(

@@ -1,12 +1,12 @@
-package io.github.aedev.flow.data.stats
+package com.arubr.smsvcodes.data.stats
 
 import android.content.Context
 import android.util.Log
 import dagger.hilt.android.qualifiers.ApplicationContext
-import io.github.aedev.flow.data.local.PrivacyGate
-import io.github.aedev.flow.data.local.dao.WatchHistoryDao
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.data.recommendation.FlowNeuroEngine
+import com.arubr.smsvcodes.data.local.PrivacyGate
+import com.arubr.smsvcodes.data.local.dao.WatchHistoryDao
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.data.recommendation.FlowNeuroEngine
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job

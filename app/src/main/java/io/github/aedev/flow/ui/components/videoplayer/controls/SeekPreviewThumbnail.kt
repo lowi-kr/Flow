@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.videoplayer.controls
+package com.arubr.smsvcodes.ui.components.videoplayer.controls
 
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
@@ -16,8 +16,8 @@ import androidx.compose.ui.graphics.drawscope.scale
 import androidx.compose.ui.graphics.drawscope.translate
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.player.stream.StoryboardLevel
-import io.github.aedev.flow.ui.theme.PlayerScrim
+import com.arubr.smsvcodes.player.stream.StoryboardLevel
+import com.arubr.smsvcodes.ui.theme.PlayerScrim
 
 /** Width the preview is drawn at, and the size the storyboard level is chosen to match. */
 internal val SeekPreviewWidth: Dp = 160.dp

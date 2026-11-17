@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.layout.navigation
+package com.arubr.smsvcodes.ui.components.layout.navigation
 
 import androidx.annotation.StringRes
 import androidx.compose.material.icons.Icons
@@ -19,8 +19,8 @@ import androidx.compose.material.icons.outlined.VideoLibrary
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.vectorResource
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.local.DEFAULT_NAV_TAB_ORDER
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.local.DEFAULT_NAV_TAB_ORDER
 
 /** The downloads page other screens open over themselves, with a back arrow. */
 const val DOWNLOADS_ROUTE = "downloads"

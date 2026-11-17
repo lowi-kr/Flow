@@ -1,13 +1,13 @@
-package io.github.aedev.flow.data.video.downloader.work
+package com.arubr.smsvcodes.data.video.downloader.work
 
-import io.github.aedev.flow.data.local.entity.DownloadItemStatus
-import io.github.aedev.flow.data.local.entity.DownloadWithItems
-import io.github.aedev.flow.data.video.downloader.request.DownloadRequest
-import io.github.aedev.flow.data.video.downloader.request.StoredArtist
-import io.github.aedev.flow.data.video.downloader.request.sourceUrlFor
-import io.github.aedev.flow.data.video.downloader.tags.DownloadKind
-import io.github.aedev.flow.data.video.downloader.tags.DownloadTags
-import io.github.aedev.flow.data.video.storage.DownloadFiles
+import com.arubr.smsvcodes.data.local.entity.DownloadItemStatus
+import com.arubr.smsvcodes.data.local.entity.DownloadWithItems
+import com.arubr.smsvcodes.data.video.downloader.request.DownloadRequest
+import com.arubr.smsvcodes.data.video.downloader.request.StoredArtist
+import com.arubr.smsvcodes.data.video.downloader.request.sourceUrlFor
+import com.arubr.smsvcodes.data.video.downloader.tags.DownloadKind
+import com.arubr.smsvcodes.data.video.downloader.tags.DownloadTags
+import com.arubr.smsvcodes.data.video.storage.DownloadFiles
 import java.io.File
 
 /**

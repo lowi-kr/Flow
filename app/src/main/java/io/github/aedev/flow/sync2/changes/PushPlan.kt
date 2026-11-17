@@ -1,6 +1,6 @@
-package io.github.aedev.flow.sync2.changes
+package com.arubr.smsvcodes.sync2.changes
 
-import io.github.aedev.flow.sync.protocol.SyncCollection
+import com.arubr.smsvcodes.sync.protocol.SyncCollection
 
 /** The Room tables each collection is exported from; their changes decide whether a push exports it. */
 internal val COLLECTION_TABLES: Map<String, Set<String>> =

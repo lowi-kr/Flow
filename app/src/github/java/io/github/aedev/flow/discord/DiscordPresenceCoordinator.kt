@@ -1,4 +1,4 @@
-package io.github.aedev.flow.discord
+package com.arubr.smsvcodes.discord
 
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.collect

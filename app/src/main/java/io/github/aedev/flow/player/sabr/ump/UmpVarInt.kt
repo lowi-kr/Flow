@@ -1,4 +1,4 @@
-package io.github.aedev.flow.player.sabr.ump
+package com.arubr.smsvcodes.player.sabr.ump
 
 import java.io.InputStream
 import java.nio.ByteBuffer

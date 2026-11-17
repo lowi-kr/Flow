@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.subscriptions
+package com.arubr.smsvcodes.ui.screens.subscriptions
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.combinedClickable
@@ -24,12 +24,12 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.data.model.Channel
-import io.github.aedev.flow.ui.components.shared.ChannelAvatarImage
-import io.github.aedev.flow.ui.components.shared.ChannelGroupBadge
-import io.github.aedev.flow.ui.components.shared.FlowSubscribeButton
-import io.github.aedev.flow.ui.components.shared.rememberChannelOrganizeActions
-import io.github.aedev.flow.ui.components.shared.toOrganizeTarget
+import com.arubr.smsvcodes.data.model.Channel
+import com.arubr.smsvcodes.ui.components.shared.ChannelAvatarImage
+import com.arubr.smsvcodes.ui.components.shared.ChannelGroupBadge
+import com.arubr.smsvcodes.ui.components.shared.FlowSubscribeButton
+import com.arubr.smsvcodes.ui.components.shared.rememberChannelOrganizeActions
+import com.arubr.smsvcodes.ui.components.shared.toOrganizeTarget
 
 private val RowPadding = 12.dp
 private val AvatarSize = 48.dp

@@ -1,7 +1,7 @@
-package io.github.aedev.flow.ui.screens.player.state
+package com.arubr.smsvcodes.ui.screens.player.state
 
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.player.state.SubtitleOption
+import com.arubr.smsvcodes.player.state.SubtitleOption
 import org.junit.Test
 
 private fun option(

@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.utils
+package com.arubr.smsvcodes.ui.utils
 
 import android.content.Context
 import android.net.ConnectivityManager
@@ -11,8 +11,8 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.platform.LocalContext
-import io.github.aedev.flow.utils.NetworkState
-import io.github.aedev.flow.utils.isWifiOrEthernet
+import com.arubr.smsvcodes.utils.NetworkState
+import com.arubr.smsvcodes.utils.isWifiOrEthernet
 
 /**
  * Wifi (or Ethernet) or not, kept current by the platform callback. Seeded synchronously rather than defaulting

@@ -1,41 +1,41 @@
-package io.github.aedev.flow.ui.screens.player
+package com.arubr.smsvcodes.ui.screens.player
 
 import android.content.Context
-import io.github.aedev.flow.data.comments.CommentsPageResult
-import io.github.aedev.flow.data.engagement.VideoEngagementSignals
-import io.github.aedev.flow.data.engagement.VideoEngagementUseCase
-import io.github.aedev.flow.data.local.ChannelSubscription
-import io.github.aedev.flow.data.local.HomeFeedCacheRepository
-import io.github.aedev.flow.data.local.LikedVideosRepository
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.data.local.PlaylistRepository
-import io.github.aedev.flow.data.local.SubscriptionRepository
-import io.github.aedev.flow.data.local.VideoQuality
-import io.github.aedev.flow.data.local.ViewHistory
-import io.github.aedev.flow.data.local.entity.WatchHistoryEntity
-import io.github.aedev.flow.data.localmedia.LocalSubtitles
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.data.music.model.MusicTrack
-import io.github.aedev.flow.data.recommendation.FlowNeuroEngine
-import io.github.aedev.flow.data.repository.LiveChatRepository
-import io.github.aedev.flow.data.repository.SponsorBlockRepository
-import io.github.aedev.flow.data.repository.YouTubeRepository
-import io.github.aedev.flow.data.transcript.TranscriptRepository
-import io.github.aedev.flow.data.video.AutoDownloadTrigger
-import io.github.aedev.flow.data.video.OfflineSubtitleStore
-import io.github.aedev.flow.data.video.VideoDownloadManager
-import io.github.aedev.flow.innertube.YouTube
-import io.github.aedev.flow.player.EnhancedMusicPlayerManager
-import io.github.aedev.flow.player.EnhancedPlayerManager
-import io.github.aedev.flow.player.GlobalPlayerState
-import io.github.aedev.flow.player.LifecyclePlaybackSettings
-import io.github.aedev.flow.player.error.PlayerDiagnostics
-import io.github.aedev.flow.player.state.EnhancedPlayerState
-import io.github.aedev.flow.player.stream.CaptionTrackResolver
-import io.github.aedev.flow.player.stream.InnerTubeVideoStreamExtractor
-import io.github.aedev.flow.player.stream.PlaybackLoadResolver
-import io.github.aedev.flow.player.stream.UpcomingPremiereProbe
-import io.github.aedev.flow.utils.NetworkState
+import com.arubr.smsvcodes.data.comments.CommentsPageResult
+import com.arubr.smsvcodes.data.engagement.VideoEngagementSignals
+import com.arubr.smsvcodes.data.engagement.VideoEngagementUseCase
+import com.arubr.smsvcodes.data.local.ChannelSubscription
+import com.arubr.smsvcodes.data.local.HomeFeedCacheRepository
+import com.arubr.smsvcodes.data.local.LikedVideosRepository
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.data.local.PlaylistRepository
+import com.arubr.smsvcodes.data.local.SubscriptionRepository
+import com.arubr.smsvcodes.data.local.VideoQuality
+import com.arubr.smsvcodes.data.local.ViewHistory
+import com.arubr.smsvcodes.data.local.entity.WatchHistoryEntity
+import com.arubr.smsvcodes.data.localmedia.LocalSubtitles
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.data.music.model.MusicTrack
+import com.arubr.smsvcodes.data.recommendation.FlowNeuroEngine
+import com.arubr.smsvcodes.data.repository.LiveChatRepository
+import com.arubr.smsvcodes.data.repository.SponsorBlockRepository
+import com.arubr.smsvcodes.data.repository.YouTubeRepository
+import com.arubr.smsvcodes.data.transcript.TranscriptRepository
+import com.arubr.smsvcodes.data.video.AutoDownloadTrigger
+import com.arubr.smsvcodes.data.video.OfflineSubtitleStore
+import com.arubr.smsvcodes.data.video.VideoDownloadManager
+import com.arubr.smsvcodes.innertube.YouTube
+import com.arubr.smsvcodes.player.EnhancedMusicPlayerManager
+import com.arubr.smsvcodes.player.EnhancedPlayerManager
+import com.arubr.smsvcodes.player.GlobalPlayerState
+import com.arubr.smsvcodes.player.LifecyclePlaybackSettings
+import com.arubr.smsvcodes.player.error.PlayerDiagnostics
+import com.arubr.smsvcodes.player.state.EnhancedPlayerState
+import com.arubr.smsvcodes.player.stream.CaptionTrackResolver
+import com.arubr.smsvcodes.player.stream.InnerTubeVideoStreamExtractor
+import com.arubr.smsvcodes.player.stream.PlaybackLoadResolver
+import com.arubr.smsvcodes.player.stream.UpcomingPremiereProbe
+import com.arubr.smsvcodes.utils.NetworkState
 import io.mockk.Runs
 import io.mockk.coEvery
 import io.mockk.every
@@ -77,7 +77,7 @@ internal class VideoPlayerViewModelHarness(
     val playerManager: EnhancedPlayerManager = mockk(relaxed = true)
     var startVideosPaused = false
     var openVideosFullscreen = false
-    val videoStats: io.github.aedev.flow.data.stats.VideoStatsRecorder = mockk(relaxed = true)
+    val videoStats: com.arubr.smsvcodes.data.stats.VideoStatsRecorder = mockk(relaxed = true)
 
     /**
      * The real use case over the mocked repositories: every engagement assertion in the suite is
@@ -96,7 +96,7 @@ internal class VideoPlayerViewModelHarness(
     val playerState = MutableStateFlow(EnhancedPlayerState())
     val playbackAbandonedEvent = MutableSharedFlow<Unit>(extraBufferCapacity = 1)
     val queueVideos = MutableStateFlow<List<Video>>(emptyList())
-    val videoQueueStore = mockk<io.github.aedev.flow.data.video.VideoQueueStore>(relaxed = true)
+    val videoQueueStore = mockk<com.arubr.smsvcodes.data.video.VideoQueueStore>(relaxed = true)
     val musicCurrentTrack = MutableStateFlow<MusicTrack?>(null)
     val autoplayEnabled = MutableStateFlow(true)
     val continueWatchingEnabled = MutableStateFlow(true)

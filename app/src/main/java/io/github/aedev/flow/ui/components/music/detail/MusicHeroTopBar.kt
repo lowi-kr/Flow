@@ -4,7 +4,7 @@
  * This file is part of Flow (https://github.com/Flow-Tube/Flow).
  */
 
-package io.github.aedev.flow.ui.components.music.detail
+package com.arubr.smsvcodes.ui.components.music.detail
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.animateColorAsState
@@ -32,11 +32,11 @@ import androidx.compose.ui.focus.FocusRequester
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow
-import io.github.aedev.flow.R
-import io.github.aedev.flow.ui.components.layout.topbar.FlowTopBarDefaults
-import io.github.aedev.flow.ui.components.shared.dpadDownTo
-import io.github.aedev.flow.ui.theme.ArtworkScrimAffordance
-import io.github.aedev.flow.ui.theme.ArtworkScrimContent
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.ui.components.layout.topbar.FlowTopBarDefaults
+import com.arubr.smsvcodes.ui.components.shared.dpadDownTo
+import com.arubr.smsvcodes.ui.theme.ArtworkScrimAffordance
+import com.arubr.smsvcodes.ui.theme.ArtworkScrimContent
 
 /**
  * The bar over a full-bleed hero that runs under the status bar: transparent with scrim-backed

@@ -4,12 +4,12 @@
  * This file is part of Flow (https://github.com/Flow-Tube/Flow).
  */
 
-package io.github.aedev.flow.data.recommendation.eval
+package com.arubr.smsvcodes.data.recommendation.eval
 
 import com.google.common.truth.Truth.assertWithMessage
-import io.github.aedev.flow.data.recommendation.NeuroDisplayForms
-import io.github.aedev.flow.data.recommendation.NeuroText
-import io.github.aedev.flow.data.recommendation.NeuroTokenizer
+import com.arubr.smsvcodes.data.recommendation.NeuroDisplayForms
+import com.arubr.smsvcodes.data.recommendation.NeuroText
+import com.arubr.smsvcodes.data.recommendation.NeuroTokenizer
 import org.junit.Test
 
 /**

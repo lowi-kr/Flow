@@ -1,10 +1,10 @@
-package io.github.aedev.flow.player.sabr.integration
+package com.arubr.smsvcodes.player.sabr.integration
 
 import android.util.Log
-import io.github.aedev.flow.player.sabr.core.SabrEvent
-import io.github.aedev.flow.player.sabr.core.SabrStreamController
-import io.github.aedev.flow.player.sabr.proto.FormatInitializationMetadata
-import io.github.aedev.flow.utils.potoken.WebPoTokenSession
+import com.arubr.smsvcodes.player.sabr.core.SabrEvent
+import com.arubr.smsvcodes.player.sabr.core.SabrStreamController
+import com.arubr.smsvcodes.player.sabr.proto.FormatInitializationMetadata
+import com.arubr.smsvcodes.utils.potoken.WebPoTokenSession
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Deferred
 import kotlinx.coroutines.Dispatchers
@@ -247,7 +247,7 @@ class SabrOrchestrator(
         if (playerResponseReloadJob?.isActive == true) return
         val resolver = reloadResolver
         if (resolver == null || playerResponseReloads >= MAX_PLAYER_RESPONSE_RELOADS) {
-            io.github.aedev.flow.player.error.PlayerDiagnostics.logError(
+            com.arubr.smsvcodes.player.error.PlayerDiagnostics.logError(
                 TAG,
                 "SABR reload budget spent ($playerResponseReloads/$MAX_PLAYER_RESPONSE_RELOADS) — giving up",
             )
@@ -270,7 +270,7 @@ class SabrOrchestrator(
                         Log.w(TAG, "Player response reload failed", e)
                         null
                     } ?: run {
-                        io.github.aedev.flow.player.error.PlayerDiagnostics
+                        com.arubr.smsvcodes.player.error.PlayerDiagnostics
                             .logError(TAG, "SABR reload could not resolve a fresh player response")
                         return@async false
                     }
@@ -304,7 +304,7 @@ class SabrOrchestrator(
                     "Player response reloaded in place at ${controller.sessionState.playheadPositionMs}ms " +
                         "(attempt $playerResponseReloads/$MAX_PLAYER_RESPONSE_RELOADS)",
                 )
-                io.github.aedev.flow.player.error.PlayerDiagnostics.logWarning(
+                com.arubr.smsvcodes.player.error.PlayerDiagnostics.logWarning(
                     TAG,
                     "SABR reload applied at ${controller.sessionState.playheadPositionMs}ms " +
                         "(attempt $playerResponseReloads/$MAX_PLAYER_RESPONSE_RELOADS) — resuming session",
@@ -401,7 +401,7 @@ class SabrOrchestrator(
         }
     }
 
-    private fun bufferedAheadMs(state: io.github.aedev.flow.player.sabr.core.SabrSessionState): Long {
+    private fun bufferedAheadMs(state: com.arubr.smsvcodes.player.sabr.core.SabrSessionState): Long {
         val audioEndMs =
             state.audioBufferedRanges.maxOfOrNull { it.startTimeMs + it.durationMs }
                 ?: return 0L
@@ -413,7 +413,7 @@ class SabrOrchestrator(
         return minOf(audioEndMs, videoEndMs) - state.playheadPositionMs
     }
 
-    private fun targetReadaheadMs(state: io.github.aedev.flow.player.sabr.core.SabrSessionState): Long =
+    private fun targetReadaheadMs(state: com.arubr.smsvcodes.player.sabr.core.SabrSessionState): Long =
         minOf(state.targetAudioReadaheadMs, state.targetVideoReadaheadMs)
             .coerceAtLeast(MIN_TARGET_READAHEAD_MS)
 

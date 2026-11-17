@@ -1,9 +1,9 @@
-package io.github.aedev.flow.ui.screens.music
+package com.arubr.smsvcodes.ui.screens.music
 
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.data.music.model.MusicArtist
-import io.github.aedev.flow.innertube.models.Artist
-import io.github.aedev.flow.innertube.models.SongItem
+import com.arubr.smsvcodes.data.music.model.MusicArtist
+import com.arubr.smsvcodes.innertube.models.Artist
+import com.arubr.smsvcodes.innertube.models.SongItem
 import org.junit.Test
 
 class SearchSongArtistsTest {

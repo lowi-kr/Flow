@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.shared
+package com.arubr.smsvcodes.ui.components.shared
 
 import androidx.compose.ui.unit.Constraints
 import com.google.common.truth.Truth.assertThat

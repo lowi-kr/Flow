@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.player.dialogs
+package com.arubr.smsvcodes.ui.screens.player.dialogs
 
 import android.content.Context
 import android.content.Intent
@@ -17,20 +17,20 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.local.DEFAULT_SPHERICAL_DRAG_SPEED
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.player.EnhancedPlayerManager
-import io.github.aedev.flow.player.PictureInPictureHelper
-import io.github.aedev.flow.player.dlna.DlnaCastManager
-import io.github.aedev.flow.player.state.EnhancedPlayerState
-import io.github.aedev.flow.ui.components.videoplayer.settings.SettingsMenuDialog
-import io.github.aedev.flow.ui.screens.player.VideoPlayerViewModel
-import io.github.aedev.flow.ui.screens.player.saveChosenPlaybackSpeed
-import io.github.aedev.flow.ui.screens.player.state.PlayerScreenState
-import io.github.aedev.flow.ui.screens.player.state.PlayerSheet
-import io.github.aedev.flow.ui.screens.player.state.SubtitleSelection
-import io.github.aedev.flow.ui.screens.player.state.VideoPlayerUiState
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.local.DEFAULT_SPHERICAL_DRAG_SPEED
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.player.EnhancedPlayerManager
+import com.arubr.smsvcodes.player.PictureInPictureHelper
+import com.arubr.smsvcodes.player.dlna.DlnaCastManager
+import com.arubr.smsvcodes.player.state.EnhancedPlayerState
+import com.arubr.smsvcodes.ui.components.videoplayer.settings.SettingsMenuDialog
+import com.arubr.smsvcodes.ui.screens.player.VideoPlayerViewModel
+import com.arubr.smsvcodes.ui.screens.player.saveChosenPlaybackSpeed
+import com.arubr.smsvcodes.ui.screens.player.state.PlayerScreenState
+import com.arubr.smsvcodes.ui.screens.player.state.PlayerSheet
+import com.arubr.smsvcodes.ui.screens.player.state.SubtitleSelection
+import com.arubr.smsvcodes.ui.screens.player.state.VideoPlayerUiState
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 

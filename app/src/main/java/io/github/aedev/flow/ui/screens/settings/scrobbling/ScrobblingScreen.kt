@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.settings.scrobbling
+package com.arubr.smsvcodes.ui.screens.settings.scrobbling
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.CloudUpload
@@ -17,15 +17,15 @@ import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.scrobble.ScrobbleService
-import io.github.aedev.flow.data.scrobble.ScrobbleSettings
-import io.github.aedev.flow.ui.components.settings.SettingsGroupScope
-import io.github.aedev.flow.ui.components.settings.SettingsPage
-import io.github.aedev.flow.ui.components.settings.nav
-import io.github.aedev.flow.ui.components.settings.switch
-import io.github.aedev.flow.ui.components.shared.FlowNavRow
-import io.github.aedev.flow.ui.screens.settings.index.ScrobblingIndex
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.scrobble.ScrobbleService
+import com.arubr.smsvcodes.data.scrobble.ScrobbleSettings
+import com.arubr.smsvcodes.ui.components.settings.SettingsGroupScope
+import com.arubr.smsvcodes.ui.components.settings.SettingsPage
+import com.arubr.smsvcodes.ui.components.settings.nav
+import com.arubr.smsvcodes.ui.components.settings.switch
+import com.arubr.smsvcodes.ui.components.shared.FlowNavRow
+import com.arubr.smsvcodes.ui.screens.settings.index.ScrobblingIndex
 
 /** Last.fm, Libre.fm and ListenBrainz accounts, the viewer's own Last.fm key, and what gets sent. */
 @Composable

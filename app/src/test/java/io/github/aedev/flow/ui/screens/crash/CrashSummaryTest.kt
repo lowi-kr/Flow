@@ -1,8 +1,8 @@
-package io.github.aedev.flow.ui.screens.crash
+package com.arubr.smsvcodes.ui.screens.crash
 
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.utils.FlowCrashReportFormatter
-import io.github.aedev.flow.utils.FlowCrashReportSnapshot
+import com.arubr.smsvcodes.utils.FlowCrashReportFormatter
+import com.arubr.smsvcodes.utils.FlowCrashReportSnapshot
 import org.junit.Test
 import java.net.URLDecoder
 import java.time.LocalDateTime
@@ -20,7 +20,7 @@ class CrashSummaryTest {
                     """
                     java.lang.IllegalArgumentException: Padding must be non-negative
                     	at androidx.compose.foundation.layout.PaddingKt.padding(Padding.kt:88)
-                    	at io.github.aedev.flow.ui.screens.player.PlayerBottomBarKt.PlayerBottomBar(PlayerBottomBar.kt:212)
+                    	at com.arubr.smsvcodes.ui.screens.player.PlayerBottomBarKt.PlayerBottomBar(PlayerBottomBar.kt:212)
                     """.trimIndent(),
                 deviceInfo = "  Model: 23049PCD8G\n  Manufacturer: Xiaomi\n  Android: 16 (SDK 36)\n  App Version: 2.2.5 (225)",
                 memoryInfo = "  Used heap: 10 MB",
@@ -129,7 +129,7 @@ class CrashSummaryTest {
                         	at androidx.compose.material3.AppBarKt${'$'}${'$'}ExternalSyntheticLambda12.invoke(r8-map-id-6b62:135)
                         	at androidx.compose.material3.AppBarKt${'$'}${'$'}ExternalSyntheticLambda12.invoke(r8-map-id-6b62:114)
                         	at androidx.compose.ui.layout.Placeable${'$'}PlacementScope.place(r8-map-id-6b62:20)
-                        	at io.github.aedev.flow.ui.components.videoplayer.sheet.PlaylistQueueItemKt.QueueRow(r8-map-id-6b62:79)
+                        	at com.arubr.smsvcodes.ui.components.videoplayer.sheet.PlaylistQueueItemKt.QueueRow(r8-map-id-6b62:79)
                         	at androidx.compose.ui.node.LayoutNode.place(r8-map-id-6b62:40)
                         	... 30 more
                         """.trimIndent(),
@@ -220,7 +220,7 @@ class CrashSummaryTest {
             parseCrashSummary(
                 releaseCrash(
                     "java.lang.IllegalArgumentException: boom\n$framework\n" +
-                        "\tat io.github.aedev.flow.data.local.PlayerPreferences.read(r8-map-id-1bc4:40)",
+                        "\tat com.arubr.smsvcodes.data.local.PlayerPreferences.read(r8-map-id-1bc4:40)",
                 ),
             )
         val logs = URLDecoder.decode(summary.issueUrl().substringAfter("&logs="), Charsets.UTF_8.name())
@@ -228,7 +228,7 @@ class CrashSummaryTest {
         assertThat(summary.location).isEqualTo("PlayerPreferences.read")
         assertThat(logs).contains("Frame6.run")
         assertThat(logs).doesNotContain("Frame7.run")
-        assertThat(logs).endsWith("...\nat io.github.aedev.flow.data.local.PlayerPreferences.read(r8-map-id-1bc4:40)")
+        assertThat(logs).endsWith("...\nat com.arubr.smsvcodes.data.local.PlayerPreferences.read(r8-map-id-1bc4:40)")
     }
 
     @Test

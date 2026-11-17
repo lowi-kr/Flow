@@ -1,8 +1,8 @@
-package io.github.aedev.flow.sync2.data
+package com.arubr.smsvcodes.sync2.data
 
-import io.github.aedev.flow.sync2.changes.IncomingBatch
-import io.github.aedev.flow.sync2.changes.batchContent
-import io.github.aedev.flow.sync2.changes.parseBatch
+import com.arubr.smsvcodes.sync2.changes.IncomingBatch
+import com.arubr.smsvcodes.sync2.changes.batchContent
+import com.arubr.smsvcodes.sync2.changes.parseBatch
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import java.io.File

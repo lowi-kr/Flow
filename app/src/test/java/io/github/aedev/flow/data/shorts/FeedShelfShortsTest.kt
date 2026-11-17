@@ -1,10 +1,10 @@
-package io.github.aedev.flow.data.shorts
+package com.arubr.smsvcodes.data.shorts
 
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.data.model.Playlist
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.innertube.pages.renderer.FeedItem
-import io.github.aedev.flow.innertube.pages.renderer.FeedShelf
+import com.arubr.smsvcodes.data.model.Playlist
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.innertube.pages.renderer.FeedItem
+import com.arubr.smsvcodes.innertube.pages.renderer.FeedShelf
 import org.junit.Test
 
 class FeedShelfShortsTest {

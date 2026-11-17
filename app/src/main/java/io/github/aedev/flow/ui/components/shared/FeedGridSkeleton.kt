@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.shared
+package com.arubr.smsvcodes.ui.components.shared
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.fillMaxSize
@@ -8,10 +8,10 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.ui.components.FeedGridLayout
-import io.github.aedev.flow.ui.components.layout.flowBottomContentPadding
-import io.github.aedev.flow.ui.components.shared.card.VideoCardLayout
-import io.github.aedev.flow.ui.components.shared.card.VideoCardSkeleton
+import com.arubr.smsvcodes.ui.components.FeedGridLayout
+import com.arubr.smsvcodes.ui.components.layout.flowBottomContentPadding
+import com.arubr.smsvcodes.ui.components.shared.card.VideoCardLayout
+import com.arubr.smsvcodes.ui.components.shared.card.VideoCardSkeleton
 
 /**
  * Placeholder cards in the exact plan the loaded feed will use, so the first page does not jump.

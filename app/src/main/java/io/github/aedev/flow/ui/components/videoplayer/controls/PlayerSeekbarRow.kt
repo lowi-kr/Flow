@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.videoplayer.controls
+package com.arubr.smsvcodes.ui.components.videoplayer.controls
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.fadeIn
@@ -28,13 +28,13 @@ import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.zIndex
-import io.github.aedev.flow.data.local.ScrubPreviewStyle
-import io.github.aedev.flow.data.model.SponsorBlockSegment
-import io.github.aedev.flow.innertube.models.response.VideoHeatmap
-import io.github.aedev.flow.player.stream.StoryboardLevel
-import io.github.aedev.flow.player.stream.StoryboardSpec
-import io.github.aedev.flow.ui.components.shared.MediaSeekBar
-import io.github.aedev.flow.ui.theme.PlayerLiveIndicator
+import com.arubr.smsvcodes.data.local.ScrubPreviewStyle
+import com.arubr.smsvcodes.data.model.SponsorBlockSegment
+import com.arubr.smsvcodes.innertube.models.response.VideoHeatmap
+import com.arubr.smsvcodes.player.stream.StoryboardLevel
+import com.arubr.smsvcodes.player.stream.StoryboardSpec
+import com.arubr.smsvcodes.ui.components.shared.MediaSeekBar
+import com.arubr.smsvcodes.ui.theme.PlayerLiveIndicator
 import org.schabi.newpipe.extractor.stream.StreamSegment
 
 private val SeekPreviewGap = 12.dp

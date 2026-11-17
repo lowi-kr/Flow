@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.playlists
+package com.arubr.smsvcodes.ui.screens.playlists
 
 import android.content.Context
 import android.net.Uri
@@ -7,32 +7,32 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.engagement.LikedMediaUseCase
-import io.github.aedev.flow.data.local.LikedVideoInfo
-import io.github.aedev.flow.data.local.LikedVideosRepository
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.data.local.PlaylistRepository
-import io.github.aedev.flow.data.local.PlaylistSwipes
-import io.github.aedev.flow.data.local.WatchLaterCleanup
-import io.github.aedev.flow.data.local.dao.DownloadCollectionSummary
-import io.github.aedev.flow.data.migration.WatchLaterMetadataMigrator
-import io.github.aedev.flow.data.model.PlaylistInfo
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.data.music.YouTubeMusicService
-import io.github.aedev.flow.data.playlist.PlaylistFileCodec
-import io.github.aedev.flow.data.playlist.PlaylistTransfer
-import io.github.aedev.flow.data.repository.RemotePlaylistPage
-import io.github.aedev.flow.data.repository.YouTubePlaylistRepository
-import io.github.aedev.flow.data.repository.YouTubeRepository
-import io.github.aedev.flow.data.repository.walkPlaylistPages
-import io.github.aedev.flow.data.video.BackgroundDownloadQueuer
-import io.github.aedev.flow.data.video.DownloadBatch
-import io.github.aedev.flow.data.video.downloader.collection.DownloadedCollections
-import io.github.aedev.flow.ui.components.library.PlaylistSortOrder
-import io.github.aedev.flow.ui.components.library.sortedForPlaylist
-import io.github.aedev.flow.ui.components.shared.quickactions.QuickActionUndo
-import io.github.aedev.flow.utils.PerformanceDispatcher
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.engagement.LikedMediaUseCase
+import com.arubr.smsvcodes.data.local.LikedVideoInfo
+import com.arubr.smsvcodes.data.local.LikedVideosRepository
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.data.local.PlaylistRepository
+import com.arubr.smsvcodes.data.local.PlaylistSwipes
+import com.arubr.smsvcodes.data.local.WatchLaterCleanup
+import com.arubr.smsvcodes.data.local.dao.DownloadCollectionSummary
+import com.arubr.smsvcodes.data.migration.WatchLaterMetadataMigrator
+import com.arubr.smsvcodes.data.model.PlaylistInfo
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.data.music.YouTubeMusicService
+import com.arubr.smsvcodes.data.playlist.PlaylistFileCodec
+import com.arubr.smsvcodes.data.playlist.PlaylistTransfer
+import com.arubr.smsvcodes.data.repository.RemotePlaylistPage
+import com.arubr.smsvcodes.data.repository.YouTubePlaylistRepository
+import com.arubr.smsvcodes.data.repository.YouTubeRepository
+import com.arubr.smsvcodes.data.repository.walkPlaylistPages
+import com.arubr.smsvcodes.data.video.BackgroundDownloadQueuer
+import com.arubr.smsvcodes.data.video.DownloadBatch
+import com.arubr.smsvcodes.data.video.downloader.collection.DownloadedCollections
+import com.arubr.smsvcodes.ui.components.library.PlaylistSortOrder
+import com.arubr.smsvcodes.ui.components.library.sortedForPlaylist
+import com.arubr.smsvcodes.ui.components.shared.quickactions.QuickActionUndo
+import com.arubr.smsvcodes.utils.PerformanceDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.Flow
@@ -548,7 +548,7 @@ class PlaylistDetailViewModel
         }
     }
 
-private fun io.github.aedev.flow.data.music.model.MusicTrack.toPlaylistVideo(): Video =
+private fun com.arubr.smsvcodes.data.music.model.MusicTrack.toPlaylistVideo(): Video =
     Video(
         id = videoId,
         title = title,

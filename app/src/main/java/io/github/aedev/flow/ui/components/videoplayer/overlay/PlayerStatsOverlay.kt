@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.videoplayer.overlay
+package com.arubr.smsvcodes.ui.components.videoplayer.overlay
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -23,10 +23,10 @@ import androidx.compose.ui.draw.clipToBounds
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.player.stats.PlayerStatLine
-import io.github.aedev.flow.ui.theme.PlayerScrimContent
-import io.github.aedev.flow.ui.theme.PlayerScrimPanel
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.player.stats.PlayerStatLine
+import com.arubr.smsvcodes.ui.theme.PlayerScrimContent
+import com.arubr.smsvcodes.ui.theme.PlayerScrimPanel
 
 private val PanelMaxWidth = 520.dp
 

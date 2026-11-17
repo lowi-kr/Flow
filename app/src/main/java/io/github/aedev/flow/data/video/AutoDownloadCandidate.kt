@@ -1,7 +1,7 @@
-package io.github.aedev.flow.data.video
+package com.arubr.smsvcodes.data.video
 
-import io.github.aedev.flow.data.local.AutoDownloadMode
-import io.github.aedev.flow.data.local.entity.DownloadItemStatus
+import com.arubr.smsvcodes.data.local.AutoDownloadMode
+import com.arubr.smsvcodes.data.local.entity.DownloadItemStatus
 
 /** What is known about an opened video once its streams resolve, for [shouldAutoDownload]. */
 internal data class AutoDownloadCandidate(

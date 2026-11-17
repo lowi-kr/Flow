@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.shared
+package com.arubr.smsvcodes.ui.components.shared
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
@@ -24,8 +24,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.player.dlna.DlnaDevice
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.player.dlna.DlnaDevice
 
 /** The DLNA / UPnP renderers to cast [title] to, or the one it plays on with Stop while [isCasting]. */
 @Composable

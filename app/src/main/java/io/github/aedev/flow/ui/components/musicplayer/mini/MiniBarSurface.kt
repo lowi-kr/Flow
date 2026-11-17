@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.musicplayer.mini
+package com.arubr.smsvcodes.ui.components.musicplayer.mini
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -14,17 +14,17 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.data.local.CoverShape
-import io.github.aedev.flow.data.local.DefaultCoverShapes
-import io.github.aedev.flow.data.local.MiniBarBackground
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.ui.components.musicplayer.lyrics.LyricsCoverLayer
-import io.github.aedev.flow.ui.components.musicplayer.lyrics.rememberLyricsCover
-import io.github.aedev.flow.ui.components.shared.MediaMiniBarDefaults
-import io.github.aedev.flow.ui.theme.MusicPlayerTrueBlack
-import io.github.aedev.flow.ui.theme.PlayerScrimContent
-import io.github.aedev.flow.ui.theme.PlayerScrimContentSecondary
-import io.github.aedev.flow.ui.theme.PlayerScrimImmersiveBackdrop
+import com.arubr.smsvcodes.data.local.CoverShape
+import com.arubr.smsvcodes.data.local.DefaultCoverShapes
+import com.arubr.smsvcodes.data.local.MiniBarBackground
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.ui.components.musicplayer.lyrics.LyricsCoverLayer
+import com.arubr.smsvcodes.ui.components.musicplayer.lyrics.rememberLyricsCover
+import com.arubr.smsvcodes.ui.components.shared.MediaMiniBarDefaults
+import com.arubr.smsvcodes.ui.theme.MusicPlayerTrueBlack
+import com.arubr.smsvcodes.ui.theme.PlayerScrimContent
+import com.arubr.smsvcodes.ui.theme.PlayerScrimContentSecondary
+import com.arubr.smsvcodes.ui.theme.PlayerScrimImmersiveBackdrop
 
 private val OutlineWidth = 1.dp
 

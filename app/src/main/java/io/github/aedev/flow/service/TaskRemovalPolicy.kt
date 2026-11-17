@@ -1,8 +1,8 @@
-package io.github.aedev.flow.service
+package com.arubr.smsvcodes.service
 
 import androidx.media3.common.Player
-import io.github.aedev.flow.ui.screens.lockscreen.LockScreenPlayerActivity
-import io.github.aedev.flow.widget.config.WidgetConfigActivity
+import com.arubr.smsvcodes.ui.screens.lockscreen.LockScreenPlayerActivity
+import com.arubr.smsvcodes.widget.config.WidgetConfigActivity
 
 /**
  * Whether a media service stays up when Flow is swiped away from recents. Media3's own rule keeps it

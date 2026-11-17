@@ -1,8 +1,8 @@
-package io.github.aedev.flow.player.subtitle
+package com.arubr.smsvcodes.player.subtitle
 
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.player.state.SubtitleOption
-import io.github.aedev.flow.player.state.SubtitleOrigin
+import com.arubr.smsvcodes.player.state.SubtitleOption
+import com.arubr.smsvcodes.player.state.SubtitleOrigin
 import org.junit.Test
 
 /** How a remembered language tag and the automatic policy resolve against a video's tracks. */

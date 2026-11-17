@@ -4,7 +4,7 @@
  * native C++ + FFTW3 implementation with a JVM-only FFT. Byte layout is wire-compatible
  * with the Shazam DejaVu signature format, so the magic numbers below must not change.
  */
-package io.github.aedev.flow.data.recognition.signature
+package com.arubr.smsvcodes.data.recognition.signature
 
 import android.util.Base64
 import java.io.ByteArrayOutputStream

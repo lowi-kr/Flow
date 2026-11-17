@@ -1,4 +1,4 @@
-package io.github.aedev.flow.widget.core.theme
+package com.arubr.smsvcodes.widget.core.theme
 
 import android.os.Build
 import androidx.compose.runtime.Composable

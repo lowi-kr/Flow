@@ -1,8 +1,8 @@
-package io.github.aedev.flow.ui.screens.subscriptions
+package com.arubr.smsvcodes.ui.screens.subscriptions
 
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.data.model.Channel
-import io.github.aedev.flow.data.model.Video
+import com.arubr.smsvcodes.data.model.Channel
+import com.arubr.smsvcodes.data.model.Video
 import org.junit.Test
 
 /** Pinned channels at the start of Quick access, and the Most watched sort (#1776). */

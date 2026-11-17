@@ -1,4 +1,4 @@
-package io.github.aedev.flow.player
+package com.arubr.smsvcodes.player
 
 import android.content.Context
 import android.graphics.Bitmap
@@ -16,8 +16,8 @@ import coil3.toBitmap
 import com.google.common.util.concurrent.ListenableFuture
 import com.google.common.util.concurrent.MoreExecutors
 import com.google.common.util.concurrent.SettableFuture
-import io.github.aedev.flow.service.auto.AutoArtworkProvider
-import io.github.aedev.flow.utils.PerformanceDispatcher
+import com.arubr.smsvcodes.service.auto.AutoArtworkProvider
+import com.arubr.smsvcodes.utils.PerformanceDispatcher
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.SupervisorJob

@@ -1,11 +1,11 @@
-package io.github.aedev.flow.ui
+package com.arubr.smsvcodes.ui
 
 import androidx.navigation.NavBackStackEntry
 import androidx.navigation.NavController
-import io.github.aedev.flow.data.shorts.queue.ShortsQueueSource
-import io.github.aedev.flow.ui.components.layout.navigation.DOWNLOADS_ROUTE
-import io.github.aedev.flow.ui.components.layout.navigation.FlowTab
-import io.github.aedev.flow.ui.screens.search.SEARCH_ROUTE_PATTERN
+import com.arubr.smsvcodes.data.shorts.queue.ShortsQueueSource
+import com.arubr.smsvcodes.ui.components.layout.navigation.DOWNLOADS_ROUTE
+import com.arubr.smsvcodes.ui.components.layout.navigation.FlowTab
+import com.arubr.smsvcodes.ui.screens.search.SEARCH_ROUTE_PATTERN
 import java.net.URI
 import java.net.URLEncoder
 

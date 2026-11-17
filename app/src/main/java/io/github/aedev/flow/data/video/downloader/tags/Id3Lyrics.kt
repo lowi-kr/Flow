@@ -1,4 +1,4 @@
-package io.github.aedev.flow.data.video.downloader.tags
+package com.arubr.smsvcodes.data.video.downloader.tags
 
 /**
  * The text of an ID3 `USLT` frame. Media3 1.11's `Id3Decoder` has no decoder for it and hands the

@@ -1,16 +1,16 @@
-package io.github.aedev.flow.ui.screens.music
+package com.arubr.smsvcodes.ui.screens.music
 
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.data.contentfilter.aislist.AiListMatcher
-import io.github.aedev.flow.data.contentfilter.aislist.AiListSets
-import io.github.aedev.flow.innertube.models.AlbumItem
-import io.github.aedev.flow.innertube.models.Artist
-import io.github.aedev.flow.innertube.models.ArtistItem
-import io.github.aedev.flow.innertube.models.PlaylistItem
-import io.github.aedev.flow.innertube.models.SongItem
-import io.github.aedev.flow.innertube.pages.SearchSummary
-import io.github.aedev.flow.innertube.pages.SearchSummaryKind
-import io.github.aedev.flow.innertube.pages.SearchSummaryPage
+import com.arubr.smsvcodes.data.contentfilter.aislist.AiListMatcher
+import com.arubr.smsvcodes.data.contentfilter.aislist.AiListSets
+import com.arubr.smsvcodes.innertube.models.AlbumItem
+import com.arubr.smsvcodes.innertube.models.Artist
+import com.arubr.smsvcodes.innertube.models.ArtistItem
+import com.arubr.smsvcodes.innertube.models.PlaylistItem
+import com.arubr.smsvcodes.innertube.models.SongItem
+import com.arubr.smsvcodes.innertube.pages.SearchSummary
+import com.arubr.smsvcodes.innertube.pages.SearchSummaryKind
+import com.arubr.smsvcodes.innertube.pages.SearchSummaryPage
 import org.junit.Test
 
 class MusicSearchAiFilterTest {

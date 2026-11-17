@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.onboarding
+package com.arubr.smsvcodes.ui.screens.onboarding
 
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
@@ -12,14 +12,14 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.backup.ImportKind
-import io.github.aedev.flow.data.backup.ImportSource
-import io.github.aedev.flow.ui.components.shared.FlowNavRow
-import io.github.aedev.flow.ui.components.shared.FlowRowGroup
-import io.github.aedev.flow.ui.components.shared.FlowSheetHeader
-import io.github.aedev.flow.ui.components.shared.flowRowGroupShape
-import io.github.aedev.flow.ui.components.shared.rememberFlowSheetState
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.backup.ImportKind
+import com.arubr.smsvcodes.data.backup.ImportSource
+import com.arubr.smsvcodes.ui.components.shared.FlowNavRow
+import com.arubr.smsvcodes.ui.components.shared.FlowRowGroup
+import com.arubr.smsvcodes.ui.components.shared.FlowSheetHeader
+import com.arubr.smsvcodes.ui.components.shared.flowRowGroupShape
+import com.arubr.smsvcodes.ui.components.shared.rememberFlowSheetState
 
 private val SheetBottomPadding = 16.dp
 

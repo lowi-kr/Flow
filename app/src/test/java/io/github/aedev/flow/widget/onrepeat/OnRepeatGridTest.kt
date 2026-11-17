@@ -1,4 +1,4 @@
-package io.github.aedev.flow.widget.onrepeat
+package com.arubr.smsvcodes.widget.onrepeat
 
 import androidx.compose.ui.unit.DpSize
 import androidx.compose.ui.unit.dp

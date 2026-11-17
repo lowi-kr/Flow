@@ -1,4 +1,4 @@
-package io.github.aedev.flow.service
+package com.arubr.smsvcodes.service
 
 import androidx.annotation.OptIn
 import androidx.media3.common.MediaItem
@@ -8,7 +8,7 @@ import androidx.media3.exoplayer.LoadControl
 import androidx.media3.exoplayer.analytics.PlayerId
 import androidx.media3.exoplayer.source.MediaSource
 import androidx.media3.exoplayer.source.SinglePeriodTimeline
-import io.github.aedev.flow.player.factory.LoadControlFactory
+import com.arubr.smsvcodes.player.factory.LoadControlFactory
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue

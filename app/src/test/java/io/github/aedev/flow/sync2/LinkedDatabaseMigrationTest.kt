@@ -1,4 +1,4 @@
-package io.github.aedev.flow.sync2
+package com.arubr.smsvcodes.sync2
 
 import android.app.Application
 import android.content.Context
@@ -6,10 +6,10 @@ import android.database.sqlite.SQLiteDatabase
 import androidx.room.Room
 import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import io.github.aedev.flow.sync.protocol.SyncCollection
-import io.github.aedev.flow.sync2.data.DEFAULT_PROFILE
-import io.github.aedev.flow.sync2.data.LinkedDatabase
-import io.github.aedev.flow.sync2.data.SentRecord
+import com.arubr.smsvcodes.sync.protocol.SyncCollection
+import com.arubr.smsvcodes.sync2.data.DEFAULT_PROFILE
+import com.arubr.smsvcodes.sync2.data.LinkedDatabase
+import com.arubr.smsvcodes.sync2.data.SentRecord
 import kotlinx.coroutines.test.runTest
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonObject

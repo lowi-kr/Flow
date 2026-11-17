@@ -1,7 +1,7 @@
-package io.github.aedev.flow.notification
+package com.arubr.smsvcodes.notification
 
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.model.Video
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.model.Video
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.async

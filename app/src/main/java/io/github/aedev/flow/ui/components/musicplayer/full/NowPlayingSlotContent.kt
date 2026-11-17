@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.musicplayer.full
+package com.arubr.smsvcodes.ui.components.musicplayer.full
 
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.ColorScheme
@@ -8,18 +8,18 @@ import androidx.compose.runtime.State
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.media3.common.Player
-import io.github.aedev.flow.data.localmedia.LocalMediaIds
-import io.github.aedev.flow.data.music.model.MusicTrack
-import io.github.aedev.flow.ui.components.layout.navigation.LocalMediaNavigator
-import io.github.aedev.flow.ui.components.musicplayer.queue.QueueActions
-import io.github.aedev.flow.ui.components.musicplayer.queue.QueueList
-import io.github.aedev.flow.ui.components.musicplayer.queue.QueuePullUpSheet
-import io.github.aedev.flow.ui.components.musicplayer.queue.QueuePullUpState
-import io.github.aedev.flow.ui.components.musicplayer.queue.QueueSheet
-import io.github.aedev.flow.ui.components.musicplayer.queue.QueueSwipes
-import io.github.aedev.flow.ui.components.shared.SkipDirection
-import io.github.aedev.flow.ui.screens.music.MusicPlayerUiState
-import io.github.aedev.flow.ui.screens.music.MusicPlayerViewModel
+import com.arubr.smsvcodes.data.localmedia.LocalMediaIds
+import com.arubr.smsvcodes.data.music.model.MusicTrack
+import com.arubr.smsvcodes.ui.components.layout.navigation.LocalMediaNavigator
+import com.arubr.smsvcodes.ui.components.musicplayer.queue.QueueActions
+import com.arubr.smsvcodes.ui.components.musicplayer.queue.QueueList
+import com.arubr.smsvcodes.ui.components.musicplayer.queue.QueuePullUpSheet
+import com.arubr.smsvcodes.ui.components.musicplayer.queue.QueuePullUpState
+import com.arubr.smsvcodes.ui.components.musicplayer.queue.QueueSheet
+import com.arubr.smsvcodes.ui.components.musicplayer.queue.QueueSwipes
+import com.arubr.smsvcodes.ui.components.shared.SkipDirection
+import com.arubr.smsvcodes.ui.screens.music.MusicPlayerUiState
+import com.arubr.smsvcodes.ui.screens.music.MusicPlayerViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 

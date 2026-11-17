@@ -1,16 +1,16 @@
-package io.github.aedev.flow.data.stats
+package com.arubr.smsvcodes.data.stats
 
 import android.content.Context
 import android.util.Log
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.stringPreferencesKey
 import dagger.hilt.android.qualifiers.ApplicationContext
-import io.github.aedev.flow.data.local.SubscriptionRepository
-import io.github.aedev.flow.data.local.safePreferencesDataStore
-import io.github.aedev.flow.data.profile.StoreScope
-import io.github.aedev.flow.data.recommendation.music.MusicBrainEngine
-import io.github.aedev.flow.data.repository.YouTubeRepository
-import io.github.aedev.flow.di.NetworkIoDispatcher
+import com.arubr.smsvcodes.data.local.SubscriptionRepository
+import com.arubr.smsvcodes.data.local.safePreferencesDataStore
+import com.arubr.smsvcodes.data.profile.StoreScope
+import com.arubr.smsvcodes.data.recommendation.music.MusicBrainEngine
+import com.arubr.smsvcodes.data.repository.YouTubeRepository
+import com.arubr.smsvcodes.di.NetworkIoDispatcher
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.async
 import kotlinx.coroutines.awaitAll

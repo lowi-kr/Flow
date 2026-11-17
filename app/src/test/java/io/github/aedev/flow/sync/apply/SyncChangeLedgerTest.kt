@@ -1,4 +1,4 @@
-package io.github.aedev.flow.sync.apply
+package com.arubr.smsvcodes.sync.apply
 
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse

@@ -1,6 +1,6 @@
-package io.github.aedev.flow.ui.screens.settings.downloads
+package com.arubr.smsvcodes.ui.screens.settings.downloads
 
-import io.github.aedev.flow.data.local.MediaCacheSizes
+import com.arubr.smsvcodes.data.local.MediaCacheSizes
 import java.text.NumberFormat
 import java.util.Locale
 import kotlin.math.roundToInt

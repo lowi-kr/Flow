@@ -2,9 +2,9 @@
 // This implementation was based on metrolist's (https://github.com/MetrolistGroup/Metrolist)
 // ==================================================================================================
 
-package io.github.aedev.flow.data.lyrics
+package com.arubr.smsvcodes.data.lyrics
 
-import io.github.aedev.flow.data.lyrics.paxsenix.Paxsenix
+import com.arubr.smsvcodes.data.lyrics.paxsenix.Paxsenix
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import okhttp3.OkHttpClient

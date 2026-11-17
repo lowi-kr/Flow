@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.settings.appearance.theme
+package com.arubr.smsvcodes.ui.screens.settings.appearance.theme
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -16,15 +16,15 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.ui.components.shared.FlowAlertDialog
-import io.github.aedev.flow.ui.components.shared.FlowChoice
-import io.github.aedev.flow.ui.components.shared.FlowChoiceDialog
-import io.github.aedev.flow.ui.components.shared.FlowNavRow
-import io.github.aedev.flow.ui.theme.CustomTheme
-import io.github.aedev.flow.ui.theme.ThemeCatalog
-import io.github.aedev.flow.ui.theme.ThemeCatalogEntry
-import io.github.aedev.flow.ui.theme.ThemeMode
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.ui.components.shared.FlowAlertDialog
+import com.arubr.smsvcodes.ui.components.shared.FlowChoice
+import com.arubr.smsvcodes.ui.components.shared.FlowChoiceDialog
+import com.arubr.smsvcodes.ui.components.shared.FlowNavRow
+import com.arubr.smsvcodes.ui.theme.CustomTheme
+import com.arubr.smsvcodes.ui.theme.ThemeCatalog
+import com.arubr.smsvcodes.ui.theme.ThemeCatalogEntry
+import com.arubr.smsvcodes.ui.theme.ThemeMode
 
 private val FieldSpacing = 8.dp
 

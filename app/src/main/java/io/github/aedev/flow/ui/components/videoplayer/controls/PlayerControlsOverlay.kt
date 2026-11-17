@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.videoplayer.controls
+package com.arubr.smsvcodes.ui.components.videoplayer.controls
 
 import androidx.compose.animation.*
 import androidx.compose.animation.core.*
@@ -17,12 +17,12 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.local.PlayerOverlayPreferences
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.player.EnhancedPlayerManager
-import io.github.aedev.flow.ui.theme.PlayerScrim
-import io.github.aedev.flow.utils.formatMultiplierLabel
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.local.PlayerOverlayPreferences
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.player.EnhancedPlayerManager
+import com.arubr.smsvcodes.ui.theme.PlayerScrim
+import com.arubr.smsvcodes.utils.formatMultiplierLabel
 
 private val OverlayActionIconSize = 24.dp
 private val OverlayActionSpacing = 8.dp

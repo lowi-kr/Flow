@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.sync.linked
+package com.arubr.smsvcodes.ui.screens.sync.linked
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -18,16 +18,16 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.profile.ProfileRegistry
-import io.github.aedev.flow.sync2.service.LocalProfile
-import io.github.aedev.flow.sync2.service.OtherProfile
-import io.github.aedev.flow.sync2.service.ProfileChoices
-import io.github.aedev.flow.ui.components.settings.SettingsNotice
-import io.github.aedev.flow.ui.components.shared.FlowNavRow
-import io.github.aedev.flow.ui.components.shared.FlowSwitchRow
-import io.github.aedev.flow.ui.screens.sync.SyncRowGroup
-import io.github.aedev.flow.ui.screens.sync.SyncSection
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.profile.ProfileRegistry
+import com.arubr.smsvcodes.sync2.service.LocalProfile
+import com.arubr.smsvcodes.sync2.service.OtherProfile
+import com.arubr.smsvcodes.sync2.service.ProfileChoices
+import com.arubr.smsvcodes.ui.components.settings.SettingsNotice
+import com.arubr.smsvcodes.ui.components.shared.FlowNavRow
+import com.arubr.smsvcodes.ui.components.shared.FlowSwitchRow
+import com.arubr.smsvcodes.ui.screens.sync.SyncRowGroup
+import com.arubr.smsvcodes.ui.screens.sync.SyncSection
 
 /** Which profiles sync (spec/protocol.md, Profiles): a switch per profile here, and the synced ones it can add. */
 @Composable

@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.layout.navigation
+package com.arubr.smsvcodes.ui.components.layout.navigation
 
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.animateFloatAsState
@@ -52,10 +52,10 @@ import androidx.compose.ui.text.rememberTextMeasurer
 import androidx.compose.ui.unit.Constraints
 import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.local.NavBarLabels
-import io.github.aedev.flow.data.local.NavBarLook
-import io.github.aedev.flow.ui.components.shared.MediaMiniBarDefaults
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.local.NavBarLabels
+import com.arubr.smsvcodes.data.local.NavBarLook
+import com.arubr.smsvcodes.ui.components.shared.MediaMiniBarDefaults
 import kotlinx.coroutines.launch
 import kotlin.math.roundToInt
 

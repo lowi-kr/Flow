@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui
+package com.arubr.smsvcodes.ui
 
 import androidx.compose.animation.core.Animatable
 import androidx.compose.material3.ExperimentalMaterial3ExpressiveApi
@@ -14,15 +14,15 @@ import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.ui.components.layout.FlowBottomInsets
-import io.github.aedev.flow.ui.components.layout.navigation.FlowNavigationDefaults
-import io.github.aedev.flow.ui.components.layout.navigation.FlowNavigationScrollState
-import io.github.aedev.flow.ui.components.shared.MediaMiniBarBounds
-import io.github.aedev.flow.ui.components.shared.MediaMiniBarDefaults
-import io.github.aedev.flow.ui.components.shared.mediaMiniBarBounds
-import io.github.aedev.flow.ui.components.videoplayer.MiniPlayerDock
-import io.github.aedev.flow.ui.utils.LocalWindowSizeClass
-import io.github.aedev.flow.ui.utils.isMediumWidth
+import com.arubr.smsvcodes.ui.components.layout.FlowBottomInsets
+import com.arubr.smsvcodes.ui.components.layout.navigation.FlowNavigationDefaults
+import com.arubr.smsvcodes.ui.components.layout.navigation.FlowNavigationScrollState
+import com.arubr.smsvcodes.ui.components.shared.MediaMiniBarBounds
+import com.arubr.smsvcodes.ui.components.shared.MediaMiniBarDefaults
+import com.arubr.smsvcodes.ui.components.shared.mediaMiniBarBounds
+import com.arubr.smsvcodes.ui.components.videoplayer.MiniPlayerDock
+import com.arubr.smsvcodes.ui.utils.LocalWindowSizeClass
+import com.arubr.smsvcodes.ui.utils.isMediumWidth
 import kotlinx.coroutines.flow.collectLatest
 
 private val DockGap = 8.dp

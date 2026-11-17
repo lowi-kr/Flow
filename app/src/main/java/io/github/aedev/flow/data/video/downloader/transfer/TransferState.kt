@@ -1,4 +1,4 @@
-package io.github.aedev.flow.data.video.downloader.transfer
+package com.arubr.smsvcodes.data.video.downloader.transfer
 
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json

@@ -1,15 +1,15 @@
-package io.github.aedev.flow.ui.screens.settings.content
+package com.arubr.smsvcodes.ui.screens.settings.content
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.res.stringResource
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import io.github.aedev.flow.R
-import io.github.aedev.flow.ui.components.music.section.MusicHomeShelf
-import io.github.aedev.flow.ui.components.settings.SettingsPage
-import io.github.aedev.flow.ui.components.settings.switch
-import io.github.aedev.flow.ui.screens.settings.index.MusicHomeIndex
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.ui.components.music.section.MusicHomeShelf
+import com.arubr.smsvcodes.ui.components.settings.SettingsPage
+import com.arubr.smsvcodes.ui.components.settings.switch
+import com.arubr.smsvcodes.ui.screens.settings.index.MusicHomeIndex
 
 /** One switch per music home section; a hidden section is left out of the feed. */
 @Composable

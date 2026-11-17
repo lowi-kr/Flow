@@ -1,9 +1,9 @@
-package io.github.aedev.flow.ui.screens.update
+package com.arubr.smsvcodes.ui.screens.update
 
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.data.update.InstallPhase
-import io.github.aedev.flow.data.update.UpdateDownload
-import io.github.aedev.flow.data.update.UpdateFailure
+import com.arubr.smsvcodes.data.update.InstallPhase
+import com.arubr.smsvcodes.data.update.UpdateDownload
+import com.arubr.smsvcodes.data.update.UpdateFailure
 import org.junit.Test
 
 class UpdateStageTest {

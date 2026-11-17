@@ -1,9 +1,9 @@
-package io.github.aedev.flow.ui.components.shared
+package com.arubr.smsvcodes.ui.components.shared
 
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.data.video.downloader.request.DownloadSubtitle
-import io.github.aedev.flow.player.state.SubtitleOption
-import io.github.aedev.flow.player.state.SubtitleOrigin
+import com.arubr.smsvcodes.data.video.downloader.request.DownloadSubtitle
+import com.arubr.smsvcodes.player.state.SubtitleOption
+import com.arubr.smsvcodes.player.state.SubtitleOrigin
 import org.junit.Test
 
 class DownloadSubtitleChoiceTest {

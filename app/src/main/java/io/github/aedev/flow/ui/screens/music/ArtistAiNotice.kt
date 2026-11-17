@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.music
+package com.arubr.smsvcodes.ui.screens.music
 
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyListScope
@@ -7,9 +7,9 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.ui.components.shared.FlowNoticeBanner
-import io.github.aedev.flow.ui.theme.Dimensions
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.ui.components.shared.FlowNoticeBanner
+import com.arubr.smsvcodes.ui.theme.Dimensions
 
 /** Which AI list an opened artist is on, which decides the banner's wording. */
 internal enum class ArtistAiNotice(

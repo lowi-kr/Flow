@@ -1,7 +1,7 @@
-package io.github.aedev.flow.ui.screens.notifications
+package com.arubr.smsvcodes.ui.screens.notifications
 
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.data.local.entity.NotificationEntity
+import com.arubr.smsvcodes.data.local.entity.NotificationEntity
 import org.junit.Test
 import java.time.DayOfWeek
 import java.time.LocalDate

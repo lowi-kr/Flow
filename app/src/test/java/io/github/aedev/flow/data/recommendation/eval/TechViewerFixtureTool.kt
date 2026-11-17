@@ -5,11 +5,11 @@
  * Test-source-set only — never shipped in the APK.
  */
 
-package io.github.aedev.flow.data.recommendation.eval
+package com.arubr.smsvcodes.data.recommendation.eval
 
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.data.recommendation.NeuroStorage
-import io.github.aedev.flow.data.recommendation.eval.NeuroLearningBenchmark.watch
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.data.recommendation.NeuroStorage
+import com.arubr.smsvcodes.data.recommendation.eval.NeuroLearningBenchmark.watch
 import io.mockk.mockk
 import kotlinx.coroutines.runBlocking
 import kotlinx.serialization.json.Json

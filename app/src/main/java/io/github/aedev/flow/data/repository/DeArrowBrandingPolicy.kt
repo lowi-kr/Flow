@@ -1,7 +1,7 @@
-package io.github.aedev.flow.data.repository
+package com.arubr.smsvcodes.data.repository
 
-import io.github.aedev.flow.data.model.DeArrowContent
-import io.github.aedev.flow.data.model.DeArrowResult
+import com.arubr.smsvcodes.data.model.DeArrowContent
+import com.arubr.smsvcodes.data.model.DeArrowResult
 import okhttp3.HttpUrl.Companion.toHttpUrl
 
 /**

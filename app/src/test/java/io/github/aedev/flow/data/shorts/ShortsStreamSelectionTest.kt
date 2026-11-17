@@ -1,4 +1,4 @@
-package io.github.aedev.flow.data.shorts
+package com.arubr.smsvcodes.data.shorts
 
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNull

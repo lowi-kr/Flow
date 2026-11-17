@@ -1,6 +1,6 @@
-package io.github.aedev.flow.data.subscriptions
+package com.arubr.smsvcodes.data.subscriptions
 
-import io.github.aedev.flow.data.local.ChannelSubscription
+import com.arubr.smsvcodes.data.local.ChannelSubscription
 
 /**
  * Which channels the next subscription-feed refresh should actually hit.

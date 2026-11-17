@@ -1,4 +1,4 @@
-package io.github.aedev.flow.data.contentfilter.aislist
+package com.arubr.smsvcodes.data.contentfilter.aislist
 
 import java.io.IOException
 import java.security.MessageDigest

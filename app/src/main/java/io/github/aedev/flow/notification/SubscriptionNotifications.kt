@@ -1,4 +1,4 @@
-package io.github.aedev.flow.notification
+package com.arubr.smsvcodes.notification
 
 import android.app.PendingIntent
 import android.content.Context
@@ -6,12 +6,12 @@ import android.content.Intent
 import android.graphics.Bitmap
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.data.local.entity.NotificationEntity
-import io.github.aedev.flow.notification.NotificationHelper.CHANNEL_SUBSCRIPTIONS
-import io.github.aedev.flow.notification.NotificationHelper.NOTIFICATION_NEW_VIDEO
-import io.github.aedev.flow.notification.NotificationHelper.NOTIFICATION_NEW_VIDEO_SUMMARY
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.data.local.entity.NotificationEntity
+import com.arubr.smsvcodes.notification.NotificationHelper.CHANNEL_SUBSCRIPTIONS
+import com.arubr.smsvcodes.notification.NotificationHelper.NOTIFICATION_NEW_VIDEO
+import com.arubr.smsvcodes.notification.NotificationHelper.NOTIFICATION_NEW_VIDEO_SUMMARY
 import kotlinx.coroutines.flow.first
 import java.time.ZoneId
 

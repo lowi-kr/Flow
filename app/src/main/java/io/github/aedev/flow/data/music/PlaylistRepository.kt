@@ -1,4 +1,4 @@
-package io.github.aedev.flow.data.music
+package com.arubr.smsvcodes.data.music
 
 import android.content.Context
 import androidx.datastore.core.DataStore
@@ -7,10 +7,10 @@ import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.stringPreferencesKey
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
-import io.github.aedev.flow.data.local.safePreferencesDataStore
-import io.github.aedev.flow.data.music.model.MusicTrack
-import io.github.aedev.flow.data.music.model.withTypedArtists
-import io.github.aedev.flow.data.profile.StoreScope
+import com.arubr.smsvcodes.data.local.safePreferencesDataStore
+import com.arubr.smsvcodes.data.music.model.MusicTrack
+import com.arubr.smsvcodes.data.music.model.withTypedArtists
+import com.arubr.smsvcodes.data.profile.StoreScope
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.map

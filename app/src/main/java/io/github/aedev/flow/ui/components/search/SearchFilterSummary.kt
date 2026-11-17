@@ -1,14 +1,14 @@
-package io.github.aedev.flow.ui.components.search
+package com.arubr.smsvcodes.ui.components.search
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.res.stringResource
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.local.ContentType
-import io.github.aedev.flow.data.local.Duration
-import io.github.aedev.flow.data.local.SearchFilter
-import io.github.aedev.flow.data.local.SortType
-import io.github.aedev.flow.data.local.UploadDate
-import io.github.aedev.flow.data.local.WatchState
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.local.ContentType
+import com.arubr.smsvcodes.data.local.Duration
+import com.arubr.smsvcodes.data.local.SearchFilter
+import com.arubr.smsvcodes.data.local.SortType
+import com.arubr.smsvcodes.data.local.UploadDate
+import com.arubr.smsvcodes.data.local.WatchState
 
 /** What [this] narrows, in dialog order. Channels and playlists ignore duration and date, so those are left out there. */
 internal fun SearchFilter.summaryLabelRes(): List<Int> =

@@ -1,4 +1,4 @@
-package io.github.aedev.flow.data.subscriptions
+package com.arubr.smsvcodes.data.subscriptions
 
 import android.util.Log
 import org.xmlpull.v1.XmlPullParser

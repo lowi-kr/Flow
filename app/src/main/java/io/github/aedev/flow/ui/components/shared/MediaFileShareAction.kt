@@ -1,10 +1,10 @@
-package io.github.aedev.flow.ui.components.shared
+package com.arubr.smsvcodes.ui.components.shared
 
 import android.content.ClipData
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
-import io.github.aedev.flow.R
+import com.arubr.smsvcodes.R
 
 /**
  * Shares files on the device by their `content://` URIs, granting the receiving app read access,

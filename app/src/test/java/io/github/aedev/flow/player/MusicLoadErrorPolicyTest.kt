@@ -1,11 +1,11 @@
-package io.github.aedev.flow.player
+package com.arubr.smsvcodes.player
 
 import androidx.media3.common.C
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.player.stream.PlaybackBlock
-import io.github.aedev.flow.player.stream.PlaybackBlockedException
-import io.github.aedev.flow.player.stream.VideoUnavailableException
-import io.github.aedev.flow.utils.MusicResolveTimeoutException
+import com.arubr.smsvcodes.player.stream.PlaybackBlock
+import com.arubr.smsvcodes.player.stream.PlaybackBlockedException
+import com.arubr.smsvcodes.player.stream.VideoUnavailableException
+import com.arubr.smsvcodes.utils.MusicResolveTimeoutException
 import org.junit.Test
 import java.io.IOException
 import java.net.SocketException

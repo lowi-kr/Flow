@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.tv.components
+package com.arubr.smsvcodes.ui.tv.components
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.expandHorizontally
@@ -28,13 +28,13 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.profile.displayName
-import io.github.aedev.flow.ui.components.profiles.ProfileAvatar
-import io.github.aedev.flow.ui.components.profiles.ProfileSwitchSheet
-import io.github.aedev.flow.ui.components.profiles.ProfileSwitchViewModel
-import io.github.aedev.flow.ui.components.settings.SettingsDestination
-import io.github.aedev.flow.ui.components.settings.SettingsTarget
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.profile.displayName
+import com.arubr.smsvcodes.ui.components.profiles.ProfileAvatar
+import com.arubr.smsvcodes.ui.components.profiles.ProfileSwitchSheet
+import com.arubr.smsvcodes.ui.components.profiles.ProfileSwitchViewModel
+import com.arubr.smsvcodes.ui.components.settings.SettingsDestination
+import com.arubr.smsvcodes.ui.components.settings.SettingsTarget
 
 private val AvatarSize = 32.dp
 private val NameMaxWidth = 160.dp

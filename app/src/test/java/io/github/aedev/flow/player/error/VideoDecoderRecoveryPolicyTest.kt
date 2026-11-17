@@ -1,8 +1,8 @@
-package io.github.aedev.flow.player.error
+package com.arubr.smsvcodes.player.error
 
 import androidx.media3.common.PlaybackException
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.player.error.VideoDecoderRecoveryPolicy.Decision
+import com.arubr.smsvcodes.player.error.VideoDecoderRecoveryPolicy.Decision
 import org.junit.Test
 
 class VideoDecoderRecoveryPolicyTest {

@@ -1,8 +1,8 @@
-package io.github.aedev.flow.sync.mapping
+package com.arubr.smsvcodes.sync.mapping
 
-import io.github.aedev.flow.data.audio.eq.EqStateJson
-import io.github.aedev.flow.data.local.SettingsBackup
-import io.github.aedev.flow.sync.canonical.CanonicalSetting
+import com.arubr.smsvcodes.data.audio.eq.EqStateJson
+import com.arubr.smsvcodes.data.local.SettingsBackup
+import com.arubr.smsvcodes.sync.canonical.CanonicalSetting
 import kotlinx.serialization.json.JsonElement
 import kotlinx.serialization.json.JsonPrimitive
 import kotlinx.serialization.json.booleanOrNull
@@ -15,7 +15,7 @@ import kotlinx.serialization.json.longOrNull
  * Curated, device-independent settings whitelist. ONLY these
  * keys are ever put on the wire — device-specific values (paths, proxy creds, geometry,
  * caches, telemetry) are deliberately excluded. Each setting is stamped with when it last changed
- * here, recovered by [io.github.aedev.flow.sync.apply.SyncChangeTracker] (preferences keep no
+ * here, recovered by [com.arubr.smsvcodes.sync.apply.SyncChangeTracker] (preferences keep no
  * per-key timestamps).
  *
  * Bridges via [SettingsBackup] (the typed maps already produced by `PlayerPreferences`).

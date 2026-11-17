@@ -1,9 +1,9 @@
-package io.github.aedev.flow.innertube.pages
+package com.arubr.smsvcodes.innertube.pages
 
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.innertube.pages.renderer.browseHandle
-import io.github.aedev.flow.innertube.pages.renderer.parseDurationText
-import io.github.aedev.flow.utils.ThumbnailUrlResolver
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.innertube.pages.renderer.browseHandle
+import com.arubr.smsvcodes.innertube.pages.renderer.parseDurationText
+import com.arubr.smsvcodes.utils.ThumbnailUrlResolver
 import kotlinx.serialization.json.JsonElement
 import kotlinx.serialization.json.JsonObject
 

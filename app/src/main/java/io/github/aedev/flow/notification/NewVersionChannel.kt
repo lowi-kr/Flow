@@ -1,4 +1,4 @@
-package io.github.aedev.flow.notification
+package com.arubr.smsvcodes.notification
 
 private const val UPDATE_CHANNEL_NIGHTLY = "nightly"
 

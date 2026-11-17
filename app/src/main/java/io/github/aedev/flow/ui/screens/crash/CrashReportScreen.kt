@@ -1,6 +1,6 @@
 @file:OptIn(ExperimentalMaterial3ExpressiveApi::class)
 
-package io.github.aedev.flow.ui.screens.crash
+package com.arubr.smsvcodes.ui.screens.crash
 
 import android.content.ActivityNotFoundException
 import android.content.ClipData
@@ -52,10 +52,10 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.unit.dp
 import androidx.core.net.toUri
-import io.github.aedev.flow.R
-import io.github.aedev.flow.ui.components.shared.FlowActionButton
-import io.github.aedev.flow.ui.components.shared.FlowMaxContentWidth
-import io.github.aedev.flow.ui.components.shared.flowActionShape
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.ui.components.shared.FlowActionButton
+import com.arubr.smsvcodes.ui.components.shared.FlowMaxContentWidth
+import com.arubr.smsvcodes.ui.components.shared.flowActionShape
 import kotlinx.coroutines.launch
 import java.time.format.DateTimeFormatter
 import java.time.format.FormatStyle

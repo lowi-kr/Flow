@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.settings.appearance.player
+package com.arubr.smsvcodes.ui.screens.settings.appearance.player
 
 import androidx.annotation.StringRes
 import androidx.compose.foundation.background
@@ -21,27 +21,27 @@ import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.local.CoverShape
-import io.github.aedev.flow.data.local.MiniBarBackground
-import io.github.aedev.flow.data.local.MiniBarProgress
-import io.github.aedev.flow.data.local.MiniCoverMotion
-import io.github.aedev.flow.data.local.MiniCoverShape
-import io.github.aedev.flow.data.local.MiniCoverTap
-import io.github.aedev.flow.data.local.MiniLongPress
-import io.github.aedev.flow.ui.components.musicplayer.mini.MiniBarProgressLine
-import io.github.aedev.flow.ui.components.musicplayer.mini.coverShapeLabel
-import io.github.aedev.flow.ui.components.musicplayer.mini.isLine
-import io.github.aedev.flow.ui.components.musicplayer.mini.labelRes
-import io.github.aedev.flow.ui.components.musicplayer.mini.miniBarProgress
-import io.github.aedev.flow.ui.components.settings.SettingsListScope
-import io.github.aedev.flow.ui.components.settings.SettingsPreviewSheet
-import io.github.aedev.flow.ui.components.settings.nav
-import io.github.aedev.flow.ui.components.settings.switch
-import io.github.aedev.flow.ui.components.settings.toggleGroup
-import io.github.aedev.flow.ui.components.shared.FlowToggleOption
-import io.github.aedev.flow.ui.components.shared.MediaMiniBarDefaults
-import io.github.aedev.flow.ui.screens.settings.index.PlayerAppearanceIndex
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.local.CoverShape
+import com.arubr.smsvcodes.data.local.MiniBarBackground
+import com.arubr.smsvcodes.data.local.MiniBarProgress
+import com.arubr.smsvcodes.data.local.MiniCoverMotion
+import com.arubr.smsvcodes.data.local.MiniCoverShape
+import com.arubr.smsvcodes.data.local.MiniCoverTap
+import com.arubr.smsvcodes.data.local.MiniLongPress
+import com.arubr.smsvcodes.ui.components.musicplayer.mini.MiniBarProgressLine
+import com.arubr.smsvcodes.ui.components.musicplayer.mini.coverShapeLabel
+import com.arubr.smsvcodes.ui.components.musicplayer.mini.isLine
+import com.arubr.smsvcodes.ui.components.musicplayer.mini.labelRes
+import com.arubr.smsvcodes.ui.components.musicplayer.mini.miniBarProgress
+import com.arubr.smsvcodes.ui.components.settings.SettingsListScope
+import com.arubr.smsvcodes.ui.components.settings.SettingsPreviewSheet
+import com.arubr.smsvcodes.ui.components.settings.nav
+import com.arubr.smsvcodes.ui.components.settings.switch
+import com.arubr.smsvcodes.ui.components.settings.toggleGroup
+import com.arubr.smsvcodes.ui.components.shared.FlowToggleOption
+import com.arubr.smsvcodes.ui.components.shared.MediaMiniBarDefaults
+import com.arubr.smsvcodes.ui.screens.settings.index.PlayerAppearanceIndex
 
 internal enum class MusicMiniSheet { COVER_SHAPES, COVER_PAUSED, BAR_PROGRESS, BUTTONS, BACKGROUND }
 

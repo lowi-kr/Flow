@@ -1,4 +1,4 @@
-package io.github.aedev.flow.sync.identity
+package com.arubr.smsvcodes.sync.identity
 
 import com.google.common.truth.Truth.assertThat
 import org.junit.Test

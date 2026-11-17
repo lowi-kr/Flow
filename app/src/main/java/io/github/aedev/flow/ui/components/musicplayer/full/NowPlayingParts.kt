@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.musicplayer.full
+package com.arubr.smsvcodes.ui.components.musicplayer.full
 
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.animation.fadeIn
@@ -35,11 +35,11 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.player.RepeatMode
-import io.github.aedev.flow.ui.components.musicplayer.controls.PlayerMainActionButtons
-import io.github.aedev.flow.ui.components.musicplayer.controls.PlayerSecondaryActions
-import io.github.aedev.flow.ui.components.shared.LocalMarqueeEnabled
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.player.RepeatMode
+import com.arubr.smsvcodes.ui.components.musicplayer.controls.PlayerMainActionButtons
+import com.arubr.smsvcodes.ui.components.musicplayer.controls.PlayerSecondaryActions
+import com.arubr.smsvcodes.ui.components.shared.LocalMarqueeEnabled
 
 internal val PlayerHorizontalPadding = 28.dp
 

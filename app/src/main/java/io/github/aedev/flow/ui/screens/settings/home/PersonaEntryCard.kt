@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.settings.home
+package com.arubr.smsvcodes.ui.screens.settings.home
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -19,10 +19,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.recommendation.FlowPersona
-import io.github.aedev.flow.ui.components.shared.FlowSpinner
-import io.github.aedev.flow.ui.screens.settings.taste.PersonaEmblem
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.recommendation.FlowPersona
+import com.arubr.smsvcodes.ui.components.shared.FlowSpinner
+import com.arubr.smsvcodes.ui.screens.settings.taste.PersonaEmblem
 
 private val CardPadding = 16.dp
 private val CardSpacing = 16.dp

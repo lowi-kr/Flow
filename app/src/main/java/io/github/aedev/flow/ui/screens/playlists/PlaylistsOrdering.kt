@@ -1,9 +1,9 @@
-package io.github.aedev.flow.ui.screens.playlists
+package com.arubr.smsvcodes.ui.screens.playlists
 
-import io.github.aedev.flow.data.model.PlaylistInfo
-import io.github.aedev.flow.data.playlist.PlaylistListOrder
-import io.github.aedev.flow.data.playlist.sortedFor
-import io.github.aedev.flow.ui.components.library.PlaylistOwnershipFilter
+import com.arubr.smsvcodes.data.model.PlaylistInfo
+import com.arubr.smsvcodes.data.playlist.PlaylistListOrder
+import com.arubr.smsvcodes.data.playlist.sortedFor
+import com.arubr.smsvcodes.ui.components.library.PlaylistOwnershipFilter
 
 /**
  * Owned playlists lead saved ones in every order except [PlaylistListOrder.CUSTOM], where the

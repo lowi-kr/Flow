@@ -1,10 +1,10 @@
-package io.github.aedev.flow.ui.components.musicplayer.lyrics
+package com.arubr.smsvcodes.ui.components.musicplayer.lyrics
 
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.luminance
 import androidx.compose.ui.graphics.toArgb
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.data.local.LyricsBackgroundStyle
+import com.arubr.smsvcodes.data.local.LyricsBackgroundStyle
 import org.junit.Test
 
 class LyricsCoverMeshTest {
@@ -46,7 +46,7 @@ class LyricsCoverMeshTest {
     @Test
     fun `an unknown stored style reads as solid`() {
         assertThat(
-            io.github.aedev.flow.data.local.LyricsBackgroundStyle
+            com.arubr.smsvcodes.data.local.LyricsBackgroundStyle
                 .fromStored("NEON"),
         ).isEqualTo(LyricsBackgroundStyle.SOLID)
     }

@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.subscriptions
+package com.arubr.smsvcodes.ui.screens.subscriptions
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -7,11 +7,11 @@ import androidx.paging.PagingConfig
 import androidx.paging.PagingData
 import androidx.paging.cachedIn
 import dagger.hilt.android.lifecycle.HiltViewModel
-import io.github.aedev.flow.data.community.PostCommentsLoader
-import io.github.aedev.flow.data.recommendation.FlowNeuroEngine
-import io.github.aedev.flow.data.subscriptions.SubscriptionPost
-import io.github.aedev.flow.data.subscriptions.SubscriptionPostsPagingSource
-import io.github.aedev.flow.data.subscriptions.SubscriptionPostsRepository
+import com.arubr.smsvcodes.data.community.PostCommentsLoader
+import com.arubr.smsvcodes.data.recommendation.FlowNeuroEngine
+import com.arubr.smsvcodes.data.subscriptions.SubscriptionPost
+import com.arubr.smsvcodes.data.subscriptions.SubscriptionPostsPagingSource
+import com.arubr.smsvcodes.data.subscriptions.SubscriptionPostsRepository
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow

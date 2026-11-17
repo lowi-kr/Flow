@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui
+package com.arubr.smsvcodes.ui
 
 import android.app.Activity
 import androidx.compose.animation.*
@@ -23,61 +23,61 @@ import androidx.media3.common.util.UnstableApi
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
-import io.github.aedev.flow.MainActivity
-import io.github.aedev.flow.data.local.NavBarLook
-import io.github.aedev.flow.data.local.NavBarScroll
-import io.github.aedev.flow.data.local.NavBarStyle
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.data.profile.PendingSlice
-import io.github.aedev.flow.data.recommendation.FlowNeuroEngine
-import io.github.aedev.flow.player.DeepFlowManager
-import io.github.aedev.flow.player.EnhancedMusicPlayerManager
-import io.github.aedev.flow.player.EnhancedPlayerManager
-import io.github.aedev.flow.player.GlobalPlayerState
-import io.github.aedev.flow.player.SleepTimerManager
-import io.github.aedev.flow.sync2.service.LinkedCatchUp
-import io.github.aedev.flow.ui.components.donation.DonationPromptHost
-import io.github.aedev.flow.ui.components.equalizer.LocalEqualizerState
-import io.github.aedev.flow.ui.components.layout.LocalFlowBottomInsets
-import io.github.aedev.flow.ui.components.layout.LocalFlowSnackbarHostState
-import io.github.aedev.flow.ui.components.layout.navigation.FlowNavigationChrome
-import io.github.aedev.flow.ui.components.layout.navigation.FlowNavigationDefaults
-import io.github.aedev.flow.ui.components.layout.navigation.FlowTab
-import io.github.aedev.flow.ui.components.layout.navigation.NavigationVisibility
-import io.github.aedev.flow.ui.components.layout.navigation.flowUsesNavigationRail
-import io.github.aedev.flow.ui.components.layout.navigation.rememberFlowNavigationScrollState
-import io.github.aedev.flow.ui.components.layout.navigation.resolveDefaultFlowTab
-import io.github.aedev.flow.ui.components.layout.navigation.visibleFlowTabs
-import io.github.aedev.flow.ui.components.layout.topbar.ProvideFlowGlobalActions
-import io.github.aedev.flow.ui.components.music.common.ProvideMusicPlaybackState
-import io.github.aedev.flow.ui.components.music.sheet.LocalMusicMenus
-import io.github.aedev.flow.ui.components.music.sheet.rememberMusicMenus
-import io.github.aedev.flow.ui.components.musicplayer.sheet.rememberMusicPlayerSheetState
-import io.github.aedev.flow.ui.components.profiles.ProfileSwitchViewModel
-import io.github.aedev.flow.ui.components.profiles.ProfileTopBarAction
-import io.github.aedev.flow.ui.components.profiles.SwitchRefusals
-import io.github.aedev.flow.ui.components.settings.SettingsDestination
-import io.github.aedev.flow.ui.components.settings.SettingsTarget
-import io.github.aedev.flow.ui.components.shared.FlowLoadingIndicator
-import io.github.aedev.flow.ui.components.shared.LocalMediaOpenOrigins
-import io.github.aedev.flow.ui.components.shared.MediaOpenOrigins
-import io.github.aedev.flow.ui.components.shared.SubscriptionBellAlerts
-import io.github.aedev.flow.ui.components.videoplayer.PlayerSheetValue
-import io.github.aedev.flow.ui.components.videoplayer.rememberPlayerDraggableState
-import io.github.aedev.flow.ui.screens.equalizer.EqualizerViewModel
-import io.github.aedev.flow.ui.screens.home.HomeViewModel
-import io.github.aedev.flow.ui.screens.notifications.NotificationViewModel
-import io.github.aedev.flow.ui.screens.player.VideoPlayerViewModel
-import io.github.aedev.flow.ui.screens.playon.LocalPlayOn
-import io.github.aedev.flow.ui.screens.playon.PlayOnHost
-import io.github.aedev.flow.ui.screens.playon.remoteSlot
-import io.github.aedev.flow.ui.screens.settings.wellbeing.TIMES_UP_ROUTE
-import io.github.aedev.flow.ui.screens.settings.wellbeing.TimesUpLaunchEffect
-import io.github.aedev.flow.ui.screens.sync.linked.LinkedSyncAlerts
-import io.github.aedev.flow.ui.screens.update.UPDATE_ROUTE
-import io.github.aedev.flow.ui.screens.update.UpdateLaunchEffect
-import io.github.aedev.flow.ui.theme.ThemeMode
-import io.github.aedev.flow.ui.theme.ThemeVariant
+import com.arubr.smsvcodes.MainActivity
+import com.arubr.smsvcodes.data.local.NavBarLook
+import com.arubr.smsvcodes.data.local.NavBarScroll
+import com.arubr.smsvcodes.data.local.NavBarStyle
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.data.profile.PendingSlice
+import com.arubr.smsvcodes.data.recommendation.FlowNeuroEngine
+import com.arubr.smsvcodes.player.DeepFlowManager
+import com.arubr.smsvcodes.player.EnhancedMusicPlayerManager
+import com.arubr.smsvcodes.player.EnhancedPlayerManager
+import com.arubr.smsvcodes.player.GlobalPlayerState
+import com.arubr.smsvcodes.player.SleepTimerManager
+import com.arubr.smsvcodes.sync2.service.LinkedCatchUp
+import com.arubr.smsvcodes.ui.components.donation.DonationPromptHost
+import com.arubr.smsvcodes.ui.components.equalizer.LocalEqualizerState
+import com.arubr.smsvcodes.ui.components.layout.LocalFlowBottomInsets
+import com.arubr.smsvcodes.ui.components.layout.LocalFlowSnackbarHostState
+import com.arubr.smsvcodes.ui.components.layout.navigation.FlowNavigationChrome
+import com.arubr.smsvcodes.ui.components.layout.navigation.FlowNavigationDefaults
+import com.arubr.smsvcodes.ui.components.layout.navigation.FlowTab
+import com.arubr.smsvcodes.ui.components.layout.navigation.NavigationVisibility
+import com.arubr.smsvcodes.ui.components.layout.navigation.flowUsesNavigationRail
+import com.arubr.smsvcodes.ui.components.layout.navigation.rememberFlowNavigationScrollState
+import com.arubr.smsvcodes.ui.components.layout.navigation.resolveDefaultFlowTab
+import com.arubr.smsvcodes.ui.components.layout.navigation.visibleFlowTabs
+import com.arubr.smsvcodes.ui.components.layout.topbar.ProvideFlowGlobalActions
+import com.arubr.smsvcodes.ui.components.music.common.ProvideMusicPlaybackState
+import com.arubr.smsvcodes.ui.components.music.sheet.LocalMusicMenus
+import com.arubr.smsvcodes.ui.components.music.sheet.rememberMusicMenus
+import com.arubr.smsvcodes.ui.components.musicplayer.sheet.rememberMusicPlayerSheetState
+import com.arubr.smsvcodes.ui.components.profiles.ProfileSwitchViewModel
+import com.arubr.smsvcodes.ui.components.profiles.ProfileTopBarAction
+import com.arubr.smsvcodes.ui.components.profiles.SwitchRefusals
+import com.arubr.smsvcodes.ui.components.settings.SettingsDestination
+import com.arubr.smsvcodes.ui.components.settings.SettingsTarget
+import com.arubr.smsvcodes.ui.components.shared.FlowLoadingIndicator
+import com.arubr.smsvcodes.ui.components.shared.LocalMediaOpenOrigins
+import com.arubr.smsvcodes.ui.components.shared.MediaOpenOrigins
+import com.arubr.smsvcodes.ui.components.shared.SubscriptionBellAlerts
+import com.arubr.smsvcodes.ui.components.videoplayer.PlayerSheetValue
+import com.arubr.smsvcodes.ui.components.videoplayer.rememberPlayerDraggableState
+import com.arubr.smsvcodes.ui.screens.equalizer.EqualizerViewModel
+import com.arubr.smsvcodes.ui.screens.home.HomeViewModel
+import com.arubr.smsvcodes.ui.screens.notifications.NotificationViewModel
+import com.arubr.smsvcodes.ui.screens.player.VideoPlayerViewModel
+import com.arubr.smsvcodes.ui.screens.playon.LocalPlayOn
+import com.arubr.smsvcodes.ui.screens.playon.PlayOnHost
+import com.arubr.smsvcodes.ui.screens.playon.remoteSlot
+import com.arubr.smsvcodes.ui.screens.settings.wellbeing.TIMES_UP_ROUTE
+import com.arubr.smsvcodes.ui.screens.settings.wellbeing.TimesUpLaunchEffect
+import com.arubr.smsvcodes.ui.screens.sync.linked.LinkedSyncAlerts
+import com.arubr.smsvcodes.ui.screens.update.UPDATE_ROUTE
+import com.arubr.smsvcodes.ui.screens.update.UpdateLaunchEffect
+import com.arubr.smsvcodes.ui.theme.ThemeMode
+import com.arubr.smsvcodes.ui.theme.ThemeVariant
 import kotlinx.coroutines.flow.first
 import kotlin.math.roundToInt
 
@@ -121,7 +121,7 @@ fun FlowApp(
     val isCategoriesNavigationEnabled by preferences.categoriesNavigationEnabled.collectAsState(initial = false)
     val isDownloadsNavigationEnabled by preferences.downloadsNavigationEnabled.collectAsState(initial = false)
     val disableShortsPlayer by preferences.effectiveDisableShortsPlayer.collectAsState(initial = false)
-    val navTabOrder by preferences.navTabOrder.collectAsState(initial = io.github.aedev.flow.data.local.DEFAULT_NAV_TAB_ORDER)
+    val navTabOrder by preferences.navTabOrder.collectAsState(initial = com.arubr.smsvcodes.data.local.DEFAULT_NAV_TAB_ORDER)
     val defaultNavTabIndex by preferences.defaultNavTabIndex.collectAsState(initial = 0)
     val subscriptionRefreshOnStartup by preferences.subscriptionRefreshOnStartup.collectAsState(initial = false)
     val bottomNavHideOnScroll by preferences.bottomNavHideOnScroll.collectAsState(initial = true)

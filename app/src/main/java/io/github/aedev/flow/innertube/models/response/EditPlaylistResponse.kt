@@ -1,4 +1,4 @@
-package io.github.aedev.flow.innertube.models.response
+package com.arubr.smsvcodes.innertube.models.response
 
 import kotlinx.serialization.Serializable
 

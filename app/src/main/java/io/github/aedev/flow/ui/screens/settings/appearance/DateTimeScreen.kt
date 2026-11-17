@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.settings.appearance
+package com.arubr.smsvcodes.ui.screens.settings.appearance
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -17,18 +17,18 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import io.github.aedev.flow.R
-import io.github.aedev.flow.ui.components.settings.SettingsPage
-import io.github.aedev.flow.ui.components.settings.option
-import io.github.aedev.flow.ui.components.settings.toggleGroup
-import io.github.aedev.flow.ui.components.shared.FlowToggleOption
-import io.github.aedev.flow.ui.screens.settings.index.DateTimeIndex
-import io.github.aedev.flow.utils.DateContext
-import io.github.aedev.flow.utils.DateContextMode
-import io.github.aedev.flow.utils.DateDisplayMode
-import io.github.aedev.flow.utils.DateDisplaySettings
-import io.github.aedev.flow.utils.DateFormatStyle
-import io.github.aedev.flow.utils.formatExactDate
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.ui.components.settings.SettingsPage
+import com.arubr.smsvcodes.ui.components.settings.option
+import com.arubr.smsvcodes.ui.components.settings.toggleGroup
+import com.arubr.smsvcodes.ui.components.shared.FlowToggleOption
+import com.arubr.smsvcodes.ui.screens.settings.index.DateTimeIndex
+import com.arubr.smsvcodes.utils.DateContext
+import com.arubr.smsvcodes.utils.DateContextMode
+import com.arubr.smsvcodes.utils.DateDisplayMode
+import com.arubr.smsvcodes.utils.DateDisplaySettings
+import com.arubr.smsvcodes.utils.DateFormatStyle
+import com.arubr.smsvcodes.utils.formatExactDate
 import java.time.Duration
 import java.time.Instant
 

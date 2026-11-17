@@ -1,8 +1,8 @@
-package io.github.aedev.flow.innertube.pages.explore
+package com.arubr.smsvcodes.innertube.pages.explore
 
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.innertube.pages.renderer.FeedItem
-import io.github.aedev.flow.innertube.pages.renderer.FeedShelf
+import com.arubr.smsvcodes.innertube.pages.renderer.FeedItem
+import com.arubr.smsvcodes.innertube.pages.renderer.FeedShelf
 import org.junit.Test
 
 class ExploreDestinationParserTest {

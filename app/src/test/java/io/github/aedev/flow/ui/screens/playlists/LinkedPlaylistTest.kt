@@ -1,7 +1,7 @@
-package io.github.aedev.flow.ui.screens.playlists
+package com.arubr.smsvcodes.ui.screens.playlists
 
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.data.repository.RemotePlaylistPage
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.data.repository.RemotePlaylistPage
 import kotlinx.coroutines.test.runTest
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNull

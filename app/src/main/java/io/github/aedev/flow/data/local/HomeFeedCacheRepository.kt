@@ -1,9 +1,9 @@
-package io.github.aedev.flow.data.local
+package com.arubr.smsvcodes.data.local
 
 import android.content.Context
-import io.github.aedev.flow.data.local.entity.HomeFeedCacheEntity
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.data.recommendation.FeedExclusions
+import com.arubr.smsvcodes.data.local.entity.HomeFeedCacheEntity
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.data.recommendation.FeedExclusions
 import org.json.JSONArray
 
 data class CachedHomeVideo(

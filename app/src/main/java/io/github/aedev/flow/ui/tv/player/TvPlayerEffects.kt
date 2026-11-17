@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.tv.player
+package com.arubr.smsvcodes.ui.tv.player
 
 import android.os.SystemClock
 import androidx.compose.runtime.Composable
@@ -11,12 +11,12 @@ import androidx.compose.runtime.snapshotFlow
 import androidx.compose.ui.focus.FocusRequester
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.compose.LocalLifecycleOwner
-import io.github.aedev.flow.ui.screens.player.VideoPlayerViewModel
-import io.github.aedev.flow.ui.screens.player.state.PlayerScreenState
-import io.github.aedev.flow.ui.screens.player.state.PlayerSheet
-import io.github.aedev.flow.ui.tv.player.state.TvOverlayMode
-import io.github.aedev.flow.ui.tv.player.state.TvOverlayState
-import io.github.aedev.flow.ui.tv.player.state.TvPlayerOverlayController
+import com.arubr.smsvcodes.ui.screens.player.VideoPlayerViewModel
+import com.arubr.smsvcodes.ui.screens.player.state.PlayerScreenState
+import com.arubr.smsvcodes.ui.screens.player.state.PlayerSheet
+import com.arubr.smsvcodes.ui.tv.player.state.TvOverlayMode
+import com.arubr.smsvcodes.ui.tv.player.state.TvOverlayState
+import com.arubr.smsvcodes.ui.tv.player.state.TvPlayerOverlayController
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.combine
 

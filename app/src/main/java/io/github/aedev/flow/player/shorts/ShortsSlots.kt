@@ -1,4 +1,4 @@
-package io.github.aedev.flow.player.shorts
+package com.arubr.smsvcodes.player.shorts
 
 /** What each pooled player holds, kept together so a slot is assigned and cleared as one. */
 internal class ShortsSlots(

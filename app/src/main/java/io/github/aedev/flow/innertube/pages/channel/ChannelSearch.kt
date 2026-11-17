@@ -1,9 +1,9 @@
-package io.github.aedev.flow.innertube.pages.channel
+package com.arubr.smsvcodes.innertube.pages.channel
 
 import android.util.Log
-import io.github.aedev.flow.innertube.YouTube
-import io.github.aedev.flow.innertube.pages.parseYouTubeViewCount
-import io.github.aedev.flow.utils.avatarImageIdentityKey
+import com.arubr.smsvcodes.innertube.YouTube
+import com.arubr.smsvcodes.innertube.pages.parseYouTubeViewCount
+import com.arubr.smsvcodes.utils.avatarImageIdentityKey
 
 internal const val CHANNEL_SEARCH_FALLBACK_LANGUAGE = "en"
 
@@ -18,7 +18,7 @@ internal fun shouldSearchChannelInEnglish(
 ): Boolean = videoCount == 0 && hl.substringBefore('-').lowercase() != CHANNEL_SEARCH_FALLBACK_LANGUAGE
 
 internal fun parseChannelSearchResponse(
-    response: io.github.aedev.flow.innertube.models.response.ChannelSearchResponse,
+    response: com.arubr.smsvcodes.innertube.models.response.ChannelSearchResponse,
     channelId: String,
     channelName: String,
     channelThumbnailUrl: String,
@@ -65,7 +65,7 @@ internal fun parseChannelSearchResponse(
             "hasRichGrid=${tabContent?.richGridRenderer != null}",
     )
 
-    val videos = mutableListOf<io.github.aedev.flow.data.model.Video>()
+    val videos = mutableListOf<com.arubr.smsvcodes.data.model.Video>()
     var continuation: String? = null
 
     tabContent?.richGridRenderer?.contents?.forEach { richItem ->
@@ -105,11 +105,11 @@ internal fun parseChannelSearchResponse(
 }
 
 private fun parseVideoRenderer(
-    r: io.github.aedev.flow.innertube.models.response.ChannelSearchResponse.VideoRenderer,
+    r: com.arubr.smsvcodes.innertube.models.response.ChannelSearchResponse.VideoRenderer,
     channelId: String,
     channelName: String,
     channelThumbnailUrl: String,
-): io.github.aedev.flow.data.model.Video? {
+): com.arubr.smsvcodes.data.model.Video? {
     val videoId = r.videoId ?: return null
     val title =
         r.title
@@ -125,7 +125,7 @@ private fun parseVideoRenderer(
     val duration = parseLengthText(r.lengthText?.simpleText)
     val viewCount = parseYouTubeViewCount(r.viewCountText?.simpleText)
     val avatarUrls = r.channelAvatarUrls(channelThumbnailUrl)
-    return io.github.aedev.flow.data.model.Video(
+    return com.arubr.smsvcodes.data.model.Video(
         id = videoId,
         title = title,
         channelName = channelName,
@@ -139,7 +139,7 @@ private fun parseVideoRenderer(
     )
 }
 
-private fun io.github.aedev.flow.innertube.models.response.ChannelSearchResponse.VideoRenderer.channelAvatarUrls(
+private fun com.arubr.smsvcodes.innertube.models.response.ChannelSearchResponse.VideoRenderer.channelAvatarUrls(
     fallback: String,
 ): List<String> {
     val supported = channelThumbnailSupportedRenderers

@@ -1,4 +1,4 @@
-package io.github.aedev.flow.sync2.store
+package com.arubr.smsvcodes.sync2.store
 
 /** Plain storage that holds the store layout as files: WebDAV now, S3 later (spec/store.md, Backends). */
 interface FileStore {

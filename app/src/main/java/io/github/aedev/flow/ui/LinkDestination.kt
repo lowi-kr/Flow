@@ -1,9 +1,9 @@
-package io.github.aedev.flow.ui
+package com.arubr.smsvcodes.ui
 
 import android.content.Intent
-import io.github.aedev.flow.data.local.PlaylistRepository
-import io.github.aedev.flow.innertube.pages.isMix
-import io.github.aedev.flow.utils.YouTubeLink
+import com.arubr.smsvcodes.data.local.PlaylistRepository
+import com.arubr.smsvcodes.innertube.pages.isMix
+import com.arubr.smsvcodes.utils.YouTubeLink
 
 /** Where a YouTube link opened from another app, or pasted into search, takes the user. */
 internal sealed interface LinkDestination {

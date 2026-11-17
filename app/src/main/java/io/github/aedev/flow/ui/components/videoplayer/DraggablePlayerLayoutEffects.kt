@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.videoplayer
+package com.arubr.smsvcodes.ui.components.videoplayer
 
 import androidx.compose.animation.core.Animatable
 import androidx.compose.runtime.Composable
@@ -11,10 +11,10 @@ import androidx.compose.runtime.rememberUpdatedState
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.ui.components.videoplayer.motion.MINI_RESNAP_DEBOUNCE_MS
-import io.github.aedev.flow.ui.components.videoplayer.motion.MiniPlayerResnapTargets
-import io.github.aedev.flow.ui.components.videoplayer.motion.playerResizeSpringSpec
-import io.github.aedev.flow.ui.components.videoplayer.motion.resnapMiniPlayer
+import com.arubr.smsvcodes.ui.components.videoplayer.motion.MINI_RESNAP_DEBOUNCE_MS
+import com.arubr.smsvcodes.ui.components.videoplayer.motion.MiniPlayerResnapTargets
+import com.arubr.smsvcodes.ui.components.videoplayer.motion.playerResizeSpringSpec
+import com.arubr.smsvcodes.ui.components.videoplayer.motion.resnapMiniPlayer
 import kotlinx.coroutines.delay
 import kotlin.math.roundToInt
 

@@ -1,6 +1,6 @@
-package io.github.aedev.flow.data.download
+package com.arubr.smsvcodes.data.download
 
-import io.github.aedev.flow.innertube.models.response.PlayerResponse.StreamingData.Format
+import com.arubr.smsvcodes.innertube.models.response.PlayerResponse.StreamingData.Format
 import java.io.IOException
 
 /** What makes two streams of a song the same file, whichever client or url they came through. */

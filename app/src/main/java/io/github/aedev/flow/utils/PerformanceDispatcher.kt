@@ -9,7 +9,7 @@
  * any later version.
  */
 
-package io.github.aedev.flow.utils
+package com.arubr.smsvcodes.utils
 
 import android.os.Process
 import kotlinx.coroutines.CoroutineDispatcher

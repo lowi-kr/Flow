@@ -1,4 +1,4 @@
-package io.github.aedev.flow
+package com.arubr.smsvcodes
 
 import android.app.Application
 import android.content.ComponentCallbacks2
@@ -10,46 +10,46 @@ import coil3.ImageLoader
 import coil3.PlatformContext
 import coil3.SingletonImageLoader
 import dagger.hilt.android.HiltAndroidApp
-import io.github.aedev.flow.applock.AppLock
-import io.github.aedev.flow.data.contentfilter.aislist.AiListRepository
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.data.local.SubscriptionRepository
-import io.github.aedev.flow.data.profile.ActiveProfile
-import io.github.aedev.flow.data.profile.PendingSlice
-import io.github.aedev.flow.data.profile.PostSwitchWork
-import io.github.aedev.flow.data.profile.ProfileFiles
-import io.github.aedev.flow.data.profile.ProfileSlices
-import io.github.aedev.flow.data.profile.ProfileWebView
-import io.github.aedev.flow.data.profile.ProfileWorkReconciler
-import io.github.aedev.flow.data.recommendation.FlowNeuroEngine
-import io.github.aedev.flow.data.repository.NewPipeDownloader
-import io.github.aedev.flow.data.repository.YouTubeRepository
-import io.github.aedev.flow.discord.DiscordPresenceRuntime
-import io.github.aedev.flow.innertube.YouTube
-import io.github.aedev.flow.network.AppProxyManager
-import io.github.aedev.flow.network.VpnStateMonitor
-import io.github.aedev.flow.notification.AutoBackupWorker
-import io.github.aedev.flow.notification.BackgroundCheckScheduler
-import io.github.aedev.flow.notification.BreakReminderTimer
-import io.github.aedev.flow.notification.DailyLimitGuard
-import io.github.aedev.flow.notification.NotificationHelper
-import io.github.aedev.flow.player.PlaybackShutdown
-import io.github.aedev.flow.player.SleepTimerManager
-import io.github.aedev.flow.sync2.service.LinkedCatchUp
-import io.github.aedev.flow.sync2.service.LinkedForeground
-import io.github.aedev.flow.sync2.service.LinkedProfiles
-import io.github.aedev.flow.sync2.service.LinkedSync
-import io.github.aedev.flow.ui.screens.home.HomeFeedLanguageReset
-import io.github.aedev.flow.utils.AppLanguageManager
-import io.github.aedev.flow.utils.FlowCrashHandler
-import io.github.aedev.flow.utils.PerformanceDispatcher
-import io.github.aedev.flow.utils.cipher.PipePipeNsigDecoder
-import io.github.aedev.flow.utils.contentYouTubeLocale
-import io.github.aedev.flow.utils.newPipeContentCountry
-import io.github.aedev.flow.utils.newPipeLocalization
-import io.github.aedev.flow.utils.potoken.NewPipePoTokenProvider
-import io.github.aedev.flow.utils.potoken.VisitorIdentityStore
-import io.github.aedev.flow.utils.potoken.WebPoTokenSession
+import com.arubr.smsvcodes.applock.AppLock
+import com.arubr.smsvcodes.data.contentfilter.aislist.AiListRepository
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.data.local.SubscriptionRepository
+import com.arubr.smsvcodes.data.profile.ActiveProfile
+import com.arubr.smsvcodes.data.profile.PendingSlice
+import com.arubr.smsvcodes.data.profile.PostSwitchWork
+import com.arubr.smsvcodes.data.profile.ProfileFiles
+import com.arubr.smsvcodes.data.profile.ProfileSlices
+import com.arubr.smsvcodes.data.profile.ProfileWebView
+import com.arubr.smsvcodes.data.profile.ProfileWorkReconciler
+import com.arubr.smsvcodes.data.recommendation.FlowNeuroEngine
+import com.arubr.smsvcodes.data.repository.NewPipeDownloader
+import com.arubr.smsvcodes.data.repository.YouTubeRepository
+import com.arubr.smsvcodes.discord.DiscordPresenceRuntime
+import com.arubr.smsvcodes.innertube.YouTube
+import com.arubr.smsvcodes.network.AppProxyManager
+import com.arubr.smsvcodes.network.VpnStateMonitor
+import com.arubr.smsvcodes.notification.AutoBackupWorker
+import com.arubr.smsvcodes.notification.BackgroundCheckScheduler
+import com.arubr.smsvcodes.notification.BreakReminderTimer
+import com.arubr.smsvcodes.notification.DailyLimitGuard
+import com.arubr.smsvcodes.notification.NotificationHelper
+import com.arubr.smsvcodes.player.PlaybackShutdown
+import com.arubr.smsvcodes.player.SleepTimerManager
+import com.arubr.smsvcodes.sync2.service.LinkedCatchUp
+import com.arubr.smsvcodes.sync2.service.LinkedForeground
+import com.arubr.smsvcodes.sync2.service.LinkedProfiles
+import com.arubr.smsvcodes.sync2.service.LinkedSync
+import com.arubr.smsvcodes.ui.screens.home.HomeFeedLanguageReset
+import com.arubr.smsvcodes.utils.AppLanguageManager
+import com.arubr.smsvcodes.utils.FlowCrashHandler
+import com.arubr.smsvcodes.utils.PerformanceDispatcher
+import com.arubr.smsvcodes.utils.cipher.PipePipeNsigDecoder
+import com.arubr.smsvcodes.utils.contentYouTubeLocale
+import com.arubr.smsvcodes.utils.newPipeContentCountry
+import com.arubr.smsvcodes.utils.newPipeLocalization
+import com.arubr.smsvcodes.utils.potoken.NewPipePoTokenProvider
+import com.arubr.smsvcodes.utils.potoken.VisitorIdentityStore
+import com.arubr.smsvcodes.utils.potoken.WebPoTokenSession
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -178,7 +178,7 @@ class FlowApplication :
         }
 
         try {
-            io.github.aedev.flow.utils.cipher.CipherDeobfuscator
+            com.arubr.smsvcodes.utils.cipher.CipherDeobfuscator
                 .initialize(this)
             Log.d(TAG, "CipherDeobfuscator initialized")
         } catch (e: Exception) {
@@ -315,7 +315,7 @@ class FlowApplication :
     }
 
     private fun applyProxyConfig(
-        config: io.github.aedev.flow.network.AppProxyConfig,
+        config: com.arubr.smsvcodes.network.AppProxyConfig,
         vpnActive: Boolean,
     ) {
         AppProxyManager.update(config, vpnActive)

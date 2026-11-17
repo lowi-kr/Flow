@@ -1,11 +1,11 @@
-package io.github.aedev.flow.player
+package com.arubr.smsvcodes.player
 
 import android.os.SystemClock
 import android.util.Log
 import androidx.media3.common.Player
 import androidx.media3.common.util.UnstableApi
 import androidx.media3.exoplayer.analytics.AnalyticsListener
-import io.github.aedev.flow.player.error.PlayerDiagnostics
+import com.arubr.smsvcodes.player.error.PlayerDiagnostics
 
 private const val TAG = "MusicPause"
 private const val CAUSE_WINDOW_MS = 2_000L

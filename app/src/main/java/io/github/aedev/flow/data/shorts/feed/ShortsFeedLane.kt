@@ -1,6 +1,6 @@
-package io.github.aedev.flow.data.shorts.feed
+package com.arubr.smsvcodes.data.shorts.feed
 
-import io.github.aedev.flow.data.model.ShortVideo
+import com.arubr.smsvcodes.data.model.ShortVideo
 
 /** Where a reel in the algorithmic feed came from. The order is the blend's quota order. */
 enum class ShortsFeedLane {

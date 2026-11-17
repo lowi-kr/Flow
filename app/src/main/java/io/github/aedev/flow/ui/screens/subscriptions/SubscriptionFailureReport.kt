@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.subscriptions
+package com.arubr.smsvcodes.ui.screens.subscriptions
 
 internal const val SUBSCRIPTION_FAILURE_LOG_LINES = 400
 

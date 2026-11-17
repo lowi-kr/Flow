@@ -1,4 +1,4 @@
-package io.github.aedev.flow.player.sabr.ump
+package com.arubr.smsvcodes.player.sabr.ump
 
 object UmpPartType {
     const val MEDIA_HEADER = 20

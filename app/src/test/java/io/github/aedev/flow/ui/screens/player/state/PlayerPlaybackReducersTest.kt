@@ -1,12 +1,12 @@
-package io.github.aedev.flow.ui.screens.player.state
+package com.arubr.smsvcodes.ui.screens.player.state
 
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.data.local.VideoQuality
-import io.github.aedev.flow.data.model.SponsorBlockSegment
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.player.error.VideoErrorMapper
-import io.github.aedev.flow.player.stream.ResolvedPlayback
-import io.github.aedev.flow.ui.screens.player.SecondaryMetadata
+import com.arubr.smsvcodes.data.local.VideoQuality
+import com.arubr.smsvcodes.data.model.SponsorBlockSegment
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.player.error.VideoErrorMapper
+import com.arubr.smsvcodes.player.stream.ResolvedPlayback
+import com.arubr.smsvcodes.ui.screens.player.SecondaryMetadata
 import io.mockk.every
 import io.mockk.mockk
 import io.mockk.unmockkAll

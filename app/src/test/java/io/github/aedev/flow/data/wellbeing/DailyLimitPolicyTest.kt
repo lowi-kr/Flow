@@ -1,4 +1,4 @@
-package io.github.aedev.flow.data.wellbeing
+package com.arubr.smsvcodes.data.wellbeing
 
 import com.google.common.truth.Truth.assertThat
 import org.junit.Test

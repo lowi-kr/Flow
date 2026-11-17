@@ -2,17 +2,17 @@
 // This implementation was based on metrolist's (https://github.com/MetrolistGroup/Metrolist)
 // ==================================================================================================
 
-package io.github.aedev.flow.data.lyrics
+package com.arubr.smsvcodes.data.lyrics
 
 import android.content.Context
 import android.util.Log
 import dagger.hilt.android.qualifiers.ApplicationContext
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.data.lyrics.LyricsChecks.hasReasonableTimestamps
-import io.github.aedev.flow.data.lyrics.LyricsChecks.hasWordSync
-import io.github.aedev.flow.data.lyrics.LyricsChecks.normalizeEntries
-import io.github.aedev.flow.data.lyrics.LyricsChecks.stripWordTimings
-import io.github.aedev.flow.di.MetadataClient
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.data.lyrics.LyricsChecks.hasReasonableTimestamps
+import com.arubr.smsvcodes.data.lyrics.LyricsChecks.hasWordSync
+import com.arubr.smsvcodes.data.lyrics.LyricsChecks.normalizeEntries
+import com.arubr.smsvcodes.data.lyrics.LyricsChecks.stripWordTimings
+import com.arubr.smsvcodes.di.MetadataClient
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.CoroutineStart

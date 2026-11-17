@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.musicplayer.lyrics
+package com.arubr.smsvcodes.ui.components.musicplayer.lyrics
 
 import android.os.Build
 import android.provider.Settings
@@ -7,13 +7,13 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.style.TextAlign
-import io.github.aedev.flow.data.local.LyricsAnimationStyle
-import io.github.aedev.flow.data.local.LyricsBackgroundStyle
-import io.github.aedev.flow.data.local.LyricsGlow
-import io.github.aedev.flow.data.lyrics.LyricsEntry
-import io.github.aedev.flow.data.lyrics.WordTimestamp
-import io.github.aedev.flow.ui.theme.ensureContrastOn
-import io.github.aedev.flow.ui.theme.withTone
+import com.arubr.smsvcodes.data.local.LyricsAnimationStyle
+import com.arubr.smsvcodes.data.local.LyricsBackgroundStyle
+import com.arubr.smsvcodes.data.local.LyricsGlow
+import com.arubr.smsvcodes.data.lyrics.LyricsEntry
+import com.arubr.smsvcodes.data.lyrics.WordTimestamp
+import com.arubr.smsvcodes.ui.theme.ensureContrastOn
+import com.arubr.smsvcodes.ui.theme.withTone
 
 /** Which side of the panel a singer's lines sit on in a duet. */
 internal enum class DuetSide { START, END, BOTH }

@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.sync.linked
+package com.arubr.smsvcodes.ui.screens.sync.linked
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -16,12 +16,12 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.ui.components.shared.FlowActionButtonPair
-import io.github.aedev.flow.ui.components.shared.FlowPairAction
-import io.github.aedev.flow.ui.screens.sync.SyncOption
-import io.github.aedev.flow.ui.screens.sync.SyncOptions
-import io.github.aedev.flow.ui.screens.sync.SyncSection
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.ui.components.shared.FlowActionButtonPair
+import com.arubr.smsvcodes.ui.components.shared.FlowPairAction
+import com.arubr.smsvcodes.ui.screens.sync.SyncOption
+import com.arubr.smsvcodes.ui.screens.sync.SyncOptions
+import com.arubr.smsvcodes.ui.screens.sync.SyncSection
 
 private val IntroInset = 4.dp
 

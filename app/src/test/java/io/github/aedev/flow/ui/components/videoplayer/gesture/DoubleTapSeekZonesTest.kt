@@ -1,7 +1,7 @@
-package io.github.aedev.flow.ui.components.videoplayer.gesture
+package com.arubr.smsvcodes.ui.components.videoplayer.gesture
 
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.data.local.DoubleTapSeekZone
+import com.arubr.smsvcodes.data.local.DoubleTapSeekZone
 import org.junit.Test
 
 class DoubleTapSeekZonesTest {

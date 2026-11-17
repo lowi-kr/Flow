@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.settings.playback
+package com.arubr.smsvcodes.ui.screens.settings.playback
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -34,7 +34,7 @@ import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import io.github.aedev.flow.R
+import com.arubr.smsvcodes.R
 
 private val EditorPadding = 16.dp
 private val EditorSpacing = 12.dp

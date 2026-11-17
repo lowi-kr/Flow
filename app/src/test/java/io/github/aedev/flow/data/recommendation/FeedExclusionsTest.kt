@@ -4,12 +4,12 @@
  * This file is part of Flow (https://github.com/Flow-Tube/Flow).
  */
 
-package io.github.aedev.flow.data.recommendation
+package com.arubr.smsvcodes.data.recommendation
 
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.data.contentfilter.aislist.AiListMatcher
-import io.github.aedev.flow.data.contentfilter.aislist.AiListSets
-import io.github.aedev.flow.data.model.Video
+import com.arubr.smsvcodes.data.contentfilter.aislist.AiListMatcher
+import com.arubr.smsvcodes.data.contentfilter.aislist.AiListSets
+import com.arubr.smsvcodes.data.model.Video
 import org.junit.Test
 
 class FeedExclusionsTest {

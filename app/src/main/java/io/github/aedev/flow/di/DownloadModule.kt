@@ -1,4 +1,4 @@
-package io.github.aedev.flow.di
+package com.arubr.smsvcodes.di
 
 import android.content.Context
 import androidx.media3.database.DatabaseProvider
@@ -9,8 +9,8 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
-import io.github.aedev.flow.player.cache.PlayerCacheManager
-import io.github.aedev.flow.player.cache.SharedPlayerCacheProvider
+import com.arubr.smsvcodes.player.cache.PlayerCacheManager
+import com.arubr.smsvcodes.player.cache.SharedPlayerCacheProvider
 import java.io.File
 import javax.inject.Singleton
 

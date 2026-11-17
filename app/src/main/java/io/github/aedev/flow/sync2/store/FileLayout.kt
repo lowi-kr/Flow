@@ -1,10 +1,10 @@
-package io.github.aedev.flow.sync2.store
+package com.arubr.smsvcodes.sync2.store
 
-import io.github.aedev.flow.sync2.roster.Entry
-import io.github.aedev.flow.sync2.roster.canonicalEntry
-import io.github.aedev.flow.sync2.roster.entryHash
-import io.github.aedev.flow.sync2.roster.parseEntry
-import io.github.aedev.flow.sync2.roster.winningChain
+import com.arubr.smsvcodes.sync2.roster.Entry
+import com.arubr.smsvcodes.sync2.roster.canonicalEntry
+import com.arubr.smsvcodes.sync2.roster.entryHash
+import com.arubr.smsvcodes.sync2.roster.parseEntry
+import com.arubr.smsvcodes.sync2.roster.winningChain
 import kotlinx.serialization.json.Json
 import java.util.concurrent.ConcurrentHashMap
 

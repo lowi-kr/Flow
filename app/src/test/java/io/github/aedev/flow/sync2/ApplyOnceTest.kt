@@ -1,14 +1,14 @@
-package io.github.aedev.flow.sync2
+package com.arubr.smsvcodes.sync2
 
 import android.content.Context
-import io.github.aedev.flow.data.local.dao.SyncLogDao
-import io.github.aedev.flow.data.profile.ProfileSlices
-import io.github.aedev.flow.sync.apply.PeerInfo
-import io.github.aedev.flow.sync.apply.ReceivedCollection
-import io.github.aedev.flow.sync.apply.SyncApplier
-import io.github.aedev.flow.sync.apply.SyncApplyException
-import io.github.aedev.flow.sync.identity.DeviceIdentity
-import io.github.aedev.flow.sync.protocol.SyncCollection
+import com.arubr.smsvcodes.data.local.dao.SyncLogDao
+import com.arubr.smsvcodes.data.profile.ProfileSlices
+import com.arubr.smsvcodes.sync.apply.PeerInfo
+import com.arubr.smsvcodes.sync.apply.ReceivedCollection
+import com.arubr.smsvcodes.sync.apply.SyncApplier
+import com.arubr.smsvcodes.sync.apply.SyncApplyException
+import com.arubr.smsvcodes.sync.identity.DeviceIdentity
+import com.arubr.smsvcodes.sync.protocol.SyncCollection
 import io.mockk.coEvery
 import io.mockk.coVerify
 import io.mockk.every

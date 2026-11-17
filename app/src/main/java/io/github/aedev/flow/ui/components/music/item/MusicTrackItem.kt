@@ -4,7 +4,7 @@
  * This file is part of Flow (https://github.com/Flow-Tube/Flow).
  */
 
-package io.github.aedev.flow.ui.components.music.item
+package com.arubr.smsvcodes.ui.components.music.item
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
@@ -48,19 +48,19 @@ import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
 import coil3.request.ImageRequest
 import coil3.request.crossfade
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.contentfilter.aislist.AiVerdict
-import io.github.aedev.flow.data.music.model.MusicTrack
-import io.github.aedev.flow.ui.components.music.common.MusicNowPlayingOverlay
-import io.github.aedev.flow.ui.components.music.common.isTrackPlaying
-import io.github.aedev.flow.ui.components.music.common.rememberMusicArtworkColors
-import io.github.aedev.flow.ui.components.shared.DownloadedBadge
-import io.github.aedev.flow.ui.components.shared.ExplicitBadge
-import io.github.aedev.flow.ui.components.shared.card.LocalAiListMatcher
-import io.github.aedev.flow.ui.components.shared.onMenuKey
-import io.github.aedev.flow.ui.theme.Dimensions
-import io.github.aedev.flow.utils.formatDuration
-import io.github.aedev.flow.utils.formatViewCount
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.contentfilter.aislist.AiVerdict
+import com.arubr.smsvcodes.data.music.model.MusicTrack
+import com.arubr.smsvcodes.ui.components.music.common.MusicNowPlayingOverlay
+import com.arubr.smsvcodes.ui.components.music.common.isTrackPlaying
+import com.arubr.smsvcodes.ui.components.music.common.rememberMusicArtworkColors
+import com.arubr.smsvcodes.ui.components.shared.DownloadedBadge
+import com.arubr.smsvcodes.ui.components.shared.ExplicitBadge
+import com.arubr.smsvcodes.ui.components.shared.card.LocalAiListMatcher
+import com.arubr.smsvcodes.ui.components.shared.onMenuKey
+import com.arubr.smsvcodes.ui.theme.Dimensions
+import com.arubr.smsvcodes.utils.formatDuration
+import com.arubr.smsvcodes.utils.formatViewCount
 
 private const val SUBTITLE_ALPHA = 0.6f
 private const val HIGHLIGHT_SUBTITLE_ALPHA = 0.8f

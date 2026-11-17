@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.settings.appearance.theme
+package com.arubr.smsvcodes.ui.screens.settings.appearance.theme
 
 import android.content.Intent
 import androidx.activity.compose.rememberLauncherForActivityResult
@@ -39,20 +39,20 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import io.github.aedev.flow.R
-import io.github.aedev.flow.ui.components.settings.SettingsDestination
-import io.github.aedev.flow.ui.components.settings.SettingsPage
-import io.github.aedev.flow.ui.components.settings.SettingsTarget
-import io.github.aedev.flow.ui.components.settings.nav
-import io.github.aedev.flow.ui.components.settings.notice
-import io.github.aedev.flow.ui.components.shared.FlowEmptyState
-import io.github.aedev.flow.ui.screens.settings.index.CustomThemeIndex
-import io.github.aedev.flow.ui.theme.CustomTheme
-import io.github.aedev.flow.ui.theme.ThemeCatalog
-import io.github.aedev.flow.ui.theme.ThemeCatalogEntry
-import io.github.aedev.flow.ui.theme.ThemeMode
-import io.github.aedev.flow.ui.theme.ThemeVariant
-import io.github.aedev.flow.ui.theme.toColorScheme
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.ui.components.settings.SettingsDestination
+import com.arubr.smsvcodes.ui.components.settings.SettingsPage
+import com.arubr.smsvcodes.ui.components.settings.SettingsTarget
+import com.arubr.smsvcodes.ui.components.settings.nav
+import com.arubr.smsvcodes.ui.components.settings.notice
+import com.arubr.smsvcodes.ui.components.shared.FlowEmptyState
+import com.arubr.smsvcodes.ui.screens.settings.index.CustomThemeIndex
+import com.arubr.smsvcodes.ui.theme.CustomTheme
+import com.arubr.smsvcodes.ui.theme.ThemeCatalog
+import com.arubr.smsvcodes.ui.theme.ThemeCatalogEntry
+import com.arubr.smsvcodes.ui.theme.ThemeMode
+import com.arubr.smsvcodes.ui.theme.ThemeVariant
+import com.arubr.smsvcodes.ui.theme.toColorScheme
 
 private const val JSON_MIME = "application/json"
 private val ImportMimeTypes = arrayOf(JSON_MIME, "text/plain", "application/octet-stream")

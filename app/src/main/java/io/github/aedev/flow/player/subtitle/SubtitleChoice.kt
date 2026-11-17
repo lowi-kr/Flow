@@ -1,8 +1,8 @@
-package io.github.aedev.flow.player.subtitle
+package com.arubr.smsvcodes.player.subtitle
 
-import io.github.aedev.flow.player.state.SubtitleOption
-import io.github.aedev.flow.player.state.SubtitleOrigin
-import io.github.aedev.flow.player.stream.CaptionTrackResolver
+import com.arubr.smsvcodes.player.state.SubtitleOption
+import com.arubr.smsvcodes.player.state.SubtitleOrigin
+import com.arubr.smsvcodes.player.stream.CaptionTrackResolver
 
 /** Whether the player turns captions on by itself, and in which language. */
 data class SubtitleAutoPolicy(

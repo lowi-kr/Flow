@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.player.state
+package com.arubr.smsvcodes.ui.screens.player.state
 
 import androidx.compose.foundation.lazy.LazyListState
 import androidx.compose.runtime.Composable
@@ -14,7 +14,7 @@ import androidx.compose.ui.input.key.isShiftPressed
 import androidx.compose.ui.input.key.key
 import androidx.compose.ui.input.key.onKeyEvent
 import androidx.compose.ui.input.key.type
-import io.github.aedev.flow.ui.components.shared.LocalHardwareKeyboard
+import com.arubr.smsvcodes.ui.components.shared.LocalHardwareKeyboard
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 

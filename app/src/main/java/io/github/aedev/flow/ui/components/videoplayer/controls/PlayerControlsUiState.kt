@@ -1,8 +1,8 @@
-package io.github.aedev.flow.ui.components.videoplayer.controls
+package com.arubr.smsvcodes.ui.components.videoplayer.controls
 
 import androidx.compose.runtime.Immutable
-import io.github.aedev.flow.innertube.models.response.VideoHeatmap
-import io.github.aedev.flow.player.stream.StoryboardLevel
+import com.arubr.smsvcodes.innertube.models.response.VideoHeatmap
+import com.arubr.smsvcodes.player.stream.StoryboardLevel
 import org.schabi.newpipe.extractor.stream.StreamSegment
 
 /**

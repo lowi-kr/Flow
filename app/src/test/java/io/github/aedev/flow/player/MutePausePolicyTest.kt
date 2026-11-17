@@ -1,7 +1,7 @@
-package io.github.aedev.flow.player
+package com.arubr.smsvcodes.player
 
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.player.MutePausePolicy.Action
+import com.arubr.smsvcodes.player.MutePausePolicy.Action
 import org.junit.Test
 
 class MutePausePolicyTest {

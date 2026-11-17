@@ -1,16 +1,16 @@
-package io.github.aedev.flow.sync2
+package com.arubr.smsvcodes.sync2
 
 import android.app.Application
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import io.github.aedev.flow.sync.crypto.SyncBytes
-import io.github.aedev.flow.sync.protocol.CollectionWire
-import io.github.aedev.flow.sync.protocol.SyncCollection
-import io.github.aedev.flow.sync2.data.LinkedDatabase
-import io.github.aedev.flow.sync2.engine.Session
-import io.github.aedev.flow.sync2.engine.writeSnapshot
-import io.github.aedev.flow.sync2.linking.leaveGroup
-import io.github.aedev.flow.sync2.linking.removeDevices
-import io.github.aedev.flow.sync2.store.StorePaths
+import com.arubr.smsvcodes.sync.crypto.SyncBytes
+import com.arubr.smsvcodes.sync.protocol.CollectionWire
+import com.arubr.smsvcodes.sync.protocol.SyncCollection
+import com.arubr.smsvcodes.sync2.data.LinkedDatabase
+import com.arubr.smsvcodes.sync2.engine.Session
+import com.arubr.smsvcodes.sync2.engine.writeSnapshot
+import com.arubr.smsvcodes.sync2.linking.leaveGroup
+import com.arubr.smsvcodes.sync2.linking.removeDevices
+import com.arubr.smsvcodes.sync2.store.StorePaths
 import kotlinx.coroutines.test.runTest
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertTrue

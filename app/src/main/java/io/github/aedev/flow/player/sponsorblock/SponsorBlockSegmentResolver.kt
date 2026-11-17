@@ -1,7 +1,7 @@
-package io.github.aedev.flow.player.sponsorblock
+package com.arubr.smsvcodes.player.sponsorblock
 
-import io.github.aedev.flow.data.local.SponsorBlockAction
-import io.github.aedev.flow.data.model.SponsorBlockSegment
+import com.arubr.smsvcodes.data.local.SponsorBlockAction
+import com.arubr.smsvcodes.data.model.SponsorBlockSegment
 
 /**
  * What to do at one position. For an automatic skip, [chain] is every auto-skip segment the jump

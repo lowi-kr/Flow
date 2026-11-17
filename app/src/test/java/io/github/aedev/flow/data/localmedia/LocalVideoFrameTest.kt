@@ -1,4 +1,4 @@
-package io.github.aedev.flow.data.localmedia
+package com.arubr.smsvcodes.data.localmedia
 
 import com.google.common.truth.Truth.assertThat
 import org.junit.Test
@@ -29,6 +29,6 @@ class LocalVideoFrameTest {
 
     @Test
     fun `a saved download cover keeps its plain request`() {
-        assertThat(localVideoFrameFor("file:///data/user/0/io.github.aedev.flow/files/thumbs/abc.jpg")).isNull()
+        assertThat(localVideoFrameFor("file:///data/user/0/com.arubr.smsvcodes/files/thumbs/abc.jpg")).isNull()
     }
 }

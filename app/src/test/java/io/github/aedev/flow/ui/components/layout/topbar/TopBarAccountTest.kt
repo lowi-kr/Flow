@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.layout.topbar
+package com.arubr.smsvcodes.ui.components.layout.topbar
 
 import com.google.common.truth.Truth.assertThat
 import org.junit.Test

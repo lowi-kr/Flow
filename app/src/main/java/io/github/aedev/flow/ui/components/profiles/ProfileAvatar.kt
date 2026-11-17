@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.profiles
+package com.arubr.smsvcodes.ui.components.profiles
 
 import android.content.Context
 import androidx.compose.foundation.layout.Box
@@ -19,11 +19,11 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
 import coil3.request.ImageRequest
-import io.github.aedev.flow.data.profile.Profile
-import io.github.aedev.flow.data.profile.ProfileAvatar
-import io.github.aedev.flow.data.profile.ProfileAvatarPhotos
-import io.github.aedev.flow.data.profile.displayName
-import io.github.aedev.flow.ui.theme.profileTones
+import com.arubr.smsvcodes.data.profile.Profile
+import com.arubr.smsvcodes.data.profile.ProfileAvatar
+import com.arubr.smsvcodes.data.profile.ProfileAvatarPhotos
+import com.arubr.smsvcodes.data.profile.displayName
+import com.arubr.smsvcodes.ui.theme.profileTones
 import java.text.BreakIterator
 
 /**

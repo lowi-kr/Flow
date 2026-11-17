@@ -1,9 +1,9 @@
-package io.github.aedev.flow.data.shorts.queue
+package com.arubr.smsvcodes.data.shorts.queue
 
-import io.github.aedev.flow.data.model.ShortVideo
-import io.github.aedev.flow.data.shorts.deferChannelRuns
-import io.github.aedev.flow.data.shorts.mergeDiscoveryCandidates
-import io.github.aedev.flow.innertube.pages.reel.reelPosterUrl
+import com.arubr.smsvcodes.data.model.ShortVideo
+import com.arubr.smsvcodes.data.shorts.deferChannelRuns
+import com.arubr.smsvcodes.data.shorts.mergeDiscoveryCandidates
+import com.arubr.smsvcodes.innertube.pages.reel.reelPosterUrl
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow

@@ -1,8 +1,8 @@
-package io.github.aedev.flow.sync2.changes
+package com.arubr.smsvcodes.sync2.changes
 
 import androidx.room.InvalidationTracker
-import io.github.aedev.flow.data.local.AppDatabase
-import io.github.aedev.flow.di.ProfileDb
+import com.arubr.smsvcodes.data.local.AppDatabase
+import com.arubr.smsvcodes.di.ProfileDb
 import kotlinx.coroutines.channels.BufferOverflow
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableSharedFlow

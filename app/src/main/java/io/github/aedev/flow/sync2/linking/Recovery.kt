@@ -1,39 +1,39 @@
-package io.github.aedev.flow.sync2.linking
+package com.arubr.smsvcodes.sync2.linking
 
-import io.github.aedev.flow.sync.crypto.SyncBytes
-import io.github.aedev.flow.sync.crypto.SyncCrypto
-import io.github.aedev.flow.sync2.crypto.MemberSecrets
-import io.github.aedev.flow.sync2.crypto.ProtocolError
-import io.github.aedev.flow.sync2.crypto.checkEpochKey
-import io.github.aedev.flow.sync2.crypto.recoveryKeys
-import io.github.aedev.flow.sync2.crypto.recoverySecret
-import io.github.aedev.flow.sync2.crypto.recoveryWords
-import io.github.aedev.flow.sync2.crypto.reject
-import io.github.aedev.flow.sync2.crypto.unwrapEpochKey
-import io.github.aedev.flow.sync2.data.GroupRecord
-import io.github.aedev.flow.sync2.data.LinkedDatabase
-import io.github.aedev.flow.sync2.data.WEBDAV_STORE
-import io.github.aedev.flow.sync2.data.addEntries
-import io.github.aedev.flow.sync2.data.keptDevices
-import io.github.aedev.flow.sync2.engine.EpochKeys
-import io.github.aedev.flow.sync2.engine.LinkedException
-import io.github.aedev.flow.sync2.engine.Session
-import io.github.aedev.flow.sync2.roster.Draft
-import io.github.aedev.flow.sync2.roster.Entry
-import io.github.aedev.flow.sync2.roster.Op
-import io.github.aedev.flow.sync2.roster.Role
-import io.github.aedev.flow.sync2.roster.RosterState
-import io.github.aedev.flow.sync2.roster.applyEntry
-import io.github.aedev.flow.sync2.roster.buildEntry
-import io.github.aedev.flow.sync2.roster.memberSubject
-import io.github.aedev.flow.sync2.roster.replayRoster
-import io.github.aedev.flow.sync2.roster.sealDeviceMeta
-import io.github.aedev.flow.sync2.store.Appended
-import io.github.aedev.flow.sync2.store.FileLayout
-import io.github.aedev.flow.sync2.store.ServerStore
-import io.github.aedev.flow.sync2.store.Store
-import io.github.aedev.flow.sync2.store.WebDavStore
-import io.github.aedev.flow.sync2.store.kcName
+import com.arubr.smsvcodes.sync.crypto.SyncBytes
+import com.arubr.smsvcodes.sync.crypto.SyncCrypto
+import com.arubr.smsvcodes.sync2.crypto.MemberSecrets
+import com.arubr.smsvcodes.sync2.crypto.ProtocolError
+import com.arubr.smsvcodes.sync2.crypto.checkEpochKey
+import com.arubr.smsvcodes.sync2.crypto.recoveryKeys
+import com.arubr.smsvcodes.sync2.crypto.recoverySecret
+import com.arubr.smsvcodes.sync2.crypto.recoveryWords
+import com.arubr.smsvcodes.sync2.crypto.reject
+import com.arubr.smsvcodes.sync2.crypto.unwrapEpochKey
+import com.arubr.smsvcodes.sync2.data.GroupRecord
+import com.arubr.smsvcodes.sync2.data.LinkedDatabase
+import com.arubr.smsvcodes.sync2.data.WEBDAV_STORE
+import com.arubr.smsvcodes.sync2.data.addEntries
+import com.arubr.smsvcodes.sync2.data.keptDevices
+import com.arubr.smsvcodes.sync2.engine.EpochKeys
+import com.arubr.smsvcodes.sync2.engine.LinkedException
+import com.arubr.smsvcodes.sync2.engine.Session
+import com.arubr.smsvcodes.sync2.roster.Draft
+import com.arubr.smsvcodes.sync2.roster.Entry
+import com.arubr.smsvcodes.sync2.roster.Op
+import com.arubr.smsvcodes.sync2.roster.Role
+import com.arubr.smsvcodes.sync2.roster.RosterState
+import com.arubr.smsvcodes.sync2.roster.applyEntry
+import com.arubr.smsvcodes.sync2.roster.buildEntry
+import com.arubr.smsvcodes.sync2.roster.memberSubject
+import com.arubr.smsvcodes.sync2.roster.replayRoster
+import com.arubr.smsvcodes.sync2.roster.sealDeviceMeta
+import com.arubr.smsvcodes.sync2.store.Appended
+import com.arubr.smsvcodes.sync2.store.FileLayout
+import com.arubr.smsvcodes.sync2.store.ServerStore
+import com.arubr.smsvcodes.sync2.store.Store
+import com.arubr.smsvcodes.sync2.store.WebDavStore
+import com.arubr.smsvcodes.sync2.store.kcName
 
 /** The roster after a restore, and the new recovery words to show once. */
 class Restored(
@@ -246,7 +246,7 @@ private suspend fun previewOn(
 
 /**
  * Restores onto this device from the recovery words, keeping the devices in [keep]. Its profile link stays open until
- * the first sync reads every log ([io.github.aedev.flow.sync2.service.LinkedProfiles.links]), which also signs out
+ * the first sync reads every log ([com.arubr.smsvcodes.sync2.service.LinkedProfiles.links]), which also signs out
  * every other device ([finishRestore]).
  */
 suspend fun restoreGroup(

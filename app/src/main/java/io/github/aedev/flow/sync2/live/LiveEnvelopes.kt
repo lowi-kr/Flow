@@ -1,18 +1,18 @@
-package io.github.aedev.flow.sync2.live
+package com.arubr.smsvcodes.sync2.live
 
-import io.github.aedev.flow.sync.crypto.SyncBytes
-import io.github.aedev.flow.sync2.crypto.Purpose
-import io.github.aedev.flow.sync2.crypto.decodePayload
-import io.github.aedev.flow.sync2.crypto.encodePayload
-import io.github.aedev.flow.sync2.crypto.purposeKey
-import io.github.aedev.flow.sync2.engine.Session
-import io.github.aedev.flow.sync2.roster.Role
-import io.github.aedev.flow.sync2.store.Header
-import io.github.aedev.flow.sync2.store.MAX_LIVE_MESSAGE
-import io.github.aedev.flow.sync2.store.ObjectType
-import io.github.aedev.flow.sync2.store.ZERO_HASH
-import io.github.aedev.flow.sync2.store.parseObject
-import io.github.aedev.flow.sync2.store.sealObject
+import com.arubr.smsvcodes.sync.crypto.SyncBytes
+import com.arubr.smsvcodes.sync2.crypto.Purpose
+import com.arubr.smsvcodes.sync2.crypto.decodePayload
+import com.arubr.smsvcodes.sync2.crypto.encodePayload
+import com.arubr.smsvcodes.sync2.crypto.purposeKey
+import com.arubr.smsvcodes.sync2.engine.Session
+import com.arubr.smsvcodes.sync2.roster.Role
+import com.arubr.smsvcodes.sync2.store.Header
+import com.arubr.smsvcodes.sync2.store.MAX_LIVE_MESSAGE
+import com.arubr.smsvcodes.sync2.store.ObjectType
+import com.arubr.smsvcodes.sync2.store.ZERO_HASH
+import com.arubr.smsvcodes.sync2.store.parseObject
+import com.arubr.smsvcodes.sync2.store.sealObject
 import kotlinx.coroutines.CancellationException
 
 /** A live message another member sent, with its live counter. */

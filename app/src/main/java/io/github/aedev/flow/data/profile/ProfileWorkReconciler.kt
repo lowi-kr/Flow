@@ -1,14 +1,14 @@
-package io.github.aedev.flow.data.profile
+package com.arubr.smsvcodes.data.profile
 
 import android.content.Context
 import dagger.hilt.android.qualifiers.ApplicationContext
-import io.github.aedev.flow.data.local.LocalDataManager
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.data.scrobble.ScrobbleStore
-import io.github.aedev.flow.data.scrobble.ScrobbleWorker
-import io.github.aedev.flow.notification.UpcomingReminder
-import io.github.aedev.flow.notification.UpcomingVideoReminderWorker
-import io.github.aedev.flow.notification.WellbeingAlarms
+import com.arubr.smsvcodes.data.local.LocalDataManager
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.data.scrobble.ScrobbleStore
+import com.arubr.smsvcodes.data.scrobble.ScrobbleWorker
+import com.arubr.smsvcodes.notification.UpcomingReminder
+import com.arubr.smsvcodes.notification.UpcomingVideoReminderWorker
+import com.arubr.smsvcodes.notification.WellbeingAlarms
 import kotlinx.coroutines.flow.first
 import javax.inject.Inject
 import javax.inject.Singleton

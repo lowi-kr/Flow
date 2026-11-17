@@ -1,9 +1,9 @@
-package io.github.aedev.flow.player.sabr
+package com.arubr.smsvcodes.player.sabr
 
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.player.sabr.core.SabrRequestBuilder
-import io.github.aedev.flow.player.sabr.core.SabrSessionState
-import io.github.aedev.flow.player.sabr.proto.ProtobufReader
+import com.arubr.smsvcodes.player.sabr.core.SabrRequestBuilder
+import com.arubr.smsvcodes.player.sabr.core.SabrSessionState
+import com.arubr.smsvcodes.player.sabr.proto.ProtobufReader
 import org.junit.Test
 
 /**

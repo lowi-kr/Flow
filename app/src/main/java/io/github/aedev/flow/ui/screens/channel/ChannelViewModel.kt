@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.channel
+package com.arubr.smsvcodes.ui.screens.channel
 
 import android.content.Context
 import android.util.Log
@@ -6,26 +6,26 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.community.PostCommentsLoader
-import io.github.aedev.flow.data.contentfilter.aislist.AiListRepository
-import io.github.aedev.flow.data.contentfilter.aislist.AiVerdict
-import io.github.aedev.flow.data.contentfilter.aislist.AllowedAiChannel
-import io.github.aedev.flow.data.local.ChannelSubscription
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.data.local.SubscriptionRepository
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.data.model.distinctByNonBlankKey
-import io.github.aedev.flow.data.notes.NoteKind
-import io.github.aedev.flow.data.notes.NotesRepository
-import io.github.aedev.flow.data.shorts.withoutShorts
-import io.github.aedev.flow.data.subscriptions.markChannelSeen
-import io.github.aedev.flow.innertube.YouTube
-import io.github.aedev.flow.innertube.pages.channel.ChannelTabKind
-import io.github.aedev.flow.innertube.pages.renderer.FeedItemOwner
-import io.github.aedev.flow.ui.youtubeChannelBrowseId
-import io.github.aedev.flow.ui.youtubeChannelUrl
-import io.github.aedev.flow.utils.PerformanceDispatcher
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.community.PostCommentsLoader
+import com.arubr.smsvcodes.data.contentfilter.aislist.AiListRepository
+import com.arubr.smsvcodes.data.contentfilter.aislist.AiVerdict
+import com.arubr.smsvcodes.data.contentfilter.aislist.AllowedAiChannel
+import com.arubr.smsvcodes.data.local.ChannelSubscription
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.data.local.SubscriptionRepository
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.data.model.distinctByNonBlankKey
+import com.arubr.smsvcodes.data.notes.NoteKind
+import com.arubr.smsvcodes.data.notes.NotesRepository
+import com.arubr.smsvcodes.data.shorts.withoutShorts
+import com.arubr.smsvcodes.data.subscriptions.markChannelSeen
+import com.arubr.smsvcodes.innertube.YouTube
+import com.arubr.smsvcodes.innertube.pages.channel.ChannelTabKind
+import com.arubr.smsvcodes.innertube.pages.renderer.FeedItemOwner
+import com.arubr.smsvcodes.ui.youtubeChannelBrowseId
+import com.arubr.smsvcodes.ui.youtubeChannelUrl
+import com.arubr.smsvcodes.utils.PerformanceDispatcher
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.currentCoroutineContext
@@ -76,7 +76,7 @@ class ChannelViewModel
         }
 
         fun setChannelSubscription(
-            channel: io.github.aedev.flow.data.model.Channel,
+            channel: com.arubr.smsvcodes.data.model.Channel,
             subscribed: Boolean,
         ) {
             viewModelScope.launch(PerformanceDispatcher.diskIO) {

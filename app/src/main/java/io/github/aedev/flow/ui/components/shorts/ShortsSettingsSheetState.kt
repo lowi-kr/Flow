@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.shorts
+package com.arubr.smsvcodes.ui.components.shorts
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.Stable
@@ -6,15 +6,15 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
-import io.github.aedev.flow.data.model.ShortVideo
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.data.model.toVideo
-import io.github.aedev.flow.data.shorts.ShortAudioTrack
-import io.github.aedev.flow.data.shorts.ShortVideoQuality
-import io.github.aedev.flow.innertube.models.response.PlayerResponse
-import io.github.aedev.flow.ui.components.shared.MediaDownloadPrompt
-import io.github.aedev.flow.ui.components.shared.MediaSheetSlot
-import io.github.aedev.flow.ui.screens.shorts.ShortsViewModel
+import com.arubr.smsvcodes.data.model.ShortVideo
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.data.model.toVideo
+import com.arubr.smsvcodes.data.shorts.ShortAudioTrack
+import com.arubr.smsvcodes.data.shorts.ShortVideoQuality
+import com.arubr.smsvcodes.innertube.models.response.PlayerResponse
+import com.arubr.smsvcodes.ui.components.shared.MediaDownloadPrompt
+import com.arubr.smsvcodes.ui.components.shared.MediaSheetSlot
+import com.arubr.smsvcodes.ui.screens.shorts.ShortsViewModel
 
 internal enum class ShortsSettingsPage {
     Main,

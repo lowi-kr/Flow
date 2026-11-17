@@ -1,15 +1,15 @@
-package io.github.aedev.flow.sync2.service
+package com.arubr.smsvcodes.sync2.service
 
 import android.os.SystemClock
 import android.util.Log
-import io.github.aedev.flow.sync.crypto.SyncBytes
-import io.github.aedev.flow.sync.protocol.SyncCollection
-import io.github.aedev.flow.sync2.changes.COLLECTION_TABLES
-import io.github.aedev.flow.sync2.changes.LocalChanges
-import io.github.aedev.flow.sync2.changes.PushSchedule
-import io.github.aedev.flow.sync2.changes.TableChanges
-import io.github.aedev.flow.sync2.device.DeviceKeys
-import io.github.aedev.flow.sync2.live.LiveDevices
+import com.arubr.smsvcodes.sync.crypto.SyncBytes
+import com.arubr.smsvcodes.sync.protocol.SyncCollection
+import com.arubr.smsvcodes.sync2.changes.COLLECTION_TABLES
+import com.arubr.smsvcodes.sync2.changes.LocalChanges
+import com.arubr.smsvcodes.sync2.changes.PushSchedule
+import com.arubr.smsvcodes.sync2.changes.TableChanges
+import com.arubr.smsvcodes.sync2.device.DeviceKeys
+import com.arubr.smsvcodes.sync2.live.LiveDevices
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.flow.first

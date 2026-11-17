@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.tv.player
+package com.arubr.smsvcodes.ui.tv.player
 
 import androidx.annotation.StringRes
 import androidx.compose.animation.AnimatedVisibility
@@ -54,25 +54,25 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.model.SponsorBlockSegment
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.ui.components.shared.ChannelAvatarImage
-import io.github.aedev.flow.ui.components.shared.FocusLiftDefaults
-import io.github.aedev.flow.ui.components.shared.MediaPlaybackControls
-import io.github.aedev.flow.ui.components.shared.MediaSeekBar
-import io.github.aedev.flow.ui.components.shared.connectedButtonShapes
-import io.github.aedev.flow.ui.components.shared.focusLift
-import io.github.aedev.flow.ui.components.shared.videoMetadataLine
-import io.github.aedev.flow.ui.components.videoplayer.controls.PlayerControlActions
-import io.github.aedev.flow.ui.components.videoplayer.controls.ScrimEdge
-import io.github.aedev.flow.ui.components.videoplayer.controls.playerEdgeScrim
-import io.github.aedev.flow.ui.screens.playon.PlayOnButton
-import io.github.aedev.flow.ui.theme.PlayerScrimContent
-import io.github.aedev.flow.ui.theme.PlayerScrimContentSecondary
-import io.github.aedev.flow.ui.theme.PlayerScrimEdgeGradient
-import io.github.aedev.flow.ui.tv.theme.LocalTvDimens
-import io.github.aedev.flow.utils.formatDuration
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.model.SponsorBlockSegment
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.ui.components.shared.ChannelAvatarImage
+import com.arubr.smsvcodes.ui.components.shared.FocusLiftDefaults
+import com.arubr.smsvcodes.ui.components.shared.MediaPlaybackControls
+import com.arubr.smsvcodes.ui.components.shared.MediaSeekBar
+import com.arubr.smsvcodes.ui.components.shared.connectedButtonShapes
+import com.arubr.smsvcodes.ui.components.shared.focusLift
+import com.arubr.smsvcodes.ui.components.shared.videoMetadataLine
+import com.arubr.smsvcodes.ui.components.videoplayer.controls.PlayerControlActions
+import com.arubr.smsvcodes.ui.components.videoplayer.controls.ScrimEdge
+import com.arubr.smsvcodes.ui.components.videoplayer.controls.playerEdgeScrim
+import com.arubr.smsvcodes.ui.screens.playon.PlayOnButton
+import com.arubr.smsvcodes.ui.theme.PlayerScrimContent
+import com.arubr.smsvcodes.ui.theme.PlayerScrimContentSecondary
+import com.arubr.smsvcodes.ui.theme.PlayerScrimEdgeGradient
+import com.arubr.smsvcodes.ui.tv.theme.LocalTvDimens
+import com.arubr.smsvcodes.utils.formatDuration
 import org.schabi.newpipe.extractor.stream.StreamSegment
 
 private val AvatarSize = 28.dp

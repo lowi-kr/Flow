@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.player.stage
+package com.arubr.smsvcodes.ui.screens.player.stage
 
 import android.content.res.Configuration
 import androidx.compose.foundation.layout.Box
@@ -22,22 +22,22 @@ import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.LocalHapticFeedback
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.media3.common.util.UnstableApi
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.player.EnhancedPlayerManager
-import io.github.aedev.flow.ui.components.shared.MediaBufferingIndicator
-import io.github.aedev.flow.ui.components.shared.VideoThumbnailImage
-import io.github.aedev.flow.ui.components.videoplayer.MINI_PLAYER_CORNER_RADIUS_DP
-import io.github.aedev.flow.ui.components.videoplayer.VideoPlayerSurface
-import io.github.aedev.flow.ui.components.videoplayer.gesture.chapterSkipTarget
-import io.github.aedev.flow.ui.components.videoplayer.gesture.videoPlayerControls
-import io.github.aedev.flow.ui.components.videoplayer.gesture.videoPlayerZoom
-import io.github.aedev.flow.ui.components.videoplayer.overlay.ChapterSkipFeedback
-import io.github.aedev.flow.ui.components.videoplayer.placedWhen
-import io.github.aedev.flow.ui.components.videoplayer.subtitle.Media3SubtitleOverlay
-import io.github.aedev.flow.ui.screens.player.saveChosenPlaybackSpeed
-import io.github.aedev.flow.ui.screens.player.state.PlayerSheet
-import io.github.aedev.flow.ui.screens.player.state.effectiveResizeMode
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.player.EnhancedPlayerManager
+import com.arubr.smsvcodes.ui.components.shared.MediaBufferingIndicator
+import com.arubr.smsvcodes.ui.components.shared.VideoThumbnailImage
+import com.arubr.smsvcodes.ui.components.videoplayer.MINI_PLAYER_CORNER_RADIUS_DP
+import com.arubr.smsvcodes.ui.components.videoplayer.VideoPlayerSurface
+import com.arubr.smsvcodes.ui.components.videoplayer.gesture.chapterSkipTarget
+import com.arubr.smsvcodes.ui.components.videoplayer.gesture.videoPlayerControls
+import com.arubr.smsvcodes.ui.components.videoplayer.gesture.videoPlayerZoom
+import com.arubr.smsvcodes.ui.components.videoplayer.overlay.ChapterSkipFeedback
+import com.arubr.smsvcodes.ui.components.videoplayer.placedWhen
+import com.arubr.smsvcodes.ui.components.videoplayer.subtitle.Media3SubtitleOverlay
+import com.arubr.smsvcodes.ui.screens.player.saveChosenPlaybackSpeed
+import com.arubr.smsvcodes.ui.screens.player.state.PlayerSheet
+import com.arubr.smsvcodes.ui.screens.player.state.effectiveResizeMode
 
 /**
  * The player's video slot: the surface itself, the gesture and zoom transforms wrapped around it,

@@ -1,8 +1,8 @@
-package io.github.aedev.flow.player.stream
+package com.arubr.smsvcodes.player.stream
 
-import io.github.aedev.flow.data.local.VideoQuality
-import io.github.aedev.flow.data.model.SponsorBlockSegment
-import io.github.aedev.flow.data.model.Video
+import com.arubr.smsvcodes.data.local.VideoQuality
+import com.arubr.smsvcodes.data.model.SponsorBlockSegment
+import com.arubr.smsvcodes.data.model.Video
 
 /** Everything [PlaybackLoadResolver] needs that the player screen owns. */
 data class PlaybackResolutionRequest(

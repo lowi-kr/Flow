@@ -1,4 +1,4 @@
-package io.github.aedev.flow.innertube.models.response
+package com.arubr.smsvcodes.innertube.models.response
 
 import com.google.common.truth.Truth.assertThat
 import kotlinx.serialization.json.Json

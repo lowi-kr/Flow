@@ -1,15 +1,15 @@
-package io.github.aedev.flow.sync
+package com.arubr.smsvcodes.sync
 
 import android.content.Context
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.profile.ActiveProfile
-import io.github.aedev.flow.data.profile.Profile
-import io.github.aedev.flow.data.profile.ProfileRegistryState
-import io.github.aedev.flow.data.profile.ProfileRepository
-import io.github.aedev.flow.data.profile.RunningProfile
-import io.github.aedev.flow.data.profile.SyncProfile
-import io.github.aedev.flow.sync.protocol.SyncRole
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.profile.ActiveProfile
+import com.arubr.smsvcodes.data.profile.Profile
+import com.arubr.smsvcodes.data.profile.ProfileRegistryState
+import com.arubr.smsvcodes.data.profile.ProfileRepository
+import com.arubr.smsvcodes.data.profile.RunningProfile
+import com.arubr.smsvcodes.data.profile.SyncProfile
+import com.arubr.smsvcodes.sync.protocol.SyncRole
 import io.mockk.every
 import io.mockk.mockk
 import io.mockk.mockkObject

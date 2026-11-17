@@ -1,7 +1,7 @@
-package io.github.aedev.flow.data.stats
+package com.arubr.smsvcodes.data.stats
 
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.data.local.PrivacyGate
+import com.arubr.smsvcodes.data.local.PrivacyGate
 import kotlinx.coroutines.test.runTest
 import org.junit.Test
 

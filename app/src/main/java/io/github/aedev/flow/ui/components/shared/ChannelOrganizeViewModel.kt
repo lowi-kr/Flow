@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.shared
+package com.arubr.smsvcodes.ui.components.shared
 
 import androidx.activity.ComponentActivity
 import androidx.compose.runtime.Composable
@@ -8,17 +8,17 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.data.local.dao.SubscriptionGroupDao
-import io.github.aedev.flow.data.local.entity.SubscriptionGroupEntity
-import io.github.aedev.flow.data.model.Channel
-import io.github.aedev.flow.data.model.SubscriptionGroup
-import io.github.aedev.flow.data.model.toUiModel
-import io.github.aedev.flow.data.model.withMember
-import io.github.aedev.flow.data.notes.NoteKind
-import io.github.aedev.flow.data.notes.NoteSubject
-import io.github.aedev.flow.data.notes.NotesRepository
-import io.github.aedev.flow.utils.PerformanceDispatcher
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.data.local.dao.SubscriptionGroupDao
+import com.arubr.smsvcodes.data.local.entity.SubscriptionGroupEntity
+import com.arubr.smsvcodes.data.model.Channel
+import com.arubr.smsvcodes.data.model.SubscriptionGroup
+import com.arubr.smsvcodes.data.model.toUiModel
+import com.arubr.smsvcodes.data.model.withMember
+import com.arubr.smsvcodes.data.notes.NoteKind
+import com.arubr.smsvcodes.data.notes.NoteSubject
+import com.arubr.smsvcodes.data.notes.NotesRepository
+import com.arubr.smsvcodes.utils.PerformanceDispatcher
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow

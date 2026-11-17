@@ -1,4 +1,4 @@
-package io.github.aedev.flow.data.video.downloader.tags
+package com.arubr.smsvcodes.data.video.downloader.tags
 
 import com.google.common.truth.Truth.assertThat
 import org.junit.Rule

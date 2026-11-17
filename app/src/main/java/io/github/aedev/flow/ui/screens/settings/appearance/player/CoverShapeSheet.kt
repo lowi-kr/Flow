@@ -1,6 +1,6 @@
 @file:OptIn(ExperimentalMaterial3Api::class, ExperimentalMaterial3ExpressiveApi::class)
 
-package io.github.aedev.flow.ui.screens.settings.appearance.player
+package com.arubr.smsvcodes.ui.screens.settings.appearance.player
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -38,12 +38,12 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.local.CoverShape
-import io.github.aedev.flow.ui.components.musicplayer.mini.coverPolygon
-import io.github.aedev.flow.ui.components.musicplayer.mini.coverShapeLabel
-import io.github.aedev.flow.ui.components.shared.FlowSheetHeader
-import io.github.aedev.flow.ui.components.shared.rememberFlowSheetState
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.local.CoverShape
+import com.arubr.smsvcodes.ui.components.musicplayer.mini.coverPolygon
+import com.arubr.smsvcodes.ui.components.musicplayer.mini.coverShapeLabel
+import com.arubr.smsvcodes.ui.components.shared.FlowSheetHeader
+import com.arubr.smsvcodes.ui.components.shared.rememberFlowSheetState
 
 private val ShapeSize = 52.dp
 private val CellMinWidth = 88.dp

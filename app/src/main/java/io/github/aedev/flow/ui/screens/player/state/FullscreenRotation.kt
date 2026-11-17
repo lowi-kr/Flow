@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.player.state
+package com.arubr.smsvcodes.ui.screens.player.state
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect

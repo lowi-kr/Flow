@@ -1,7 +1,7 @@
-package io.github.aedev.flow.player.datasource
+package com.arubr.smsvcodes.player.datasource
 
-import io.github.aedev.flow.innertube.models.response.PlayerResponse
-import io.github.aedev.flow.player.error.StreamDenialClassifier
+import com.arubr.smsvcodes.innertube.models.response.PlayerResponse
+import com.arubr.smsvcodes.player.error.StreamDenialClassifier
 
 /**
  * The file a googlevideo URL serves, read off the URL itself: the minted set it belongs to (`id`),

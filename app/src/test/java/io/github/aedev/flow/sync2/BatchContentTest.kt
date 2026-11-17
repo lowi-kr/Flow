@@ -1,8 +1,8 @@
-package io.github.aedev.flow.sync2
+package com.arubr.smsvcodes.sync2
 
-import io.github.aedev.flow.sync.protocol.SyncSerialization
-import io.github.aedev.flow.sync2.changes.batchContent
-import io.github.aedev.flow.sync2.crypto.encodePayload
+import com.arubr.smsvcodes.sync.protocol.SyncSerialization
+import com.arubr.smsvcodes.sync2.changes.batchContent
+import com.arubr.smsvcodes.sync2.crypto.encodePayload
 import kotlinx.serialization.json.JsonPrimitive
 import kotlinx.serialization.json.buildJsonObject
 import org.junit.Assert.assertArrayEquals

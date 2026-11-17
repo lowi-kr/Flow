@@ -1,11 +1,11 @@
-package io.github.aedev.flow.ui.components.shared
+package com.arubr.smsvcodes.ui.components.shared
 
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.data.model.Comment
-import io.github.aedev.flow.data.model.RichText
-import io.github.aedev.flow.data.model.RichTextSpan
-import io.github.aedev.flow.data.model.RichTextTarget
-import io.github.aedev.flow.innertube.pages.VideoCommentSort
+import com.arubr.smsvcodes.data.model.Comment
+import com.arubr.smsvcodes.data.model.RichText
+import com.arubr.smsvcodes.data.model.RichTextSpan
+import com.arubr.smsvcodes.data.model.RichTextTarget
+import com.arubr.smsvcodes.innertube.pages.VideoCommentSort
 import org.junit.Test
 
 /**

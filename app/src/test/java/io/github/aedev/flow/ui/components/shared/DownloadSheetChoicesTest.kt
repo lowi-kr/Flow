@@ -1,8 +1,8 @@
-package io.github.aedev.flow.ui.components.shared
+package com.arubr.smsvcodes.ui.components.shared
 
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.data.video.DownloadStreamPolicy
-import io.github.aedev.flow.innertube.models.response.PlayerResponse.StreamingData.Format
+import com.arubr.smsvcodes.data.video.DownloadStreamPolicy
+import com.arubr.smsvcodes.innertube.models.response.PlayerResponse.StreamingData.Format
 import org.junit.Test
 
 class DownloadSheetChoicesTest {

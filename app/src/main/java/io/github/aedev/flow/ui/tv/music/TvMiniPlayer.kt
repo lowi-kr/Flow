@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.tv.music
+package com.arubr.smsvcodes.ui.tv.music
 
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -17,12 +17,12 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.music.model.MusicTrack
-import io.github.aedev.flow.ui.components.musicplayer.common.rememberMusicPlayerAppearance
-import io.github.aedev.flow.ui.components.musicplayer.mini.MiniPlayerContent
-import io.github.aedev.flow.ui.components.shared.MediaMiniBarDefaults
-import io.github.aedev.flow.ui.components.shared.dpadFocusGroup
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.music.model.MusicTrack
+import com.arubr.smsvcodes.ui.components.musicplayer.common.rememberMusicPlayerAppearance
+import com.arubr.smsvcodes.ui.components.musicplayer.mini.MiniPlayerContent
+import com.arubr.smsvcodes.ui.components.shared.MediaMiniBarDefaults
+import com.arubr.smsvcodes.ui.components.shared.dpadFocusGroup
 
 /** The phone mini card's resting elevation. */
 private val CardShadowElevation = 6.dp

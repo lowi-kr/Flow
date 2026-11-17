@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.player.dialogs
+package com.arubr.smsvcodes.ui.screens.player.dialogs
 
 import android.app.Application
 import android.content.Context
@@ -13,18 +13,18 @@ import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.onRoot
 import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.local.DownloadDialogStyle
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.player.state.EnhancedPlayerState
-import io.github.aedev.flow.ui.components.videoplayer.settings.PlayerSettingsPage
-import io.github.aedev.flow.ui.screens.player.fakePlayerState
-import io.github.aedev.flow.ui.screens.player.fakeUiState
-import io.github.aedev.flow.ui.screens.player.fakeVideo
-import io.github.aedev.flow.ui.screens.player.relaxedVideoPlayerViewModel
-import io.github.aedev.flow.ui.screens.player.state.PlayerScreenState
-import io.github.aedev.flow.ui.screens.player.state.PlayerSheet
-import io.github.aedev.flow.ui.screens.player.state.rememberVideoPlayerPreferences
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.local.DownloadDialogStyle
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.player.state.EnhancedPlayerState
+import com.arubr.smsvcodes.ui.components.videoplayer.settings.PlayerSettingsPage
+import com.arubr.smsvcodes.ui.screens.player.fakePlayerState
+import com.arubr.smsvcodes.ui.screens.player.fakeUiState
+import com.arubr.smsvcodes.ui.screens.player.fakeVideo
+import com.arubr.smsvcodes.ui.screens.player.relaxedVideoPlayerViewModel
+import com.arubr.smsvcodes.ui.screens.player.state.PlayerScreenState
+import com.arubr.smsvcodes.ui.screens.player.state.PlayerSheet
+import com.arubr.smsvcodes.ui.screens.player.state.rememberVideoPlayerPreferences
 import kotlinx.coroutines.runBlocking
 import org.junit.Ignore
 import org.junit.Rule

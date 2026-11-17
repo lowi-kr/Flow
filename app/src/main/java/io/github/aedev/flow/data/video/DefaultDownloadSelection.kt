@@ -1,4 +1,4 @@
-package io.github.aedev.flow.data.video
+package com.arubr.smsvcodes.data.video
 
 /**
  * Picks what a download started without a dialog should fetch: the tallest quality at or below

@@ -1,8 +1,8 @@
-package io.github.aedev.flow.sync2.roster
+package com.arubr.smsvcodes.sync2.roster
 
-import io.github.aedev.flow.sync2.crypto.ProtocolError
-import io.github.aedev.flow.sync2.crypto.ProtocolException
-import io.github.aedev.flow.sync2.crypto.reject
+import com.arubr.smsvcodes.sync2.crypto.ProtocolError
+import com.arubr.smsvcodes.sync2.crypto.ProtocolException
+import com.arubr.smsvcodes.sync2.crypto.reject
 
 const val MAX_ROSTER_ENTRIES = 4096
 

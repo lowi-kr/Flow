@@ -1,8 +1,8 @@
-package io.github.aedev.flow.player.sponsorblock
+package com.arubr.smsvcodes.player.sponsorblock
 
-import io.github.aedev.flow.data.local.SponsorBlockAction
-import io.github.aedev.flow.data.model.SponsorBlockCategories
-import io.github.aedev.flow.data.model.SponsorBlockSegment
+import com.arubr.smsvcodes.data.local.SponsorBlockAction
+import com.arubr.smsvcodes.data.model.SponsorBlockCategories
+import com.arubr.smsvcodes.data.model.SponsorBlockSegment
 
 /** What each [SponsorBlockAction] does, for the handler, the skip button and the seek bar alike. */
 object SponsorBlockActionPolicy {

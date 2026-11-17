@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.sync.linked
+package com.arubr.smsvcodes.ui.screens.sync.linked
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -23,13 +23,13 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.ui.components.shared.FlowNavRow
-import io.github.aedev.flow.ui.screens.sync.QrCodeImage
-import io.github.aedev.flow.ui.screens.sync.SyncActionRow
-import io.github.aedev.flow.ui.screens.sync.SyncCard
-import io.github.aedev.flow.ui.screens.sync.SyncRowGroup
-import io.github.aedev.flow.ui.screens.sync.SyncStepHeader
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.ui.components.shared.FlowNavRow
+import com.arubr.smsvcodes.ui.screens.sync.QrCodeImage
+import com.arubr.smsvcodes.ui.screens.sync.SyncActionRow
+import com.arubr.smsvcodes.ui.screens.sync.SyncCard
+import com.arubr.smsvcodes.ui.screens.sync.SyncRowGroup
+import com.arubr.smsvcodes.ui.screens.sync.SyncStepHeader
 
 /** How many words the user types back before the key counts as saved (spec/protocol.md, Recovery). */
 private const val CHECKED_WORDS = 2

@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.subscriptions
+package com.arubr.smsvcodes.ui.screens.subscriptions
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.AccountCircle
@@ -12,8 +12,8 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.res.stringResource
-import io.github.aedev.flow.R
-import io.github.aedev.flow.ui.components.shared.ChannelOrganizeActions
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.ui.components.shared.ChannelOrganizeActions
 
 /**
  * The long-press menu of a subscribed channel: pin or unpin it, open it where a tap does something

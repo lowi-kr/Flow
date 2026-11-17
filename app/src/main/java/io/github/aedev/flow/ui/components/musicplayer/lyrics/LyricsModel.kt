@@ -1,7 +1,7 @@
-package io.github.aedev.flow.ui.components.musicplayer.lyrics
+package com.arubr.smsvcodes.ui.components.musicplayer.lyrics
 
-import io.github.aedev.flow.data.lyrics.LyricsEntry
-import io.github.aedev.flow.data.lyrics.WordTimestamp
+import com.arubr.smsvcodes.data.lyrics.LyricsEntry
+import com.arubr.smsvcodes.data.lyrics.WordTimestamp
 
 /** A wordless stretch shorter than this gets no instrumental break row. */
 private const val MIN_BREAK_MS = 4000L

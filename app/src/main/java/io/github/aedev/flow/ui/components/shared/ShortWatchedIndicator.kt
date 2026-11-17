@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.shared
+package com.arubr.smsvcodes.ui.components.shared
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
@@ -14,12 +14,12 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.ui.components.shared.card.LocalVideoWatchProgress
-import io.github.aedev.flow.ui.components.shared.card.WATCHED_PROGRESS_THRESHOLD
-import io.github.aedev.flow.ui.components.shared.card.rememberWatchProgress
-import io.github.aedev.flow.ui.theme.ArtworkScrimContent
-import io.github.aedev.flow.ui.theme.artworkScrim
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.ui.components.shared.card.LocalVideoWatchProgress
+import com.arubr.smsvcodes.ui.components.shared.card.WATCHED_PROGRESS_THRESHOLD
+import com.arubr.smsvcodes.ui.components.shared.card.rememberWatchProgress
+import com.arubr.smsvcodes.ui.theme.ArtworkScrimContent
+import com.arubr.smsvcodes.ui.theme.artworkScrim
 
 private const val WATCHED_BADGE_SCRIM_ALPHA = 0.6f
 private val BadgeMargin = 6.dp

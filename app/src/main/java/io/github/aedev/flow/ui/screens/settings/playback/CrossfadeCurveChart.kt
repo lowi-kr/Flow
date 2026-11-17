@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.settings.playback
+package com.arubr.smsvcodes.ui.screens.settings.playback
 
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.layout.Arrangement
@@ -25,9 +25,9 @@ import androidx.compose.ui.graphics.drawscope.DrawScope
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.local.CrossfadeCurve
-import io.github.aedev.flow.player.crossfade.CrossfadePolicy
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.local.CrossfadeCurve
+import com.arubr.smsvcodes.player.crossfade.CrossfadePolicy
 
 private val ChartHeight = 112.dp
 private val LineWidth = 3.dp

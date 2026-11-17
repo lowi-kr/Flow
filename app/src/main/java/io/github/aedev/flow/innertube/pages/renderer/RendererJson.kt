@@ -1,9 +1,9 @@
-package io.github.aedev.flow.innertube.pages.renderer
+package com.arubr.smsvcodes.innertube.pages.renderer
 
-import io.github.aedev.flow.innertube.pages.bestThumbnailUrl
-import io.github.aedev.flow.innertube.pages.normalizeImageUrl
-import io.github.aedev.flow.innertube.pages.objectOrNull
-import io.github.aedev.flow.innertube.pages.stringOrNull
+import com.arubr.smsvcodes.innertube.pages.bestThumbnailUrl
+import com.arubr.smsvcodes.innertube.pages.normalizeImageUrl
+import com.arubr.smsvcodes.innertube.pages.objectOrNull
+import com.arubr.smsvcodes.innertube.pages.stringOrNull
 import kotlinx.serialization.json.JsonArray
 import kotlinx.serialization.json.JsonElement
 import kotlinx.serialization.json.JsonObject

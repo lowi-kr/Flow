@@ -1,4 +1,4 @@
-package io.github.aedev.flow.sync.apply
+package com.arubr.smsvcodes.sync.apply
 
 import kotlinx.serialization.Serializable
 

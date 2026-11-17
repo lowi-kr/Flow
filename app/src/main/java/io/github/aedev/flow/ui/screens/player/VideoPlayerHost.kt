@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.player
+package com.arubr.smsvcodes.ui.screens.player
 
 import androidx.activity.ComponentActivity
 import androidx.compose.foundation.layout.*
@@ -16,24 +16,24 @@ import androidx.lifecycle.compose.LifecycleEventEffect
 import androidx.lifecycle.compose.LocalLifecycleOwner
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.media3.common.util.UnstableApi
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.player.EnhancedPlayerManager
-import io.github.aedev.flow.player.GlobalPlayerState
-import io.github.aedev.flow.player.dlna.DlnaCastManager
-import io.github.aedev.flow.ui.components.layout.flowWindowAdaptiveInfo
-import io.github.aedev.flow.ui.components.videoplayer.DraggablePlayerLayout
-import io.github.aedev.flow.ui.components.videoplayer.MiniPlayerDock
-import io.github.aedev.flow.ui.components.videoplayer.PlayerDraggableState
-import io.github.aedev.flow.ui.components.videoplayer.PlayerSheetValue
-import io.github.aedev.flow.ui.components.videoplayer.isImmersivePlayer
-import io.github.aedev.flow.ui.screens.player.effects.*
-import io.github.aedev.flow.ui.screens.player.stage.*
-import io.github.aedev.flow.ui.screens.player.state.*
-import io.github.aedev.flow.ui.screens.player.state.supportingPaneReserve
-import io.github.aedev.flow.ui.utils.LocalWindowIsLandscape
-import io.github.aedev.flow.ui.utils.LocalWindowSizeClass
-import io.github.aedev.flow.ui.utils.rememberIsInPipMode
-import io.github.aedev.flow.utils.ThumbnailUrlResolver
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.player.EnhancedPlayerManager
+import com.arubr.smsvcodes.player.GlobalPlayerState
+import com.arubr.smsvcodes.player.dlna.DlnaCastManager
+import com.arubr.smsvcodes.ui.components.layout.flowWindowAdaptiveInfo
+import com.arubr.smsvcodes.ui.components.videoplayer.DraggablePlayerLayout
+import com.arubr.smsvcodes.ui.components.videoplayer.MiniPlayerDock
+import com.arubr.smsvcodes.ui.components.videoplayer.PlayerDraggableState
+import com.arubr.smsvcodes.ui.components.videoplayer.PlayerSheetValue
+import com.arubr.smsvcodes.ui.components.videoplayer.isImmersivePlayer
+import com.arubr.smsvcodes.ui.screens.player.effects.*
+import com.arubr.smsvcodes.ui.screens.player.stage.*
+import com.arubr.smsvcodes.ui.screens.player.state.*
+import com.arubr.smsvcodes.ui.screens.player.state.supportingPaneReserve
+import com.arubr.smsvcodes.ui.utils.LocalWindowIsLandscape
+import com.arubr.smsvcodes.ui.utils.LocalWindowSizeClass
+import com.arubr.smsvcodes.ui.utils.rememberIsInPipMode
+import com.arubr.smsvcodes.utils.ThumbnailUrlResolver
 import kotlinx.coroutines.launch
 
 /**

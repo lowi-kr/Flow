@@ -1,10 +1,10 @@
-package io.github.aedev.flow.ui.screens.recap
+package com.arubr.smsvcodes.ui.screens.recap
 
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.data.stats.RankedItem
-import io.github.aedev.flow.data.stats.RankedKind
-import io.github.aedev.flow.data.stats.RecapPeriod
-import io.github.aedev.flow.utils.YouTubeLink
+import com.arubr.smsvcodes.data.stats.RankedItem
+import com.arubr.smsvcodes.data.stats.RankedKind
+import com.arubr.smsvcodes.data.stats.RecapPeriod
+import com.arubr.smsvcodes.utils.YouTubeLink
 import org.junit.Test
 
 class RecapLinksTest {

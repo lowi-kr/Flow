@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.videoplayer.sheet
+package com.arubr.smsvcodes.ui.components.videoplayer.sheet
 
 import android.os.Build
 import android.widget.Toast
@@ -28,10 +28,10 @@ import androidx.compose.ui.platform.LocalClipboard
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.transcript.TranscriptCue
-import io.github.aedev.flow.data.video.storage.DownloadNaming
-import io.github.aedev.flow.utils.copyPlainText
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.transcript.TranscriptCue
+import com.arubr.smsvcodes.data.video.storage.DownloadNaming
+import com.arubr.smsvcodes.utils.copyPlainText
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext

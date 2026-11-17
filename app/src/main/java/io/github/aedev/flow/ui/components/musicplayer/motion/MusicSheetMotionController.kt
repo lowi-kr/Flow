@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.musicplayer.motion
+package com.arubr.smsvcodes.ui.components.musicplayer.motion
 
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.AnimationSpec

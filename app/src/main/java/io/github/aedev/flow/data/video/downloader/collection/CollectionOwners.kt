@@ -1,9 +1,9 @@
-package io.github.aedev.flow.data.video.downloader.collection
+package com.arubr.smsvcodes.data.video.downloader.collection
 
-import io.github.aedev.flow.data.local.entity.DownloadCollectionEntity
-import io.github.aedev.flow.data.local.entity.DownloadCollectionKind
-import io.github.aedev.flow.data.profile.RunningProfile
-import io.github.aedev.flow.data.profile.isSafeProfileId
+import com.arubr.smsvcodes.data.local.entity.DownloadCollectionEntity
+import com.arubr.smsvcodes.data.local.entity.DownloadCollectionKind
+import com.arubr.smsvcodes.data.profile.RunningProfile
+import com.arubr.smsvcodes.data.profile.isSafeProfileId
 
 /**
  * Downloads are shared by every profile, but a profile's own playlists are not, and Watch Later or two restored

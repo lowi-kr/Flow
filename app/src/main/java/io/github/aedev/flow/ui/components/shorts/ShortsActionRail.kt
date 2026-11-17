@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.shorts
+package com.arubr.smsvcodes.ui.components.shorts
 
 import androidx.compose.animation.core.LinearEasing
 import androidx.compose.animation.core.RepeatMode
@@ -38,11 +38,11 @@ import androidx.compose.ui.hapticfeedback.HapticFeedbackType
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.ui.components.shared.ChannelAvatarImage
-import io.github.aedev.flow.ui.components.videoplayer.controls.PlayerPillIconButton
-import io.github.aedev.flow.ui.theme.PlayerScrimContent
-import io.github.aedev.flow.ui.theme.PlayerScrimPanel
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.ui.components.shared.ChannelAvatarImage
+import com.arubr.smsvcodes.ui.components.videoplayer.controls.PlayerPillIconButton
+import com.arubr.smsvcodes.ui.theme.PlayerScrimContent
+import com.arubr.smsvcodes.ui.theme.PlayerScrimPanel
 
 private const val DISC_SPIN_MS = 4_000
 private val RailSpacing = 16.dp

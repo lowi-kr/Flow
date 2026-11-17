@@ -1,4 +1,4 @@
-package io.github.aedev.flow.player.resolver
+package com.arubr.smsvcodes.player.resolver
 
 import androidx.media3.common.C
 import androidx.media3.common.Format

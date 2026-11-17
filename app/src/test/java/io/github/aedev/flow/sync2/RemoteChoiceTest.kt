@@ -1,7 +1,7 @@
-package io.github.aedev.flow.sync2
+package com.arubr.smsvcodes.sync2
 
-import io.github.aedev.flow.sync2.live.QUIET_CHECK_MS
-import io.github.aedev.flow.sync2.live.RemoteChoice
+import com.arubr.smsvcodes.sync2.live.QUIET_CHECK_MS
+import com.arubr.smsvcodes.sync2.live.RemoteChoice
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch

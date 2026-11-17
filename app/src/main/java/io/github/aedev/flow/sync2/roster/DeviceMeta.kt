@@ -1,13 +1,13 @@
-package io.github.aedev.flow.sync2.roster
+package com.arubr.smsvcodes.sync2.roster
 
-import io.github.aedev.flow.sync2.crypto.Purpose
-import io.github.aedev.flow.sync2.crypto.decodePayload
-import io.github.aedev.flow.sync2.crypto.encodePayload
-import io.github.aedev.flow.sync2.crypto.open
-import io.github.aedev.flow.sync2.crypto.purposeKey
-import io.github.aedev.flow.sync2.crypto.seal
-import io.github.aedev.flow.sync2.crypto.tag
-import io.github.aedev.flow.sync2.crypto.u64
+import com.arubr.smsvcodes.sync2.crypto.Purpose
+import com.arubr.smsvcodes.sync2.crypto.decodePayload
+import com.arubr.smsvcodes.sync2.crypto.encodePayload
+import com.arubr.smsvcodes.sync2.crypto.open
+import com.arubr.smsvcodes.sync2.crypto.purposeKey
+import com.arubr.smsvcodes.sync2.crypto.seal
+import com.arubr.smsvcodes.sync2.crypto.tag
+import com.arubr.smsvcodes.sync2.crypto.u64
 
 private fun metaAad(
     group: ByteArray,

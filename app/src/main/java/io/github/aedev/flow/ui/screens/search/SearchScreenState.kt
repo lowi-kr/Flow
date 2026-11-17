@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.search
+package com.arubr.smsvcodes.ui.screens.search
 
 import androidx.compose.foundation.text.input.TextFieldState
 import androidx.compose.foundation.text.input.setTextAndPlaceCursorAtEnd
@@ -13,15 +13,15 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.runtime.snapshotFlow
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import io.github.aedev.flow.data.local.HomeFeedColumns
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.data.local.SearchHistoryItem
-import io.github.aedev.flow.data.local.SearchHistoryRepository
-import io.github.aedev.flow.data.local.SearchHistoryScope
-import io.github.aedev.flow.innertube.pages.search.SearchSuggestion
-import io.github.aedev.flow.player.DeepFlowManager
-import io.github.aedev.flow.ui.components.search.recentOrMatching
-import io.github.aedev.flow.ui.components.shared.DeepFlowState
+import com.arubr.smsvcodes.data.local.HomeFeedColumns
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.data.local.SearchHistoryItem
+import com.arubr.smsvcodes.data.local.SearchHistoryRepository
+import com.arubr.smsvcodes.data.local.SearchHistoryScope
+import com.arubr.smsvcodes.innertube.pages.search.SearchSuggestion
+import com.arubr.smsvcodes.player.DeepFlowManager
+import com.arubr.smsvcodes.ui.components.search.recentOrMatching
+import com.arubr.smsvcodes.ui.components.shared.DeepFlowState
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.FlowPreview
 import kotlinx.coroutines.flow.combine

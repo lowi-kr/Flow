@@ -1,13 +1,13 @@
-package io.github.aedev.flow.data.local.dao
+package com.arubr.smsvcodes.data.local.dao
 
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import androidx.room.Transaction
-import io.github.aedev.flow.data.local.entity.MusicHomeCacheEntity
-import io.github.aedev.flow.data.local.entity.MusicHomeChipEntity
-import io.github.aedev.flow.data.local.entity.SubscriptionFeedEntity
+import com.arubr.smsvcodes.data.local.entity.MusicHomeCacheEntity
+import com.arubr.smsvcodes.data.local.entity.MusicHomeChipEntity
+import com.arubr.smsvcodes.data.local.entity.SubscriptionFeedEntity
 import kotlinx.coroutines.flow.Flow
 
 @Dao

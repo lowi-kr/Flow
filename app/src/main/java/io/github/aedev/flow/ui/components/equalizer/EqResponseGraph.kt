@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.equalizer
+package com.arubr.smsvcodes.ui.components.equalizer
 
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
@@ -34,11 +34,11 @@ import androidx.compose.ui.text.drawText
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.rememberTextMeasurer
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.audio.eq.EqBand
-import io.github.aedev.flow.data.audio.eq.EqFilterMath
-import io.github.aedev.flow.data.audio.eq.EqFilterType
-import io.github.aedev.flow.data.audio.eq.EqLimits
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.audio.eq.EqBand
+import com.arubr.smsvcodes.data.audio.eq.EqFilterMath
+import com.arubr.smsvcodes.data.audio.eq.EqFilterType
+import com.arubr.smsvcodes.data.audio.eq.EqLimits
 import kotlin.math.abs
 import kotlin.math.hypot
 import kotlin.math.roundToInt

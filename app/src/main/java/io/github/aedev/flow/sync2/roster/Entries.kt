@@ -1,10 +1,10 @@
-package io.github.aedev.flow.sync2.roster
+package com.arubr.smsvcodes.sync2.roster
 
-import io.github.aedev.flow.sync.crypto.SyncBytes
-import io.github.aedev.flow.sync2.crypto.MemberSecrets
-import io.github.aedev.flow.sync2.crypto.epochCommitment
-import io.github.aedev.flow.sync2.crypto.memberId
-import io.github.aedev.flow.sync2.crypto.sign
+import com.arubr.smsvcodes.sync.crypto.SyncBytes
+import com.arubr.smsvcodes.sync2.crypto.MemberSecrets
+import com.arubr.smsvcodes.sync2.crypto.epochCommitment
+import com.arubr.smsvcodes.sync2.crypto.memberId
+import com.arubr.smsvcodes.sync2.crypto.sign
 
 /** What an entry says, before the chain fields and signatures are added. */
 data class Draft(

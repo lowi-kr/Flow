@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.musicplayer.full
+package com.arubr.smsvcodes.ui.components.musicplayer.full
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.Cast
@@ -10,9 +10,9 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.res.stringResource
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import io.github.aedev.flow.R
-import io.github.aedev.flow.ui.components.shared.DlnaDevicePickerDialog
-import io.github.aedev.flow.ui.screens.music.MusicCastViewModel
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.ui.components.shared.DlnaDevicePickerDialog
+import com.arubr.smsvcodes.ui.screens.music.MusicCastViewModel
 
 /** In the full player's top bar while the music plays on a TV, in the primary colour; it opens the picker to stop casting. */
 @Composable

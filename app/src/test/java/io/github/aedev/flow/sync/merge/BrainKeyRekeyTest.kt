@@ -1,16 +1,16 @@
-package io.github.aedev.flow.sync.merge
+package com.arubr.smsvcodes.sync.merge
 
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.data.recommendation.NeuroKeyMigration
-import io.github.aedev.flow.data.recommendation.NeuroTokenizer
-import io.github.aedev.flow.sync.canonical.BrainLwwMaps
-import io.github.aedev.flow.sync.canonical.CanonicalBrain
-import io.github.aedev.flow.sync.canonical.CanonicalBrainVectors
-import io.github.aedev.flow.sync.canonical.CanonicalTopicEvidence
-import io.github.aedev.flow.sync.canonical.CanonicalVector
-import io.github.aedev.flow.sync.canonical.GCounter
-import io.github.aedev.flow.sync.canonical.Lww
-import io.github.aedev.flow.sync.identity.Hlc
+import com.arubr.smsvcodes.data.recommendation.NeuroKeyMigration
+import com.arubr.smsvcodes.data.recommendation.NeuroTokenizer
+import com.arubr.smsvcodes.sync.canonical.BrainLwwMaps
+import com.arubr.smsvcodes.sync.canonical.CanonicalBrain
+import com.arubr.smsvcodes.sync.canonical.CanonicalBrainVectors
+import com.arubr.smsvcodes.sync.canonical.CanonicalTopicEvidence
+import com.arubr.smsvcodes.sync.canonical.CanonicalVector
+import com.arubr.smsvcodes.sync.canonical.GCounter
+import com.arubr.smsvcodes.sync.canonical.Lww
+import com.arubr.smsvcodes.sync.identity.Hlc
 import org.junit.Test
 
 /** A peer's or the sidecar's spellings read by key spec 2 before they merge (#907). */

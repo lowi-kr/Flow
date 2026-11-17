@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.shared
+package com.arubr.smsvcodes.ui.components.shared
 
 import androidx.compose.ui.hapticfeedback.HapticFeedbackType
 import androidx.core.view.HapticFeedbackConstantsCompat

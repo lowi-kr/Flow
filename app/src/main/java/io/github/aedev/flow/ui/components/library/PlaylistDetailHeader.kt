@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.library
+package com.arubr.smsvcodes.ui.components.library
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -63,12 +63,12 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
-import io.github.aedev.flow.R
-import io.github.aedev.flow.ui.components.shared.FlowActionButtonPair
-import io.github.aedev.flow.ui.components.shared.FlowPairAction
-import io.github.aedev.flow.ui.components.shared.FlowSortChip
-import io.github.aedev.flow.ui.components.shared.connectedButtonShapes
-import io.github.aedev.flow.ui.components.shared.thumbnailUrlOrNull
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.ui.components.shared.FlowActionButtonPair
+import com.arubr.smsvcodes.ui.components.shared.FlowPairAction
+import com.arubr.smsvcodes.ui.components.shared.FlowSortChip
+import com.arubr.smsvcodes.ui.components.shared.connectedButtonShapes
+import com.arubr.smsvcodes.ui.components.shared.thumbnailUrlOrNull
 
 private val HeaderPadding: Dp = 16.dp
 private const val DESCRIPTION_COLLAPSED_LINES = 2

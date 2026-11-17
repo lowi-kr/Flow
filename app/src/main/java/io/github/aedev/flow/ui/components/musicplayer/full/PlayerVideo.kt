@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.musicplayer.full
+package com.arubr.smsvcodes.ui.components.musicplayer.full
 
 import android.view.LayoutInflater
 import android.view.View
@@ -22,8 +22,8 @@ import androidx.media3.common.Tracks
 import androidx.media3.common.util.UnstableApi
 import androidx.media3.ui.AspectRatioFrameLayout
 import androidx.media3.ui.PlayerView
-import io.github.aedev.flow.ui.components.shared.clipToCornerRadius
-import io.github.aedev.flow.ui.components.shared.flowPlayerViewLayout
+import com.arubr.smsvcodes.ui.components.shared.clipToCornerRadius
+import com.arubr.smsvcodes.ui.components.shared.flowPlayerViewLayout
 
 /**
  * The music video in the artwork box. It draws under the artwork, which steps aside once

@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.musicplayer.full
+package com.arubr.smsvcodes.ui.components.musicplayer.full
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -8,16 +8,16 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import io.github.aedev.flow.data.music.model.MusicArtist
-import io.github.aedev.flow.data.music.model.MusicTrack
-import io.github.aedev.flow.ui.components.music.sheet.CrossfadePauseRow
-import io.github.aedev.flow.ui.components.music.sheet.MusicArtistsSheet
-import io.github.aedev.flow.ui.components.music.sheet.MusicQuickActionsSheet
-import io.github.aedev.flow.ui.components.music.sheet.SaveSongSheet
-import io.github.aedev.flow.ui.components.music.sheet.SaveSongsSheet
-import io.github.aedev.flow.ui.components.musicplayer.sheet.AudioSettingsSheet
-import io.github.aedev.flow.ui.screens.music.CrossfadePauseViewModel
-import io.github.aedev.flow.ui.screens.music.MusicCastViewModel
+import com.arubr.smsvcodes.data.music.model.MusicArtist
+import com.arubr.smsvcodes.data.music.model.MusicTrack
+import com.arubr.smsvcodes.ui.components.music.sheet.CrossfadePauseRow
+import com.arubr.smsvcodes.ui.components.music.sheet.MusicArtistsSheet
+import com.arubr.smsvcodes.ui.components.music.sheet.MusicQuickActionsSheet
+import com.arubr.smsvcodes.ui.components.music.sheet.SaveSongSheet
+import com.arubr.smsvcodes.ui.components.music.sheet.SaveSongsSheet
+import com.arubr.smsvcodes.ui.components.musicplayer.sheet.AudioSettingsSheet
+import com.arubr.smsvcodes.ui.screens.music.CrossfadePauseViewModel
+import com.arubr.smsvcodes.ui.screens.music.MusicCastViewModel
 
 /** Which of the full player's own sheets is open. */
 @Stable

@@ -1,12 +1,12 @@
-package io.github.aedev.flow.innertube.pages.search
+package com.arubr.smsvcodes.innertube.pages.search
 
-import io.github.aedev.flow.innertube.pages.arrayOrNull
-import io.github.aedev.flow.innertube.pages.objectOrNull
-import io.github.aedev.flow.innertube.pages.renderer.FeedItemOwner
-import io.github.aedev.flow.innertube.pages.renderer.distinctKey
-import io.github.aedev.flow.innertube.pages.renderer.toFeedItem
-import io.github.aedev.flow.innertube.pages.renderer.toFeedShelf
-import io.github.aedev.flow.innertube.pages.stringOrNull
+import com.arubr.smsvcodes.innertube.pages.arrayOrNull
+import com.arubr.smsvcodes.innertube.pages.objectOrNull
+import com.arubr.smsvcodes.innertube.pages.renderer.FeedItemOwner
+import com.arubr.smsvcodes.innertube.pages.renderer.distinctKey
+import com.arubr.smsvcodes.innertube.pages.renderer.toFeedItem
+import com.arubr.smsvcodes.innertube.pages.renderer.toFeedShelf
+import com.arubr.smsvcodes.innertube.pages.stringOrNull
 import kotlinx.serialization.json.JsonArray
 import kotlinx.serialization.json.JsonElement
 import kotlinx.serialization.json.JsonObject

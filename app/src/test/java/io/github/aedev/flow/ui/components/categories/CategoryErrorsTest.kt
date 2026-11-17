@@ -1,7 +1,7 @@
-package io.github.aedev.flow.ui.components.categories
+package com.arubr.smsvcodes.ui.components.categories
 
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.R
+import com.arubr.smsvcodes.R
 import io.ktor.client.plugins.ResponseException
 import io.ktor.client.statement.HttpResponse
 import io.ktor.http.HttpStatusCode

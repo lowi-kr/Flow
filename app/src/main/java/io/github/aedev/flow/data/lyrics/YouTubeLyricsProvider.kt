@@ -1,6 +1,6 @@
-package io.github.aedev.flow.data.lyrics
+package com.arubr.smsvcodes.data.lyrics
 
-import io.github.aedev.flow.innertube.YouTube
+import com.arubr.smsvcodes.innertube.YouTube
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 

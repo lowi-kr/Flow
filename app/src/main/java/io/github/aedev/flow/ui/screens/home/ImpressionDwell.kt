@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.home
+package com.arubr.smsvcodes.ui.screens.home
 
 import androidx.compose.foundation.lazy.grid.LazyGridLayoutInfo
 

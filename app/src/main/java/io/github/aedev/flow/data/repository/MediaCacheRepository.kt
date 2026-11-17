@@ -1,4 +1,4 @@
-package io.github.aedev.flow.data.repository
+package com.arubr.smsvcodes.data.repository
 
 import android.content.Context
 import android.util.Log
@@ -9,10 +9,10 @@ import androidx.media3.datasource.cache.SimpleCache
 import coil3.ImageLoader
 import dagger.Lazy
 import dagger.hilt.android.qualifiers.ApplicationContext
-import io.github.aedev.flow.data.lyrics.LyricsCacheManager
-import io.github.aedev.flow.di.MusicCache
-import io.github.aedev.flow.di.PlayerCache
-import io.github.aedev.flow.innertube.YouTube
+import com.arubr.smsvcodes.data.lyrics.LyricsCacheManager
+import com.arubr.smsvcodes.di.MusicCache
+import com.arubr.smsvcodes.di.PlayerCache
+import com.arubr.smsvcodes.innertube.YouTube
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import okhttp3.OkHttpClient

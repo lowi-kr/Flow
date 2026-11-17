@@ -1,4 +1,4 @@
-package io.github.aedev.flow.sync2.data
+package com.arubr.smsvcodes.sync2.data
 
 import androidx.room.ColumnInfo
 import androidx.room.Dao
@@ -7,9 +7,9 @@ import androidx.room.PrimaryKey
 import androidx.room.Query
 import androidx.room.Transaction
 import androidx.room.Upsert
-import io.github.aedev.flow.sync2.roster.Entry
-import io.github.aedev.flow.sync2.roster.canonicalEntry
-import io.github.aedev.flow.sync2.roster.parseEntry
+import com.arubr.smsvcodes.sync2.roster.Entry
+import com.arubr.smsvcodes.sync2.roster.canonicalEntry
+import com.arubr.smsvcodes.sync2.roster.parseEntry
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.map

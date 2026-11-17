@@ -1,7 +1,7 @@
-package io.github.aedev.flow.ui.screens.settings.index
+package com.arubr.smsvcodes.ui.screens.settings.index
 
-import io.github.aedev.flow.ui.components.settings.SettingEntry
-import io.github.aedev.flow.ui.components.settings.SettingsDestination
+import com.arubr.smsvcodes.ui.components.settings.SettingEntry
+import com.arubr.smsvcodes.ui.components.settings.SettingsDestination
 
 /**
  * Which settings are new (#1676). Flow notices a key it has not seen before on its own, so nothing has

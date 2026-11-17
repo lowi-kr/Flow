@@ -1,4 +1,4 @@
-package io.github.aedev.flow.data.update
+package com.arubr.smsvcodes.data.update
 
 private const val REPO_URL = "https://github.com/Flow-Tube/Flow"
 private const val GITHUB_URL = "https://github.com"

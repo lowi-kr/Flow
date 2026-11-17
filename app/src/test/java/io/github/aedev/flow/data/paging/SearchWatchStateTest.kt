@@ -1,9 +1,9 @@
-package io.github.aedev.flow.data.paging
+package com.arubr.smsvcodes.data.paging
 
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.data.local.WatchedThreshold
-import io.github.aedev.flow.data.local.dao.WatchProgress
-import io.github.aedev.flow.data.model.Video
+import com.arubr.smsvcodes.data.local.WatchedThreshold
+import com.arubr.smsvcodes.data.local.dao.WatchProgress
+import com.arubr.smsvcodes.data.model.Video
 import org.junit.Test
 
 class SearchWatchStateTest {

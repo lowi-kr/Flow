@@ -1,9 +1,9 @@
-package io.github.aedev.flow.ui.components.videoplayer.overlay
+package com.arubr.smsvcodes.ui.components.videoplayer.overlay
 
-import io.github.aedev.flow.data.local.SponsorBlockAction
-import io.github.aedev.flow.data.model.SponsorBlockSegment
-import io.github.aedev.flow.player.sponsorblock.SponsorBlockActionPolicy
-import io.github.aedev.flow.player.sponsorblock.SponsorBlockSegmentResolver
+import com.arubr.smsvcodes.data.local.SponsorBlockAction
+import com.arubr.smsvcodes.data.model.SponsorBlockSegment
+import com.arubr.smsvcodes.player.sponsorblock.SponsorBlockActionPolicy
+import com.arubr.smsvcodes.player.sponsorblock.SponsorBlockSegmentResolver
 
 /** How long after a video's content begins the jump to its highlight is offered. */
 private const val HIGHLIGHT_BUTTON_WINDOW_SEC = 10f

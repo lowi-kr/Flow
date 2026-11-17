@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.player.state
+package com.arubr.smsvcodes.ui.screens.player.state
 
 import android.content.Context
 import androidx.compose.runtime.Composable
@@ -6,18 +6,18 @@ import androidx.compose.runtime.Stable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
-import io.github.aedev.flow.data.local.DEFAULT_SPEED_SWIPE_STEP
-import io.github.aedev.flow.data.local.DEFAULT_SPHERICAL_DRAG_SPEED
-import io.github.aedev.flow.data.local.DoubleTapSeekZone
-import io.github.aedev.flow.data.local.FullscreenSidePanelWidth
-import io.github.aedev.flow.data.local.GestureOverlayStyle
-import io.github.aedev.flow.data.local.HomeFeedColumns
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.data.local.PlayerRelatedCardStyle
-import io.github.aedev.flow.data.local.SpeedSwipeSide
-import io.github.aedev.flow.data.local.SponsorBlockSkipButtonStyle
-import io.github.aedev.flow.player.stream.CaptionTrackResolver
-import io.github.aedev.flow.ui.components.videoplayer.subtitle.SubtitleStyle
+import com.arubr.smsvcodes.data.local.DEFAULT_SPEED_SWIPE_STEP
+import com.arubr.smsvcodes.data.local.DEFAULT_SPHERICAL_DRAG_SPEED
+import com.arubr.smsvcodes.data.local.DoubleTapSeekZone
+import com.arubr.smsvcodes.data.local.FullscreenSidePanelWidth
+import com.arubr.smsvcodes.data.local.GestureOverlayStyle
+import com.arubr.smsvcodes.data.local.HomeFeedColumns
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.data.local.PlayerRelatedCardStyle
+import com.arubr.smsvcodes.data.local.SpeedSwipeSide
+import com.arubr.smsvcodes.data.local.SponsorBlockSkipButtonStyle
+import com.arubr.smsvcodes.player.stream.CaptionTrackResolver
+import com.arubr.smsvcodes.ui.components.videoplayer.subtitle.SubtitleStyle
 
 /**
  * One snapshot of every [PlayerPreferences] flow the video player overlay reads, plus the store

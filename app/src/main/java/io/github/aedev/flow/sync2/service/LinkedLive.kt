@@ -1,15 +1,15 @@
-package io.github.aedev.flow.sync2.service
+package com.arubr.smsvcodes.sync2.service
 
 import android.util.Log
-import io.github.aedev.flow.di.ApplicationScope
-import io.github.aedev.flow.sync2.data.GroupRecord
-import io.github.aedev.flow.sync2.data.LinkedDatabase
-import io.github.aedev.flow.sync2.data.serverUrl
-import io.github.aedev.flow.sync2.device.DeviceKeys
-import io.github.aedev.flow.sync2.live.LiveChannel
-import io.github.aedev.flow.sync2.live.LiveDevices
-import io.github.aedev.flow.sync2.live.LiveTransport
-import io.github.aedev.flow.sync2.store.ServerStore
+import com.arubr.smsvcodes.di.ApplicationScope
+import com.arubr.smsvcodes.sync2.data.GroupRecord
+import com.arubr.smsvcodes.sync2.data.LinkedDatabase
+import com.arubr.smsvcodes.sync2.data.serverUrl
+import com.arubr.smsvcodes.sync2.device.DeviceKeys
+import com.arubr.smsvcodes.sync2.live.LiveChannel
+import com.arubr.smsvcodes.sync2.live.LiveDevices
+import com.arubr.smsvcodes.sync2.live.LiveTransport
+import com.arubr.smsvcodes.sync2.store.ServerStore
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.CompletableDeferred
 import kotlinx.coroutines.CoroutineScope

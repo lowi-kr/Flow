@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.tv.components
+package com.arubr.smsvcodes.ui.tv.components
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.expandHorizontally
@@ -52,12 +52,12 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.Density
 import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.ui.components.PlayingWaveform
-import io.github.aedev.flow.ui.components.layout.navigation.FlowTab
-import io.github.aedev.flow.ui.components.layout.navigation.icon
-import io.github.aedev.flow.ui.components.music.common.LocalMusicNowPlayingAnimates
-import io.github.aedev.flow.ui.tv.navigation.TV_SETTINGS_ROUTE
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.ui.components.PlayingWaveform
+import com.arubr.smsvcodes.ui.components.layout.navigation.FlowTab
+import com.arubr.smsvcodes.ui.components.layout.navigation.icon
+import com.arubr.smsvcodes.ui.components.music.common.LocalMusicNowPlayingAnimates
+import com.arubr.smsvcodes.ui.tv.navigation.TV_SETTINGS_ROUTE
 
 /**
  * The TV navigation rail: M3's wide rail with the user's tabs and Settings at its foot. It expands

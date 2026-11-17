@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.settings.downloads
+package com.arubr.smsvcodes.ui.screens.settings.downloads
 
 import com.google.common.truth.Truth.assertThat
 import org.junit.Test

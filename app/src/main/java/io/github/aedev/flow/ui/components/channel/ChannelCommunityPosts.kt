@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.channel
+package com.arubr.smsvcodes.ui.components.channel
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.PaddingValues
@@ -17,12 +17,12 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.innertube.pages.renderer.CommunityPost
-import io.github.aedev.flow.ui.components.shared.FlowFeedProgress
-import io.github.aedev.flow.ui.components.shared.FlowLoadingIndicator
-import io.github.aedev.flow.ui.components.shared.MediaPostCard
-import io.github.aedev.flow.ui.screens.channel.ChannelRequestErrorState
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.innertube.pages.renderer.CommunityPost
+import com.arubr.smsvcodes.ui.components.shared.FlowFeedProgress
+import com.arubr.smsvcodes.ui.components.shared.FlowLoadingIndicator
+import com.arubr.smsvcodes.ui.components.shared.MediaPostCard
+import com.arubr.smsvcodes.ui.screens.channel.ChannelRequestErrorState
 
 @Composable
 internal fun ChannelCommunityPosts(

@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.shared
+package com.arubr.smsvcodes.ui.components.shared
 
 import androidx.annotation.StringRes
 import androidx.compose.foundation.background
@@ -39,8 +39,8 @@ import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.local.MiniBarSwipeAction
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.local.MiniBarSwipeAction
 import kotlin.math.abs
 
 private const val DISABLED_CONTENT_ALPHA = 0.38f

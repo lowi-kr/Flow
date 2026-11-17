@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.library
+package com.arubr.smsvcodes.ui.components.library
 
 import android.text.format.Formatter
 import androidx.compose.foundation.lazy.items
@@ -11,9 +11,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.Dp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.local.dao.DownloadCollectionSummary
-import io.github.aedev.flow.ui.components.shared.FlowAlertDialog
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.local.dao.DownloadCollectionSummary
+import com.arubr.smsvcodes.ui.components.shared.FlowAlertDialog
 
 /**
  * The playlists and albums downloaded as one item, above the loose downloads of the same tab. A

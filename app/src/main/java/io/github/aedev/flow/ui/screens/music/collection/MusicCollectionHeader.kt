@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.music.collection
+package com.arubr.smsvcodes.ui.screens.music.collection
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -56,10 +56,10 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
-import io.github.aedev.flow.R
-import io.github.aedev.flow.ui.components.layout.LocalFlowBottomInsets
-import io.github.aedev.flow.ui.components.shared.connectedButtonShapes
-import io.github.aedev.flow.ui.components.shared.flowHeroArtworkSize
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.ui.components.layout.LocalFlowBottomInsets
+import com.arubr.smsvcodes.ui.components.shared.connectedButtonShapes
+import com.arubr.smsvcodes.ui.components.shared.flowHeroArtworkSize
 
 private const val DESCRIPTION_COLLAPSED_LINES = 2
 private val DownloadProgressSize: Dp = 28.dp

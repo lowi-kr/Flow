@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.videoplayer.controls
+package com.arubr.smsvcodes.ui.components.videoplayer.controls
 
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -14,11 +14,11 @@ import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.graphics.drawscope.clipRect
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.innertube.models.response.HeatmapMarker
-import io.github.aedev.flow.innertube.models.response.VideoHeatmap
-import io.github.aedev.flow.ui.theme.PlayerHeatmapCurve
-import io.github.aedev.flow.ui.theme.PlayerHeatmapCurveEdge
-import io.github.aedev.flow.ui.theme.PlayerHeatmapCurvePeak
+import com.arubr.smsvcodes.innertube.models.response.HeatmapMarker
+import com.arubr.smsvcodes.innertube.models.response.VideoHeatmap
+import com.arubr.smsvcodes.ui.theme.PlayerHeatmapCurve
+import com.arubr.smsvcodes.ui.theme.PlayerHeatmapCurveEdge
+import com.arubr.smsvcodes.ui.theme.PlayerHeatmapCurvePeak
 
 /** Height of the rewatch curve above the bar. YouTube's own spec tops out at 40dp; 28 suits a phone. */
 internal val SeekHeatmapHeight: Dp = 28.dp

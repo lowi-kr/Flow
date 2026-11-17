@@ -1,4 +1,4 @@
-package io.github.aedev.flow.data.localmedia
+package com.arubr.smsvcodes.data.localmedia
 
 import android.content.Context
 import android.content.Intent
@@ -7,10 +7,10 @@ import android.provider.DocumentsContract
 import android.provider.OpenableColumns
 import android.util.Log
 import dagger.hilt.android.qualifiers.ApplicationContext
-import io.github.aedev.flow.player.stream.CaptionFormat
-import io.github.aedev.flow.player.stream.CaptionSource
-import io.github.aedev.flow.player.stream.ResolvedCaption
-import io.github.aedev.flow.utils.PerformanceDispatcher
+import com.arubr.smsvcodes.player.stream.CaptionFormat
+import com.arubr.smsvcodes.player.stream.CaptionSource
+import com.arubr.smsvcodes.player.stream.ResolvedCaption
+import com.arubr.smsvcodes.utils.PerformanceDispatcher
 import kotlinx.coroutines.withContext
 import java.io.File
 import java.util.Locale

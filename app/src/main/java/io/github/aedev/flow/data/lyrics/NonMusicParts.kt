@@ -1,4 +1,4 @@
-package io.github.aedev.flow.data.lyrics
+package com.arubr.smsvcodes.data.lyrics
 
 /** A stretch of a music video with no song playing, on the video's clock. */
 internal data class NonMusicPart(

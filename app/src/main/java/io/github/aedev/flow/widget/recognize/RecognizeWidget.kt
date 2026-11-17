@@ -1,4 +1,4 @@
-package io.github.aedev.flow.widget.recognize
+package com.arubr.smsvcodes.widget.recognize
 
 import android.content.Context
 import androidx.compose.runtime.Composable
@@ -30,15 +30,15 @@ import androidx.glance.layout.padding
 import androidx.glance.layout.size
 import androidx.glance.layout.width
 import androidx.glance.text.Text
-import io.github.aedev.flow.R
-import io.github.aedev.flow.widget.core.action.WidgetDeepLink
-import io.github.aedev.flow.widget.core.image.ShapeDecor
-import io.github.aedev.flow.widget.core.image.WidgetShape
-import io.github.aedev.flow.widget.core.theme.FlowGlanceTheme
-import io.github.aedev.flow.widget.core.theme.WidgetDimens
-import io.github.aedev.flow.widget.core.theme.WidgetText
-import io.github.aedev.flow.widget.core.theme.widgetColorsFlow
-import io.github.aedev.flow.widget.core.theme.widgetSurface
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.widget.core.action.WidgetDeepLink
+import com.arubr.smsvcodes.widget.core.image.ShapeDecor
+import com.arubr.smsvcodes.widget.core.image.WidgetShape
+import com.arubr.smsvcodes.widget.core.theme.FlowGlanceTheme
+import com.arubr.smsvcodes.widget.core.theme.WidgetDimens
+import com.arubr.smsvcodes.widget.core.theme.WidgetText
+import com.arubr.smsvcodes.widget.core.theme.widgetColorsFlow
+import com.arubr.smsvcodes.widget.core.theme.widgetSurface
 import kotlinx.coroutines.flow.first
 
 /** One tap to identify a song: the whole tile is the button, labelled once it is wide enough. */

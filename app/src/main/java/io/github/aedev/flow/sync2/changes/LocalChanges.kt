@@ -1,13 +1,13 @@
-package io.github.aedev.flow.sync2.changes
+package com.arubr.smsvcodes.sync2.changes
 
-import io.github.aedev.flow.data.local.LikedVideosRepository
-import io.github.aedev.flow.data.local.SubscriptionRepository
-import io.github.aedev.flow.data.localmedia.LocalMediaIds
-import io.github.aedev.flow.player.EnhancedMusicPlayerManager
-import io.github.aedev.flow.player.GlobalPlayerState
-import io.github.aedev.flow.sync.mapping.LikesMapper
-import io.github.aedev.flow.sync.mapping.SubscribedChannelsMapper
-import io.github.aedev.flow.sync.protocol.SyncCollection
+import com.arubr.smsvcodes.data.local.LikedVideosRepository
+import com.arubr.smsvcodes.data.local.SubscriptionRepository
+import com.arubr.smsvcodes.data.localmedia.LocalMediaIds
+import com.arubr.smsvcodes.player.EnhancedMusicPlayerManager
+import com.arubr.smsvcodes.player.GlobalPlayerState
+import com.arubr.smsvcodes.sync.mapping.LikesMapper
+import com.arubr.smsvcodes.sync.mapping.SubscribedChannelsMapper
+import com.arubr.smsvcodes.sync.protocol.SyncCollection
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.distinctUntilChanged

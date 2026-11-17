@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui
+package com.arubr.smsvcodes.ui
 
 import androidx.compose.runtime.*
 import androidx.navigation.NavGraphBuilder
@@ -6,18 +6,18 @@ import androidx.navigation.NavHostController
 import androidx.navigation.NavType
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
-import io.github.aedev.flow.data.localmedia.toMusicTrack
-import io.github.aedev.flow.data.localmedia.toVideo
-import io.github.aedev.flow.data.music.model.MusicArtist
-import io.github.aedev.flow.data.music.model.MusicTrack
-import io.github.aedev.flow.data.music.model.toMusicTrack
-import io.github.aedev.flow.data.music.model.toVideo
-import io.github.aedev.flow.ui.components.layout.navigation.FlowTab
-import io.github.aedev.flow.ui.components.layout.navigation.MediaNavigator
-import io.github.aedev.flow.ui.screens.music.EnhancedMusicScreen
-import io.github.aedev.flow.ui.screens.music.MusicViewModel
-import io.github.aedev.flow.ui.screens.music.sharedMusicPlayerViewModel
-import io.github.aedev.flow.ui.screens.player.VideoPlayerViewModel
+import com.arubr.smsvcodes.data.localmedia.toMusicTrack
+import com.arubr.smsvcodes.data.localmedia.toVideo
+import com.arubr.smsvcodes.data.music.model.MusicArtist
+import com.arubr.smsvcodes.data.music.model.MusicTrack
+import com.arubr.smsvcodes.data.music.model.toMusicTrack
+import com.arubr.smsvcodes.data.music.model.toVideo
+import com.arubr.smsvcodes.ui.components.layout.navigation.FlowTab
+import com.arubr.smsvcodes.ui.components.layout.navigation.MediaNavigator
+import com.arubr.smsvcodes.ui.screens.music.EnhancedMusicScreen
+import com.arubr.smsvcodes.ui.screens.music.MusicViewModel
+import com.arubr.smsvcodes.ui.screens.music.sharedMusicPlayerViewModel
+import com.arubr.smsvcodes.ui.screens.player.VideoPlayerViewModel
 
 /** The music tab and every page reached from it: search, recognition, browse, artists and collections. */
 internal fun NavGraphBuilder.musicRoutes(
@@ -57,7 +57,7 @@ internal fun NavGraphBuilder.musicRoutes(
             },
             onPlaylistClick = mediaNavigator::openMusicPlaylist,
             onAllPlaylistsClick = {
-                navController.navigate("playlists?kind=${io.github.aedev.flow.ui.components.shared.MediaKind.Music.name}")
+                navController.navigate("playlists?kind=${com.arubr.smsvcodes.ui.components.shared.MediaKind.Music.name}")
             },
             onAllSubscriptionsClick = {
                 currentRoute.value = FlowTab.Subscriptions.route
@@ -78,7 +78,7 @@ internal fun NavGraphBuilder.musicRoutes(
 
     composable("moodsAndGenres") {
         currentRoute.value = "moodsAndGenres"
-        io.github.aedev.flow.ui.screens.music.MoodsAndGenresScreen(
+        com.arubr.smsvcodes.ui.screens.music.MoodsAndGenresScreen(
             onBackClick = { navController.popBackStack() },
             onGenreClick = { item ->
                 val encodedParams = android.net.Uri.encode(item.endpoint.params ?: "")
@@ -104,7 +104,7 @@ internal fun NavGraphBuilder.musicRoutes(
         val musicPlayerViewModel = sharedMusicPlayerViewModel()
         val initialQuery = backStackEntry.arguments?.getString("query")
 
-        io.github.aedev.flow.ui.screens.music.MusicSearchScreen(
+        com.arubr.smsvcodes.ui.screens.music.MusicSearchScreen(
             initialQuery = initialQuery,
             onBackClick = { navController.popBackStack() },
             onTrackClick = { track, queue, source ->
@@ -135,9 +135,9 @@ internal fun NavGraphBuilder.musicRoutes(
 
         val musicPlayerViewModel = sharedMusicPlayerViewModel()
 
-        fun playRecognized(result: io.github.aedev.flow.data.recognition.RecognitionResult) {
+        fun playRecognized(result: com.arubr.smsvcodes.data.recognition.RecognitionResult) {
             val track =
-                io.github.aedev.flow.ui.screens.recognition.RecognitionViewModel
+                com.arubr.smsvcodes.ui.screens.recognition.RecognitionViewModel
                     .toMusicTrack(result) ?: return
             musicPlayerViewModel.loadAndPlayTrack(track, listOf(track), "Recognized")
             onMusicStarted()
@@ -148,12 +148,12 @@ internal fun NavGraphBuilder.musicRoutes(
             artist: String,
         ) {
             val query =
-                io.github.aedev.flow.ui.screens.recognition.RecognitionViewModel
+                com.arubr.smsvcodes.ui.screens.recognition.RecognitionViewModel
                     .searchQueryFor(title, artist)
             navController.navigate("musicSearch?query=${android.net.Uri.encode(query)}")
         }
 
-        io.github.aedev.flow.ui.screens.recognition.RecognitionScreen(
+        com.arubr.smsvcodes.ui.screens.recognition.RecognitionScreen(
             onBackClick = { navController.popBackStack() },
             onHistoryClick = { navController.navigate("recognitionHistory") },
             onPlay = { result -> playRecognized(result) },
@@ -167,7 +167,7 @@ internal fun NavGraphBuilder.musicRoutes(
 
         val musicPlayerViewModel = sharedMusicPlayerViewModel()
 
-        io.github.aedev.flow.ui.screens.recognition.RecognitionHistoryScreen(
+        com.arubr.smsvcodes.ui.screens.recognition.RecognitionHistoryScreen(
             onBackClick = { navController.popBackStack() },
             onItemClick = { item ->
                 val videoId = item.youtubeVideoId
@@ -185,7 +185,7 @@ internal fun NavGraphBuilder.musicRoutes(
                     onMusicStarted()
                 } else {
                     val query =
-                        io.github.aedev.flow.ui.screens.recognition.RecognitionViewModel
+                        com.arubr.smsvcodes.ui.screens.recognition.RecognitionViewModel
                             .searchQueryFor(item.title, item.artist)
                     navController.navigate("musicSearch?query=${android.net.Uri.encode(query)}")
                 }
@@ -210,7 +210,7 @@ internal fun NavGraphBuilder.musicRoutes(
 
         val musicPlayerViewModel = sharedMusicPlayerViewModel()
 
-        io.github.aedev.flow.ui.screens.music.YouTubeBrowseScreen(
+        com.arubr.smsvcodes.ui.screens.music.YouTubeBrowseScreen(
             onBackClick = { navController.popBackStack() },
             onSongClick = { song ->
                 val track =
@@ -246,7 +246,7 @@ internal fun NavGraphBuilder.musicRoutes(
     ) { backStackEntry ->
         val channelId = backStackEntry.arguments?.getString("channelId") ?: return@composable
         val musicPlayerViewModel = sharedMusicPlayerViewModel()
-        io.github.aedev.flow.ui.screens.music.ArtistRoute(
+        com.arubr.smsvcodes.ui.screens.music.ArtistRoute(
             channelId = channelId,
             onBackClick = { navController.popBackStack() },
             onTrackClick = { track, queue ->
@@ -290,11 +290,11 @@ internal fun NavGraphBuilder.musicRoutes(
         // channelId is available if needed contextually
 
         val musicViewModel: MusicViewModel =
-            io.github.aedev.flow.ui.screens.music
+            com.arubr.smsvcodes.ui.screens.music
                 .sharedMusicViewModel()
         val musicPlayerViewModel = sharedMusicPlayerViewModel()
 
-        io.github.aedev.flow.ui.screens.music.ArtistItemsScreen(
+        com.arubr.smsvcodes.ui.screens.music.ArtistItemsScreen(
             browseId = browseId,
             params = params,
             onBackClick = { navController.popBackStack() },
@@ -330,9 +330,9 @@ internal fun NavGraphBuilder.musicRoutes(
     ) { backStackEntry ->
         if (backStackEntry.arguments?.getString("playlistId") == null) return@composable
         val musicPlayerViewModel = sharedMusicPlayerViewModel()
-        io.github.aedev.flow.ui.screens.music.collection.MusicCollectionScreen(
+        com.arubr.smsvcodes.ui.screens.music.collection.MusicCollectionScreen(
             callbacks =
-                io.github.aedev.flow.ui.screens.music.collection.MusicCollectionCallbacks(
+                com.arubr.smsvcodes.ui.screens.music.collection.MusicCollectionCallbacks(
                     onBackClick = { navController.popBackStack() },
                     onTrackClick = { track, queue, sourceName ->
                         musicPlayerViewModel.loadAndPlayTrack(track, queue, sourceName)

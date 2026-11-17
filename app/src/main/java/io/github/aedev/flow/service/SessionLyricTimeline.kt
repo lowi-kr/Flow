@@ -1,6 +1,6 @@
-package io.github.aedev.flow.service
+package com.arubr.smsvcodes.service
 
-import io.github.aedev.flow.data.lyrics.LyricsEntry
+import com.arubr.smsvcodes.data.lyrics.LyricsEntry
 import java.text.BreakIterator
 import kotlin.math.abs
 import kotlin.math.roundToInt

@@ -1,8 +1,8 @@
-package io.github.aedev.flow.sync.mapping
+package com.arubr.smsvcodes.sync.mapping
 
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.data.local.entity.PlaylistEntity
-import io.github.aedev.flow.sync.canonical.CanonicalPlaylist
+import com.arubr.smsvcodes.data.local.entity.PlaylistEntity
+import com.arubr.smsvcodes.sync.canonical.CanonicalPlaylist
 import org.junit.Test
 
 class PlaylistMapperTest {

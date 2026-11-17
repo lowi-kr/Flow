@@ -1,9 +1,9 @@
-package io.github.aedev.flow.data.repository
+package com.arubr.smsvcodes.data.repository
 
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.innertube.models.response.WatchMetadataResponse
-import io.github.aedev.flow.innertube.pages.YouTubeCountParser
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.innertube.models.response.WatchMetadataResponse
+import com.arubr.smsvcodes.innertube.pages.YouTubeCountParser
 import kotlinx.serialization.json.Json
 import org.junit.Test
 

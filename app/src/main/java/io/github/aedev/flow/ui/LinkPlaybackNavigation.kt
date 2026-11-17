@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui
+package com.arubr.smsvcodes.ui
 
 import android.net.Uri
 import androidx.compose.foundation.layout.Box
@@ -11,15 +11,15 @@ import androidx.navigation.NavHostController
 import androidx.navigation.NavType
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.innertube.pages.isMix
-import io.github.aedev.flow.player.GlobalPlayerState
-import io.github.aedev.flow.ui.components.videoplayer.PlayerDraggableState
-import io.github.aedev.flow.ui.screens.music.sharedMusicPlayerViewModel
-import io.github.aedev.flow.ui.screens.player.VideoPlayerViewModel
-import io.github.aedev.flow.ui.screens.player.state.VideoPlayerUiState
-import io.github.aedev.flow.ui.screens.player.state.shouldExpandInsteadOfPlaying
-import io.github.aedev.flow.ui.screens.playlists.LinkedPlaylistViewModel
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.innertube.pages.isMix
+import com.arubr.smsvcodes.player.GlobalPlayerState
+import com.arubr.smsvcodes.ui.components.videoplayer.PlayerDraggableState
+import com.arubr.smsvcodes.ui.screens.music.sharedMusicPlayerViewModel
+import com.arubr.smsvcodes.ui.screens.player.VideoPlayerViewModel
+import com.arubr.smsvcodes.ui.screens.player.state.VideoPlayerUiState
+import com.arubr.smsvcodes.ui.screens.player.state.shouldExpandInsteadOfPlaying
+import com.arubr.smsvcodes.ui.screens.playlists.LinkedPlaylistViewModel
 
 /** Routes a link from another app opens to start playback; each plays, then leaves at once. */
 internal fun NavGraphBuilder.linkPlaybackRoutes(

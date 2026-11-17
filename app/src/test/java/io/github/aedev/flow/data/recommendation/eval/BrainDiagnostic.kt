@@ -5,18 +5,18 @@
  * Test-source-set only — never shipped in the APK.
  */
 
-package io.github.aedev.flow.data.recommendation.eval
+package com.arubr.smsvcodes.data.recommendation.eval
 
-import io.github.aedev.flow.data.recommendation.FlowPersona
-import io.github.aedev.flow.data.recommendation.NeuroClusters
-import io.github.aedev.flow.data.recommendation.NeuroDiscovery
-import io.github.aedev.flow.data.recommendation.NeuroMaintenance
-import io.github.aedev.flow.data.recommendation.NeuroScoring
-import io.github.aedev.flow.data.recommendation.NeuroStorage
-import io.github.aedev.flow.data.recommendation.NeuroTokenizer
-import io.github.aedev.flow.data.recommendation.NeuroTopicCatalog
-import io.github.aedev.flow.data.recommendation.UserBrain
-import io.github.aedev.flow.data.recommendation.toUserBrain
+import com.arubr.smsvcodes.data.recommendation.FlowPersona
+import com.arubr.smsvcodes.data.recommendation.NeuroClusters
+import com.arubr.smsvcodes.data.recommendation.NeuroDiscovery
+import com.arubr.smsvcodes.data.recommendation.NeuroMaintenance
+import com.arubr.smsvcodes.data.recommendation.NeuroScoring
+import com.arubr.smsvcodes.data.recommendation.NeuroStorage
+import com.arubr.smsvcodes.data.recommendation.NeuroTokenizer
+import com.arubr.smsvcodes.data.recommendation.NeuroTopicCatalog
+import com.arubr.smsvcodes.data.recommendation.UserBrain
+import com.arubr.smsvcodes.data.recommendation.toUserBrain
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json

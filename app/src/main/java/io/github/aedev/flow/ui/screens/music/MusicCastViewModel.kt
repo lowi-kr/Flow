@@ -1,12 +1,12 @@
-package io.github.aedev.flow.ui.screens.music
+package com.arubr.smsvcodes.ui.screens.music
 
 import android.content.Context
 import androidx.lifecycle.ViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
-import io.github.aedev.flow.player.dlna.DlnaCastManager
-import io.github.aedev.flow.player.dlna.DlnaDevice
-import io.github.aedev.flow.player.dlna.DlnaMusicDriver
+import com.arubr.smsvcodes.player.dlna.DlnaCastManager
+import com.arubr.smsvcodes.player.dlna.DlnaDevice
+import com.arubr.smsvcodes.player.dlna.DlnaMusicDriver
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import javax.inject.Inject

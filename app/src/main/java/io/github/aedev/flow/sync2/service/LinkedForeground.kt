@@ -1,16 +1,16 @@
-package io.github.aedev.flow.sync2.service
+package com.arubr.smsvcodes.sync2.service
 
 import android.content.Context
 import androidx.lifecycle.DefaultLifecycleObserver
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.ProcessLifecycleOwner
 import dagger.hilt.android.qualifiers.ApplicationContext
-import io.github.aedev.flow.di.ApplicationScope
-import io.github.aedev.flow.sync2.data.LinkedDatabase
-import io.github.aedev.flow.sync2.lan.LanSync
-import io.github.aedev.flow.sync2.live.Handoff
-import io.github.aedev.flow.sync2.live.NowPlaying
-import io.github.aedev.flow.sync2.live.RemoteDriver
+import com.arubr.smsvcodes.di.ApplicationScope
+import com.arubr.smsvcodes.sync2.data.LinkedDatabase
+import com.arubr.smsvcodes.sync2.lan.LanSync
+import com.arubr.smsvcodes.sync2.live.Handoff
+import com.arubr.smsvcodes.sync2.live.NowPlaying
+import com.arubr.smsvcodes.sync2.live.RemoteDriver
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.flow.MutableStateFlow

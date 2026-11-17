@@ -1,6 +1,6 @@
-package io.github.aedev.flow.player.dlna
+package com.arubr.smsvcodes.player.dlna
 
-import io.github.aedev.flow.utils.LanAddress
+import com.arubr.smsvcodes.utils.LanAddress
 import java.net.Inet4Address
 import java.net.NetworkInterface
 

@@ -1,15 +1,15 @@
-package io.github.aedev.flow.widget.core.action
+package com.arubr.smsvcodes.widget.core.action
 
 import android.appwidget.AppWidgetManager
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
-import io.github.aedev.flow.MainActivity
-import io.github.aedev.flow.ui.ON_REPEAT_SHUFFLE_ROUTE
-import io.github.aedev.flow.ui.musicCollectionRoute
-import io.github.aedev.flow.ui.musicPlayerRoute
-import io.github.aedev.flow.ui.widgetPlaylistRoute
-import io.github.aedev.flow.widget.config.WidgetConfigActivity
+import com.arubr.smsvcodes.MainActivity
+import com.arubr.smsvcodes.ui.ON_REPEAT_SHUFFLE_ROUTE
+import com.arubr.smsvcodes.ui.musicCollectionRoute
+import com.arubr.smsvcodes.ui.musicPlayerRoute
+import com.arubr.smsvcodes.ui.widgetPlaylistRoute
+import com.arubr.smsvcodes.widget.config.WidgetConfigActivity
 
 /**
  * Single source of truth for widget-tap intents into [MainActivity].
@@ -96,7 +96,7 @@ object WidgetDeepLink {
         Intent(context, MainActivity::class.java).apply {
             // Custom action (not ACTION_VIEW): MainActivity.handleIntent must read our
             // extras, not try to parse the uniqueness-only data Uri as a YouTube URL.
-            action = "io.github.aedev.flow.widget.OPEN"
+            action = "com.arubr.smsvcodes.widget.OPEN"
             data = Uri.parse("flow://widget/$path")
             addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
         }

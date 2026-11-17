@@ -1,16 +1,16 @@
-package io.github.aedev.flow.ui.components.equalizer
+package com.arubr.smsvcodes.ui.components.equalizer
 
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.res.stringResource
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.audio.eq.BuiltInEqPresets
-import io.github.aedev.flow.data.audio.eq.EqFilterType
-import io.github.aedev.flow.data.audio.eq.EqMode
-import io.github.aedev.flow.data.audio.eq.EqState
-import io.github.aedev.flow.data.audio.eq.GraphicEq
-import io.github.aedev.flow.data.audio.eq.userPreset
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.audio.eq.BuiltInEqPresets
+import com.arubr.smsvcodes.data.audio.eq.EqFilterType
+import com.arubr.smsvcodes.data.audio.eq.EqMode
+import com.arubr.smsvcodes.data.audio.eq.EqState
+import com.arubr.smsvcodes.data.audio.eq.GraphicEq
+import com.arubr.smsvcodes.data.audio.eq.userPreset
 import java.util.Locale
 import kotlin.math.abs
 import kotlin.math.roundToInt

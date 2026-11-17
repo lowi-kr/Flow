@@ -1,9 +1,9 @@
-package io.github.aedev.flow.ui.components.music.search
+package com.arubr.smsvcodes.ui.components.music.search
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.res.stringResource
-import io.github.aedev.flow.R
-import io.github.aedev.flow.innertube.YouTube.SearchFilter
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.innertube.YouTube.SearchFilter
 
 /** Every filter the music search can show, in the order used when YouTube names none. */
 internal val DefaultMusicSearchFilters =

@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.shorts
+package com.arubr.smsvcodes.ui.components.shorts
 
 import android.widget.Toast
 import androidx.compose.foundation.BorderStroke
@@ -33,21 +33,21 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.model.ShortLinkedVideo
-import io.github.aedev.flow.data.model.ShortVideo
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.ui.components.PlayingWaveform
-import io.github.aedev.flow.ui.components.layout.navigation.LocalMediaNavigator
-import io.github.aedev.flow.ui.components.shared.ChannelAvatarImage
-import io.github.aedev.flow.ui.components.shared.ChannelOrganizeTarget
-import io.github.aedev.flow.ui.components.shared.FlowSubscribeButton
-import io.github.aedev.flow.ui.components.shared.FlowSubscribeButtonSize
-import io.github.aedev.flow.ui.components.shared.rememberChannelOrganizeActions
-import io.github.aedev.flow.ui.components.shared.videoMetadataLine
-import io.github.aedev.flow.ui.theme.PlayerScrimContent
-import io.github.aedev.flow.ui.theme.PlayerScrimPanel
-import io.github.aedev.flow.utils.YouTubeLink
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.model.ShortLinkedVideo
+import com.arubr.smsvcodes.data.model.ShortVideo
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.ui.components.PlayingWaveform
+import com.arubr.smsvcodes.ui.components.layout.navigation.LocalMediaNavigator
+import com.arubr.smsvcodes.ui.components.shared.ChannelAvatarImage
+import com.arubr.smsvcodes.ui.components.shared.ChannelOrganizeTarget
+import com.arubr.smsvcodes.ui.components.shared.FlowSubscribeButton
+import com.arubr.smsvcodes.ui.components.shared.FlowSubscribeButtonSize
+import com.arubr.smsvcodes.ui.components.shared.rememberChannelOrganizeActions
+import com.arubr.smsvcodes.ui.components.shared.videoMetadataLine
+import com.arubr.smsvcodes.ui.theme.PlayerScrimContent
+import com.arubr.smsvcodes.ui.theme.PlayerScrimPanel
+import com.arubr.smsvcodes.utils.YouTubeLink
 
 private val AvatarSize = 36.dp
 private val ChannelRowSpacing = 8.dp

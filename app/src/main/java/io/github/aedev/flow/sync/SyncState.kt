@@ -1,7 +1,7 @@
-package io.github.aedev.flow.sync
+package com.arubr.smsvcodes.sync
 
-import io.github.aedev.flow.sync.protocol.ApplyStats
-import io.github.aedev.flow.sync.protocol.TransferSummary
+import com.arubr.smsvcodes.sync.protocol.ApplyStats
+import com.arubr.smsvcodes.sync.protocol.TransferSummary
 
 /** UI-facing state of a sync session, emitted by [SyncManager] as a single StateFlow. */
 sealed interface SyncState {

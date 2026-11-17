@@ -1,17 +1,17 @@
-package io.github.aedev.flow.ui.screens.player
+package com.arubr.smsvcodes.ui.screens.player
 
 import app.cash.turbine.test
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.comments.CommentsPageResult
-import io.github.aedev.flow.data.local.ChannelSubscription
-import io.github.aedev.flow.data.model.Comment
-import io.github.aedev.flow.data.video.DownloadedVideo
-import io.github.aedev.flow.innertube.YouTube
-import io.github.aedev.flow.player.GlobalPlayerState
-import io.github.aedev.flow.player.state.EnhancedPlayerState
-import io.github.aedev.flow.player.stream.InnerTubeVideoStreamExtractor
-import io.github.aedev.flow.ui.screens.player.VideoPlayerViewModelHarness.Companion.video
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.comments.CommentsPageResult
+import com.arubr.smsvcodes.data.local.ChannelSubscription
+import com.arubr.smsvcodes.data.model.Comment
+import com.arubr.smsvcodes.data.video.DownloadedVideo
+import com.arubr.smsvcodes.innertube.YouTube
+import com.arubr.smsvcodes.player.GlobalPlayerState
+import com.arubr.smsvcodes.player.state.EnhancedPlayerState
+import com.arubr.smsvcodes.player.stream.InnerTubeVideoStreamExtractor
+import com.arubr.smsvcodes.ui.screens.player.VideoPlayerViewModelHarness.Companion.video
 import io.mockk.Called
 import io.mockk.clearAllMocks
 import io.mockk.coEvery
@@ -81,7 +81,7 @@ class VideoPlayerViewModelFetchCountsTest {
             coEvery { harness.videoDownloadManager.findLocalCopy("vid_dl") } returns
                 DownloadedVideo(video = row, filePath = "/tmp/vid_dl.mp4")
             coEvery { harness.repository.enrichFromWatchMetadata(any()) } answers {
-                firstArg<io.github.aedev.flow.data.model.Video>().copy(title = "Watch title", channelId = "UC_watch")
+                firstArg<com.arubr.smsvcodes.data.model.Video>().copy(title = "Watch title", channelId = "UC_watch")
             }
             val viewModel = newViewModel()
             forgetRecordedCalls()

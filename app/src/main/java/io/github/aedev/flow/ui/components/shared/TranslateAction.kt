@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.shared
+package com.arubr.smsvcodes.ui.components.shared
 
 import android.content.Context
 import android.widget.Toast
@@ -7,11 +7,11 @@ import androidx.compose.runtime.Stable
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.ui.platform.LocalContext
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.translation.TextTranslator
-import io.github.aedev.flow.data.translation.Translation
-import io.github.aedev.flow.data.translation.TranslationResult
-import io.github.aedev.flow.utils.TranslateIntents
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.translation.TextTranslator
+import com.arubr.smsvcodes.data.translation.Translation
+import com.arubr.smsvcodes.data.translation.TranslationResult
+import com.arubr.smsvcodes.utils.TranslateIntents
 
 /** The activity's translator, installed by MainActivity; null in previews, where Translate hands text to an app. */
 val LocalTextTranslator = staticCompositionLocalOf<TextTranslator?> { null }

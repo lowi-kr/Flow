@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.videoplayer.sheet
+package com.arubr.smsvcodes.ui.components.videoplayer.sheet
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.size
@@ -17,9 +17,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.player.state.SubtitleOption
-import io.github.aedev.flow.ui.components.shared.FlowDropdownFilterChip
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.player.state.SubtitleOption
+import com.arubr.smsvcodes.ui.components.shared.FlowDropdownFilterChip
 
 /** Picks which caption track the transcript is read from, without touching the video's subtitles. */
 @Composable

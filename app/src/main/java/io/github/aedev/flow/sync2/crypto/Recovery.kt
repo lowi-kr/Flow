@@ -1,4 +1,4 @@
-package io.github.aedev.flow.sync2.crypto
+package com.arubr.smsvcodes.sync2.crypto
 
 import cash.z.ecc.android.bip39.Mnemonics
 

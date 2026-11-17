@@ -1,4 +1,4 @@
-package io.github.aedev.flow.data.local.dao
+package com.arubr.smsvcodes.data.local.dao
 
 data class ChannelLatestUploadRow(
     val channelId: String,

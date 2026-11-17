@@ -1,4 +1,4 @@
-package io.github.aedev.flow.sync2.crypto
+package com.arubr.smsvcodes.sync2.crypto
 
 /** A member's key pairs: this device's own, or the recovery key while it is in use. */
 class MemberSecrets(

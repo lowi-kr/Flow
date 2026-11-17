@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.videoplayer.ambient
+package com.arubr.smsvcodes.ui.components.videoplayer.ambient
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -27,9 +27,9 @@ import androidx.lifecycle.compose.LocalLifecycleOwner
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.media3.common.util.UnstableApi
 import androidx.media3.ui.PlayerView
-import io.github.aedev.flow.player.DEFAULT_VIDEO_ASPECT_RATIO
-import io.github.aedev.flow.player.EnhancedPlayerManager
-import io.github.aedev.flow.ui.theme.PlayerScrim
+import com.arubr.smsvcodes.player.DEFAULT_VIDEO_ASPECT_RATIO
+import com.arubr.smsvcodes.player.EnhancedPlayerManager
+import com.arubr.smsvcodes.ui.theme.PlayerScrim
 import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow

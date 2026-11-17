@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.library
+package com.arubr.smsvcodes.ui.components.library
 
 import androidx.annotation.StringRes
 import androidx.compose.material.icons.Icons
@@ -16,7 +16,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.res.vectorResource
-import io.github.aedev.flow.R
+import com.arubr.smsvcodes.R
 
 /** Every Library section, each of which the viewer can hide. The names are stored, so they must never be renamed. */
 internal enum class LibrarySection(

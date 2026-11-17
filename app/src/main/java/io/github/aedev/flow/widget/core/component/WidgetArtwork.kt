@@ -1,4 +1,4 @@
-package io.github.aedev.flow.widget.core.component
+package com.arubr.smsvcodes.widget.core.component
 
 import android.graphics.Bitmap
 import androidx.annotation.DrawableRes
@@ -18,9 +18,9 @@ import androidx.glance.layout.fillMaxSize
 import androidx.glance.layout.padding
 import androidx.glance.layout.size
 import androidx.glance.text.Text
-import io.github.aedev.flow.widget.core.theme.WidgetDimens
-import io.github.aedev.flow.widget.core.theme.WidgetText
-import io.github.aedev.flow.widget.core.theme.innerCorners
+import com.arubr.smsvcodes.widget.core.theme.WidgetDimens
+import com.arubr.smsvcodes.widget.core.theme.WidgetText
+import com.arubr.smsvcodes.widget.core.theme.innerCorners
 
 /** Artwork or a thumbnail on the launcher's inner radius, with a tonal placeholder until it loads. */
 @Composable

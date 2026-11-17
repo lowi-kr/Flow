@@ -1,10 +1,10 @@
-package io.github.aedev.flow.notification
+package com.arubr.smsvcodes.notification
 
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.local.LocalDataManager
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.local.LocalDataManager
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.first

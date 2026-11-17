@@ -1,4 +1,4 @@
-package io.github.aedev.flow.player
+package com.arubr.smsvcodes.player
 
 import androidx.annotation.OptIn
 import androidx.media3.common.util.UnstableApi

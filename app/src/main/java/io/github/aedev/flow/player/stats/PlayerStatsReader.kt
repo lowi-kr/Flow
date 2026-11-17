@@ -1,4 +1,4 @@
-package io.github.aedev.flow.player.stats
+package com.arubr.smsvcodes.player.stats
 
 import android.graphics.Rect
 import android.os.Build

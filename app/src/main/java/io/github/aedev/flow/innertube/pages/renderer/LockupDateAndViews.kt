@@ -1,6 +1,6 @@
-package io.github.aedev.flow.innertube.pages.renderer
+package com.arubr.smsvcodes.innertube.pages.renderer
 
-import io.github.aedev.flow.utils.relativedate.RelativeUploadDateParser
+import com.arubr.smsvcodes.utils.relativedate.RelativeUploadDateParser
 
 internal data class LockupDateAndViews(
     val viewsText: String?,

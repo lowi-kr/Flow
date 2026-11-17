@@ -1,10 +1,10 @@
-package io.github.aedev.flow.ui.screens.settings.playback
+package com.arubr.smsvcodes.ui.screens.settings.playback
 
 import dagger.hilt.android.lifecycle.HiltViewModel
-import io.github.aedev.flow.data.local.BufferProfile
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.player.cache.DiskReadAheadPolicy
-import io.github.aedev.flow.ui.screens.settings.SettingsViewModel
+import com.arubr.smsvcodes.data.local.BufferProfile
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.player.cache.DiskReadAheadPolicy
+import com.arubr.smsvcodes.ui.screens.settings.SettingsViewModel
 import javax.inject.Inject
 
 /** The video player's buffer: a preset profile or four custom durations, and the disk read-ahead. */

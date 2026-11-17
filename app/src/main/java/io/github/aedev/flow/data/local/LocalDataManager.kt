@@ -1,4 +1,4 @@
-package io.github.aedev.flow.data.local
+package com.arubr.smsvcodes.data.local
 
 import android.content.Context
 import androidx.datastore.core.DataStore
@@ -6,17 +6,17 @@ import androidx.datastore.preferences.core.*
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import dagger.hilt.android.qualifiers.ApplicationContext
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.model.Channel
-import io.github.aedev.flow.data.model.Playlist
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.data.profile.StoreScope
-import io.github.aedev.flow.data.wellbeing.DailyLimitStore
-import io.github.aedev.flow.ui.theme.CustomTheme
-import io.github.aedev.flow.ui.theme.ThemeMode
-import io.github.aedev.flow.ui.theme.ThemeVariant
-import io.github.aedev.flow.ui.theme.canonicalFamily
-import io.github.aedev.flow.ui.theme.defaultVariant
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.model.Channel
+import com.arubr.smsvcodes.data.model.Playlist
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.data.profile.StoreScope
+import com.arubr.smsvcodes.data.wellbeing.DailyLimitStore
+import com.arubr.smsvcodes.ui.theme.CustomTheme
+import com.arubr.smsvcodes.ui.theme.ThemeMode
+import com.arubr.smsvcodes.ui.theme.ThemeVariant
+import com.arubr.smsvcodes.ui.theme.canonicalFamily
+import com.arubr.smsvcodes.ui.theme.defaultVariant
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.map

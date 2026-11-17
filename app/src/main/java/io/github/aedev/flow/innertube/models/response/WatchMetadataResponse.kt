@@ -1,8 +1,8 @@
-package io.github.aedev.flow.innertube.models.response
+package com.arubr.smsvcodes.innertube.models.response
 
-import io.github.aedev.flow.data.model.VideoCollaborator
-import io.github.aedev.flow.innertube.pages.renderer.collaboratorDialog
-import io.github.aedev.flow.utils.relativedate.RelativeUploadDateParser
+import com.arubr.smsvcodes.data.model.VideoCollaborator
+import com.arubr.smsvcodes.innertube.pages.renderer.collaboratorDialog
+import com.arubr.smsvcodes.utils.relativedate.RelativeUploadDateParser
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.Transient
 import kotlinx.serialization.json.JsonObject

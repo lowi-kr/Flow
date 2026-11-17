@@ -1,4 +1,4 @@
-package io.github.aedev.flow.sync2.store
+package com.arubr.smsvcodes.sync2.store
 
 private const val REQUESTS = 4096
 private const val OBJECTS = 200_000

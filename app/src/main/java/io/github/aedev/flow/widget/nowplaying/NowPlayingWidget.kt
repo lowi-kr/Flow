@@ -1,4 +1,4 @@
-package io.github.aedev.flow.widget.nowplaying
+package com.arubr.smsvcodes.widget.nowplaying
 
 import android.content.Context
 import android.os.SystemClock
@@ -12,14 +12,14 @@ import androidx.glance.appwidget.GlanceAppWidgetReceiver
 import androidx.glance.appwidget.SizeMode
 import androidx.glance.appwidget.provideContent
 import androidx.glance.color.ColorProviders
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.widget.core.image.WidgetImageLoader
-import io.github.aedev.flow.widget.core.state.nowPlayingSnapshotFlow
-import io.github.aedev.flow.widget.core.theme.FlowGlanceTheme
-import io.github.aedev.flow.widget.core.theme.artworkColorProviders
-import io.github.aedev.flow.widget.core.theme.bakedCornerRadiusPx
-import io.github.aedev.flow.widget.core.theme.dpToPx
-import io.github.aedev.flow.widget.core.theme.widgetColorsFlow
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.widget.core.image.WidgetImageLoader
+import com.arubr.smsvcodes.widget.core.state.nowPlayingSnapshotFlow
+import com.arubr.smsvcodes.widget.core.theme.FlowGlanceTheme
+import com.arubr.smsvcodes.widget.core.theme.artworkColorProviders
+import com.arubr.smsvcodes.widget.core.theme.bakedCornerRadiusPx
+import com.arubr.smsvcodes.widget.core.theme.dpToPx
+import com.arubr.smsvcodes.widget.core.theme.widgetColorsFlow
 import kotlinx.coroutines.flow.first
 
 class NowPlayingWidget : GlanceAppWidget() {

@@ -1,13 +1,13 @@
-package io.github.aedev.flow.innertube.pages
+package com.arubr.smsvcodes.innertube.pages
 
-import io.github.aedev.flow.innertube.pages.InnerTubeJson.ALBUM
-import io.github.aedev.flow.innertube.pages.InnerTubeJson.ARTIST
-import io.github.aedev.flow.innertube.pages.InnerTubeJson.ATV
-import io.github.aedev.flow.innertube.pages.InnerTubeJson.OMV
-import io.github.aedev.flow.innertube.pages.InnerTubeJson.browseEndpoint
-import io.github.aedev.flow.innertube.pages.InnerTubeJson.queueRow
-import io.github.aedev.flow.innertube.pages.InnerTubeJson.run
-import io.github.aedev.flow.innertube.pages.InnerTubeJson.separator
+import com.arubr.smsvcodes.innertube.pages.InnerTubeJson.ALBUM
+import com.arubr.smsvcodes.innertube.pages.InnerTubeJson.ARTIST
+import com.arubr.smsvcodes.innertube.pages.InnerTubeJson.ATV
+import com.arubr.smsvcodes.innertube.pages.InnerTubeJson.OMV
+import com.arubr.smsvcodes.innertube.pages.InnerTubeJson.browseEndpoint
+import com.arubr.smsvcodes.innertube.pages.InnerTubeJson.queueRow
+import com.arubr.smsvcodes.innertube.pages.InnerTubeJson.run
+import com.arubr.smsvcodes.innertube.pages.InnerTubeJson.separator
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNull
 import org.junit.Test

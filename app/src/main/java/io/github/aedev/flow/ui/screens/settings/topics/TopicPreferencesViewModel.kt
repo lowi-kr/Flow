@@ -1,10 +1,10 @@
-package io.github.aedev.flow.ui.screens.settings.topics
+package com.arubr.smsvcodes.ui.screens.settings.topics
 
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
-import io.github.aedev.flow.data.recommendation.NeuroTopicCatalog
-import io.github.aedev.flow.data.recommendation.TopicPreferencesRepository
-import io.github.aedev.flow.ui.screens.settings.SettingsViewModel
+import com.arubr.smsvcodes.data.recommendation.NeuroTopicCatalog
+import com.arubr.smsvcodes.data.recommendation.TopicPreferencesRepository
+import com.arubr.smsvcodes.ui.screens.settings.SettingsViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow

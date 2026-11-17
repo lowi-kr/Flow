@@ -1,7 +1,7 @@
-package io.github.aedev.flow.player
+package com.arubr.smsvcodes.player
 
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.data.music.model.MusicTrack
+import com.arubr.smsvcodes.data.music.model.MusicTrack
 import org.junit.Test
 
 /**

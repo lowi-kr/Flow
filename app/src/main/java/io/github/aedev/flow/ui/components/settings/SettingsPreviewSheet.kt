@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.settings
+package com.arubr.smsvcodes.ui.components.settings
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -24,8 +24,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.ui.components.shared.FlowSheetHeader
-import io.github.aedev.flow.ui.components.shared.rememberFlowSheetState
+import com.arubr.smsvcodes.ui.components.shared.FlowSheetHeader
+import com.arubr.smsvcodes.ui.components.shared.rememberFlowSheetState
 
 private val OptionHorizontalPadding = 24.dp
 private val OptionVerticalPadding = 12.dp

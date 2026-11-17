@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.videoplayer.settings
+package com.arubr.smsvcodes.ui.components.videoplayer.settings
 
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
@@ -14,23 +14,23 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.local.SPHERICAL_DRAG_SPEEDS
-import io.github.aedev.flow.player.AudioTrackOption
-import io.github.aedev.flow.player.QualityOption
-import io.github.aedev.flow.player.SubtitleOption
-import io.github.aedev.flow.player.state.SubtitleOrigin
-import io.github.aedev.flow.player.stream.VideoCodecUtils
-import io.github.aedev.flow.ui.components.shared.FlowNavRow
-import io.github.aedev.flow.ui.components.shared.FlowRowGroup
-import io.github.aedev.flow.ui.components.shared.FlowSelectionRow
-import io.github.aedev.flow.ui.components.shared.MediaAudioTrackRow
-import io.github.aedev.flow.ui.components.shared.MediaPlaybackSpeedPicker
-import io.github.aedev.flow.ui.components.shared.MediaQualitySelectorContent
-import io.github.aedev.flow.ui.components.shared.MediaQualitySelectorOption
-import io.github.aedev.flow.ui.components.shared.audioTrackFallbackLabel
-import io.github.aedev.flow.ui.components.shared.flowRowGroupShape
-import io.github.aedev.flow.ui.components.shared.playbackSpeedLabel
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.local.SPHERICAL_DRAG_SPEEDS
+import com.arubr.smsvcodes.player.AudioTrackOption
+import com.arubr.smsvcodes.player.QualityOption
+import com.arubr.smsvcodes.player.SubtitleOption
+import com.arubr.smsvcodes.player.state.SubtitleOrigin
+import com.arubr.smsvcodes.player.stream.VideoCodecUtils
+import com.arubr.smsvcodes.ui.components.shared.FlowNavRow
+import com.arubr.smsvcodes.ui.components.shared.FlowRowGroup
+import com.arubr.smsvcodes.ui.components.shared.FlowSelectionRow
+import com.arubr.smsvcodes.ui.components.shared.MediaAudioTrackRow
+import com.arubr.smsvcodes.ui.components.shared.MediaPlaybackSpeedPicker
+import com.arubr.smsvcodes.ui.components.shared.MediaQualitySelectorContent
+import com.arubr.smsvcodes.ui.components.shared.MediaQualitySelectorOption
+import com.arubr.smsvcodes.ui.components.shared.audioTrackFallbackLabel
+import com.arubr.smsvcodes.ui.components.shared.flowRowGroupShape
+import com.arubr.smsvcodes.ui.components.shared.playbackSpeedLabel
 
 @Composable
 internal fun PlayerSettingsQualityPage(
@@ -92,7 +92,7 @@ internal fun PlayerSettingsSpeedPage(
     val context = LocalContext.current
     val playerPrefs =
         remember {
-            io.github.aedev.flow.data.local
+            com.arubr.smsvcodes.data.local
                 .PlayerPreferences(context)
         }
     val customSpeedsEnabled by playerPrefs.customSpeedsEnabled.collectAsState(initial = false)

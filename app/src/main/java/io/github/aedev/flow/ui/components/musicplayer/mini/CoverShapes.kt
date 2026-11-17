@@ -1,12 +1,12 @@
 @file:OptIn(ExperimentalMaterial3ExpressiveApi::class)
 
-package io.github.aedev.flow.ui.components.musicplayer.mini
+package com.arubr.smsvcodes.ui.components.musicplayer.mini
 
 import androidx.compose.material3.ExperimentalMaterial3ExpressiveApi
 import androidx.compose.material3.MaterialShapes
 import androidx.graphics.shapes.RoundedPolygon
-import io.github.aedev.flow.data.local.CoverShape
-import io.github.aedev.flow.ui.components.shared.fittedToCircle
+import com.arubr.smsvcodes.data.local.CoverShape
+import com.arubr.smsvcodes.ui.components.shared.fittedToCircle
 
 /** The library shape behind each [CoverShape]. */
 internal fun CoverShape.materialShape(): RoundedPolygon =

@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.music.collection
+package com.arubr.smsvcodes.ui.screens.music.collection
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.PlaylistAdd
@@ -12,13 +12,13 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.music.model.MusicTrack
-import io.github.aedev.flow.data.music.model.PlaylistDetails
-import io.github.aedev.flow.ui.components.shared.CollectionEditDialog
-import io.github.aedev.flow.ui.components.shared.CollectionTarget
-import io.github.aedev.flow.ui.components.shared.DeleteCollectionDialog
-import io.github.aedev.flow.ui.components.shared.MergeIntoCollectionSheet
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.music.model.MusicTrack
+import com.arubr.smsvcodes.data.music.model.PlaylistDetails
+import com.arubr.smsvcodes.ui.components.shared.CollectionEditDialog
+import com.arubr.smsvcodes.ui.components.shared.CollectionTarget
+import com.arubr.smsvcodes.ui.components.shared.DeleteCollectionDialog
+import com.arubr.smsvcodes.ui.components.shared.MergeIntoCollectionSheet
 
 /** The sheet or dialog a music page has open. */
 internal sealed interface CollectionSheet {

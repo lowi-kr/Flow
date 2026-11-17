@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.settings.home
+package com.arubr.smsvcodes.ui.screens.settings.home
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.outlined.ManageSearch
@@ -29,7 +29,7 @@ import androidx.compose.material.icons.outlined.VolunteerActivism
 import androidx.compose.material.icons.outlined.Widgets
 import androidx.compose.material.icons.outlined.WorkHistory
 import androidx.compose.ui.graphics.vector.ImageVector
-import io.github.aedev.flow.ui.components.settings.SettingsDestination
+import com.arubr.smsvcodes.ui.components.settings.SettingsDestination
 
 /** One distinct icon per settings page, used on its row in the settings list. */
 internal fun destinationIcon(destination: SettingsDestination): ImageVector =

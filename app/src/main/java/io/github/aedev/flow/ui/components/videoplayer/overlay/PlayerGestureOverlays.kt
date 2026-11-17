@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.videoplayer.overlay
+package com.arubr.smsvcodes.ui.components.videoplayer.overlay
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.runtime.*
@@ -9,13 +9,13 @@ import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.data.local.GestureOverlayStyle
-import io.github.aedev.flow.data.local.SpeedSwipeSide
-import io.github.aedev.flow.ui.components.shared.BrightnessOverlay
-import io.github.aedev.flow.ui.components.shared.SpeedSwipeOverlay
-import io.github.aedev.flow.ui.components.shared.VolumeOverlay
-import io.github.aedev.flow.ui.components.shared.centredGestureHudAlignment
-import io.github.aedev.flow.ui.screens.player.state.PlayerScreenState
+import com.arubr.smsvcodes.data.local.GestureOverlayStyle
+import com.arubr.smsvcodes.data.local.SpeedSwipeSide
+import com.arubr.smsvcodes.ui.components.shared.BrightnessOverlay
+import com.arubr.smsvcodes.ui.components.shared.SpeedSwipeOverlay
+import com.arubr.smsvcodes.ui.components.shared.VolumeOverlay
+import com.arubr.smsvcodes.ui.components.shared.centredGestureHudAlignment
+import com.arubr.smsvcodes.ui.screens.player.state.PlayerScreenState
 
 private val HudSideInset = 16.dp
 private val HudTopInset = 12.dp

@@ -1,8 +1,8 @@
-package io.github.aedev.flow.ui.components.shared
+package com.arubr.smsvcodes.ui.components.shared
 
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.data.local.ChannelSubscription
-import io.github.aedev.flow.data.local.notifyingIds
+import com.arubr.smsvcodes.data.local.ChannelSubscription
+import com.arubr.smsvcodes.data.local.notifyingIds
 import org.junit.Test
 
 class SubscriptionBellTest {

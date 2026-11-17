@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.videoplayer.sheet
+package com.arubr.smsvcodes.ui.components.videoplayer.sheet
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.PaddingValues
@@ -19,15 +19,15 @@ import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.ui.components.shared.FlowBottomSheet
-import io.github.aedev.flow.ui.components.shared.FlowSegmentedGap
-import io.github.aedev.flow.ui.components.shared.FlowSheetHeader
-import io.github.aedev.flow.ui.components.shared.defaultSheetExpandedHeight
-import io.github.aedev.flow.ui.components.shared.flowSegmentShape
-import io.github.aedev.flow.ui.components.shared.rememberFlowBottomSheetState
-import io.github.aedev.flow.ui.components.shared.rememberMediaArtworkTint
-import io.github.aedev.flow.utils.formatDurationMillis
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.ui.components.shared.FlowBottomSheet
+import com.arubr.smsvcodes.ui.components.shared.FlowSegmentedGap
+import com.arubr.smsvcodes.ui.components.shared.FlowSheetHeader
+import com.arubr.smsvcodes.ui.components.shared.defaultSheetExpandedHeight
+import com.arubr.smsvcodes.ui.components.shared.flowSegmentShape
+import com.arubr.smsvcodes.ui.components.shared.rememberFlowBottomSheetState
+import com.arubr.smsvcodes.ui.components.shared.rememberMediaArtworkTint
+import com.arubr.smsvcodes.utils.formatDurationMillis
 import org.schabi.newpipe.extractor.stream.StreamSegment
 
 @Composable

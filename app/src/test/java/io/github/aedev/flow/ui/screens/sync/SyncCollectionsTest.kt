@@ -1,7 +1,7 @@
-package io.github.aedev.flow.ui.screens.sync
+package com.arubr.smsvcodes.ui.screens.sync
 
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.sync.protocol.SyncCollection
+import com.arubr.smsvcodes.sync.protocol.SyncCollection
 import org.junit.Test
 
 class SyncCollectionsTest {

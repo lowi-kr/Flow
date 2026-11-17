@@ -1,14 +1,14 @@
-package io.github.aedev.flow.innertube.pages
+package com.arubr.smsvcodes.innertube.pages
 
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.data.repository.WatchMetadataVideoMapper
-import io.github.aedev.flow.data.repository.decodeWatchMetadata
-import io.github.aedev.flow.innertube.pages.channel.ChannelTabKind
-import io.github.aedev.flow.innertube.pages.channel.toChannelTabContent
-import io.github.aedev.flow.innertube.pages.renderer.FeedItemOwner
-import io.github.aedev.flow.innertube.pages.renderer.videoOrNull
-import io.github.aedev.flow.innertube.pages.search.resultVideos
-import io.github.aedev.flow.innertube.pages.search.toSearchResultsPage
+import com.arubr.smsvcodes.data.repository.WatchMetadataVideoMapper
+import com.arubr.smsvcodes.data.repository.decodeWatchMetadata
+import com.arubr.smsvcodes.innertube.pages.channel.ChannelTabKind
+import com.arubr.smsvcodes.innertube.pages.channel.toChannelTabContent
+import com.arubr.smsvcodes.innertube.pages.renderer.FeedItemOwner
+import com.arubr.smsvcodes.innertube.pages.renderer.videoOrNull
+import com.arubr.smsvcodes.innertube.pages.search.resultVideos
+import com.arubr.smsvcodes.innertube.pages.search.toSearchResultsPage
 import kotlinx.serialization.json.Json
 import org.junit.Test
 

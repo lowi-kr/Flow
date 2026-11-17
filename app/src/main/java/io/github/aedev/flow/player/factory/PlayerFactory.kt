@@ -1,4 +1,4 @@
-package io.github.aedev.flow.player.factory
+package com.arubr.smsvcodes.player.factory
 
 import android.content.Context
 import android.util.Log
@@ -18,13 +18,13 @@ import androidx.media3.exoplayer.trackselection.DefaultTrackSelector
 import androidx.media3.exoplayer.upstream.BandwidthMeter
 import androidx.media3.exoplayer.upstream.DefaultBandwidthMeter
 import androidx.media3.exoplayer.util.EventLogger
-import io.github.aedev.flow.BuildConfig
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.player.audio.shouldHandleAudioFocus
-import io.github.aedev.flow.player.config.PlayerConfig
-import io.github.aedev.flow.player.config.VideoSizeCap
-import io.github.aedev.flow.player.renderer.CustomRenderersFactory
-import io.github.aedev.flow.player.subtitle.SubtitleDelay
+import com.arubr.smsvcodes.BuildConfig
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.player.audio.shouldHandleAudioFocus
+import com.arubr.smsvcodes.player.config.PlayerConfig
+import com.arubr.smsvcodes.player.config.VideoSizeCap
+import com.arubr.smsvcodes.player.renderer.CustomRenderersFactory
+import com.arubr.smsvcodes.player.subtitle.SubtitleDelay
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.runBlocking
 

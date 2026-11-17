@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.videoplayer.overlay
+package com.arubr.smsvcodes.ui.components.videoplayer.overlay
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.fadeIn
@@ -12,9 +12,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.ui.theme.PlayerScrimContent
-import io.github.aedev.flow.ui.theme.PlayerScrimPanel
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.ui.theme.PlayerScrimContent
+import com.arubr.smsvcodes.ui.theme.PlayerScrimPanel
 
 /** Says a video includes paid promotion, in YouTube's own wording when it gave one. */
 @Composable

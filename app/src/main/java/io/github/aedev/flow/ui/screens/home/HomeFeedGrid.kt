@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.home
+package com.arubr.smsvcodes.ui.screens.home
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.fillMaxSize
@@ -13,20 +13,20 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.local.VideoHistoryEntry
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.ui.components.FeedGridLayout
-import io.github.aedev.flow.ui.components.home.ContinueWatchingShelf
-import io.github.aedev.flow.ui.components.home.ContinueWatchingShelfDefaults
-import io.github.aedev.flow.ui.components.layout.flowBottomContentPadding
-import io.github.aedev.flow.ui.components.shared.FlowFeedProgress
-import io.github.aedev.flow.ui.components.shared.MediaShortsShelf
-import io.github.aedev.flow.ui.components.shared.card.MediaVideoCard
-import io.github.aedev.flow.ui.components.shared.card.VideoCardLayout
-import io.github.aedev.flow.ui.components.shared.dpadFocusGroup
-import io.github.aedev.flow.ui.components.shared.feedStripCardWidth
-import io.github.aedev.flow.ui.components.shared.rememberFeedGridPlan
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.local.VideoHistoryEntry
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.ui.components.FeedGridLayout
+import com.arubr.smsvcodes.ui.components.home.ContinueWatchingShelf
+import com.arubr.smsvcodes.ui.components.home.ContinueWatchingShelfDefaults
+import com.arubr.smsvcodes.ui.components.layout.flowBottomContentPadding
+import com.arubr.smsvcodes.ui.components.shared.FlowFeedProgress
+import com.arubr.smsvcodes.ui.components.shared.MediaShortsShelf
+import com.arubr.smsvcodes.ui.components.shared.card.MediaVideoCard
+import com.arubr.smsvcodes.ui.components.shared.card.VideoCardLayout
+import com.arubr.smsvcodes.ui.components.shared.dpadFocusGroup
+import com.arubr.smsvcodes.ui.components.shared.feedStripCardWidth
+import com.arubr.smsvcodes.ui.components.shared.rememberFeedGridPlan
 
 private const val FEED_FOOTER_MIN_VIDEOS = 100
 private val FeedTopPadding = 4.dp

@@ -1,4 +1,4 @@
-package io.github.aedev.flow.player
+package com.arubr.smsvcodes.player
 
 object PlayerChannelMetadataPolicy {
     private const val CHANNEL_ID_PREFIX = "UC"

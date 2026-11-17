@@ -1,7 +1,7 @@
-package io.github.aedev.flow.player.stream
+package com.arubr.smsvcodes.player.stream
 
-import io.github.aedev.flow.innertube.models.response.PlayerResponse
-import io.github.aedev.flow.player.stream.InnerTubeVideoStreamExtractor.VideoExtractionResult
+import com.arubr.smsvcodes.innertube.models.response.PlayerResponse
+import com.arubr.smsvcodes.player.stream.InnerTubeVideoStreamExtractor.VideoExtractionResult
 
 /** The video's length from its `/player` response, or null when the response does not say. */
 internal fun VideoExtractionResult.durationMs(): Long? =

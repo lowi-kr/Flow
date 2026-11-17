@@ -1,4 +1,4 @@
-package io.github.aedev.flow.player.state
+package com.arubr.smsvcodes.player.state
 
 /**
  * A subtitle track whose fetch ran out of retries.

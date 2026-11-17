@@ -1,8 +1,8 @@
-package io.github.aedev.flow.ui.components.musicplayer.mini
+package com.arubr.smsvcodes.ui.components.musicplayer.mini
 
 import androidx.annotation.StringRes
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.local.CoverShape
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.local.CoverShape
 
 @StringRes
 internal fun coverShapeLabel(shape: CoverShape): Int =

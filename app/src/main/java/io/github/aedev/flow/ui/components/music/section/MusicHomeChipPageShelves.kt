@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.music.section
+package com.arubr.smsvcodes.ui.components.music.section
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.height
@@ -8,16 +8,16 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.music.model.MUSIC_GENRE_SOURCE_PREFIX
-import io.github.aedev.flow.data.music.model.MusicTrack
-import io.github.aedev.flow.ui.components.music.header.MusicSectionAction
-import io.github.aedev.flow.ui.components.shared.FlowEmptyState
-import io.github.aedev.flow.ui.components.shared.FlowErrorState
-import io.github.aedev.flow.ui.components.shared.FlowFeedProgress
-import io.github.aedev.flow.ui.screens.music.MusicHomeChipPage
-import io.github.aedev.flow.ui.screens.music.MusicHomeChipStatus
-import io.github.aedev.flow.ui.screens.music.isSongShelf
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.music.model.MUSIC_GENRE_SOURCE_PREFIX
+import com.arubr.smsvcodes.data.music.model.MusicTrack
+import com.arubr.smsvcodes.ui.components.music.header.MusicSectionAction
+import com.arubr.smsvcodes.ui.components.shared.FlowEmptyState
+import com.arubr.smsvcodes.ui.components.shared.FlowErrorState
+import com.arubr.smsvcodes.ui.components.shared.FlowFeedProgress
+import com.arubr.smsvcodes.ui.screens.music.MusicHomeChipPage
+import com.arubr.smsvcodes.ui.screens.music.MusicHomeChipStatus
+import com.arubr.smsvcodes.ui.screens.music.isSongShelf
 
 private const val STATE_HEIGHT_FRACTION = 0.6f
 

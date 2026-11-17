@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.player.stage
+package com.arubr.smsvcodes.ui.screens.player.stage
 
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.layout.BoxScope
@@ -7,8 +7,8 @@ import androidx.compose.runtime.derivedStateOf
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.media3.common.util.UnstableApi
-import io.github.aedev.flow.ui.screens.player.state.PlayerCommentsUiState
-import io.github.aedev.flow.ui.screens.player.state.PlayerSheet
+import com.arubr.smsvcodes.ui.screens.player.state.PlayerCommentsUiState
+import com.arubr.smsvcodes.ui.screens.player.state.PlayerSheet
 
 /** What a landscape fullscreen player raises over the video instead of a bottom sheet. */
 @UnstableApi

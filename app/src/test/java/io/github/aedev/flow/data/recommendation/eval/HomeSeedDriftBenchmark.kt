@@ -5,16 +5,16 @@
  * Test-source-set only — never shipped in the APK.
  */
 
-package io.github.aedev.flow.data.recommendation.eval
+package com.arubr.smsvcodes.data.recommendation.eval
 
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.data.recommendation.ContentVector
-import io.github.aedev.flow.data.recommendation.GraphSeedInput
-import io.github.aedev.flow.data.recommendation.GraphSeedSelector
-import io.github.aedev.flow.data.recommendation.GraphSeedSource
-import io.github.aedev.flow.data.recommendation.NeuroScoring
-import io.github.aedev.flow.data.recommendation.NeuroVectorMath
-import io.github.aedev.flow.ui.screens.home.feedSeedInputs
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.data.recommendation.ContentVector
+import com.arubr.smsvcodes.data.recommendation.GraphSeedInput
+import com.arubr.smsvcodes.data.recommendation.GraphSeedSelector
+import com.arubr.smsvcodes.data.recommendation.GraphSeedSource
+import com.arubr.smsvcodes.data.recommendation.NeuroScoring
+import com.arubr.smsvcodes.data.recommendation.NeuroVectorMath
+import com.arubr.smsvcodes.ui.screens.home.feedSeedInputs
 import java.util.Random
 
 /**

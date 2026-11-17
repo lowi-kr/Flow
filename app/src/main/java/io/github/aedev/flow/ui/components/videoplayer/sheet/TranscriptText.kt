@@ -1,7 +1,7 @@
-package io.github.aedev.flow.ui.components.videoplayer.sheet
+package com.arubr.smsvcodes.ui.components.videoplayer.sheet
 
-import io.github.aedev.flow.data.transcript.TranscriptCue
-import io.github.aedev.flow.utils.formatDurationMillis
+import com.arubr.smsvcodes.data.transcript.TranscriptCue
+import com.arubr.smsvcodes.utils.formatDurationMillis
 
 /**
  * The whole transcript as plain text, one line per spoken line, with each chapter's title as a

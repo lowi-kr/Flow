@@ -1,13 +1,13 @@
-package io.github.aedev.flow.sync.apply
+package com.arubr.smsvcodes.sync.apply
 
-import io.github.aedev.flow.sync.canonical.CanonicalLike
-import io.github.aedev.flow.sync.canonical.CanonicalPlaylist
-import io.github.aedev.flow.sync.canonical.CanonicalPlaylistItem
-import io.github.aedev.flow.sync.canonical.CanonicalSetting
-import io.github.aedev.flow.sync.canonical.CanonicalSubscriptionGroup
-import io.github.aedev.flow.sync.canonical.CanonicalWatchHistory
-import io.github.aedev.flow.sync.identity.DeviceIdentity
-import io.github.aedev.flow.sync.identity.Hlc
+import com.arubr.smsvcodes.sync.canonical.CanonicalLike
+import com.arubr.smsvcodes.sync.canonical.CanonicalPlaylist
+import com.arubr.smsvcodes.sync.canonical.CanonicalPlaylistItem
+import com.arubr.smsvcodes.sync.canonical.CanonicalSetting
+import com.arubr.smsvcodes.sync.canonical.CanonicalSubscriptionGroup
+import com.arubr.smsvcodes.sync.canonical.CanonicalWatchHistory
+import com.arubr.smsvcodes.sync.identity.DeviceIdentity
+import com.arubr.smsvcodes.sync.identity.Hlc
 import io.mockk.coEvery
 import io.mockk.mockk
 import io.mockk.slot

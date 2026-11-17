@@ -1,6 +1,6 @@
 @file:OptIn(ExperimentalMaterial3ExpressiveApi::class)
 
-package io.github.aedev.flow.ui.components.musicplayer.mini
+package com.arubr.smsvcodes.ui.components.musicplayer.mini
 
 import androidx.compose.animation.core.Animatable
 import androidx.compose.foundation.background
@@ -45,13 +45,13 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.compose.LocalLifecycleOwner
 import androidx.lifecycle.compose.currentStateAsState
 import coil3.compose.AsyncImage
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.local.CoverShape
-import io.github.aedev.flow.data.local.MiniCoverMotion
-import io.github.aedev.flow.data.local.MiniCoverShape
-import io.github.aedev.flow.ui.components.PlayingWaveform
-import io.github.aedev.flow.ui.theme.ArtworkScrimContent
-import io.github.aedev.flow.ui.theme.ArtworkScrimNowPlaying
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.local.CoverShape
+import com.arubr.smsvcodes.data.local.MiniCoverMotion
+import com.arubr.smsvcodes.data.local.MiniCoverShape
+import com.arubr.smsvcodes.ui.components.PlayingWaveform
+import com.arubr.smsvcodes.ui.theme.ArtworkScrimContent
+import com.arubr.smsvcodes.ui.theme.ArtworkScrimNowPlaying
 import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.isActive
 import kotlinx.coroutines.launch

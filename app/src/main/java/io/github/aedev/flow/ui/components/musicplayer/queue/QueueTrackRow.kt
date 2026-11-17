@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.musicplayer.queue
+package com.arubr.smsvcodes.ui.components.musicplayer.queue
 
 import androidx.compose.animation.animateColorAsState
 import androidx.compose.animation.core.Animatable
@@ -58,14 +58,14 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.IntSize
 import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.music.model.MusicTrack
-import io.github.aedev.flow.ui.components.PlayingWaveform
-import io.github.aedev.flow.ui.components.musicplayer.common.formatTime
-import io.github.aedev.flow.ui.components.musicplayer.motion.QueueRowSwipeGestureHandler
-import io.github.aedev.flow.ui.components.shared.FlowSpinner
-import io.github.aedev.flow.ui.components.shared.LocalDpadNavigation
-import io.github.aedev.flow.ui.components.shared.onMenuKey
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.music.model.MusicTrack
+import com.arubr.smsvcodes.ui.components.PlayingWaveform
+import com.arubr.smsvcodes.ui.components.musicplayer.common.formatTime
+import com.arubr.smsvcodes.ui.components.musicplayer.motion.QueueRowSwipeGestureHandler
+import com.arubr.smsvcodes.ui.components.shared.FlowSpinner
+import com.arubr.smsvcodes.ui.components.shared.LocalDpadNavigation
+import com.arubr.smsvcodes.ui.components.shared.onMenuKey
 
 @OptIn(ExperimentalMaterial3ExpressiveApi::class)
 @Composable

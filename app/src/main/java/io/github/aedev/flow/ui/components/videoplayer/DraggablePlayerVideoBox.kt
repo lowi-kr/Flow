@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.videoplayer
+package com.arubr.smsvcodes.ui.components.videoplayer
 
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.ui.Modifier
@@ -8,10 +8,10 @@ import androidx.compose.ui.graphics.TransformOrigin
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.layout.layout
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.ui.components.videoplayer.motion.DraggablePlayerGeometry
-import io.github.aedev.flow.ui.components.videoplayer.motion.OpenOriginRect
-import io.github.aedev.flow.ui.components.videoplayer.motion.lerpClamped
-import io.github.aedev.flow.ui.theme.PlayerGround
+import com.arubr.smsvcodes.ui.components.videoplayer.motion.DraggablePlayerGeometry
+import com.arubr.smsvcodes.ui.components.videoplayer.motion.OpenOriginRect
+import com.arubr.smsvcodes.ui.components.videoplayer.motion.lerpClamped
+import com.arubr.smsvcodes.ui.theme.PlayerGround
 
 private val MiniPlayerShadowElevation = 8.dp
 

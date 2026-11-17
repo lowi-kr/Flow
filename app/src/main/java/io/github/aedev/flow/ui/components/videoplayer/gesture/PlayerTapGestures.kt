@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.videoplayer.gesture
+package com.arubr.smsvcodes.ui.components.videoplayer.gesture
 
 import android.os.SystemClock
 import androidx.compose.foundation.gestures.awaitEachGesture
@@ -19,7 +19,7 @@ import androidx.compose.ui.input.pointer.isOutOfBounds
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.unit.dp
 import androidx.media3.common.Player
-import io.github.aedev.flow.player.EnhancedPlayerManager
+import com.arubr.smsvcodes.player.EnhancedPlayerManager
 
 private val LongPressBottomExclusion = 40.dp
 private val LongPressBottomExclusionFullscreen = 28.dp

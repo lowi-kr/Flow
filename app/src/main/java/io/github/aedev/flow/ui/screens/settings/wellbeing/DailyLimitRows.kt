@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.settings.wellbeing
+package com.arubr.smsvcodes.ui.screens.settings.wellbeing
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.HourglassBottom
@@ -8,17 +8,17 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.res.stringResource
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.wellbeing.DailyLimitPolicy
-import io.github.aedev.flow.data.wellbeing.DailyLimitSettings
-import io.github.aedev.flow.ui.components.settings.SettingsListScope
-import io.github.aedev.flow.ui.components.settings.choice
-import io.github.aedev.flow.ui.components.settings.switch
-import io.github.aedev.flow.ui.components.shared.FlowAlertDialog
-import io.github.aedev.flow.ui.components.shared.FlowChoice
-import io.github.aedev.flow.ui.components.shared.FlowChoiceDialog
-import io.github.aedev.flow.ui.components.stats.spentTimeLabel
-import io.github.aedev.flow.ui.screens.settings.index.WellbeingIndex
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.wellbeing.DailyLimitPolicy
+import com.arubr.smsvcodes.data.wellbeing.DailyLimitSettings
+import com.arubr.smsvcodes.ui.components.settings.SettingsListScope
+import com.arubr.smsvcodes.ui.components.settings.choice
+import com.arubr.smsvcodes.ui.components.settings.switch
+import com.arubr.smsvcodes.ui.components.shared.FlowAlertDialog
+import com.arubr.smsvcodes.ui.components.shared.FlowChoice
+import com.arubr.smsvcodes.ui.components.shared.FlowChoiceDialog
+import com.arubr.smsvcodes.ui.components.stats.spentTimeLabel
+import com.arubr.smsvcodes.ui.screens.settings.index.WellbeingIndex
 
 private const val MILLIS_PER_MINUTE = 60_000L
 

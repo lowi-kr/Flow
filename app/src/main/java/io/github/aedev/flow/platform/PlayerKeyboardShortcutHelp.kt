@@ -1,12 +1,12 @@
-package io.github.aedev.flow.platform
+package com.arubr.smsvcodes.platform
 
 import android.content.Context
 import android.view.KeyEvent
 import android.view.KeyboardShortcutGroup
 import android.view.KeyboardShortcutInfo
-import io.github.aedev.flow.R
+import com.arubr.smsvcodes.R
 
-/** The player's keys as the system lists them under Meta + /, matching [io.github.aedev.flow.ui.components.shared.MediaKeyMapper]. */
+/** The player's keys as the system lists them under Meta + /, matching [com.arubr.smsvcodes.ui.components.shared.MediaKeyMapper]. */
 object PlayerKeyboardShortcutHelp {
     fun group(context: Context): KeyboardShortcutGroup {
         fun key(

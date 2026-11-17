@@ -1,4 +1,4 @@
-package io.github.aedev.flow.widget.playlist
+package com.arubr.smsvcodes.widget.playlist
 
 import android.app.Application
 import android.content.Context
@@ -9,8 +9,8 @@ import androidx.glance.testing.unit.hasContentDescriptionEqualTo
 import androidx.glance.testing.unit.hasTextEqualTo
 import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import io.github.aedev.flow.data.local.PlaylistRepository
-import io.github.aedev.flow.data.model.Video
+import com.arubr.smsvcodes.data.local.PlaylistRepository
+import com.arubr.smsvcodes.data.model.Video
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.robolectric.annotation.Config

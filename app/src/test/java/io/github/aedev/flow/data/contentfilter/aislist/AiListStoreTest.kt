@@ -1,4 +1,4 @@
-package io.github.aedev.flow.data.contentfilter.aislist
+package com.arubr.smsvcodes.data.contentfilter.aislist
 
 import com.google.common.truth.Truth.assertThat
 import org.junit.Rule

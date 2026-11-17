@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.musicplayer.full
+package com.arubr.smsvcodes.ui.components.musicplayer.full
 
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.foundation.layout.BoxWithConstraints
@@ -28,31 +28,31 @@ import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.min
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
-import io.github.aedev.flow.data.local.MusicPlayerBackgroundStyle
-import io.github.aedev.flow.data.music.model.MusicTrack
-import io.github.aedev.flow.player.EnhancedMusicPlayerManager
-import io.github.aedev.flow.player.SleepTimerManager
-import io.github.aedev.flow.ui.components.musicplayer.common.PlayerBackdropColors
-import io.github.aedev.flow.ui.components.musicplayer.controls.PlayerProgressSlider
-import io.github.aedev.flow.ui.components.musicplayer.lyrics.DEFAULT_LYRICS_TEXT_SIZE
-import io.github.aedev.flow.ui.components.musicplayer.lyrics.LARGE_LYRICS_TEXT_SIZE
-import io.github.aedev.flow.ui.components.musicplayer.lyrics.lyricsBackdrop
-import io.github.aedev.flow.ui.components.musicplayer.motion.MusicSideSwipeHud
-import io.github.aedev.flow.ui.components.musicplayer.motion.musicSideSwipes
-import io.github.aedev.flow.ui.components.musicplayer.motion.rememberMusicSideSwipes
-import io.github.aedev.flow.ui.components.musicplayer.queue.queuePullUpGesture
-import io.github.aedev.flow.ui.components.musicplayer.queue.rememberQueuePullUpState
-import io.github.aedev.flow.ui.components.musicplayer.sheet.PlayerPanel
-import io.github.aedev.flow.ui.components.musicplayer.sheet.PlayerPanelRequestEffect
-import io.github.aedev.flow.ui.components.shared.MediaPalette
-import io.github.aedev.flow.ui.components.shared.MediaPlaybackControls
-import io.github.aedev.flow.ui.components.shared.MediaSleepTimerSheet
-import io.github.aedev.flow.ui.components.shared.SkipDirection
-import io.github.aedev.flow.ui.screens.music.MusicPlayerViewModel
-import io.github.aedev.flow.ui.screens.music.MusicVideoSwitchViewModel
-import io.github.aedev.flow.ui.screens.music.sharedMusicPlayerViewModel
-import io.github.aedev.flow.ui.utils.LocalWindowIsLandscape
-import io.github.aedev.flow.ui.utils.LocalWindowSizeClass
+import com.arubr.smsvcodes.data.local.MusicPlayerBackgroundStyle
+import com.arubr.smsvcodes.data.music.model.MusicTrack
+import com.arubr.smsvcodes.player.EnhancedMusicPlayerManager
+import com.arubr.smsvcodes.player.SleepTimerManager
+import com.arubr.smsvcodes.ui.components.musicplayer.common.PlayerBackdropColors
+import com.arubr.smsvcodes.ui.components.musicplayer.controls.PlayerProgressSlider
+import com.arubr.smsvcodes.ui.components.musicplayer.lyrics.DEFAULT_LYRICS_TEXT_SIZE
+import com.arubr.smsvcodes.ui.components.musicplayer.lyrics.LARGE_LYRICS_TEXT_SIZE
+import com.arubr.smsvcodes.ui.components.musicplayer.lyrics.lyricsBackdrop
+import com.arubr.smsvcodes.ui.components.musicplayer.motion.MusicSideSwipeHud
+import com.arubr.smsvcodes.ui.components.musicplayer.motion.musicSideSwipes
+import com.arubr.smsvcodes.ui.components.musicplayer.motion.rememberMusicSideSwipes
+import com.arubr.smsvcodes.ui.components.musicplayer.queue.queuePullUpGesture
+import com.arubr.smsvcodes.ui.components.musicplayer.queue.rememberQueuePullUpState
+import com.arubr.smsvcodes.ui.components.musicplayer.sheet.PlayerPanel
+import com.arubr.smsvcodes.ui.components.musicplayer.sheet.PlayerPanelRequestEffect
+import com.arubr.smsvcodes.ui.components.shared.MediaPalette
+import com.arubr.smsvcodes.ui.components.shared.MediaPlaybackControls
+import com.arubr.smsvcodes.ui.components.shared.MediaSleepTimerSheet
+import com.arubr.smsvcodes.ui.components.shared.SkipDirection
+import com.arubr.smsvcodes.ui.screens.music.MusicPlayerViewModel
+import com.arubr.smsvcodes.ui.screens.music.MusicVideoSwitchViewModel
+import com.arubr.smsvcodes.ui.screens.music.sharedMusicPlayerViewModel
+import com.arubr.smsvcodes.ui.utils.LocalWindowIsLandscape
+import com.arubr.smsvcodes.ui.utils.LocalWindowSizeClass
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

@@ -1,4 +1,4 @@
-package io.github.aedev.flow.data.playlist
+package com.arubr.smsvcodes.data.playlist
 
 import java.io.BufferedInputStream
 import java.io.ByteArrayOutputStream

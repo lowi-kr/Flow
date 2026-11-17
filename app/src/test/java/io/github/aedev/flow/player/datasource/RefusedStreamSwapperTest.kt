@@ -1,10 +1,10 @@
-package io.github.aedev.flow.player.datasource
+package com.arubr.smsvcodes.player.datasource
 
 import android.net.Uri
 import androidx.media3.datasource.DataSpec
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.innertube.models.response.PlayerResponse
-import io.github.aedev.flow.player.error.StreamDenialKind
+import com.arubr.smsvcodes.innertube.models.response.PlayerResponse
+import com.arubr.smsvcodes.player.error.StreamDenialKind
 import io.mockk.mockk
 import org.junit.Test
 

@@ -1,16 +1,16 @@
-package io.github.aedev.flow.innertube.pages.renderer
+package com.arubr.smsvcodes.innertube.pages.renderer
 
-import io.github.aedev.flow.data.model.Channel
-import io.github.aedev.flow.data.model.Playlist
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.data.model.VideoCollaborator
-import io.github.aedev.flow.innertube.YouTube
-import io.github.aedev.flow.innertube.pages.arrayOrNull
-import io.github.aedev.flow.innertube.pages.objectOrNull
-import io.github.aedev.flow.innertube.pages.parseYouTubeViewCount
-import io.github.aedev.flow.innertube.pages.stringOrNull
-import io.github.aedev.flow.innertube.pages.youtubeText
-import io.github.aedev.flow.utils.ThumbnailUrlResolver
+import com.arubr.smsvcodes.data.model.Channel
+import com.arubr.smsvcodes.data.model.Playlist
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.data.model.VideoCollaborator
+import com.arubr.smsvcodes.innertube.YouTube
+import com.arubr.smsvcodes.innertube.pages.arrayOrNull
+import com.arubr.smsvcodes.innertube.pages.objectOrNull
+import com.arubr.smsvcodes.innertube.pages.parseYouTubeViewCount
+import com.arubr.smsvcodes.innertube.pages.stringOrNull
+import com.arubr.smsvcodes.innertube.pages.youtubeText
+import com.arubr.smsvcodes.utils.ThumbnailUrlResolver
 import kotlinx.serialization.json.JsonObject
 
 private const val LOCKUP_CONTENT_TYPE_COURSE = "LOCKUP_CONTENT_TYPE_COURSE"

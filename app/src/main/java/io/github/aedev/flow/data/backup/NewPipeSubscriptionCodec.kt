@@ -1,6 +1,6 @@
-package io.github.aedev.flow.data.backup
+package com.arubr.smsvcodes.data.backup
 
-import io.github.aedev.flow.data.local.ChannelSubscription
+import com.arubr.smsvcodes.data.local.ChannelSubscription
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json

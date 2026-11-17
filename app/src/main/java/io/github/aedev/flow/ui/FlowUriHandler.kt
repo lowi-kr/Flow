@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui
+package com.arubr.smsvcodes.ui
 
 import android.widget.Toast
 import androidx.compose.runtime.Composable
@@ -7,11 +7,11 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.platform.UriHandler
-import io.github.aedev.flow.R
-import io.github.aedev.flow.innertube.pages.unwrapRedirectUrl
-import io.github.aedev.flow.ui.components.layout.navigation.LocalMediaNavigator
-import io.github.aedev.flow.ui.components.layout.navigation.MediaNavigator
-import io.github.aedev.flow.utils.parseYouTubeLink
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.innertube.pages.unwrapRedirectUrl
+import com.arubr.smsvcodes.ui.components.layout.navigation.LocalMediaNavigator
+import com.arubr.smsvcodes.ui.components.layout.navigation.MediaNavigator
+import com.arubr.smsvcodes.utils.parseYouTubeLink
 
 /**
  * Opens a YouTube link on the page Flow has for it and hands every other link to [platform].

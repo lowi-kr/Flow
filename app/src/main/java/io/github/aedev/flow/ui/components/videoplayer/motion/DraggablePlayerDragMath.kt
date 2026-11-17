@@ -1,7 +1,7 @@
-package io.github.aedev.flow.ui.components.videoplayer.motion
+package com.arubr.smsvcodes.ui.components.videoplayer.motion
 
-import io.github.aedev.flow.ui.components.videoplayer.MiniPlayerCorner
-import io.github.aedev.flow.ui.components.videoplayer.MiniPlayerTuckSide
+import com.arubr.smsvcodes.ui.components.videoplayer.MiniPlayerCorner
+import com.arubr.smsvcodes.ui.components.videoplayer.MiniPlayerTuckSide
 import kotlin.math.abs
 
 /** Upward travel that commits to fullscreen; mirrors the release check. */

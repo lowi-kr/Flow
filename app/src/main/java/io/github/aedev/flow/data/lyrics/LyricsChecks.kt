@@ -1,4 +1,4 @@
-package io.github.aedev.flow.data.lyrics
+package com.arubr.smsvcodes.data.lyrics
 
 /** What a provider's answer is worth: how it is timed, and whether those times can be trusted. */
 internal object LyricsChecks {

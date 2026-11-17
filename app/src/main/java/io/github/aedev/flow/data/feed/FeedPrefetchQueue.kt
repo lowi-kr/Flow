@@ -1,4 +1,4 @@
-package io.github.aedev.flow.data.feed
+package com.arubr.smsvcodes.data.feed
 
 data class FeedPrefetchRequest(
     val generation: Int,

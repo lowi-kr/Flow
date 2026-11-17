@@ -1,4 +1,4 @@
-package io.github.aedev.flow.data.video.downloader
+package com.arubr.smsvcodes.data.video.downloader
 
 /**
  * googlevideo URL handling for ranged downloads, on the raw query string: rebuilding these URLs

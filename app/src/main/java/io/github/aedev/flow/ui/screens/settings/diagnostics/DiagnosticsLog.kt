@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.settings.diagnostics
+package com.arubr.smsvcodes.ui.screens.settings.diagnostics
 
 import androidx.compose.runtime.Immutable
 

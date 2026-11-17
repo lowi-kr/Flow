@@ -1,4 +1,4 @@
-package io.github.aedev.flow.data.music.model
+package com.arubr.smsvcodes.data.music.model
 
 /** A song the audio player can play as music: not a video, an album row, or a clip too short or long. */
 fun MusicTrack.isAudioMusicCandidate(): Boolean {

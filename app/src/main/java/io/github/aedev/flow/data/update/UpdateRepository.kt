@@ -1,8 +1,8 @@
-package io.github.aedev.flow.data.update
+package com.arubr.smsvcodes.data.update
 
 import android.os.Build
-import io.github.aedev.flow.BuildConfig
-import io.github.aedev.flow.data.local.LocalDataManager
+import com.arubr.smsvcodes.BuildConfig
+import com.arubr.smsvcodes.data.local.LocalDataManager
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow

@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.musicplayer.common
+package com.arubr.smsvcodes.ui.components.musicplayer.common
 
 import androidx.compose.material3.ColorScheme
 import androidx.compose.material3.MaterialTheme
@@ -8,11 +8,11 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.platform.LocalContext
-import io.github.aedev.flow.data.local.MusicPlainControlColors
-import io.github.aedev.flow.data.local.MusicPlayerBackgroundStyle
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.ui.components.shared.MediaPalette
-import io.github.aedev.flow.ui.components.shared.rememberMediaPalette
+import com.arubr.smsvcodes.data.local.MusicPlainControlColors
+import com.arubr.smsvcodes.data.local.MusicPlayerBackgroundStyle
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.ui.components.shared.MediaPalette
+import com.arubr.smsvcodes.ui.components.shared.rememberMediaPalette
 
 /**
  * How the full music player looks for the track on show: the cover's palette, the background style

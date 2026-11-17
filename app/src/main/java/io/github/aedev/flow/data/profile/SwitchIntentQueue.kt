@@ -1,12 +1,12 @@
-package io.github.aedev.flow.data.profile
+package com.arubr.smsvcodes.data.profile
 
 import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.util.Log
-import io.github.aedev.flow.MainActivity
-import io.github.aedev.flow.data.playlist.PLAYLIST_FILE_MAX_BYTES
+import com.arubr.smsvcodes.MainActivity
+import com.arubr.smsvcodes.data.playlist.PLAYLIST_FILE_MAX_BYTES
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Deferred
 import kotlinx.coroutines.Dispatchers
@@ -24,7 +24,7 @@ import java.util.concurrent.atomic.AtomicReference
  */
 object SwitchIntentQueue {
     private const val TAG = "SwitchIntentQueue"
-    private const val EXTRA_HELD_PLAYLIST = "io.github.aedev.flow.extra.HELD_PLAYLIST"
+    private const val EXTRA_HELD_PLAYLIST = "com.arubr.smsvcodes.extra.HELD_PLAYLIST"
     private const val HELD_DIR = "held_link"
     private const val HOLD_TIMEOUT_MS = 3_000L
 

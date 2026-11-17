@@ -4,7 +4,7 @@
  * This file is part of Flow (https://github.com/Flow-Tube/Flow).
  */
 
-package io.github.aedev.flow.ui.components.music.section
+package com.arubr.smsvcodes.ui.components.music.section
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.height
@@ -14,17 +14,17 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.music.model.MusicItemType
-import io.github.aedev.flow.data.music.model.MusicPlaylist
-import io.github.aedev.flow.data.music.model.MusicTrack
-import io.github.aedev.flow.data.recommendation.music.MusicTimeBucket
-import io.github.aedev.flow.innertube.pages.HomePage
-import io.github.aedev.flow.innertube.pages.MoodAndGenres
-import io.github.aedev.flow.ui.components.music.sheet.MusicCollectionActionItem
-import io.github.aedev.flow.ui.components.music.sheet.toCollectionActionItem
-import io.github.aedev.flow.ui.components.shared.FlowFeedProgress
-import io.github.aedev.flow.ui.screens.music.MusicUiState
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.music.model.MusicItemType
+import com.arubr.smsvcodes.data.music.model.MusicPlaylist
+import com.arubr.smsvcodes.data.music.model.MusicTrack
+import com.arubr.smsvcodes.data.recommendation.music.MusicTimeBucket
+import com.arubr.smsvcodes.innertube.pages.HomePage
+import com.arubr.smsvcodes.innertube.pages.MoodAndGenres
+import com.arubr.smsvcodes.ui.components.music.sheet.MusicCollectionActionItem
+import com.arubr.smsvcodes.ui.components.music.sheet.toCollectionActionItem
+import com.arubr.smsvcodes.ui.components.shared.FlowFeedProgress
+import com.arubr.smsvcodes.ui.screens.music.MusicUiState
 
 /**
  * Everything the music home feed draws, one section component per block.

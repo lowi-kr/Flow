@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.home
+package com.arubr.smsvcodes.ui.screens.home
 
 /** Fewer cards than this wait for the run's next attempt instead of showing on their own (#1317). */
 internal const val HOME_LOAD_MORE_MIN_CARDS = 4

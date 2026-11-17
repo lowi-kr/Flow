@@ -1,9 +1,9 @@
-package io.github.aedev.flow.ui.components.shared.card
+package com.arubr.smsvcodes.ui.components.shared.card
 
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.data.model.DeArrowResult
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.ui.components.DeArrowLookup
+import com.arubr.smsvcodes.data.model.DeArrowResult
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.ui.components.DeArrowLookup
 import org.junit.Test
 
 class CardThumbnailPolicyTest {

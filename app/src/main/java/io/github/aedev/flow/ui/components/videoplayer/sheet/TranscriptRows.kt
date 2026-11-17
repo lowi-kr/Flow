@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.videoplayer.sheet
+package com.arubr.smsvcodes.ui.components.videoplayer.sheet
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.fadeIn
@@ -45,10 +45,10 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.rememberTextMeasurer
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.transcript.TranscriptCue
-import io.github.aedev.flow.ui.components.shared.MediaArtworkTint
-import io.github.aedev.flow.utils.formatDurationMillis
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.transcript.TranscriptCue
+import com.arubr.smsvcodes.ui.components.shared.MediaArtworkTint
+import com.arubr.smsvcodes.utils.formatDurationMillis
 
 internal val TranscriptHorizontalPadding = 16.dp
 private val RowVerticalPadding = 12.dp

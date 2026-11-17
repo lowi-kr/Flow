@@ -1,4 +1,4 @@
-package io.github.aedev.flow.player.sabr.proto
+package com.arubr.smsvcodes.player.sabr.proto
 
 class ProtobufReader(private val data: ByteArray) {
     private var pos = 0

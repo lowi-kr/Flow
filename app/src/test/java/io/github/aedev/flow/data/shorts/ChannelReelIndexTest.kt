@@ -1,9 +1,9 @@
-package io.github.aedev.flow.data.shorts
+package com.arubr.smsvcodes.data.shorts
 
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.innertube.YouTube
-import io.github.aedev.flow.innertube.pages.channel.ChannelShortsPage
-import io.github.aedev.flow.innertube.pages.reel.ReelLockup
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.innertube.YouTube
+import com.arubr.smsvcodes.innertube.pages.channel.ChannelShortsPage
+import com.arubr.smsvcodes.innertube.pages.reel.ReelLockup
 import io.mockk.coEvery
 import io.mockk.coVerify
 import io.mockk.mockkObject

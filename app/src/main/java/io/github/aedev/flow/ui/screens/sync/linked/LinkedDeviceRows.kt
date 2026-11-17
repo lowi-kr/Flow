@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.sync.linked
+package com.arubr.smsvcodes.ui.screens.sync.linked
 
 import android.text.format.DateUtils
 import androidx.compose.material.icons.Icons
@@ -9,14 +9,14 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.res.stringResource
-import io.github.aedev.flow.R
-import io.github.aedev.flow.sync2.service.LinkedDevice
-import io.github.aedev.flow.ui.components.shared.FlowChoice
-import io.github.aedev.flow.ui.components.shared.FlowChoiceDialog
-import io.github.aedev.flow.ui.components.shared.FlowNavRow
-import io.github.aedev.flow.ui.components.shared.deviceKindIcon
-import io.github.aedev.flow.ui.screens.sync.SyncRowGroup
-import io.github.aedev.flow.ui.screens.sync.SyncSection
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.sync2.service.LinkedDevice
+import com.arubr.smsvcodes.ui.components.shared.FlowChoice
+import com.arubr.smsvcodes.ui.components.shared.FlowChoiceDialog
+import com.arubr.smsvcodes.ui.components.shared.FlowNavRow
+import com.arubr.smsvcodes.ui.components.shared.deviceKindIcon
+import com.arubr.smsvcodes.ui.screens.sync.SyncRowGroup
+import com.arubr.smsvcodes.ui.screens.sync.SyncSection
 
 private enum class AddWay { SHOW_CODE, SCAN_CODE }
 

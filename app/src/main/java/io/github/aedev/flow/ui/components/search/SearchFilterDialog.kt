@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.search
+package com.arubr.smsvcodes.ui.components.search
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -30,16 +30,16 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.local.ContentType
-import io.github.aedev.flow.data.local.Duration
-import io.github.aedev.flow.data.local.SearchFeature
-import io.github.aedev.flow.data.local.SearchFilter
-import io.github.aedev.flow.data.local.SortType
-import io.github.aedev.flow.data.local.UploadDate
-import io.github.aedev.flow.data.local.WatchState
-import io.github.aedev.flow.ui.components.shared.FlowAlertDialog
-import io.github.aedev.flow.ui.components.shared.FlowFilterChip
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.local.ContentType
+import com.arubr.smsvcodes.data.local.Duration
+import com.arubr.smsvcodes.data.local.SearchFeature
+import com.arubr.smsvcodes.data.local.SearchFilter
+import com.arubr.smsvcodes.data.local.SortType
+import com.arubr.smsvcodes.data.local.UploadDate
+import com.arubr.smsvcodes.data.local.WatchState
+import com.arubr.smsvcodes.ui.components.shared.FlowAlertDialog
+import com.arubr.smsvcodes.ui.components.shared.FlowFilterChip
 
 /**
  * Search filters, laid out the way YouTube's own dialog is: one row per single-choice group with

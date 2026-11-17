@@ -1,14 +1,14 @@
-package io.github.aedev.flow.ui.screens.recap.story
+package com.arubr.smsvcodes.ui.screens.recap.story
 
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.data.recommendation.music.MusicStatsStorage
-import io.github.aedev.flow.data.stats.LedgerTime
-import io.github.aedev.flow.data.stats.RecapAggregates
-import io.github.aedev.flow.data.stats.RecapPeriod
-import io.github.aedev.flow.data.stats.VideoMonthRecord
-import io.github.aedev.flow.data.stats.VideoStatsSnapshot
-import io.github.aedev.flow.data.stats.ViewFormat
-import io.github.aedev.flow.ui.screens.recap.RecapRoutes
+import com.arubr.smsvcodes.data.recommendation.music.MusicStatsStorage
+import com.arubr.smsvcodes.data.stats.LedgerTime
+import com.arubr.smsvcodes.data.stats.RecapAggregates
+import com.arubr.smsvcodes.data.stats.RecapPeriod
+import com.arubr.smsvcodes.data.stats.VideoMonthRecord
+import com.arubr.smsvcodes.data.stats.VideoStatsSnapshot
+import com.arubr.smsvcodes.data.stats.ViewFormat
+import com.arubr.smsvcodes.ui.screens.recap.RecapRoutes
 import org.junit.Test
 import java.time.YearMonth
 

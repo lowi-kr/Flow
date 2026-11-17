@@ -1,6 +1,6 @@
-package io.github.aedev.flow.ui.components.search
+package com.arubr.smsvcodes.ui.components.search
 
-import io.github.aedev.flow.data.local.SearchHistoryItem
+import com.arubr.smsvcodes.data.local.SearchHistoryItem
 
 const val SEARCH_HISTORY_LIMIT = 8
 

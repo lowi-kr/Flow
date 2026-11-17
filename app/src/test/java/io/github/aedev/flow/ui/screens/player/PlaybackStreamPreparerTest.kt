@@ -1,16 +1,16 @@
-package io.github.aedev.flow.ui.screens.player
+package com.arubr.smsvcodes.ui.screens.player
 
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.data.local.VideoQuality
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.innertube.models.ResponseContext
-import io.github.aedev.flow.innertube.models.Thumbnail
-import io.github.aedev.flow.innertube.models.Thumbnails
-import io.github.aedev.flow.innertube.models.YouTubeClient
-import io.github.aedev.flow.innertube.models.response.PlayerResponse
-import io.github.aedev.flow.player.stream.CaptionTrackResolver
-import io.github.aedev.flow.player.stream.InnerTubeVideoStreamExtractor
-import io.github.aedev.flow.player.stream.ResolvedPlayback
+import com.arubr.smsvcodes.data.local.VideoQuality
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.innertube.models.ResponseContext
+import com.arubr.smsvcodes.innertube.models.Thumbnail
+import com.arubr.smsvcodes.innertube.models.Thumbnails
+import com.arubr.smsvcodes.innertube.models.YouTubeClient
+import com.arubr.smsvcodes.innertube.models.response.PlayerResponse
+import com.arubr.smsvcodes.player.stream.CaptionTrackResolver
+import com.arubr.smsvcodes.player.stream.InnerTubeVideoStreamExtractor
+import com.arubr.smsvcodes.player.stream.ResolvedPlayback
 import org.junit.Test
 
 /**

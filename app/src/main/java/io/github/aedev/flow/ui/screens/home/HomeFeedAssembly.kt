@@ -1,7 +1,7 @@
-package io.github.aedev.flow.ui.screens.home
+package com.arubr.smsvcodes.ui.screens.home
 
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.data.recommendation.FeedExclusions
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.data.recommendation.FeedExclusions
 
 internal const val FRESH_UPLOAD_MAX_SIGHTINGS = 3
 internal const val HOME_TARGET_SIZE = 40

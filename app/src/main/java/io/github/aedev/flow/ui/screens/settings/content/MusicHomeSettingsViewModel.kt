@@ -1,9 +1,9 @@
-package io.github.aedev.flow.ui.screens.settings.content
+package com.arubr.smsvcodes.ui.screens.settings.content
 
 import dagger.hilt.android.lifecycle.HiltViewModel
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.ui.components.music.section.MusicHomeShelf
-import io.github.aedev.flow.ui.screens.settings.SettingsViewModel
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.ui.components.music.section.MusicHomeShelf
+import com.arubr.smsvcodes.ui.screens.settings.SettingsViewModel
 import kotlinx.coroutines.flow.map
 import javax.inject.Inject
 

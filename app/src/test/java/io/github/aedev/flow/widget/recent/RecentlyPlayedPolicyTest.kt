@@ -1,4 +1,4 @@
-package io.github.aedev.flow.widget.recent
+package com.arubr.smsvcodes.widget.recent
 
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNull

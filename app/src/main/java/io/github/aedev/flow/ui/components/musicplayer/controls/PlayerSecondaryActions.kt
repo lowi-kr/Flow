@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.musicplayer.controls
+package com.arubr.smsvcodes.ui.components.musicplayer.controls
 
 import androidx.compose.animation.animateColorAsState
 import androidx.compose.animation.core.*
@@ -28,9 +28,9 @@ import androidx.compose.ui.hapticfeedback.HapticFeedbackType
 import androidx.compose.ui.platform.LocalHapticFeedback
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.player.RepeatMode
-import io.github.aedev.flow.ui.components.musicplayer.common.readableAccentOn
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.player.RepeatMode
+import com.arubr.smsvcodes.ui.components.musicplayer.common.readableAccentOn
 
 private val SegmentFullRadius = 21.dp
 private val SegmentEdgeRadius = 8.dp

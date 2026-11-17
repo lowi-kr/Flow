@@ -1,18 +1,18 @@
-package io.github.aedev.flow.data.engagement
+package com.arubr.smsvcodes.data.engagement
 
 import android.content.Context
 import dagger.hilt.android.qualifiers.ApplicationContext
-import io.github.aedev.flow.data.local.PlaylistRepository
-import io.github.aedev.flow.data.local.ViewHistory
-import io.github.aedev.flow.data.local.WatchLaterCleanup
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.data.recommendation.BlockedChannelNames
-import io.github.aedev.flow.data.recommendation.FlowNeuroEngine
-import io.github.aedev.flow.data.recommendation.InteractionType
-import io.github.aedev.flow.data.repository.YouTubeRepository
-import io.github.aedev.flow.data.stats.LedgerAction
-import io.github.aedev.flow.data.stats.VideoStatsRecorder
-import io.github.aedev.flow.utils.ThumbnailUrlResolver
+import com.arubr.smsvcodes.data.local.PlaylistRepository
+import com.arubr.smsvcodes.data.local.ViewHistory
+import com.arubr.smsvcodes.data.local.WatchLaterCleanup
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.data.recommendation.BlockedChannelNames
+import com.arubr.smsvcodes.data.recommendation.FlowNeuroEngine
+import com.arubr.smsvcodes.data.recommendation.InteractionType
+import com.arubr.smsvcodes.data.repository.YouTubeRepository
+import com.arubr.smsvcodes.data.stats.LedgerAction
+import com.arubr.smsvcodes.data.stats.VideoStatsRecorder
+import com.arubr.smsvcodes.utils.ThumbnailUrlResolver
 import javax.inject.Inject
 
 /** A channel a block applied to, named as the viewer knows it. */

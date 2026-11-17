@@ -1,10 +1,10 @@
-package io.github.aedev.flow.player.error
+package com.arubr.smsvcodes.player.error
 
 import android.content.Context
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.R
-import io.github.aedev.flow.player.stream.PlaybackBlock
-import io.github.aedev.flow.player.stream.PlaybackBlockedException
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.player.stream.PlaybackBlock
+import com.arubr.smsvcodes.player.stream.PlaybackBlockedException
 import io.mockk.every
 import io.mockk.mockk
 import org.junit.Test

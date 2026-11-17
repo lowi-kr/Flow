@@ -1,4 +1,4 @@
-package io.github.aedev.flow.applock
+package com.arubr.smsvcodes.applock
 
 import com.google.common.truth.Truth.assertThat
 import org.junit.Test

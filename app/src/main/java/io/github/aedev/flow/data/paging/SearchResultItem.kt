@@ -1,9 +1,9 @@
-package io.github.aedev.flow.data.paging
+package com.arubr.smsvcodes.data.paging
 
-import io.github.aedev.flow.data.model.Channel
-import io.github.aedev.flow.data.model.Playlist
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.innertube.pages.renderer.CommunityPost
+import com.arubr.smsvcodes.data.model.Channel
+import com.arubr.smsvcodes.data.model.Playlist
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.innertube.pages.renderer.CommunityPost
 
 /** One row of the search feed: a result, or one of the strips YouTube interleaves between them. */
 sealed interface SearchResultItem {

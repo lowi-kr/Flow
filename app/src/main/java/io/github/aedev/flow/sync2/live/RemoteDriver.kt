@@ -1,11 +1,11 @@
-package io.github.aedev.flow.sync2.live
+package com.arubr.smsvcodes.sync2.live
 
-import io.github.aedev.flow.data.music.model.MusicTrack
-import io.github.aedev.flow.di.ApplicationScope
-import io.github.aedev.flow.player.EnhancedMusicPlayerManager
-import io.github.aedev.flow.player.Followed
-import io.github.aedev.flow.player.PlaybackTarget
-import io.github.aedev.flow.player.RemotePlayer
+import com.arubr.smsvcodes.data.music.model.MusicTrack
+import com.arubr.smsvcodes.di.ApplicationScope
+import com.arubr.smsvcodes.player.EnhancedMusicPlayerManager
+import com.arubr.smsvcodes.player.Followed
+import com.arubr.smsvcodes.player.PlaybackTarget
+import com.arubr.smsvcodes.player.RemotePlayer
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.flow.collectLatest

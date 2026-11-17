@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.shared
+package com.arubr.smsvcodes.ui.components.shared
 
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -8,8 +8,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.ui.components.shared.card.rememberWatchProgress
-import io.github.aedev.flow.ui.theme.artworkScrim
+import com.arubr.smsvcodes.ui.components.shared.card.rememberWatchProgress
+import com.arubr.smsvcodes.ui.theme.artworkScrim
 
 private const val PROGRESS_TRACK_ALPHA = 0.4f
 private val ProgressBarHeight = 3.dp

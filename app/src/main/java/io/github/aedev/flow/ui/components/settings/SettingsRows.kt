@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.settings
+package com.arubr.smsvcodes.ui.components.settings
 
 import androidx.annotation.DrawableRes
 import androidx.compose.foundation.focusable
@@ -21,12 +21,12 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import io.github.aedev.flow.ui.components.shared.FlowBadgedTitle
-import io.github.aedev.flow.ui.components.shared.FlowNavRow
-import io.github.aedev.flow.ui.components.shared.FlowSelectionRow
-import io.github.aedev.flow.ui.components.shared.FlowSwitchRow
-import io.github.aedev.flow.ui.components.shared.FlowToggleOption
-import io.github.aedev.flow.ui.components.shared.LocalDpadNavigation
+import com.arubr.smsvcodes.ui.components.shared.FlowBadgedTitle
+import com.arubr.smsvcodes.ui.components.shared.FlowNavRow
+import com.arubr.smsvcodes.ui.components.shared.FlowSelectionRow
+import com.arubr.smsvcodes.ui.components.shared.FlowSwitchRow
+import com.arubr.smsvcodes.ui.components.shared.FlowToggleOption
+import com.arubr.smsvcodes.ui.components.shared.LocalDpadNavigation
 import kotlinx.coroutines.flow.StateFlow
 
 /**

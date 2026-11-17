@@ -1,10 +1,10 @@
-package io.github.aedev.flow.sync.mapping
+package com.arubr.smsvcodes.sync.mapping
 
-import io.github.aedev.flow.data.local.entity.PlaylistEntity
-import io.github.aedev.flow.data.local.entity.PlaylistVideoCrossRef
-import io.github.aedev.flow.data.local.entity.VideoEntity
-import io.github.aedev.flow.sync.canonical.CanonicalPlaylist
-import io.github.aedev.flow.sync.canonical.CanonicalPlaylistItem
+import com.arubr.smsvcodes.data.local.entity.PlaylistEntity
+import com.arubr.smsvcodes.data.local.entity.PlaylistVideoCrossRef
+import com.arubr.smsvcodes.data.local.entity.VideoEntity
+import com.arubr.smsvcodes.sync.canonical.CanonicalPlaylist
+import com.arubr.smsvcodes.sync.canonical.CanonicalPlaylistItem
 
 /**
  * Playlist ⇄ canonical mapping. Handles the Android specifics:

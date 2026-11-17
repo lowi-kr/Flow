@@ -1,13 +1,13 @@
-package io.github.aedev.flow.sync.merge
+package com.arubr.smsvcodes.sync.merge
 
-import io.github.aedev.flow.sync.canonical.BrainCounters
-import io.github.aedev.flow.sync.canonical.BrainFlags
-import io.github.aedev.flow.sync.canonical.BrainLwwMaps
-import io.github.aedev.flow.sync.canonical.BrainPerVideo
-import io.github.aedev.flow.sync.canonical.BrainSets
-import io.github.aedev.flow.sync.canonical.CanonicalBrain
-import io.github.aedev.flow.sync.canonical.CanonicalBrainVectors
-import io.github.aedev.flow.sync.canonical.Lww
+import com.arubr.smsvcodes.sync.canonical.BrainCounters
+import com.arubr.smsvcodes.sync.canonical.BrainFlags
+import com.arubr.smsvcodes.sync.canonical.BrainLwwMaps
+import com.arubr.smsvcodes.sync.canonical.BrainPerVideo
+import com.arubr.smsvcodes.sync.canonical.BrainSets
+import com.arubr.smsvcodes.sync.canonical.CanonicalBrain
+import com.arubr.smsvcodes.sync.canonical.CanonicalBrainVectors
+import com.arubr.smsvcodes.sync.canonical.Lww
 
 /**
  * Brain merge for everything except the learned vectors. Every field is a join-semilattice op so

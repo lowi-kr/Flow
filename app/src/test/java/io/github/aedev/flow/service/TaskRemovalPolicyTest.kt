@@ -1,4 +1,4 @@
-package io.github.aedev.flow.service
+package com.arubr.smsvcodes.service
 
 import androidx.media3.common.Player
 import com.google.common.truth.Truth.assertThat
@@ -49,15 +49,15 @@ class TaskRemovalPolicyTest {
 
     @Test
     fun `the lock screen player and widget setup ending are not the app being swiped away`() {
-        assertThat(isSideTaskRemoval("io.github.aedev.flow.ui.screens.lockscreen.LockScreenPlayerActivity")).isTrue()
-        assertThat(isSideTaskRemoval("io.github.aedev.flow.widget.config.WidgetConfigActivity")).isTrue()
+        assertThat(isSideTaskRemoval("com.arubr.smsvcodes.ui.screens.lockscreen.LockScreenPlayerActivity")).isTrue()
+        assertThat(isSideTaskRemoval("com.arubr.smsvcodes.widget.config.WidgetConfigActivity")).isTrue()
     }
 
     @Test
     fun `the app's own task, its launcher aliases and an unknown root still count as a swipe`() {
-        assertThat(isSideTaskRemoval("io.github.aedev.flow.MainActivity")).isFalse()
-        assertThat(isSideTaskRemoval("io.github.aedev.flow.IconAmoled")).isFalse()
-        assertThat(isSideTaskRemoval("io.github.aedev.flow.TvActivity")).isFalse()
+        assertThat(isSideTaskRemoval("com.arubr.smsvcodes.MainActivity")).isFalse()
+        assertThat(isSideTaskRemoval("com.arubr.smsvcodes.IconAmoled")).isFalse()
+        assertThat(isSideTaskRemoval("com.arubr.smsvcodes.TvActivity")).isFalse()
         assertThat(isSideTaskRemoval(null)).isFalse()
     }
 }

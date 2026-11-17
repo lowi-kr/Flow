@@ -1,6 +1,6 @@
-package io.github.aedev.flow.ui.components.layout.navigation
+package com.arubr.smsvcodes.ui.components.layout.navigation
 
-import io.github.aedev.flow.data.local.NavBarLabels
+import com.arubr.smsvcodes.data.local.NavBarLabels
 
 /** Item sizes of the floating bar, in px. */
 internal data class FloatingNavMetrics(

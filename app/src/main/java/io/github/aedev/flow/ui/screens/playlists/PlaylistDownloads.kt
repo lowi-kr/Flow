@@ -1,13 +1,13 @@
-package io.github.aedev.flow.ui.screens.playlists
+package com.arubr.smsvcodes.ui.screens.playlists
 
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.local.dao.DownloadCollectionSummary
-import io.github.aedev.flow.data.local.entity.DownloadCollectionKind
-import io.github.aedev.flow.data.repository.YouTubePlaylistRepository
-import io.github.aedev.flow.data.video.BackgroundDownloadQueuer
-import io.github.aedev.flow.data.video.DownloadBatch
-import io.github.aedev.flow.data.video.downloader.collection.CollectionSpec
-import io.github.aedev.flow.data.video.downloader.collection.DownloadedCollections
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.local.dao.DownloadCollectionSummary
+import com.arubr.smsvcodes.data.local.entity.DownloadCollectionKind
+import com.arubr.smsvcodes.data.repository.YouTubePlaylistRepository
+import com.arubr.smsvcodes.data.video.BackgroundDownloadQueuer
+import com.arubr.smsvcodes.data.video.DownloadBatch
+import com.arubr.smsvcodes.data.video.downloader.collection.CollectionSpec
+import com.arubr.smsvcodes.data.video.downloader.collection.DownloadedCollections
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow

@@ -1,10 +1,10 @@
-package io.github.aedev.flow.ui
+package com.arubr.smsvcodes.ui
 
 import android.app.Application
 import android.content.Intent
 import android.net.Uri
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import io.github.aedev.flow.utils.parseYouTubeLink
+import com.arubr.smsvcodes.utils.parseYouTubeLink
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNull
 import org.junit.Test
@@ -103,6 +103,6 @@ class LinkDestinationTest {
             linkTextOf(Intent(Intent.ACTION_SEND).setType("text/plain").putExtra(Intent.EXTRA_TEXT, "Look $url")),
         )
         assertNull(linkTextOf(Intent(Intent.ACTION_SEND).setType("image/png").putExtra(Intent.EXTRA_TEXT, url)))
-        assertNull(linkTextOf(Intent("io.github.aedev.flow.widget.OPEN", Uri.parse("flow://widget/video/$video"))))
+        assertNull(linkTextOf(Intent("com.arubr.smsvcodes.widget.OPEN", Uri.parse("flow://widget/video/$video"))))
     }
 }

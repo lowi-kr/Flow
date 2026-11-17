@@ -1,11 +1,11 @@
-package io.github.aedev.flow.sync2.device
+package com.arubr.smsvcodes.sync2.device
 
 import android.content.Context
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.stringPreferencesKey
 import dagger.hilt.android.qualifiers.ApplicationContext
-import io.github.aedev.flow.data.local.KeystoreSecretBox
-import io.github.aedev.flow.sync2.store.StoreLogin
+import com.arubr.smsvcodes.data.local.KeystoreSecretBox
+import com.arubr.smsvcodes.sync2.store.StoreLogin
 import kotlinx.coroutines.flow.first
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json

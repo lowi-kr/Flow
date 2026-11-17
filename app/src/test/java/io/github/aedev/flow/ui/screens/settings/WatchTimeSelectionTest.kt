@@ -1,9 +1,9 @@
-package io.github.aedev.flow.ui.screens.settings
+package com.arubr.smsvcodes.ui.screens.settings
 
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.ui.screens.settings.wellbeing.DayWatchTime
-import io.github.aedev.flow.ui.screens.settings.wellbeing.WatchTimeSummary
-import io.github.aedev.flow.ui.screens.settings.wellbeing.millisUntilNextDay
+import com.arubr.smsvcodes.ui.screens.settings.wellbeing.DayWatchTime
+import com.arubr.smsvcodes.ui.screens.settings.wellbeing.WatchTimeSummary
+import com.arubr.smsvcodes.ui.screens.settings.wellbeing.millisUntilNextDay
 import org.junit.Test
 import java.time.Duration
 import java.time.LocalDate

@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.applock
+package com.arubr.smsvcodes.ui.components.applock
 
 import android.app.Activity
 import androidx.activity.compose.BackHandler
@@ -36,8 +36,8 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.LocalLifecycleOwner
 import androidx.lifecycle.withResumed
-import io.github.aedev.flow.R
-import io.github.aedev.flow.applock.AppLock
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.applock.AppLock
 
 private val BadgeSize = 72.dp
 private val BadgeIconSize = 40.dp

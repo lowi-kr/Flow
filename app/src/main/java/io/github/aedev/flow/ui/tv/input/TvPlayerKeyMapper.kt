@@ -1,7 +1,7 @@
-package io.github.aedev.flow.ui.tv.input
+package com.arubr.smsvcodes.ui.tv.input
 
 import android.view.KeyEvent
-import io.github.aedev.flow.ui.components.shared.MediaButton
+import com.arubr.smsvcodes.ui.components.shared.MediaButton
 
 /** Playback intents produced by remote keys on the TV player. */
 enum class TvPlayerAction {

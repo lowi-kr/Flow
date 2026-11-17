@@ -1,6 +1,6 @@
-package io.github.aedev.flow.sync
+package com.arubr.smsvcodes.sync
 
-import io.github.aedev.flow.sync.transport.SyncConnection
+import com.arubr.smsvcodes.sync.transport.SyncConnection
 import kotlinx.coroutines.channels.Channel
 
 /** A pair of UNLIMITED channels wired as a full-duplex in-memory [SyncConnection] pair. */

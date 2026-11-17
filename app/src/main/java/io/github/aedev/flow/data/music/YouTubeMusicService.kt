@@ -1,13 +1,13 @@
-package io.github.aedev.flow.data.music
+package com.arubr.smsvcodes.data.music
 
 import android.util.Log
-import io.github.aedev.flow.data.music.model.ArtistDetails
-import io.github.aedev.flow.data.music.model.MusicArtist
-import io.github.aedev.flow.data.music.model.MusicPlaylist
-import io.github.aedev.flow.data.music.model.MusicTrack
-import io.github.aedev.flow.data.music.model.PlaylistDetails
-import io.github.aedev.flow.data.newmusic.InnertubeMusicService
-import io.github.aedev.flow.innertube.YouTube
+import com.arubr.smsvcodes.data.music.model.ArtistDetails
+import com.arubr.smsvcodes.data.music.model.MusicArtist
+import com.arubr.smsvcodes.data.music.model.MusicPlaylist
+import com.arubr.smsvcodes.data.music.model.MusicTrack
+import com.arubr.smsvcodes.data.music.model.PlaylistDetails
+import com.arubr.smsvcodes.data.newmusic.InnertubeMusicService
+import com.arubr.smsvcodes.innertube.YouTube
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
@@ -180,7 +180,7 @@ object YouTubeMusicService {
         return if (hours > 0) "$hours hr $minutes min" else "$minutes min $seconds sec"
     }
 
-    private fun convertSongItemToMusicTrack(item: io.github.aedev.flow.innertube.models.SongItem): MusicTrack =
+    private fun convertSongItemToMusicTrack(item: com.arubr.smsvcodes.innertube.models.SongItem): MusicTrack =
         MusicTrack(
             videoId = item.id,
             title = item.title,

@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.settings.appearance.theme
+package com.arubr.smsvcodes.ui.screens.settings.appearance.theme
 
 import android.content.Context
 import android.os.Build
@@ -7,15 +7,15 @@ import androidx.compose.runtime.Immutable
 import androidx.compose.ui.graphics.Color
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
-import io.github.aedev.flow.data.local.LocalDataManager
-import io.github.aedev.flow.ui.screens.settings.SettingsViewModel
-import io.github.aedev.flow.ui.theme.CustomTheme
-import io.github.aedev.flow.ui.theme.ThemeCatalog
-import io.github.aedev.flow.ui.theme.ThemeCatalogEntry
-import io.github.aedev.flow.ui.theme.ThemeMode
-import io.github.aedev.flow.ui.theme.ThemeVariant
-import io.github.aedev.flow.ui.theme.resolveFlowColorScheme
-import io.github.aedev.flow.ui.theme.toColorScheme
+import com.arubr.smsvcodes.data.local.LocalDataManager
+import com.arubr.smsvcodes.ui.screens.settings.SettingsViewModel
+import com.arubr.smsvcodes.ui.theme.CustomTheme
+import com.arubr.smsvcodes.ui.theme.ThemeCatalog
+import com.arubr.smsvcodes.ui.theme.ThemeCatalogEntry
+import com.arubr.smsvcodes.ui.theme.ThemeMode
+import com.arubr.smsvcodes.ui.theme.ThemeVariant
+import com.arubr.smsvcodes.ui.theme.resolveFlowColorScheme
+import com.arubr.smsvcodes.ui.theme.toColorScheme
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.combine

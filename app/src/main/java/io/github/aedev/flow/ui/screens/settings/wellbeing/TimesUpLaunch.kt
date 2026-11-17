@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.settings.wellbeing
+package com.arubr.smsvcodes.ui.screens.settings.wellbeing
 
 import androidx.activity.ComponentActivity
 import androidx.compose.runtime.Composable
@@ -10,7 +10,7 @@ import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import dagger.hilt.android.lifecycle.HiltViewModel
-import io.github.aedev.flow.notification.DailyLimitGuard
+import com.arubr.smsvcodes.notification.DailyLimitGuard
 import javax.inject.Inject
 
 const val TIMES_UP_ROUTE = "times_up"

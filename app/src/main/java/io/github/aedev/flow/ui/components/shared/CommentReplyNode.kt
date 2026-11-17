@@ -1,6 +1,6 @@
-package io.github.aedev.flow.ui.components.shared
+package com.arubr.smsvcodes.ui.components.shared
 
-import io.github.aedev.flow.data.model.Comment
+import com.arubr.smsvcodes.data.model.Comment
 
 /** A reply and whatever replied to it, at the depth it sits in the conversation. */
 data class CommentReplyNode(

@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.shared.quickactions
+package com.arubr.smsvcodes.ui.components.shared.quickactions
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -17,11 +17,11 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.contentfilter.aislist.AiReportCheck
-import io.github.aedev.flow.data.contentfilter.aislist.AiVerdict
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.ui.components.shared.FlowLoadingIndicator
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.contentfilter.aislist.AiReportCheck
+import com.arubr.smsvcodes.data.contentfilter.aislist.AiVerdict
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.ui.components.shared.FlowLoadingIndicator
 
 private val PagePadding = 16.dp
 private val PageSpacing = 12.dp

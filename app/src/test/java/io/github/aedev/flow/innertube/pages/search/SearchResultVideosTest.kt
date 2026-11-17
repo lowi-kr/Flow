@@ -1,8 +1,8 @@
-package io.github.aedev.flow.innertube.pages.search
+package com.arubr.smsvcodes.innertube.pages.search
 
 import com.google.common.collect.Range
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.data.model.Video
+import com.arubr.smsvcodes.data.model.Video
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.jsonObject
 import org.junit.Test

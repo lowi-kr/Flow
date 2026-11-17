@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.applock
+package com.arubr.smsvcodes.ui.components.applock
 
 import androidx.biometric.AuthenticationRequest
 import androidx.biometric.compose.rememberAuthenticationLauncher
@@ -7,9 +7,9 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberUpdatedState
 import androidx.compose.ui.res.stringResource
-import io.github.aedev.flow.R
-import io.github.aedev.flow.applock.AppLock
-import io.github.aedev.flow.applock.usesStrongBiometrics
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.applock.AppLock
+import com.arubr.smsvcodes.applock.usesStrongBiometrics
 
 /**
  * Asks for the phone's own unlock: biometrics, with the PIN, pattern or password as the fallback.

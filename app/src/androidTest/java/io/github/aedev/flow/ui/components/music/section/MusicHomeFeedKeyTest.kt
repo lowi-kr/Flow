@@ -4,7 +4,7 @@
  * This file is part of Flow (https://github.com/Flow-Tube/Flow).
  */
 
-package io.github.aedev.flow.ui.components.music.section
+package com.arubr.smsvcodes.ui.components.music.section
 
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.grid.rememberLazyGridState
@@ -12,12 +12,12 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.compose.ui.test.onNodeWithText
-import io.github.aedev.flow.data.music.model.MusicTrack
-import io.github.aedev.flow.data.recommendation.MusicSection
-import io.github.aedev.flow.innertube.pages.HomePage
-import io.github.aedev.flow.ui.screens.music.MusicHomeChipPage
-import io.github.aedev.flow.ui.screens.music.MusicHomeChipStatus
-import io.github.aedev.flow.ui.screens.music.MusicUiState
+import com.arubr.smsvcodes.data.music.model.MusicTrack
+import com.arubr.smsvcodes.data.recommendation.MusicSection
+import com.arubr.smsvcodes.innertube.pages.HomePage
+import com.arubr.smsvcodes.ui.screens.music.MusicHomeChipPage
+import com.arubr.smsvcodes.ui.screens.music.MusicHomeChipStatus
+import com.arubr.smsvcodes.ui.screens.music.MusicUiState
 import org.junit.Rule
 import org.junit.Test
 

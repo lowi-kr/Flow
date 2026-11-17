@@ -1,13 +1,13 @@
-package io.github.aedev.flow.ui.screens.subscriptions
+package com.arubr.smsvcodes.ui.screens.subscriptions
 
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.innertube.SubscriptionRefreshStage
-import io.github.aedev.flow.data.local.ChannelSubscription
-import io.github.aedev.flow.data.model.Channel
-import io.github.aedev.flow.data.model.SubscriptionGroup
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.data.subscriptions.allChipScope
-import io.github.aedev.flow.utils.ThumbnailUrlResolver
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.innertube.SubscriptionRefreshStage
+import com.arubr.smsvcodes.data.local.ChannelSubscription
+import com.arubr.smsvcodes.data.model.Channel
+import com.arubr.smsvcodes.data.model.SubscriptionGroup
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.data.subscriptions.allChipScope
+import com.arubr.smsvcodes.utils.ThumbnailUrlResolver
 
 enum class SubscriptionSortMode {
     DEFAULT,

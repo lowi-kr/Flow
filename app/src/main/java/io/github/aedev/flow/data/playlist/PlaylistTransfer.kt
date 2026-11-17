@@ -1,16 +1,16 @@
-package io.github.aedev.flow.data.playlist
+package com.arubr.smsvcodes.data.playlist
 
 import android.content.Context
 import android.net.Uri
 import androidx.annotation.StringRes
 import dagger.hilt.android.qualifiers.ApplicationContext
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.local.LikedVideoInfo
-import io.github.aedev.flow.data.local.LikedVideosRepository
-import io.github.aedev.flow.data.local.PlaylistRepository
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.data.model.toVideo
-import io.github.aedev.flow.utils.sharedFileUri
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.local.LikedVideoInfo
+import com.arubr.smsvcodes.data.local.LikedVideosRepository
+import com.arubr.smsvcodes.data.local.PlaylistRepository
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.data.model.toVideo
+import com.arubr.smsvcodes.utils.sharedFileUri
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.withContext

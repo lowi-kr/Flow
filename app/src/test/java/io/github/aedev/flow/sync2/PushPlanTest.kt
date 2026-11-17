@@ -1,8 +1,8 @@
-package io.github.aedev.flow.sync2
+package com.arubr.smsvcodes.sync2
 
-import io.github.aedev.flow.sync.protocol.SyncCollection
-import io.github.aedev.flow.sync2.changes.collectionsOf
-import io.github.aedev.flow.sync2.changes.collectionsToPush
+import com.arubr.smsvcodes.sync.protocol.SyncCollection
+import com.arubr.smsvcodes.sync2.changes.collectionsOf
+import com.arubr.smsvcodes.sync2.changes.collectionsToPush
 import org.junit.Assert.assertEquals
 import org.junit.Test
 

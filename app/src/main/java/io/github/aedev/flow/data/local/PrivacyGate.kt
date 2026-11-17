@@ -1,4 +1,4 @@
-package io.github.aedev.flow.data.local
+package com.arubr.smsvcodes.data.local
 
 import kotlinx.coroutines.flow.first
 import javax.inject.Inject

@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.musicplayer.full
+package com.arubr.smsvcodes.ui.components.musicplayer.full
 
 import androidx.compose.animation.core.Animatable
 import androidx.compose.foundation.layout.Box
@@ -18,15 +18,15 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.res.stringResource
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.localmedia.LocalMediaIds
-import io.github.aedev.flow.ui.components.musicplayer.lyrics.InlineLyricsPanel
-import io.github.aedev.flow.ui.components.musicplayer.lyrics.LyricsDisplayOptions
-import io.github.aedev.flow.ui.components.musicplayer.lyrics.MusicLyricsSheet
-import io.github.aedev.flow.ui.components.musicplayer.lyrics.PANE_LYRICS_TEXT_SIZE
-import io.github.aedev.flow.ui.components.musicplayer.lyrics.lyricsTextAlignFor
-import io.github.aedev.flow.ui.screens.music.MusicPlayerUiState
-import io.github.aedev.flow.ui.screens.music.MusicPlayerViewModel
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.localmedia.LocalMediaIds
+import com.arubr.smsvcodes.ui.components.musicplayer.lyrics.InlineLyricsPanel
+import com.arubr.smsvcodes.ui.components.musicplayer.lyrics.LyricsDisplayOptions
+import com.arubr.smsvcodes.ui.components.musicplayer.lyrics.MusicLyricsSheet
+import com.arubr.smsvcodes.ui.components.musicplayer.lyrics.PANE_LYRICS_TEXT_SIZE
+import com.arubr.smsvcodes.ui.components.musicplayer.lyrics.lyricsTextAlignFor
+import com.arubr.smsvcodes.ui.screens.music.MusicPlayerUiState
+import com.arubr.smsvcodes.ui.screens.music.MusicPlayerViewModel
 
 /** The player's lyrics wired to its state: the full-screen sheet every layout can open. */
 @Composable

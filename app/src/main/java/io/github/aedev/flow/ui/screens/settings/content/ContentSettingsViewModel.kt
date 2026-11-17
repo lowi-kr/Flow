@@ -1,11 +1,11 @@
-package io.github.aedev.flow.ui.screens.settings.content
+package com.arubr.smsvcodes.ui.screens.settings.content
 
 import dagger.hilt.android.lifecycle.HiltViewModel
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.data.local.SharedLinkAction
-import io.github.aedev.flow.data.local.WatchedThreshold
-import io.github.aedev.flow.data.local.dao.SubscriptionGroupDao
-import io.github.aedev.flow.ui.screens.settings.SettingsViewModel
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.data.local.SharedLinkAction
+import com.arubr.smsvcodes.data.local.WatchedThreshold
+import com.arubr.smsvcodes.data.local.dao.SubscriptionGroupDao
+import com.arubr.smsvcodes.ui.screens.settings.SettingsViewModel
 import kotlinx.coroutines.flow.combine
 import javax.inject.Inject
 

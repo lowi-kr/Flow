@@ -1,7 +1,7 @@
-package io.github.aedev.flow.utils
+package com.arubr.smsvcodes.utils
 
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.data.local.ThumbnailQuality
+import com.arubr.smsvcodes.data.local.ThumbnailQuality
 import org.junit.Test
 
 class ThumbnailUrlResolverTest {

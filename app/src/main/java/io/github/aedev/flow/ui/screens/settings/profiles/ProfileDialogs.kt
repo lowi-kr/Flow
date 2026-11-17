@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.settings.profiles
+package com.arubr.smsvcodes.ui.screens.settings.profiles
 
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material.icons.Icons
@@ -17,10 +17,10 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.profile.ProfileRegistry
-import io.github.aedev.flow.ui.components.profiles.switchRefusalText
-import io.github.aedev.flow.ui.components.shared.FlowAlertDialog
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.profile.ProfileRegistry
+import com.arubr.smsvcodes.ui.components.profiles.switchRefusalText
+import com.arubr.smsvcodes.ui.components.shared.FlowAlertDialog
 
 @Composable
 internal fun RenameProfileDialog(

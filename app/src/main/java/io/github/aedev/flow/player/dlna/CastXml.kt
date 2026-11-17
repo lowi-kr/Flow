@@ -1,4 +1,4 @@
-package io.github.aedev.flow.player.dlna
+package com.arubr.smsvcodes.player.dlna
 
 /** Where a renderer is in its item, in seconds; either may be missing from its answer. */
 internal data class CastPosition(

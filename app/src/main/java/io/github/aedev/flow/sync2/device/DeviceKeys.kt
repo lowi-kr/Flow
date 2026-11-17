@@ -1,15 +1,15 @@
-package io.github.aedev.flow.sync2.device
+package com.arubr.smsvcodes.sync2.device
 
 import android.content.Context
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.stringPreferencesKey
 import dagger.hilt.android.qualifiers.ApplicationContext
-import io.github.aedev.flow.data.local.KeystoreSecretBox
-import io.github.aedev.flow.data.local.safePreferencesDataStore
-import io.github.aedev.flow.data.profile.StoreScope
-import io.github.aedev.flow.sync.crypto.SyncBytes
-import io.github.aedev.flow.sync.crypto.SyncCrypto
-import io.github.aedev.flow.sync2.crypto.MemberSecrets
+import com.arubr.smsvcodes.data.local.KeystoreSecretBox
+import com.arubr.smsvcodes.data.local.safePreferencesDataStore
+import com.arubr.smsvcodes.data.profile.StoreScope
+import com.arubr.smsvcodes.sync.crypto.SyncBytes
+import com.arubr.smsvcodes.sync.crypto.SyncCrypto
+import com.arubr.smsvcodes.sync2.crypto.MemberSecrets
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock

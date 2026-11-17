@@ -1,15 +1,15 @@
-package io.github.aedev.flow.sync2
+package com.arubr.smsvcodes.sync2
 
-import io.github.aedev.flow.sync.protocol.SyncSerialization
-import io.github.aedev.flow.sync2.changes.batchContent
-import io.github.aedev.flow.sync2.changes.parseBatch
-import io.github.aedev.flow.sync2.crypto.ProtocolException
-import io.github.aedev.flow.sync2.engine.Manifest
-import io.github.aedev.flow.sync2.engine.Part
-import io.github.aedev.flow.sync2.engine.Tip
-import io.github.aedev.flow.sync2.engine.parseAck
-import io.github.aedev.flow.sync2.engine.parseManifest
-import io.github.aedev.flow.sync2.live.LiveMessage
+import com.arubr.smsvcodes.sync.protocol.SyncSerialization
+import com.arubr.smsvcodes.sync2.changes.batchContent
+import com.arubr.smsvcodes.sync2.changes.parseBatch
+import com.arubr.smsvcodes.sync2.crypto.ProtocolException
+import com.arubr.smsvcodes.sync2.engine.Manifest
+import com.arubr.smsvcodes.sync2.engine.Part
+import com.arubr.smsvcodes.sync2.engine.Tip
+import com.arubr.smsvcodes.sync2.engine.parseAck
+import com.arubr.smsvcodes.sync2.engine.parseManifest
+import com.arubr.smsvcodes.sync2.live.LiveMessage
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonObject
 import kotlinx.serialization.json.JsonPrimitive

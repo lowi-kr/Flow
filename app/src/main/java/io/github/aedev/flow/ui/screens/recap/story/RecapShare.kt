@@ -1,10 +1,10 @@
-package io.github.aedev.flow.ui.screens.recap.story
+package com.arubr.smsvcodes.ui.screens.recap.story
 
 import android.content.Context
 import android.content.Intent
 import androidx.compose.ui.graphics.ImageBitmap
 import androidx.compose.ui.graphics.asAndroidBitmap
-import io.github.aedev.flow.utils.sharedPngUri
+import com.arubr.smsvcodes.utils.sharedPngUri
 
 private const val SHARE_DIR = "recap"
 private const val SHARE_FILE = "flow_recap.png"

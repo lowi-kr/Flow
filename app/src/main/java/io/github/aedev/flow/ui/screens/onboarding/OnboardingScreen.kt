@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.onboarding
+package com.arubr.smsvcodes.ui.screens.onboarding
 
 import androidx.activity.compose.BackHandler
 import androidx.activity.compose.rememberLauncherForActivityResult
@@ -34,13 +34,13 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.backup.BackupOperation
-import io.github.aedev.flow.data.backup.ImportKind
-import io.github.aedev.flow.ui.components.shared.FlowConfirmDialog
-import io.github.aedev.flow.ui.components.shared.FlowMaxContentWidth
-import io.github.aedev.flow.ui.utils.LocalWindowSizeClass
-import io.github.aedev.flow.ui.utils.isExpandedWidth
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.backup.BackupOperation
+import com.arubr.smsvcodes.data.backup.ImportKind
+import com.arubr.smsvcodes.ui.components.shared.FlowConfirmDialog
+import com.arubr.smsvcodes.ui.components.shared.FlowMaxContentWidth
+import com.arubr.smsvcodes.ui.utils.LocalWindowSizeClass
+import com.arubr.smsvcodes.ui.utils.isExpandedWidth
 import kotlinx.coroutines.launch
 
 @Composable

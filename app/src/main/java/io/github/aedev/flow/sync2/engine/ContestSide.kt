@@ -1,14 +1,14 @@
-package io.github.aedev.flow.sync2.engine
+package com.arubr.smsvcodes.sync2.engine
 
-import io.github.aedev.flow.sync.crypto.SyncBytes
-import io.github.aedev.flow.sync2.crypto.MemberSecrets
-import io.github.aedev.flow.sync2.data.LinkedDatabase
-import io.github.aedev.flow.sync2.data.toEntries
-import io.github.aedev.flow.sync2.linking.deviceNames
-import io.github.aedev.flow.sync2.roster.Settlement
-import io.github.aedev.flow.sync2.roster.entryHash
-import io.github.aedev.flow.sync2.roster.settleRoster
-import io.github.aedev.flow.sync2.store.ChangeList
+import com.arubr.smsvcodes.sync.crypto.SyncBytes
+import com.arubr.smsvcodes.sync2.crypto.MemberSecrets
+import com.arubr.smsvcodes.sync2.data.LinkedDatabase
+import com.arubr.smsvcodes.sync2.data.toEntries
+import com.arubr.smsvcodes.sync2.linking.deviceNames
+import com.arubr.smsvcodes.sync2.roster.Settlement
+import com.arubr.smsvcodes.sync2.roster.entryHash
+import com.arubr.smsvcodes.sync2.roster.settleRoster
+import com.arubr.smsvcodes.sync2.store.ChangeList
 
 /** One side of a contested roster: keeping it keeps [device], which removed [removes]. */
 data class ContestSide(

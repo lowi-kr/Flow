@@ -1,13 +1,13 @@
-package io.github.aedev.flow.sync2
+package com.arubr.smsvcodes.sync2
 
 import android.app.Application
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import io.github.aedev.flow.sync2.store.ChangeList
-import io.github.aedev.flow.sync2.store.GroupStore
-import io.github.aedev.flow.sync2.store.Mailbox
-import io.github.aedev.flow.sync2.store.Remote
-import io.github.aedev.flow.sync2.store.StoreException
-import io.github.aedev.flow.sync2.store.StorePaths
+import com.arubr.smsvcodes.sync2.store.ChangeList
+import com.arubr.smsvcodes.sync2.store.GroupStore
+import com.arubr.smsvcodes.sync2.store.Mailbox
+import com.arubr.smsvcodes.sync2.store.Remote
+import com.arubr.smsvcodes.sync2.store.StoreException
+import com.arubr.smsvcodes.sync2.store.StorePaths
 import kotlinx.coroutines.test.runTest
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNotNull

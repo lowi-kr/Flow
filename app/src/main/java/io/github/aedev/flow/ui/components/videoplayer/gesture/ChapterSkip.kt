@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.videoplayer.gesture
+package com.arubr.smsvcodes.ui.components.videoplayer.gesture
 
 /** Past this far into a chapter, going back restarts it instead of opening the one before. */
 internal const val CHAPTER_RESTART_WINDOW_MS = 3_000L

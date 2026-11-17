@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.settings.content
+package com.arubr.smsvcodes.ui.screens.settings.content
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -9,20 +9,20 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.local.SharedLinkAction
-import io.github.aedev.flow.data.local.WatchedThreshold
-import io.github.aedev.flow.ui.components.settings.SettingsDestination
-import io.github.aedev.flow.ui.components.settings.SettingsPage
-import io.github.aedev.flow.ui.components.settings.SettingsTarget
-import io.github.aedev.flow.ui.components.settings.choice
-import io.github.aedev.flow.ui.components.settings.nav
-import io.github.aedev.flow.ui.components.settings.switch
-import io.github.aedev.flow.ui.components.shared.FlowChoice
-import io.github.aedev.flow.ui.components.shared.FlowChoiceDialog
-import io.github.aedev.flow.ui.components.shared.FlowSwitchRow
-import io.github.aedev.flow.ui.screens.settings.index.ContentIndex
-import io.github.aedev.flow.ui.screens.settings.index.DestinationIndex
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.local.SharedLinkAction
+import com.arubr.smsvcodes.data.local.WatchedThreshold
+import com.arubr.smsvcodes.ui.components.settings.SettingsDestination
+import com.arubr.smsvcodes.ui.components.settings.SettingsPage
+import com.arubr.smsvcodes.ui.components.settings.SettingsTarget
+import com.arubr.smsvcodes.ui.components.settings.choice
+import com.arubr.smsvcodes.ui.components.settings.nav
+import com.arubr.smsvcodes.ui.components.settings.switch
+import com.arubr.smsvcodes.ui.components.shared.FlowChoice
+import com.arubr.smsvcodes.ui.components.shared.FlowChoiceDialog
+import com.arubr.smsvcodes.ui.components.shared.FlowSwitchRow
+import com.arubr.smsvcodes.ui.screens.settings.index.ContentIndex
+import com.arubr.smsvcodes.ui.screens.settings.index.DestinationIndex
 
 /**
  * What shows up in the feeds. How it is laid out lives in Appearance, and what the players do in

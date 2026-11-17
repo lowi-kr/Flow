@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.player.content
+package com.arubr.smsvcodes.ui.screens.player.content
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -17,19 +17,19 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.data.local.PlayerRelatedCardStyle
-import io.github.aedev.flow.data.model.Video
-import io.github.aedev.flow.ui.components.FeedGridLayout
-import io.github.aedev.flow.ui.components.partialRowIndices
-import io.github.aedev.flow.ui.components.shared.LocalDpadNavigation
-import io.github.aedev.flow.ui.components.shared.LocalHardwareKeyboard
-import io.github.aedev.flow.ui.components.shared.LocalSkeletonGradientEnabled
-import io.github.aedev.flow.ui.components.shared.ThumbnailSkeletonGradient
-import io.github.aedev.flow.ui.components.shared.card.MediaVideoCard
-import io.github.aedev.flow.ui.components.shared.card.VideoCardLayout
-import io.github.aedev.flow.ui.components.shared.card.VideoCardSkeleton
-import io.github.aedev.flow.ui.screens.player.state.PlayerScreenState
-import io.github.aedev.flow.ui.screens.player.state.VideoPlayerUiState
+import com.arubr.smsvcodes.data.local.PlayerRelatedCardStyle
+import com.arubr.smsvcodes.data.model.Video
+import com.arubr.smsvcodes.ui.components.FeedGridLayout
+import com.arubr.smsvcodes.ui.components.partialRowIndices
+import com.arubr.smsvcodes.ui.components.shared.LocalDpadNavigation
+import com.arubr.smsvcodes.ui.components.shared.LocalHardwareKeyboard
+import com.arubr.smsvcodes.ui.components.shared.LocalSkeletonGradientEnabled
+import com.arubr.smsvcodes.ui.components.shared.ThumbnailSkeletonGradient
+import com.arubr.smsvcodes.ui.components.shared.card.MediaVideoCard
+import com.arubr.smsvcodes.ui.components.shared.card.VideoCardLayout
+import com.arubr.smsvcodes.ui.components.shared.card.VideoCardSkeleton
+import com.arubr.smsvcodes.ui.screens.player.state.PlayerScreenState
+import com.arubr.smsvcodes.ui.screens.player.state.VideoPlayerUiState
 import kotlinx.coroutines.delay
 
 /**

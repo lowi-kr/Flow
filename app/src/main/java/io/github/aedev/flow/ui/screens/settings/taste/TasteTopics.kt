@@ -1,9 +1,9 @@
-package io.github.aedev.flow.ui.screens.settings.taste
+package com.arubr.smsvcodes.ui.screens.settings.taste
 
-import io.github.aedev.flow.data.recommendation.NeuroClusters
-import io.github.aedev.flow.data.recommendation.NeuroDisplayForms
-import io.github.aedev.flow.data.recommendation.NeuroScoring
-import io.github.aedev.flow.data.recommendation.UserBrain
+import com.arubr.smsvcodes.data.recommendation.NeuroClusters
+import com.arubr.smsvcodes.data.recommendation.NeuroDisplayForms
+import com.arubr.smsvcodes.data.recommendation.NeuroScoring
+import com.arubr.smsvcodes.data.recommendation.UserBrain
 
 private const val TASTE_MIN_SPECIFICITY = 0.3
 

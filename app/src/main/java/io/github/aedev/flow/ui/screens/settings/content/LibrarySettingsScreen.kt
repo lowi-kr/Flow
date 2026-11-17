@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.settings.content
+package com.arubr.smsvcodes.ui.screens.settings.content
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -8,16 +8,16 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.res.stringResource
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.local.PlaylistSwipeAction
-import io.github.aedev.flow.ui.components.library.LibrarySection
-import io.github.aedev.flow.ui.components.library.labelRes
-import io.github.aedev.flow.ui.components.settings.SettingsPage
-import io.github.aedev.flow.ui.components.settings.choice
-import io.github.aedev.flow.ui.components.settings.switch
-import io.github.aedev.flow.ui.components.shared.FlowChoice
-import io.github.aedev.flow.ui.components.shared.FlowChoiceDialog
-import io.github.aedev.flow.ui.screens.settings.index.LibrarySectionsIndex
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.local.PlaylistSwipeAction
+import com.arubr.smsvcodes.ui.components.library.LibrarySection
+import com.arubr.smsvcodes.ui.components.library.labelRes
+import com.arubr.smsvcodes.ui.components.settings.SettingsPage
+import com.arubr.smsvcodes.ui.components.settings.choice
+import com.arubr.smsvcodes.ui.components.settings.switch
+import com.arubr.smsvcodes.ui.components.shared.FlowChoice
+import com.arubr.smsvcodes.ui.components.shared.FlowChoiceDialog
+import com.arubr.smsvcodes.ui.screens.settings.index.LibrarySectionsIndex
 
 /**
  * One switch per Library section, laid out as Library lays them out; a hidden section is left out of

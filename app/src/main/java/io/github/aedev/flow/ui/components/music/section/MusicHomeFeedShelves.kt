@@ -4,26 +4,26 @@
  * This file is part of Flow (https://github.com/Flow-Tube/Flow).
  */
 
-package io.github.aedev.flow.ui.components.music.section
+package com.arubr.smsvcodes.ui.components.music.section
 
 import androidx.compose.foundation.lazy.LazyListScope
 import androidx.compose.foundation.lazy.grid.LazyGridState
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.res.stringResource
-import io.github.aedev.flow.R
-import io.github.aedev.flow.data.music.model.ArtistDetails
-import io.github.aedev.flow.data.music.model.CommunityMusicPlaylist
-import io.github.aedev.flow.data.music.model.DailyDiscoverItem
-import io.github.aedev.flow.data.music.model.MUSIC_GENRE_SOURCE_PREFIX
-import io.github.aedev.flow.data.music.model.MusicItemType
-import io.github.aedev.flow.data.music.model.MusicPlaylist
-import io.github.aedev.flow.data.music.model.MusicTrack
-import io.github.aedev.flow.data.recommendation.MusicSection
-import io.github.aedev.flow.ui.components.music.header.MusicSectionAction
-import io.github.aedev.flow.ui.components.music.sheet.MusicCollectionActionItem
-import io.github.aedev.flow.ui.components.music.sheet.toCollectionActionItem
-import io.github.aedev.flow.ui.screens.music.MusicUiState
-import io.github.aedev.flow.ui.screens.music.MusicViewModel
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.data.music.model.ArtistDetails
+import com.arubr.smsvcodes.data.music.model.CommunityMusicPlaylist
+import com.arubr.smsvcodes.data.music.model.DailyDiscoverItem
+import com.arubr.smsvcodes.data.music.model.MUSIC_GENRE_SOURCE_PREFIX
+import com.arubr.smsvcodes.data.music.model.MusicItemType
+import com.arubr.smsvcodes.data.music.model.MusicPlaylist
+import com.arubr.smsvcodes.data.music.model.MusicTrack
+import com.arubr.smsvcodes.data.recommendation.MusicSection
+import com.arubr.smsvcodes.ui.components.music.header.MusicSectionAction
+import com.arubr.smsvcodes.ui.components.music.sheet.MusicCollectionActionItem
+import com.arubr.smsvcodes.ui.components.music.sheet.toCollectionActionItem
+import com.arubr.smsvcodes.ui.screens.music.MusicUiState
+import com.arubr.smsvcodes.ui.screens.music.MusicViewModel
 import java.util.Locale
 
 internal fun LazyListScope.trackShelf(

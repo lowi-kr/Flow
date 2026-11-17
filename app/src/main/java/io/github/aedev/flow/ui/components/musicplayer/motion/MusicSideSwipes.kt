@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.musicplayer.motion
+package com.arubr.smsvcodes.ui.components.musicplayer.motion
 
 import android.media.AudioManager
 import androidx.compose.foundation.gestures.awaitEachGesture
@@ -36,17 +36,17 @@ import androidx.compose.ui.platform.LocalHapticFeedback
 import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.unit.IntSize
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.data.local.DEFAULT_SPEED_SWIPE_STEP
-import io.github.aedev.flow.data.local.GestureOverlayStyle
-import io.github.aedev.flow.data.local.PlayerPreferences
-import io.github.aedev.flow.player.EnhancedMusicPlayerManager
-import io.github.aedev.flow.ui.components.musicplayer.full.MusicPlayerLayout
-import io.github.aedev.flow.ui.components.musicplayer.full.hasSideSwipes
-import io.github.aedev.flow.ui.components.shared.SpeedSwipeDrag
-import io.github.aedev.flow.ui.components.shared.SpeedSwipeOverlay
-import io.github.aedev.flow.ui.components.shared.SpeedSwipeStepTravel
-import io.github.aedev.flow.ui.components.shared.VolumeOverlay
-import io.github.aedev.flow.ui.components.shared.centredGestureHudAlignment
+import com.arubr.smsvcodes.data.local.DEFAULT_SPEED_SWIPE_STEP
+import com.arubr.smsvcodes.data.local.GestureOverlayStyle
+import com.arubr.smsvcodes.data.local.PlayerPreferences
+import com.arubr.smsvcodes.player.EnhancedMusicPlayerManager
+import com.arubr.smsvcodes.ui.components.musicplayer.full.MusicPlayerLayout
+import com.arubr.smsvcodes.ui.components.musicplayer.full.hasSideSwipes
+import com.arubr.smsvcodes.ui.components.shared.SpeedSwipeDrag
+import com.arubr.smsvcodes.ui.components.shared.SpeedSwipeOverlay
+import com.arubr.smsvcodes.ui.components.shared.SpeedSwipeStepTravel
+import com.arubr.smsvcodes.ui.components.shared.VolumeOverlay
+import com.arubr.smsvcodes.ui.components.shared.centredGestureHudAlignment
 import kotlin.math.abs
 
 private val HudEdgePadding = 24.dp

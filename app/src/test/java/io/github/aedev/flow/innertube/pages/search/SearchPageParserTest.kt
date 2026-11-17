@@ -1,9 +1,9 @@
-package io.github.aedev.flow.innertube.pages.search
+package com.arubr.smsvcodes.innertube.pages.search
 
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.innertube.pages.SearchFixture
-import io.github.aedev.flow.innertube.pages.renderer.FeedItem
-import io.github.aedev.flow.innertube.pages.renderer.FeedShelfStyle
+import com.arubr.smsvcodes.innertube.pages.SearchFixture
+import com.arubr.smsvcodes.innertube.pages.renderer.FeedItem
+import com.arubr.smsvcodes.innertube.pages.renderer.FeedShelfStyle
 import kotlinx.serialization.json.JsonObject
 import org.junit.Test
 

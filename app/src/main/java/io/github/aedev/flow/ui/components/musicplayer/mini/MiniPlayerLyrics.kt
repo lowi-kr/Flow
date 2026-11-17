@@ -1,13 +1,13 @@
-package io.github.aedev.flow.ui.components.musicplayer.mini
+package com.arubr.smsvcodes.ui.components.musicplayer.mini
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import io.github.aedev.flow.data.lyrics.LyricsUtils
-import io.github.aedev.flow.ui.components.musicplayer.lyrics.SyncedLines
-import io.github.aedev.flow.ui.screens.music.MusicPlayerViewModel
-import io.github.aedev.flow.ui.screens.music.sharedMusicPlayerViewModel
+import com.arubr.smsvcodes.data.lyrics.LyricsUtils
+import com.arubr.smsvcodes.ui.components.musicplayer.lyrics.SyncedLines
+import com.arubr.smsvcodes.ui.screens.music.MusicPlayerViewModel
+import com.arubr.smsvcodes.ui.screens.music.sharedMusicPlayerViewModel
 import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.map
 

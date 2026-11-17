@@ -1,4 +1,4 @@
-package io.github.aedev.flow.sync.apply
+package com.arubr.smsvcodes.sync.apply
 
 import android.content.Context
 import android.util.Log
@@ -8,8 +8,8 @@ import androidx.datastore.core.DataStoreFactory
 import androidx.datastore.core.Serializer
 import androidx.datastore.core.handlers.ReplaceFileCorruptionHandler
 import dagger.hilt.android.qualifiers.ApplicationContext
-import io.github.aedev.flow.data.profile.ProfileFiles
-import io.github.aedev.flow.data.profile.StoreScope
+import com.arubr.smsvcodes.data.profile.ProfileFiles
+import com.arubr.smsvcodes.data.profile.StoreScope
 import kotlinx.coroutines.flow.first
 import kotlinx.serialization.SerializationException
 import kotlinx.serialization.json.Json

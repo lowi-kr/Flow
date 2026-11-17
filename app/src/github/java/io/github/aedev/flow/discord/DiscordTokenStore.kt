@@ -1,11 +1,11 @@
-package io.github.aedev.flow.discord
+package com.arubr.smsvcodes.discord
 
 import android.content.Context
 import android.security.keystore.KeyGenParameterSpec
 import android.security.keystore.KeyProperties
 import android.util.AtomicFile
 import android.util.Base64
-import io.github.aedev.flow.data.profile.ProfileFiles
+import com.arubr.smsvcodes.data.profile.ProfileFiles
 import org.json.JSONObject
 import java.io.File
 import java.security.KeyStore

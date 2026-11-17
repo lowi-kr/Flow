@@ -1,7 +1,7 @@
-package io.github.aedev.flow.utils
+package com.arubr.smsvcodes.utils
 
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.data.local.CONTENT_LANGUAGE_FOLLOW_APP
+import com.arubr.smsvcodes.data.local.CONTENT_LANGUAGE_FOLLOW_APP
 import org.junit.Test
 import java.util.Locale
 

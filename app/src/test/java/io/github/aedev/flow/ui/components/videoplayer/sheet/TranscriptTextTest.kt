@@ -1,7 +1,7 @@
-package io.github.aedev.flow.ui.components.videoplayer.sheet
+package com.arubr.smsvcodes.ui.components.videoplayer.sheet
 
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.data.transcript.TranscriptCue
+import com.arubr.smsvcodes.data.transcript.TranscriptCue
 import org.junit.Test
 
 class TranscriptTextTest {

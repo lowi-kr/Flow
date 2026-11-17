@@ -1,13 +1,13 @@
-package io.github.aedev.flow.sync2.changes
+package com.arubr.smsvcodes.sync2.changes
 
-import io.github.aedev.flow.sync.apply.ReceivedCollection
-import io.github.aedev.flow.sync.protocol.CollectionWire
-import io.github.aedev.flow.sync.protocol.SyncCollection
-import io.github.aedev.flow.sync.protocol.SyncSerialization
-import io.github.aedev.flow.sync2.crypto.ProtocolError
-import io.github.aedev.flow.sync2.crypto.reject
-import io.github.aedev.flow.sync2.data.SentDao
-import io.github.aedev.flow.sync2.data.SentRecord
+import com.arubr.smsvcodes.sync.apply.ReceivedCollection
+import com.arubr.smsvcodes.sync.protocol.CollectionWire
+import com.arubr.smsvcodes.sync.protocol.SyncCollection
+import com.arubr.smsvcodes.sync.protocol.SyncSerialization
+import com.arubr.smsvcodes.sync2.crypto.ProtocolError
+import com.arubr.smsvcodes.sync2.crypto.reject
+import com.arubr.smsvcodes.sync2.data.SentDao
+import com.arubr.smsvcodes.sync2.data.SentRecord
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonObject

@@ -1,4 +1,4 @@
-package io.github.aedev.flow.sync2.live
+package com.arubr.smsvcodes.sync2.live
 
 import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.delay

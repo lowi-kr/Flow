@@ -1,4 +1,4 @@
-package io.github.aedev.flow.innertube.pages.reel
+package com.arubr.smsvcodes.innertube.pages.reel
 
 import org.junit.Assert.assertEquals
 import org.junit.Test

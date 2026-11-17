@@ -1,13 +1,13 @@
-package io.github.aedev.flow.data.video.downloader.work
+package com.arubr.smsvcodes.data.video.downloader.work
 
 import androidx.work.WorkInfo
 import androidx.work.workDataOf
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.data.local.entity.DownloadEntity
-import io.github.aedev.flow.data.local.entity.DownloadFileType
-import io.github.aedev.flow.data.local.entity.DownloadItemEntity
-import io.github.aedev.flow.data.local.entity.DownloadItemStatus
-import io.github.aedev.flow.data.local.entity.DownloadWithItems
+import com.arubr.smsvcodes.data.local.entity.DownloadEntity
+import com.arubr.smsvcodes.data.local.entity.DownloadFileType
+import com.arubr.smsvcodes.data.local.entity.DownloadItemEntity
+import com.arubr.smsvcodes.data.local.entity.DownloadItemStatus
+import com.arubr.smsvcodes.data.local.entity.DownloadWithItems
 import io.mockk.every
 import io.mockk.mockk
 import org.junit.Test

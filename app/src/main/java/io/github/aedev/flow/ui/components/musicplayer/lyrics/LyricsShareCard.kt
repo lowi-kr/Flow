@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.musicplayer.lyrics
+package com.arubr.smsvcodes.ui.components.musicplayer.lyrics
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -18,7 +18,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.sp
 import coil3.request.ImageRequest
 import coil3.request.allowHardware
-import io.github.aedev.flow.ui.components.shared.MediaPalette
+import com.arubr.smsvcodes.ui.components.shared.MediaPalette
 import kotlin.math.sqrt
 
 // About 15 of 255 across red, green and blue together: closer than that, two swatches read as one.

@@ -1,9 +1,9 @@
-package io.github.aedev.flow.ui.startup
+package com.arubr.smsvcodes.ui.startup
 
 import androidx.annotation.StyleRes
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.luminance
-import io.github.aedev.flow.R
+import com.arubr.smsvcodes.R
 
 private const val DARK_LUMINANCE = 0.5f
 

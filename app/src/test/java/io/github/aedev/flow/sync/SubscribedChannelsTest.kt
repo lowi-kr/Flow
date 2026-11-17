@@ -1,10 +1,10 @@
-package io.github.aedev.flow.sync
+package com.arubr.smsvcodes.sync
 
-import io.github.aedev.flow.data.local.ChannelSubscription
-import io.github.aedev.flow.sync.canonical.CanonicalSubscribedChannel
-import io.github.aedev.flow.sync.mapping.SubscribedChannelsMapper
-import io.github.aedev.flow.sync.merge.SubscribedChannelsMerger
-import io.github.aedev.flow.sync.protocol.SyncSerialization
+import com.arubr.smsvcodes.data.local.ChannelSubscription
+import com.arubr.smsvcodes.sync.canonical.CanonicalSubscribedChannel
+import com.arubr.smsvcodes.sync.mapping.SubscribedChannelsMapper
+import com.arubr.smsvcodes.sync.merge.SubscribedChannelsMerger
+import com.arubr.smsvcodes.sync.protocol.SyncSerialization
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue

@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.sync.linked
+package com.arubr.smsvcodes.ui.screens.sync.linked
 
 import android.text.format.DateUtils
 import androidx.compose.foundation.layout.Arrangement
@@ -27,10 +27,10 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.sync2.data.LAN_STORE
-import io.github.aedev.flow.sync2.data.WEBDAV_STORE
-import io.github.aedev.flow.ui.screens.sync.SyncCard
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.sync2.data.LAN_STORE
+import com.arubr.smsvcodes.sync2.data.WEBDAV_STORE
+import com.arubr.smsvcodes.ui.screens.sync.SyncCard
 
 private val CardPadding = 16.dp
 private val TileSize = 40.dp

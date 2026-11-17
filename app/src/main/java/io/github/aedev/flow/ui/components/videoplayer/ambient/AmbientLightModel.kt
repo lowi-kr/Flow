@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.components.videoplayer.ambient
+package com.arubr.smsvcodes.ui.components.videoplayer.ambient
 
 /** Immersive glow lights the whole page, so it carries more of the frame than the glow does. */
 internal const val IMMERSIVE_GAIN_DARK = 0.45f

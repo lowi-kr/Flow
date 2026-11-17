@@ -1,4 +1,4 @@
-package io.github.aedev.flow.ui.screens.sync.linked
+package com.arubr.smsvcodes.ui.screens.sync.linked
 
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -33,18 +33,18 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.unit.dp
-import io.github.aedev.flow.R
-import io.github.aedev.flow.sync2.device.WebDavLogin
-import io.github.aedev.flow.sync2.linking.RestoreDevice
-import io.github.aedev.flow.sync2.service.LinkedError
-import io.github.aedev.flow.ui.components.settings.SettingsNotice
-import io.github.aedev.flow.ui.screens.sync.SyncActionRow
-import io.github.aedev.flow.ui.screens.sync.SyncCard
-import io.github.aedev.flow.ui.screens.sync.SyncManualEntryContent
-import io.github.aedev.flow.ui.screens.sync.SyncOption
-import io.github.aedev.flow.ui.screens.sync.SyncOptions
-import io.github.aedev.flow.ui.screens.sync.SyncScanContent
-import io.github.aedev.flow.ui.screens.sync.SyncStepHeader
+import com.arubr.smsvcodes.R
+import com.arubr.smsvcodes.sync2.device.WebDavLogin
+import com.arubr.smsvcodes.sync2.linking.RestoreDevice
+import com.arubr.smsvcodes.sync2.service.LinkedError
+import com.arubr.smsvcodes.ui.components.settings.SettingsNotice
+import com.arubr.smsvcodes.ui.screens.sync.SyncActionRow
+import com.arubr.smsvcodes.ui.screens.sync.SyncCard
+import com.arubr.smsvcodes.ui.screens.sync.SyncManualEntryContent
+import com.arubr.smsvcodes.ui.screens.sync.SyncOption
+import com.arubr.smsvcodes.ui.screens.sync.SyncOptions
+import com.arubr.smsvcodes.ui.screens.sync.SyncScanContent
+import com.arubr.smsvcodes.ui.screens.sync.SyncStepHeader
 
 private enum class Setup {
     CHOOSE,

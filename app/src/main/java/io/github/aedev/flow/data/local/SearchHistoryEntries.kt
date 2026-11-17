@@ -1,4 +1,4 @@
-package io.github.aedev.flow.data.local
+package com.arubr.smsvcodes.data.local
 
 /** The words a history entry is matched on, so "World news" and "world news " are one entry. */
 internal fun String.searchHistoryKey(): String = trim().lowercase()

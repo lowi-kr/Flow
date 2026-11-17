@@ -1,7 +1,7 @@
-package io.github.aedev.flow.ui.screens.recap
+package com.arubr.smsvcodes.ui.screens.recap
 
-import io.github.aedev.flow.data.stats.LedgerTime
-import io.github.aedev.flow.data.stats.RecapPeriod
+import com.arubr.smsvcodes.data.stats.LedgerTime
+import com.arubr.smsvcodes.data.stats.RecapPeriod
 
 /** Routes for the recap surfaces, with the period carried as "2026-09", "2026" or "all". */
 object RecapRoutes {

@@ -1,13 +1,13 @@
-package io.github.aedev.flow.data.video.downloader.resolve
+package com.arubr.smsvcodes.data.video.downloader.resolve
 
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.data.local.MusicAudioQuality
-import io.github.aedev.flow.data.video.downloader.request.DownloadRequest
-import io.github.aedev.flow.data.video.downloader.tags.DownloadKind
-import io.github.aedev.flow.data.video.downloader.tags.DownloadTags
-import io.github.aedev.flow.innertube.models.response.PlayerResponse.StreamingData.Format
-import io.github.aedev.flow.innertube.models.response.PlayerResponse.StreamingData.Format.AudioTrack
-import io.github.aedev.flow.player.stream.InnerTubeVideoStreamExtractor.VideoExtractionResult
+import com.arubr.smsvcodes.data.local.MusicAudioQuality
+import com.arubr.smsvcodes.data.video.downloader.request.DownloadRequest
+import com.arubr.smsvcodes.data.video.downloader.tags.DownloadKind
+import com.arubr.smsvcodes.data.video.downloader.tags.DownloadTags
+import com.arubr.smsvcodes.innertube.models.response.PlayerResponse.StreamingData.Format
+import com.arubr.smsvcodes.innertube.models.response.PlayerResponse.StreamingData.Format.AudioTrack
+import com.arubr.smsvcodes.player.stream.InnerTubeVideoStreamExtractor.VideoExtractionResult
 import io.mockk.every
 import io.mockk.mockk
 import org.junit.Test

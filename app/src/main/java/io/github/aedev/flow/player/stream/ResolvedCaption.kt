@@ -1,7 +1,7 @@
-package io.github.aedev.flow.player.stream
+package com.arubr.smsvcodes.player.stream
 
 import androidx.media3.common.MimeTypes
-import io.github.aedev.flow.player.renderer.subtitle.Srv3SubtitleParser
+import com.arubr.smsvcodes.player.renderer.subtitle.Srv3SubtitleParser
 
 /**
  * The text format of a caption track. [fmtQueryValue] is YouTube's timedtext `fmt` spelling, set

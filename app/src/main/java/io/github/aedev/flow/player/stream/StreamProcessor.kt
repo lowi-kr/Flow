@@ -1,9 +1,9 @@
-package io.github.aedev.flow.player.stream
+package com.arubr.smsvcodes.player.stream
 
 import android.util.Log
-import io.github.aedev.flow.player.state.AudioTrackOption
-import io.github.aedev.flow.player.state.SubtitleOption
-import io.github.aedev.flow.player.state.SubtitleOrigin
+import com.arubr.smsvcodes.player.state.AudioTrackOption
+import com.arubr.smsvcodes.player.state.SubtitleOption
+import com.arubr.smsvcodes.player.state.SubtitleOrigin
 import org.schabi.newpipe.extractor.stream.AudioStream
 import org.schabi.newpipe.extractor.stream.AudioTrackType
 import org.schabi.newpipe.extractor.stream.VideoStream

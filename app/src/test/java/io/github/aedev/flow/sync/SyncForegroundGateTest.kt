@@ -1,8 +1,8 @@
-package io.github.aedev.flow.sync
+package com.arubr.smsvcodes.sync
 
 import com.google.common.truth.Truth.assertThat
-import io.github.aedev.flow.sync.transport.SyncForegroundGate
-import io.github.aedev.flow.sync.transport.SyncForegroundGate.Stop
+import com.arubr.smsvcodes.sync.transport.SyncForegroundGate
+import com.arubr.smsvcodes.sync.transport.SyncForegroundGate.Stop
 import org.junit.Test
 
 class SyncForegroundGateTest {

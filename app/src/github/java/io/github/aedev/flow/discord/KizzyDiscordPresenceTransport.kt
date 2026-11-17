@@ -1,10 +1,10 @@
-package io.github.aedev.flow.discord
+package com.arubr.smsvcodes.discord
 
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import androidx.annotation.StringRes
-import io.github.aedev.flow.R
+import com.arubr.smsvcodes.R
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.CompletableDeferred
 import kotlinx.coroutines.CoroutineScope

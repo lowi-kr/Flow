@@ -1,14 +1,14 @@
-package io.github.aedev.flow.sync2.store
+package com.arubr.smsvcodes.sync2.store
 
-import io.github.aedev.flow.sync2.data.HeldDao
-import io.github.aedev.flow.sync2.data.HeldRow
-import io.github.aedev.flow.sync2.roster.Entry
-import io.github.aedev.flow.sync2.roster.ForkResolution
-import io.github.aedev.flow.sync2.roster.ValidEntries
-import io.github.aedev.flow.sync2.roster.canonicalEntry
-import io.github.aedev.flow.sync2.roster.entryHash
-import io.github.aedev.flow.sync2.roster.parseEntry
-import io.github.aedev.flow.sync2.roster.resolveForks
+import com.arubr.smsvcodes.sync2.data.HeldDao
+import com.arubr.smsvcodes.sync2.data.HeldRow
+import com.arubr.smsvcodes.sync2.roster.Entry
+import com.arubr.smsvcodes.sync2.roster.ForkResolution
+import com.arubr.smsvcodes.sync2.roster.ValidEntries
+import com.arubr.smsvcodes.sync2.roster.canonicalEntry
+import com.arubr.smsvcodes.sync2.roster.entryHash
+import com.arubr.smsvcodes.sync2.roster.parseEntry
+import com.arubr.smsvcodes.sync2.roster.resolveForks
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import kotlinx.serialization.json.Json
