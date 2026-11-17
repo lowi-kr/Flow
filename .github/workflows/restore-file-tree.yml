@@ -1,0 +1,95 @@
+name: restore-file-tree
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  restore-file-tree:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: Feature/zemer-filter
+          fetch-depth: 0
+
+      - name: Configure git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Restore file tree layout
+        run: |
+          python3 - <<'PYEOF'
+          import os
+          import sys
+
+          ROOT = os.getcwd()
+          OLD = ("com", "arubr", "smsvcodes")
+          NEW = ("io", "github", "aedev", "flow")
+
+          def is_old(dirpath):
+              parts = os.path.relpath(dirpath, ROOT).split(os.sep)
+              return len(parts) >= 3 and tuple(parts[-3:]) == OLD
+
+          # Collect targets first so we do not walk trees we are mutating.
+          targets = []
+          for dirpath, dirnames, _ in os.walk(ROOT):
+              dirnames[:] = [d for d in dirnames if d != ".git"]
+              if is_old(dirpath):
+                  targets.append(dirpath)
+                  dirnames[:] = []
+
+          moved_files = 0
+          for old in targets:
+              parent_parts = os.path.relpath(old, ROOT).split(os.sep)[:-3]
+              new = os.path.join(ROOT, *parent_parts, *NEW)
+              print(f"Moving {old} -> {new}")
+              for dp, _, fns in os.walk(old):
+                  for fn in fns:
+                      src = os.path.join(dp, fn)
+                      dst = os.path.join(new, os.path.relpath(src, old))
+                      if os.path.lexists(dst):
+                          print(f"ERROR: destination already exists: {dst}", file=sys.stderr)
+                          sys.exit(1)
+                      os.makedirs(os.path.dirname(dst), exist_ok=True)
+                      os.replace(src, dst)
+                      moved_files += 1
+              # Remove the now-empty old tree (bottom-up).
+              for dp, _, _ in os.walk(old, topdown=False):
+                  os.rmdir(dp)
+              # Clean up empty parents (com/arubr, then com).
+              parent = os.path.dirname(old)
+              while parent != ROOT and parent.startswith(ROOT) and os.path.isdir(parent) and not os.listdir(parent):
+                  os.rmdir(parent)
+                  parent = os.path.dirname(parent)
+
+          # Schema exports: rename com.arubr.smsvcodes.* to io.github.aedev.flow.*
+          schemas = os.path.join(ROOT, "app", "schemas")
+          for name in ("AppDatabase", "LinkedDatabase"):
+              src = os.path.join(schemas, f"com.arubr.smsvcodes.data.local.{name}")
+              dst = os.path.join(schemas, f"io.github.aedev.flow.data.local.{name}")
+              if os.path.lexists(src):
+                  if os.path.lexists(dst):
+                      print(f"ERROR: destination already exists: {dst}", file=sys.stderr)
+                      sys.exit(1)
+                  os.replace(src, dst)
+                  print(f"Renamed {src} -> {dst}")
+                  moved_files += 1
+
+          print(f"Done. Directory trees moved: {len(targets)}. Files moved: {moved_files}.")
+          PYEOF
+
+      - name: Commit and push
+        run: |
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "refactor: restore upstream io/github/aedev/flow file tree layout"
+            git push origin HEAD:Feature/zemer-filter
+            echo "Commit: $(git rev-parse HEAD)"
+          fi
