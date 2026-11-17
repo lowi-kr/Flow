@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.player
+package io.github.aedev.flow.player
 
 import android.content.Context
 import android.os.Bundle
@@ -10,7 +10,7 @@ import androidx.media3.session.SessionCommand
 import androidx.media3.session.SessionResult
 import com.google.common.util.concurrent.Futures
 import com.google.common.util.concurrent.ListenableFuture
-import com.arubr.smsvcodes.R
+import io.github.aedev.flow.R
 
 /** What the video notification's repeat and shuffle buttons show and do. */
 internal object VideoSessionControls {

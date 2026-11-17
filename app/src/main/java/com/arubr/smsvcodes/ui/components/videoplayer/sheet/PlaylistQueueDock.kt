@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.videoplayer.sheet
+package io.github.aedev.flow.ui.components.videoplayer.sheet
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -29,9 +29,9 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.data.model.Video
-import com.arubr.smsvcodes.ui.components.shared.MediaThumbnail
+import io.github.aedev.flow.R
+import io.github.aedev.flow.data.model.Video
+import io.github.aedev.flow.ui.components.shared.MediaThumbnail
 
 object PlaylistQueueDockDefaults {
     val Height: Dp = 76.dp

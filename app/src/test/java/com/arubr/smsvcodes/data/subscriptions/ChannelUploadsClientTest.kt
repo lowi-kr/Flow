@@ -1,13 +1,13 @@
-package com.arubr.smsvcodes.data.subscriptions
+package io.github.aedev.flow.data.subscriptions
 
 import com.google.common.truth.Truth.assertThat
-import com.arubr.smsvcodes.data.model.Video
-import com.arubr.smsvcodes.innertube.pages.channel.ChannelHeader
-import com.arubr.smsvcodes.innertube.pages.channel.ChannelPage
-import com.arubr.smsvcodes.innertube.pages.channel.ChannelTabContent
-import com.arubr.smsvcodes.innertube.pages.channel.ChannelTabDescriptor
-import com.arubr.smsvcodes.innertube.pages.channel.ChannelTabKind
-import com.arubr.smsvcodes.innertube.pages.renderer.FeedItem
+import io.github.aedev.flow.data.model.Video
+import io.github.aedev.flow.innertube.pages.channel.ChannelHeader
+import io.github.aedev.flow.innertube.pages.channel.ChannelPage
+import io.github.aedev.flow.innertube.pages.channel.ChannelTabContent
+import io.github.aedev.flow.innertube.pages.channel.ChannelTabDescriptor
+import io.github.aedev.flow.innertube.pages.channel.ChannelTabKind
+import io.github.aedev.flow.innertube.pages.renderer.FeedItem
 import kotlinx.coroutines.test.runTest
 import org.junit.Test
 import java.io.IOException

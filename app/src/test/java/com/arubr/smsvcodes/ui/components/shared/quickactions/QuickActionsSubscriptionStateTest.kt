@@ -1,7 +1,7 @@
-package com.arubr.smsvcodes.ui.components.shared.quickactions
+package io.github.aedev.flow.ui.components.shared.quickactions
 
 import com.google.common.truth.Truth.assertThat
-import com.arubr.smsvcodes.data.engagement.VideoEngagementUseCase
+import io.github.aedev.flow.data.engagement.VideoEngagementUseCase
 import io.mockk.every
 import io.mockk.mockk
 import io.mockk.unmockkAll

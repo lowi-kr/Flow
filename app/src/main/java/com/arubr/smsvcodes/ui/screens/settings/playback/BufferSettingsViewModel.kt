@@ -1,9 +1,9 @@
-package com.arubr.smsvcodes.ui.screens.settings.playback
+package io.github.aedev.flow.ui.screens.settings.playback
 
 import dagger.hilt.android.lifecycle.HiltViewModel
-import com.arubr.smsvcodes.data.local.BufferProfile
-import com.arubr.smsvcodes.data.local.PlayerPreferences
-import com.arubr.smsvcodes.ui.screens.settings.SettingsViewModel
+import io.github.aedev.flow.data.local.BufferProfile
+import io.github.aedev.flow.data.local.PlayerPreferences
+import io.github.aedev.flow.ui.screens.settings.SettingsViewModel
 import javax.inject.Inject
 
 /** The video player's buffer: a preset profile, or four custom durations. */

@@ -1,6 +1,6 @@
-package com.arubr.smsvcodes.innertube.pages
+package io.github.aedev.flow.innertube.pages
 
-import com.arubr.smsvcodes.innertube.models.AlbumItem
+import io.github.aedev.flow.innertube.models.AlbumItem
 
 data class ExplorePage(
     val newReleaseAlbums: List<AlbumItem>,

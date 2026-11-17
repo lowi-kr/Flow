@@ -1,7 +1,7 @@
-package com.arubr.smsvcodes.player.datasource
+package io.github.aedev.flow.player.datasource
 
 import com.google.common.truth.Truth.assertThat
-import com.arubr.smsvcodes.innertube.models.YouTubeClient
+import io.github.aedev.flow.innertube.models.YouTubeClient
 import org.junit.Test
 
 class GoogleVideoRequestPolicyTest {

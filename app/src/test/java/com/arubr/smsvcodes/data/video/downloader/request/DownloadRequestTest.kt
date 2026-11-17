@@ -1,15 +1,15 @@
-package com.arubr.smsvcodes.data.video.downloader.request
+package io.github.aedev.flow.data.video.downloader.request
 
 import com.google.common.truth.Truth.assertThat
-import com.arubr.smsvcodes.data.local.entity.DownloadEntity
-import com.arubr.smsvcodes.data.local.entity.DownloadFileType
-import com.arubr.smsvcodes.data.local.entity.DownloadItemEntity
-import com.arubr.smsvcodes.data.local.entity.DownloadWithItems
-import com.arubr.smsvcodes.data.model.Video
-import com.arubr.smsvcodes.data.music.model.MusicArtist
-import com.arubr.smsvcodes.data.music.model.MusicTrack
-import com.arubr.smsvcodes.data.video.downloader.tags.DownloadKind
-import com.arubr.smsvcodes.data.video.downloader.work.LegacyDownloadRequest
+import io.github.aedev.flow.data.local.entity.DownloadEntity
+import io.github.aedev.flow.data.local.entity.DownloadFileType
+import io.github.aedev.flow.data.local.entity.DownloadItemEntity
+import io.github.aedev.flow.data.local.entity.DownloadWithItems
+import io.github.aedev.flow.data.model.Video
+import io.github.aedev.flow.data.music.model.MusicArtist
+import io.github.aedev.flow.data.music.model.MusicTrack
+import io.github.aedev.flow.data.video.downloader.tags.DownloadKind
+import io.github.aedev.flow.data.video.downloader.work.LegacyDownloadRequest
 import org.junit.Test
 
 class DownloadRequestTest {

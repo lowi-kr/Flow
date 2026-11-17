@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.data.feed
+package io.github.aedev.flow.data.feed
 
 import com.google.common.truth.Truth.assertThat
 import org.junit.Test

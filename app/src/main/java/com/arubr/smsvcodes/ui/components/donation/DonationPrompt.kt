@@ -1,6 +1,6 @@
 @file:OptIn(ExperimentalMaterial3ExpressiveApi::class)
 
-package com.arubr.smsvcodes.ui.components.donation
+package io.github.aedev.flow.ui.components.donation
 
 import androidx.activity.ComponentActivity
 import androidx.compose.foundation.layout.Arrangement
@@ -35,8 +35,8 @@ import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.ui.components.shared.FlowAlertDialog
+import io.github.aedev.flow.R
+import io.github.aedev.flow.ui.components.shared.FlowAlertDialog
 
 private val HeartSize = 64.dp
 private val HeartIconSize = 28.dp

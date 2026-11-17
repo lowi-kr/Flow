@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.data.video.downloader.work
+package io.github.aedev.flow.data.video.downloader.work
 
 import android.content.Context
 import androidx.work.Constraints
@@ -14,7 +14,7 @@ import dagger.hilt.EntryPoint
 import dagger.hilt.InstallIn
 import dagger.hilt.android.EntryPointAccessors
 import dagger.hilt.components.SingletonComponent
-import com.arubr.smsvcodes.data.local.PlayerPreferences
+import io.github.aedev.flow.data.local.PlayerPreferences
 import java.time.Duration
 
 /**

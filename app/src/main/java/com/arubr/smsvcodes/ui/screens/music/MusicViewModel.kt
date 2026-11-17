@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.screens.music
+package io.github.aedev.flow.ui.screens.music
 
 import android.content.Context
 import android.util.Log
@@ -6,40 +6,40 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.data.local.LikedVideosRepository
-import com.arubr.smsvcodes.data.local.PlayerPreferences
-import com.arubr.smsvcodes.data.music.DownloadManager
-import com.arubr.smsvcodes.data.music.MusicCache
-import com.arubr.smsvcodes.data.music.YouTubeMusicService
-import com.arubr.smsvcodes.data.music.zemer.ZemerFilter
-import com.arubr.smsvcodes.data.music.model.ArtistDetails
-import com.arubr.smsvcodes.data.music.model.CommunityMusicPlaylist
-import com.arubr.smsvcodes.data.music.model.DailyDiscoverItem
-import com.arubr.smsvcodes.data.music.model.MusicItemType
-import com.arubr.smsvcodes.data.music.model.MusicPlaylist
-import com.arubr.smsvcodes.data.music.model.MusicTrack
-import com.arubr.smsvcodes.data.music.model.RelatedMusic
-import com.arubr.smsvcodes.data.music.model.audioMusicOnly
-import com.arubr.smsvcodes.data.music.model.isAudioMusicCandidate
-import com.arubr.smsvcodes.data.newmusic.InnertubeMusicService
-import com.arubr.smsvcodes.data.recommendation.MusicRecommendationAlgorithm
-import com.arubr.smsvcodes.data.recommendation.MusicSection
-import com.arubr.smsvcodes.data.recommendation.music.MusicArtistInsights
-import com.arubr.smsvcodes.data.recommendation.music.MusicQuickPicks
-import com.arubr.smsvcodes.data.recommendation.music.MusicTimeBucket
-import com.arubr.smsvcodes.data.recommendation.music.graph.MusicGraphStore
-import com.arubr.smsvcodes.data.recommendation.music.musicArtistKey
-import com.arubr.smsvcodes.data.recommendation.music.onRepeatShelf
-import com.arubr.smsvcodes.data.recommendation.music.primaryArtistKey
-import com.arubr.smsvcodes.innertube.YouTube
-import com.arubr.smsvcodes.innertube.models.BrowseEndpoint
-import com.arubr.smsvcodes.innertube.models.SongItem
-import com.arubr.smsvcodes.innertube.pages.ArtistItemsPage
-import com.arubr.smsvcodes.innertube.pages.HomePage
-import com.arubr.smsvcodes.innertube.pages.MoodAndGenres
-import com.arubr.smsvcodes.player.EnhancedMusicPlayerManager
-import com.arubr.smsvcodes.utils.PerformanceDispatcher
+import io.github.aedev.flow.R
+import io.github.aedev.flow.data.local.LikedVideosRepository
+import io.github.aedev.flow.data.local.PlayerPreferences
+import io.github.aedev.flow.data.music.DownloadManager
+import io.github.aedev.flow.data.music.MusicCache
+import io.github.aedev.flow.data.music.YouTubeMusicService
+import io.github.aedev.flow.data.music.zemer.ZemerFilter
+import io.github.aedev.flow.data.music.model.ArtistDetails
+import io.github.aedev.flow.data.music.model.CommunityMusicPlaylist
+import io.github.aedev.flow.data.music.model.DailyDiscoverItem
+import io.github.aedev.flow.data.music.model.MusicItemType
+import io.github.aedev.flow.data.music.model.MusicPlaylist
+import io.github.aedev.flow.data.music.model.MusicTrack
+import io.github.aedev.flow.data.music.model.RelatedMusic
+import io.github.aedev.flow.data.music.model.audioMusicOnly
+import io.github.aedev.flow.data.music.model.isAudioMusicCandidate
+import io.github.aedev.flow.data.newmusic.InnertubeMusicService
+import io.github.aedev.flow.data.recommendation.MusicRecommendationAlgorithm
+import io.github.aedev.flow.data.recommendation.MusicSection
+import io.github.aedev.flow.data.recommendation.music.MusicArtistInsights
+import io.github.aedev.flow.data.recommendation.music.MusicQuickPicks
+import io.github.aedev.flow.data.recommendation.music.MusicTimeBucket
+import io.github.aedev.flow.data.recommendation.music.graph.MusicGraphStore
+import io.github.aedev.flow.data.recommendation.music.musicArtistKey
+import io.github.aedev.flow.data.recommendation.music.onRepeatShelf
+import io.github.aedev.flow.data.recommendation.music.primaryArtistKey
+import io.github.aedev.flow.innertube.YouTube
+import io.github.aedev.flow.innertube.models.BrowseEndpoint
+import io.github.aedev.flow.innertube.models.SongItem
+import io.github.aedev.flow.innertube.pages.ArtistItemsPage
+import io.github.aedev.flow.innertube.pages.HomePage
+import io.github.aedev.flow.innertube.pages.MoodAndGenres
+import io.github.aedev.flow.player.EnhancedMusicPlayerManager
+import io.github.aedev.flow.utils.PerformanceDispatcher
 import kotlinx.coroutines.CoroutineStart
 import kotlinx.coroutines.Deferred
 import kotlinx.coroutines.async
@@ -71,13 +71,13 @@ class MusicViewModel
     constructor(
         @ApplicationContext private val context: Context,
         private val musicRecommendationAlgorithm: MusicRecommendationAlgorithm,
-        private val subscriptionRepository: com.arubr.smsvcodes.data.local.SubscriptionRepository,
-        private val playlistRepository: com.arubr.smsvcodes.data.music.PlaylistRepository,
+        private val subscriptionRepository: io.github.aedev.flow.data.local.SubscriptionRepository,
+        private val playlistRepository: io.github.aedev.flow.data.music.PlaylistRepository,
         private val downloadManager: DownloadManager,
-        private val musicBrain: com.arubr.smsvcodes.data.recommendation.music.MusicBrainEngine,
+        private val musicBrain: io.github.aedev.flow.data.recommendation.music.MusicBrainEngine,
         private val playerPreferences: PlayerPreferences,
         private val musicGraph: MusicGraphStore,
-        private val dailyMixStore: com.arubr.smsvcodes.data.recommendation.music.DailyMixStore,
+        private val dailyMixStore: io.github.aedev.flow.data.recommendation.music.DailyMixStore,
     ) : ViewModel() {
         companion object {
             /** Route prefix for synthesized Daily Mix playlist pages. */
@@ -1398,7 +1398,7 @@ class MusicViewModel
                     subscriptionRepository.unsubscribe(artist.channelId)
                 } else {
                     subscriptionRepository.subscribe(
-                        com.arubr.smsvcodes.data.local.ChannelSubscription(
+                        io.github.aedev.flow.data.local.ChannelSubscription(
                             channelId = artist.channelId,
                             channelName = artist.name,
                             channelThumbnail = artist.thumbnailUrl,
@@ -1547,7 +1547,7 @@ data class MusicUiState(
     val homeChips: List<HomePage.Chip> = emptyList(),
     val selectedHomeChip: HomePage.Chip? = null,
     val brainMaturity: String? = null, // "cold_start" / "warming" / "mature" — steers section order
-    val explorePage: com.arubr.smsvcodes.innertube.pages.ExplorePage? = null,
+    val explorePage: io.github.aedev.flow.innertube.pages.ExplorePage? = null,
     val moodsAndGenres: List<MoodAndGenres> = emptyList(),
     val selectedGenre: String? = null,
     val selectedFilter: String? = null,
@@ -1563,7 +1563,7 @@ data class MusicUiState(
     val isMoreLoading: Boolean = false,
     val searchResultsArtists: List<ArtistDetails> = emptyList(),
     val homeContinuation: String? = null,
-    val artistItemsPage: com.arubr.smsvcodes.innertube.pages.ArtistItemsPage? = null,
+    val artistItemsPage: io.github.aedev.flow.innertube.pages.ArtistItemsPage? = null,
     val isArtistItemsLoading: Boolean = false,
     val similarToSections: List<MusicSection> = emptyList(),
     val otherPerformanceSections: List<MusicSection> = emptyList(),

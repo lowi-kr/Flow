@@ -1,6 +1,6 @@
-package com.arubr.smsvcodes.innertube.pages
+package io.github.aedev.flow.innertube.pages
 
-import com.arubr.smsvcodes.player.sabr.proto.ProtobufReader
+import io.github.aedev.flow.player.sabr.proto.ProtobufReader
 import java.net.URLDecoder
 import java.util.Base64
 

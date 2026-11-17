@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.utils
+package io.github.aedev.flow.utils
 
 import android.text.style.URLSpan
 import androidx.compose.ui.graphics.Color

@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.player.datasource
+package io.github.aedev.flow.player.datasource
 
 import android.net.Uri
 import androidx.media3.datasource.DataSource

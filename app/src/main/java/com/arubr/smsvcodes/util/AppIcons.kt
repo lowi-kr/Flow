@@ -1,8 +1,8 @@
-package com.arubr.smsvcodes.util
+package io.github.aedev.flow.util
 
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
-import com.arubr.smsvcodes.R
+import io.github.aedev.flow.R
 
 /** A launcher alias: its manifest suffix, the name the picker shows and the adaptive icon it installs. */
 data class LauncherIcon(
@@ -13,7 +13,7 @@ data class LauncherIcon(
 
 object AppIcons {
     /** Component name prefix shared by every alias (the application id namespace). */
-    const val NAMESPACE = "com.arubr.smsvcodes"
+    const val NAMESPACE = "io.github.aedev.flow"
 
     /** The alias enabled by default in the manifest. Used as a safe fallback. */
     const val DEFAULT_SUFFIX = ".IconFlowRed"

@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.screens.sync
+package io.github.aedev.flow.ui.screens.sync
 
 import android.os.Build
 import android.widget.Toast
@@ -47,11 +47,11 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.sync.SyncState
-import com.arubr.smsvcodes.sync.protocol.ApplyStats
-import com.arubr.smsvcodes.ui.components.shared.LocalDpadNavigation
-import com.arubr.smsvcodes.utils.copyPlainText
+import io.github.aedev.flow.R
+import io.github.aedev.flow.sync.SyncState
+import io.github.aedev.flow.sync.protocol.ApplyStats
+import io.github.aedev.flow.ui.components.shared.LocalDpadNavigation
+import io.github.aedev.flow.utils.copyPlainText
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 

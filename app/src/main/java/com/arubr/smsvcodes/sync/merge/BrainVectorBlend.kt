@@ -1,9 +1,9 @@
-package com.arubr.smsvcodes.sync.merge
+package io.github.aedev.flow.sync.merge
 
-import com.arubr.smsvcodes.sync.canonical.CanonicalBrain
-import com.arubr.smsvcodes.sync.canonical.CanonicalBrainVectors
-import com.arubr.smsvcodes.sync.canonical.CanonicalVector
-import com.arubr.smsvcodes.sync.identity.Hlc
+import io.github.aedev.flow.sync.canonical.CanonicalBrain
+import io.github.aedev.flow.sync.canonical.CanonicalBrainVectors
+import io.github.aedev.flow.sync.canonical.CanonicalVector
+import io.github.aedev.flow.sync.identity.Hlc
 import kotlinx.serialization.Serializable
 import java.util.TreeMap
 import java.util.TreeSet

@@ -1,8 +1,8 @@
-package com.arubr.smsvcodes.ui.components.videoplayer.overlay
+package io.github.aedev.flow.ui.components.videoplayer.overlay
 
-import com.arubr.smsvcodes.data.local.SponsorBlockAction
-import com.arubr.smsvcodes.data.model.SponsorBlockCategories
-import com.arubr.smsvcodes.data.model.SponsorBlockSegment
+import io.github.aedev.flow.data.local.SponsorBlockAction
+import io.github.aedev.flow.data.model.SponsorBlockCategories
+import io.github.aedev.flow.data.model.SponsorBlockSegment
 
 internal fun findActiveManualSponsorSegment(
     sponsorSegments: List<SponsorBlockSegment>,

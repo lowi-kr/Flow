@@ -1,8 +1,8 @@
-package com.arubr.smsvcodes.innertube.models.body
+package io.github.aedev.flow.innertube.models.body
 
 import com.google.common.truth.Truth.assertThat
-import com.arubr.smsvcodes.innertube.models.YouTubeClient
-import com.arubr.smsvcodes.innertube.models.YouTubeLocale
+import io.github.aedev.flow.innertube.models.YouTubeClient
+import io.github.aedev.flow.innertube.models.YouTubeLocale
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.boolean
 import kotlinx.serialization.json.jsonObject

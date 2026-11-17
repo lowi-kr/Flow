@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.shared
+package io.github.aedev.flow.ui.components.shared
 
 import androidx.compose.animation.animateContentSize
 import androidx.compose.foundation.layout.Arrangement
@@ -47,9 +47,9 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.data.notes.NoteMoments
-import com.arubr.smsvcodes.utils.formatDurationMillis
+import io.github.aedev.flow.R
+import io.github.aedev.flow.data.notes.NoteMoments
+import io.github.aedev.flow.utils.formatDurationMillis
 
 private const val COLLAPSED_LINES = 3
 

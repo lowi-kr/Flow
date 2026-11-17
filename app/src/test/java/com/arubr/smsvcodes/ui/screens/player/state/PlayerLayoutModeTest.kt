@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.screens.player.state
+package io.github.aedev.flow.ui.screens.player.state
 
 import androidx.window.core.layout.WindowSizeClass
 import com.google.common.truth.Truth.assertThat

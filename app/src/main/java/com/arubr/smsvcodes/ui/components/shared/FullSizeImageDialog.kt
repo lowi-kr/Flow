@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.shared
+package io.github.aedev.flow.ui.components.shared
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -30,7 +30,7 @@ import coil3.compose.AsyncImage
 import coil3.request.ImageRequest
 import coil3.request.allowHardware
 import coil3.request.crossfade
-import com.arubr.smsvcodes.R
+import io.github.aedev.flow.R
 
 @Composable
 fun FullSizeImageDialog(

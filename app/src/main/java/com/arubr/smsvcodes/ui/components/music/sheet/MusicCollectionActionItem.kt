@@ -1,9 +1,9 @@
-package com.arubr.smsvcodes.ui.components.music.sheet
+package io.github.aedev.flow.ui.components.music.sheet
 
-import com.arubr.smsvcodes.data.music.model.MusicPlaylist
-import com.arubr.smsvcodes.innertube.models.AlbumItem
-import com.arubr.smsvcodes.innertube.models.PlaylistItem
-import com.arubr.smsvcodes.innertube.models.YTItem
+import io.github.aedev.flow.data.music.model.MusicPlaylist
+import io.github.aedev.flow.innertube.models.AlbumItem
+import io.github.aedev.flow.innertube.models.PlaylistItem
+import io.github.aedev.flow.innertube.models.YTItem
 
 data class MusicCollectionActionItem(
     val id: String,

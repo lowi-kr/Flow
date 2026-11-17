@@ -1,11 +1,11 @@
-package com.arubr.smsvcodes.ui.screens.settings
+package io.github.aedev.flow.ui.screens.settings
 
-import com.arubr.smsvcodes.data.local.VideoCodec
-import com.arubr.smsvcodes.ui.screens.settings.playback.parseSpeedInput
-import com.arubr.smsvcodes.ui.screens.settings.playback.parseSpeedPresets
-import com.arubr.smsvcodes.ui.screens.settings.playback.serializeSpeedPresets
-import com.arubr.smsvcodes.ui.screens.settings.quality.fallbackAfterPreferredChange
-import com.arubr.smsvcodes.ui.screens.settings.quality.fallbackCodecs
+import io.github.aedev.flow.data.local.VideoCodec
+import io.github.aedev.flow.ui.screens.settings.playback.parseSpeedInput
+import io.github.aedev.flow.ui.screens.settings.playback.parseSpeedPresets
+import io.github.aedev.flow.ui.screens.settings.playback.serializeSpeedPresets
+import io.github.aedev.flow.ui.screens.settings.quality.fallbackAfterPreferredChange
+import io.github.aedev.flow.ui.screens.settings.quality.fallbackCodecs
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertNull

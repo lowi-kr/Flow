@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.search
+package io.github.aedev.flow.ui.components.search
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.PaddingValues
@@ -24,15 +24,15 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.data.local.SearchHistoryItem
-import com.arubr.smsvcodes.data.local.SearchType
-import com.arubr.smsvcodes.innertube.pages.search.SearchSuggestion
-import com.arubr.smsvcodes.ui.components.layout.flowBottomContentPadding
-import com.arubr.smsvcodes.ui.components.shared.DeepFlowState
-import com.arubr.smsvcodes.ui.components.shared.FlowSuggestionRow
-import com.arubr.smsvcodes.ui.components.shared.FlowSwitchRow
-import com.arubr.smsvcodes.ui.components.shared.deepFlowStatus
+import io.github.aedev.flow.R
+import io.github.aedev.flow.data.local.SearchHistoryItem
+import io.github.aedev.flow.data.local.SearchType
+import io.github.aedev.flow.innertube.pages.search.SearchSuggestion
+import io.github.aedev.flow.ui.components.layout.flowBottomContentPadding
+import io.github.aedev.flow.ui.components.shared.DeepFlowState
+import io.github.aedev.flow.ui.components.shared.FlowSuggestionRow
+import io.github.aedev.flow.ui.components.shared.FlowSwitchRow
+import io.github.aedev.flow.ui.components.shared.deepFlowStatus
 
 /**
  * What the search screen shows before a query is submitted: the user's own history first, then

@@ -1,8 +1,8 @@
-package com.arubr.smsvcodes.ui.components.musicplayer.lyrics
+package io.github.aedev.flow.ui.components.musicplayer.lyrics
 
 import com.google.common.collect.Range
 import com.google.common.truth.Truth.assertThat
-import com.arubr.smsvcodes.data.lyrics.WordTimestamp
+import io.github.aedev.flow.data.lyrics.WordTimestamp
 import org.junit.Test
 
 class LyricsTimingTest {

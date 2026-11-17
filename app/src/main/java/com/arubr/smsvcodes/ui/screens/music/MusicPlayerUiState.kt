@@ -1,10 +1,10 @@
-package com.arubr.smsvcodes.ui.screens.music
+package io.github.aedev.flow.ui.screens.music
 
-import com.arubr.smsvcodes.data.local.LYRICS_ALIGN_CENTER
-import com.arubr.smsvcodes.data.lyrics.LyricsCandidate
-import com.arubr.smsvcodes.data.lyrics.LyricsEntry
-import com.arubr.smsvcodes.data.music.model.MusicTrack
-import com.arubr.smsvcodes.player.RepeatMode
+import io.github.aedev.flow.data.local.LYRICS_ALIGN_CENTER
+import io.github.aedev.flow.data.lyrics.LyricsCandidate
+import io.github.aedev.flow.data.lyrics.LyricsEntry
+import io.github.aedev.flow.data.music.model.MusicTrack
+import io.github.aedev.flow.player.RepeatMode
 
 data class MusicPlayerUiState(
     val currentTrack: MusicTrack? = null,

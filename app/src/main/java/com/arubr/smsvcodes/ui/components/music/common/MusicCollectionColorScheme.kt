@@ -4,7 +4,7 @@
  * This file is part of Flow (https://github.com/Flow-Tube/Flow).
  */
 
-package com.arubr.smsvcodes.ui.components.music.common
+package io.github.aedev.flow.ui.components.music.common
 
 import androidx.compose.material3.ColorScheme
 import androidx.compose.material3.MaterialTheme
@@ -12,11 +12,11 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.lerp
-import com.arubr.smsvcodes.ui.components.shared.MediaPalette
-import com.arubr.smsvcodes.ui.components.shared.rememberMediaPalette
-import com.arubr.smsvcodes.ui.theme.ensureContrastOn
-import com.arubr.smsvcodes.ui.theme.tone
-import com.arubr.smsvcodes.ui.theme.withTone
+import io.github.aedev.flow.ui.components.shared.MediaPalette
+import io.github.aedev.flow.ui.components.shared.rememberMediaPalette
+import io.github.aedev.flow.ui.theme.ensureContrastOn
+import io.github.aedev.flow.ui.theme.tone
+import io.github.aedev.flow.ui.theme.withTone
 
 private const val SURFACE_TINT = 0.45f
 private const val CONTAINER_TINT = 0.55f

@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.player.state
+package io.github.aedev.flow.player.state
 
 import app.cash.turbine.test
 import kotlinx.coroutines.flow.MutableStateFlow

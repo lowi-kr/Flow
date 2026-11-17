@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.player.subtitle
+package io.github.aedev.flow.player.subtitle
 
 /**
  * How far captions are shifted from the picture: positive shows them later, negative earlier.

@@ -8,7 +8,7 @@
  * explicitly credit "Flow Android Client" and link back to the original repository.
  */
 
-package com.arubr.smsvcodes.data.recommendation
+package io.github.aedev.flow.data.recommendation
 
 /**
  * Channel-level knowledge extraction — pure functions the engine applies.

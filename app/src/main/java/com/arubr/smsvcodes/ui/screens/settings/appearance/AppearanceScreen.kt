@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.screens.settings.appearance
+package io.github.aedev.flow.ui.screens.settings.appearance
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.outlined.ViewList
@@ -18,26 +18,26 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.res.stringResource
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.data.local.AppFontSelection
-import com.arubr.smsvcodes.data.local.HomeFeedColumns
-import com.arubr.smsvcodes.data.local.HomeViewMode
-import com.arubr.smsvcodes.platform.AppUiMode
-import com.arubr.smsvcodes.ui.components.settings.SettingsDestination
-import com.arubr.smsvcodes.ui.components.settings.SettingsPage
-import com.arubr.smsvcodes.ui.components.settings.SettingsTarget
-import com.arubr.smsvcodes.ui.components.settings.nav
-import com.arubr.smsvcodes.ui.components.settings.switch
-import com.arubr.smsvcodes.ui.components.settings.toggleGroup
-import com.arubr.smsvcodes.ui.components.shared.FlowChoice
-import com.arubr.smsvcodes.ui.components.shared.FlowChoiceDialog
-import com.arubr.smsvcodes.ui.components.shared.FlowToggleOption
-import com.arubr.smsvcodes.ui.screens.settings.index.AppearanceIndex
-import com.arubr.smsvcodes.ui.screens.settings.index.DestinationIndex
-import com.arubr.smsvcodes.ui.theme.AppFont
-import com.arubr.smsvcodes.ui.theme.GridItemSize
-import com.arubr.smsvcodes.ui.theme.ThemeCatalog
-import com.arubr.smsvcodes.ui.theme.ThemeMode
+import io.github.aedev.flow.R
+import io.github.aedev.flow.data.local.AppFontSelection
+import io.github.aedev.flow.data.local.HomeFeedColumns
+import io.github.aedev.flow.data.local.HomeViewMode
+import io.github.aedev.flow.platform.AppUiMode
+import io.github.aedev.flow.ui.components.settings.SettingsDestination
+import io.github.aedev.flow.ui.components.settings.SettingsPage
+import io.github.aedev.flow.ui.components.settings.SettingsTarget
+import io.github.aedev.flow.ui.components.settings.nav
+import io.github.aedev.flow.ui.components.settings.switch
+import io.github.aedev.flow.ui.components.settings.toggleGroup
+import io.github.aedev.flow.ui.components.shared.FlowChoice
+import io.github.aedev.flow.ui.components.shared.FlowChoiceDialog
+import io.github.aedev.flow.ui.components.shared.FlowToggleOption
+import io.github.aedev.flow.ui.screens.settings.index.AppearanceIndex
+import io.github.aedev.flow.ui.screens.settings.index.DestinationIndex
+import io.github.aedev.flow.ui.theme.AppFont
+import io.github.aedev.flow.ui.theme.GridItemSize
+import io.github.aedev.flow.ui.theme.ThemeCatalog
+import io.github.aedev.flow.ui.theme.ThemeMode
 import kotlinx.coroutines.launch
 
 /** Everything about how Flow looks: theme, icon, layout, and the sub-pages for finer control. */

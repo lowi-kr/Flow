@@ -1,13 +1,13 @@
-package com.arubr.smsvcodes.ui.components.shared
+package io.github.aedev.flow.ui.components.shared
 
 import androidx.annotation.StringRes
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.res.stringResource
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.data.model.Comment
-import com.arubr.smsvcodes.innertube.pages.VideoCommentSort
-import com.arubr.smsvcodes.utils.formatTimeAgo
-import com.arubr.smsvcodes.utils.parseTimestampMs
+import io.github.aedev.flow.R
+import io.github.aedev.flow.data.model.Comment
+import io.github.aedev.flow.innertube.pages.VideoCommentSort
+import io.github.aedev.flow.utils.formatTimeAgo
+import io.github.aedev.flow.utils.parseTimestampMs
 
 enum class CommentSortFilter(
     @param:StringRes val labelRes: Int,

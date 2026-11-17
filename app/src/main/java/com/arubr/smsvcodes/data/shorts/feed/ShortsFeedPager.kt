@@ -1,12 +1,12 @@
-package com.arubr.smsvcodes.data.shorts.feed
+package io.github.aedev.flow.data.shorts.feed
 
 import android.util.Log
-import com.arubr.smsvcodes.data.model.ShortVideo
-import com.arubr.smsvcodes.data.model.Video
-import com.arubr.smsvcodes.data.model.toVideo
-import com.arubr.smsvcodes.data.recommendation.ShortsSeedInput
-import com.arubr.smsvcodes.data.recommendation.ShortsSeedSource
-import com.arubr.smsvcodes.innertube.pages.reel.reelPosterUrl
+import io.github.aedev.flow.data.model.ShortVideo
+import io.github.aedev.flow.data.model.Video
+import io.github.aedev.flow.data.model.toVideo
+import io.github.aedev.flow.data.recommendation.ShortsSeedInput
+import io.github.aedev.flow.data.recommendation.ShortsSeedSource
+import io.github.aedev.flow.innertube.pages.reel.reelPosterUrl
 import kotlinx.coroutines.async
 import kotlinx.coroutines.awaitAll
 import kotlinx.coroutines.coroutineScope

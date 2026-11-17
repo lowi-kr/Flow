@@ -1,7 +1,7 @@
-package com.arubr.smsvcodes.ui.screens.library
+package io.github.aedev.flow.ui.screens.library
 
 import com.google.common.truth.Truth.assertThat
-import com.arubr.smsvcodes.ui.components.library.LibrarySection
+import io.github.aedev.flow.ui.components.library.LibrarySection
 import org.junit.Test
 
 class LibrarySectionVisibilityTest {

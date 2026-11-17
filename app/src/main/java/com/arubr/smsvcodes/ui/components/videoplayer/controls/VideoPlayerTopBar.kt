@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.videoplayer.controls
+package io.github.aedev.flow.ui.components.videoplayer.controls
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -54,13 +54,13 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.data.local.PlayerOverlayPreferences
-import com.arubr.smsvcodes.ui.theme.PlayerScrim
-import com.arubr.smsvcodes.ui.theme.PlayerScrimAffordance
-import com.arubr.smsvcodes.ui.theme.PlayerScrimContent
-import com.arubr.smsvcodes.ui.theme.PlayerScrimContentDisabled
-import com.arubr.smsvcodes.ui.theme.PlayerScrimContentSecondary
+import io.github.aedev.flow.R
+import io.github.aedev.flow.data.local.PlayerOverlayPreferences
+import io.github.aedev.flow.ui.theme.PlayerScrim
+import io.github.aedev.flow.ui.theme.PlayerScrimAffordance
+import io.github.aedev.flow.ui.theme.PlayerScrimContent
+import io.github.aedev.flow.ui.theme.PlayerScrimContentDisabled
+import io.github.aedev.flow.ui.theme.PlayerScrimContentSecondary
 
 /**
  * The row of actions along the top of the player: minimise, title, and the configurable action

@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.equalizer
+package io.github.aedev.flow.ui.components.equalizer
 
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.interaction.collectIsPressedAsState
@@ -32,7 +32,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
-import com.arubr.smsvcodes.R
+import io.github.aedev.flow.R
 import kotlinx.coroutines.delay
 
 private const val REPEAT_DELAY_MS = 400L

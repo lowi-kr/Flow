@@ -1,8 +1,8 @@
-package com.arubr.smsvcodes.ui.screens.music
+package io.github.aedev.flow.ui.screens.music
 
 import android.content.Context
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.data.music.model.MusicTrack
+import io.github.aedev.flow.R
+import io.github.aedev.flow.data.music.model.MusicTrack
 import java.util.Locale
 
 /** The "Playing from" label for a queue: known shelf keys become their section names, the rest is tidied. */

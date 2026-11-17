@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.stats
+package io.github.aedev.flow.ui.components.stats
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -21,8 +21,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.ui.components.shared.flowActionShape
+import io.github.aedev.flow.R
+import io.github.aedev.flow.ui.components.shared.flowActionShape
 
 private val CardPadding = 16.dp
 private val CardSpacing = 16.dp

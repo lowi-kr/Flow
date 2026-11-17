@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.screens.playlists
+package io.github.aedev.flow.ui.screens.playlists
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.BoxWithConstraints
@@ -18,15 +18,15 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.data.model.PlaylistInfo
-import com.arubr.smsvcodes.ui.components.PlaylistCard
-import com.arubr.smsvcodes.ui.components.PlaylistCardLayout
-import com.arubr.smsvcodes.ui.components.layout.flowBottomContentPadding
-import com.arubr.smsvcodes.ui.components.library.MusicPlaylistLibraryCard
-import com.arubr.smsvcodes.ui.components.library.libraryGridLayoutFor
-import com.arubr.smsvcodes.ui.components.shared.FlowEmptyState
-import com.arubr.smsvcodes.ui.components.shared.MediaKind
+import io.github.aedev.flow.R
+import io.github.aedev.flow.data.model.PlaylistInfo
+import io.github.aedev.flow.ui.components.PlaylistCard
+import io.github.aedev.flow.ui.components.PlaylistCardLayout
+import io.github.aedev.flow.ui.components.layout.flowBottomContentPadding
+import io.github.aedev.flow.ui.components.library.MusicPlaylistLibraryCard
+import io.github.aedev.flow.ui.components.library.libraryGridLayoutFor
+import io.github.aedev.flow.ui.components.shared.FlowEmptyState
+import io.github.aedev.flow.ui.components.shared.MediaKind
 
 private val GridCellMinWidth = 160.dp
 private val CompactCellMinWidth = 360.dp

@@ -50,11 +50,11 @@ fun translatedLocaleTags(): List<String> =
         .sorted()
 
 android {
-    namespace = "com.arubr.smsvcodes"
+    namespace = "io.github.aedev.flow"
     compileSdk = 37
 
     defaultConfig {
-        applicationId = "com.arubr.smsvcodes"
+        applicationId = "io.github.aedev.flow"
         minSdk = 26
         targetSdk = 36
         versionCode = 19
@@ -66,7 +66,7 @@ android {
         buildConfigField("String", "LASTFM_API_KEY", "\"${secretValue("lastfmApiKey", "lastfm.apiKey", "LASTFM_API_KEY")}\"")
         buildConfigField("String", "LASTFM_API_SECRET", "\"${secretValue("lastfmApiSecret", "lastfm.apiSecret", "LASTFM_API_SECRET")}\"")
 
-        testInstrumentationRunner = "com.arubr.smsvcodes.HiltTestRunner"
+        testInstrumentationRunner = "io.github.aedev.flow.HiltTestRunner"
         vectorDrawables {
             useSupportLibrary = true
         }

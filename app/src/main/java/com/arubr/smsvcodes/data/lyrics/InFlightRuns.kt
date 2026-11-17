@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.data.lyrics
+package io.github.aedev.flow.data.lyrics
 
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Deferred

@@ -1,11 +1,11 @@
-package com.arubr.smsvcodes.data.scrobble
+package io.github.aedev.flow.data.scrobble
 
-import com.arubr.smsvcodes.data.music.model.MusicTrack
-import com.arubr.smsvcodes.data.newmusic.InnertubeMusicService
-import com.arubr.smsvcodes.data.recommendation.music.MusicBrainEngine
-import com.arubr.smsvcodes.innertube.YouTube
-import com.arubr.smsvcodes.innertube.models.SongItem
-import com.arubr.smsvcodes.utils.PerformanceDispatcher
+import io.github.aedev.flow.data.music.model.MusicTrack
+import io.github.aedev.flow.data.newmusic.InnertubeMusicService
+import io.github.aedev.flow.data.recommendation.music.MusicBrainEngine
+import io.github.aedev.flow.innertube.YouTube
+import io.github.aedev.flow.innertube.models.SongItem
+import io.github.aedev.flow.utils.PerformanceDispatcher
 import kotlinx.coroutines.async
 import kotlinx.coroutines.awaitAll
 import kotlinx.coroutines.coroutineScope

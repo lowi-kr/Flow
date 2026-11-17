@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui
+package io.github.aedev.flow.ui
 
 import androidx.compose.animation.*
 import androidx.compose.runtime.*
@@ -10,43 +10,43 @@ import androidx.navigation.NavHostController
 import androidx.navigation.NavType
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
-import com.arubr.smsvcodes.data.local.PlaylistRepository
-import com.arubr.smsvcodes.data.localmedia.LocalMediaIds
-import com.arubr.smsvcodes.data.localmedia.toMusicTrack
-import com.arubr.smsvcodes.data.localmedia.toVideo
-import com.arubr.smsvcodes.data.model.Video
-import com.arubr.smsvcodes.data.music.model.toMusicTrack
-import com.arubr.smsvcodes.data.music.model.toVideo
-import com.arubr.smsvcodes.data.shorts.queue.ShortsQueueSource
-import com.arubr.smsvcodes.player.GlobalPlayerState
-import com.arubr.smsvcodes.ui.components.layout.LocalFlowBottomInsets
-import com.arubr.smsvcodes.ui.components.layout.navigation.MediaNavigator
-import com.arubr.smsvcodes.ui.components.musicplayer.sheet.MusicPlayerSheetState
-import com.arubr.smsvcodes.ui.components.settings.SettingsDestination
-import com.arubr.smsvcodes.ui.components.settings.SettingsTarget
-import com.arubr.smsvcodes.ui.components.videoplayer.PlayerDraggableState
-import com.arubr.smsvcodes.ui.screens.channel.ChannelScreen
-import com.arubr.smsvcodes.ui.screens.equalizer.EqualizerScreen
-import com.arubr.smsvcodes.ui.screens.history.HistoryScreen
-import com.arubr.smsvcodes.ui.screens.home.HomeScreen
-import com.arubr.smsvcodes.ui.screens.home.HomeViewModel
-import com.arubr.smsvcodes.ui.screens.library.LibraryScreen
-import com.arubr.smsvcodes.ui.screens.music.sharedMusicPlayerViewModel
-import com.arubr.smsvcodes.ui.screens.notifications.NotificationScreen
-import com.arubr.smsvcodes.ui.screens.onboarding.OnboardingScreen
-import com.arubr.smsvcodes.ui.screens.player.VideoPlayerViewModel
-import com.arubr.smsvcodes.ui.screens.player.state.VideoPlayerUiState
-import com.arubr.smsvcodes.ui.screens.playlists.PlaylistDetailScreen
-import com.arubr.smsvcodes.ui.screens.playlists.PlaylistsScreen
-import com.arubr.smsvcodes.ui.screens.recap.RecapRoutes
-import com.arubr.smsvcodes.ui.screens.recap.RecapScreen
-import com.arubr.smsvcodes.ui.screens.recap.story.RecapStoryScreen
-import com.arubr.smsvcodes.ui.screens.search.SearchScreen
-import com.arubr.smsvcodes.ui.screens.settings.SettingsHost
-import com.arubr.smsvcodes.ui.screens.shorts.ShortsScreen
-import com.arubr.smsvcodes.ui.screens.subscriptions.SubscriptionsScreen
-import com.arubr.smsvcodes.ui.screens.update.UPDATE_ROUTE
-import com.arubr.smsvcodes.ui.screens.update.UpdateScreen
+import io.github.aedev.flow.data.local.PlaylistRepository
+import io.github.aedev.flow.data.localmedia.LocalMediaIds
+import io.github.aedev.flow.data.localmedia.toMusicTrack
+import io.github.aedev.flow.data.localmedia.toVideo
+import io.github.aedev.flow.data.model.Video
+import io.github.aedev.flow.data.music.model.toMusicTrack
+import io.github.aedev.flow.data.music.model.toVideo
+import io.github.aedev.flow.data.shorts.queue.ShortsQueueSource
+import io.github.aedev.flow.player.GlobalPlayerState
+import io.github.aedev.flow.ui.components.layout.LocalFlowBottomInsets
+import io.github.aedev.flow.ui.components.layout.navigation.MediaNavigator
+import io.github.aedev.flow.ui.components.musicplayer.sheet.MusicPlayerSheetState
+import io.github.aedev.flow.ui.components.settings.SettingsDestination
+import io.github.aedev.flow.ui.components.settings.SettingsTarget
+import io.github.aedev.flow.ui.components.videoplayer.PlayerDraggableState
+import io.github.aedev.flow.ui.screens.channel.ChannelScreen
+import io.github.aedev.flow.ui.screens.equalizer.EqualizerScreen
+import io.github.aedev.flow.ui.screens.history.HistoryScreen
+import io.github.aedev.flow.ui.screens.home.HomeScreen
+import io.github.aedev.flow.ui.screens.home.HomeViewModel
+import io.github.aedev.flow.ui.screens.library.LibraryScreen
+import io.github.aedev.flow.ui.screens.music.sharedMusicPlayerViewModel
+import io.github.aedev.flow.ui.screens.notifications.NotificationScreen
+import io.github.aedev.flow.ui.screens.onboarding.OnboardingScreen
+import io.github.aedev.flow.ui.screens.player.VideoPlayerViewModel
+import io.github.aedev.flow.ui.screens.player.state.VideoPlayerUiState
+import io.github.aedev.flow.ui.screens.playlists.PlaylistDetailScreen
+import io.github.aedev.flow.ui.screens.playlists.PlaylistsScreen
+import io.github.aedev.flow.ui.screens.recap.RecapRoutes
+import io.github.aedev.flow.ui.screens.recap.RecapScreen
+import io.github.aedev.flow.ui.screens.recap.story.RecapStoryScreen
+import io.github.aedev.flow.ui.screens.search.SearchScreen
+import io.github.aedev.flow.ui.screens.settings.SettingsHost
+import io.github.aedev.flow.ui.screens.shorts.ShortsScreen
+import io.github.aedev.flow.ui.screens.subscriptions.SubscriptionsScreen
+import io.github.aedev.flow.ui.screens.update.UPDATE_ROUTE
+import io.github.aedev.flow.ui.screens.update.UpdateScreen
 import kotlinx.coroutines.flow.first
 
 @UnstableApi
@@ -183,7 +183,7 @@ fun NavGraphBuilder.flowAppGraph(
         val musicPlayerViewModel = sharedMusicPlayerViewModel()
         val downloadsSourceName =
             androidx.compose.ui.res.stringResource(
-                com.arubr.smsvcodes.R.string.library_downloads_label,
+                io.github.aedev.flow.R.string.library_downloads_label,
             )
         LibraryScreen(
             onOpenRecap = { period -> navController.navigate(period?.let { RecapRoutes.story(it) } ?: RecapRoutes.stats()) },
@@ -274,7 +274,7 @@ fun NavGraphBuilder.flowAppGraph(
 
     composable("categories") {
         currentRoute.value = "categories"
-        com.arubr.smsvcodes.ui.screens.categories.CategoriesScreen(
+        io.github.aedev.flow.ui.screens.categories.CategoriesScreen(
             onVideoClick = { video ->
                 navController.openVideoOrShorts(video, disableShortsPlayer) { playerViewModel.playVideo(it) }
             },
@@ -354,7 +354,7 @@ fun NavGraphBuilder.flowAppGraph(
 
     composable("donations") {
         currentRoute.value = "donations"
-        com.arubr.smsvcodes.ui.screens.settings.about.DonationsScreen(
+        io.github.aedev.flow.ui.screens.settings.about.DonationsScreen(
             onNavigateBack = { navController.popBackStack() },
         )
     }
@@ -399,7 +399,7 @@ fun NavGraphBuilder.flowAppGraph(
                 val deviceFile = LocalMediaIds.videoUri(track.videoId)
                 if (deviceFile != null) {
                     val video =
-                        com.arubr.smsvcodes.data.model.Video(
+                        io.github.aedev.flow.data.model.Video(
                             id = track.videoId,
                             title = track.title,
                             channelName = track.artist,
@@ -440,7 +440,7 @@ fun NavGraphBuilder.flowAppGraph(
         currentRoute.value = "playlists"
         val fixedKind =
             backStackEntry.arguments?.getString("kind")?.let { name ->
-                com.arubr.smsvcodes.ui.components.shared.MediaKind.entries
+                io.github.aedev.flow.ui.components.shared.MediaKind.entries
                     .firstOrNull { it.name == name }
             }
         PlaylistsScreen(
@@ -478,7 +478,7 @@ fun NavGraphBuilder.flowAppGraph(
     // Saved Shorts Grid
     composable("savedShorts") {
         currentRoute.value = "savedShorts"
-        com.arubr.smsvcodes.ui.screens.library.SavedShortsGridScreen(
+        io.github.aedev.flow.ui.screens.library.SavedShortsGridScreen(
             onBackClick = { navController.popBackStack() },
             onVideoClick = { videoId ->
                 navController.openShortsOrPlayer(ShortsQueueSource.Saved(videoId), disableShortsPlayer)
@@ -488,7 +488,7 @@ fun NavGraphBuilder.flowAppGraph(
 
     composable("notes") {
         currentRoute.value = "notes"
-        com.arubr.smsvcodes.ui.screens.notes.NotesScreen(
+        io.github.aedev.flow.ui.screens.notes.NotesScreen(
             onBackClick = { navController.popBackStack() },
             onPlay = { video, startPositionMs -> playerViewModel.playVideo(video, startPositionMs = startPositionMs) },
         )
@@ -498,8 +498,8 @@ fun NavGraphBuilder.flowAppGraph(
         val musicPlayerViewModel = sharedMusicPlayerViewModel()
         val localTitle =
             androidx.compose.ui.res
-                .stringResource(com.arubr.smsvcodes.R.string.local_media_title)
-        com.arubr.smsvcodes.ui.screens.library.LocalMediaScreen(
+                .stringResource(io.github.aedev.flow.R.string.local_media_title)
+        io.github.aedev.flow.ui.screens.library.LocalMediaScreen(
             onBackClick = { navController.popBackStack() },
             onPlayVideos = { items, index, shuffle ->
                 playerViewModel.playPlaylist(items.map { it.toVideo() }, index, localTitle, shuffle)

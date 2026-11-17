@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.sync.transport
+package io.github.aedev.flow.sync.transport
 
 import android.app.Notification
 import android.app.NotificationChannel
@@ -10,7 +10,7 @@ import android.content.pm.ServiceInfo
 import android.os.Build
 import android.os.IBinder
 import androidx.core.app.NotificationCompat
-import com.arubr.smsvcodes.R
+import io.github.aedev.flow.R
 
 /**
  * Keeps the LAN transfer alive while the screen is off / app is backgrounded. Declared with `foregroundServiceType="dataSync"` in the manifest. The actual protocol runs

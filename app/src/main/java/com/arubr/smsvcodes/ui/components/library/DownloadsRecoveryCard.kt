@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.library
+package io.github.aedev.flow.ui.components.library
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -18,7 +18,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import com.arubr.smsvcodes.R
+import io.github.aedev.flow.R
 
 /**
  * Offered on an empty Downloads screen when Flow can't read shared media: downloads an earlier

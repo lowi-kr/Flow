@@ -1,7 +1,7 @@
-package com.arubr.smsvcodes.ui.components.videoplayer.sheet
+package io.github.aedev.flow.ui.components.videoplayer.sheet
 
 import com.google.common.truth.Truth.assertThat
-import com.arubr.smsvcodes.data.model.Video
+import io.github.aedev.flow.data.model.Video
 import org.junit.Test
 
 class QueueRowKeysTest {

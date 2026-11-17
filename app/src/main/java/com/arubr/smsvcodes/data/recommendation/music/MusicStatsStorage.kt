@@ -4,11 +4,11 @@
  * This file is part of Flow (https://github.com/Flow-Tube/Flow).
  */
 
-package com.arubr.smsvcodes.data.recommendation.music
+package io.github.aedev.flow.data.recommendation.music
 
 import android.content.Context
-import com.arubr.smsvcodes.data.stats.LedgerTime
-import com.arubr.smsvcodes.data.stats.MonthlyLedgerStore
+import io.github.aedev.flow.data.stats.LedgerTime
+import io.github.aedev.flow.data.stats.MonthlyLedgerStore
 import kotlinx.serialization.Serializable
 
 /**

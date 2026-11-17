@@ -1,13 +1,13 @@
-package com.arubr.smsvcodes.ui.screens.settings.integrations
+package io.github.aedev.flow.ui.screens.settings.integrations
 
 import androidx.compose.runtime.Immutable
 import dagger.hilt.android.lifecycle.HiltViewModel
-import com.arubr.smsvcodes.data.local.PlayerPreferences
-import com.arubr.smsvcodes.data.local.SponsorBlockAction
-import com.arubr.smsvcodes.data.model.SponsorBlockCategories
-import com.arubr.smsvcodes.discord.DiscordLinkResult
-import com.arubr.smsvcodes.discord.DiscordPresenceController
-import com.arubr.smsvcodes.ui.screens.settings.SettingsViewModel
+import io.github.aedev.flow.data.local.PlayerPreferences
+import io.github.aedev.flow.data.local.SponsorBlockAction
+import io.github.aedev.flow.data.model.SponsorBlockCategories
+import io.github.aedev.flow.discord.DiscordLinkResult
+import io.github.aedev.flow.discord.DiscordPresenceController
+import io.github.aedev.flow.ui.screens.settings.SettingsViewModel
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.SharedFlow
 import kotlinx.coroutines.flow.asSharedFlow

@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.shared
+package io.github.aedev.flow.ui.components.shared
 
 import android.content.Context
 import androidx.compose.runtime.Composable
@@ -8,13 +8,13 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberUpdatedState
 import androidx.compose.ui.platform.LocalContext
-import com.arubr.smsvcodes.data.local.DownloadDialogStyle
-import com.arubr.smsvcodes.data.local.PlayerPreferences
-import com.arubr.smsvcodes.data.local.VideoCodec
-import com.arubr.smsvcodes.data.model.Video
-import com.arubr.smsvcodes.data.video.DownloadStreamPolicy
-import com.arubr.smsvcodes.innertube.models.response.PlayerResponse.StreamingData.Format
-import com.arubr.smsvcodes.player.state.SubtitleOption
+import io.github.aedev.flow.data.local.DownloadDialogStyle
+import io.github.aedev.flow.data.local.PlayerPreferences
+import io.github.aedev.flow.data.local.VideoCodec
+import io.github.aedev.flow.data.model.Video
+import io.github.aedev.flow.data.video.DownloadStreamPolicy
+import io.github.aedev.flow.innertube.models.response.PlayerResponse.StreamingData.Format
+import io.github.aedev.flow.player.state.SubtitleOption
 import kotlinx.coroutines.flow.first
 
 /**

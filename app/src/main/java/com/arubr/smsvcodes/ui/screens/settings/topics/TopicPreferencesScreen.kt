@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.screens.settings.topics
+package io.github.aedev.flow.ui.screens.settings.topics
 
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
@@ -17,18 +17,18 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.data.recommendation.NeuroTopicCatalog
-import com.arubr.smsvcodes.ui.components.settings.SettingsPage
-import com.arubr.smsvcodes.ui.components.settings.SettingsTabs
-import com.arubr.smsvcodes.ui.components.settings.notice
-import com.arubr.smsvcodes.ui.components.shared.FlowConnectedToggleGroup
-import com.arubr.smsvcodes.ui.components.shared.FlowPillChip
-import com.arubr.smsvcodes.ui.components.shared.FlowPillSection
-import com.arubr.smsvcodes.ui.components.shared.FlowToggleOption
-import com.arubr.smsvcodes.ui.components.topicCategoryIcon
-import com.arubr.smsvcodes.ui.components.topicCategoryNameRes
-import com.arubr.smsvcodes.ui.screens.settings.index.TopicsIndex
+import io.github.aedev.flow.R
+import io.github.aedev.flow.data.recommendation.NeuroTopicCatalog
+import io.github.aedev.flow.ui.components.settings.SettingsPage
+import io.github.aedev.flow.ui.components.settings.SettingsTabs
+import io.github.aedev.flow.ui.components.settings.notice
+import io.github.aedev.flow.ui.components.shared.FlowConnectedToggleGroup
+import io.github.aedev.flow.ui.components.shared.FlowPillChip
+import io.github.aedev.flow.ui.components.shared.FlowPillSection
+import io.github.aedev.flow.ui.components.shared.FlowToggleOption
+import io.github.aedev.flow.ui.components.topicCategoryIcon
+import io.github.aedev.flow.ui.components.topicCategoryNameRes
+import io.github.aedev.flow.ui.screens.settings.index.TopicsIndex
 
 private val TabsBottomPadding = 8.dp
 private val SectionVerticalPadding = 12.dp

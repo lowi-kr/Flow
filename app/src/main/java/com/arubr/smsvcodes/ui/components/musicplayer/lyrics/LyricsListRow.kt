@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.musicplayer.lyrics
+package io.github.aedev.flow.ui.components.musicplayer.lyrics
 
 import androidx.compose.animation.core.Animatable
 import androidx.compose.foundation.layout.Box
@@ -20,7 +20,7 @@ import androidx.compose.ui.layout.onSizeChanged
 import androidx.compose.ui.unit.Constraints
 import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
-import com.arubr.smsvcodes.data.lyrics.LyricsEntry
+import io.github.aedev.flow.data.lyrics.LyricsEntry
 import kotlinx.coroutines.delay
 import kotlin.math.roundToInt
 

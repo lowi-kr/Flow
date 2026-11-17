@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.data.audio.eq
+package io.github.aedev.flow.data.audio.eq
 
 import kotlin.math.PI
 import kotlin.math.cos

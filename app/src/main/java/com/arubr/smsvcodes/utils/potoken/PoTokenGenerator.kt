@@ -1,9 +1,9 @@
-package com.arubr.smsvcodes.utils.potoken
+package io.github.aedev.flow.utils.potoken
 
 import android.util.Log
 import android.webkit.CookieManager
 import android.webkit.WebStorage
-import com.arubr.smsvcodes.utils.cipher.CipherDeobfuscator
+import io.github.aedev.flow.utils.cipher.CipherDeobfuscator
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.NonCancellable

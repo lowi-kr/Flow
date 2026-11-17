@@ -1,10 +1,10 @@
-package com.arubr.smsvcodes.data.video.downloader.transfer
+package io.github.aedev.flow.data.video.downloader.transfer
 
 import android.util.Log
-import com.arubr.smsvcodes.data.video.downloader.YouTubeStreamUrls
-import com.arubr.smsvcodes.network.ProxyAwareClient
-import com.arubr.smsvcodes.player.datasource.GoogleVideoRequestPolicy
-import com.arubr.smsvcodes.player.error.StreamDenialClassifier
+import io.github.aedev.flow.data.video.downloader.YouTubeStreamUrls
+import io.github.aedev.flow.network.ProxyAwareClient
+import io.github.aedev.flow.player.datasource.GoogleVideoRequestPolicy
+import io.github.aedev.flow.player.error.StreamDenialClassifier
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async

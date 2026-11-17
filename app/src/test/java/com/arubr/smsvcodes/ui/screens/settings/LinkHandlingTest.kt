@@ -1,7 +1,7 @@
-package com.arubr.smsvcodes.ui.screens.settings
+package io.github.aedev.flow.ui.screens.settings
 
-import com.arubr.smsvcodes.ui.screens.settings.content.LinkHandling
-import com.arubr.smsvcodes.ui.screens.settings.content.linkHandling
+import io.github.aedev.flow.ui.screens.settings.content.LinkHandling
+import io.github.aedev.flow.ui.screens.settings.content.linkHandling
 import org.junit.Assert.assertEquals
 import org.junit.Test
 

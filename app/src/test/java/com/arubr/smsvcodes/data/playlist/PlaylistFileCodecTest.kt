@@ -1,7 +1,7 @@
-package com.arubr.smsvcodes.data.playlist
+package io.github.aedev.flow.data.playlist
 
 import com.google.common.truth.Truth.assertThat
-import com.arubr.smsvcodes.data.model.Video
+import io.github.aedev.flow.data.model.Video
 import org.junit.Test
 
 class PlaylistFileCodecTest {

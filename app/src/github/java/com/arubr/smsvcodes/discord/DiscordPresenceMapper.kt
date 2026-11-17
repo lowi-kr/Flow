@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.discord
+package io.github.aedev.flow.discord
 
 class DiscordPresenceMapper(
     private val appName: String,

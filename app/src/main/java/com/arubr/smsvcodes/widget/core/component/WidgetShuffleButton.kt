@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.widget.core.component
+package io.github.aedev.flow.widget.core.component
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.unit.dp
@@ -13,10 +13,10 @@ import androidx.glance.action.clickable
 import androidx.glance.layout.Alignment
 import androidx.glance.layout.Box
 import androidx.glance.layout.size
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.widget.core.image.ShapeDecor
-import com.arubr.smsvcodes.widget.core.image.WidgetShape
-import com.arubr.smsvcodes.widget.core.theme.WidgetDimens
+import io.github.aedev.flow.R
+import io.github.aedev.flow.widget.core.image.ShapeDecor
+import io.github.aedev.flow.widget.core.image.WidgetShape
+import io.github.aedev.flow.widget.core.theme.WidgetDimens
 
 /** Shuffle on the Cookie12 action shape, the one the app gives shuffle and radio. */
 @Composable

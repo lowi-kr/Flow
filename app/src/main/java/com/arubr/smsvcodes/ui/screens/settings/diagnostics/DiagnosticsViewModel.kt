@@ -1,16 +1,16 @@
-package com.arubr.smsvcodes.ui.screens.settings.diagnostics
+package io.github.aedev.flow.ui.screens.settings.diagnostics
 
 import android.content.Context
 import android.net.Uri
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
-import com.arubr.smsvcodes.data.local.PlayerPreferences
-import com.arubr.smsvcodes.data.recommendation.snapshot.HomeSnapshotStore
-import com.arubr.smsvcodes.player.stream.ResetYouTubeSession
-import com.arubr.smsvcodes.ui.screens.settings.SettingsViewModel
-import com.arubr.smsvcodes.utils.DeviceInfo
-import com.arubr.smsvcodes.utils.FlowDiagnostics
+import io.github.aedev.flow.data.local.PlayerPreferences
+import io.github.aedev.flow.data.recommendation.snapshot.HomeSnapshotStore
+import io.github.aedev.flow.player.stream.ResetYouTubeSession
+import io.github.aedev.flow.ui.screens.settings.SettingsViewModel
+import io.github.aedev.flow.utils.DeviceInfo
+import io.github.aedev.flow.utils.FlowDiagnostics
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow

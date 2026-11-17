@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.equalizer
+package io.github.aedev.flow.ui.components.equalizer
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -16,10 +16,10 @@ import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.data.audio.eq.EqBand
-import com.arubr.smsvcodes.ui.components.shared.FlowNavRow
-import com.arubr.smsvcodes.ui.components.shared.FlowSwitch
+import io.github.aedev.flow.R
+import io.github.aedev.flow.data.audio.eq.EqBand
+import io.github.aedev.flow.ui.components.shared.FlowNavRow
+import io.github.aedev.flow.ui.components.shared.FlowSwitch
 
 private val BadgeSize = 32.dp
 private val ShapeIconSize = 22.dp

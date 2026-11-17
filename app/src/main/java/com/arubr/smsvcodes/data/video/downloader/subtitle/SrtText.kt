@@ -1,11 +1,11 @@
-package com.arubr.smsvcodes.data.video.downloader.subtitle
+package io.github.aedev.flow.data.video.downloader.subtitle
 
 import androidx.annotation.OptIn
 import androidx.media3.common.util.UnstableApi
 import androidx.media3.extractor.text.CuesWithTiming
 import androidx.media3.extractor.text.SubtitleParser
 import androidx.media3.extractor.text.webvtt.WebvttParser
-import com.arubr.smsvcodes.player.subtitle.toRollingCaptionText
+import io.github.aedev.flow.player.subtitle.toRollingCaptionText
 import java.util.Locale
 
 private data class SrtLine(

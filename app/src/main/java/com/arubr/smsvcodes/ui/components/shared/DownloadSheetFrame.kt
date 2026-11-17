@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.shared
+package io.github.aedev.flow.ui.components.shared
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ColumnScope
@@ -33,8 +33,8 @@ import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import com.arubr.smsvcodes.ui.components.shared.quickactions.QuickActionsSheet
-import com.arubr.smsvcodes.ui.components.shared.quickactions.QuickActionsSheetController
+import io.github.aedev.flow.ui.components.shared.quickactions.QuickActionsSheet
+import io.github.aedev.flow.ui.components.shared.quickactions.QuickActionsSheetController
 
 internal val DownloadSheetPadding = 16.dp
 

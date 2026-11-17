@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.musicplayer.full
+package io.github.aedev.flow.ui.components.musicplayer.full
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -22,9 +22,9 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.ui.components.shared.FlowConnectedToggleGroup
-import com.arubr.smsvcodes.ui.components.shared.FlowToggleOption
+import io.github.aedev.flow.R
+import io.github.aedev.flow.ui.components.shared.FlowConnectedToggleGroup
+import io.github.aedev.flow.ui.components.shared.FlowToggleOption
 
 /** What the side pane beside the wide player shows. */
 internal enum class PlayerSidePaneTab { UP_NEXT, LYRICS }

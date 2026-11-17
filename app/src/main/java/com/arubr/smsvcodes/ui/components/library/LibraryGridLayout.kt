@@ -1,12 +1,12 @@
-package com.arubr.smsvcodes.ui.components.library
+package io.github.aedev.flow.ui.components.library
 
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import com.arubr.smsvcodes.ui.components.feedGridLayoutFor
-import com.arubr.smsvcodes.ui.components.partialRowIndices
-import com.arubr.smsvcodes.ui.components.shared.MediaRowDefaults
-import com.arubr.smsvcodes.ui.components.shared.MediaThumbnailDefaults
-import com.arubr.smsvcodes.ui.components.shared.card.VideoCardDefaults
+import io.github.aedev.flow.ui.components.feedGridLayoutFor
+import io.github.aedev.flow.ui.components.partialRowIndices
+import io.github.aedev.flow.ui.components.shared.MediaRowDefaults
+import io.github.aedev.flow.ui.components.shared.MediaThumbnailDefaults
+import io.github.aedev.flow.ui.components.shared.card.VideoCardDefaults
 
 /**
  * A library grid sized on the space it actually has, with the same column count and margins as the

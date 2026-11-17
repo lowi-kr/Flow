@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.settings
+package io.github.aedev.flow.ui.components.settings
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -26,13 +26,13 @@ import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.arubr.smsvcodes.ui.components.layout.LocalFlowBottomInsets
-import com.arubr.smsvcodes.ui.components.layout.floatAboveBottomChrome
-import com.arubr.smsvcodes.ui.components.layout.flowBottomContentPadding
-import com.arubr.smsvcodes.ui.components.layout.topbar.FlowGlobalActionsMode
-import com.arubr.smsvcodes.ui.components.layout.topbar.FlowTopBar
-import com.arubr.smsvcodes.ui.components.shared.FlowMaxContentWidth
-import com.arubr.smsvcodes.ui.components.shared.LocalDpadNavigation
+import io.github.aedev.flow.ui.components.layout.LocalFlowBottomInsets
+import io.github.aedev.flow.ui.components.layout.floatAboveBottomChrome
+import io.github.aedev.flow.ui.components.layout.flowBottomContentPadding
+import io.github.aedev.flow.ui.components.layout.topbar.FlowGlobalActionsMode
+import io.github.aedev.flow.ui.components.layout.topbar.FlowTopBar
+import io.github.aedev.flow.ui.components.shared.FlowMaxContentWidth
+import io.github.aedev.flow.ui.components.shared.LocalDpadNavigation
 import kotlinx.coroutines.flow.first
 
 internal val SettingsMaxContentWidth = FlowMaxContentWidth

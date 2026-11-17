@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.screens.settings.content
+package io.github.aedev.flow.ui.screens.settings.content
 
 import android.content.Context
 import android.content.Intent
@@ -15,7 +15,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.lifecycle.compose.LifecycleResumeEffect
-import com.arubr.smsvcodes.R
+import io.github.aedev.flow.R
 
 /**
  * Whether YouTube links open in Flow. Flow cannot prove it owns youtube.com, so from Android 12 a

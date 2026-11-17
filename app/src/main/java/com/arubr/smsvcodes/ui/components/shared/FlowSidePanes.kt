@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.shared
+package io.github.aedev.flow.ui.components.shared
 
 import androidx.compose.material3.adaptive.ExperimentalMaterial3AdaptiveApi
 import androidx.compose.material3.adaptive.layout.AnimatedPane
@@ -11,7 +11,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.Dp
-import com.arubr.smsvcodes.ui.components.layout.rememberFlowPaneScaffoldDirective
+import io.github.aedev.flow.ui.components.layout.rememberFlowPaneScaffoldDirective
 
 /** The pane layout for this window; keeps the adaptive library's experimental types out of screens. */
 @OptIn(ExperimentalMaterial3AdaptiveApi::class)

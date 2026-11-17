@@ -1,10 +1,10 @@
-package com.arubr.smsvcodes.innertube.pages
+package io.github.aedev.flow.innertube.pages
 
-import com.arubr.smsvcodes.innertube.models.AlbumItem
-import com.arubr.smsvcodes.innertube.models.Artist
-import com.arubr.smsvcodes.innertube.models.MusicTwoRowItemRenderer
-import com.arubr.smsvcodes.innertube.models.oddElements
-import com.arubr.smsvcodes.innertube.models.splitBySeparator
+import io.github.aedev.flow.innertube.models.AlbumItem
+import io.github.aedev.flow.innertube.models.Artist
+import io.github.aedev.flow.innertube.models.MusicTwoRowItemRenderer
+import io.github.aedev.flow.innertube.models.oddElements
+import io.github.aedev.flow.innertube.models.splitBySeparator
 
 object NewReleaseAlbumPage {
     fun fromMusicTwoRowItemRenderer(renderer: MusicTwoRowItemRenderer): AlbumItem? {

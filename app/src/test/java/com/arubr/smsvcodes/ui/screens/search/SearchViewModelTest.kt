@@ -1,18 +1,18 @@
-package com.arubr.smsvcodes.ui.screens.search
+package io.github.aedev.flow.ui.screens.search
 
 import android.content.Context
 import com.google.common.truth.Truth.assertThat
-import com.arubr.smsvcodes.data.local.ContentType
-import com.arubr.smsvcodes.data.local.Duration
-import com.arubr.smsvcodes.data.local.SearchFilter
-import com.arubr.smsvcodes.data.local.SearchHistoryRepository
-import com.arubr.smsvcodes.data.local.SortType
-import com.arubr.smsvcodes.data.local.UploadDate
-import com.arubr.smsvcodes.data.recommendation.FlowNeuroEngine
-import com.arubr.smsvcodes.data.search.SearchSuggestionsRepository
-import com.arubr.smsvcodes.data.shorts.ShortsContentFilter
-import com.arubr.smsvcodes.data.shorts.queue.ShortsQueueHandoff
-import com.arubr.smsvcodes.innertube.pages.search.SearchSuggestion
+import io.github.aedev.flow.data.local.ContentType
+import io.github.aedev.flow.data.local.Duration
+import io.github.aedev.flow.data.local.SearchFilter
+import io.github.aedev.flow.data.local.SearchHistoryRepository
+import io.github.aedev.flow.data.local.SortType
+import io.github.aedev.flow.data.local.UploadDate
+import io.github.aedev.flow.data.recommendation.FlowNeuroEngine
+import io.github.aedev.flow.data.search.SearchSuggestionsRepository
+import io.github.aedev.flow.data.shorts.ShortsContentFilter
+import io.github.aedev.flow.data.shorts.queue.ShortsQueueHandoff
+import io.github.aedev.flow.innertube.pages.search.SearchSuggestion
 import io.mockk.coEvery
 import io.mockk.coVerify
 import io.mockk.just
@@ -163,7 +163,7 @@ class SearchViewModelTest {
             SearchFilter(
                 contentType = ContentType.VIDEOS,
                 sortType = SortType.VIEW_COUNT,
-                features = setOf(com.arubr.smsvcodes.data.local.SearchFeature.FOUR_K),
+                features = setOf(io.github.aedev.flow.data.local.SearchFeature.FOUR_K),
             )
 
         assertThat(filter.activeCount).isEqualTo(3)

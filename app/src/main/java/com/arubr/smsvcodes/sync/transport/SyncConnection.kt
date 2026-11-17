@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.sync.transport
+package io.github.aedev.flow.sync.transport
 
 /**
  * A single full-duplex binary message channel for one FLOW-SYNC/1 session, abstracting over the

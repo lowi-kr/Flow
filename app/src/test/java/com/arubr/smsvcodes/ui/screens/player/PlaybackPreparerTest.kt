@@ -1,16 +1,16 @@
-package com.arubr.smsvcodes.ui.screens.player
+package io.github.aedev.flow.ui.screens.player
 
 import android.content.Context
 import com.google.common.truth.Truth.assertThat
-import com.arubr.smsvcodes.data.local.PlayerPreferences
-import com.arubr.smsvcodes.data.local.VideoQuality
-import com.arubr.smsvcodes.data.localmedia.LocalSubtitles
-import com.arubr.smsvcodes.data.video.OfflineSubtitleStore
-import com.arubr.smsvcodes.player.EnhancedPlayerManager
-import com.arubr.smsvcodes.player.sabr.integration.SabrStreamInfo
-import com.arubr.smsvcodes.player.stream.CaptionFormat
-import com.arubr.smsvcodes.player.stream.ResolvedCaption
-import com.arubr.smsvcodes.utils.NetworkState
+import io.github.aedev.flow.data.local.PlayerPreferences
+import io.github.aedev.flow.data.local.VideoQuality
+import io.github.aedev.flow.data.localmedia.LocalSubtitles
+import io.github.aedev.flow.data.video.OfflineSubtitleStore
+import io.github.aedev.flow.player.EnhancedPlayerManager
+import io.github.aedev.flow.player.sabr.integration.SabrStreamInfo
+import io.github.aedev.flow.player.stream.CaptionFormat
+import io.github.aedev.flow.player.stream.ResolvedCaption
+import io.github.aedev.flow.utils.NetworkState
 import io.mockk.coEvery
 import io.mockk.coVerify
 import io.mockk.coVerifyOrder

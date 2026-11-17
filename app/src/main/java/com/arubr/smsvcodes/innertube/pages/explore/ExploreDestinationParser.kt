@@ -1,14 +1,14 @@
-package com.arubr.smsvcodes.innertube.pages.explore
+package io.github.aedev.flow.innertube.pages.explore
 
-import com.arubr.smsvcodes.innertube.pages.arrayOrNull
-import com.arubr.smsvcodes.innertube.pages.objectOrNull
-import com.arubr.smsvcodes.innertube.pages.renderer.FeedItem
-import com.arubr.smsvcodes.innertube.pages.renderer.FeedItemOwner
-import com.arubr.smsvcodes.innertube.pages.renderer.FeedShelf
-import com.arubr.smsvcodes.innertube.pages.renderer.browseParams
-import com.arubr.smsvcodes.innertube.pages.renderer.feedShelfSequence
-import com.arubr.smsvcodes.innertube.pages.stringOrNull
-import com.arubr.smsvcodes.innertube.pages.youtubeText
+import io.github.aedev.flow.innertube.pages.arrayOrNull
+import io.github.aedev.flow.innertube.pages.objectOrNull
+import io.github.aedev.flow.innertube.pages.renderer.FeedItem
+import io.github.aedev.flow.innertube.pages.renderer.FeedItemOwner
+import io.github.aedev.flow.innertube.pages.renderer.FeedShelf
+import io.github.aedev.flow.innertube.pages.renderer.browseParams
+import io.github.aedev.flow.innertube.pages.renderer.feedShelfSequence
+import io.github.aedev.flow.innertube.pages.stringOrNull
+import io.github.aedev.flow.innertube.pages.youtubeText
 import kotlinx.serialization.json.JsonElement
 import kotlinx.serialization.json.JsonObject
 

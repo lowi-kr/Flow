@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.data.subscriptions
+package io.github.aedev.flow.data.subscriptions
 
 /** A single `<entry>` of a YouTube channel RSS feed. */
 data class ChannelRssEntry(

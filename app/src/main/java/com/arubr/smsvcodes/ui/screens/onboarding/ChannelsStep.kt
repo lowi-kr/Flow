@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.screens.onboarding
+package io.github.aedev.flow.ui.screens.onboarding
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.PaddingValues
@@ -24,17 +24,17 @@ import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.data.model.Channel
-import com.arubr.smsvcodes.ui.components.shared.FlowPopIn
-import com.arubr.smsvcodes.ui.components.shared.FlowQuickSearchChips
-import com.arubr.smsvcodes.ui.components.shared.FlowSearchField
-import com.arubr.smsvcodes.ui.components.shared.FlowSectionHeader
-import com.arubr.smsvcodes.ui.components.shared.FlowSegmentedGap
-import com.arubr.smsvcodes.ui.components.shared.MediaChannelSubscribeRow
-import com.arubr.smsvcodes.ui.components.shared.dismissKeyboardOnPress
-import com.arubr.smsvcodes.ui.components.shared.flowSegmentShape
-import com.arubr.smsvcodes.utils.formatSubscriberCount
+import io.github.aedev.flow.R
+import io.github.aedev.flow.data.model.Channel
+import io.github.aedev.flow.ui.components.shared.FlowPopIn
+import io.github.aedev.flow.ui.components.shared.FlowQuickSearchChips
+import io.github.aedev.flow.ui.components.shared.FlowSearchField
+import io.github.aedev.flow.ui.components.shared.FlowSectionHeader
+import io.github.aedev.flow.ui.components.shared.FlowSegmentedGap
+import io.github.aedev.flow.ui.components.shared.MediaChannelSubscribeRow
+import io.github.aedev.flow.ui.components.shared.dismissKeyboardOnPress
+import io.github.aedev.flow.ui.components.shared.flowSegmentShape
+import io.github.aedev.flow.utils.formatSubscriberCount
 
 private val SearchLoadingSize = 24.dp
 private val ChipSpacing = 8.dp

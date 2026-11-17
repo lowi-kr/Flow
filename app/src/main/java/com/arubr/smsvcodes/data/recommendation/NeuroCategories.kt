@@ -8,7 +8,7 @@
  * explicitly credit "Flow Android Client" and link back to the original repository.
  */
 
-package com.arubr.smsvcodes.data.recommendation
+package io.github.aedev.flow.data.recommendation
 
 /** The category a channel posts in, and how sure [NeuroCategoryStore] is of it, from 0 to 1. */
 internal data class ChannelCategory(

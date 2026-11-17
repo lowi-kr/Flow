@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.notification
+package io.github.aedev.flow.notification
 
 import android.content.BroadcastReceiver
 import android.content.Context

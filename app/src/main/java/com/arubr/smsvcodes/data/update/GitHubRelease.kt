@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.data.update
+package io.github.aedev.flow.data.update
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable

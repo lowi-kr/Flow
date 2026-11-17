@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.data.local.dao
+package io.github.aedev.flow.data.local.dao
 
 import androidx.room.Dao
 import androidx.room.Insert
@@ -6,7 +6,7 @@ import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import androidx.room.Transaction
 import androidx.room.Update
-import com.arubr.smsvcodes.data.local.entity.SubscriptionGroupEntity
+import io.github.aedev.flow.data.local.entity.SubscriptionGroupEntity
 import kotlinx.coroutines.flow.Flow
 
 @Dao

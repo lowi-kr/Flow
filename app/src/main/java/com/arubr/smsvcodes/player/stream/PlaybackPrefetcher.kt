@@ -1,7 +1,7 @@
-package com.arubr.smsvcodes.player.stream
+package io.github.aedev.flow.player.stream
 
 import android.util.Log
-import com.arubr.smsvcodes.data.localmedia.LocalMediaIds
+import io.github.aedev.flow.data.localmedia.LocalMediaIds
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job

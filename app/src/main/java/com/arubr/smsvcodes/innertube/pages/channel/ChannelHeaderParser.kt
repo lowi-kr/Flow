@@ -1,12 +1,12 @@
-package com.arubr.smsvcodes.innertube.pages.channel
+package io.github.aedev.flow.innertube.pages.channel
 
-import com.arubr.smsvcodes.innertube.pages.arrayOrNull
-import com.arubr.smsvcodes.innertube.pages.objectOrNull
-import com.arubr.smsvcodes.innertube.pages.parseYouTubeViewCount
-import com.arubr.smsvcodes.innertube.pages.renderer.findRenderers
-import com.arubr.smsvcodes.innertube.pages.renderer.largestImageUrl
-import com.arubr.smsvcodes.innertube.pages.stringOrNull
-import com.arubr.smsvcodes.innertube.pages.youtubeText
+import io.github.aedev.flow.innertube.pages.arrayOrNull
+import io.github.aedev.flow.innertube.pages.objectOrNull
+import io.github.aedev.flow.innertube.pages.parseYouTubeViewCount
+import io.github.aedev.flow.innertube.pages.renderer.findRenderers
+import io.github.aedev.flow.innertube.pages.renderer.largestImageUrl
+import io.github.aedev.flow.innertube.pages.stringOrNull
+import io.github.aedev.flow.innertube.pages.youtubeText
 import kotlinx.serialization.json.JsonElement
 import kotlinx.serialization.json.JsonObject
 

@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.player.error
+package io.github.aedev.flow.player.error
 
 import androidx.media3.common.PlaybackException
 

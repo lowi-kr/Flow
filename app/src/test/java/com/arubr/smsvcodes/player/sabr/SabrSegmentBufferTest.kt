@@ -1,6 +1,6 @@
-package com.arubr.smsvcodes.player.sabr
+package io.github.aedev.flow.player.sabr
 
-import com.arubr.smsvcodes.player.sabr.integration.SabrSegmentBuffer
+import io.github.aedev.flow.player.sabr.integration.SabrSegmentBuffer
 import org.junit.Assert.assertArrayEquals
 import org.junit.Assert.assertEquals
 import org.junit.Test

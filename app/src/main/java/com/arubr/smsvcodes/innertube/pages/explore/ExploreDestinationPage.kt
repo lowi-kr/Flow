@@ -1,13 +1,13 @@
-package com.arubr.smsvcodes.innertube.pages.explore
+package io.github.aedev.flow.innertube.pages.explore
 
-import com.arubr.smsvcodes.innertube.pages.renderer.FeedItemOwner
-import com.arubr.smsvcodes.innertube.pages.renderer.FeedShelf
+import io.github.aedev.flow.innertube.pages.renderer.FeedItemOwner
+import io.github.aedev.flow.innertube.pages.renderer.FeedShelf
 
 /**
  * One explore destination's landing page: the shelves it arranged, and the category tabs it offers.
  *
  * A destination carries no continuation of its own — each shelf's `moreParams` opens a paginated
- * grid instead, which [com.arubr.smsvcodes.data.paging.FeedTabPagingSource] loads.
+ * grid instead, which [io.github.aedev.flow.data.paging.FeedTabPagingSource] loads.
  */
 data class ExploreDestinationPage(
     val title: String? = null,

@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.discord
+package io.github.aedev.flow.discord
 
 import android.content.Context
 import androidx.test.core.app.ApplicationProvider

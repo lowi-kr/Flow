@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.shorts
+package io.github.aedev.flow.ui.components.shorts
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
@@ -15,9 +15,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.ui.components.videoplayer.controls.PlayerPillIconButton
-import com.arubr.smsvcodes.ui.theme.PlayerScrimContent
+import io.github.aedev.flow.R
+import io.github.aedev.flow.ui.components.videoplayer.controls.PlayerPillIconButton
+import io.github.aedev.flow.ui.theme.PlayerScrimContent
 
 private val TopBarHorizontalPadding = 16.dp
 private val BackButtonSize = 40.dp

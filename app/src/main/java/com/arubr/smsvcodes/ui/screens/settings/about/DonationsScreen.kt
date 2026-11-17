@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.screens.settings.about
+package io.github.aedev.flow.ui.screens.settings.about
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -31,13 +31,13 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.ui.components.donation.CryptoWallet
-import com.arubr.smsvcodes.ui.components.donation.DonationWallets
-import com.arubr.smsvcodes.ui.components.donation.OPEN_COLLECTIVE_URL
-import com.arubr.smsvcodes.ui.components.donation.PATREON_URL
-import com.arubr.smsvcodes.ui.components.settings.SettingsPage
-import com.arubr.smsvcodes.utils.copyPlainText
+import io.github.aedev.flow.R
+import io.github.aedev.flow.ui.components.donation.CryptoWallet
+import io.github.aedev.flow.ui.components.donation.DonationWallets
+import io.github.aedev.flow.ui.components.donation.OPEN_COLLECTIVE_URL
+import io.github.aedev.flow.ui.components.donation.PATREON_URL
+import io.github.aedev.flow.ui.components.settings.SettingsPage
+import io.github.aedev.flow.utils.copyPlainText
 import kotlinx.coroutines.launch
 
 private val HeaderPadding = 24.dp

@@ -1,8 +1,8 @@
-package com.arubr.smsvcodes.ui.screens.music.collection
+package io.github.aedev.flow.ui.screens.music.collection
 
-import com.arubr.smsvcodes.data.model.Video
-import com.arubr.smsvcodes.data.music.model.MusicTrack
-import com.arubr.smsvcodes.data.music.model.toMusicTrack
+import io.github.aedev.flow.data.model.Video
+import io.github.aedev.flow.data.music.model.MusicTrack
+import io.github.aedev.flow.data.music.model.toMusicTrack
 
 /** A stored song as a row of a music page; lengths are stored in seconds already. */
 internal fun Video.toCollectionTrack(): MusicTrack = toMusicTrack()

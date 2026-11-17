@@ -1,9 +1,9 @@
-package com.arubr.smsvcodes.ui.screens.home.chips
+package io.github.aedev.flow.ui.screens.home.chips
 
 import com.google.common.truth.Truth.assertThat
-import com.arubr.smsvcodes.data.local.VideoHistoryEntry
-import com.arubr.smsvcodes.data.model.Video
-import com.arubr.smsvcodes.data.recommendation.InterestChip
+import io.github.aedev.flow.data.local.VideoHistoryEntry
+import io.github.aedev.flow.data.model.Video
+import io.github.aedev.flow.data.recommendation.InterestChip
 import org.junit.Test
 
 class HomeChipPoliciesTest {

@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.widget.nowplaying
+package io.github.aedev.flow.widget.nowplaying
 
 import android.app.Application
 import android.content.Context
@@ -10,7 +10,7 @@ import androidx.glance.testing.unit.hasText
 import androidx.glance.testing.unit.hasTextEqualTo
 import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import com.arubr.smsvcodes.widget.core.state.NowPlayingSnapshot
+import io.github.aedev.flow.widget.core.state.NowPlayingSnapshot
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.robolectric.annotation.Config

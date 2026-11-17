@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.shorts
+package io.github.aedev.flow.ui.components.shorts
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
@@ -9,11 +9,11 @@ import androidx.compose.runtime.rememberUpdatedState
 import androidx.compose.ui.platform.LocalContext
 import androidx.media3.common.Player
 import androidx.media3.ui.PlayerView
-import com.arubr.smsvcodes.data.model.ShortVideo
-import com.arubr.smsvcodes.data.shorts.SHORT_COMPLETE_FRACTION
-import com.arubr.smsvcodes.player.EnhancedMusicPlayerManager
-import com.arubr.smsvcodes.player.shorts.ShortsPlayerPool
-import com.arubr.smsvcodes.ui.screens.shorts.ShortsViewModel
+import io.github.aedev.flow.data.model.ShortVideo
+import io.github.aedev.flow.data.shorts.SHORT_COMPLETE_FRACTION
+import io.github.aedev.flow.player.EnhancedMusicPlayerManager
+import io.github.aedev.flow.player.shorts.ShortsPlayerPool
+import io.github.aedev.flow.ui.screens.shorts.ShortsViewModel
 import kotlinx.coroutines.delay
 import kotlin.math.abs
 

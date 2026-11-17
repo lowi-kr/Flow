@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.player.stream
+package io.github.aedev.flow.player.stream
 
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.CoroutineStart

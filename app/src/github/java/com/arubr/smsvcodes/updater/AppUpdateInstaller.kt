@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.updater
+package io.github.aedev.flow.updater
 
 import android.app.PendingIntent
 import android.content.Context
@@ -18,9 +18,9 @@ import androidx.work.WorkManager
 import androidx.work.WorkRequest
 import androidx.work.workDataOf
 import dagger.hilt.android.qualifiers.ApplicationContext
-import com.arubr.smsvcodes.data.update.AppRelease
-import com.arubr.smsvcodes.data.update.UpdateDownload
-import com.arubr.smsvcodes.data.update.UpdateFailure
+import io.github.aedev.flow.data.update.AppRelease
+import io.github.aedev.flow.data.update.UpdateDownload
+import io.github.aedev.flow.data.update.UpdateFailure
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow

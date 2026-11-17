@@ -1,6 +1,6 @@
-package com.arubr.smsvcodes.player.sabr.integration
+package io.github.aedev.flow.player.sabr.integration
 
-import com.arubr.smsvcodes.innertube.models.YouTubeClient
+import io.github.aedev.flow.innertube.models.YouTubeClient
 
 /**
  * The identity a SABR streaming request must report so that it matches the player response that

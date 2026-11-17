@@ -1,12 +1,12 @@
-package com.arubr.smsvcodes.ui.screens.music
+package io.github.aedev.flow.ui.screens.music
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
-import com.arubr.smsvcodes.data.local.PlaylistRepository
-import com.arubr.smsvcodes.data.model.PlaylistInfo
-import com.arubr.smsvcodes.data.model.Video
-import com.arubr.smsvcodes.data.music.model.MusicTrack
+import io.github.aedev.flow.data.local.PlaylistRepository
+import io.github.aedev.flow.data.model.PlaylistInfo
+import io.github.aedev.flow.data.model.Video
+import io.github.aedev.flow.data.music.model.MusicTrack
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow

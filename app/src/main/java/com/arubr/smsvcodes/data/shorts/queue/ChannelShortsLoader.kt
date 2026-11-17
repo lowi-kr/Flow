@@ -1,11 +1,11 @@
-package com.arubr.smsvcodes.data.shorts.queue
+package io.github.aedev.flow.data.shorts.queue
 
 import android.util.Log
-import com.arubr.smsvcodes.data.model.ShortVideo
-import com.arubr.smsvcodes.data.model.toShortVideo
-import com.arubr.smsvcodes.data.shorts.ChannelShortsFeed
-import com.arubr.smsvcodes.data.shorts.ChannelShortsOwner
-import com.arubr.smsvcodes.innertube.YouTube
+import io.github.aedev.flow.data.model.ShortVideo
+import io.github.aedev.flow.data.model.toShortVideo
+import io.github.aedev.flow.data.shorts.ChannelShortsFeed
+import io.github.aedev.flow.data.shorts.ChannelShortsOwner
+import io.github.aedev.flow.innertube.YouTube
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 

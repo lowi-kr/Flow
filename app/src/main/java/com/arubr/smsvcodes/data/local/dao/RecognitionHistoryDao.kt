@@ -1,10 +1,10 @@
-package com.arubr.smsvcodes.data.local.dao
+package io.github.aedev.flow.data.local.dao
 
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.arubr.smsvcodes.data.local.entity.RecognitionHistoryEntity
+import io.github.aedev.flow.data.local.entity.RecognitionHistoryEntity
 import kotlinx.coroutines.flow.Flow
 
 @Dao

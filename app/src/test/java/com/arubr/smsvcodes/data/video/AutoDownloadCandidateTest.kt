@@ -1,7 +1,7 @@
-package com.arubr.smsvcodes.data.video
+package io.github.aedev.flow.data.video
 
-import com.arubr.smsvcodes.data.local.AutoDownloadMode
-import com.arubr.smsvcodes.data.local.entity.DownloadItemStatus
+import io.github.aedev.flow.data.local.AutoDownloadMode
+import io.github.aedev.flow.data.local.entity.DownloadItemStatus
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue
 import org.junit.Test

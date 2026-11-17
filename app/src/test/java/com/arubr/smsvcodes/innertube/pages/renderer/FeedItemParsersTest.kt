@@ -1,7 +1,7 @@
-package com.arubr.smsvcodes.innertube.pages.renderer
+package io.github.aedev.flow.innertube.pages.renderer
 
-import com.arubr.smsvcodes.innertube.YouTube
-import com.arubr.smsvcodes.innertube.models.YouTubeLocale
+import io.github.aedev.flow.innertube.YouTube
+import io.github.aedev.flow.innertube.models.YouTubeLocale
 import kotlinx.serialization.json.Json
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse

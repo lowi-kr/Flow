@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.musicplayer.lyrics
+package io.github.aedev.flow.ui.components.musicplayer.lyrics
 
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.AnimationState
@@ -47,11 +47,11 @@ import androidx.compose.ui.semantics.liveRegion
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.data.lyrics.LyricsEntry
-import com.arubr.smsvcodes.player.EnhancedMusicPlayerManager
-import com.arubr.smsvcodes.ui.theme.ensureContrastOn
-import com.arubr.smsvcodes.ui.utils.fadingEdge
+import io.github.aedev.flow.R
+import io.github.aedev.flow.data.lyrics.LyricsEntry
+import io.github.aedev.flow.player.EnhancedMusicPlayerManager
+import io.github.aedev.flow.ui.theme.ensureContrastOn
+import io.github.aedev.flow.ui.utils.fadingEdge
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.first

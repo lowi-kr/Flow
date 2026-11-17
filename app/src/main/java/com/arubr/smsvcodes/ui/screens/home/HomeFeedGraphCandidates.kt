@@ -1,9 +1,9 @@
-package com.arubr.smsvcodes.ui.screens.home
+package io.github.aedev.flow.ui.screens.home
 
-import com.arubr.smsvcodes.data.local.VideoHistoryEntry
-import com.arubr.smsvcodes.data.model.Video
-import com.arubr.smsvcodes.data.recommendation.GraphSeedInput
-import com.arubr.smsvcodes.data.recommendation.GraphSeedSource
+import io.github.aedev.flow.data.local.VideoHistoryEntry
+import io.github.aedev.flow.data.model.Video
+import io.github.aedev.flow.data.recommendation.GraphSeedInput
+import io.github.aedev.flow.data.recommendation.GraphSeedSource
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.map
 

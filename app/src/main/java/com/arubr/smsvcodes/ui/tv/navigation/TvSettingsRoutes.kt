@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.tv.navigation
+package io.github.aedev.flow.ui.tv.navigation
 
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.remember
@@ -7,18 +7,18 @@ import androidx.navigation.NavHostController
 import androidx.navigation.NavType
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
-import com.arubr.smsvcodes.ui.components.settings.SettingsDestination
-import com.arubr.smsvcodes.ui.screens.recap.RecapRoutes
-import com.arubr.smsvcodes.ui.screens.recap.RecapScreen
-import com.arubr.smsvcodes.ui.screens.recap.story.RecapStoryScreen
-import com.arubr.smsvcodes.ui.screens.settings.SettingsHost
-import com.arubr.smsvcodes.ui.screens.settings.SettingsHostOptions
-import com.arubr.smsvcodes.ui.screens.settings.about.DonationsScreen
-import com.arubr.smsvcodes.ui.screens.sync.SyncScreen
-import com.arubr.smsvcodes.ui.screens.update.UPDATE_ROUTE
-import com.arubr.smsvcodes.ui.screens.update.UpdateScreen
-import com.arubr.smsvcodes.ui.tv.components.TvScreenFrame
-import com.arubr.smsvcodes.ui.tv.screens.TvRemoteGuideScreen
+import io.github.aedev.flow.ui.components.settings.SettingsDestination
+import io.github.aedev.flow.ui.screens.recap.RecapRoutes
+import io.github.aedev.flow.ui.screens.recap.RecapScreen
+import io.github.aedev.flow.ui.screens.recap.story.RecapStoryScreen
+import io.github.aedev.flow.ui.screens.settings.SettingsHost
+import io.github.aedev.flow.ui.screens.settings.SettingsHostOptions
+import io.github.aedev.flow.ui.screens.settings.about.DonationsScreen
+import io.github.aedev.flow.ui.screens.sync.SyncScreen
+import io.github.aedev.flow.ui.screens.update.UPDATE_ROUTE
+import io.github.aedev.flow.ui.screens.update.UpdateScreen
+import io.github.aedev.flow.ui.tv.components.TvScreenFrame
+import io.github.aedev.flow.ui.tv.screens.TvRemoteGuideScreen
 
 /** Settings, hosted from the phone with TV's own Sync and remote guide pages, and the screens it opens. */
 internal fun NavGraphBuilder.tvSettingsRoutes(navController: NavHostController) {

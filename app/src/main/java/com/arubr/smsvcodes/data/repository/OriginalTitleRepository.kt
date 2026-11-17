@@ -1,6 +1,6 @@
-package com.arubr.smsvcodes.data.repository
+package io.github.aedev.flow.data.repository
 
-import com.arubr.smsvcodes.di.NetworkIoDispatcher
+import io.github.aedev.flow.di.NetworkIoDispatcher
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.CompletableDeferred
 import kotlinx.coroutines.CoroutineDispatcher

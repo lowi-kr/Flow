@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.sync.transport
+package io.github.aedev.flow.sync.transport
 
 import io.ktor.server.application.install
 import io.ktor.server.cio.CIO

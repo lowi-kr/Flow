@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.data.download
+package io.github.aedev.flow.data.download
 
 import android.app.NotificationManager
 import android.content.Context
@@ -11,7 +11,7 @@ import androidx.media3.exoplayer.offline.DefaultDownloadIndex
 import androidx.media3.exoplayer.offline.Download
 import androidx.media3.exoplayer.scheduler.PlatformScheduler
 import dagger.hilt.android.qualifiers.ApplicationContext
-import com.arubr.smsvcodes.di.DownloadCache
+import io.github.aedev.flow.di.DownloadCache
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock

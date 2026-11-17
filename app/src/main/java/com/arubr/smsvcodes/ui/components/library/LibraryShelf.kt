@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.library
+package io.github.aedev.flow.ui.components.library
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -36,14 +36,14 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import com.arubr.smsvcodes.data.model.Video
-import com.arubr.smsvcodes.data.music.DownloadedTrack
-import com.arubr.smsvcodes.data.music.model.MusicTrack
-import com.arubr.smsvcodes.data.video.DownloadedVideo
-import com.arubr.smsvcodes.ui.components.shared.MediaShortCard
-import com.arubr.smsvcodes.ui.components.shared.ShimmerBone
-import com.arubr.smsvcodes.ui.components.shared.ShortCardDefaults
-import com.arubr.smsvcodes.ui.components.shared.dpadShelfRow
+import io.github.aedev.flow.data.model.Video
+import io.github.aedev.flow.data.music.DownloadedTrack
+import io.github.aedev.flow.data.music.model.MusicTrack
+import io.github.aedev.flow.data.video.DownloadedVideo
+import io.github.aedev.flow.ui.components.shared.MediaShortCard
+import io.github.aedev.flow.ui.components.shared.ShimmerBone
+import io.github.aedev.flow.ui.components.shared.ShortCardDefaults
+import io.github.aedev.flow.ui.components.shared.dpadShelfRow
 
 private const val PLACEHOLDER_CARD_COUNT = 2
 private const val PLACEHOLDER_STAGGER_MS = 120

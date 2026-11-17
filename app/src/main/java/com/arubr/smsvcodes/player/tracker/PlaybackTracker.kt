@@ -1,11 +1,11 @@
-package com.arubr.smsvcodes.player.tracker
+package io.github.aedev.flow.player.tracker
 
 import android.util.Log
 import androidx.media3.common.Player
 import androidx.media3.common.util.UnstableApi
 import androidx.media3.exoplayer.ExoPlayer
-import com.arubr.smsvcodes.player.config.PlayerConfig
-import com.arubr.smsvcodes.player.state.EnhancedPlayerState
+import io.github.aedev.flow.player.config.PlayerConfig
+import io.github.aedev.flow.player.state.EnhancedPlayerState
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay

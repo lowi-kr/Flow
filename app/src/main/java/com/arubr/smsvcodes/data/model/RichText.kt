@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.data.model
+package io.github.aedev.flow.data.model
 
 /**
  * A stretch of text YouTube marked as actionable, with the target it resolved to.

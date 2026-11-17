@@ -1,25 +1,25 @@
-package com.arubr.smsvcodes.ui.tv.navigation
+package io.github.aedev.flow.ui.tv.navigation
 
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
 import androidx.navigation.NavType
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
-import com.arubr.smsvcodes.data.model.Video
-import com.arubr.smsvcodes.data.music.model.toVideo
-import com.arubr.smsvcodes.ui.components.layout.navigation.FlowTab
-import com.arubr.smsvcodes.ui.components.shared.MediaKind
-import com.arubr.smsvcodes.ui.screens.music.ArtistItemsScreen
-import com.arubr.smsvcodes.ui.screens.music.ArtistRoute
-import com.arubr.smsvcodes.ui.screens.music.EnhancedMusicScreen
-import com.arubr.smsvcodes.ui.screens.music.MoodsAndGenresScreen
-import com.arubr.smsvcodes.ui.screens.music.MusicPlayerViewModel
-import com.arubr.smsvcodes.ui.screens.music.MusicViewModel
-import com.arubr.smsvcodes.ui.screens.music.YouTubeBrowseScreen
-import com.arubr.smsvcodes.ui.screens.music.collection.MusicCollectionCallbacks
-import com.arubr.smsvcodes.ui.screens.music.collection.MusicCollectionScreen
-import com.arubr.smsvcodes.ui.screens.music.convertSongToMusicTrack
-import com.arubr.smsvcodes.ui.tv.components.TvScreenFrame
+import io.github.aedev.flow.data.model.Video
+import io.github.aedev.flow.data.music.model.toVideo
+import io.github.aedev.flow.ui.components.layout.navigation.FlowTab
+import io.github.aedev.flow.ui.components.shared.MediaKind
+import io.github.aedev.flow.ui.screens.music.ArtistItemsScreen
+import io.github.aedev.flow.ui.screens.music.ArtistRoute
+import io.github.aedev.flow.ui.screens.music.EnhancedMusicScreen
+import io.github.aedev.flow.ui.screens.music.MoodsAndGenresScreen
+import io.github.aedev.flow.ui.screens.music.MusicPlayerViewModel
+import io.github.aedev.flow.ui.screens.music.MusicViewModel
+import io.github.aedev.flow.ui.screens.music.YouTubeBrowseScreen
+import io.github.aedev.flow.ui.screens.music.collection.MusicCollectionCallbacks
+import io.github.aedev.flow.ui.screens.music.collection.MusicCollectionScreen
+import io.github.aedev.flow.ui.screens.music.convertSongToMusicTrack
+import io.github.aedev.flow.ui.tv.components.TvScreenFrame
 
 /** Music and everything reached from it: artists and their sections, albums and playlists, moods. */
 internal fun NavGraphBuilder.tvMusicRoutes(

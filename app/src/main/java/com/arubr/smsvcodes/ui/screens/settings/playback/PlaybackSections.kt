@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.screens.settings.playback
+package io.github.aedev.flow.ui.screens.settings.playback
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.BatteryAlert
@@ -6,24 +6,24 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.data.local.PlayerRelatedCardStyle
-import com.arubr.smsvcodes.data.local.SpeedSwipeSide
-import com.arubr.smsvcodes.ui.components.equalizer.equalizerSummary
-import com.arubr.smsvcodes.ui.components.settings.SettingsDestination
-import com.arubr.smsvcodes.ui.components.settings.SettingsListScope
-import com.arubr.smsvcodes.ui.components.settings.SettingsTarget
-import com.arubr.smsvcodes.ui.components.settings.SettingsToggleGroupRow
-import com.arubr.smsvcodes.ui.components.settings.choice
-import com.arubr.smsvcodes.ui.components.settings.nav
-import com.arubr.smsvcodes.ui.components.settings.switch
-import com.arubr.smsvcodes.ui.components.settings.toggleGroup
-import com.arubr.smsvcodes.ui.components.shared.FlowNavRow
-import com.arubr.smsvcodes.ui.components.shared.FlowSwitchRow
-import com.arubr.smsvcodes.ui.components.shared.FlowToggleOption
-import com.arubr.smsvcodes.ui.screens.settings.index.DestinationIndex
-import com.arubr.smsvcodes.ui.screens.settings.index.PlaybackGesturesIndex
-import com.arubr.smsvcodes.ui.screens.settings.index.PlaybackIndex
+import io.github.aedev.flow.R
+import io.github.aedev.flow.data.local.PlayerRelatedCardStyle
+import io.github.aedev.flow.data.local.SpeedSwipeSide
+import io.github.aedev.flow.ui.components.equalizer.equalizerSummary
+import io.github.aedev.flow.ui.components.settings.SettingsDestination
+import io.github.aedev.flow.ui.components.settings.SettingsListScope
+import io.github.aedev.flow.ui.components.settings.SettingsTarget
+import io.github.aedev.flow.ui.components.settings.SettingsToggleGroupRow
+import io.github.aedev.flow.ui.components.settings.choice
+import io.github.aedev.flow.ui.components.settings.nav
+import io.github.aedev.flow.ui.components.settings.switch
+import io.github.aedev.flow.ui.components.settings.toggleGroup
+import io.github.aedev.flow.ui.components.shared.FlowNavRow
+import io.github.aedev.flow.ui.components.shared.FlowSwitchRow
+import io.github.aedev.flow.ui.components.shared.FlowToggleOption
+import io.github.aedev.flow.ui.screens.settings.index.DestinationIndex
+import io.github.aedev.flow.ui.screens.settings.index.PlaybackGesturesIndex
+import io.github.aedev.flow.ui.screens.settings.index.PlaybackIndex
 
 private const val UNLIMITED_TITLE_LINES = 0
 

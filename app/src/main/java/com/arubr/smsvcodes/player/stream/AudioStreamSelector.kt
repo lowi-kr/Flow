@@ -1,6 +1,6 @@
-package com.arubr.smsvcodes.player.stream
+package io.github.aedev.flow.player.stream
 
-import com.arubr.smsvcodes.data.local.MusicAudioQuality
+import io.github.aedev.flow.data.local.MusicAudioQuality
 import org.schabi.newpipe.extractor.stream.AudioStream
 import org.schabi.newpipe.extractor.stream.AudioTrackType
 import java.util.Locale

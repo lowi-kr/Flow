@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.library
+package io.github.aedev.flow.ui.components.library
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -30,16 +30,16 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.data.local.entity.DownloadWithItems
-import com.arubr.smsvcodes.data.music.DownloadedTrack
-import com.arubr.smsvcodes.data.video.DownloadProgressUpdate
-import com.arubr.smsvcodes.data.video.DownloadedVideo
-import com.arubr.smsvcodes.ui.components.layout.flowBottomContentPadding
-import com.arubr.smsvcodes.ui.components.shared.FlowEmptyState
-import com.arubr.smsvcodes.ui.components.shared.FlowPullToRefreshBox
-import com.arubr.smsvcodes.ui.components.shared.MediaKind
-import com.arubr.smsvcodes.ui.components.shared.animateMediaGridItem
+import io.github.aedev.flow.R
+import io.github.aedev.flow.data.local.entity.DownloadWithItems
+import io.github.aedev.flow.data.music.DownloadedTrack
+import io.github.aedev.flow.data.video.DownloadProgressUpdate
+import io.github.aedev.flow.data.video.DownloadedVideo
+import io.github.aedev.flow.ui.components.layout.flowBottomContentPadding
+import io.github.aedev.flow.ui.components.shared.FlowEmptyState
+import io.github.aedev.flow.ui.components.shared.FlowPullToRefreshBox
+import io.github.aedev.flow.ui.components.shared.MediaKind
+import io.github.aedev.flow.ui.components.shared.animateMediaGridItem
 
 private val GridSpacing = 12.dp
 private val MusicGridPadding = 16.dp

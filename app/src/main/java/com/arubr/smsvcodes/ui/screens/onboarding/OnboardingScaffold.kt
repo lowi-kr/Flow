@@ -1,6 +1,6 @@
 @file:OptIn(ExperimentalMaterial3ExpressiveApi::class)
 
-package com.arubr.smsvcodes.ui.screens.onboarding
+package io.github.aedev.flow.ui.screens.onboarding
 
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.foundation.layout.Arrangement
@@ -36,10 +36,10 @@ import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.ui.components.layout.LocalFlowBottomInsets
-import com.arubr.smsvcodes.ui.components.shared.FlowActionButton
-import com.arubr.smsvcodes.ui.components.shared.drawSegmentedProgress
+import io.github.aedev.flow.R
+import io.github.aedev.flow.ui.components.layout.LocalFlowBottomInsets
+import io.github.aedev.flow.ui.components.shared.FlowActionButton
+import io.github.aedev.flow.ui.components.shared.drawSegmentedProgress
 
 /** Draws the current step's hero at the given size; the screen builds it so it can be shared between steps. */
 internal typealias HeroSlot = @Composable (size: Dp) -> Unit

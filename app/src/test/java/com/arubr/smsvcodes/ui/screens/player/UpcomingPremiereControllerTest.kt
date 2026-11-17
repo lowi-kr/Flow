@@ -1,16 +1,16 @@
-package com.arubr.smsvcodes.ui.screens.player
+package io.github.aedev.flow.ui.screens.player
 
 import android.content.Context
 import com.google.common.truth.Truth.assertThat
-import com.arubr.smsvcodes.data.local.PlayerPreferences
-import com.arubr.smsvcodes.data.model.Video
-import com.arubr.smsvcodes.notification.UpcomingVideoReminderWorker
-import com.arubr.smsvcodes.player.GlobalPlayerState
-import com.arubr.smsvcodes.player.error.PlayerDiagnostics
-import com.arubr.smsvcodes.player.stream.UpcomingPremiere
-import com.arubr.smsvcodes.player.stream.UpcomingPremiereProbe
-import com.arubr.smsvcodes.ui.screens.player.VideoPlayerViewModelHarness.Companion.video
-import com.arubr.smsvcodes.ui.screens.player.state.VideoPlayerUiState
+import io.github.aedev.flow.data.local.PlayerPreferences
+import io.github.aedev.flow.data.model.Video
+import io.github.aedev.flow.notification.UpcomingVideoReminderWorker
+import io.github.aedev.flow.player.GlobalPlayerState
+import io.github.aedev.flow.player.error.PlayerDiagnostics
+import io.github.aedev.flow.player.stream.UpcomingPremiere
+import io.github.aedev.flow.player.stream.UpcomingPremiereProbe
+import io.github.aedev.flow.ui.screens.player.VideoPlayerViewModelHarness.Companion.video
+import io.github.aedev.flow.ui.screens.player.state.VideoPlayerUiState
 import io.mockk.Runs
 import io.mockk.coEvery
 import io.mockk.coVerify

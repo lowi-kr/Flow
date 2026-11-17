@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.data.stats
+package io.github.aedev.flow.data.stats
 
 import android.content.Context
 import android.util.Log

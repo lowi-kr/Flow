@@ -1,10 +1,10 @@
-package com.arubr.smsvcodes.innertube.pages.reel
+package io.github.aedev.flow.innertube.pages.reel
 
-import com.arubr.smsvcodes.innertube.pages.arrayOrNull
-import com.arubr.smsvcodes.innertube.pages.booleanOrNull
-import com.arubr.smsvcodes.innertube.pages.objectOrNull
-import com.arubr.smsvcodes.innertube.pages.renderer.largestImageUrl
-import com.arubr.smsvcodes.innertube.pages.stringOrNull
+import io.github.aedev.flow.innertube.pages.arrayOrNull
+import io.github.aedev.flow.innertube.pages.booleanOrNull
+import io.github.aedev.flow.innertube.pages.objectOrNull
+import io.github.aedev.flow.innertube.pages.renderer.largestImageUrl
+import io.github.aedev.flow.innertube.pages.stringOrNull
 import kotlinx.serialization.json.JsonObject
 
 /**

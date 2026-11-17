@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.videoplayer.controls
+package io.github.aedev.flow.ui.components.videoplayer.controls
 
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.foundation.layout.Arrangement
@@ -37,11 +37,11 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.zIndex
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.ui.theme.PlayerScrim
-import com.arubr.smsvcodes.ui.theme.PlayerScrimAffordance
-import com.arubr.smsvcodes.ui.theme.PlayerScrimContent
-import com.arubr.smsvcodes.ui.theme.PlayerScrimContentSecondary
+import io.github.aedev.flow.R
+import io.github.aedev.flow.ui.theme.PlayerScrim
+import io.github.aedev.flow.ui.theme.PlayerScrimAffordance
+import io.github.aedev.flow.ui.theme.PlayerScrimContent
+import io.github.aedev.flow.ui.theme.PlayerScrimContentSecondary
 import org.schabi.newpipe.extractor.stream.StreamSegment
 
 /** A tappable text pill on video: the playback speed and the current quality. */

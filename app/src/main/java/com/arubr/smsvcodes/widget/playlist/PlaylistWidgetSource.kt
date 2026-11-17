@@ -1,16 +1,16 @@
-package com.arubr.smsvcodes.widget.playlist
+package io.github.aedev.flow.widget.playlist
 
 import android.content.Context
 import androidx.glance.appwidget.GlanceAppWidget
 import androidx.glance.appwidget.GlanceAppWidgetManager
 import dagger.hilt.android.qualifiers.ApplicationContext
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.data.local.PlaylistRepository
-import com.arubr.smsvcodes.data.model.PlaylistInfo
-import com.arubr.smsvcodes.data.model.Video
-import com.arubr.smsvcodes.data.repository.YouTubePlaylistRepository
-import com.arubr.smsvcodes.widget.core.refresh.WidgetContentKey
-import com.arubr.smsvcodes.widget.core.refresh.WidgetContentSource
+import io.github.aedev.flow.R
+import io.github.aedev.flow.data.local.PlaylistRepository
+import io.github.aedev.flow.data.model.PlaylistInfo
+import io.github.aedev.flow.data.model.Video
+import io.github.aedev.flow.data.repository.YouTubePlaylistRepository
+import io.github.aedev.flow.widget.core.refresh.WidgetContentKey
+import io.github.aedev.flow.widget.core.refresh.WidgetContentSource
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.distinctUntilChanged

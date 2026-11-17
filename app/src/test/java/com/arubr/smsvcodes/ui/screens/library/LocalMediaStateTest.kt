@@ -1,10 +1,10 @@
-package com.arubr.smsvcodes.ui.screens.library
+package io.github.aedev.flow.ui.screens.library
 
 import com.google.common.truth.Truth.assertThat
-import com.arubr.smsvcodes.data.localmedia.LocalLibrary
-import com.arubr.smsvcodes.data.localmedia.LocalMediaItem
-import com.arubr.smsvcodes.data.localmedia.LocalMediaSettings
-import com.arubr.smsvcodes.ui.components.shared.MediaKind
+import io.github.aedev.flow.data.localmedia.LocalLibrary
+import io.github.aedev.flow.data.localmedia.LocalMediaItem
+import io.github.aedev.flow.data.localmedia.LocalMediaSettings
+import io.github.aedev.flow.ui.components.shared.MediaKind
 import org.junit.Test
 
 class LocalMediaStateTest {

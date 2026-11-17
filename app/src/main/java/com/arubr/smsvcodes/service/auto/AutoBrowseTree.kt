@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.service.auto
+package io.github.aedev.flow.service.auto
 
 /**
  * The ids of the car's browse tree. A song's id names the list it was picked from, so a tap can

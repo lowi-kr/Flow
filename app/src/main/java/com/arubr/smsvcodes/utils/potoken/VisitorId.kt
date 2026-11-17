@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.utils.potoken
+package io.github.aedev.flow.utils.potoken
 
 import java.net.URLDecoder
 import java.util.Base64

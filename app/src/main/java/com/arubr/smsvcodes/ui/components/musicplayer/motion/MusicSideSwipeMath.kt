@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.musicplayer.motion
+package io.github.aedev.flow.ui.components.musicplayer.motion
 
 import kotlin.math.roundToInt
 

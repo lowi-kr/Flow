@@ -1,12 +1,12 @@
-package com.arubr.smsvcodes.ui.screens.settings.quality
+package io.github.aedev.flow.ui.screens.settings.quality
 
 import dagger.hilt.android.lifecycle.HiltViewModel
-import com.arubr.smsvcodes.data.local.MusicAudioQuality
-import com.arubr.smsvcodes.data.local.PlayerPreferences
-import com.arubr.smsvcodes.data.local.ThumbnailQuality
-import com.arubr.smsvcodes.data.local.VideoCodec
-import com.arubr.smsvcodes.data.local.VideoQuality
-import com.arubr.smsvcodes.ui.screens.settings.SettingsViewModel
+import io.github.aedev.flow.data.local.MusicAudioQuality
+import io.github.aedev.flow.data.local.PlayerPreferences
+import io.github.aedev.flow.data.local.ThumbnailQuality
+import io.github.aedev.flow.data.local.VideoCodec
+import io.github.aedev.flow.data.local.VideoQuality
+import io.github.aedev.flow.ui.screens.settings.SettingsViewModel
 import javax.inject.Inject
 
 @HiltViewModel

@@ -5,24 +5,24 @@
  * Test-source-set only — never shipped in the APK.
  */
 
-package com.arubr.smsvcodes.data.recommendation.eval
+package io.github.aedev.flow.data.recommendation.eval
 
-import com.arubr.smsvcodes.data.model.Video
-import com.arubr.smsvcodes.data.recommendation.NeuroCategoryStore
-import com.arubr.smsvcodes.data.recommendation.NeuroCoWatchStore
-import com.arubr.smsvcodes.data.recommendation.NeuroScoring
-import com.arubr.smsvcodes.data.recommendation.NeuroStorage
-import com.arubr.smsvcodes.data.recommendation.RankTrace
-import com.arubr.smsvcodes.data.recommendation.UserBrain
-import com.arubr.smsvcodes.data.recommendation.snapshot.HomeSnapshot
-import com.arubr.smsvcodes.data.recommendation.toUserBrain
-import com.arubr.smsvcodes.ui.screens.home.FeedSource
-import com.arubr.smsvcodes.ui.screens.home.GraphCandidate
-import com.arubr.smsvcodes.ui.screens.home.assembleHomeFeed
-import com.arubr.smsvcodes.ui.screens.home.buildHomeFeedLanes
-import com.arubr.smsvcodes.ui.screens.home.dynamicFreshSubSlots
-import com.arubr.smsvcodes.ui.screens.home.feedTasteProfile
-import com.arubr.smsvcodes.ui.screens.home.storedSubscriptionVideos
+import io.github.aedev.flow.data.model.Video
+import io.github.aedev.flow.data.recommendation.NeuroCategoryStore
+import io.github.aedev.flow.data.recommendation.NeuroCoWatchStore
+import io.github.aedev.flow.data.recommendation.NeuroScoring
+import io.github.aedev.flow.data.recommendation.NeuroStorage
+import io.github.aedev.flow.data.recommendation.RankTrace
+import io.github.aedev.flow.data.recommendation.UserBrain
+import io.github.aedev.flow.data.recommendation.snapshot.HomeSnapshot
+import io.github.aedev.flow.data.recommendation.toUserBrain
+import io.github.aedev.flow.ui.screens.home.FeedSource
+import io.github.aedev.flow.ui.screens.home.GraphCandidate
+import io.github.aedev.flow.ui.screens.home.assembleHomeFeed
+import io.github.aedev.flow.ui.screens.home.buildHomeFeedLanes
+import io.github.aedev.flow.ui.screens.home.dynamicFreshSubSlots
+import io.github.aedev.flow.ui.screens.home.feedTasteProfile
+import io.github.aedev.flow.ui.screens.home.storedSubscriptionVideos
 import io.mockk.mockk
 import kotlinx.coroutines.runBlocking
 import kotlinx.serialization.json.Json
@@ -92,7 +92,7 @@ internal object HomeReplay {
         runBlocking {
             val shift = now - snapshot.createdAt
 
-            fun List<com.arubr.smsvcodes.data.recommendation.snapshot.SnapshotVideo>.videos() = map { it.toVideo(shift) }
+            fun List<io.github.aedev.flow.data.recommendation.snapshot.SnapshotVideo>.videos() = map { it.toVideo(shift) }
 
             val brain = brainOf(snapshot)
             val categories = NeuroCategoryStore(mockk(relaxed = true)).apply { restore(snapshot.categories) }

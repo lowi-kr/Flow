@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.screens.library
+package io.github.aedev.flow.ui.screens.library
 
 import androidx.compose.foundation.layout.BoxScope
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -16,16 +16,16 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.data.localmedia.LocalMediaItem
-import com.arubr.smsvcodes.ui.components.library.LibraryVideoCard
-import com.arubr.smsvcodes.ui.components.shared.ArtworkThumbnail
-import com.arubr.smsvcodes.ui.components.shared.MediaRow
-import com.arubr.smsvcodes.ui.components.shared.MediaThumbnail
-import com.arubr.smsvcodes.ui.components.shared.MediaThumbnailDefaults
-import com.arubr.smsvcodes.ui.components.shared.card.LocalVideoCardPreferences
-import com.arubr.smsvcodes.utils.formatDurationMillis
-import com.arubr.smsvcodes.utils.formatYouTubeRelativeTime
+import io.github.aedev.flow.R
+import io.github.aedev.flow.data.localmedia.LocalMediaItem
+import io.github.aedev.flow.ui.components.library.LibraryVideoCard
+import io.github.aedev.flow.ui.components.shared.ArtworkThumbnail
+import io.github.aedev.flow.ui.components.shared.MediaRow
+import io.github.aedev.flow.ui.components.shared.MediaThumbnail
+import io.github.aedev.flow.ui.components.shared.MediaThumbnailDefaults
+import io.github.aedev.flow.ui.components.shared.card.LocalVideoCardPreferences
+import io.github.aedev.flow.utils.formatDurationMillis
+import io.github.aedev.flow.utils.formatYouTubeRelativeTime
 
 private const val UHD_SHORT_SIDE = 2160
 

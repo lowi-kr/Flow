@@ -1,8 +1,8 @@
-package com.arubr.smsvcodes.data.repository
+package io.github.aedev.flow.data.repository
 
 import com.google.common.truth.Truth.assertThat
-import com.arubr.smsvcodes.innertube.YouTube
-import com.arubr.smsvcodes.innertube.models.ReturnYouTubeDislikeResponse
+import io.github.aedev.flow.innertube.YouTube
+import io.github.aedev.flow.innertube.models.ReturnYouTubeDislikeResponse
 import io.mockk.coEvery
 import io.mockk.coVerify
 import io.mockk.mockk

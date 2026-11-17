@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.screens.settings.appearance
+package io.github.aedev.flow.ui.screens.settings.appearance
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -31,9 +31,9 @@ import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.ui.components.shared.FlowAlertDialog
-import com.arubr.smsvcodes.util.LauncherIcon
+import io.github.aedev.flow.R
+import io.github.aedev.flow.ui.components.shared.FlowAlertDialog
+import io.github.aedev.flow.util.LauncherIcon
 
 private const val ICON_COLUMNS = 3
 private val IconGridMaxHeight = 320.dp

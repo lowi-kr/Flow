@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.screens.settings.integrations
+package io.github.aedev.flow.ui.screens.settings.integrations
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -34,10 +34,10 @@ import androidx.compose.ui.semantics.role
 import androidx.compose.ui.semantics.selected
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.dp
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.ui.components.shared.FlowAlertDialog
-import com.arubr.smsvcodes.ui.theme.SponsorBlockSegmentPresets
-import com.arubr.smsvcodes.utils.sponsorCategoryLabelRes
+import io.github.aedev.flow.R
+import io.github.aedev.flow.ui.components.shared.FlowAlertDialog
+import io.github.aedev.flow.ui.theme.SponsorBlockSegmentPresets
+import io.github.aedev.flow.utils.sponsorCategoryLabelRes
 
 private val PresetSize = 32.dp
 private val PresetBorder = 1.dp

@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.screens.library
+package io.github.aedev.flow.ui.screens.library
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.PaddingValues
@@ -7,9 +7,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.ui.components.shared.FlowFilterChip
-import com.arubr.smsvcodes.ui.components.shared.FlowSortChip
+import io.github.aedev.flow.R
+import io.github.aedev.flow.ui.components.shared.FlowFilterChip
+import io.github.aedev.flow.ui.components.shared.FlowSortChip
 
 /**
  * The chips under the search field: All or Folders, then sort and the filters that apply to this

@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.shared
+package io.github.aedev.flow.ui.components.shared
 
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
@@ -6,10 +6,10 @@ import androidx.compose.runtime.Immutable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.isSpecified
-import com.arubr.smsvcodes.data.local.ThumbnailQuality
-import com.arubr.smsvcodes.ui.theme.ensureContrastOn
-import com.arubr.smsvcodes.ui.theme.tone
-import com.arubr.smsvcodes.ui.theme.withTone
+import io.github.aedev.flow.data.local.ThumbnailQuality
+import io.github.aedev.flow.ui.theme.ensureContrastOn
+import io.github.aedev.flow.ui.theme.tone
+import io.github.aedev.flow.ui.theme.withTone
 
 private const val CONTAINER_TONE_DARK = 16.0
 private const val CONTAINER_TONE_LIGHT = 92.0

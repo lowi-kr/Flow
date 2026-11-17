@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.utils
+package io.github.aedev.flow.utils
 
 import android.app.Application
 import android.content.Context
@@ -6,7 +6,7 @@ import android.content.Intent
 import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.google.common.truth.Truth.assertThat
-import com.arubr.smsvcodes.R
+import io.github.aedev.flow.R
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.robolectric.annotation.Config

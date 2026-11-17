@@ -1,8 +1,8 @@
-package com.arubr.smsvcodes.data.shorts.queue
+package io.github.aedev.flow.data.shorts.queue
 
-import com.arubr.smsvcodes.data.model.ShortVideo
-import com.arubr.smsvcodes.data.model.Video
-import com.arubr.smsvcodes.data.model.toShortVideo
+import io.github.aedev.flow.data.model.ShortVideo
+import io.github.aedev.flow.data.model.Video
+import io.github.aedev.flow.data.model.toShortVideo
 import javax.inject.Inject
 import javax.inject.Singleton
 

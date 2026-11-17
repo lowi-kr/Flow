@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.search
+package io.github.aedev.flow.ui.components.search
 
 import android.app.Application
 import android.content.Context
@@ -21,17 +21,17 @@ import androidx.paging.LoadState
 import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.google.common.truth.Truth.assertThat
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.data.local.ContentType
-import com.arubr.smsvcodes.data.local.Duration
-import com.arubr.smsvcodes.data.local.SearchFeature
-import com.arubr.smsvcodes.data.local.SearchFilter
-import com.arubr.smsvcodes.data.local.SortType
-import com.arubr.smsvcodes.data.local.UploadDate
-import com.arubr.smsvcodes.data.local.WatchState
-import com.arubr.smsvcodes.data.model.Channel
-import com.arubr.smsvcodes.ui.components.shared.FeedPagingFooter
-import com.arubr.smsvcodes.ui.components.shared.FlowSuggestionRow
+import io.github.aedev.flow.R
+import io.github.aedev.flow.data.local.ContentType
+import io.github.aedev.flow.data.local.Duration
+import io.github.aedev.flow.data.local.SearchFeature
+import io.github.aedev.flow.data.local.SearchFilter
+import io.github.aedev.flow.data.local.SortType
+import io.github.aedev.flow.data.local.UploadDate
+import io.github.aedev.flow.data.local.WatchState
+import io.github.aedev.flow.data.model.Channel
+import io.github.aedev.flow.ui.components.shared.FeedPagingFooter
+import io.github.aedev.flow.ui.components.shared.FlowSuggestionRow
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith

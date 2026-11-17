@@ -1,18 +1,18 @@
-package com.arubr.smsvcodes.ui
+package io.github.aedev.flow.ui
 
 import androidx.compose.runtime.MutableState
 import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.composable
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.player.GlobalPlayerState
-import com.arubr.smsvcodes.ui.components.layout.navigation.DOWNLOADS_ROUTE
-import com.arubr.smsvcodes.ui.components.layout.navigation.DOWNLOADS_TAB_ROUTE
-import com.arubr.smsvcodes.ui.components.layout.navigation.MediaNavigator
-import com.arubr.smsvcodes.ui.screens.library.DownloadsScreen
-import com.arubr.smsvcodes.ui.screens.music.sharedMusicPlayerViewModel
-import com.arubr.smsvcodes.ui.screens.player.VideoPlayerViewModel
+import io.github.aedev.flow.R
+import io.github.aedev.flow.player.GlobalPlayerState
+import io.github.aedev.flow.ui.components.layout.navigation.DOWNLOADS_ROUTE
+import io.github.aedev.flow.ui.components.layout.navigation.DOWNLOADS_TAB_ROUTE
+import io.github.aedev.flow.ui.components.layout.navigation.MediaNavigator
+import io.github.aedev.flow.ui.screens.library.DownloadsScreen
+import io.github.aedev.flow.ui.screens.music.sharedMusicPlayerViewModel
+import io.github.aedev.flow.ui.screens.player.VideoPlayerViewModel
 
 /** The downloads page, opened over a screen with a back arrow, and as the Downloads tab without one. */
 internal fun NavGraphBuilder.downloadsRoutes(

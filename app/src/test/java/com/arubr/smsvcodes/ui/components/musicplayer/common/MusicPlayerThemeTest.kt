@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.musicplayer.common
+package io.github.aedev.flow.ui.components.musicplayer.common
 
 import android.app.Application
 import androidx.compose.ui.graphics.Color
@@ -6,9 +6,9 @@ import androidx.compose.ui.graphics.compositeOver
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.google.common.truth.Truth.assertThat
 import com.google.common.truth.Truth.assertWithMessage
-import com.arubr.smsvcodes.data.local.MusicPlayerBackgroundStyle
-import com.arubr.smsvcodes.ui.components.shared.MediaPalette
-import com.arubr.smsvcodes.ui.theme.contrastRatio
+import io.github.aedev.flow.data.local.MusicPlayerBackgroundStyle
+import io.github.aedev.flow.ui.components.shared.MediaPalette
+import io.github.aedev.flow.ui.theme.contrastRatio
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.robolectric.annotation.Config

@@ -6,12 +6,12 @@
 
     <application>
         <activity
-            android:name="com.arubr.smsvcodes.discord.DiscordLoginActivity"
+            android:name="io.github.aedev.flow.discord.DiscordLoginActivity"
             android:exported="false"
             android:theme="@style/Theme.Flow" />
 
         <receiver
-            android:name="com.arubr.smsvcodes.updater.UpdateInstallReceiver"
+            android:name="io.github.aedev.flow.updater.UpdateInstallReceiver"
             android:exported="false" />
 
         <service

@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.screens.subscriptions
+package io.github.aedev.flow.ui.screens.subscriptions
 
 import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.Arrangement
@@ -31,22 +31,22 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.data.local.HomeFeedColumns
-import com.arubr.smsvcodes.data.model.Channel
-import com.arubr.smsvcodes.data.model.Video
-import com.arubr.smsvcodes.data.shorts.queue.ShortsQueueSource
-import com.arubr.smsvcodes.ui.components.FEED_MAX_AUTO_COLUMNS
-import com.arubr.smsvcodes.ui.components.FeedCardMinWidth
-import com.arubr.smsvcodes.ui.components.layout.flowBottomContentPadding
-import com.arubr.smsvcodes.ui.components.rememberFeedGridLayout
-import com.arubr.smsvcodes.ui.components.shared.FlowFilterChip
-import com.arubr.smsvcodes.ui.components.shared.FlowPullToRefreshBox
-import com.arubr.smsvcodes.ui.components.shared.MediaShortsShelf
-import com.arubr.smsvcodes.ui.components.shared.card.MediaVideoCard
-import com.arubr.smsvcodes.ui.components.shared.card.VideoCardLayout
-import com.arubr.smsvcodes.ui.components.shared.dpadFocusGroup
-import com.arubr.smsvcodes.ui.components.shared.rememberFeedGridPlan
+import io.github.aedev.flow.R
+import io.github.aedev.flow.data.local.HomeFeedColumns
+import io.github.aedev.flow.data.model.Channel
+import io.github.aedev.flow.data.model.Video
+import io.github.aedev.flow.data.shorts.queue.ShortsQueueSource
+import io.github.aedev.flow.ui.components.FEED_MAX_AUTO_COLUMNS
+import io.github.aedev.flow.ui.components.FeedCardMinWidth
+import io.github.aedev.flow.ui.components.layout.flowBottomContentPadding
+import io.github.aedev.flow.ui.components.rememberFeedGridLayout
+import io.github.aedev.flow.ui.components.shared.FlowFilterChip
+import io.github.aedev.flow.ui.components.shared.FlowPullToRefreshBox
+import io.github.aedev.flow.ui.components.shared.MediaShortsShelf
+import io.github.aedev.flow.ui.components.shared.card.MediaVideoCard
+import io.github.aedev.flow.ui.components.shared.card.VideoCardLayout
+import io.github.aedev.flow.ui.components.shared.dpadFocusGroup
+import io.github.aedev.flow.ui.components.shared.rememberFeedGridPlan
 
 private val GroupRowHorizontalPadding = 12.dp
 private val GroupRowVerticalPadding = 8.dp

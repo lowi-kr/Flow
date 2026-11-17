@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.screens.settings.playback
+package io.github.aedev.flow.ui.screens.settings.playback
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
@@ -15,14 +15,14 @@ import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.data.local.SPEED_SWIPE_STEPS
-import com.arubr.smsvcodes.data.local.SpeedSwipeSide
-import com.arubr.smsvcodes.player.stream.CaptionTrackResolver
-import com.arubr.smsvcodes.ui.components.shared.FlowChoice
-import com.arubr.smsvcodes.ui.components.shared.FlowChoiceDialog
-import com.arubr.smsvcodes.utils.LanguageCatalog
-import com.arubr.smsvcodes.utils.formatMultiplierLabel
+import io.github.aedev.flow.R
+import io.github.aedev.flow.data.local.SPEED_SWIPE_STEPS
+import io.github.aedev.flow.data.local.SpeedSwipeSide
+import io.github.aedev.flow.player.stream.CaptionTrackResolver
+import io.github.aedev.flow.ui.components.shared.FlowChoice
+import io.github.aedev.flow.ui.components.shared.FlowChoiceDialog
+import io.github.aedev.flow.utils.LanguageCatalog
+import io.github.aedev.flow.utils.formatMultiplierLabel
 import kotlin.math.roundToInt
 
 private val SliderTopPadding = 8.dp

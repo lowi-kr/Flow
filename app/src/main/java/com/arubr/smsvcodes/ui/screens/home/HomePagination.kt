@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.screens.home
+package io.github.aedev.flow.ui.screens.home
 
 internal const val HOME_PREFETCH_AHEAD_VIDEO_COUNT = 24
 

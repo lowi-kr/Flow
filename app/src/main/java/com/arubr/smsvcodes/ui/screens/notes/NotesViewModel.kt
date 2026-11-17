@@ -1,11 +1,11 @@
-package com.arubr.smsvcodes.ui.screens.notes
+package io.github.aedev.flow.ui.screens.notes
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
-import com.arubr.smsvcodes.data.local.PlayerPreferences
-import com.arubr.smsvcodes.data.notes.Note
-import com.arubr.smsvcodes.data.notes.NotesRepository
+import io.github.aedev.flow.data.local.PlayerPreferences
+import io.github.aedev.flow.data.notes.Note
+import io.github.aedev.flow.data.notes.NotesRepository
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow

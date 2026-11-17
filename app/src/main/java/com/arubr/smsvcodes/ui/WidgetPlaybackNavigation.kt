@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui
+package io.github.aedev.flow.ui
 
 import android.net.Uri
 import androidx.compose.runtime.LaunchedEffect
@@ -11,12 +11,12 @@ import androidx.navigation.NavHostController
 import androidx.navigation.NavType
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.data.music.model.toMusicTrack
-import com.arubr.smsvcodes.player.GlobalPlayerState
-import com.arubr.smsvcodes.ui.screens.music.sharedMusicPlayerViewModel
-import com.arubr.smsvcodes.ui.screens.player.VideoPlayerViewModel
-import com.arubr.smsvcodes.ui.screens.widgets.WidgetPlaybackViewModel
+import io.github.aedev.flow.R
+import io.github.aedev.flow.data.music.model.toMusicTrack
+import io.github.aedev.flow.player.GlobalPlayerState
+import io.github.aedev.flow.ui.screens.music.sharedMusicPlayerViewModel
+import io.github.aedev.flow.ui.screens.player.VideoPlayerViewModel
+import io.github.aedev.flow.ui.screens.widgets.WidgetPlaybackViewModel
 
 internal const val ON_REPEAT_SHUFFLE_ROUTE = "onRepeatShuffle"
 private const val WIDGET_PLAYLIST_ROUTE = "widgetPlaylist/{playlistId}?shuffle={shuffle}&start={start}"

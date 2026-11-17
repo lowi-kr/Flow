@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.videoplayer.controls
+package io.github.aedev.flow.ui.components.videoplayer.controls
 
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.size
@@ -13,8 +13,8 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.hapticfeedback.HapticFeedbackType
 import androidx.compose.ui.platform.LocalHapticFeedback
 import androidx.compose.ui.unit.Dp
-import com.arubr.smsvcodes.ui.theme.PlayerScrimAffordance
-import com.arubr.smsvcodes.ui.theme.PlayerScrimContent
+import io.github.aedev.flow.ui.theme.PlayerScrimAffordance
+import io.github.aedev.flow.ui.theme.PlayerScrimContent
 
 /**
  * A round icon button resting on video.

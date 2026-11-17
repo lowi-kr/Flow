@@ -1,6 +1,6 @@
-package com.arubr.smsvcodes.data.model
+package io.github.aedev.flow.data.model
 
-import com.arubr.smsvcodes.data.local.entity.SubscriptionGroupEntity
+import io.github.aedev.flow.data.local.entity.SubscriptionGroupEntity
 
 data class SubscriptionGroup(
     val name: String,

@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.screens.settings.scrobbling
+package io.github.aedev.flow.ui.screens.settings.scrobbling
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -20,10 +20,10 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.unit.dp
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.data.scrobble.AudioscrobblerKeys
-import com.arubr.smsvcodes.data.scrobble.ScrobbleService
-import com.arubr.smsvcodes.ui.components.shared.FlowAlertDialog
+import io.github.aedev.flow.R
+import io.github.aedev.flow.data.scrobble.AudioscrobblerKeys
+import io.github.aedev.flow.data.scrobble.ScrobbleService
+import io.github.aedev.flow.ui.components.shared.FlowAlertDialog
 
 private val FieldSpacing = 8.dp
 

@@ -1,8 +1,8 @@
-package com.arubr.smsvcodes.ui.screens.crash
+package io.github.aedev.flow.ui.screens.crash
 
 import com.google.common.truth.Truth.assertThat
-import com.arubr.smsvcodes.utils.FlowCrashReportFormatter
-import com.arubr.smsvcodes.utils.FlowCrashReportSnapshot
+import io.github.aedev.flow.utils.FlowCrashReportFormatter
+import io.github.aedev.flow.utils.FlowCrashReportSnapshot
 import org.junit.Test
 import java.time.LocalDateTime
 
@@ -19,7 +19,7 @@ class CrashSummaryTest {
                     """
                     java.lang.IllegalArgumentException: Padding must be non-negative
                     	at androidx.compose.foundation.layout.PaddingKt.padding(Padding.kt:88)
-                    	at com.arubr.smsvcodes.ui.screens.player.PlayerBottomBarKt.PlayerBottomBar(PlayerBottomBar.kt:212)
+                    	at io.github.aedev.flow.ui.screens.player.PlayerBottomBarKt.PlayerBottomBar(PlayerBottomBar.kt:212)
                     """.trimIndent(),
                 deviceInfo = "  Model: 23049PCD8G\n  Manufacturer: Xiaomi\n  Android: 16 (SDK 36)\n  App Version: 2.2.5 (225)",
                 memoryInfo = "  Used heap: 10 MB",

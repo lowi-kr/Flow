@@ -1,8 +1,8 @@
-package com.arubr.smsvcodes.data.stats
+package io.github.aedev.flow.data.stats
 
 import com.google.common.truth.Truth.assertThat
-import com.arubr.smsvcodes.data.recommendation.music.MusicStatsParams
-import com.arubr.smsvcodes.data.recommendation.music.MusicStatsStorage
+import io.github.aedev.flow.data.recommendation.music.MusicStatsParams
+import io.github.aedev.flow.data.recommendation.music.MusicStatsStorage
 import org.junit.Test
 import java.time.YearMonth
 

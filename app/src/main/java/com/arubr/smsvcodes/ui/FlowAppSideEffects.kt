@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui
+package io.github.aedev.flow.ui
 
 import androidx.compose.material3.SnackbarDuration
 import androidx.compose.material3.SnackbarHostState
@@ -10,13 +10,13 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.platform.LocalContext
 import androidx.navigation.NavHostController
-import com.arubr.smsvcodes.data.subscriptions.refreshSubscriptionsAtStartup
-import com.arubr.smsvcodes.player.DeepFlowManager
-import com.arubr.smsvcodes.player.EnhancedMusicPlayerManager
-import com.arubr.smsvcodes.player.SleepTimerManager
-import com.arubr.smsvcodes.service.MusicServiceState
-import com.arubr.smsvcodes.ui.components.layout.navigation.FlowTab
-import com.arubr.smsvcodes.ui.screens.music.sharedMusicPlayerViewModel
+import io.github.aedev.flow.data.subscriptions.refreshSubscriptionsAtStartup
+import io.github.aedev.flow.player.DeepFlowManager
+import io.github.aedev.flow.player.EnhancedMusicPlayerManager
+import io.github.aedev.flow.player.SleepTimerManager
+import io.github.aedev.flow.service.MusicServiceState
+import io.github.aedev.flow.ui.components.layout.navigation.FlowTab
+import io.github.aedev.flow.ui.screens.music.sharedMusicPlayerViewModel
 import kotlinx.coroutines.flow.collectLatest
 
 /** App-wide effects with no UI of their own: preference propagation and the global snackbar feeds. */

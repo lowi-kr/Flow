@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.screens.channel
+package io.github.aedev.flow.ui.screens.channel
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -19,15 +19,15 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.data.local.HomeFeedColumns
-import com.arubr.smsvcodes.data.model.Video
-import com.arubr.smsvcodes.ui.components.rememberFeedGridLayout
-import com.arubr.smsvcodes.ui.components.shared.FlowEmptyState
-import com.arubr.smsvcodes.ui.components.shared.FlowLoadingIndicator
-import com.arubr.smsvcodes.ui.components.shared.card.MediaVideoCard
-import com.arubr.smsvcodes.ui.components.shared.card.VideoCardLayout
-import com.arubr.smsvcodes.ui.components.shared.rememberFeedGridPlan
+import io.github.aedev.flow.R
+import io.github.aedev.flow.data.local.HomeFeedColumns
+import io.github.aedev.flow.data.model.Video
+import io.github.aedev.flow.ui.components.rememberFeedGridLayout
+import io.github.aedev.flow.ui.components.shared.FlowEmptyState
+import io.github.aedev.flow.ui.components.shared.FlowLoadingIndicator
+import io.github.aedev.flow.ui.components.shared.card.MediaVideoCard
+import io.github.aedev.flow.ui.components.shared.card.VideoCardLayout
+import io.github.aedev.flow.ui.components.shared.rememberFeedGridPlan
 
 @Composable
 internal fun ChannelSearchResults(

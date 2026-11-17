@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.player
+package io.github.aedev.flow.player
 
 import android.content.Context
 import android.media.AudioManager

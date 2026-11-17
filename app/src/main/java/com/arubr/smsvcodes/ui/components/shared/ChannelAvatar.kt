@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.shared
+package io.github.aedev.flow.ui.components.shared
 
 import android.util.Log
 import androidx.compose.foundation.Image
@@ -25,7 +25,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
-import com.arubr.smsvcodes.utils.ThumbnailUrlResolver
+import io.github.aedev.flow.utils.ThumbnailUrlResolver
 
 private const val AVATAR_TAG = "ChannelAvatarImage"
 

@@ -1,6 +1,6 @@
-package com.arubr.smsvcodes.ui.components.videoplayer.sheet
+package io.github.aedev.flow.ui.components.videoplayer.sheet
 
-import com.arubr.smsvcodes.data.transcript.TranscriptCue
+import io.github.aedev.flow.data.transcript.TranscriptCue
 
 /** A chapter as the transcript reads it: where it starts, and what it is called. */
 data class TranscriptChapter(

@@ -1,26 +1,26 @@
-package com.arubr.smsvcodes.innertube.pages
+package io.github.aedev.flow.innertube.pages
 
-import com.arubr.smsvcodes.innertube.YouTubeConstants
-import com.arubr.smsvcodes.innertube.models.Album
-import com.arubr.smsvcodes.innertube.models.AlbumItem
-import com.arubr.smsvcodes.innertube.models.Artist
-import com.arubr.smsvcodes.innertube.models.ArtistItem
-import com.arubr.smsvcodes.innertube.models.BrowseEndpoint.BrowseEndpointContextSupportedConfigs.BrowseEndpointContextMusicConfig.Companion.MUSIC_PAGE_TYPE_ALBUM
-import com.arubr.smsvcodes.innertube.models.BrowseEndpoint.BrowseEndpointContextSupportedConfigs.BrowseEndpointContextMusicConfig.Companion.MUSIC_PAGE_TYPE_ARTIST
-import com.arubr.smsvcodes.innertube.models.BrowseEndpoint.BrowseEndpointContextSupportedConfigs.BrowseEndpointContextMusicConfig.Companion.MUSIC_PAGE_TYPE_USER_CHANNEL
-import com.arubr.smsvcodes.innertube.models.MusicCardShelfRenderer
-import com.arubr.smsvcodes.innertube.models.MusicResponsiveListItemRenderer
-import com.arubr.smsvcodes.innertube.models.MusicShelfRenderer
-import com.arubr.smsvcodes.innertube.models.PlaylistItem
-import com.arubr.smsvcodes.innertube.models.SongItem
-import com.arubr.smsvcodes.innertube.models.YTItem
-import com.arubr.smsvcodes.innertube.models.clean
-import com.arubr.smsvcodes.innertube.models.getContinuation
-import com.arubr.smsvcodes.innertube.models.getItems
-import com.arubr.smsvcodes.innertube.models.oddElements
-import com.arubr.smsvcodes.innertube.models.response.SearchResponse
-import com.arubr.smsvcodes.innertube.models.splitBySeparator
-import com.arubr.smsvcodes.innertube.utils.parseTime
+import io.github.aedev.flow.innertube.YouTubeConstants
+import io.github.aedev.flow.innertube.models.Album
+import io.github.aedev.flow.innertube.models.AlbumItem
+import io.github.aedev.flow.innertube.models.Artist
+import io.github.aedev.flow.innertube.models.ArtistItem
+import io.github.aedev.flow.innertube.models.BrowseEndpoint.BrowseEndpointContextSupportedConfigs.BrowseEndpointContextMusicConfig.Companion.MUSIC_PAGE_TYPE_ALBUM
+import io.github.aedev.flow.innertube.models.BrowseEndpoint.BrowseEndpointContextSupportedConfigs.BrowseEndpointContextMusicConfig.Companion.MUSIC_PAGE_TYPE_ARTIST
+import io.github.aedev.flow.innertube.models.BrowseEndpoint.BrowseEndpointContextSupportedConfigs.BrowseEndpointContextMusicConfig.Companion.MUSIC_PAGE_TYPE_USER_CHANNEL
+import io.github.aedev.flow.innertube.models.MusicCardShelfRenderer
+import io.github.aedev.flow.innertube.models.MusicResponsiveListItemRenderer
+import io.github.aedev.flow.innertube.models.MusicShelfRenderer
+import io.github.aedev.flow.innertube.models.PlaylistItem
+import io.github.aedev.flow.innertube.models.SongItem
+import io.github.aedev.flow.innertube.models.YTItem
+import io.github.aedev.flow.innertube.models.clean
+import io.github.aedev.flow.innertube.models.getContinuation
+import io.github.aedev.flow.innertube.models.getItems
+import io.github.aedev.flow.innertube.models.oddElements
+import io.github.aedev.flow.innertube.models.response.SearchResponse
+import io.github.aedev.flow.innertube.models.splitBySeparator
+import io.github.aedev.flow.innertube.utils.parseTime
 
 /** What a search summary section holds; [SHELF] is a section the server titled itself. */
 enum class SearchSummaryKind {

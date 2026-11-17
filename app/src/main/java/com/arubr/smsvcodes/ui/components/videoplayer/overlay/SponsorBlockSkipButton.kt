@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.videoplayer.overlay
+package io.github.aedev.flow.ui.components.videoplayer.overlay
 
 import androidx.compose.animation.*
 import androidx.compose.animation.core.animateFloatAsState
@@ -17,13 +17,13 @@ import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.data.local.SponsorBlockAction
-import com.arubr.smsvcodes.data.model.SponsorBlockSegment
-import com.arubr.smsvcodes.ui.theme.PlayerScrim
-import com.arubr.smsvcodes.ui.theme.PlayerScrimContent
-import com.arubr.smsvcodes.ui.theme.PlayerScrimPanel
-import com.arubr.smsvcodes.utils.sponsorCategoryLabelRes
+import io.github.aedev.flow.R
+import io.github.aedev.flow.data.local.SponsorBlockAction
+import io.github.aedev.flow.data.model.SponsorBlockSegment
+import io.github.aedev.flow.ui.theme.PlayerScrim
+import io.github.aedev.flow.ui.theme.PlayerScrimContent
+import io.github.aedev.flow.ui.theme.PlayerScrimPanel
+import io.github.aedev.flow.utils.sponsorCategoryLabelRes
 import kotlinx.coroutines.delay
 
 private const val SB_SKIP_DIM_DELAY_MS = 5_000L

@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.player.subtitle
+package io.github.aedev.flow.player.subtitle
 
 import androidx.media3.common.C
 import androidx.media3.common.Format
@@ -6,10 +6,10 @@ import androidx.media3.common.MimeTypes
 import androidx.media3.common.TrackGroup
 import androidx.media3.common.Tracks
 import com.google.common.truth.Truth.assertThat
-import com.arubr.smsvcodes.player.media.MediaLoader
-import com.arubr.smsvcodes.player.state.SubtitleOrigin
-import com.arubr.smsvcodes.player.stream.CaptionFormat
-import com.arubr.smsvcodes.player.stream.ResolvedCaption
+import io.github.aedev.flow.player.media.MediaLoader
+import io.github.aedev.flow.player.state.SubtitleOrigin
+import io.github.aedev.flow.player.stream.CaptionFormat
+import io.github.aedev.flow.player.stream.ResolvedCaption
 import org.junit.Test
 
 class SubtitleTracksTest {

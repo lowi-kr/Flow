@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.shared
+package io.github.aedev.flow.ui.components.shared
 
 import android.view.KeyEvent
 import com.google.common.truth.Truth.assertThat

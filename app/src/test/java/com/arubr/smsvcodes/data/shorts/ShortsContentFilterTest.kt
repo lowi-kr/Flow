@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.data.shorts
+package io.github.aedev.flow.data.shorts
 
 import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.test.runTest

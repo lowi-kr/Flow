@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.player.media
+package io.github.aedev.flow.player.media
 
 import android.content.Context
 import android.net.Uri
@@ -21,20 +21,20 @@ import androidx.media3.exoplayer.source.SingleSampleMediaSource
 import androidx.media3.exoplayer.upstream.DefaultLoadErrorHandlingPolicy
 import androidx.media3.exoplayer.upstream.LoadErrorHandlingPolicy
 import androidx.media3.extractor.DefaultExtractorsFactory
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.player.cache.PlayerCacheManager
-import com.arubr.smsvcodes.player.config.PlayerConfig
-import com.arubr.smsvcodes.player.renderer.subtitle.Srv3SubtitleParser
-import com.arubr.smsvcodes.player.resolver.VideoPlaybackResolver
-import com.arubr.smsvcodes.player.sabr.integration.SabrMediaSourceFactory
-import com.arubr.smsvcodes.player.sabr.integration.SabrMediaSourceResult
-import com.arubr.smsvcodes.player.sabr.integration.SabrOrchestrator
-import com.arubr.smsvcodes.player.sabr.integration.SabrStreamInfo
-import com.arubr.smsvcodes.player.state.EnhancedPlayerState
-import com.arubr.smsvcodes.player.stream.ResolvedCaption
-import com.arubr.smsvcodes.player.stream.StreamProcessor
-import com.arubr.smsvcodes.player.stream.VideoCodecUtils
-import com.arubr.smsvcodes.player.surface.SurfaceManager
+import io.github.aedev.flow.R
+import io.github.aedev.flow.player.cache.PlayerCacheManager
+import io.github.aedev.flow.player.config.PlayerConfig
+import io.github.aedev.flow.player.renderer.subtitle.Srv3SubtitleParser
+import io.github.aedev.flow.player.resolver.VideoPlaybackResolver
+import io.github.aedev.flow.player.sabr.integration.SabrMediaSourceFactory
+import io.github.aedev.flow.player.sabr.integration.SabrMediaSourceResult
+import io.github.aedev.flow.player.sabr.integration.SabrOrchestrator
+import io.github.aedev.flow.player.sabr.integration.SabrStreamInfo
+import io.github.aedev.flow.player.state.EnhancedPlayerState
+import io.github.aedev.flow.player.stream.ResolvedCaption
+import io.github.aedev.flow.player.stream.StreamProcessor
+import io.github.aedev.flow.player.stream.VideoCodecUtils
+import io.github.aedev.flow.player.surface.SurfaceManager
 import kotlinx.coroutines.flow.MutableStateFlow
 import org.schabi.newpipe.extractor.stream.AudioStream
 import org.schabi.newpipe.extractor.stream.VideoStream
@@ -129,8 +129,8 @@ class MediaLoader(
         sabrInfo: SabrStreamInfo? = null,
         sabrVideoId: String? = null,
         sabrPreferred: Boolean = false,
-        innerTubeVideoFormats: List<com.arubr.smsvcodes.innertube.models.response.PlayerResponse.StreamingData.Format> = emptyList(),
-        innerTubeAudioFormats: List<com.arubr.smsvcodes.innertube.models.response.PlayerResponse.StreamingData.Format> = emptyList(),
+        innerTubeVideoFormats: List<io.github.aedev.flow.innertube.models.response.PlayerResponse.StreamingData.Format> = emptyList(),
+        innerTubeAudioFormats: List<io.github.aedev.flow.innertube.models.response.PlayerResponse.StreamingData.Format> = emptyList(),
         mediaId: String = "",
         mediaMetadata: MediaMetadata = MediaMetadata.EMPTY,
         adaptiveLadder: List<VideoStream> = emptyList(),
@@ -300,8 +300,8 @@ class MediaLoader(
         sabrVideoId: String? = null,
         sabrPreferred: Boolean = false,
         startPositionMs: Long = 0L,
-        innerTubeVideoFormats: List<com.arubr.smsvcodes.innertube.models.response.PlayerResponse.StreamingData.Format> = emptyList(),
-        innerTubeAudioFormats: List<com.arubr.smsvcodes.innertube.models.response.PlayerResponse.StreamingData.Format> = emptyList(),
+        innerTubeVideoFormats: List<io.github.aedev.flow.innertube.models.response.PlayerResponse.StreamingData.Format> = emptyList(),
+        innerTubeAudioFormats: List<io.github.aedev.flow.innertube.models.response.PlayerResponse.StreamingData.Format> = emptyList(),
         mediaId: String = "",
         mediaMetadata: MediaMetadata = MediaMetadata.EMPTY,
         adaptiveLadder: List<VideoStream> = emptyList(),

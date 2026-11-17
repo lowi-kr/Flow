@@ -1,9 +1,9 @@
-package com.arubr.smsvcodes.ui
+package io.github.aedev.flow.ui
 
 import android.app.Application
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.google.common.truth.Truth.assertThat
-import com.arubr.smsvcodes.data.local.SharedLinkAction
+import io.github.aedev.flow.data.local.SharedLinkAction
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.robolectric.annotation.Config

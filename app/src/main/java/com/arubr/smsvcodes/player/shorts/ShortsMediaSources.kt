@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.player.shorts
+package io.github.aedev.flow.player.shorts
 
 import android.net.Uri
 import android.util.Log
@@ -10,7 +10,7 @@ import androidx.media3.exoplayer.ExoPlayer
 import androidx.media3.exoplayer.source.MediaSource
 import androidx.media3.exoplayer.source.MergingMediaSource
 import androidx.media3.exoplayer.source.ProgressiveMediaSource
-import com.arubr.smsvcodes.player.resolver.MediaSourceBuilder
+import io.github.aedev.flow.player.resolver.MediaSourceBuilder
 
 /** Loads a reel into a pooled player: separate video and audio merged, or one muxed stream. */
 @OptIn(UnstableApi::class)

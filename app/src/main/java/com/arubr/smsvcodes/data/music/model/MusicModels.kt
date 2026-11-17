@@ -1,7 +1,7 @@
-package com.arubr.smsvcodes.data.music.model
+package io.github.aedev.flow.data.music.model
 
-import com.arubr.smsvcodes.data.model.Video
-import com.arubr.smsvcodes.utils.ThumbnailUrlResolver
+import io.github.aedev.flow.data.model.Video
+import io.github.aedev.flow.utils.ThumbnailUrlResolver
 import kotlinx.serialization.Serializable
 
 enum class MusicItemType { SONG, ALBUM, PLAYLIST, ARTIST }

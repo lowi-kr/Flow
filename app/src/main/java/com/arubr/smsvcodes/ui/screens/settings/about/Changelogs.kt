@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.screens.settings.about
+package io.github.aedev.flow.ui.screens.settings.about
 
 import androidx.compose.runtime.Immutable
 import java.time.LocalDate

@@ -1,8 +1,8 @@
-package com.arubr.smsvcodes.ui.tv.navigation
+package io.github.aedev.flow.ui.tv.navigation
 
 import androidx.navigation.NavHostController
-import com.arubr.smsvcodes.ui.components.layout.navigation.MediaNavigator
-import com.arubr.smsvcodes.utils.YouTubeLink
+import io.github.aedev.flow.ui.components.layout.navigation.MediaNavigator
+import io.github.aedev.flow.utils.YouTubeLink
 import java.net.URLDecoder
 
 /**

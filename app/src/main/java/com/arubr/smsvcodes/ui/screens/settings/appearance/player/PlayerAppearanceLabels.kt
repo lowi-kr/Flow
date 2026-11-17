@@ -1,12 +1,12 @@
-package com.arubr.smsvcodes.ui.screens.settings.appearance.player
+package io.github.aedev.flow.ui.screens.settings.appearance.player
 
 import androidx.annotation.StringRes
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.data.local.GestureOverlayStyle
-import com.arubr.smsvcodes.data.local.MusicPlayerBackgroundStyle
-import com.arubr.smsvcodes.data.local.SeekbarPaddingMode
-import com.arubr.smsvcodes.data.local.ShortsPlayerUiMode
-import com.arubr.smsvcodes.data.local.SliderStyle
+import io.github.aedev.flow.R
+import io.github.aedev.flow.data.local.GestureOverlayStyle
+import io.github.aedev.flow.data.local.MusicPlayerBackgroundStyle
+import io.github.aedev.flow.data.local.SeekbarPaddingMode
+import io.github.aedev.flow.data.local.ShortsPlayerUiMode
+import io.github.aedev.flow.data.local.SliderStyle
 
 /**
  * Enum names predate the current slider drawings: SQUIGGLY draws the wave and EXPRESSIVE_WAVY the

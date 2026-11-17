@@ -1,9 +1,9 @@
-package com.arubr.smsvcodes.utils.potoken
+package io.github.aedev.flow.utils.potoken
 
 import android.util.Log
-import com.arubr.smsvcodes.innertube.YouTube
-import com.arubr.smsvcodes.player.error.PlayerDiagnostics
-import com.arubr.smsvcodes.player.stream.InFlightRequestCoalescer
+import io.github.aedev.flow.innertube.YouTube
+import io.github.aedev.flow.player.error.PlayerDiagnostics
+import io.github.aedev.flow.player.stream.InFlightRequestCoalescer
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers

@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.shorts
+package io.github.aedev.flow.ui.components.shorts
 
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.animation.AnimatedVisibility
@@ -35,15 +35,15 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.data.local.ThumbnailQuality
-import com.arubr.smsvcodes.ui.components.shared.FlowLoadingIndicator
-import com.arubr.smsvcodes.ui.components.shared.LocalThumbnailQuality
-import com.arubr.smsvcodes.ui.components.shared.VideoThumbnailImage
-import com.arubr.smsvcodes.ui.theme.PlayerScrim
-import com.arubr.smsvcodes.ui.theme.PlayerScrimContent
-import com.arubr.smsvcodes.ui.theme.PlayerScrimImmersiveBackdrop
-import com.arubr.smsvcodes.ui.theme.PlayerScrimPanel
+import io.github.aedev.flow.R
+import io.github.aedev.flow.data.local.ThumbnailQuality
+import io.github.aedev.flow.ui.components.shared.FlowLoadingIndicator
+import io.github.aedev.flow.ui.components.shared.LocalThumbnailQuality
+import io.github.aedev.flow.ui.components.shared.VideoThumbnailImage
+import io.github.aedev.flow.ui.theme.PlayerScrim
+import io.github.aedev.flow.ui.theme.PlayerScrimContent
+import io.github.aedev.flow.ui.theme.PlayerScrimImmersiveBackdrop
+import io.github.aedev.flow.ui.theme.PlayerScrimPanel
 import kotlinx.coroutines.delay
 
 private const val LIKE_BURST_MS = 800L

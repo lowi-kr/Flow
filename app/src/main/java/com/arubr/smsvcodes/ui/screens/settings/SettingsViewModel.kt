@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.screens.settings
+package io.github.aedev.flow.ui.screens.settings
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

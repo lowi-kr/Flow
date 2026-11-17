@@ -1,7 +1,7 @@
-package com.arubr.smsvcodes.utils
+package io.github.aedev.flow.utils
 
-import com.arubr.smsvcodes.data.local.ThumbnailQuality
-import com.arubr.smsvcodes.data.localmedia.LocalMediaIds
+import io.github.aedev.flow.data.local.ThumbnailQuality
+import io.github.aedev.flow.data.localmedia.LocalMediaIds
 
 object ThumbnailUrlResolver {
     private val youtubeVideoThumbnailPattern =

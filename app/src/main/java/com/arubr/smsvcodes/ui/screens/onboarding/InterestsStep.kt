@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.screens.onboarding
+package io.github.aedev.flow.ui.screens.onboarding
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.fadeIn
@@ -20,12 +20,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
-import com.arubr.smsvcodes.data.recommendation.NeuroTopicCatalog
-import com.arubr.smsvcodes.data.recommendation.TopicCategory
-import com.arubr.smsvcodes.ui.components.shared.FlowPillChip
-import com.arubr.smsvcodes.ui.components.shared.FlowPillSection
-import com.arubr.smsvcodes.ui.components.topicCategoryIcon
-import com.arubr.smsvcodes.ui.components.topicCategoryNameRes
+import io.github.aedev.flow.data.recommendation.NeuroTopicCatalog
+import io.github.aedev.flow.data.recommendation.TopicCategory
+import io.github.aedev.flow.ui.components.shared.FlowPillChip
+import io.github.aedev.flow.ui.components.shared.FlowPillSection
+import io.github.aedev.flow.ui.components.topicCategoryIcon
+import io.github.aedev.flow.ui.components.topicCategoryNameRes
 import kotlinx.coroutines.delay
 
 private val SectionSpacing = 28.dp

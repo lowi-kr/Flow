@@ -1,10 +1,10 @@
-package com.arubr.smsvcodes.player.sponsorblock
+package io.github.aedev.flow.player.sponsorblock
 
 import android.util.Log
-import com.arubr.smsvcodes.data.local.SponsorBlockAction
-import com.arubr.smsvcodes.data.model.SponsorBlockCategories
-import com.arubr.smsvcodes.data.model.SponsorBlockSegment
-import com.arubr.smsvcodes.data.repository.SponsorBlockRepository
+import io.github.aedev.flow.data.local.SponsorBlockAction
+import io.github.aedev.flow.data.model.SponsorBlockCategories
+import io.github.aedev.flow.data.model.SponsorBlockSegment
+import io.github.aedev.flow.data.repository.SponsorBlockRepository
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Job

@@ -1,6 +1,6 @@
-package com.arubr.smsvcodes.data.music.model
+package io.github.aedev.flow.data.music.model
 
-import com.arubr.smsvcodes.utils.foldForSearch
+import io.github.aedev.flow.utils.foldForSearch
 
 private val Brackets = Regex("""\s*[(\[][^)\]]*[)\]]""")
 private val Featuring = Regex("""\s+(feat\.?|ft\.?|featuring)\s.*$""")

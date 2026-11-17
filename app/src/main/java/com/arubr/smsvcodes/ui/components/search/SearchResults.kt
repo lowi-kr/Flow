@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.search
+package io.github.aedev.flow.ui.components.search
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.PaddingValues
@@ -13,24 +13,24 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.paging.compose.LazyPagingItems
-import com.arubr.smsvcodes.data.model.Channel
-import com.arubr.smsvcodes.data.model.Playlist
-import com.arubr.smsvcodes.data.model.Video
-import com.arubr.smsvcodes.data.paging.SearchResultItem
-import com.arubr.smsvcodes.data.paging.SearchShelfKind
-import com.arubr.smsvcodes.ui.components.FeedGridLayout
-import com.arubr.smsvcodes.ui.components.PlaylistCard
-import com.arubr.smsvcodes.ui.components.PlaylistCardLayout
-import com.arubr.smsvcodes.ui.components.layout.flowBottomContentPadding
-import com.arubr.smsvcodes.ui.components.shared.FeedGridTopPadding
-import com.arubr.smsvcodes.ui.components.shared.FeedPagingFooter
-import com.arubr.smsvcodes.ui.components.shared.MediaShortCard
-import com.arubr.smsvcodes.ui.components.shared.ShortCardDefaults
-import com.arubr.smsvcodes.ui.components.shared.card.MediaVideoCard
-import com.arubr.smsvcodes.ui.components.shared.card.VideoCardDefaults
-import com.arubr.smsvcodes.ui.components.shared.card.VideoCardLayout
-import com.arubr.smsvcodes.ui.components.shared.dismissKeyboardOnPress
-import com.arubr.smsvcodes.ui.components.shared.rememberFeedGridPlan
+import io.github.aedev.flow.data.model.Channel
+import io.github.aedev.flow.data.model.Playlist
+import io.github.aedev.flow.data.model.Video
+import io.github.aedev.flow.data.paging.SearchResultItem
+import io.github.aedev.flow.data.paging.SearchShelfKind
+import io.github.aedev.flow.ui.components.FeedGridLayout
+import io.github.aedev.flow.ui.components.PlaylistCard
+import io.github.aedev.flow.ui.components.PlaylistCardLayout
+import io.github.aedev.flow.ui.components.layout.flowBottomContentPadding
+import io.github.aedev.flow.ui.components.shared.FeedGridTopPadding
+import io.github.aedev.flow.ui.components.shared.FeedPagingFooter
+import io.github.aedev.flow.ui.components.shared.MediaShortCard
+import io.github.aedev.flow.ui.components.shared.ShortCardDefaults
+import io.github.aedev.flow.ui.components.shared.card.MediaVideoCard
+import io.github.aedev.flow.ui.components.shared.card.VideoCardDefaults
+import io.github.aedev.flow.ui.components.shared.card.VideoCardLayout
+import io.github.aedev.flow.ui.components.shared.dismissKeyboardOnPress
+import io.github.aedev.flow.ui.components.shared.rememberFeedGridPlan
 
 /** Every callback the result surfaces need, threaded through one object rather than nine parameters. */
 data class SearchResultActions(

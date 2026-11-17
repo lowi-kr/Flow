@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.screens.playlists
+package io.github.aedev.flow.ui.screens.playlists
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.PlaylistAdd
@@ -17,13 +17,13 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.data.model.PlaylistInfo
-import com.arubr.smsvcodes.ui.components.shared.CollectionEditDialog
-import com.arubr.smsvcodes.ui.components.shared.CollectionTarget
-import com.arubr.smsvcodes.ui.components.shared.DeleteCollectionDialog
-import com.arubr.smsvcodes.ui.components.shared.FlowAlertDialog
-import com.arubr.smsvcodes.ui.components.shared.MergeIntoCollectionSheet
+import io.github.aedev.flow.R
+import io.github.aedev.flow.data.model.PlaylistInfo
+import io.github.aedev.flow.ui.components.shared.CollectionEditDialog
+import io.github.aedev.flow.ui.components.shared.CollectionTarget
+import io.github.aedev.flow.ui.components.shared.DeleteCollectionDialog
+import io.github.aedev.flow.ui.components.shared.FlowAlertDialog
+import io.github.aedev.flow.ui.components.shared.MergeIntoCollectionSheet
 
 /** The dialog or sheet the playlist page has open, if any. */
 internal sealed interface PlaylistDialog {

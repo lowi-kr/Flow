@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.layout
+package io.github.aedev.flow.ui.components.layout
 
 import androidx.compose.material3.adaptive.ExperimentalMaterial3AdaptiveApi
 import androidx.compose.material3.adaptive.currentWindowAdaptiveInfoV2

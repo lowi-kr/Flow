@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.shared
+package io.github.aedev.flow.ui.components.shared
 
 import androidx.activity.compose.BackHandler
 import androidx.compose.animation.core.Animatable

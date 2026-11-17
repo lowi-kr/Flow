@@ -1,7 +1,7 @@
-package com.arubr.smsvcodes.ui.screens.playlists
+package io.github.aedev.flow.ui.screens.playlists
 
-import com.arubr.smsvcodes.data.model.PlaylistInfo
-import com.arubr.smsvcodes.ui.components.library.PlaylistOwnershipFilter
+import io.github.aedev.flow.data.model.PlaylistInfo
+import io.github.aedev.flow.ui.components.library.PlaylistOwnershipFilter
 import org.junit.Assert.assertEquals
 import org.junit.Test
 

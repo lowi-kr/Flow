@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.search
+package io.github.aedev.flow.ui.components.search
 
 import android.app.Application
 import androidx.compose.foundation.layout.Box
@@ -13,10 +13,10 @@ import androidx.compose.ui.unit.DpSize
 import androidx.compose.ui.unit.dp
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.google.common.truth.Truth.assertThat
-import com.arubr.smsvcodes.data.local.HomeFeedColumns
-import com.arubr.smsvcodes.ui.components.feedGridLayoutFor
-import com.arubr.smsvcodes.ui.components.shared.FeedGridSkeleton
-import com.arubr.smsvcodes.ui.components.shared.card.VideoCardDefaults
+import io.github.aedev.flow.data.local.HomeFeedColumns
+import io.github.aedev.flow.ui.components.feedGridLayoutFor
+import io.github.aedev.flow.ui.components.shared.FeedGridSkeleton
+import io.github.aedev.flow.ui.components.shared.card.VideoCardDefaults
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith

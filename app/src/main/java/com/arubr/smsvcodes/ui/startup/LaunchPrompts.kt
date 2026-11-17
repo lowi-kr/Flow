@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.startup
+package io.github.aedev.flow.ui.startup
 
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.first

@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.screens.settings.wellbeing
+package io.github.aedev.flow.ui.screens.settings.wellbeing
 
 import androidx.compose.runtime.Immutable
 import java.time.Instant

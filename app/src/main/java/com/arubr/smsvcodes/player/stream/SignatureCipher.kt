@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.player.stream
+package io.github.aedev.flow.player.stream
 
 import java.net.URLDecoder
 import java.net.URLEncoder

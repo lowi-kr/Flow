@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.videoplayer.settings
+package io.github.aedev.flow.ui.components.videoplayer.settings
 
 import android.app.Application
 import android.content.Context
@@ -22,12 +22,12 @@ import androidx.compose.ui.test.performScrollTo
 import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.google.common.truth.Truth.assertThat
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.player.state.EnhancedPlayerState
-import com.arubr.smsvcodes.player.state.QualityOption
-import com.arubr.smsvcodes.ui.components.videoplayer.subtitle.SubtitleStyle
-import com.arubr.smsvcodes.ui.screens.player.FIXTURE_QUALITY_720
-import com.arubr.smsvcodes.ui.screens.player.fakePlayerState
+import io.github.aedev.flow.R
+import io.github.aedev.flow.player.state.EnhancedPlayerState
+import io.github.aedev.flow.player.state.QualityOption
+import io.github.aedev.flow.ui.components.videoplayer.subtitle.SubtitleStyle
+import io.github.aedev.flow.ui.screens.player.FIXTURE_QUALITY_720
+import io.github.aedev.flow.ui.screens.player.fakePlayerState
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith

@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.videoplayer.settings
+package io.github.aedev.flow.ui.components.videoplayer.settings
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.rounded.VolumeUp
@@ -20,16 +20,16 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.res.vectorResource
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.player.EnhancedPlayerState
-import com.arubr.smsvcodes.ui.components.equalizer.equalizerSummary
-import com.arubr.smsvcodes.ui.components.shared.FlowNavRow
-import com.arubr.smsvcodes.ui.components.shared.FlowRowGroup
-import com.arubr.smsvcodes.ui.components.shared.FlowSectionHeader
-import com.arubr.smsvcodes.ui.components.shared.FlowSwitchRow
-import com.arubr.smsvcodes.ui.components.shared.flowRowGroupShape
-import com.arubr.smsvcodes.ui.components.shared.playbackSpeedLabel
-import com.arubr.smsvcodes.utils.formatDurationMillis
+import io.github.aedev.flow.R
+import io.github.aedev.flow.player.EnhancedPlayerState
+import io.github.aedev.flow.ui.components.equalizer.equalizerSummary
+import io.github.aedev.flow.ui.components.shared.FlowNavRow
+import io.github.aedev.flow.ui.components.shared.FlowRowGroup
+import io.github.aedev.flow.ui.components.shared.FlowSectionHeader
+import io.github.aedev.flow.ui.components.shared.FlowSwitchRow
+import io.github.aedev.flow.ui.components.shared.flowRowGroupShape
+import io.github.aedev.flow.ui.components.shared.playbackSpeedLabel
+import io.github.aedev.flow.utils.formatDurationMillis
 
 private const val VIDEO_ROWS = 1
 private const val PLAYBACK_ROWS = 3

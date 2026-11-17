@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.musicplayer.sheet
+package io.github.aedev.flow.ui.components.musicplayer.sheet
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
@@ -24,21 +24,21 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.data.local.PlayerPreferences
-import com.arubr.smsvcodes.player.EnhancedMusicPlayerManager
-import com.arubr.smsvcodes.ui.components.equalizer.EqQuickPanel
-import com.arubr.smsvcodes.ui.components.equalizer.PanelRow
-import com.arubr.smsvcodes.ui.components.layout.navigation.LocalMediaNavigator
-import com.arubr.smsvcodes.ui.components.shared.FlowModalSheetDefaults
-import com.arubr.smsvcodes.ui.components.shared.FlowNavRow
-import com.arubr.smsvcodes.ui.components.shared.FlowRowGroup
-import com.arubr.smsvcodes.ui.components.shared.FlowSectionHeader
-import com.arubr.smsvcodes.ui.components.shared.FlowSheetHeader
-import com.arubr.smsvcodes.ui.components.shared.FlowSwitchRow
-import com.arubr.smsvcodes.ui.components.shared.MediaPlaybackSpeedPicker
-import com.arubr.smsvcodes.ui.components.shared.flowRowGroupShape
-import com.arubr.smsvcodes.ui.components.shared.rememberFlowSheetState
+import io.github.aedev.flow.R
+import io.github.aedev.flow.data.local.PlayerPreferences
+import io.github.aedev.flow.player.EnhancedMusicPlayerManager
+import io.github.aedev.flow.ui.components.equalizer.EqQuickPanel
+import io.github.aedev.flow.ui.components.equalizer.PanelRow
+import io.github.aedev.flow.ui.components.layout.navigation.LocalMediaNavigator
+import io.github.aedev.flow.ui.components.shared.FlowModalSheetDefaults
+import io.github.aedev.flow.ui.components.shared.FlowNavRow
+import io.github.aedev.flow.ui.components.shared.FlowRowGroup
+import io.github.aedev.flow.ui.components.shared.FlowSectionHeader
+import io.github.aedev.flow.ui.components.shared.FlowSheetHeader
+import io.github.aedev.flow.ui.components.shared.FlowSwitchRow
+import io.github.aedev.flow.ui.components.shared.MediaPlaybackSpeedPicker
+import io.github.aedev.flow.ui.components.shared.flowRowGroupShape
+import io.github.aedev.flow.ui.components.shared.rememberFlowSheetState
 import kotlinx.coroutines.launch
 import kotlin.math.roundToInt
 

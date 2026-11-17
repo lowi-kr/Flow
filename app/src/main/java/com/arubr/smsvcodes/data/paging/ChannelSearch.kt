@@ -1,10 +1,10 @@
-package com.arubr.smsvcodes.data.paging
+package io.github.aedev.flow.data.paging
 
-import com.arubr.smsvcodes.data.local.ContentType
-import com.arubr.smsvcodes.data.local.SearchFilter
-import com.arubr.smsvcodes.data.model.Channel
-import com.arubr.smsvcodes.data.model.distinctByNonBlankKey
-import com.arubr.smsvcodes.innertube.YouTube
+import io.github.aedev.flow.data.local.ContentType
+import io.github.aedev.flow.data.local.SearchFilter
+import io.github.aedev.flow.data.model.Channel
+import io.github.aedev.flow.data.model.distinctByNonBlankKey
+import io.github.aedev.flow.innertube.YouTube
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import javax.inject.Inject

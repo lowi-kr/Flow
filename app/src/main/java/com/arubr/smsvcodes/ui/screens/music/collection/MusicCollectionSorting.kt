@@ -1,8 +1,8 @@
-package com.arubr.smsvcodes.ui.screens.music.collection
+package io.github.aedev.flow.ui.screens.music.collection
 
 import androidx.annotation.StringRes
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.data.music.model.MusicTrack
+import io.github.aedev.flow.R
+import io.github.aedev.flow.data.music.model.MusicTrack
 
 /** How a music page orders its songs; remembered per collection. */
 enum class MusicSortOrder(

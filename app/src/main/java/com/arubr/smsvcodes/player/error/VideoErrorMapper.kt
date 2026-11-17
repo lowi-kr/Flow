@@ -1,11 +1,11 @@
-package com.arubr.smsvcodes.player.error
+package io.github.aedev.flow.player.error
 
 import android.content.Context
 import android.util.Log
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.network.appTrafficUsesVpn
-import com.arubr.smsvcodes.player.stream.PlaybackBlock
-import com.arubr.smsvcodes.player.stream.PlaybackBlockedException
+import io.github.aedev.flow.R
+import io.github.aedev.flow.network.appTrafficUsesVpn
+import io.github.aedev.flow.player.stream.PlaybackBlock
+import io.github.aedev.flow.player.stream.PlaybackBlockedException
 import org.schabi.newpipe.extractor.exceptions.AccountTerminatedException
 import org.schabi.newpipe.extractor.exceptions.AgeRestrictedContentException
 import org.schabi.newpipe.extractor.exceptions.ContentNotAvailableException

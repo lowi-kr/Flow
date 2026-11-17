@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.screens.settings.region
+package io.github.aedev.flow.ui.screens.settings.region
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Language
@@ -15,16 +15,16 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.data.local.CONTENT_LANGUAGE_FOLLOW_APP
-import com.arubr.smsvcodes.ui.components.settings.SettingsPage
-import com.arubr.smsvcodes.ui.components.settings.nav
-import com.arubr.smsvcodes.ui.components.settings.switch
-import com.arubr.smsvcodes.ui.components.shared.FlowChoice
-import com.arubr.smsvcodes.ui.components.shared.FlowChoiceDialog
-import com.arubr.smsvcodes.ui.screens.settings.index.LanguageRegionIndex
-import com.arubr.smsvcodes.utils.AppLanguageManager
-import com.arubr.smsvcodes.utils.RegionCatalog
+import io.github.aedev.flow.R
+import io.github.aedev.flow.data.local.CONTENT_LANGUAGE_FOLLOW_APP
+import io.github.aedev.flow.ui.components.settings.SettingsPage
+import io.github.aedev.flow.ui.components.settings.nav
+import io.github.aedev.flow.ui.components.settings.switch
+import io.github.aedev.flow.ui.components.shared.FlowChoice
+import io.github.aedev.flow.ui.components.shared.FlowChoiceDialog
+import io.github.aedev.flow.ui.screens.settings.index.LanguageRegionIndex
+import io.github.aedev.flow.utils.AppLanguageManager
+import io.github.aedev.flow.utils.RegionCatalog
 
 private enum class LanguageRegionDialog { APP_LANGUAGE, CONTENT_LANGUAGE, CONTENT_COUNTRY }
 

@@ -1,11 +1,11 @@
-package com.arubr.smsvcodes.innertube.pages
+package io.github.aedev.flow.innertube.pages
 
 import androidx.compose.ui.graphics.Color
-import com.arubr.smsvcodes.data.model.RichText
-import com.arubr.smsvcodes.data.model.RichTextSpan
-import com.arubr.smsvcodes.data.model.RichTextTarget
-import com.arubr.smsvcodes.utils.RICH_TEXT_VIDEO
-import com.arubr.smsvcodes.utils.toAnnotatedString
+import io.github.aedev.flow.data.model.RichText
+import io.github.aedev.flow.data.model.RichTextSpan
+import io.github.aedev.flow.data.model.RichTextTarget
+import io.github.aedev.flow.utils.RICH_TEXT_VIDEO
+import io.github.aedev.flow.utils.toAnnotatedString
 import kotlinx.serialization.json.Json
 import org.junit.Assert.assertEquals
 import org.junit.Test

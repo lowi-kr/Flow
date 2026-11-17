@@ -1,17 +1,17 @@
-package com.arubr.smsvcodes.innertube.pages
+package io.github.aedev.flow.innertube.pages
 
-import com.arubr.smsvcodes.innertube.models.Album
-import com.arubr.smsvcodes.innertube.models.AlbumItem
-import com.arubr.smsvcodes.innertube.models.Artist
-import com.arubr.smsvcodes.innertube.models.ArtistItem
-import com.arubr.smsvcodes.innertube.models.MusicResponsiveListItemRenderer
-import com.arubr.smsvcodes.innertube.models.MusicTwoRowItemRenderer
-import com.arubr.smsvcodes.innertube.models.PlaylistItem
-import com.arubr.smsvcodes.innertube.models.Run
-import com.arubr.smsvcodes.innertube.models.SongItem
-import com.arubr.smsvcodes.innertube.models.YTItem
-import com.arubr.smsvcodes.innertube.models.oddElements
-import com.arubr.smsvcodes.innertube.utils.parseTime
+import io.github.aedev.flow.innertube.models.Album
+import io.github.aedev.flow.innertube.models.AlbumItem
+import io.github.aedev.flow.innertube.models.Artist
+import io.github.aedev.flow.innertube.models.ArtistItem
+import io.github.aedev.flow.innertube.models.MusicResponsiveListItemRenderer
+import io.github.aedev.flow.innertube.models.MusicTwoRowItemRenderer
+import io.github.aedev.flow.innertube.models.PlaylistItem
+import io.github.aedev.flow.innertube.models.Run
+import io.github.aedev.flow.innertube.models.SongItem
+import io.github.aedev.flow.innertube.models.YTItem
+import io.github.aedev.flow.innertube.models.oddElements
+import io.github.aedev.flow.innertube.utils.parseTime
 
 data class LibraryPage(
     val items: List<YTItem>,

@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.shared
+package io.github.aedev.flow.ui.components.shared
 
 import androidx.compose.animation.animateContentSize
 import androidx.compose.foundation.BorderStroke
@@ -32,9 +32,9 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil3.compose.AsyncImage
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.innertube.pages.VideoDescriptionChannel
-import com.arubr.smsvcodes.innertube.pages.VideoDescriptionFactoid
+import io.github.aedev.flow.R
+import io.github.aedev.flow.innertube.pages.VideoDescriptionChannel
+import io.github.aedev.flow.innertube.pages.VideoDescriptionFactoid
 
 /** One of the three figures above the description: a big value over the label that names it. */
 @Composable

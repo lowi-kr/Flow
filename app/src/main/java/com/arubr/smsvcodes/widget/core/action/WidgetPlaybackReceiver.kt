@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.widget.core.action
+package io.github.aedev.flow.widget.core.action
 
 import android.app.PendingIntent
 import android.content.BroadcastReceiver
@@ -16,9 +16,9 @@ import kotlinx.coroutines.launch
 enum class WidgetPlaybackCommand(
     val action: String,
 ) {
-    PLAY_PAUSE("com.arubr.smsvcodes.widget.PLAY_PAUSE"),
-    NEXT("com.arubr.smsvcodes.widget.NEXT"),
-    PREVIOUS("com.arubr.smsvcodes.widget.PREVIOUS"),
+    PLAY_PAUSE("io.github.aedev.flow.widget.PLAY_PAUSE"),
+    NEXT("io.github.aedev.flow.widget.NEXT"),
+    PREVIOUS("io.github.aedev.flow.widget.PREVIOUS"),
     ;
 
     @OptIn(UnstableApi::class)

@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.settings
+package io.github.aedev.flow.ui.components.settings
 
 import androidx.annotation.StringRes
 import androidx.compose.foundation.layout.padding
@@ -9,9 +9,9 @@ import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import com.arubr.smsvcodes.ui.components.shared.FlowSectionHeader
-import com.arubr.smsvcodes.ui.components.shared.FlowSegmentedGap
-import com.arubr.smsvcodes.ui.components.shared.flowRowGroupShape
+import io.github.aedev.flow.ui.components.shared.FlowSectionHeader
+import io.github.aedev.flow.ui.components.shared.FlowSegmentedGap
+import io.github.aedev.flow.ui.components.shared.flowRowGroupShape
 
 internal val SettingsRowGap = FlowSegmentedGap
 private val GroupHeaderTopPadding = 8.dp

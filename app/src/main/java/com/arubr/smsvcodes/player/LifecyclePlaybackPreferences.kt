@@ -1,7 +1,7 @@
-package com.arubr.smsvcodes.player
+package io.github.aedev.flow.player
 
-import com.arubr.smsvcodes.data.local.DEFAULT_BACKGROUND_PLAY_ENABLED
-import com.arubr.smsvcodes.data.local.PlayerPreferences
+import io.github.aedev.flow.data.local.DEFAULT_BACKGROUND_PLAY_ENABLED
+import io.github.aedev.flow.data.local.PlayerPreferences
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.combine

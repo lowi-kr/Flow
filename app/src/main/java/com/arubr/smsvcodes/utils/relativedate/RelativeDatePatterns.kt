@@ -12,7 +12,7 @@
  * amounts, and English limited to whole words.
  */
 
-package com.arubr.smsvcodes.utils.relativedate
+package io.github.aedev.flow.utils.relativedate
 
 internal enum class RelativeDateUnit(
     val millis: Long,

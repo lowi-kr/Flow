@@ -1,7 +1,7 @@
-package com.arubr.smsvcodes.discord
+package io.github.aedev.flow.discord
 
 import android.content.Context
-import com.arubr.smsvcodes.BuildConfig
+import io.github.aedev.flow.BuildConfig
 import okhttp3.OkHttpClient
 
 class DiscordPlatformTransportFactory : DiscordPresenceTransportFactory {

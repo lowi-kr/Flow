@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.channel
+package io.github.aedev.flow.ui.components.channel
 
 import android.widget.Toast
 import androidx.compose.foundation.background
@@ -34,15 +34,15 @@ import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.innertube.pages.channel.ChannelHeader
-import com.arubr.smsvcodes.ui.components.shared.ChannelAvatarImage
-import com.arubr.smsvcodes.ui.components.shared.FlowNoteCard
-import com.arubr.smsvcodes.ui.components.shared.FlowSubscribeButton
-import com.arubr.smsvcodes.ui.components.shared.FullSizeImageDialog
-import com.arubr.smsvcodes.ui.theme.extendedColors
-import com.arubr.smsvcodes.utils.ThumbnailUrlResolver
-import com.arubr.smsvcodes.utils.copyPlainText
+import io.github.aedev.flow.R
+import io.github.aedev.flow.innertube.pages.channel.ChannelHeader
+import io.github.aedev.flow.ui.components.shared.ChannelAvatarImage
+import io.github.aedev.flow.ui.components.shared.FlowNoteCard
+import io.github.aedev.flow.ui.components.shared.FlowSubscribeButton
+import io.github.aedev.flow.ui.components.shared.FullSizeImageDialog
+import io.github.aedev.flow.ui.theme.extendedColors
+import io.github.aedev.flow.utils.ThumbnailUrlResolver
+import io.github.aedev.flow.utils.copyPlainText
 import kotlinx.coroutines.launch
 
 @Composable

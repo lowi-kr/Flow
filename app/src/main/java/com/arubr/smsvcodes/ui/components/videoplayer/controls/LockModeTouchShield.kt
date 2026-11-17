@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.videoplayer.controls
+package io.github.aedev.flow.ui.components.videoplayer.controls
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.runtime.Composable
@@ -7,7 +7,7 @@ import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.onClick
 import androidx.compose.ui.semantics.semantics
-import com.arubr.smsvcodes.R
+import io.github.aedev.flow.R
 
 @Composable
 fun LockModeTouchShield(

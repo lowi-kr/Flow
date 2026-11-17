@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.screens.recap.story
+package io.github.aedev.flow.ui.screens.recap.story
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -28,12 +28,12 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.data.stats.RecapSummary
-import com.arubr.smsvcodes.ui.components.shared.FlowMorphingPortrait
-import com.arubr.smsvcodes.ui.components.stats.spentTimeLabel
-import com.arubr.smsvcodes.ui.screens.recap.labels
-import com.arubr.smsvcodes.ui.screens.recap.readable
+import io.github.aedev.flow.R
+import io.github.aedev.flow.data.stats.RecapSummary
+import io.github.aedev.flow.ui.components.shared.FlowMorphingPortrait
+import io.github.aedev.flow.ui.components.stats.spentTimeLabel
+import io.github.aedev.flow.ui.screens.recap.labels
+import io.github.aedev.flow.ui.screens.recap.readable
 
 /** A 9:16 poster, the shape story apps expect; the image shared is always this size. */
 internal val ShareCardWidth = 360.dp

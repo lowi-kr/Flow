@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.screens.library
+package io.github.aedev.flow.ui.screens.library
 
 import android.app.RecoverableSecurityException
 import android.content.ContentResolver

@@ -12,10 +12,10 @@
  * explicitly credit "Flow Android Client" and link back to the original repository.
  */
 
-package com.arubr.smsvcodes.data.recommendation
+package io.github.aedev.flow.data.recommendation
 
 import androidx.annotation.StringRes
-import com.arubr.smsvcodes.R
+import io.github.aedev.flow.R
 import java.util.Calendar
 
 /*
@@ -223,7 +223,7 @@ enum class QueryStrategy {
 // ── Internal Tracking Structures ──
 
 internal data class ScoredVideo(
-    val video: com.arubr.smsvcodes.data.model.Video,
+    val video: io.github.aedev.flow.data.model.Video,
     var score: Double,
     val vector: ContentVector,
 )

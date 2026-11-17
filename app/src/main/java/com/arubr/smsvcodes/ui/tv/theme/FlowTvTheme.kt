@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.tv.theme
+package io.github.aedev.flow.ui.tv.theme
 
 import androidx.compose.material3.LocalRippleConfiguration
 import androidx.compose.material3.LocalRippleThemeConfiguration
@@ -8,10 +8,10 @@ import androidx.compose.material3.RippleDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.remember
-import com.arubr.smsvcodes.ui.components.shared.LocalDpadNavigation
+import io.github.aedev.flow.ui.components.shared.LocalDpadNavigation
 
 /**
- * The TV layer over [com.arubr.smsvcodes.ui.theme.FlowTheme]. Colours, type, shapes and motion stay
+ * The TV layer over [io.github.aedev.flow.ui.theme.FlowTheme]. Colours, type, shapes and motion stay
  * the app's own: Google's TV type roles at 960×540 dp are the mobile M3 sizes.
  *
  * What it adds is focus. M3's inset focus ring turns on for every component that draws a ripple, so

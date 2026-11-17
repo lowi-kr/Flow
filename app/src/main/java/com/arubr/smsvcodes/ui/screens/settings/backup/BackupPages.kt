@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.screens.settings.backup
+package io.github.aedev.flow.ui.screens.settings.backup
 
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -15,20 +15,20 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.data.backup.ExportKind
-import com.arubr.smsvcodes.data.backup.ImportKind
-import com.arubr.smsvcodes.data.backup.ImportSource
-import com.arubr.smsvcodes.data.local.LocalDataManager.AutoBackupFrequency
-import com.arubr.smsvcodes.data.local.LocalDataManager.AutoBackupType
-import com.arubr.smsvcodes.ui.components.settings.SettingsListScope
-import com.arubr.smsvcodes.ui.components.settings.info
-import com.arubr.smsvcodes.ui.components.settings.nav
-import com.arubr.smsvcodes.ui.components.settings.notice
-import com.arubr.smsvcodes.ui.components.settings.option
-import com.arubr.smsvcodes.ui.components.settings.toggleGroup
-import com.arubr.smsvcodes.ui.components.shared.FlowToggleOption
-import com.arubr.smsvcodes.ui.screens.settings.index.BackupIndex
+import io.github.aedev.flow.R
+import io.github.aedev.flow.data.backup.ExportKind
+import io.github.aedev.flow.data.backup.ImportKind
+import io.github.aedev.flow.data.backup.ImportSource
+import io.github.aedev.flow.data.local.LocalDataManager.AutoBackupFrequency
+import io.github.aedev.flow.data.local.LocalDataManager.AutoBackupType
+import io.github.aedev.flow.ui.components.settings.SettingsListScope
+import io.github.aedev.flow.ui.components.settings.info
+import io.github.aedev.flow.ui.components.settings.nav
+import io.github.aedev.flow.ui.components.settings.notice
+import io.github.aedev.flow.ui.components.settings.option
+import io.github.aedev.flow.ui.components.settings.toggleGroup
+import io.github.aedev.flow.ui.components.shared.FlowToggleOption
+import io.github.aedev.flow.ui.screens.settings.index.BackupIndex
 
 internal fun SettingsListScope.exportPage(onExport: (ExportKind) -> Unit) {
     group(key = "backup.export.full", header = R.string.settings_backup_full) {

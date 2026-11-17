@@ -1,9 +1,9 @@
-package com.arubr.smsvcodes.ui.screens.settings.taste
+package io.github.aedev.flow.ui.screens.settings.taste
 
 import com.google.common.truth.Truth.assertThat
-import com.arubr.smsvcodes.data.recommendation.ContentVector
-import com.arubr.smsvcodes.data.recommendation.NeuroClusters
-import com.arubr.smsvcodes.data.recommendation.UserBrain
+import io.github.aedev.flow.data.recommendation.ContentVector
+import io.github.aedev.flow.data.recommendation.NeuroClusters
+import io.github.aedev.flow.data.recommendation.UserBrain
 import org.junit.Test
 
 class TasteGroupsTest {

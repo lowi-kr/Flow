@@ -1,6 +1,6 @@
-package com.arubr.smsvcodes.player
+package io.github.aedev.flow.player
 
-import com.arubr.smsvcodes.data.model.Video
+import io.github.aedev.flow.data.model.Video
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow

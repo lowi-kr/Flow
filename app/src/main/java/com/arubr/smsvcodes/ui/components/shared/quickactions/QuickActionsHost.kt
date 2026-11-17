@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.shared.quickactions
+package io.github.aedev.flow.ui.components.shared.quickactions
 
 import android.net.Uri
 import android.os.Build
@@ -14,8 +14,8 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.platform.LocalContext
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.ui.components.shared.MediaDownloadPrompt
+import io.github.aedev.flow.R
+import io.github.aedev.flow.ui.components.shared.MediaDownloadPrompt
 import kotlinx.coroutines.flow.collectLatest
 
 /**

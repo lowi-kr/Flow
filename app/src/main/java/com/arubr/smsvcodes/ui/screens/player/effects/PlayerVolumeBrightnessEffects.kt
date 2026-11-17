@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.screens.player.effects
+package io.github.aedev.flow.ui.screens.player.effects
 
 import android.content.Context
 import android.media.AudioManager
@@ -9,10 +9,10 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.arubr.smsvcodes.data.local.PlayerPreferences
-import com.arubr.smsvcodes.player.EnhancedPlayerManager
-import com.arubr.smsvcodes.player.PlayerHardwareController
-import com.arubr.smsvcodes.ui.screens.player.state.PlayerScreenState
+import io.github.aedev.flow.data.local.PlayerPreferences
+import io.github.aedev.flow.player.EnhancedPlayerManager
+import io.github.aedev.flow.player.PlayerHardwareController
+import io.github.aedev.flow.ui.screens.player.state.PlayerScreenState
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 

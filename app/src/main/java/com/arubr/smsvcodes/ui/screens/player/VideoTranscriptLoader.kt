@@ -1,7 +1,7 @@
-package com.arubr.smsvcodes.ui.screens.player
+package io.github.aedev.flow.ui.screens.player
 
-import com.arubr.smsvcodes.data.transcript.TranscriptCue
-import com.arubr.smsvcodes.data.transcript.TranscriptRepository
+import io.github.aedev.flow.data.transcript.TranscriptCue
+import io.github.aedev.flow.data.transcript.TranscriptRepository
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.CoroutineScope

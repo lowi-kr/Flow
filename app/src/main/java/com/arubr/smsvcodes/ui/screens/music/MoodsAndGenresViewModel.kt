@@ -1,10 +1,10 @@
-package com.arubr.smsvcodes.ui.screens.music
+package io.github.aedev.flow.ui.screens.music
 
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.arubr.smsvcodes.innertube.YouTube
-import com.arubr.smsvcodes.innertube.pages.MoodAndGenres
+import io.github.aedev.flow.innertube.YouTube
+import io.github.aedev.flow.innertube.pages.MoodAndGenres
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow

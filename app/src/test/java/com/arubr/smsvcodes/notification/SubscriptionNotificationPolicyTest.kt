@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.notification
+package io.github.aedev.flow.notification
 
 import com.google.common.truth.Truth.assertThat
 import org.junit.Test

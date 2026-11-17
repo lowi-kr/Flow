@@ -1,11 +1,11 @@
-package com.arubr.smsvcodes.player.musicvideo
+package io.github.aedev.flow.player.musicvideo
 
 import androidx.media3.common.C
 import androidx.media3.common.MimeTypes
 import androidx.media3.exoplayer.dash.manifest.Representation
 import com.google.common.truth.Truth.assertThat
-import com.arubr.smsvcodes.innertube.models.response.PlayerResponse
-import com.arubr.smsvcodes.ui.screens.player.fakeInnerTubeFormat
+import io.github.aedev.flow.innertube.models.response.PlayerResponse
+import io.github.aedev.flow.ui.screens.player.fakeInnerTubeFormat
 import org.junit.Test
 
 class MusicVideoManifestTest {

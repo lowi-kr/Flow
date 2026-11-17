@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.musicplayer.full
+package io.github.aedev.flow.ui.components.musicplayer.full
 
 import androidx.window.core.layout.WindowSizeClass
 import androidx.window.core.layout.computeWindowSizeClass

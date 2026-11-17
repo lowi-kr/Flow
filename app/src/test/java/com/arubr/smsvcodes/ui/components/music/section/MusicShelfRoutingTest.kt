@@ -4,11 +4,11 @@
  * This file is part of Flow (https://github.com/Flow-Tube/Flow).
  */
 
-package com.arubr.smsvcodes.ui.components.music.section
+package io.github.aedev.flow.ui.components.music.section
 
 import com.google.common.truth.Truth.assertThat
-import com.arubr.smsvcodes.data.music.model.MusicItemType
-import com.arubr.smsvcodes.data.music.model.MusicTrack
+import io.github.aedev.flow.data.music.model.MusicItemType
+import io.github.aedev.flow.data.music.model.MusicTrack
 import org.junit.Test
 
 /**

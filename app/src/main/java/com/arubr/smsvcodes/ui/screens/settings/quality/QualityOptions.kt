@@ -1,13 +1,13 @@
-package com.arubr.smsvcodes.ui.screens.settings.quality
+package io.github.aedev.flow.ui.screens.settings.quality
 
 import androidx.annotation.StringRes
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.res.stringResource
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.data.local.MusicAudioQuality
-import com.arubr.smsvcodes.data.local.ThumbnailQuality
-import com.arubr.smsvcodes.data.local.VideoCodec
-import com.arubr.smsvcodes.data.local.VideoQuality
+import io.github.aedev.flow.R
+import io.github.aedev.flow.data.local.MusicAudioQuality
+import io.github.aedev.flow.data.local.ThumbnailQuality
+import io.github.aedev.flow.data.local.VideoCodec
+import io.github.aedev.flow.data.local.VideoQuality
 
 /** Resolutions offered for regular video and Shorts, best first. */
 internal val VideoQualities =

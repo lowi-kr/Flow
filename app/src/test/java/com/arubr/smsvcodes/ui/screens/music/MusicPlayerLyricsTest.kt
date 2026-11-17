@@ -1,14 +1,14 @@
-package com.arubr.smsvcodes.ui.screens.music
+package io.github.aedev.flow.ui.screens.music
 
 import android.content.Context
 import com.google.common.truth.Truth.assertThat
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.data.local.PlayerPreferences
-import com.arubr.smsvcodes.data.localmedia.LocalLyrics
-import com.arubr.smsvcodes.data.localmedia.LocalLyricsReader
-import com.arubr.smsvcodes.data.localmedia.LocalLyricsSource
-import com.arubr.smsvcodes.data.lyrics.LyricsHelper
-import com.arubr.smsvcodes.utils.NetworkState
+import io.github.aedev.flow.R
+import io.github.aedev.flow.data.local.PlayerPreferences
+import io.github.aedev.flow.data.localmedia.LocalLyrics
+import io.github.aedev.flow.data.localmedia.LocalLyricsReader
+import io.github.aedev.flow.data.localmedia.LocalLyricsSource
+import io.github.aedev.flow.data.lyrics.LyricsHelper
+import io.github.aedev.flow.utils.NetworkState
 import io.mockk.coEvery
 import io.mockk.coVerify
 import io.mockk.every

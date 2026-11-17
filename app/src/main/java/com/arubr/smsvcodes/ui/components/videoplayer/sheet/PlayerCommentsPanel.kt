@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.videoplayer.sheet
+package io.github.aedev.flow.ui.components.videoplayer.sheet
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -21,12 +21,12 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.data.model.Comment
-import com.arubr.smsvcodes.ui.components.shared.CommentSortChips
-import com.arubr.smsvcodes.ui.components.shared.CommentSortFilter
-import com.arubr.smsvcodes.ui.components.shared.FlowCommentsList
-import com.arubr.smsvcodes.ui.components.shared.rememberMediaArtworkTint
+import io.github.aedev.flow.R
+import io.github.aedev.flow.data.model.Comment
+import io.github.aedev.flow.ui.components.shared.CommentSortChips
+import io.github.aedev.flow.ui.components.shared.CommentSortFilter
+import io.github.aedev.flow.ui.components.shared.FlowCommentsList
+import io.github.aedev.flow.ui.components.shared.rememberMediaArtworkTint
 
 /**
  * Comments rendered as an inline panel rather than a modal sheet, so the video stays visible.

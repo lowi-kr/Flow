@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.videoplayer.sheet
+package io.github.aedev.flow.ui.components.videoplayer.sheet
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -28,11 +28,11 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
-import com.arubr.smsvcodes.ui.components.shared.DurationBadge
-import com.arubr.smsvcodes.ui.components.shared.MediaArtworkTint
-import com.arubr.smsvcodes.ui.components.shared.MediaThumbnailDefaults
-import com.arubr.smsvcodes.ui.components.shared.thumbnailUrlOrNull
-import com.arubr.smsvcodes.utils.formatDuration
+import io.github.aedev.flow.ui.components.shared.DurationBadge
+import io.github.aedev.flow.ui.components.shared.MediaArtworkTint
+import io.github.aedev.flow.ui.components.shared.MediaThumbnailDefaults
+import io.github.aedev.flow.ui.components.shared.thumbnailUrlOrNull
+import io.github.aedev.flow.utils.formatDuration
 import org.schabi.newpipe.extractor.stream.StreamSegment
 
 private val ThumbnailWidth: Dp = 104.dp

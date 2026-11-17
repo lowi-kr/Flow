@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.shared
+package io.github.aedev.flow.ui.components.shared
 
 import android.app.Application
 import androidx.compose.material3.MaterialTheme
@@ -8,12 +8,12 @@ import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.compose.ui.test.onNodeWithText
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.google.common.truth.Truth.assertThat
-import com.arubr.smsvcodes.data.model.Video
-import com.arubr.smsvcodes.utils.DateContext
-import com.arubr.smsvcodes.utils.DateContextMode
-import com.arubr.smsvcodes.utils.DateDisplayMode
-import com.arubr.smsvcodes.utils.DateDisplaySettings
-import com.arubr.smsvcodes.utils.DateFormatStyle
+import io.github.aedev.flow.data.model.Video
+import io.github.aedev.flow.utils.DateContext
+import io.github.aedev.flow.utils.DateContextMode
+import io.github.aedev.flow.utils.DateDisplayMode
+import io.github.aedev.flow.utils.DateDisplaySettings
+import io.github.aedev.flow.utils.DateFormatStyle
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith

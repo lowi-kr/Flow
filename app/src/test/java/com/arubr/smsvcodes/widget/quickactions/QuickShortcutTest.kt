@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.widget.quickactions
+package io.github.aedev.flow.widget.quickactions
 
 import androidx.compose.ui.unit.dp
 import org.junit.Assert.assertEquals

@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.data.recommendation
+package io.github.aedev.flow.data.recommendation
 
 import org.junit.Assert.assertEquals
 import org.junit.Test

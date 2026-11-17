@@ -1,12 +1,12 @@
-package com.arubr.smsvcodes.ui.screens.music
+package io.github.aedev.flow.ui.screens.music
 
 import android.net.Uri
-import com.arubr.smsvcodes.data.local.PlayerPreferences
-import com.arubr.smsvcodes.data.local.ViewHistory
-import com.arubr.smsvcodes.data.music.DownloadManager
-import com.arubr.smsvcodes.data.music.model.MusicTrack
-import com.arubr.smsvcodes.player.MusicResumePolicy
-import com.arubr.smsvcodes.utils.PerformanceDispatcher
+import io.github.aedev.flow.data.local.PlayerPreferences
+import io.github.aedev.flow.data.local.ViewHistory
+import io.github.aedev.flow.data.music.DownloadManager
+import io.github.aedev.flow.data.music.model.MusicTrack
+import io.github.aedev.flow.player.MusicResumePolicy
+import io.github.aedev.flow.utils.PerformanceDispatcher
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.withContext
 import java.io.File

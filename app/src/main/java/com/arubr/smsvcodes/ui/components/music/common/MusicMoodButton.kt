@@ -4,7 +4,7 @@
  * This file is part of Flow (https://github.com/Flow-Tube/Flow).
  */
 
-package com.arubr.smsvcodes.ui.components.music.common
+package io.github.aedev.flow.ui.components.music.common
 
 import androidx.compose.foundation.layout.heightIn
 import androidx.compose.material3.ButtonDefaults

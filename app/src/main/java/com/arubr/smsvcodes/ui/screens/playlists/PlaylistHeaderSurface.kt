@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.screens.playlists
+package io.github.aedev.flow.ui.screens.playlists
 
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
@@ -7,8 +7,8 @@ import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.arubr.smsvcodes.ui.components.layout.LocalFlowBottomInsets
-import com.arubr.smsvcodes.ui.components.shared.rememberMediaArtworkTint
+import io.github.aedev.flow.ui.components.layout.LocalFlowBottomInsets
+import io.github.aedev.flow.ui.components.shared.rememberMediaArtworkTint
 
 // The desktop app's header column, which keeps the artwork a header rather than a poster.
 internal val HeaderPaneWidth = 360.dp

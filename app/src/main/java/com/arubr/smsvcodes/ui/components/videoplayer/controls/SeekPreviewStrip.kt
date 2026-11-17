@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.videoplayer.controls
+package io.github.aedev.flow.ui.components.videoplayer.controls
 
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
@@ -21,10 +21,10 @@ import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import com.arubr.smsvcodes.player.stream.StoryboardLevel
-import com.arubr.smsvcodes.player.stream.StoryboardTile
-import com.arubr.smsvcodes.ui.theme.PlayerScrim
-import com.arubr.smsvcodes.ui.theme.PlayerScrimContent
+import io.github.aedev.flow.player.stream.StoryboardLevel
+import io.github.aedev.flow.player.stream.StoryboardTile
+import io.github.aedev.flow.ui.theme.PlayerScrim
+import io.github.aedev.flow.ui.theme.PlayerScrimContent
 
 /** Height of the strip, and so of every frame in it. */
 internal val SeekStripHeight: Dp = 64.dp

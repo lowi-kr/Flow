@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.widget.turntable
+package io.github.aedev.flow.widget.turntable
 
 import android.content.Context
 import android.graphics.Bitmap
@@ -30,22 +30,22 @@ import androidx.glance.layout.fillMaxSize
 import androidx.glance.layout.padding
 import androidx.glance.layout.size
 import androidx.glance.layout.width
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.data.local.PlayerPreferences
-import com.arubr.smsvcodes.widget.core.action.WidgetDeepLink
-import com.arubr.smsvcodes.widget.core.component.WidePlayPauseButton
-import com.arubr.smsvcodes.widget.core.component.WidgetEmptyState
-import com.arubr.smsvcodes.widget.core.image.ShapeDecor
-import com.arubr.smsvcodes.widget.core.image.WidgetImageLoader
-import com.arubr.smsvcodes.widget.core.image.WidgetShape
-import com.arubr.smsvcodes.widget.core.state.NowPlayingSnapshot
-import com.arubr.smsvcodes.widget.core.state.nowPlayingSnapshotFlow
-import com.arubr.smsvcodes.widget.core.theme.FlowGlanceTheme
-import com.arubr.smsvcodes.widget.core.theme.artworkColorProviders
-import com.arubr.smsvcodes.widget.core.theme.dpToPx
-import com.arubr.smsvcodes.widget.core.theme.widgetColorsFlow
-import com.arubr.smsvcodes.widget.core.theme.widgetSurface
-import com.arubr.smsvcodes.widget.nowplaying.NowPlayingWidgetPublisher
+import io.github.aedev.flow.R
+import io.github.aedev.flow.data.local.PlayerPreferences
+import io.github.aedev.flow.widget.core.action.WidgetDeepLink
+import io.github.aedev.flow.widget.core.component.WidePlayPauseButton
+import io.github.aedev.flow.widget.core.component.WidgetEmptyState
+import io.github.aedev.flow.widget.core.image.ShapeDecor
+import io.github.aedev.flow.widget.core.image.WidgetImageLoader
+import io.github.aedev.flow.widget.core.image.WidgetShape
+import io.github.aedev.flow.widget.core.state.NowPlayingSnapshot
+import io.github.aedev.flow.widget.core.state.nowPlayingSnapshotFlow
+import io.github.aedev.flow.widget.core.theme.FlowGlanceTheme
+import io.github.aedev.flow.widget.core.theme.artworkColorProviders
+import io.github.aedev.flow.widget.core.theme.dpToPx
+import io.github.aedev.flow.widget.core.theme.widgetColorsFlow
+import io.github.aedev.flow.widget.core.theme.widgetSurface
+import io.github.aedev.flow.widget.nowplaying.NowPlayingWidgetPublisher
 import kotlinx.coroutines.flow.first
 import kotlin.math.min
 

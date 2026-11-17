@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.videoplayer
+package io.github.aedev.flow.ui.components.videoplayer
 
 /**
  * A compact window in landscape has no room for the page under the video, so the expanded player

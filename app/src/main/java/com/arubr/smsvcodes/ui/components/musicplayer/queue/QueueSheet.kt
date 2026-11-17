@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.musicplayer.queue
+package io.github.aedev.flow.ui.components.musicplayer.queue
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -20,8 +20,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import com.arubr.smsvcodes.data.music.model.MusicTrack
-import com.arubr.smsvcodes.player.RepeatMode
+import io.github.aedev.flow.data.music.model.MusicTrack
+import io.github.aedev.flow.player.RepeatMode
 
 /** The pull-up queue sheet used where there is no room for a side pane. */
 @Composable

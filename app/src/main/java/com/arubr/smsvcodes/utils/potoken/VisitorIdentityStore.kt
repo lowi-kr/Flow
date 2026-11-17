@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.utils.potoken
+package io.github.aedev.flow.utils.potoken
 
 import android.content.Context
 import android.content.SharedPreferences

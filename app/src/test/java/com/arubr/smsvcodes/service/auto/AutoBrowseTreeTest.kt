@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.service.auto
+package io.github.aedev.flow.service.auto
 
 import com.google.common.truth.Truth.assertThat
 import org.junit.Test

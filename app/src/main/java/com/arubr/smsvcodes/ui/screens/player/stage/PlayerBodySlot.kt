@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.screens.player.stage
+package io.github.aedev.flow.ui.screens.player.stage
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
@@ -6,10 +6,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.zIndex
 import androidx.media3.common.util.UnstableApi
-import com.arubr.smsvcodes.player.EnhancedPlayerManager
-import com.arubr.smsvcodes.player.GlobalPlayerState
-import com.arubr.smsvcodes.ui.components.videoplayer.controls.LockModeTouchShield
-import com.arubr.smsvcodes.ui.screens.player.EnhancedVideoPlayerScreen
+import io.github.aedev.flow.player.EnhancedPlayerManager
+import io.github.aedev.flow.player.GlobalPlayerState
+import io.github.aedev.flow.ui.components.videoplayer.controls.LockModeTouchShield
+import io.github.aedev.flow.ui.screens.player.EnhancedVideoPlayerScreen
 
 /** The scrollable page under the video, plus the shield that swallows taps while touch is locked. */
 @UnstableApi

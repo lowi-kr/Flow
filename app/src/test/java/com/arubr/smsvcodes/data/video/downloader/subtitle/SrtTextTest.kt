@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.data.video.downloader.subtitle
+package io.github.aedev.flow.data.video.downloader.subtitle
 
 import androidx.media3.common.text.Cue
 import androidx.media3.extractor.text.CuesWithTiming

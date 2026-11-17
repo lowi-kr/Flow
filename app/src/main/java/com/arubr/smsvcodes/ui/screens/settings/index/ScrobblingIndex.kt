@@ -1,9 +1,9 @@
-package com.arubr.smsvcodes.ui.screens.settings.index
+package io.github.aedev.flow.ui.screens.settings.index
 
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.data.scrobble.ScrobbleService
-import com.arubr.smsvcodes.ui.components.settings.SettingEntry
-import com.arubr.smsvcodes.ui.components.settings.SettingsDestination
+import io.github.aedev.flow.R
+import io.github.aedev.flow.data.scrobble.ScrobbleService
+import io.github.aedev.flow.ui.components.settings.SettingEntry
+import io.github.aedev.flow.ui.components.settings.SettingsDestination
 
 internal object ScrobblingIndex {
     private val page = SettingsDestination.SCROBBLING

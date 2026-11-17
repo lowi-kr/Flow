@@ -1,9 +1,9 @@
-package com.arubr.smsvcodes.player
+package io.github.aedev.flow.player
 
 import android.content.Context
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.data.local.DEEP_FLOW_NEVER_EXPIRES_HOURS
-import com.arubr.smsvcodes.data.local.PlayerPreferences
+import io.github.aedev.flow.R
+import io.github.aedev.flow.data.local.DEEP_FLOW_NEVER_EXPIRES_HOURS
+import io.github.aedev.flow.data.local.PlayerPreferences
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job

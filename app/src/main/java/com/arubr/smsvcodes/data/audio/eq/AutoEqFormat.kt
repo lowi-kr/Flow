@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.data.audio.eq
+package io.github.aedev.flow.data.audio.eq
 
 import java.util.Locale
 import kotlin.math.pow

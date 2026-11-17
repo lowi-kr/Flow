@@ -1,8 +1,8 @@
-package com.arubr.smsvcodes.player.sponsorblock
+package io.github.aedev.flow.player.sponsorblock
 
 import com.google.common.truth.Truth.assertThat
-import com.arubr.smsvcodes.data.local.SponsorBlockAction
-import com.arubr.smsvcodes.data.model.SponsorBlockSegment
+import io.github.aedev.flow.data.local.SponsorBlockAction
+import io.github.aedev.flow.data.model.SponsorBlockSegment
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.toList
 import kotlinx.coroutines.launch

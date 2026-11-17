@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.screens.settings.playback
+package io.github.aedev.flow.ui.screens.settings.playback
 
 import androidx.annotation.StringRes
 import androidx.compose.foundation.background
@@ -45,9 +45,9 @@ import androidx.compose.ui.semantics.clearAndSetSemantics
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.unit.dp
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.data.local.DoubleTapSeekZone
-import com.arubr.smsvcodes.ui.components.shared.FlowAlertDialog
+import io.github.aedev.flow.R
+import io.github.aedev.flow.data.local.DoubleTapSeekZone
+import io.github.aedev.flow.ui.components.shared.FlowAlertDialog
 
 private const val DIAGRAM_ASPECT_RATIO = 16f / 9f
 

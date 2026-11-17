@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.screens.sync
+package io.github.aedev.flow.ui.screens.sync
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -26,9 +26,9 @@ import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import com.arubr.smsvcodes.ui.components.shared.FlowNavRow
-import com.arubr.smsvcodes.ui.components.shared.FlowSegmentedGap
-import com.arubr.smsvcodes.ui.components.shared.flowSegmentShape
+import io.github.aedev.flow.ui.components.shared.FlowNavRow
+import io.github.aedev.flow.ui.components.shared.FlowSegmentedGap
+import io.github.aedev.flow.ui.components.shared.flowSegmentShape
 
 // The sync flow's building blocks. Every step is a header, a body of the same segmented rows the
 // settings pages use, and a bottom action row, so the flow reads as one screen changing.

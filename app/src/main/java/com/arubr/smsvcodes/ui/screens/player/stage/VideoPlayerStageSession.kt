@@ -1,17 +1,17 @@
-package com.arubr.smsvcodes.ui.screens.player.stage
+package io.github.aedev.flow.ui.screens.player.stage
 
 import android.content.Context
 import androidx.activity.ComponentActivity
 import androidx.compose.runtime.Stable
-import com.arubr.smsvcodes.data.model.Video
-import com.arubr.smsvcodes.player.state.EnhancedPlayerState
-import com.arubr.smsvcodes.ui.components.videoplayer.PlayerDraggableState
-import com.arubr.smsvcodes.ui.screens.player.VideoPlayerViewModel
-import com.arubr.smsvcodes.ui.screens.player.effects.AudioSystemInfo
-import com.arubr.smsvcodes.ui.screens.player.effects.PipPreferences
-import com.arubr.smsvcodes.ui.screens.player.state.PlayerScreenState
-import com.arubr.smsvcodes.ui.screens.player.state.VideoPlayerPreferencesState
-import com.arubr.smsvcodes.ui.screens.player.state.VideoPlayerUiState
+import io.github.aedev.flow.data.model.Video
+import io.github.aedev.flow.player.state.EnhancedPlayerState
+import io.github.aedev.flow.ui.components.videoplayer.PlayerDraggableState
+import io.github.aedev.flow.ui.screens.player.VideoPlayerViewModel
+import io.github.aedev.flow.ui.screens.player.effects.AudioSystemInfo
+import io.github.aedev.flow.ui.screens.player.effects.PipPreferences
+import io.github.aedev.flow.ui.screens.player.state.PlayerScreenState
+import io.github.aedev.flow.ui.screens.player.state.VideoPlayerPreferencesState
+import io.github.aedev.flow.ui.screens.player.state.VideoPlayerUiState
 import kotlinx.coroutines.CoroutineScope
 
 /**

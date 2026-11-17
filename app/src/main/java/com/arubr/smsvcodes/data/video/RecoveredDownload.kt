@@ -1,15 +1,15 @@
-package com.arubr.smsvcodes.data.video
+package io.github.aedev.flow.data.video
 
-import com.arubr.smsvcodes.data.local.entity.DownloadEntity
-import com.arubr.smsvcodes.data.local.entity.DownloadFileType
-import com.arubr.smsvcodes.data.local.entity.DownloadItemEntity
-import com.arubr.smsvcodes.data.local.entity.DownloadItemStatus
-import com.arubr.smsvcodes.data.video.downloader.request.StoredArtist
-import com.arubr.smsvcodes.data.video.downloader.tags.DownloadKind
-import com.arubr.smsvcodes.data.video.downloader.tags.DownloadTags
-import com.arubr.smsvcodes.data.video.downloader.tags.displayArtist
-import com.arubr.smsvcodes.utils.YouTubeLink
-import com.arubr.smsvcodes.utils.parseYouTubeLink
+import io.github.aedev.flow.data.local.entity.DownloadEntity
+import io.github.aedev.flow.data.local.entity.DownloadFileType
+import io.github.aedev.flow.data.local.entity.DownloadItemEntity
+import io.github.aedev.flow.data.local.entity.DownloadItemStatus
+import io.github.aedev.flow.data.video.downloader.request.StoredArtist
+import io.github.aedev.flow.data.video.downloader.tags.DownloadKind
+import io.github.aedev.flow.data.video.downloader.tags.DownloadTags
+import io.github.aedev.flow.data.video.downloader.tags.displayArtist
+import io.github.aedev.flow.utils.YouTubeLink
+import io.github.aedev.flow.utils.parseYouTubeLink
 
 /** A media file met on disk, as the recovery scan measured it. */
 internal data class FoundFile(

@@ -1,7 +1,7 @@
-package com.arubr.smsvcodes.player.quality
+package io.github.aedev.flow.player.quality
 
 import com.google.common.truth.Truth.assertThat
-import com.arubr.smsvcodes.player.stream.VideoCodecUtils
+import io.github.aedev.flow.player.stream.VideoCodecUtils
 import org.junit.Test
 
 class LiveQualitySelectionTest {

@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.widget.playlist
+package io.github.aedev.flow.widget.playlist
 
 import android.app.PendingIntent
 import android.content.Context
@@ -31,21 +31,21 @@ import androidx.glance.layout.padding
 import androidx.glance.layout.size
 import androidx.glance.layout.width
 import androidx.glance.text.Text
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.data.local.PlaylistRepository
-import com.arubr.smsvcodes.data.model.Video
-import com.arubr.smsvcodes.utils.formatDuration
-import com.arubr.smsvcodes.widget.core.action.WidgetDeepLink
-import com.arubr.smsvcodes.widget.core.component.WidgetArtwork
-import com.arubr.smsvcodes.widget.core.component.WidgetEmptyState
-import com.arubr.smsvcodes.widget.core.component.WidgetMediaItem
-import com.arubr.smsvcodes.widget.core.component.WidgetMediaRow
-import com.arubr.smsvcodes.widget.core.component.WidgetPanel
-import com.arubr.smsvcodes.widget.core.component.WidgetPressButton
-import com.arubr.smsvcodes.widget.core.component.WidgetShuffleButton
-import com.arubr.smsvcodes.widget.core.theme.WidgetDimens
-import com.arubr.smsvcodes.widget.core.theme.WidgetText
-import com.arubr.smsvcodes.widget.core.theme.widgetSurface
+import io.github.aedev.flow.R
+import io.github.aedev.flow.data.local.PlaylistRepository
+import io.github.aedev.flow.data.model.Video
+import io.github.aedev.flow.utils.formatDuration
+import io.github.aedev.flow.widget.core.action.WidgetDeepLink
+import io.github.aedev.flow.widget.core.component.WidgetArtwork
+import io.github.aedev.flow.widget.core.component.WidgetEmptyState
+import io.github.aedev.flow.widget.core.component.WidgetMediaItem
+import io.github.aedev.flow.widget.core.component.WidgetMediaRow
+import io.github.aedev.flow.widget.core.component.WidgetPanel
+import io.github.aedev.flow.widget.core.component.WidgetPressButton
+import io.github.aedev.flow.widget.core.component.WidgetShuffleButton
+import io.github.aedev.flow.widget.core.theme.WidgetDimens
+import io.github.aedev.flow.widget.core.theme.WidgetText
+import io.github.aedev.flow.widget.core.theme.widgetSurface
 
 /** How a Playlist widget of a given size is drawn: its videos as a list, or its cover beside or above its name. */
 internal enum class PlaylistLayout {

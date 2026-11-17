@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.service
+package io.github.aedev.flow.service
 
 import android.content.Intent
 import android.view.KeyEvent

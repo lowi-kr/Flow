@@ -1,9 +1,9 @@
-package com.arubr.smsvcodes.widget.core.theme
+package io.github.aedev.flow.widget.core.theme
 
 import android.content.Context
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.stringPreferencesKey
-import com.arubr.smsvcodes.data.local.safePreferencesDataStore
+import io.github.aedev.flow.data.local.safePreferencesDataStore
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.map
 

@@ -1,8 +1,8 @@
-package com.arubr.smsvcodes.player.musicvideo
+package io.github.aedev.flow.player.musicvideo
 
 import com.google.common.truth.Truth.assertThat
-import com.arubr.smsvcodes.innertube.models.response.PlayerResponse
-import com.arubr.smsvcodes.ui.screens.player.fakeInnerTubeFormat
+import io.github.aedev.flow.innertube.models.response.PlayerResponse
+import io.github.aedev.flow.ui.screens.player.fakeInnerTubeFormat
 import org.junit.Test
 
 class MusicVideoFormatsTest {

@@ -4,7 +4,7 @@
  * This file is part of Flow (https://github.com/Flow-Tube/Flow).
  */
 
-package com.arubr.smsvcodes.ui.components.music.card
+package io.github.aedev.flow.ui.components.music.card
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.combinedClickable
@@ -43,14 +43,14 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.innertube.models.AlbumItem
-import com.arubr.smsvcodes.innertube.models.ArtistItem
-import com.arubr.smsvcodes.innertube.models.PlaylistItem
-import com.arubr.smsvcodes.innertube.models.SongItem
-import com.arubr.smsvcodes.innertube.models.YTItem
-import com.arubr.smsvcodes.ui.components.music.common.rememberMusicArtworkColors
-import com.arubr.smsvcodes.ui.components.shared.flowArtistShape
+import io.github.aedev.flow.R
+import io.github.aedev.flow.innertube.models.AlbumItem
+import io.github.aedev.flow.innertube.models.ArtistItem
+import io.github.aedev.flow.innertube.models.PlaylistItem
+import io.github.aedev.flow.innertube.models.SongItem
+import io.github.aedev.flow.innertube.models.YTItem
+import io.github.aedev.flow.ui.components.music.common.rememberMusicArtworkColors
+import io.github.aedev.flow.ui.components.shared.flowArtistShape
 
 private val TopResultArtworkSize = 104.dp
 private const val SUBTITLE_ALPHA = 0.8f

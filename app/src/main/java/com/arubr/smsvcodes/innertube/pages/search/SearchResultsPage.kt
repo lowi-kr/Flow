@@ -1,9 +1,9 @@
-package com.arubr.smsvcodes.innertube.pages.search
+package io.github.aedev.flow.innertube.pages.search
 
-import com.arubr.smsvcodes.data.model.Video
-import com.arubr.smsvcodes.innertube.pages.renderer.FeedItem
-import com.arubr.smsvcodes.innertube.pages.renderer.FeedShelf
-import com.arubr.smsvcodes.innertube.pages.renderer.videoOrNull
+import io.github.aedev.flow.data.model.Video
+import io.github.aedev.flow.innertube.pages.renderer.FeedItem
+import io.github.aedev.flow.innertube.pages.renderer.FeedShelf
+import io.github.aedev.flow.innertube.pages.renderer.videoOrNull
 
 /**
  * One page of `/youtubei/v1/search`.

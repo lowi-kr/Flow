@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.channel
+package io.github.aedev.flow.ui.components.channel
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -30,9 +30,9 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.innertube.pages.channel.ChannelHeader
-import com.arubr.smsvcodes.ui.theme.extendedColors
+import io.github.aedev.flow.R
+import io.github.aedev.flow.innertube.pages.channel.ChannelHeader
+import io.github.aedev.flow.ui.theme.extendedColors
 
 /**
  * Everything the About panel returned, and only that: each row is present exactly when its field is.

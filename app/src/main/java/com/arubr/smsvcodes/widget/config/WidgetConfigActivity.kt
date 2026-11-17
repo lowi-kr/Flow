@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.widget.config
+package io.github.aedev.flow.widget.config
 
 import android.appwidget.AppWidgetManager
 import android.content.Intent
@@ -9,14 +9,14 @@ import androidx.activity.enableEdgeToEdge
 import androidx.compose.runtime.collectAsState
 import androidx.glance.appwidget.GlanceAppWidgetManager
 import dagger.hilt.android.AndroidEntryPoint
-import com.arubr.smsvcodes.data.local.AppFontPreferences
-import com.arubr.smsvcodes.data.local.LocalDataManager
-import com.arubr.smsvcodes.ui.screens.widgets.PlaylistConfigScreen
-import com.arubr.smsvcodes.ui.screens.widgets.QuickActionsConfigScreen
-import com.arubr.smsvcodes.ui.startup.FlowTheme
-import com.arubr.smsvcodes.ui.startup.themeSettings
-import com.arubr.smsvcodes.widget.playlist.PlaylistWidgetReceiver
-import com.arubr.smsvcodes.widget.quickactions.QuickActionsWidgetReceiver
+import io.github.aedev.flow.data.local.AppFontPreferences
+import io.github.aedev.flow.data.local.LocalDataManager
+import io.github.aedev.flow.ui.screens.widgets.PlaylistConfigScreen
+import io.github.aedev.flow.ui.screens.widgets.QuickActionsConfigScreen
+import io.github.aedev.flow.ui.startup.FlowTheme
+import io.github.aedev.flow.ui.startup.themeSettings
+import io.github.aedev.flow.widget.playlist.PlaylistWidgetReceiver
+import io.github.aedev.flow.widget.quickactions.QuickActionsWidgetReceiver
 import javax.inject.Inject
 
 /**

@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.screens.settings.appearance
+package io.github.aedev.flow.ui.screens.settings.appearance
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -18,12 +18,12 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.stringResource
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.ui.components.layout.navigation.resolveDefaultFlowTab
-import com.arubr.smsvcodes.ui.components.layout.navigation.visibleFlowTabs
-import com.arubr.smsvcodes.ui.components.settings.SettingsPage
-import com.arubr.smsvcodes.ui.components.settings.switch
-import com.arubr.smsvcodes.ui.screens.settings.index.NavigationBarIndex
+import io.github.aedev.flow.R
+import io.github.aedev.flow.ui.components.layout.navigation.resolveDefaultFlowTab
+import io.github.aedev.flow.ui.components.layout.navigation.visibleFlowTabs
+import io.github.aedev.flow.ui.components.settings.SettingsPage
+import io.github.aedev.flow.ui.components.settings.switch
+import io.github.aedev.flow.ui.screens.settings.index.NavigationBarIndex
 
 /** Which tabs the navigation bar shows, in what order, and which one Flow opens on. */
 @Composable

@@ -1,6 +1,6 @@
-package com.arubr.smsvcodes.ui.screens.player
+package io.github.aedev.flow.ui.screens.player
 
-import com.arubr.smsvcodes.data.local.PlayerPreferences
+import io.github.aedev.flow.data.local.PlayerPreferences
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch

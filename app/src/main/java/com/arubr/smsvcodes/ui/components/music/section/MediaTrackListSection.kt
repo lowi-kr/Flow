@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.music.section
+package io.github.aedev.flow.ui.components.music.section
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -14,12 +14,12 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.arubr.smsvcodes.data.music.model.MusicTrack
-import com.arubr.smsvcodes.ui.components.music.header.MusicSectionAction
-import com.arubr.smsvcodes.ui.components.music.header.MusicSectionHeader
-import com.arubr.smsvcodes.ui.components.music.item.MusicTrackItem
-import com.arubr.smsvcodes.ui.components.shared.flowLaneItemWidth
-import com.arubr.smsvcodes.ui.theme.Dimensions
+import io.github.aedev.flow.data.music.model.MusicTrack
+import io.github.aedev.flow.ui.components.music.header.MusicSectionAction
+import io.github.aedev.flow.ui.components.music.header.MusicSectionHeader
+import io.github.aedev.flow.ui.components.music.item.MusicTrackItem
+import io.github.aedev.flow.ui.components.shared.flowLaneItemWidth
+import io.github.aedev.flow.ui.theme.Dimensions
 
 private val MediaRowMaxWidth = 380.dp
 private val MediaRowPeek = 48.dp

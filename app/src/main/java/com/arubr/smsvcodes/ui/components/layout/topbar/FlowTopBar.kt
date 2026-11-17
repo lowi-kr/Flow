@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.layout.topbar
+package io.github.aedev.flow.ui.components.layout.topbar
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.RowScope
@@ -15,7 +15,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow
-import com.arubr.smsvcodes.R
+import io.github.aedev.flow.R
 
 /**
  * Which screens show the app-shell actions ([FlowGlobalActions]).

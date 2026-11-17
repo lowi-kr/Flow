@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.widget.core.image
+package io.github.aedev.flow.widget.core.image
 
 import android.content.Context
 import android.graphics.Bitmap

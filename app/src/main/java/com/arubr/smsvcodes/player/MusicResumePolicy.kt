@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.player
+package io.github.aedev.flow.player
 
 /** Podcasts, audiobooks and long mixes pick up where they stopped; songs always start over. */
 object MusicResumePolicy {

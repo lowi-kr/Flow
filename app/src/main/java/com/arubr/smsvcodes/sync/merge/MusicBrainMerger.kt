@@ -1,9 +1,9 @@
-package com.arubr.smsvcodes.sync.merge
+package io.github.aedev.flow.sync.merge
 
-import com.arubr.smsvcodes.sync.canonical.CanonicalMusicAffinity
-import com.arubr.smsvcodes.sync.canonical.CanonicalMusicBrain
-import com.arubr.smsvcodes.sync.canonical.CanonicalMusicTrackMeta
-import com.arubr.smsvcodes.sync.canonical.Lww
+import io.github.aedev.flow.sync.canonical.CanonicalMusicAffinity
+import io.github.aedev.flow.sync.canonical.CanonicalMusicBrain
+import io.github.aedev.flow.sync.canonical.CanonicalMusicTrackMeta
+import io.github.aedev.flow.sync.canonical.Lww
 
 /**
  * CRDT merge for the `music_brain` collection, mirroring the desktop's

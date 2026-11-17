@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.data.subscriptions
+package io.github.aedev.flow.data.subscriptions
 
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNull

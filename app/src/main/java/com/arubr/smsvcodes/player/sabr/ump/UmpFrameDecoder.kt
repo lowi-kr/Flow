@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.player.sabr.ump
+package io.github.aedev.flow.player.sabr.ump
 
 import android.util.Log
 import java.io.ByteArrayOutputStream

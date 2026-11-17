@@ -1,5 +1,5 @@
 /**
- * Robolectric defaults for every Compose test under {@code com.arubr.smsvcodes.ui}.
+ * Robolectric defaults for every Compose test under {@code io.github.aedev.flow.ui}.
  *
  * <p>Conscrypt is off because {@code conscrypt-android} (an app dependency) shadows the host
  * Conscrypt Robolectric bundles and fails with {@code no conscrypt_jni in java.library.path};
@@ -8,7 +8,7 @@
  */
 @ConscryptMode(ConscryptMode.Mode.OFF)
 @GraphicsMode(GraphicsMode.Mode.NATIVE)
-package com.arubr.smsvcodes.ui;
+package io.github.aedev.flow.ui;
 
 import org.robolectric.annotation.ConscryptMode;
 import org.robolectric.annotation.GraphicsMode;

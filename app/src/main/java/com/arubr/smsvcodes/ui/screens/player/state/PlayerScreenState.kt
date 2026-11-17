@@ -1,9 +1,9 @@
-package com.arubr.smsvcodes.ui.screens.player.state
+package io.github.aedev.flow.ui.screens.player.state
 
 import androidx.compose.runtime.*
-import com.arubr.smsvcodes.ui.components.shared.CommentSortFilter
-import com.arubr.smsvcodes.ui.components.videoplayer.settings.PlayerSettingsPage
-import com.arubr.smsvcodes.ui.components.videoplayer.subtitle.SubtitleStyle
+import io.github.aedev.flow.ui.components.shared.CommentSortFilter
+import io.github.aedev.flow.ui.components.videoplayer.settings.PlayerSettingsPage
+import io.github.aedev.flow.ui.components.videoplayer.subtitle.SubtitleStyle
 
 // Every property is snapshot state, so composables taking this instance can skip on identity.
 @Stable
@@ -166,7 +166,7 @@ fun rememberPlayerScreenState(): PlayerScreenState = remember { PlayerScreenStat
  * rather than fetched, so a queue advance cannot leave the panel reading an empty URL.
  */
 internal fun transcriptTrackUrl(
-    playerState: com.arubr.smsvcodes.player.EnhancedPlayerState,
+    playerState: io.github.aedev.flow.player.EnhancedPlayerState,
     screenState: PlayerScreenState,
 ): String? {
     // Only tracks fetched over the network can be read; files and tracks inside a video have no URL.

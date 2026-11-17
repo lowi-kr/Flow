@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.player.sabr.integration
+package io.github.aedev.flow.player.sabr.integration
 
 import java.io.IOException
 import java.util.concurrent.LinkedBlockingQueue

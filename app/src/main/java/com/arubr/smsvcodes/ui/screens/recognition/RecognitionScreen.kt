@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.screens.recognition
+package io.github.aedev.flow.ui.screens.recognition
 
 import android.Manifest
 import androidx.activity.compose.rememberLauncherForActivityResult
@@ -69,15 +69,15 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import coil3.compose.AsyncImage
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.data.recognition.RecognitionResult
-import com.arubr.smsvcodes.data.recognition.RecognitionStatus
-import com.arubr.smsvcodes.ui.components.layout.LocalFlowBottomInsets
-import com.arubr.smsvcodes.ui.components.layout.topbar.FlowTopBar
-import com.arubr.smsvcodes.ui.components.music.common.rememberMusicArtworkColors
-import com.arubr.smsvcodes.ui.components.shared.FlowStateIcon
-import com.arubr.smsvcodes.ui.components.shared.flowActionShape
-import com.arubr.smsvcodes.ui.components.shared.flowHeroArtworkSize
+import io.github.aedev.flow.R
+import io.github.aedev.flow.data.recognition.RecognitionResult
+import io.github.aedev.flow.data.recognition.RecognitionStatus
+import io.github.aedev.flow.ui.components.layout.LocalFlowBottomInsets
+import io.github.aedev.flow.ui.components.layout.topbar.FlowTopBar
+import io.github.aedev.flow.ui.components.music.common.rememberMusicArtworkColors
+import io.github.aedev.flow.ui.components.shared.FlowStateIcon
+import io.github.aedev.flow.ui.components.shared.flowActionShape
+import io.github.aedev.flow.ui.components.shared.flowHeroArtworkSize
 
 private val MicButtonSize = 200.dp
 private val MicIconSize = 72.dp

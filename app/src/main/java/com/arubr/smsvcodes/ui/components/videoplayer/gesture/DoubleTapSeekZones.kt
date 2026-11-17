@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.videoplayer.gesture
+package io.github.aedev.flow.ui.components.videoplayer.gesture
 
 /** Where a tap landed across the player's width. [EDGE] is the strip the system back gesture owns. */
 internal enum class TapZone { EDGE, BACK, CENTER, FORWARD }

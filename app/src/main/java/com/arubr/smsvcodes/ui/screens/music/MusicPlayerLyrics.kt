@@ -1,20 +1,20 @@
-package com.arubr.smsvcodes.ui.screens.music
+package io.github.aedev.flow.ui.screens.music
 
 import android.content.Context
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.data.local.PlayerPreferences
-import com.arubr.smsvcodes.data.localmedia.LocalLyricsReader
-import com.arubr.smsvcodes.data.localmedia.LocalLyricsSource
-import com.arubr.smsvcodes.data.localmedia.LocalMediaIds
-import com.arubr.smsvcodes.data.localmedia.lrcOffsetMs
-import com.arubr.smsvcodes.data.localmedia.plainLyricsText
-import com.arubr.smsvcodes.data.lyrics.LyricsCandidate
-import com.arubr.smsvcodes.data.lyrics.LyricsEntry
-import com.arubr.smsvcodes.data.lyrics.LyricsHelper
-import com.arubr.smsvcodes.data.lyrics.LyricsUtils
-import com.arubr.smsvcodes.data.music.model.MusicTrack
-import com.arubr.smsvcodes.player.EnhancedMusicPlayerManager
-import com.arubr.smsvcodes.utils.NetworkState
+import io.github.aedev.flow.R
+import io.github.aedev.flow.data.local.PlayerPreferences
+import io.github.aedev.flow.data.localmedia.LocalLyricsReader
+import io.github.aedev.flow.data.localmedia.LocalLyricsSource
+import io.github.aedev.flow.data.localmedia.LocalMediaIds
+import io.github.aedev.flow.data.localmedia.lrcOffsetMs
+import io.github.aedev.flow.data.localmedia.plainLyricsText
+import io.github.aedev.flow.data.lyrics.LyricsCandidate
+import io.github.aedev.flow.data.lyrics.LyricsEntry
+import io.github.aedev.flow.data.lyrics.LyricsHelper
+import io.github.aedev.flow.data.lyrics.LyricsUtils
+import io.github.aedev.flow.data.music.model.MusicTrack
+import io.github.aedev.flow.player.EnhancedMusicPlayerManager
+import io.github.aedev.flow.utils.NetworkState
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -318,7 +318,7 @@ internal class MusicPlayerLyrics(
         scope.launch {
             val parsed =
                 kotlinx.coroutines.withContext(kotlinx.coroutines.Dispatchers.Default) {
-                    com.arubr.smsvcodes.data.lyrics.LyricsUtils
+                    io.github.aedev.flow.data.lyrics.LyricsUtils
                         .parseLyrics(text)
                 }
             val entries =
@@ -337,7 +337,7 @@ internal class MusicPlayerLyrics(
                 it.copy(
                     lyrics = plainText.takeIf { t -> t.isNotBlank() },
                     syncedLyrics = if (synced) entries else emptyList(),
-                    lyricsProviderName = context.getString(com.arubr.smsvcodes.R.string.lyrics_source_edited),
+                    lyricsProviderName = context.getString(io.github.aedev.flow.R.string.lyrics_source_edited),
                 )
             }
         }

@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.player
+package io.github.aedev.flow.player
 
 data class AutoplayCountdownState(
     val isActive: Boolean = false,

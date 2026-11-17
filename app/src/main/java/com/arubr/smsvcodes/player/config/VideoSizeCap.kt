@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.player.config
+package io.github.aedev.flow.player.config
 
 import android.app.ActivityManager
 import android.content.Context

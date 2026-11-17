@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.tv.player
+package io.github.aedev.flow.ui.tv.player
 
 import androidx.compose.foundation.layout.widthIn
 import androidx.compose.material3.MaterialTheme
@@ -6,8 +6,8 @@ import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.arubr.smsvcodes.ui.components.shared.FlowErrorState
-import com.arubr.smsvcodes.ui.components.shared.FlowLoadingIndicator
+import io.github.aedev.flow.ui.components.shared.FlowErrorState
+import io.github.aedev.flow.ui.components.shared.FlowLoadingIndicator
 
 private val ErrorMaxWidth = 560.dp
 

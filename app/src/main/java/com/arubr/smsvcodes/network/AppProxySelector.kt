@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.network
+package io.github.aedev.flow.network
 
 import okhttp3.Authenticator
 import okhttp3.Request

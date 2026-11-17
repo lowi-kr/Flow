@@ -1,12 +1,12 @@
-package com.arubr.smsvcodes.data.subscriptions
+package io.github.aedev.flow.data.subscriptions
 
 import com.google.common.truth.Truth.assertThat
-import com.arubr.smsvcodes.data.local.PlayerPreferences
-import com.arubr.smsvcodes.data.model.Video
-import com.arubr.smsvcodes.innertube.pages.channel.ChannelTabContent
-import com.arubr.smsvcodes.innertube.pages.channel.ChannelTabKind
-import com.arubr.smsvcodes.innertube.pages.renderer.FeedItem
-import com.arubr.smsvcodes.innertube.pages.renderer.FeedItemOwner
+import io.github.aedev.flow.data.local.PlayerPreferences
+import io.github.aedev.flow.data.model.Video
+import io.github.aedev.flow.innertube.pages.channel.ChannelTabContent
+import io.github.aedev.flow.innertube.pages.channel.ChannelTabKind
+import io.github.aedev.flow.innertube.pages.renderer.FeedItem
+import io.github.aedev.flow.innertube.pages.renderer.FeedItemOwner
 import io.mockk.coEvery
 import io.mockk.every
 import io.mockk.mockk

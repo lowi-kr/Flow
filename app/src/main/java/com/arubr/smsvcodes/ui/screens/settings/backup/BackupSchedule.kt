@@ -1,6 +1,6 @@
-package com.arubr.smsvcodes.ui.screens.settings.backup
+package io.github.aedev.flow.ui.screens.settings.backup
 
-import com.arubr.smsvcodes.data.local.LocalDataManager.AutoBackupFrequency
+import io.github.aedev.flow.data.local.LocalDataManager.AutoBackupFrequency
 
 /** Days between automatic backups, or null when they are off. */
 internal fun AutoBackupFrequency.periodDays(): Long? =

@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.screens.music
+package io.github.aedev.flow.ui.screens.music
 
 import android.content.Context
 import android.util.Log
@@ -7,19 +7,19 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.data.local.PlaylistRepository
-import com.arubr.smsvcodes.data.local.entity.DownloadCollectionKind
-import com.arubr.smsvcodes.data.local.entity.VideoEntity
-import com.arubr.smsvcodes.data.model.PlaylistInfo
-import com.arubr.smsvcodes.data.model.Video
-import com.arubr.smsvcodes.data.music.YouTubeMusicService
-import com.arubr.smsvcodes.data.music.model.MusicTrack
-import com.arubr.smsvcodes.data.music.model.PlaylistDetails
-import com.arubr.smsvcodes.data.music.model.toMusicTrack
-import com.arubr.smsvcodes.data.repository.YouTubeRepository
-import com.arubr.smsvcodes.data.video.BackgroundDownloadQueuer
-import com.arubr.smsvcodes.data.video.downloader.collection.CollectionSpec
+import io.github.aedev.flow.R
+import io.github.aedev.flow.data.local.PlaylistRepository
+import io.github.aedev.flow.data.local.entity.DownloadCollectionKind
+import io.github.aedev.flow.data.local.entity.VideoEntity
+import io.github.aedev.flow.data.model.PlaylistInfo
+import io.github.aedev.flow.data.model.Video
+import io.github.aedev.flow.data.music.YouTubeMusicService
+import io.github.aedev.flow.data.music.model.MusicTrack
+import io.github.aedev.flow.data.music.model.PlaylistDetails
+import io.github.aedev.flow.data.music.model.toMusicTrack
+import io.github.aedev.flow.data.repository.YouTubeRepository
+import io.github.aedev.flow.data.video.BackgroundDownloadQueuer
+import io.github.aedev.flow.data.video.downloader.collection.CollectionSpec
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
 import kotlinx.coroutines.awaitAll
@@ -68,7 +68,7 @@ class MusicPlaylistsViewModel
             viewModelScope.launch(Dispatchers.IO) {
                 try {
                     val db =
-                        com.arubr.smsvcodes.data.local.AppDatabase
+                        io.github.aedev.flow.data.local.AppDatabase
                             .getDatabase(context)
                     val videoDao = db.videoDao()
                     val playlistDao = db.playlistDao()
@@ -111,7 +111,7 @@ class MusicPlaylistsViewModel
         }
 
         /** Seed a blank music playlist/album cover from its first track's thumbnail (post-enrichment). */
-        private suspend fun recoverBlankAlbumCovers(playlistDao: com.arubr.smsvcodes.data.local.dao.PlaylistDao) {
+        private suspend fun recoverBlankAlbumCovers(playlistDao: io.github.aedev.flow.data.local.dao.PlaylistDao) {
             playlistDao.getMusicPlaylistsMissingThumbnail().forEach { id ->
                 val thumb = playlistDao.getFirstVideoThumbnail(id)
                 if (!thumb.isNullOrBlank()) playlistDao.updatePlaylistThumbnail(id, thumb)

@@ -1,10 +1,10 @@
-package com.arubr.smsvcodes.ui.screens.library
+package io.github.aedev.flow.ui.screens.library
 
 import com.google.common.truth.Truth.assertThat
-import com.arubr.smsvcodes.data.localmedia.HiddenReason
-import com.arubr.smsvcodes.data.localmedia.LocalMediaItem
-import com.arubr.smsvcodes.data.localmedia.LocalMediaSettings
-import com.arubr.smsvcodes.data.localmedia.hiddenReason
+import io.github.aedev.flow.data.localmedia.HiddenReason
+import io.github.aedev.flow.data.localmedia.LocalMediaItem
+import io.github.aedev.flow.data.localmedia.LocalMediaSettings
+import io.github.aedev.flow.data.localmedia.hiddenReason
 import org.junit.Test
 
 class LocalMediaFiltersTest {

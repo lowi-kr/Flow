@@ -1,9 +1,9 @@
-package com.arubr.smsvcodes.data.subscriptions
+package io.github.aedev.flow.data.subscriptions
 
-import com.arubr.smsvcodes.data.local.AppDatabase
-import com.arubr.smsvcodes.data.local.PlayerPreferences
-import com.arubr.smsvcodes.data.local.ViewHistory
-import com.arubr.smsvcodes.data.shorts.finishedShortIds
+import io.github.aedev.flow.data.local.AppDatabase
+import io.github.aedev.flow.data.local.PlayerPreferences
+import io.github.aedev.flow.data.local.ViewHistory
+import io.github.aedev.flow.data.shorts.finishedShortIds
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.distinctUntilChanged

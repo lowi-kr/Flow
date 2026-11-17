@@ -1,8 +1,8 @@
-package com.arubr.smsvcodes.ui.screens.player
+package io.github.aedev.flow.ui.screens.player
 
 import android.util.Log
-import com.arubr.smsvcodes.data.repository.YouTubeRepository
-import com.arubr.smsvcodes.innertube.pages.VideoDescriptionPage
+import io.github.aedev.flow.data.repository.YouTubeRepository
+import io.github.aedev.flow.innertube.pages.VideoDescriptionPage
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.CoroutineScope

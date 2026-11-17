@@ -1,3 +1,3 @@
-package com.arubr.smsvcodes.player.audio
+package io.github.aedev.flow.player.audio
 
 internal fun shouldHandleAudioFocus(playDuringCalls: Boolean): Boolean = !playDuringCalls

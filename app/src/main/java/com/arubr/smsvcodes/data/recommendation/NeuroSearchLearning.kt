@@ -8,7 +8,7 @@
  * explicitly credit "Flow Android Client" and link back to the original repository.
  */
 
-package com.arubr.smsvcodes.data.recommendation
+package io.github.aedev.flow.data.recommendation
 
 /**
  * Turns a typed search into one interest (#907). The words a question wraps around its subject

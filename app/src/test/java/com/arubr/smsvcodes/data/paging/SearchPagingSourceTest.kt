@@ -1,20 +1,20 @@
-package com.arubr.smsvcodes.data.paging
+package io.github.aedev.flow.data.paging
 
 import androidx.paging.PagingSource
 import com.google.common.truth.Truth.assertThat
-import com.arubr.smsvcodes.data.local.ContentType
-import com.arubr.smsvcodes.data.local.Duration
-import com.arubr.smsvcodes.data.local.SearchFilter
-import com.arubr.smsvcodes.data.local.SortType
-import com.arubr.smsvcodes.data.local.UploadDate
-import com.arubr.smsvcodes.data.local.WatchState
-import com.arubr.smsvcodes.data.recommendation.FeedExclusions
-import com.arubr.smsvcodes.innertube.pages.SearchFixture
-import com.arubr.smsvcodes.innertube.pages.renderer.FeedShelfStyle
-import com.arubr.smsvcodes.innertube.pages.renderer.videoOrNull
-import com.arubr.smsvcodes.innertube.pages.search.SearchHeader
-import com.arubr.smsvcodes.innertube.pages.search.SearchSection
-import com.arubr.smsvcodes.innertube.pages.search.toSearchResultsPage
+import io.github.aedev.flow.data.local.ContentType
+import io.github.aedev.flow.data.local.Duration
+import io.github.aedev.flow.data.local.SearchFilter
+import io.github.aedev.flow.data.local.SortType
+import io.github.aedev.flow.data.local.UploadDate
+import io.github.aedev.flow.data.local.WatchState
+import io.github.aedev.flow.data.recommendation.FeedExclusions
+import io.github.aedev.flow.innertube.pages.SearchFixture
+import io.github.aedev.flow.innertube.pages.renderer.FeedShelfStyle
+import io.github.aedev.flow.innertube.pages.renderer.videoOrNull
+import io.github.aedev.flow.innertube.pages.search.SearchHeader
+import io.github.aedev.flow.innertube.pages.search.SearchSection
+import io.github.aedev.flow.innertube.pages.search.toSearchResultsPage
 import kotlinx.coroutines.test.runTest
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonObject
@@ -277,7 +277,7 @@ class SearchPagingSourceTest {
         val hidden = SearchResultItem.VideoResult(video(channelId = "UCkept"))
         val channel =
             SearchResultItem.ChannelResult(
-                com.arubr.smsvcodes.data.model
+                io.github.aedev.flow.data.model
                     .Channel(id = "UCkept", name = "Kept", thumbnailUrl = "", subscriberCount = 0L),
             )
 
@@ -405,7 +405,7 @@ class SearchPagingSourceTest {
     }
 
     private fun video(channelId: String) =
-        com.arubr.smsvcodes.data.model.Video(
+        io.github.aedev.flow.data.model.Video(
             id = "v1",
             title = "t",
             channelName = "c",

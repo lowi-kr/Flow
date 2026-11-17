@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.musicplayer.common
+package io.github.aedev.flow.ui.components.musicplayer.common
 
 import androidx.compose.material3.ColorScheme
 import androidx.compose.material3.MaterialTheme
@@ -10,14 +10,14 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.lerp
 import androidx.compose.ui.graphics.luminance
-import com.arubr.smsvcodes.data.local.MusicPlainControlColors
-import com.arubr.smsvcodes.data.local.MusicPlayerBackgroundStyle
-import com.arubr.smsvcodes.ui.components.shared.MediaPalette
-import com.arubr.smsvcodes.ui.components.shared.PaletteInkDark
-import com.arubr.smsvcodes.ui.theme.contrastRatio
-import com.arubr.smsvcodes.ui.theme.ensureContrastOn
-import com.arubr.smsvcodes.ui.theme.tone
-import com.arubr.smsvcodes.ui.theme.withTone
+import io.github.aedev.flow.data.local.MusicPlainControlColors
+import io.github.aedev.flow.data.local.MusicPlayerBackgroundStyle
+import io.github.aedev.flow.ui.components.shared.MediaPalette
+import io.github.aedev.flow.ui.components.shared.PaletteInkDark
+import io.github.aedev.flow.ui.theme.contrastRatio
+import io.github.aedev.flow.ui.theme.ensureContrastOn
+import io.github.aedev.flow.ui.theme.tone
+import io.github.aedev.flow.ui.theme.withTone
 
 /**
  * DEFAULT background style follows the app theme; the artwork-based styles hand the whole player

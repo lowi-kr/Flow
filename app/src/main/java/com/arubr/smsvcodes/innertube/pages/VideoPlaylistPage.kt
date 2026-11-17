@@ -1,12 +1,12 @@
-package com.arubr.smsvcodes.innertube.pages
+package io.github.aedev.flow.innertube.pages
 
-import com.arubr.smsvcodes.data.model.Video
-import com.arubr.smsvcodes.innertube.pages.renderer.FeedItem
-import com.arubr.smsvcodes.innertube.pages.renderer.FeedItemOwner
-import com.arubr.smsvcodes.innertube.pages.renderer.findRenderers
-import com.arubr.smsvcodes.innertube.pages.renderer.forEachObject
-import com.arubr.smsvcodes.innertube.pages.renderer.largestImageUrl
-import com.arubr.smsvcodes.innertube.pages.renderer.toFeedItem
+import io.github.aedev.flow.data.model.Video
+import io.github.aedev.flow.innertube.pages.renderer.FeedItem
+import io.github.aedev.flow.innertube.pages.renderer.FeedItemOwner
+import io.github.aedev.flow.innertube.pages.renderer.findRenderers
+import io.github.aedev.flow.innertube.pages.renderer.forEachObject
+import io.github.aedev.flow.innertube.pages.renderer.largestImageUrl
+import io.github.aedev.flow.innertube.pages.renderer.toFeedItem
 import kotlinx.serialization.json.JsonElement
 import kotlinx.serialization.json.JsonObject
 

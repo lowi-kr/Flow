@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.utils.potoken
+package io.github.aedev.flow.utils.potoken
 
 /**
  * This is based and ported from Metrolist,

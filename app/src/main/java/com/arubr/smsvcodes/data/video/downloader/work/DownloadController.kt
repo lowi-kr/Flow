@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.data.video.downloader.work
+package io.github.aedev.flow.data.video.downloader.work
 
 import android.content.Context
 import androidx.work.Constraints
@@ -7,16 +7,16 @@ import androidx.work.NetworkType
 import androidx.work.OneTimeWorkRequestBuilder
 import androidx.work.WorkManager
 import dagger.hilt.android.qualifiers.ApplicationContext
-import com.arubr.smsvcodes.data.local.PlayerPreferences
-import com.arubr.smsvcodes.data.local.dao.DownloadDao
-import com.arubr.smsvcodes.data.local.entity.DownloadEntity
-import com.arubr.smsvcodes.data.local.entity.DownloadFileType
-import com.arubr.smsvcodes.data.local.entity.DownloadItemEntity
-import com.arubr.smsvcodes.data.local.entity.DownloadItemStatus
-import com.arubr.smsvcodes.data.video.VideoDownloadManager
-import com.arubr.smsvcodes.data.video.downloader.request.DownloadRequest
-import com.arubr.smsvcodes.data.video.downloader.request.StoredArtist
-import com.arubr.smsvcodes.data.video.downloader.tags.displayArtist
+import io.github.aedev.flow.data.local.PlayerPreferences
+import io.github.aedev.flow.data.local.dao.DownloadDao
+import io.github.aedev.flow.data.local.entity.DownloadEntity
+import io.github.aedev.flow.data.local.entity.DownloadFileType
+import io.github.aedev.flow.data.local.entity.DownloadItemEntity
+import io.github.aedev.flow.data.local.entity.DownloadItemStatus
+import io.github.aedev.flow.data.video.VideoDownloadManager
+import io.github.aedev.flow.data.video.downloader.request.DownloadRequest
+import io.github.aedev.flow.data.video.downloader.request.StoredArtist
+import io.github.aedev.flow.data.video.downloader.tags.displayArtist
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job

@@ -1,10 +1,10 @@
-package com.arubr.smsvcodes.innertube.pages.explore
+package io.github.aedev.flow.innertube.pages.explore
 
 import com.google.common.truth.Truth.assertThat
-import com.arubr.smsvcodes.data.model.Video
-import com.arubr.smsvcodes.innertube.models.ArtistItem
-import com.arubr.smsvcodes.innertube.models.PlaylistItem
-import com.arubr.smsvcodes.innertube.pages.ChartsPage
+import io.github.aedev.flow.data.model.Video
+import io.github.aedev.flow.innertube.models.ArtistItem
+import io.github.aedev.flow.innertube.models.PlaylistItem
+import io.github.aedev.flow.innertube.pages.ChartsPage
 import org.junit.Test
 
 class MusicVideoChartTest {

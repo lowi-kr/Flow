@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.shared
+package io.github.aedev.flow.ui.components.shared
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
@@ -13,7 +13,7 @@ import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.TextLayoutResult
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import com.arubr.smsvcodes.utils.RICH_TEXT_HIGHLIGHT
+import io.github.aedev.flow.utils.RICH_TEXT_HIGHLIGHT
 
 /** How strongly a chip tints the surface under it; the same weight YouTube uses. */
 const val RICH_TEXT_HIGHLIGHT_ALPHA = 0.12f

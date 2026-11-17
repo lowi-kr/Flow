@@ -1,7 +1,7 @@
-package com.arubr.smsvcodes.innertube.pages
+package io.github.aedev.flow.innertube.pages
 
-import com.arubr.smsvcodes.innertube.models.MusicResponsiveListItemRenderer.FlexColumn
-import com.arubr.smsvcodes.innertube.models.Run
+import io.github.aedev.flow.innertube.models.MusicResponsiveListItemRenderer.FlexColumn
+import io.github.aedev.flow.innertube.models.Run
 
 object PageHelper {
     fun extractRuns(

@@ -1,6 +1,6 @@
-package com.arubr.smsvcodes.ui.screens.home
+package io.github.aedev.flow.ui.screens.home
 
-import com.arubr.smsvcodes.data.model.Video
+import io.github.aedev.flow.data.model.Video
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
 

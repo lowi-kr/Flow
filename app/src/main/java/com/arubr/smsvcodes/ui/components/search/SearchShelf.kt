@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.search
+package io.github.aedev.flow.ui.components.search
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -29,14 +29,14 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.data.model.Video
-import com.arubr.smsvcodes.data.paging.SearchResultItem
-import com.arubr.smsvcodes.data.paging.SearchShelfKind
-import com.arubr.smsvcodes.ui.components.shared.MediaShortsShelf
-import com.arubr.smsvcodes.ui.components.shared.card.MediaVideoCard
-import com.arubr.smsvcodes.ui.components.shared.card.VideoCardDefaults
-import com.arubr.smsvcodes.ui.components.shared.card.VideoCardLayout
+import io.github.aedev.flow.R
+import io.github.aedev.flow.data.model.Video
+import io.github.aedev.flow.data.paging.SearchResultItem
+import io.github.aedev.flow.data.paging.SearchShelfKind
+import io.github.aedev.flow.ui.components.shared.MediaShortsShelf
+import io.github.aedev.flow.ui.components.shared.card.MediaVideoCard
+import io.github.aedev.flow.ui.components.shared.card.VideoCardDefaults
+import io.github.aedev.flow.ui.components.shared.card.VideoCardLayout
 
 /**
  * One of the strips YouTube interleaves between search results: a creator's latest uploads, an

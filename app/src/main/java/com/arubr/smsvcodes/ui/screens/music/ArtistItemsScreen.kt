@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.screens.music
+package io.github.aedev.flow.ui.screens.music
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -26,22 +26,22 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.innertube.models.AlbumItem
-import com.arubr.smsvcodes.innertube.models.ArtistItem
-import com.arubr.smsvcodes.innertube.models.PlaylistItem
-import com.arubr.smsvcodes.innertube.models.SongItem
-import com.arubr.smsvcodes.innertube.models.YTItem
-import com.arubr.smsvcodes.ui.components.layout.flowBottomContentPadding
-import com.arubr.smsvcodes.ui.components.layout.topbar.FlowTopBar
-import com.arubr.smsvcodes.ui.components.music.item.MusicCardOverflowButton
-import com.arubr.smsvcodes.ui.components.music.item.MusicCollectionCard
-import com.arubr.smsvcodes.ui.components.music.item.MusicTrackItem
-import com.arubr.smsvcodes.ui.components.music.sheet.LocalMusicMenus
-import com.arubr.smsvcodes.ui.components.music.sheet.toCollectionActionItem
-import com.arubr.smsvcodes.ui.components.shared.FlowFeedProgress
-import com.arubr.smsvcodes.ui.components.shared.FlowLoadingIndicator
-import com.arubr.smsvcodes.ui.components.shared.flowArtistShape
+import io.github.aedev.flow.R
+import io.github.aedev.flow.innertube.models.AlbumItem
+import io.github.aedev.flow.innertube.models.ArtistItem
+import io.github.aedev.flow.innertube.models.PlaylistItem
+import io.github.aedev.flow.innertube.models.SongItem
+import io.github.aedev.flow.innertube.models.YTItem
+import io.github.aedev.flow.ui.components.layout.flowBottomContentPadding
+import io.github.aedev.flow.ui.components.layout.topbar.FlowTopBar
+import io.github.aedev.flow.ui.components.music.item.MusicCardOverflowButton
+import io.github.aedev.flow.ui.components.music.item.MusicCollectionCard
+import io.github.aedev.flow.ui.components.music.item.MusicTrackItem
+import io.github.aedev.flow.ui.components.music.sheet.LocalMusicMenus
+import io.github.aedev.flow.ui.components.music.sheet.toCollectionActionItem
+import io.github.aedev.flow.ui.components.shared.FlowFeedProgress
+import io.github.aedev.flow.ui.components.shared.FlowLoadingIndicator
+import io.github.aedev.flow.ui.components.shared.flowArtistShape
 
 private val GridCellMinWidth = 150.dp
 private const val LOAD_MORE_THRESHOLD = 5

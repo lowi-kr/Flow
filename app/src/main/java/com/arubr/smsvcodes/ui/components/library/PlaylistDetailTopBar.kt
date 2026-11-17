@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.library
+package io.github.aedev.flow.ui.components.library
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Checklist
@@ -10,9 +10,9 @@ import androidx.compose.material3.IconButton
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.ui.components.layout.topbar.FlowSearchTopBar
-import com.arubr.smsvcodes.ui.components.layout.topbar.FlowTopBar
+import io.github.aedev.flow.R
+import io.github.aedev.flow.ui.components.layout.topbar.FlowSearchTopBar
+import io.github.aedev.flow.ui.components.layout.topbar.FlowTopBar
 
 /** The playlist's search: the query while the field is open, or null while it is closed. */
 internal class PlaylistSearchBar(

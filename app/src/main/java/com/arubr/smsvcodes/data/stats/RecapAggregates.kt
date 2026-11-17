@@ -1,7 +1,7 @@
-package com.arubr.smsvcodes.data.stats
+package io.github.aedev.flow.data.stats
 
-import com.arubr.smsvcodes.data.recommendation.music.MusicStatsStorage
-import com.arubr.smsvcodes.utils.ThumbnailUrlResolver
+import io.github.aedev.flow.data.recommendation.music.MusicStatsStorage
+import io.github.aedev.flow.utils.ThumbnailUrlResolver
 import java.time.LocalDate
 import java.time.YearMonth
 

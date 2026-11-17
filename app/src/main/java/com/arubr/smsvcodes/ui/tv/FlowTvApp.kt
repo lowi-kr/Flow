@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.tv
+package io.github.aedev.flow.ui.tv
 
 import androidx.activity.ComponentActivity
 import androidx.compose.foundation.layout.fillMaxSize
@@ -18,26 +18,26 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.media3.common.util.UnstableApi
 import androidx.navigation.compose.rememberNavController
-import com.arubr.smsvcodes.data.model.Video
-import com.arubr.smsvcodes.player.EnhancedMusicPlayerManager
-import com.arubr.smsvcodes.player.GlobalPlayerState
-import com.arubr.smsvcodes.ui.components.layout.navigation.LocalMediaNavigator
-import com.arubr.smsvcodes.ui.components.music.common.ProvideMusicPlaybackState
-import com.arubr.smsvcodes.ui.components.music.sheet.LocalMusicMenus
-import com.arubr.smsvcodes.ui.components.music.sheet.MusicMenuSheets
-import com.arubr.smsvcodes.ui.components.music.sheet.rememberMusicMenus
-import com.arubr.smsvcodes.ui.components.shared.LocalFlowSheetPresenter
-import com.arubr.smsvcodes.ui.screens.home.HomeViewModel
-import com.arubr.smsvcodes.ui.screens.music.MusicPlayerViewModel
-import com.arubr.smsvcodes.ui.screens.music.MusicViewModel
-import com.arubr.smsvcodes.ui.screens.player.VideoPlayerViewModel
-import com.arubr.smsvcodes.ui.screens.search.SearchViewModel
-import com.arubr.smsvcodes.ui.screens.subscriptions.SubscriptionsViewModel
-import com.arubr.smsvcodes.ui.tv.components.TvSheetPresenter
-import com.arubr.smsvcodes.ui.tv.music.TvMusicNowPlaying
-import com.arubr.smsvcodes.ui.tv.navigation.TvMediaNavigator
-import com.arubr.smsvcodes.ui.tv.player.TvPlayerScreen
-import com.arubr.smsvcodes.ui.tv.theme.FlowTvTheme
+import io.github.aedev.flow.data.model.Video
+import io.github.aedev.flow.player.EnhancedMusicPlayerManager
+import io.github.aedev.flow.player.GlobalPlayerState
+import io.github.aedev.flow.ui.components.layout.navigation.LocalMediaNavigator
+import io.github.aedev.flow.ui.components.music.common.ProvideMusicPlaybackState
+import io.github.aedev.flow.ui.components.music.sheet.LocalMusicMenus
+import io.github.aedev.flow.ui.components.music.sheet.MusicMenuSheets
+import io.github.aedev.flow.ui.components.music.sheet.rememberMusicMenus
+import io.github.aedev.flow.ui.components.shared.LocalFlowSheetPresenter
+import io.github.aedev.flow.ui.screens.home.HomeViewModel
+import io.github.aedev.flow.ui.screens.music.MusicPlayerViewModel
+import io.github.aedev.flow.ui.screens.music.MusicViewModel
+import io.github.aedev.flow.ui.screens.player.VideoPlayerViewModel
+import io.github.aedev.flow.ui.screens.search.SearchViewModel
+import io.github.aedev.flow.ui.screens.subscriptions.SubscriptionsViewModel
+import io.github.aedev.flow.ui.tv.components.TvSheetPresenter
+import io.github.aedev.flow.ui.tv.music.TvMusicNowPlaying
+import io.github.aedev.flow.ui.tv.navigation.TvMediaNavigator
+import io.github.aedev.flow.ui.tv.player.TvPlayerScreen
+import io.github.aedev.flow.ui.tv.theme.FlowTvTheme
 
 @androidx.annotation.OptIn(UnstableApi::class)
 @Composable

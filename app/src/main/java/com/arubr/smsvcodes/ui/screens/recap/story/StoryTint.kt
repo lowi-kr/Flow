@@ -1,11 +1,11 @@
-package com.arubr.smsvcodes.ui.screens.recap.story
+package io.github.aedev.flow.ui.screens.recap.story
 
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.Immutable
 import androidx.compose.ui.graphics.Color
-import com.arubr.smsvcodes.data.stats.RecapSummary
-import com.arubr.smsvcodes.ui.components.shared.rememberMediaArtworkTint
+import io.github.aedev.flow.data.stats.RecapSummary
+import io.github.aedev.flow.ui.components.shared.rememberMediaArtworkTint
 
 /** The colours one story page is painted in. */
 @Immutable

@@ -1,8 +1,8 @@
-package com.arubr.smsvcodes.ui.screens.home
+package io.github.aedev.flow.ui.screens.home
 
-import com.arubr.smsvcodes.data.recommendation.GraphSeedInput
-import com.arubr.smsvcodes.data.recommendation.GraphSeedSource
-import com.arubr.smsvcodes.data.recommendation.UserBrain
+import io.github.aedev.flow.data.recommendation.GraphSeedInput
+import io.github.aedev.flow.data.recommendation.GraphSeedSource
+import io.github.aedev.flow.data.recommendation.UserBrain
 import kotlin.math.ln
 
 internal data class RelatedLaneMetrics(

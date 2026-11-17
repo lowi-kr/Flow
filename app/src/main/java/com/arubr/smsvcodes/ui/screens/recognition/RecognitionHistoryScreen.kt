@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.screens.recognition
+package io.github.aedev.flow.ui.screens.recognition
 
 import android.text.format.DateUtils
 import androidx.compose.foundation.layout.Column
@@ -34,14 +34,14 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.data.local.entity.RecognitionHistoryEntity
-import com.arubr.smsvcodes.ui.components.layout.flowBottomContentPadding
-import com.arubr.smsvcodes.ui.components.layout.topbar.FlowTopBar
-import com.arubr.smsvcodes.ui.components.music.common.MusicThumbnail
-import com.arubr.smsvcodes.ui.components.shared.FlowAlertDialog
-import com.arubr.smsvcodes.ui.components.shared.FlowEmptyState
-import com.arubr.smsvcodes.ui.components.shared.FlowSearchField
+import io.github.aedev.flow.R
+import io.github.aedev.flow.data.local.entity.RecognitionHistoryEntity
+import io.github.aedev.flow.ui.components.layout.flowBottomContentPadding
+import io.github.aedev.flow.ui.components.layout.topbar.FlowTopBar
+import io.github.aedev.flow.ui.components.music.common.MusicThumbnail
+import io.github.aedev.flow.ui.components.shared.FlowAlertDialog
+import io.github.aedev.flow.ui.components.shared.FlowEmptyState
+import io.github.aedev.flow.ui.components.shared.FlowSearchField
 
 private val HistoryArtworkSize = 56.dp
 

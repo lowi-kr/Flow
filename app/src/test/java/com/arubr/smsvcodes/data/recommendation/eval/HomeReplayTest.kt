@@ -4,7 +4,7 @@
  * This file is part of Flow (https://github.com/Flow-Tube/Flow).
  */
 
-package com.arubr.smsvcodes.data.recommendation.eval
+package io.github.aedev.flow.data.recommendation.eval
 
 import com.google.common.truth.Truth.assertThat
 import org.junit.AfterClass

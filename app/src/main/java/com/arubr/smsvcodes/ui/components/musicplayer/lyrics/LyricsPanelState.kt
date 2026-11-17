@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.musicplayer.lyrics
+package io.github.aedev.flow.ui.components.musicplayer.lyrics
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.offset
@@ -10,7 +10,7 @@ import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableLongStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
-import com.arubr.smsvcodes.data.lyrics.LyricsEntry
+import io.github.aedev.flow.data.lyrics.LyricsEntry
 
 /**
  * Which lines are sung and which line the panel scrolls to. [advance] runs once per sync tick with

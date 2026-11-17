@@ -1,11 +1,11 @@
-package com.arubr.smsvcodes.innertube.pages.renderer
+package io.github.aedev.flow.innertube.pages.renderer
 
-import com.arubr.smsvcodes.data.model.VideoCollaborator
-import com.arubr.smsvcodes.innertube.pages.arrayOrNull
-import com.arubr.smsvcodes.innertube.pages.objectOrNull
-import com.arubr.smsvcodes.innertube.pages.stringOrNull
-import com.arubr.smsvcodes.innertube.pages.youtubeText
-import com.arubr.smsvcodes.utils.ThumbnailUrlResolver
+import io.github.aedev.flow.data.model.VideoCollaborator
+import io.github.aedev.flow.innertube.pages.arrayOrNull
+import io.github.aedev.flow.innertube.pages.objectOrNull
+import io.github.aedev.flow.innertube.pages.stringOrNull
+import io.github.aedev.flow.innertube.pages.youtubeText
+import io.github.aedev.flow.utils.ThumbnailUrlResolver
 import kotlinx.serialization.json.JsonArray
 import kotlinx.serialization.json.JsonElement
 import kotlinx.serialization.json.JsonObject

@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.service
+package io.github.aedev.flow.service
 
 /**
  * Whether the music service is alive in this process, for instance after the system media controls

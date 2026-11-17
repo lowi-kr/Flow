@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.shared.card
+package io.github.aedev.flow.ui.components.shared.card
 
 import android.app.Application
 import androidx.compose.material3.MaterialTheme
@@ -10,8 +10,8 @@ import androidx.compose.ui.test.SemanticsMatcher
 import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.google.common.truth.Truth.assertThat
-import com.arubr.smsvcodes.data.local.dao.WatchProgress
-import com.arubr.smsvcodes.ui.components.shared.WatchProgressBar
+import io.github.aedev.flow.data.local.dao.WatchProgress
+import io.github.aedev.flow.ui.components.shared.WatchProgressBar
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith

@@ -1,9 +1,9 @@
-package com.arubr.smsvcodes.ui.screens.settings.appearance.theme
+package io.github.aedev.flow.ui.screens.settings.appearance.theme
 
 import androidx.annotation.StringRes
 import androidx.compose.ui.graphics.Color
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.ui.theme.PaletteColors
+import io.github.aedev.flow.R
+import io.github.aedev.flow.ui.theme.PaletteColors
 
 /** One editable role of a custom theme: its label, and how to read and replace it. */
 internal class ThemeRole(

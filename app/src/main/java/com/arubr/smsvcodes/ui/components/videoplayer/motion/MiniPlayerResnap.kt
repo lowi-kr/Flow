@@ -1,6 +1,6 @@
-package com.arubr.smsvcodes.ui.components.videoplayer.motion
+package io.github.aedev.flow.ui.components.videoplayer.motion
 
-import com.arubr.smsvcodes.ui.components.videoplayer.PlayerDraggableState
+import io.github.aedev.flow.ui.components.videoplayer.PlayerDraggableState
 import kotlinx.coroutines.launch
 import kotlin.math.abs
 

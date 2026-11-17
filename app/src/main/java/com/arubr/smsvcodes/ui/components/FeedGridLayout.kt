@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components
+package io.github.aedev.flow.ui.components
 
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.runtime.Composable
@@ -6,9 +6,9 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.window.core.layout.WindowSizeClass
-import com.arubr.smsvcodes.data.local.HomeFeedColumns
-import com.arubr.smsvcodes.ui.components.shared.card.VideoCardDefaults
-import com.arubr.smsvcodes.ui.theme.Dimensions
+import io.github.aedev.flow.data.local.HomeFeedColumns
+import io.github.aedev.flow.ui.components.shared.card.VideoCardDefaults
+import io.github.aedev.flow.ui.theme.Dimensions
 
 /**
  * Narrowest a grid cell may be before the grid drops a column: a 260 dp card plus the 12 dp gutter

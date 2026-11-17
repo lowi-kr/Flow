@@ -1,10 +1,10 @@
-package com.arubr.smsvcodes.ui.components.videoplayer
+package io.github.aedev.flow.ui.components.videoplayer
 
 import androidx.compose.animation.core.Animatable
 import androidx.compose.runtime.BroadcastFrameClock
 import com.google.common.truth.Truth.assertThat
-import com.arubr.smsvcodes.ui.components.videoplayer.motion.MiniPlayerResnapTargets
-import com.arubr.smsvcodes.ui.components.videoplayer.motion.resnapMiniPlayer
+import io.github.aedev.flow.ui.components.videoplayer.motion.MiniPlayerResnapTargets
+import io.github.aedev.flow.ui.components.videoplayer.motion.resnapMiniPlayer
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.Job

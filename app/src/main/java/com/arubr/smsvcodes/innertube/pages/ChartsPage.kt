@@ -1,18 +1,18 @@
-package com.arubr.smsvcodes.innertube.pages
+package io.github.aedev.flow.innertube.pages
 
-import com.arubr.smsvcodes.innertube.models.Album
-import com.arubr.smsvcodes.innertube.models.Artist
-import com.arubr.smsvcodes.innertube.models.ArtistItem
-import com.arubr.smsvcodes.innertube.models.GridRenderer
-import com.arubr.smsvcodes.innertube.models.MusicCarouselShelfRenderer
-import com.arubr.smsvcodes.innertube.models.MusicResponsiveListItemRenderer
-import com.arubr.smsvcodes.innertube.models.MusicShelfRenderer
-import com.arubr.smsvcodes.innertube.models.PlaylistItem
-import com.arubr.smsvcodes.innertube.models.SongItem
-import com.arubr.smsvcodes.innertube.models.YTItem
-import com.arubr.smsvcodes.innertube.models.getContinuation
-import com.arubr.smsvcodes.innertube.models.response.BrowseResponse
-import com.arubr.smsvcodes.innertube.models.watchPlaylistEndpointFor
+import io.github.aedev.flow.innertube.models.Album
+import io.github.aedev.flow.innertube.models.Artist
+import io.github.aedev.flow.innertube.models.ArtistItem
+import io.github.aedev.flow.innertube.models.GridRenderer
+import io.github.aedev.flow.innertube.models.MusicCarouselShelfRenderer
+import io.github.aedev.flow.innertube.models.MusicResponsiveListItemRenderer
+import io.github.aedev.flow.innertube.models.MusicShelfRenderer
+import io.github.aedev.flow.innertube.models.PlaylistItem
+import io.github.aedev.flow.innertube.models.SongItem
+import io.github.aedev.flow.innertube.models.YTItem
+import io.github.aedev.flow.innertube.models.getContinuation
+import io.github.aedev.flow.innertube.models.response.BrowseResponse
+import io.github.aedev.flow.innertube.models.watchPlaylistEndpointFor
 import java.net.URLDecoder
 import java.util.Base64
 

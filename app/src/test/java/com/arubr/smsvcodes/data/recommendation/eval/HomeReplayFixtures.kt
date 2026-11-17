@@ -5,18 +5,18 @@
  * Test-source-set only — never shipped in the APK.
  */
 
-package com.arubr.smsvcodes.data.recommendation.eval
+package io.github.aedev.flow.data.recommendation.eval
 
-import com.arubr.smsvcodes.data.model.Video
-import com.arubr.smsvcodes.data.recommendation.NeuroCategoryStore
-import com.arubr.smsvcodes.data.recommendation.NeuroCoWatchStore
-import com.arubr.smsvcodes.data.recommendation.NeuroKeySpec
-import com.arubr.smsvcodes.data.recommendation.NeuroStorage
-import com.arubr.smsvcodes.data.recommendation.snapshot.HomeSnapshot
-import com.arubr.smsvcodes.data.recommendation.snapshot.SnapshotRelated
-import com.arubr.smsvcodes.data.recommendation.snapshot.SnapshotSearch
-import com.arubr.smsvcodes.data.recommendation.snapshot.SnapshotSeed
-import com.arubr.smsvcodes.data.recommendation.snapshot.SnapshotVideo
+import io.github.aedev.flow.data.model.Video
+import io.github.aedev.flow.data.recommendation.NeuroCategoryStore
+import io.github.aedev.flow.data.recommendation.NeuroCoWatchStore
+import io.github.aedev.flow.data.recommendation.NeuroKeySpec
+import io.github.aedev.flow.data.recommendation.NeuroStorage
+import io.github.aedev.flow.data.recommendation.snapshot.HomeSnapshot
+import io.github.aedev.flow.data.recommendation.snapshot.SnapshotRelated
+import io.github.aedev.flow.data.recommendation.snapshot.SnapshotSearch
+import io.github.aedev.flow.data.recommendation.snapshot.SnapshotSeed
+import io.github.aedev.flow.data.recommendation.snapshot.SnapshotVideo
 import io.mockk.mockk
 import kotlinx.coroutines.runBlocking
 import kotlinx.serialization.json.Json

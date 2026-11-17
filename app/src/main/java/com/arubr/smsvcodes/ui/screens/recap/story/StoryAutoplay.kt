@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.screens.recap.story
+package io.github.aedev.flow.ui.screens.recap.story
 
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.AnimationVector1D

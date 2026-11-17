@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.innertube.pages.search
+package io.github.aedev.flow.innertube.pages.search
 
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonArray

@@ -1,10 +1,10 @@
-package com.arubr.smsvcodes.data.recommendation
+package io.github.aedev.flow.data.recommendation
 
-import com.arubr.smsvcodes.data.local.SubscriptionRepository
-import com.arubr.smsvcodes.data.local.dao.CacheDao
-import com.arubr.smsvcodes.data.local.dao.VideoDao
-import com.arubr.smsvcodes.data.subscriptions.ChannelRssClient
-import com.arubr.smsvcodes.utils.PerformanceDispatcher
+import io.github.aedev.flow.data.local.SubscriptionRepository
+import io.github.aedev.flow.data.local.dao.CacheDao
+import io.github.aedev.flow.data.local.dao.VideoDao
+import io.github.aedev.flow.data.subscriptions.ChannelRssClient
+import io.github.aedev.flow.utils.PerformanceDispatcher
 import kotlinx.coroutines.async
 import kotlinx.coroutines.awaitAll
 import kotlinx.coroutines.coroutineScope

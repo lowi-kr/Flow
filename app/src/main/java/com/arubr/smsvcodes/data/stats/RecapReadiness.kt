@@ -1,11 +1,11 @@
-package com.arubr.smsvcodes.data.stats
+package io.github.aedev.flow.data.stats
 
 import android.content.Context
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.stringPreferencesKey
 import dagger.hilt.android.qualifiers.ApplicationContext
-import com.arubr.smsvcodes.data.local.safePreferencesDataStore
-import com.arubr.smsvcodes.data.recommendation.music.MusicBrainEngine
+import io.github.aedev.flow.data.local.safePreferencesDataStore
+import io.github.aedev.flow.data.recommendation.music.MusicBrainEngine
 import kotlinx.coroutines.flow.first
 import java.time.YearMonth
 import javax.inject.Inject

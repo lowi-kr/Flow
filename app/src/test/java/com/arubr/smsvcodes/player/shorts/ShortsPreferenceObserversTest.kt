@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.player.shorts
+package io.github.aedev.flow.player.shorts
 
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.MutableStateFlow

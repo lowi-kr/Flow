@@ -1,9 +1,9 @@
-package com.arubr.smsvcodes.data.music.artwork
+package io.github.aedev.flow.data.music.artwork
 
-import com.arubr.smsvcodes.data.music.model.MusicTrack
-import com.arubr.smsvcodes.data.music.model.musicArtistKey
-import com.arubr.smsvcodes.data.music.model.musicBaseTitle
-import com.arubr.smsvcodes.data.music.model.musicTitleKey
+import io.github.aedev.flow.data.music.model.MusicTrack
+import io.github.aedev.flow.data.music.model.musicArtistKey
+import io.github.aedev.flow.data.music.model.musicBaseTitle
+import io.github.aedev.flow.data.music.model.musicTitleKey
 import kotlinx.serialization.Serializable
 
 /** What the artwork service answers: the matched song and, when its album has one, the loop. */

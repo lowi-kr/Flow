@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.player.renderer.subtitle
+package io.github.aedev.flow.player.renderer.subtitle
 
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse

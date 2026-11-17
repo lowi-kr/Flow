@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.musicplayer.queue
+package io.github.aedev.flow.ui.components.musicplayer.queue
 
 import androidx.compose.animation.core.Spring
 import androidx.compose.animation.core.animateFloatAsState
@@ -52,11 +52,11 @@ import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.data.music.model.MusicTrack
-import com.arubr.smsvcodes.player.RepeatMode
-import com.arubr.smsvcodes.ui.components.shared.FlowSwitch
-import com.arubr.smsvcodes.ui.components.shared.rememberReorderableLazyListState
+import io.github.aedev.flow.R
+import io.github.aedev.flow.data.music.model.MusicTrack
+import io.github.aedev.flow.player.RepeatMode
+import io.github.aedev.flow.ui.components.shared.FlowSwitch
+import io.github.aedev.flow.ui.components.shared.rememberReorderableLazyListState
 import sh.calvin.reorderable.ReorderableItem
 import sh.calvin.reorderable.rememberReorderableLazyListState
 

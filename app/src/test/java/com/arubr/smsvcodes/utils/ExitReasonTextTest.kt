@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.utils
+package io.github.aedev.flow.utils
 
 import android.app.ApplicationExitInfo
 import com.google.common.truth.Truth.assertThat

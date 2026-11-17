@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.screens.notes
+package io.github.aedev.flow.ui.screens.notes
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -48,22 +48,22 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.data.notes.Note
-import com.arubr.smsvcodes.data.notes.NoteKind
-import com.arubr.smsvcodes.data.notes.NoteMoments
-import com.arubr.smsvcodes.ui.components.layout.flowBottomContentPadding
-import com.arubr.smsvcodes.ui.components.shared.ChannelAvatarImage
-import com.arubr.smsvcodes.ui.components.shared.DurationBadge
-import com.arubr.smsvcodes.ui.components.shared.FlowActionButtonPair
-import com.arubr.smsvcodes.ui.components.shared.FlowNavRow
-import com.arubr.smsvcodes.ui.components.shared.FlowPairAction
-import com.arubr.smsvcodes.ui.components.shared.FlowRowGroup
-import com.arubr.smsvcodes.ui.components.shared.FlowSectionHeader
-import com.arubr.smsvcodes.ui.components.shared.VideoThumbnailImage
-import com.arubr.smsvcodes.ui.components.shared.flowRowGroupShape
-import com.arubr.smsvcodes.ui.components.shared.rememberNoteText
-import com.arubr.smsvcodes.utils.formatDurationMillis
+import io.github.aedev.flow.R
+import io.github.aedev.flow.data.notes.Note
+import io.github.aedev.flow.data.notes.NoteKind
+import io.github.aedev.flow.data.notes.NoteMoments
+import io.github.aedev.flow.ui.components.layout.flowBottomContentPadding
+import io.github.aedev.flow.ui.components.shared.ChannelAvatarImage
+import io.github.aedev.flow.ui.components.shared.DurationBadge
+import io.github.aedev.flow.ui.components.shared.FlowActionButtonPair
+import io.github.aedev.flow.ui.components.shared.FlowNavRow
+import io.github.aedev.flow.ui.components.shared.FlowPairAction
+import io.github.aedev.flow.ui.components.shared.FlowRowGroup
+import io.github.aedev.flow.ui.components.shared.FlowSectionHeader
+import io.github.aedev.flow.ui.components.shared.VideoThumbnailImage
+import io.github.aedev.flow.ui.components.shared.flowRowGroupShape
+import io.github.aedev.flow.ui.components.shared.rememberNoteText
+import io.github.aedev.flow.utils.formatDurationMillis
 
 private val TwoColumnMinWidth = 720.dp
 private val ChannelAvatarLarge = 96.dp
@@ -270,7 +270,7 @@ internal fun NoteMenuButton(
 @Composable
 private fun ColumnScope.NoteBody(
     note: Note,
-    moments: List<com.arubr.smsvcodes.data.notes.NoteMoment>,
+    moments: List<io.github.aedev.flow.data.notes.NoteMoment>,
     durationMs: Long,
     onPlay: (Long?) -> Unit,
 ) {

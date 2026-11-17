@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.screens.settings.appearance.theme
+package io.github.aedev.flow.ui.screens.settings.appearance.theme
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -42,18 +42,18 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.ui.components.settings.SettingsPage
-import com.arubr.smsvcodes.ui.components.settings.nav
-import com.arubr.smsvcodes.ui.components.settings.toggleGroup
-import com.arubr.smsvcodes.ui.components.shared.FlowColorPickerDialog
-import com.arubr.smsvcodes.ui.components.shared.FlowToggleOption
-import com.arubr.smsvcodes.ui.screens.settings.appearance.themeVariantLabel
-import com.arubr.smsvcodes.ui.screens.settings.index.CustomThemeIndex
-import com.arubr.smsvcodes.ui.theme.CustomTheme
-import com.arubr.smsvcodes.ui.theme.ThemeVariant
-import com.arubr.smsvcodes.ui.theme.toColorScheme
-import com.arubr.smsvcodes.utils.toHexRgb
+import io.github.aedev.flow.R
+import io.github.aedev.flow.ui.components.settings.SettingsPage
+import io.github.aedev.flow.ui.components.settings.nav
+import io.github.aedev.flow.ui.components.settings.toggleGroup
+import io.github.aedev.flow.ui.components.shared.FlowColorPickerDialog
+import io.github.aedev.flow.ui.components.shared.FlowToggleOption
+import io.github.aedev.flow.ui.screens.settings.appearance.themeVariantLabel
+import io.github.aedev.flow.ui.screens.settings.index.CustomThemeIndex
+import io.github.aedev.flow.ui.theme.CustomTheme
+import io.github.aedev.flow.ui.theme.ThemeVariant
+import io.github.aedev.flow.ui.theme.toColorScheme
+import io.github.aedev.flow.utils.toHexRgb
 import kotlinx.coroutines.launch
 import kotlin.math.roundToInt
 

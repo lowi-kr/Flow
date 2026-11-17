@@ -1,6 +1,6 @@
-package com.arubr.smsvcodes.innertube.models.body
+package io.github.aedev.flow.innertube.models.body
 
-import com.arubr.smsvcodes.innertube.models.Context
+import io.github.aedev.flow.innertube.models.Context
 import kotlinx.serialization.Serializable
 
 @Serializable

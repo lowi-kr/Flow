@@ -1,10 +1,10 @@
-package com.arubr.smsvcodes.ui.screens.library
+package io.github.aedev.flow.ui.screens.library
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.ui.components.library.LibrarySection
+import io.github.aedev.flow.R
+import io.github.aedev.flow.ui.components.library.LibrarySection
 
 /** Null while the counts are still loading, so a row never flashes a wrong "0". */
 @Composable

@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.player.error
+package io.github.aedev.flow.player.error
 
 import com.google.common.truth.Truth.assertThat
 import org.junit.Test

@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.data.subscriptions
+package io.github.aedev.flow.data.subscriptions
 
 import com.google.common.truth.Truth.assertThat
 import kotlinx.coroutines.test.runTest

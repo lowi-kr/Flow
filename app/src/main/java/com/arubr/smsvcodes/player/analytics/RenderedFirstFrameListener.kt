@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.player.analytics
+package io.github.aedev.flow.player.analytics
 
 import androidx.media3.common.Timeline
 import androidx.media3.common.util.UnstableApi

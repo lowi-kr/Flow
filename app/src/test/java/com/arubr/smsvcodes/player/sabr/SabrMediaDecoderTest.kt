@@ -1,6 +1,6 @@
-package com.arubr.smsvcodes.player.sabr
+package io.github.aedev.flow.player.sabr
 
-import com.arubr.smsvcodes.player.sabr.core.SabrMediaDecoder
+import io.github.aedev.flow.player.sabr.core.SabrMediaDecoder
 import org.junit.Assert.assertArrayEquals
 import org.junit.Assert.assertThrows
 import org.junit.Test

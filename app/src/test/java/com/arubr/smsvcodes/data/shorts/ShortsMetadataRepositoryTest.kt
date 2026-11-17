@@ -1,6 +1,6 @@
-package com.arubr.smsvcodes.data.shorts
+package io.github.aedev.flow.data.shorts
 
-import com.arubr.smsvcodes.innertube.pages.reel.ReelOverlay
+import io.github.aedev.flow.innertube.pages.reel.ReelOverlay
 import kotlinx.coroutines.runBlocking
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNull

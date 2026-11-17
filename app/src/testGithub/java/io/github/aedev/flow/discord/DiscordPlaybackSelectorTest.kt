@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.discord
+package io.github.aedev.flow.discord
 
 import com.google.common.truth.Truth.assertThat
 import org.junit.Test

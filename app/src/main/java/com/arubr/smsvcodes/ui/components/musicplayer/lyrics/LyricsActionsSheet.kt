@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.musicplayer.lyrics
+package io.github.aedev.flow.ui.components.musicplayer.lyrics
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.PaddingValues
@@ -43,17 +43,17 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.data.local.LYRICS_ALIGN_CENTER
-import com.arubr.smsvcodes.data.local.LYRICS_ALIGN_LEFT
-import com.arubr.smsvcodes.data.local.LYRICS_ALIGN_RIGHT
-import com.arubr.smsvcodes.ui.components.shared.FlowAlertDialog
-import com.arubr.smsvcodes.ui.components.shared.FlowNavRow
-import com.arubr.smsvcodes.ui.components.shared.FlowSectionHeader
-import com.arubr.smsvcodes.ui.components.shared.FlowSwitchRow
-import com.arubr.smsvcodes.ui.components.shared.quickactions.QuickActionRow
-import com.arubr.smsvcodes.ui.components.shared.quickactions.QuickActionsGroup
-import com.arubr.smsvcodes.ui.components.shared.quickactions.QuickActionsSheet
+import io.github.aedev.flow.R
+import io.github.aedev.flow.data.local.LYRICS_ALIGN_CENTER
+import io.github.aedev.flow.data.local.LYRICS_ALIGN_LEFT
+import io.github.aedev.flow.data.local.LYRICS_ALIGN_RIGHT
+import io.github.aedev.flow.ui.components.shared.FlowAlertDialog
+import io.github.aedev.flow.ui.components.shared.FlowNavRow
+import io.github.aedev.flow.ui.components.shared.FlowSectionHeader
+import io.github.aedev.flow.ui.components.shared.FlowSwitchRow
+import io.github.aedev.flow.ui.components.shared.quickactions.QuickActionRow
+import io.github.aedev.flow.ui.components.shared.quickactions.QuickActionsGroup
+import io.github.aedev.flow.ui.components.shared.quickactions.QuickActionsSheet
 import java.util.Locale
 
 @Composable

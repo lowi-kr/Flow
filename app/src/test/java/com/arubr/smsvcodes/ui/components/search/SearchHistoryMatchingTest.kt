@@ -1,7 +1,7 @@
-package com.arubr.smsvcodes.ui.components.search
+package io.github.aedev.flow.ui.components.search
 
 import com.google.common.truth.Truth.assertThat
-import com.arubr.smsvcodes.data.local.SearchHistoryItem
+import io.github.aedev.flow.data.local.SearchHistoryItem
 import org.junit.Test
 
 class SearchHistoryMatchingTest {

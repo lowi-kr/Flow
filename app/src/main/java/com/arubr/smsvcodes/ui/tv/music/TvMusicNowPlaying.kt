@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.tv.music
+package io.github.aedev.flow.ui.tv.music
 
 import androidx.activity.compose.BackHandler
 import androidx.compose.material3.MaterialTheme
@@ -6,10 +6,10 @@ import androidx.compose.material3.MotionScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.arubr.smsvcodes.data.music.model.MusicTrack
-import com.arubr.smsvcodes.player.EnhancedMusicPlayerManager
-import com.arubr.smsvcodes.ui.components.musicplayer.common.rememberMusicPlayerAppearance
-import com.arubr.smsvcodes.ui.components.musicplayer.full.FullMusicPlayerContent
+import io.github.aedev.flow.data.music.model.MusicTrack
+import io.github.aedev.flow.player.EnhancedMusicPlayerManager
+import io.github.aedev.flow.ui.components.musicplayer.common.rememberMusicPlayerAppearance
+import io.github.aedev.flow.ui.components.musicplayer.full.FullMusicPlayerContent
 
 /**
  * TV's full music player: the phone's player, which a 960 dp landscape window lays out wide, artwork

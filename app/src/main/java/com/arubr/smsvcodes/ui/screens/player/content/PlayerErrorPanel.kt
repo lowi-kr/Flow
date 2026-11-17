@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.screens.player.content
+package io.github.aedev.flow.ui.screens.player.content
 
 import android.content.Context
 import android.widget.Toast
@@ -30,9 +30,9 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.player.error.PlayerDiagnostics
-import com.arubr.smsvcodes.utils.openInYouTube
+import io.github.aedev.flow.R
+import io.github.aedev.flow.player.error.PlayerDiagnostics
+import io.github.aedev.flow.utils.openInYouTube
 
 private val ButtonPadding = PaddingValues(horizontal = 14.dp, vertical = 8.dp)
 

@@ -1,8 +1,8 @@
-package com.arubr.smsvcodes.data.local.entity
+package io.github.aedev.flow.data.local.entity
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.arubr.smsvcodes.data.model.Video
+import io.github.aedev.flow.data.model.Video
 
 @Entity(tableName = "videos")
 data class VideoEntity(

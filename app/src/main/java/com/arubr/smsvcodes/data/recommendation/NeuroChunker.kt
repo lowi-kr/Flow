@@ -4,7 +4,7 @@
  * This file is part of Flow (https://github.com/Flow-Tube/Flow).
  */
 
-package com.arubr.smsvcodes.data.recommendation
+package io.github.aedev.flow.data.recommendation
 
 /**
  * Stages 2 to 6 of [NeuroKeySpec]: folded text into chunks of words that belong together. A title

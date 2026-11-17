@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.shared.quickactions
+package io.github.aedev.flow.ui.components.shared.quickactions
 
 import android.content.ClipData
 import android.os.Build
@@ -38,26 +38,26 @@ import androidx.compose.ui.platform.LocalClipboard
 import androidx.compose.ui.platform.LocalHapticFeedback
 import androidx.compose.ui.res.stringResource
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.data.model.Video
-import com.arubr.smsvcodes.data.model.VideoCollaborator
-import com.arubr.smsvcodes.ui.components.layout.navigation.LocalMediaNavigator
-import com.arubr.smsvcodes.ui.components.shared.ChannelAvatarStack
-import com.arubr.smsvcodes.ui.components.shared.FlowNavRow
-import com.arubr.smsvcodes.ui.components.shared.FlowSubscribeButton
-import com.arubr.smsvcodes.ui.components.shared.FlowSubscribeButtonSize
-import com.arubr.smsvcodes.ui.components.shared.MediaThumbnail
-import com.arubr.smsvcodes.ui.components.shared.SaveVideoSheet
-import com.arubr.smsvcodes.ui.components.shared.card.LocalVideoCardPreferences
-import com.arubr.smsvcodes.ui.components.shared.card.channelAvatarUrls
-import com.arubr.smsvcodes.ui.components.shared.card.isWatchedProgress
-import com.arubr.smsvcodes.ui.components.shared.card.rememberCardTitle
-import com.arubr.smsvcodes.ui.components.shared.card.rememberCollaboratorChannelDisplayName
-import com.arubr.smsvcodes.ui.components.shared.card.rememberCollaboratorItems
-import com.arubr.smsvcodes.ui.components.shared.card.rememberWatchProgress
-import com.arubr.smsvcodes.ui.components.shared.collaboratorRows
-import com.arubr.smsvcodes.ui.components.shared.rememberVideoShareAction
-import com.arubr.smsvcodes.utils.youtubeWatchUrl
+import io.github.aedev.flow.R
+import io.github.aedev.flow.data.model.Video
+import io.github.aedev.flow.data.model.VideoCollaborator
+import io.github.aedev.flow.ui.components.layout.navigation.LocalMediaNavigator
+import io.github.aedev.flow.ui.components.shared.ChannelAvatarStack
+import io.github.aedev.flow.ui.components.shared.FlowNavRow
+import io.github.aedev.flow.ui.components.shared.FlowSubscribeButton
+import io.github.aedev.flow.ui.components.shared.FlowSubscribeButtonSize
+import io.github.aedev.flow.ui.components.shared.MediaThumbnail
+import io.github.aedev.flow.ui.components.shared.SaveVideoSheet
+import io.github.aedev.flow.ui.components.shared.card.LocalVideoCardPreferences
+import io.github.aedev.flow.ui.components.shared.card.channelAvatarUrls
+import io.github.aedev.flow.ui.components.shared.card.isWatchedProgress
+import io.github.aedev.flow.ui.components.shared.card.rememberCardTitle
+import io.github.aedev.flow.ui.components.shared.card.rememberCollaboratorChannelDisplayName
+import io.github.aedev.flow.ui.components.shared.card.rememberCollaboratorItems
+import io.github.aedev.flow.ui.components.shared.card.rememberWatchProgress
+import io.github.aedev.flow.ui.components.shared.collaboratorRows
+import io.github.aedev.flow.ui.components.shared.rememberVideoShareAction
+import io.github.aedev.flow.utils.youtubeWatchUrl
 import kotlinx.coroutines.launch
 
 private enum class VideoMenuPage { Actions, Details, Collaborators, Save }

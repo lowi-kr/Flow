@@ -1,13 +1,13 @@
-package com.arubr.smsvcodes
+package io.github.aedev.flow
 
 import android.app.Activity
 import android.app.Application
 import android.os.Bundle
 import android.util.Log
-import com.arubr.smsvcodes.innertube.YouTube
-import com.arubr.smsvcodes.utils.cipher.CipherDeobfuscator
-import com.arubr.smsvcodes.utils.cipher.PipePipeNsigDecoder
-import com.arubr.smsvcodes.utils.potoken.WebPoTokenSession
+import io.github.aedev.flow.innertube.YouTube
+import io.github.aedev.flow.utils.cipher.CipherDeobfuscator
+import io.github.aedev.flow.utils.cipher.PipePipeNsigDecoder
+import io.github.aedev.flow.utils.potoken.WebPoTokenSession
 import kotlinx.coroutines.CompletableDeferred
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers

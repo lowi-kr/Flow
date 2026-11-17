@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.screens.recap.story
+package io.github.aedev.flow.ui.screens.recap.story
 
 import androidx.compose.animation.animateColorAsState
 import androidx.compose.foundation.gestures.detectTapGestures
@@ -57,15 +57,15 @@ import androidx.compose.ui.unit.dp
 import androidx.core.os.ConfigurationCompat
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.data.stats.RecapPeriod
-import com.arubr.smsvcodes.data.stats.RecapSummary
-import com.arubr.smsvcodes.ui.components.layout.LocalFlowBottomInsets
-import com.arubr.smsvcodes.ui.components.shared.FlowLoadingIndicator
-import com.arubr.smsvcodes.ui.components.shared.drawSegmentedProgress
-import com.arubr.smsvcodes.ui.components.stats.spentTimeLabel
-import com.arubr.smsvcodes.ui.screens.recap.RecapSource
-import com.arubr.smsvcodes.ui.screens.recap.RecapViewModel
+import io.github.aedev.flow.R
+import io.github.aedev.flow.data.stats.RecapPeriod
+import io.github.aedev.flow.data.stats.RecapSummary
+import io.github.aedev.flow.ui.components.layout.LocalFlowBottomInsets
+import io.github.aedev.flow.ui.components.shared.FlowLoadingIndicator
+import io.github.aedev.flow.ui.components.shared.drawSegmentedProgress
+import io.github.aedev.flow.ui.components.stats.spentTimeLabel
+import io.github.aedev.flow.ui.screens.recap.RecapSource
+import io.github.aedev.flow.ui.screens.recap.RecapViewModel
 import kotlinx.coroutines.launch
 import java.time.format.TextStyle
 import java.util.Locale

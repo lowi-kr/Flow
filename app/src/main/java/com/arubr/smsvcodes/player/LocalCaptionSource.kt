@@ -1,6 +1,6 @@
-package com.arubr.smsvcodes.player
+package io.github.aedev.flow.player
 
-import com.arubr.smsvcodes.player.stream.ResolvedCaption
+import io.github.aedev.flow.player.stream.ResolvedCaption
 
 /** A local file's captions and the timing saved for it. */
 data class LocalCaptions(

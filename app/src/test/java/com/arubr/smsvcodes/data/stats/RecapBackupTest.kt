@@ -1,9 +1,9 @@
-package com.arubr.smsvcodes.data.stats
+package io.github.aedev.flow.data.stats
 
 import com.google.common.truth.Truth.assertThat
-import com.arubr.smsvcodes.data.recommendation.music.MusicStatsLedger
-import com.arubr.smsvcodes.data.recommendation.music.MusicStatsLedgerOps
-import com.arubr.smsvcodes.data.recommendation.music.toSerializable
+import io.github.aedev.flow.data.recommendation.music.MusicStatsLedger
+import io.github.aedev.flow.data.recommendation.music.MusicStatsLedgerOps
+import io.github.aedev.flow.data.recommendation.music.toSerializable
 import org.junit.Test
 
 class RecapBackupTest {

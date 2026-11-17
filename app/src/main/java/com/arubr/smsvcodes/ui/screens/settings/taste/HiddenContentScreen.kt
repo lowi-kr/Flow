@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.screens.settings.taste
+package io.github.aedev.flow.ui.screens.settings.taste
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.VisibilityOff
@@ -21,10 +21,10 @@ import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.ui.components.settings.SettingsListScope
-import com.arubr.smsvcodes.ui.components.settings.SettingsPage
-import com.arubr.smsvcodes.ui.components.shared.FlowEmptyState
+import io.github.aedev.flow.R
+import io.github.aedev.flow.ui.components.settings.SettingsListScope
+import io.github.aedev.flow.ui.components.settings.SettingsPage
+import io.github.aedev.flow.ui.components.shared.FlowEmptyState
 
 /** Every topic, channel and artist blocked in either engine, each one tap from coming back. */
 @Composable

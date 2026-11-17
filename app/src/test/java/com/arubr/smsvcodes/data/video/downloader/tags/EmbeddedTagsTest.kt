@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.data.video.downloader.tags
+package io.github.aedev.flow.data.video.downloader.tags
 
 import androidx.media3.container.MdtaMetadataEntry
 import androidx.media3.extractor.metadata.id3.ApicFrame

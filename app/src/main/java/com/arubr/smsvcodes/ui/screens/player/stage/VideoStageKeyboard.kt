@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.screens.player.stage
+package io.github.aedev.flow.ui.screens.player.stage
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
@@ -6,16 +6,16 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.media3.common.util.UnstableApi
-import com.arubr.smsvcodes.data.local.PlayerPreferences
-import com.arubr.smsvcodes.player.EnhancedPlayerManager
-import com.arubr.smsvcodes.player.PlayerHardwareController
-import com.arubr.smsvcodes.ui.components.shared.MediaKeyAction
-import com.arubr.smsvcodes.ui.components.shared.mediaKeyboardShortcuts
-import com.arubr.smsvcodes.ui.components.shared.playbackSpeedOptions
-import com.arubr.smsvcodes.ui.components.shared.stepPlaybackSpeed
-import com.arubr.smsvcodes.ui.components.videoplayer.controls.PlayerControlActions
-import com.arubr.smsvcodes.ui.screens.player.saveChosenPlaybackSpeed
-import com.arubr.smsvcodes.ui.screens.player.state.PlayerSheet
+import io.github.aedev.flow.data.local.PlayerPreferences
+import io.github.aedev.flow.player.EnhancedPlayerManager
+import io.github.aedev.flow.player.PlayerHardwareController
+import io.github.aedev.flow.ui.components.shared.MediaKeyAction
+import io.github.aedev.flow.ui.components.shared.mediaKeyboardShortcuts
+import io.github.aedev.flow.ui.components.shared.playbackSpeedOptions
+import io.github.aedev.flow.ui.components.shared.stepPlaybackSpeed
+import io.github.aedev.flow.ui.components.videoplayer.controls.PlayerControlActions
+import io.github.aedev.flow.ui.screens.player.saveChosenPlaybackSpeed
+import io.github.aedev.flow.ui.screens.player.state.PlayerSheet
 
 /**
  * Keyboard shortcuts for the expanded video player, through the same actions as its buttons. They

@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.screens.notes
+package io.github.aedev.flow.ui.screens.notes
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
@@ -27,14 +27,14 @@ import androidx.compose.ui.semantics.CustomAccessibilityAction
 import androidx.compose.ui.semantics.customActions
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.dp
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.data.notes.Note
-import com.arubr.smsvcodes.data.notes.NoteKind
-import com.arubr.smsvcodes.ui.components.layout.flowContentPadding
-import com.arubr.smsvcodes.ui.components.shared.ChannelAvatarImage
-import com.arubr.smsvcodes.ui.components.shared.MediaRow
-import com.arubr.smsvcodes.ui.components.shared.MediaThumbnail
-import com.arubr.smsvcodes.ui.components.shared.ReorderHandle
+import io.github.aedev.flow.R
+import io.github.aedev.flow.data.notes.Note
+import io.github.aedev.flow.data.notes.NoteKind
+import io.github.aedev.flow.ui.components.layout.flowContentPadding
+import io.github.aedev.flow.ui.components.shared.ChannelAvatarImage
+import io.github.aedev.flow.ui.components.shared.MediaRow
+import io.github.aedev.flow.ui.components.shared.MediaThumbnail
+import io.github.aedev.flow.ui.components.shared.ReorderHandle
 import sh.calvin.reorderable.ReorderableItem
 import sh.calvin.reorderable.rememberReorderableLazyListState
 

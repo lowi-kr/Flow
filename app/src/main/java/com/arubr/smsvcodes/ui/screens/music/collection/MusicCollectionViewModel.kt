@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.screens.music.collection
+package io.github.aedev.flow.ui.screens.music.collection
 
 import android.content.Context
 import android.net.Uri
@@ -8,26 +8,26 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.data.engagement.LikedMediaUseCase
-import com.arubr.smsvcodes.data.local.LikedVideosRepository
-import com.arubr.smsvcodes.data.local.PlayerPreferences
-import com.arubr.smsvcodes.data.local.PlaylistRepository
-import com.arubr.smsvcodes.data.local.SavedPlaylistSyncStore
-import com.arubr.smsvcodes.data.model.PlaylistInfo
-import com.arubr.smsvcodes.data.music.YouTubeMusicService
-import com.arubr.smsvcodes.data.music.model.MusicTrack
-import com.arubr.smsvcodes.data.music.model.PlaylistDetails
-import com.arubr.smsvcodes.data.playlist.PlaylistFileCodec
-import com.arubr.smsvcodes.data.playlist.PlaylistTransfer
-import com.arubr.smsvcodes.data.recommendation.music.DailyMixStore
-import com.arubr.smsvcodes.data.recommendation.music.graph.MusicGraphStore
-import com.arubr.smsvcodes.data.video.BackgroundDownloadQueuer
-import com.arubr.smsvcodes.data.video.downloader.collection.DownloadedCollections
-import com.arubr.smsvcodes.ui.components.shared.quickactions.QuickActionUndo
-import com.arubr.smsvcodes.ui.screens.music.MusicViewModel
-import com.arubr.smsvcodes.ui.screens.music.saveMusicCollection
-import com.arubr.smsvcodes.utils.PerformanceDispatcher
+import io.github.aedev.flow.R
+import io.github.aedev.flow.data.engagement.LikedMediaUseCase
+import io.github.aedev.flow.data.local.LikedVideosRepository
+import io.github.aedev.flow.data.local.PlayerPreferences
+import io.github.aedev.flow.data.local.PlaylistRepository
+import io.github.aedev.flow.data.local.SavedPlaylistSyncStore
+import io.github.aedev.flow.data.model.PlaylistInfo
+import io.github.aedev.flow.data.music.YouTubeMusicService
+import io.github.aedev.flow.data.music.model.MusicTrack
+import io.github.aedev.flow.data.music.model.PlaylistDetails
+import io.github.aedev.flow.data.playlist.PlaylistFileCodec
+import io.github.aedev.flow.data.playlist.PlaylistTransfer
+import io.github.aedev.flow.data.recommendation.music.DailyMixStore
+import io.github.aedev.flow.data.recommendation.music.graph.MusicGraphStore
+import io.github.aedev.flow.data.video.BackgroundDownloadQueuer
+import io.github.aedev.flow.data.video.downloader.collection.DownloadedCollections
+import io.github.aedev.flow.ui.components.shared.quickactions.QuickActionUndo
+import io.github.aedev.flow.ui.screens.music.MusicViewModel
+import io.github.aedev.flow.ui.screens.music.saveMusicCollection
+import io.github.aedev.flow.utils.PerformanceDispatcher
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.Flow
@@ -44,7 +44,7 @@ import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withTimeoutOrNull
 import javax.inject.Inject
-import com.arubr.smsvcodes.data.music.PlaylistRepository as MusicLibrary
+import io.github.aedev.flow.data.music.PlaylistRepository as MusicLibrary
 
 private const val REMOTE_TIMEOUT_MS = 12_000L
 private const val TAG = "MusicCollectionVM"

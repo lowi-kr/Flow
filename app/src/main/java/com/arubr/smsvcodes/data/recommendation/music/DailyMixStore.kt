@@ -1,6 +1,6 @@
-package com.arubr.smsvcodes.data.recommendation.music
+package io.github.aedev.flow.data.recommendation.music
 
-import com.arubr.smsvcodes.data.recommendation.MusicSection
+import io.github.aedev.flow.data.recommendation.MusicSection
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow

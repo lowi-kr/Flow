@@ -1,7 +1,7 @@
-package com.arubr.smsvcodes.player.sabr
+package io.github.aedev.flow.player.sabr
 
 import com.google.common.truth.Truth.assertThat
-import com.arubr.smsvcodes.player.sabr.core.SabrBase64
+import io.github.aedev.flow.player.sabr.core.SabrBase64
 import org.junit.Test
 import java.util.Base64
 

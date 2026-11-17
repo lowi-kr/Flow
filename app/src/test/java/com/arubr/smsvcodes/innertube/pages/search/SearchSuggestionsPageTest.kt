@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.innertube.pages.search
+package io.github.aedev.flow.innertube.pages.search
 
 import com.google.common.truth.Truth.assertThat
 import org.junit.Test

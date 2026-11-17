@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.screens.player
+package io.github.aedev.flow.ui.screens.player
 
 import androidx.lifecycle.HasDefaultViewModelProviderFactory
 import androidx.lifecycle.ViewModel
@@ -6,15 +6,15 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelStore
 import androidx.lifecycle.ViewModelStoreOwner
 import androidx.lifecycle.viewmodel.CreationExtras
-import com.arubr.smsvcodes.data.model.Comment
-import com.arubr.smsvcodes.data.model.Video
-import com.arubr.smsvcodes.innertube.models.response.PlayerResponse
-import com.arubr.smsvcodes.player.state.AudioTrackOption
-import com.arubr.smsvcodes.player.state.EnhancedPlayerState
-import com.arubr.smsvcodes.player.state.QualityOption
-import com.arubr.smsvcodes.player.state.SubtitleOption
-import com.arubr.smsvcodes.ui.components.shared.quickactions.QuickActionsViewModel
-import com.arubr.smsvcodes.ui.screens.player.state.VideoPlayerUiState
+import io.github.aedev.flow.data.model.Comment
+import io.github.aedev.flow.data.model.Video
+import io.github.aedev.flow.innertube.models.response.PlayerResponse
+import io.github.aedev.flow.player.state.AudioTrackOption
+import io.github.aedev.flow.player.state.EnhancedPlayerState
+import io.github.aedev.flow.player.state.QualityOption
+import io.github.aedev.flow.player.state.SubtitleOption
+import io.github.aedev.flow.ui.components.shared.quickactions.QuickActionsViewModel
+import io.github.aedev.flow.ui.screens.player.state.VideoPlayerUiState
 import io.mockk.every
 import io.mockk.mockk
 import io.mockk.mockkClass
@@ -94,7 +94,7 @@ internal fun fakeUiState(
         innerTubeAudioFormats = innerTubeAudioFormats,
     )
 
-/** An InnerTube adaptive format with just enough metadata for [com.arubr.smsvcodes.player.stream.InnerTubeStreamBridge]. */
+/** An InnerTube adaptive format with just enough metadata for [io.github.aedev.flow.player.stream.InnerTubeStreamBridge]. */
 internal fun fakeInnerTubeFormat(
     itag: Int,
     mimeType: String,

@@ -1,8 +1,8 @@
-package com.arubr.smsvcodes.data.repository
+package io.github.aedev.flow.data.repository
 
 import com.google.common.truth.Truth.assertThat
-import com.arubr.smsvcodes.data.local.SponsorBlockAction
-import com.arubr.smsvcodes.data.model.SponsorBlockCategories
+import io.github.aedev.flow.data.local.SponsorBlockAction
+import io.github.aedev.flow.data.model.SponsorBlockCategories
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.jsonArray
 import kotlinx.serialization.json.jsonPrimitive

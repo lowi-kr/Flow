@@ -1,7 +1,7 @@
-package com.arubr.smsvcodes.sync
+package io.github.aedev.flow.sync
 
-import com.arubr.smsvcodes.sync.identity.Hlc
-import com.arubr.smsvcodes.sync.identity.HlcClock
+import io.github.aedev.flow.sync.identity.Hlc
+import io.github.aedev.flow.sync.identity.HlcClock
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertTrue
 import org.junit.Test

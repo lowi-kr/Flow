@@ -1,12 +1,12 @@
-package com.arubr.smsvcodes.ui.tv
+package io.github.aedev.flow.ui.tv
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
-import com.arubr.smsvcodes.data.local.PlayerPreferences
-import com.arubr.smsvcodes.ui.components.layout.navigation.NavigationVisibility
-import com.arubr.smsvcodes.ui.tv.navigation.TvNavigation
-import com.arubr.smsvcodes.ui.tv.navigation.tvNavigation
+import io.github.aedev.flow.data.local.PlayerPreferences
+import io.github.aedev.flow.ui.components.layout.navigation.NavigationVisibility
+import io.github.aedev.flow.ui.tv.navigation.TvNavigation
+import io.github.aedev.flow.ui.tv.navigation.tvNavigation
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.combine

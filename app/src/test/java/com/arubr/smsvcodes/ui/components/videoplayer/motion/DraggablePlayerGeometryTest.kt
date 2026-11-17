@@ -1,7 +1,7 @@
-package com.arubr.smsvcodes.ui.components.videoplayer.motion
+package io.github.aedev.flow.ui.components.videoplayer.motion
 
 import com.google.common.truth.Truth.assertThat
-import com.arubr.smsvcodes.ui.components.videoplayer.MiniPlayerCorner
+import io.github.aedev.flow.ui.components.videoplayer.MiniPlayerCorner
 import org.junit.Test
 
 class DraggablePlayerGeometryTest {

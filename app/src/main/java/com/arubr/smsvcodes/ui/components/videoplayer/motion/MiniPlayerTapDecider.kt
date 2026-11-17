@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.videoplayer.motion
+package io.github.aedev.flow.ui.components.videoplayer.motion
 
 internal enum class MiniPlayerTap { SINGLE_PENDING, DOUBLE }
 

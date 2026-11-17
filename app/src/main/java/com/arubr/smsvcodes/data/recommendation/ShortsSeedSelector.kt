@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.data.recommendation
+package io.github.aedev.flow.data.recommendation
 
 /**
  * Picks the reels a related reel chain is opened from. A reel-only twin of [GraphSeedSelector]:

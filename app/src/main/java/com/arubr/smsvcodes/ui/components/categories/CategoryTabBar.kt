@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.categories
+package io.github.aedev.flow.ui.components.categories
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -19,11 +19,11 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import com.arubr.smsvcodes.innertube.pages.explore.ExploreDestination
-import com.arubr.smsvcodes.ui.components.shared.FlowDropdownFilterChip
-import com.arubr.smsvcodes.ui.components.shared.FlowFilterChip
-import com.arubr.smsvcodes.ui.screens.categories.CATEGORY_TABS
-import com.arubr.smsvcodes.ui.screens.categories.CategorySubTab
+import io.github.aedev.flow.innertube.pages.explore.ExploreDestination
+import io.github.aedev.flow.ui.components.shared.FlowDropdownFilterChip
+import io.github.aedev.flow.ui.components.shared.FlowFilterChip
+import io.github.aedev.flow.ui.screens.categories.CATEGORY_TABS
+import io.github.aedev.flow.ui.screens.categories.CategorySubTab
 
 /** The destination chips, on the same pill the search and channel filter bars use. */
 @Composable

@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.innertube.pages
+package io.github.aedev.flow.innertube.pages
 
 import java.math.BigDecimal
 import java.util.Locale

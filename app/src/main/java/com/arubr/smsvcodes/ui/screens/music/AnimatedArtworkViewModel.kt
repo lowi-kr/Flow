@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.screens.music
+package io.github.aedev.flow.ui.screens.music
 
 import android.content.Context
 import androidx.lifecycle.ViewModel
@@ -10,12 +10,12 @@ import androidx.media3.datasource.cache.SimpleCache
 import androidx.media3.datasource.okhttp.OkHttpDataSource
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
-import com.arubr.smsvcodes.data.local.PlayerPreferences
-import com.arubr.smsvcodes.data.music.artwork.AnimatedArtworkRepository
-import com.arubr.smsvcodes.data.music.model.MusicTrack
-import com.arubr.smsvcodes.di.MusicCache
-import com.arubr.smsvcodes.network.ProxyAwareClient
-import com.arubr.smsvcodes.utils.NetworkState
+import io.github.aedev.flow.data.local.PlayerPreferences
+import io.github.aedev.flow.data.music.artwork.AnimatedArtworkRepository
+import io.github.aedev.flow.data.music.model.MusicTrack
+import io.github.aedev.flow.di.MusicCache
+import io.github.aedev.flow.network.ProxyAwareClient
+import io.github.aedev.flow.utils.NetworkState
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.MutableStateFlow

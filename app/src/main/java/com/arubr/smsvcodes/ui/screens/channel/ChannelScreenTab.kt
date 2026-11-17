@@ -1,8 +1,8 @@
-package com.arubr.smsvcodes.ui.screens.channel
+package io.github.aedev.flow.ui.screens.channel
 
-import com.arubr.smsvcodes.innertube.pages.channel.ChannelHeader
-import com.arubr.smsvcodes.innertube.pages.channel.ChannelTabDescriptor
-import com.arubr.smsvcodes.innertube.pages.channel.ChannelTabKind
+import io.github.aedev.flow.innertube.pages.channel.ChannelHeader
+import io.github.aedev.flow.innertube.pages.channel.ChannelTabDescriptor
+import io.github.aedev.flow.innertube.pages.channel.ChannelTabKind
 
 /** Search is already the magnifier in the filter bar; Store is a shop the app does not implement. */
 private val HIDDEN_TABS = setOf(ChannelTabKind.Search, ChannelTabKind.Store)

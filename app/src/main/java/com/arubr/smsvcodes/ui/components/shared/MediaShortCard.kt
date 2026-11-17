@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.shared
+package io.github.aedev.flow.ui.components.shared
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.combinedClickable
@@ -29,17 +29,17 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.data.model.Video
-import com.arubr.smsvcodes.ui.components.FeedGridLayout
-import com.arubr.smsvcodes.ui.components.rememberDeArrowResult
-import com.arubr.smsvcodes.ui.components.shared.card.LocalVideoCardPreferences
-import com.arubr.smsvcodes.ui.components.shared.card.VideoCardDefaults
-import com.arubr.smsvcodes.ui.components.shared.card.rememberOriginalTitle
-import com.arubr.smsvcodes.ui.components.shared.quickactions.VideoQuickActionsBottomSheet
-import com.arubr.smsvcodes.ui.components.shared.quickactions.sharedQuickActionsViewModel
-import com.arubr.smsvcodes.ui.theme.extendedColors
-import com.arubr.smsvcodes.utils.formatViewCount
+import io.github.aedev.flow.R
+import io.github.aedev.flow.data.model.Video
+import io.github.aedev.flow.ui.components.FeedGridLayout
+import io.github.aedev.flow.ui.components.rememberDeArrowResult
+import io.github.aedev.flow.ui.components.shared.card.LocalVideoCardPreferences
+import io.github.aedev.flow.ui.components.shared.card.VideoCardDefaults
+import io.github.aedev.flow.ui.components.shared.card.rememberOriginalTitle
+import io.github.aedev.flow.ui.components.shared.quickactions.VideoQuickActionsBottomSheet
+import io.github.aedev.flow.ui.components.shared.quickactions.sharedQuickActionsViewModel
+import io.github.aedev.flow.ui.theme.extendedColors
+import io.github.aedev.flow.utils.formatViewCount
 
 /** The one size every Shorts grid and strip agrees on, so cells line up across screens. */
 object ShortCardDefaults {

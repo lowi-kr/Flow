@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.categories
+package io.github.aedev.flow.ui.components.categories
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -18,22 +18,22 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.paging.LoadState
 import androidx.paging.compose.LazyPagingItems
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.data.model.Video
-import com.arubr.smsvcodes.innertube.pages.renderer.FeedItem
-import com.arubr.smsvcodes.ui.components.FeedGridLayout
-import com.arubr.smsvcodes.ui.components.PlaylistCard
-import com.arubr.smsvcodes.ui.components.PlaylistCardLayout
-import com.arubr.smsvcodes.ui.components.layout.flowBottomContentPadding
-import com.arubr.smsvcodes.ui.components.shared.FeedGridSkeleton
-import com.arubr.smsvcodes.ui.components.shared.FeedGridTopPadding
-import com.arubr.smsvcodes.ui.components.shared.FeedPagingFooter
-import com.arubr.smsvcodes.ui.components.shared.FlowEmptyState
-import com.arubr.smsvcodes.ui.components.shared.FlowErrorState
-import com.arubr.smsvcodes.ui.components.shared.card.MediaVideoCard
-import com.arubr.smsvcodes.ui.components.shared.card.VideoCardDefaults
-import com.arubr.smsvcodes.ui.components.shared.card.VideoCardLayout
-import com.arubr.smsvcodes.ui.components.shared.rememberFeedGridPlan
+import io.github.aedev.flow.R
+import io.github.aedev.flow.data.model.Video
+import io.github.aedev.flow.innertube.pages.renderer.FeedItem
+import io.github.aedev.flow.ui.components.FeedGridLayout
+import io.github.aedev.flow.ui.components.PlaylistCard
+import io.github.aedev.flow.ui.components.PlaylistCardLayout
+import io.github.aedev.flow.ui.components.layout.flowBottomContentPadding
+import io.github.aedev.flow.ui.components.shared.FeedGridSkeleton
+import io.github.aedev.flow.ui.components.shared.FeedGridTopPadding
+import io.github.aedev.flow.ui.components.shared.FeedPagingFooter
+import io.github.aedev.flow.ui.components.shared.FlowEmptyState
+import io.github.aedev.flow.ui.components.shared.FlowErrorState
+import io.github.aedev.flow.ui.components.shared.card.MediaVideoCard
+import io.github.aedev.flow.ui.components.shared.card.VideoCardDefaults
+import io.github.aedev.flow.ui.components.shared.card.VideoCardLayout
+import io.github.aedev.flow.ui.components.shared.rememberFeedGridPlan
 
 /** A destination shelf's "see all", paged. */
 @Composable

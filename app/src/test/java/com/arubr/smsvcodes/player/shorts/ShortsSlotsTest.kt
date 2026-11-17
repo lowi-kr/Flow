@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.player.shorts
+package io.github.aedev.flow.player.shorts
 
 import com.google.common.truth.Truth.assertThat
 import org.junit.Test

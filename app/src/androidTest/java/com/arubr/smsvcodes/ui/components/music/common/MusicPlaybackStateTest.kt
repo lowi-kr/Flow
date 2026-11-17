@@ -4,16 +4,16 @@
  * This file is part of Flow (https://github.com/Flow-Tube/Flow).
  */
 
-package com.arubr.smsvcodes.ui.components.music.common
+package io.github.aedev.flow.ui.components.music.common
 
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.compose.ui.test.onNodeWithText
-import com.arubr.smsvcodes.data.music.model.MusicTrack
-import com.arubr.smsvcodes.ui.components.music.item.MusicCollectionCard
-import com.arubr.smsvcodes.ui.components.music.item.MusicTrackItem
+import io.github.aedev.flow.data.music.model.MusicTrack
+import io.github.aedev.flow.ui.components.music.item.MusicCollectionCard
+import io.github.aedev.flow.ui.components.music.item.MusicTrackItem
 import org.junit.Rule
 import org.junit.Test
 

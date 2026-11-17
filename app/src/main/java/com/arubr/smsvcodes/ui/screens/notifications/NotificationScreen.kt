@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.screens.notifications
+package io.github.aedev.flow.ui.screens.notifications
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.PaddingValues
@@ -43,20 +43,20 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.data.local.entity.NotificationEntity
-import com.arubr.smsvcodes.data.model.Video
-import com.arubr.smsvcodes.ui.components.layout.LocalFlowBottomInsets
-import com.arubr.smsvcodes.ui.components.layout.floatAboveBottomChrome
-import com.arubr.smsvcodes.ui.components.layout.flowBottomContentPadding
-import com.arubr.smsvcodes.ui.components.layout.topbar.FlowTopBar
-import com.arubr.smsvcodes.ui.components.shared.FlowAlertDialog
-import com.arubr.smsvcodes.ui.components.shared.FlowEmptyState
-import com.arubr.smsvcodes.ui.components.shared.FlowMaxContentWidth
-import com.arubr.smsvcodes.ui.components.shared.FlowSectionHeader
-import com.arubr.smsvcodes.ui.components.shared.FlowSegmentedGap
-import com.arubr.smsvcodes.ui.components.shared.flowSegmentShape
-import com.arubr.smsvcodes.ui.components.shared.quickactions.VideoQuickActionsBottomSheet
+import io.github.aedev.flow.R
+import io.github.aedev.flow.data.local.entity.NotificationEntity
+import io.github.aedev.flow.data.model.Video
+import io.github.aedev.flow.ui.components.layout.LocalFlowBottomInsets
+import io.github.aedev.flow.ui.components.layout.floatAboveBottomChrome
+import io.github.aedev.flow.ui.components.layout.flowBottomContentPadding
+import io.github.aedev.flow.ui.components.layout.topbar.FlowTopBar
+import io.github.aedev.flow.ui.components.shared.FlowAlertDialog
+import io.github.aedev.flow.ui.components.shared.FlowEmptyState
+import io.github.aedev.flow.ui.components.shared.FlowMaxContentWidth
+import io.github.aedev.flow.ui.components.shared.FlowSectionHeader
+import io.github.aedev.flow.ui.components.shared.FlowSegmentedGap
+import io.github.aedev.flow.ui.components.shared.flowSegmentShape
+import io.github.aedev.flow.ui.components.shared.quickactions.VideoQuickActionsBottomSheet
 import kotlinx.coroutines.launch
 import java.time.ZoneId
 

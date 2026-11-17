@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.screens.settings.localmedia
+package io.github.aedev.flow.ui.screens.settings.localmedia
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.FolderOff
@@ -15,16 +15,16 @@ import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.data.localmedia.LocalMediaSettings
-import com.arubr.smsvcodes.ui.components.settings.SettingsPage
-import com.arubr.smsvcodes.ui.components.settings.choice
-import com.arubr.smsvcodes.ui.components.settings.info
-import com.arubr.smsvcodes.ui.components.settings.switch
-import com.arubr.smsvcodes.ui.components.shared.FlowChoice
-import com.arubr.smsvcodes.ui.components.shared.FlowChoiceDialog
-import com.arubr.smsvcodes.ui.components.shared.FlowNavRow
-import com.arubr.smsvcodes.ui.screens.settings.index.LocalMediaIndex
+import io.github.aedev.flow.R
+import io.github.aedev.flow.data.localmedia.LocalMediaSettings
+import io.github.aedev.flow.ui.components.settings.SettingsPage
+import io.github.aedev.flow.ui.components.settings.choice
+import io.github.aedev.flow.ui.components.settings.info
+import io.github.aedev.flow.ui.components.settings.switch
+import io.github.aedev.flow.ui.components.shared.FlowChoice
+import io.github.aedev.flow.ui.components.shared.FlowChoiceDialog
+import io.github.aedev.flow.ui.components.shared.FlowNavRow
+import io.github.aedev.flow.ui.screens.settings.index.LocalMediaIndex
 
 /** What Local media leaves out: voice notes and recordings, short audio, and folders the viewer hid. */
 @Composable

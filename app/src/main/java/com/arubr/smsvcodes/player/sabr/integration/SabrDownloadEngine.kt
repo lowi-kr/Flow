@@ -1,10 +1,10 @@
-package com.arubr.smsvcodes.player.sabr.integration
+package io.github.aedev.flow.player.sabr.integration
 
 import android.util.Log
-import com.arubr.smsvcodes.player.sabr.core.SabrEvent
-import com.arubr.smsvcodes.player.sabr.core.SabrSessionState
-import com.arubr.smsvcodes.player.sabr.core.SabrStreamController
-import com.arubr.smsvcodes.player.sabr.network.SabrDataSource
+import io.github.aedev.flow.player.sabr.core.SabrEvent
+import io.github.aedev.flow.player.sabr.core.SabrSessionState
+import io.github.aedev.flow.player.sabr.core.SabrStreamController
+import io.github.aedev.flow.player.sabr.network.SabrDataSource
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job

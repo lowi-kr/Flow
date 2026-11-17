@@ -1,8 +1,8 @@
-package com.arubr.smsvcodes.innertube.pages.explore
+package io.github.aedev.flow.innertube.pages.explore
 
 import com.google.common.truth.Truth.assertThat
-import com.arubr.smsvcodes.data.model.Video
-import com.arubr.smsvcodes.innertube.pages.renderer.FeedItem
+import io.github.aedev.flow.data.model.Video
+import io.github.aedev.flow.innertube.pages.renderer.FeedItem
 import org.junit.Test
 
 /**

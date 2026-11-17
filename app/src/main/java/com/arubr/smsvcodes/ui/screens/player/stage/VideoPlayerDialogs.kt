@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.screens.player.stage
+package io.github.aedev.flow.ui.screens.player.stage
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -6,18 +6,18 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.res.stringResource
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.media3.common.util.UnstableApi
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.data.model.Comment
-import com.arubr.smsvcodes.data.model.Video
-import com.arubr.smsvcodes.ui.components.shared.FlowNoteEditorDialog
-import com.arubr.smsvcodes.ui.screens.player.dialogs.PlayerBottomSheetsContainer
-import com.arubr.smsvcodes.ui.screens.player.dialogs.PlayerDialogsContainer
-import com.arubr.smsvcodes.ui.screens.player.dialogs.SbSubmitSegmentDialog
-import com.arubr.smsvcodes.ui.screens.player.state.MediaSheetHeights
-import com.arubr.smsvcodes.ui.screens.player.state.PlayerCommentsUiState
-import com.arubr.smsvcodes.ui.screens.player.state.PlayerLayoutMode
-import com.arubr.smsvcodes.ui.screens.player.state.PlayerSheet
-import com.arubr.smsvcodes.ui.screens.player.state.selectCommentSort
+import io.github.aedev.flow.R
+import io.github.aedev.flow.data.model.Comment
+import io.github.aedev.flow.data.model.Video
+import io.github.aedev.flow.ui.components.shared.FlowNoteEditorDialog
+import io.github.aedev.flow.ui.screens.player.dialogs.PlayerBottomSheetsContainer
+import io.github.aedev.flow.ui.screens.player.dialogs.PlayerDialogsContainer
+import io.github.aedev.flow.ui.screens.player.dialogs.SbSubmitSegmentDialog
+import io.github.aedev.flow.ui.screens.player.state.MediaSheetHeights
+import io.github.aedev.flow.ui.screens.player.state.PlayerCommentsUiState
+import io.github.aedev.flow.ui.screens.player.state.PlayerLayoutMode
+import io.github.aedev.flow.ui.screens.player.state.PlayerSheet
+import io.github.aedev.flow.ui.screens.player.state.selectCommentSort
 
 /** Every dialog and bottom sheet the player overlay raises above its own stage. */
 @UnstableApi

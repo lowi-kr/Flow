@@ -1,7 +1,7 @@
-package com.arubr.smsvcodes.data.subscriptions
+package io.github.aedev.flow.data.subscriptions
 
-import com.arubr.smsvcodes.network.ProxyAwareClient
-import com.arubr.smsvcodes.utils.PerformanceDispatcher
+import io.github.aedev.flow.network.ProxyAwareClient
+import io.github.aedev.flow.utils.PerformanceDispatcher
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.withContext
 import okhttp3.OkHttpClient

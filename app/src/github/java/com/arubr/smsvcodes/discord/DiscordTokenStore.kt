@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.discord
+package io.github.aedev.flow.discord
 
 import android.content.Context
 import android.security.keystore.KeyGenParameterSpec

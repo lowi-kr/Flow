@@ -4,7 +4,7 @@
  * This file is part of Flow (https://github.com/Flow-Tube/Flow).
  */
 
-package com.arubr.smsvcodes.ui.components.music.detail
+package io.github.aedev.flow.ui.components.music.detail
 
 import androidx.compose.animation.animateContentSize
 import androidx.compose.foundation.background
@@ -69,11 +69,11 @@ import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
 import coil3.request.ImageRequest
 import coil3.request.crossfade
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.data.music.model.ArtistDetails
-import com.arubr.smsvcodes.data.music.model.MusicTextLink
-import com.arubr.smsvcodes.ui.components.shared.flowWindowWidth
-import com.arubr.smsvcodes.utils.formatViewCount
+import io.github.aedev.flow.R
+import io.github.aedev.flow.data.music.model.ArtistDetails
+import io.github.aedev.flow.data.music.model.MusicTextLink
+import io.github.aedev.flow.ui.components.shared.flowWindowWidth
+import io.github.aedev.flow.utils.formatViewCount
 
 private val HeroMaxHeight = 400.dp
 private val StartingStrokeWidth = 2.dp

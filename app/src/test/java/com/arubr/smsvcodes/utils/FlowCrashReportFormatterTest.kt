@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.utils
+package io.github.aedev.flow.utils
 
 import com.google.common.truth.Truth.assertThat
 import org.junit.Test
@@ -16,8 +16,8 @@ class FlowCrashReportFormatterTest {
                 exceptionMessage = "Failed to allocate",
                 stackTrace = """
                     java.lang.OutOfMemoryError: Failed to allocate
-                        at com.arubr.smsvcodes.player.PlayerCacheManager.updateCache(PlayerCacheManager.kt:42)
-                        at com.arubr.smsvcodes.service.VideoPlayerService.onStartCommand(VideoPlayerService.kt:121)
+                        at io.github.aedev.flow.player.PlayerCacheManager.updateCache(PlayerCacheManager.kt:42)
+                        at io.github.aedev.flow.service.VideoPlayerService.onStartCommand(VideoPlayerService.kt:121)
                         at android.app.ActivityThread.handleServiceArgs(ActivityThread.java:5000)
                 """.trimIndent(),
                 deviceInfo = "Model: Pixel Test",

@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.discord
+package io.github.aedev.flow.discord
 
 import java.net.URI
 import kotlinx.serialization.json.Json

@@ -1,12 +1,12 @@
-package com.arubr.smsvcodes.ui.screens.player.state
+package io.github.aedev.flow.ui.screens.player.state
 
-import com.arubr.smsvcodes.data.local.VideoQuality
-import com.arubr.smsvcodes.data.model.LiveChatMessage
-import com.arubr.smsvcodes.data.model.SponsorBlockSegment
-import com.arubr.smsvcodes.data.model.Video
-import com.arubr.smsvcodes.innertube.models.response.PlayerResponse
-import com.arubr.smsvcodes.innertube.models.response.VideoHeatmap
-import com.arubr.smsvcodes.player.stream.StoryboardLevel
+import io.github.aedev.flow.data.local.VideoQuality
+import io.github.aedev.flow.data.model.LiveChatMessage
+import io.github.aedev.flow.data.model.SponsorBlockSegment
+import io.github.aedev.flow.data.model.Video
+import io.github.aedev.flow.innertube.models.response.PlayerResponse
+import io.github.aedev.flow.innertube.models.response.VideoHeatmap
+import io.github.aedev.flow.player.stream.StoryboardLevel
 import org.schabi.newpipe.extractor.stream.AudioStream
 import org.schabi.newpipe.extractor.stream.StreamSegment
 import org.schabi.newpipe.extractor.stream.VideoStream

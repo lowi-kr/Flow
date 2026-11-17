@@ -1,11 +1,11 @@
-package com.arubr.smsvcodes.player
+package io.github.aedev.flow.player
 
 import androidx.media3.common.C
 import androidx.media3.common.MediaItem
 import androidx.media3.common.Player
-import com.arubr.smsvcodes.data.local.PlayerPreferences
-import com.arubr.smsvcodes.data.local.ViewHistory
-import com.arubr.smsvcodes.utils.PerformanceDispatcher
+import io.github.aedev.flow.data.local.PlayerPreferences
+import io.github.aedev.flow.data.local.ViewHistory
+import io.github.aedev.flow.utils.PerformanceDispatcher
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.flow.first

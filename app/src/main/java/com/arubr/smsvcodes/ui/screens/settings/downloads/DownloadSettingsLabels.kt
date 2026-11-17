@@ -1,11 +1,11 @@
-package com.arubr.smsvcodes.ui.screens.settings.downloads
+package io.github.aedev.flow.ui.screens.settings.downloads
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.data.local.AutoDownloadMode
-import com.arubr.smsvcodes.data.video.downloader.work.RetagStatus
+import io.github.aedev.flow.R
+import io.github.aedev.flow.data.local.AutoDownloadMode
+import io.github.aedev.flow.data.video.downloader.work.RetagStatus
 
 @Composable
 internal fun LocationUi.label(): String =

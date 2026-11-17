@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.utils.protobuf
+package io.github.aedev.flow.utils.protobuf
 
 import java.io.ByteArrayOutputStream
 

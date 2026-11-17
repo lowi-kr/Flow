@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.shared
+package io.github.aedev.flow.ui.components.shared
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.Add
@@ -19,7 +19,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.style.TextOverflow
-import com.arubr.smsvcodes.R
+import io.github.aedev.flow.R
 
 /** An artist with a portrait and an add/added toggle, for picking artists from a list. */
 @OptIn(ExperimentalMaterial3ExpressiveApi::class)

@@ -1,8 +1,8 @@
-package com.arubr.smsvcodes.ui.screens.home
+package io.github.aedev.flow.ui.screens.home
 
-import com.arubr.smsvcodes.data.local.VideoHistoryEntry
-import com.arubr.smsvcodes.data.model.Video
-import com.arubr.smsvcodes.data.model.distinctByNonBlankKeyOrSelf
+import io.github.aedev.flow.data.local.VideoHistoryEntry
+import io.github.aedev.flow.data.model.Video
+import io.github.aedev.flow.data.model.distinctByNonBlankKeyOrSelf
 
 internal fun HomeUiState.withUniqueLazyContent(): HomeUiState {
     val uniqueVideos = videos.distinctByNonBlankKeyOrSelf(Video::id)

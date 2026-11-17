@@ -1,9 +1,9 @@
-package com.arubr.smsvcodes.service
+package io.github.aedev.flow.service
 
 import android.net.Uri
 import com.google.common.truth.Truth.assertThat
-import com.arubr.smsvcodes.data.music.model.MusicTrack
-import com.arubr.smsvcodes.player.RestoredMusicQueue
+import io.github.aedev.flow.data.music.model.MusicTrack
+import io.github.aedev.flow.player.RestoredMusicQueue
 import io.mockk.every
 import io.mockk.mockk
 import io.mockk.mockkStatic

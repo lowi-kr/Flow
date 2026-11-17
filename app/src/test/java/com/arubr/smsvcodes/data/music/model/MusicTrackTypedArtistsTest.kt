@@ -4,10 +4,10 @@
  * This file is part of Flow (https://github.com/Flow-Tube/Flow).
  */
 
-package com.arubr.smsvcodes.data.music.model
+package io.github.aedev.flow.data.music.model
 
 import com.google.common.truth.Truth.assertThat
-import com.arubr.smsvcodes.data.recommendation.music.primaryArtistKey
+import io.github.aedev.flow.data.recommendation.music.primaryArtistKey
 import org.junit.Test
 
 /**

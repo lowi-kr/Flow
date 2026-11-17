@@ -1,13 +1,13 @@
-package com.arubr.smsvcodes.ui.screens.subscriptions
+package io.github.aedev.flow.ui.screens.subscriptions
 
 import com.google.common.truth.Truth.assertThat
-import com.arubr.smsvcodes.innertube.YouTube
-import com.arubr.smsvcodes.innertube.models.ResponseContext
-import com.arubr.smsvcodes.innertube.models.YouTubeClient
-import com.arubr.smsvcodes.innertube.models.YouTubeLocale
-import com.arubr.smsvcodes.innertube.models.response.PlayerResponse
-import com.arubr.smsvcodes.innertube.models.response.PlayerResponse.PlayabilityStatus
-import com.arubr.smsvcodes.ui.screens.player.VideoPlayerViewModelHarness.Companion.video
+import io.github.aedev.flow.innertube.YouTube
+import io.github.aedev.flow.innertube.models.ResponseContext
+import io.github.aedev.flow.innertube.models.YouTubeClient
+import io.github.aedev.flow.innertube.models.YouTubeLocale
+import io.github.aedev.flow.innertube.models.response.PlayerResponse
+import io.github.aedev.flow.innertube.models.response.PlayerResponse.PlayabilityStatus
+import io.github.aedev.flow.ui.screens.player.VideoPlayerViewModelHarness.Companion.video
 import io.mockk.coEvery
 import io.mockk.coVerify
 import io.mockk.mockkObject

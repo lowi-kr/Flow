@@ -1,6 +1,6 @@
-package com.arubr.smsvcodes.innertube
+package io.github.aedev.flow.innertube
 
-import com.arubr.smsvcodes.utils.protobuf.ProtobufWriter
+import io.github.aedev.flow.utils.protobuf.ProtobufWriter
 import java.net.URLEncoder
 import java.util.Base64
 

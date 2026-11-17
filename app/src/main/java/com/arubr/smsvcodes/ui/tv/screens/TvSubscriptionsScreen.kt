@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.tv.screens
+package io.github.aedev.flow.ui.tv.screens
 
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.layout.Box
@@ -14,17 +14,17 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.arubr.smsvcodes.data.local.HomeFeedColumns
-import com.arubr.smsvcodes.data.model.Channel
-import com.arubr.smsvcodes.data.model.Video
-import com.arubr.smsvcodes.ui.screens.subscriptions.SubscriptionGroupDialogsHost
-import com.arubr.smsvcodes.ui.screens.subscriptions.SubscriptionsEmptyState
-import com.arubr.smsvcodes.ui.screens.subscriptions.SubscriptionsFeedContent
-import com.arubr.smsvcodes.ui.screens.subscriptions.SubscriptionsFeedEffects
-import com.arubr.smsvcodes.ui.screens.subscriptions.SubscriptionsManageContent
-import com.arubr.smsvcodes.ui.screens.subscriptions.SubscriptionsViewModel
-import com.arubr.smsvcodes.ui.screens.subscriptions.rememberSubscriptionChannels
-import com.arubr.smsvcodes.ui.tv.theme.LocalTvDimens
+import io.github.aedev.flow.data.local.HomeFeedColumns
+import io.github.aedev.flow.data.model.Channel
+import io.github.aedev.flow.data.model.Video
+import io.github.aedev.flow.ui.screens.subscriptions.SubscriptionGroupDialogsHost
+import io.github.aedev.flow.ui.screens.subscriptions.SubscriptionsEmptyState
+import io.github.aedev.flow.ui.screens.subscriptions.SubscriptionsFeedContent
+import io.github.aedev.flow.ui.screens.subscriptions.SubscriptionsFeedEffects
+import io.github.aedev.flow.ui.screens.subscriptions.SubscriptionsManageContent
+import io.github.aedev.flow.ui.screens.subscriptions.SubscriptionsViewModel
+import io.github.aedev.flow.ui.screens.subscriptions.rememberSubscriptionChannels
+import io.github.aedev.flow.ui.tv.theme.LocalTvDimens
 
 /** Grid cells sit edge to edge and each card insets itself, so this much of the margin is already there. */
 private val CardInset = 16.dp

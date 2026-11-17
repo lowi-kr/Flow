@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.data.video.downloader.work
+package io.github.aedev.flow.data.video.downloader.work
 
 import android.content.BroadcastReceiver
 import android.content.Context
@@ -32,9 +32,9 @@ class DownloadActionReceiver : BroadcastReceiver() {
 
     companion object {
         const val EXTRA_VIDEO_ID = "video_id"
-        const val ACTION_PAUSE = "com.arubr.smsvcodes.download.PAUSE"
-        const val ACTION_RESUME = "com.arubr.smsvcodes.download.RESUME"
-        const val ACTION_RETRY = "com.arubr.smsvcodes.download.RETRY"
-        const val ACTION_CANCEL = "com.arubr.smsvcodes.download.CANCEL"
+        const val ACTION_PAUSE = "io.github.aedev.flow.download.PAUSE"
+        const val ACTION_RESUME = "io.github.aedev.flow.download.RESUME"
+        const val ACTION_RETRY = "io.github.aedev.flow.download.RETRY"
+        const val ACTION_CANCEL = "io.github.aedev.flow.download.CANCEL"
     }
 }

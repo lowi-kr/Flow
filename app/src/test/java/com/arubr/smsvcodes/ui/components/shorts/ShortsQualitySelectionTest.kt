@@ -1,7 +1,7 @@
-package com.arubr.smsvcodes.ui.components.shorts
+package io.github.aedev.flow.ui.components.shorts
 
 import com.google.common.truth.Truth.assertThat
-import com.arubr.smsvcodes.data.shorts.ShortVideoQuality
+import io.github.aedev.flow.data.shorts.ShortVideoQuality
 import org.junit.Test
 
 class ShortsQualitySelectionTest {

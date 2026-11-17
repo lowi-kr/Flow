@@ -1,12 +1,12 @@
-package com.arubr.smsvcodes.widget.downloads
+package io.github.aedev.flow.widget.downloads
 
 import androidx.glance.appwidget.GlanceAppWidget
-import com.arubr.smsvcodes.data.local.entity.DownloadItemStatus
-import com.arubr.smsvcodes.data.local.entity.DownloadWithItems
-import com.arubr.smsvcodes.data.music.DownloadManager
-import com.arubr.smsvcodes.data.video.VideoDownloadManager
-import com.arubr.smsvcodes.widget.core.refresh.WidgetContentKey
-import com.arubr.smsvcodes.widget.core.refresh.WidgetContentSource
+import io.github.aedev.flow.data.local.entity.DownloadItemStatus
+import io.github.aedev.flow.data.local.entity.DownloadWithItems
+import io.github.aedev.flow.data.music.DownloadManager
+import io.github.aedev.flow.data.video.VideoDownloadManager
+import io.github.aedev.flow.widget.core.refresh.WidgetContentKey
+import io.github.aedev.flow.widget.core.refresh.WidgetContentSource
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.first

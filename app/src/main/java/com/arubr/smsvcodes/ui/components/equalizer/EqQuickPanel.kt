@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.equalizer
+package io.github.aedev.flow.ui.components.equalizer
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -26,17 +26,17 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.data.audio.eq.BuiltInEqPresets
-import com.arubr.smsvcodes.data.audio.eq.EqLimits
-import com.arubr.smsvcodes.data.audio.eq.EqState
-import com.arubr.smsvcodes.data.audio.eq.isEdited
-import com.arubr.smsvcodes.ui.components.shared.FlowFilterChip
-import com.arubr.smsvcodes.ui.components.shared.FlowNavRow
-import com.arubr.smsvcodes.ui.components.shared.FlowRowGroup
-import com.arubr.smsvcodes.ui.components.shared.FlowSwitchRow
-import com.arubr.smsvcodes.ui.components.shared.flowRowGroupShape
-import com.arubr.smsvcodes.ui.screens.equalizer.EqualizerViewModel
+import io.github.aedev.flow.R
+import io.github.aedev.flow.data.audio.eq.BuiltInEqPresets
+import io.github.aedev.flow.data.audio.eq.EqLimits
+import io.github.aedev.flow.data.audio.eq.EqState
+import io.github.aedev.flow.data.audio.eq.isEdited
+import io.github.aedev.flow.ui.components.shared.FlowFilterChip
+import io.github.aedev.flow.ui.components.shared.FlowNavRow
+import io.github.aedev.flow.ui.components.shared.FlowRowGroup
+import io.github.aedev.flow.ui.components.shared.FlowSwitchRow
+import io.github.aedev.flow.ui.components.shared.flowRowGroupShape
+import io.github.aedev.flow.ui.screens.equalizer.EqualizerViewModel
 import kotlinx.coroutines.flow.StateFlow
 import kotlin.math.roundToInt
 

@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.shared
+package io.github.aedev.flow.ui.components.shared
 
 import androidx.compose.animation.animateContentSize
 import androidx.compose.foundation.Canvas
@@ -58,9 +58,9 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.data.model.Comment
-import com.arubr.smsvcodes.utils.formatLikeCount
+import io.github.aedev.flow.R
+import io.github.aedev.flow.data.model.Comment
+import io.github.aedev.flow.utils.formatLikeCount
 
 private val ThreadHorizontalPadding = 16.dp
 private val ThreadLineWidth = 2.dp

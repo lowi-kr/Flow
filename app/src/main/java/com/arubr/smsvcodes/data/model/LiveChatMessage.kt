@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.data.model
+package io.github.aedev.flow.data.model
 
 data class LiveChatSegment(
     val text: String,

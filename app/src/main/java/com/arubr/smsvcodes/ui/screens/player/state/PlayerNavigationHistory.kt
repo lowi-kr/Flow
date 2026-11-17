@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.screens.player.state
+package io.github.aedev.flow.ui.screens.player.state
 
 /**
  * The player screen's own record of which videos were opened from inside the player, kept

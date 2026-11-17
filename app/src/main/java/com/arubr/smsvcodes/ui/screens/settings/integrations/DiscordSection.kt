@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.screens.settings.integrations
+package io.github.aedev.flow.ui.screens.settings.integrations
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.AccountCircle
@@ -17,16 +17,16 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.discord.DiscordConnectionState
-import com.arubr.smsvcodes.discord.DiscordSettingsState
-import com.arubr.smsvcodes.discord.DiscordSettingsSummary
-import com.arubr.smsvcodes.ui.components.settings.SettingsListScope
-import com.arubr.smsvcodes.ui.components.settings.notice
-import com.arubr.smsvcodes.ui.components.shared.FlowLoadingIndicator
-import com.arubr.smsvcodes.ui.components.shared.FlowNavRow
-import com.arubr.smsvcodes.ui.components.shared.FlowSwitchRow
-import com.arubr.smsvcodes.ui.screens.settings.index.IntegrationsIndex
+import io.github.aedev.flow.R
+import io.github.aedev.flow.discord.DiscordConnectionState
+import io.github.aedev.flow.discord.DiscordSettingsState
+import io.github.aedev.flow.discord.DiscordSettingsSummary
+import io.github.aedev.flow.ui.components.settings.SettingsListScope
+import io.github.aedev.flow.ui.components.settings.notice
+import io.github.aedev.flow.ui.components.shared.FlowLoadingIndicator
+import io.github.aedev.flow.ui.components.shared.FlowNavRow
+import io.github.aedev.flow.ui.components.shared.FlowSwitchRow
+import io.github.aedev.flow.ui.screens.settings.index.IntegrationsIndex
 
 internal fun SettingsListScope.discordSection(
     state: DiscordSettingsState,

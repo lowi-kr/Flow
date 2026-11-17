@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.player
+package io.github.aedev.flow.player
 
 /**
  * Pause music when the device is muted and resume it when sound comes back, but only music this

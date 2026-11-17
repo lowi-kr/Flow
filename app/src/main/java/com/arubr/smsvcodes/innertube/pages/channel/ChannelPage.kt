@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.innertube.pages.channel
+package io.github.aedev.flow.innertube.pages.channel
 
 /** [tabs] is whatever the channel published, in its order — not a fixed set the screen assumes. */
 data class ChannelPage(

@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.player.media
+package io.github.aedev.flow.player.media
 
 import com.google.common.truth.Truth.assertThat
 import org.junit.Test

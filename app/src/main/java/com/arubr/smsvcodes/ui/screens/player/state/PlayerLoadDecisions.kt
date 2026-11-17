@@ -1,10 +1,10 @@
-package com.arubr.smsvcodes.ui.screens.player.state
+package io.github.aedev.flow.ui.screens.player.state
 
-import com.arubr.smsvcodes.data.localmedia.LocalMediaIds
-import com.arubr.smsvcodes.data.model.SponsorBlockSegment
-import com.arubr.smsvcodes.data.model.Video
-import com.arubr.smsvcodes.player.BackgroundPlaybackPolicy
-import com.arubr.smsvcodes.player.state.EnhancedPlayerState
+import io.github.aedev.flow.data.localmedia.LocalMediaIds
+import io.github.aedev.flow.data.model.SponsorBlockSegment
+import io.github.aedev.flow.data.model.Video
+import io.github.aedev.flow.player.BackgroundPlaybackPolicy
+import io.github.aedev.flow.player.state.EnhancedPlayerState
 
 /*
  * The decisions a load makes before it does anything, and the states it starts from.

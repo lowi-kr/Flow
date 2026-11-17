@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.data.local
+package io.github.aedev.flow.data.local
 
 /**
  * Everything the search feed can be narrowed by. Every field maps to a server-side `params` token

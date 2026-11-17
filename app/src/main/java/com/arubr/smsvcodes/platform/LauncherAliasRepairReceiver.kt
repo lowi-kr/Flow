@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.platform
+package io.github.aedev.flow.platform
 
 import android.content.BroadcastReceiver
 import android.content.Context

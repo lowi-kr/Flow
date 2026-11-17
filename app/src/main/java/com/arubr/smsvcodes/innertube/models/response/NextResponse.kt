@@ -1,9 +1,9 @@
-package com.arubr.smsvcodes.innertube.models.response
+package io.github.aedev.flow.innertube.models.response
 
-import com.arubr.smsvcodes.innertube.models.NavigationEndpoint
-import com.arubr.smsvcodes.innertube.models.PlaylistPanelRenderer
-import com.arubr.smsvcodes.innertube.models.Tabs
-import com.arubr.smsvcodes.innertube.models.YouTubeDataPage
+import io.github.aedev.flow.innertube.models.NavigationEndpoint
+import io.github.aedev.flow.innertube.models.PlaylistPanelRenderer
+import io.github.aedev.flow.innertube.models.Tabs
+import io.github.aedev.flow.innertube.models.YouTubeDataPage
 import kotlinx.serialization.Serializable
 
 @Serializable

@@ -1,16 +1,16 @@
-package com.arubr.smsvcodes.ui.screens.onboarding
+package io.github.aedev.flow.ui.screens.onboarding
 
 import androidx.lifecycle.SavedStateHandle
 import com.google.common.truth.Truth.assertThat
-import com.arubr.smsvcodes.data.backup.BackupCoordinator
-import com.arubr.smsvcodes.data.backup.BackupOperation
-import com.arubr.smsvcodes.data.backup.ImportKind
-import com.arubr.smsvcodes.data.backup.ImportSource
-import com.arubr.smsvcodes.data.local.PlayerPreferences
-import com.arubr.smsvcodes.data.local.SubscriptionRepository
-import com.arubr.smsvcodes.data.model.Channel
-import com.arubr.smsvcodes.data.paging.ChannelSearch
-import com.arubr.smsvcodes.data.recommendation.OnboardingCompleter
+import io.github.aedev.flow.data.backup.BackupCoordinator
+import io.github.aedev.flow.data.backup.BackupOperation
+import io.github.aedev.flow.data.backup.ImportKind
+import io.github.aedev.flow.data.backup.ImportSource
+import io.github.aedev.flow.data.local.PlayerPreferences
+import io.github.aedev.flow.data.local.SubscriptionRepository
+import io.github.aedev.flow.data.model.Channel
+import io.github.aedev.flow.data.paging.ChannelSearch
+import io.github.aedev.flow.data.recommendation.OnboardingCompleter
 import io.mockk.coEvery
 import io.mockk.coVerify
 import io.mockk.every

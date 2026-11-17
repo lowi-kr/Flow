@@ -4,11 +4,11 @@
  * This file is part of Flow (https://github.com/Flow-Tube/Flow).
  */
 
-package com.arubr.smsvcodes.sync.mapping
+package io.github.aedev.flow.sync.mapping
 
 import com.google.common.truth.Truth.assertThat
-import com.arubr.smsvcodes.data.recommendation.NeuroStorage
-import com.arubr.smsvcodes.sync.merge.BrainCrdtState
+import io.github.aedev.flow.data.recommendation.NeuroStorage
+import io.github.aedev.flow.sync.merge.BrainCrdtState
 import kotlinx.serialization.json.Json
 import org.junit.Test
 

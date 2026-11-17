@@ -1,14 +1,14 @@
-package com.arubr.smsvcodes.ui.screens.music.collection
+package io.github.aedev.flow.ui.screens.music.collection
 
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.data.local.dao.DownloadCollectionSummary
-import com.arubr.smsvcodes.data.local.entity.DownloadCollectionKind
-import com.arubr.smsvcodes.data.music.model.MusicTrack
-import com.arubr.smsvcodes.data.music.model.PlaylistDetails
-import com.arubr.smsvcodes.data.video.BackgroundDownloadQueuer
-import com.arubr.smsvcodes.data.video.downloader.collection.CollectionSpec
-import com.arubr.smsvcodes.data.video.downloader.collection.DownloadedCollections
-import com.arubr.smsvcodes.data.video.downloader.collection.OfflineCollection
+import io.github.aedev.flow.R
+import io.github.aedev.flow.data.local.dao.DownloadCollectionSummary
+import io.github.aedev.flow.data.local.entity.DownloadCollectionKind
+import io.github.aedev.flow.data.music.model.MusicTrack
+import io.github.aedev.flow.data.music.model.PlaylistDetails
+import io.github.aedev.flow.data.video.BackgroundDownloadQueuer
+import io.github.aedev.flow.data.video.downloader.collection.CollectionSpec
+import io.github.aedev.flow.data.video.downloader.collection.DownloadedCollections
+import io.github.aedev.flow.data.video.downloader.collection.OfflineCollection
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow

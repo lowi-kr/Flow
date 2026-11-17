@@ -1,10 +1,10 @@
-package com.arubr.smsvcodes.sync
+package io.github.aedev.flow.sync
 
-import com.arubr.smsvcodes.sync.canonical.CanonicalSetting
-import com.arubr.smsvcodes.sync.crypto.SyncBytes
-import com.arubr.smsvcodes.sync.crypto.SyncCrypto
-import com.arubr.smsvcodes.sync.protocol.SyncCodec
-import com.arubr.smsvcodes.sync.protocol.SyncSerialization
+import io.github.aedev.flow.sync.canonical.CanonicalSetting
+import io.github.aedev.flow.sync.crypto.SyncBytes
+import io.github.aedev.flow.sync.crypto.SyncCrypto
+import io.github.aedev.flow.sync.protocol.SyncCodec
+import io.github.aedev.flow.sync.protocol.SyncSerialization
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonObject
 import kotlinx.serialization.json.int

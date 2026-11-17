@@ -1,7 +1,7 @@
-package com.arubr.smsvcodes.player
+package io.github.aedev.flow.player
 
 import com.google.common.truth.Truth.assertThat
-import com.arubr.smsvcodes.data.model.Video
+import io.github.aedev.flow.data.model.Video
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.advanceTimeBy
 import kotlinx.coroutines.test.runCurrent

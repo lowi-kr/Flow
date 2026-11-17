@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components
+package io.github.aedev.flow.ui.components
 
 /**
  * Past three cards a row of 16:9 thumbnails reads as a strip of stamps; YouTube's tablet layout stops

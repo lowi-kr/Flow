@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.screens.library
+package io.github.aedev.flow.ui.screens.library
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
@@ -9,10 +9,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.ui.components.library.LibraryNavigationRow
-import com.arubr.smsvcodes.ui.components.library.LibrarySection
-import com.arubr.smsvcodes.ui.components.shared.FlowMaxContentWidth
+import io.github.aedev.flow.R
+import io.github.aedev.flow.ui.components.library.LibraryNavigationRow
+import io.github.aedev.flow.ui.components.library.LibrarySection
+import io.github.aedev.flow.ui.components.shared.FlowMaxContentWidth
 
 @Composable
 internal fun LibrarySectionList(

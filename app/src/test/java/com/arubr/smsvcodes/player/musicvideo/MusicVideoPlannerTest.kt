@@ -1,7 +1,7 @@
-package com.arubr.smsvcodes.player.musicvideo
+package io.github.aedev.flow.player.musicvideo
 
 import com.google.common.truth.Truth.assertThat
-import com.arubr.smsvcodes.data.music.model.MusicTrack
+import io.github.aedev.flow.data.music.model.MusicTrack
 import org.junit.Test
 
 class MusicVideoPlannerTest {

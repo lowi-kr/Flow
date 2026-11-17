@@ -1,120 +1,120 @@
-package com.arubr.smsvcodes.innertube
+package io.github.aedev.flow.innertube
 
 import android.util.Log
-import com.arubr.smsvcodes.data.model.VideoCollaborator
-import com.arubr.smsvcodes.innertube.models.AccountInfo
-import com.arubr.smsvcodes.innertube.models.AlbumItem
-import com.arubr.smsvcodes.innertube.models.Artist
-import com.arubr.smsvcodes.innertube.models.ArtistItem
-import com.arubr.smsvcodes.innertube.models.BrowseEndpoint
-import com.arubr.smsvcodes.innertube.models.GridRenderer
-import com.arubr.smsvcodes.innertube.models.MediaInfo
-import com.arubr.smsvcodes.innertube.models.MusicCarouselShelfRenderer
-import com.arubr.smsvcodes.innertube.models.MusicResponsiveHeaderRenderer
-import com.arubr.smsvcodes.innertube.models.MusicShelfRenderer
-import com.arubr.smsvcodes.innertube.models.PlaylistItem
-import com.arubr.smsvcodes.innertube.models.ReturnYouTubeDislikeResponse
-import com.arubr.smsvcodes.innertube.models.Run
-import com.arubr.smsvcodes.innertube.models.Runs
-import com.arubr.smsvcodes.innertube.models.SearchSuggestions
-import com.arubr.smsvcodes.innertube.models.SongItem
-import com.arubr.smsvcodes.innertube.models.WatchEndpoint
-import com.arubr.smsvcodes.innertube.models.WatchEndpoint.WatchEndpointMusicSupportedConfigs.WatchEndpointMusicConfig.Companion.MUSIC_VIDEO_TYPE_ATV
-import com.arubr.smsvcodes.innertube.models.YouTubeClient
-import com.arubr.smsvcodes.innertube.models.YouTubeClient.Companion.WEB
-import com.arubr.smsvcodes.innertube.models.YouTubeClient.Companion.WEB_REMIX
-import com.arubr.smsvcodes.innertube.models.YouTubeLocale
-import com.arubr.smsvcodes.innertube.models.body.BrowseBody
-import com.arubr.smsvcodes.innertube.models.getContinuation
-import com.arubr.smsvcodes.innertube.models.getItems
-import com.arubr.smsvcodes.innertube.models.oddElements
-import com.arubr.smsvcodes.innertube.models.response.AccountMenuResponse
-import com.arubr.smsvcodes.innertube.models.response.BrowseResponse
-import com.arubr.smsvcodes.innertube.models.response.ChannelVideosResponse
-import com.arubr.smsvcodes.innertube.models.response.CreatePlaylistResponse
-import com.arubr.smsvcodes.innertube.models.response.EditPlaylistResponse
-import com.arubr.smsvcodes.innertube.models.response.GetQueueResponse
-import com.arubr.smsvcodes.innertube.models.response.GetSearchSuggestionsResponse
-import com.arubr.smsvcodes.innertube.models.response.GetTranscriptResponse
-import com.arubr.smsvcodes.innertube.models.response.ImageUploadResponse
-import com.arubr.smsvcodes.innertube.models.response.NextResponse
-import com.arubr.smsvcodes.innertube.models.response.PlayerResponse
-import com.arubr.smsvcodes.innertube.models.response.ResolveUrlResponse
-import com.arubr.smsvcodes.innertube.models.response.SearchResponse
-import com.arubr.smsvcodes.innertube.models.response.channelVideoCountText
-import com.arubr.smsvcodes.innertube.pages.AlbumPage
-import com.arubr.smsvcodes.innertube.pages.ArtistItemsContinuationPage
-import com.arubr.smsvcodes.innertube.pages.ArtistItemsPage
-import com.arubr.smsvcodes.innertube.pages.ArtistPage
-import com.arubr.smsvcodes.innertube.pages.BrowseResult
-import com.arubr.smsvcodes.innertube.pages.ChartsPage
-import com.arubr.smsvcodes.innertube.pages.ExplorePage
-import com.arubr.smsvcodes.innertube.pages.HistoryPage
-import com.arubr.smsvcodes.innertube.pages.HomePage
-import com.arubr.smsvcodes.innertube.pages.LibraryContinuationPage
-import com.arubr.smsvcodes.innertube.pages.LibraryPage
-import com.arubr.smsvcodes.innertube.pages.MoodAndGenres
-import com.arubr.smsvcodes.innertube.pages.NewReleaseAlbumPage
-import com.arubr.smsvcodes.innertube.pages.NextPage
-import com.arubr.smsvcodes.innertube.pages.NextResult
-import com.arubr.smsvcodes.innertube.pages.PlaylistContinuationPage
-import com.arubr.smsvcodes.innertube.pages.PlaylistPage
-import com.arubr.smsvcodes.innertube.pages.RelatedPage
-import com.arubr.smsvcodes.innertube.pages.SearchPage
-import com.arubr.smsvcodes.innertube.pages.SearchResult
-import com.arubr.smsvcodes.innertube.pages.SearchSuggestionPage
-import com.arubr.smsvcodes.innertube.pages.SearchSummaryPage
-import com.arubr.smsvcodes.innertube.pages.VideoCommentsPage
-import com.arubr.smsvcodes.innertube.pages.VideoDescriptionPage
-import com.arubr.smsvcodes.innertube.pages.VideoPlaylistPage
-import com.arubr.smsvcodes.innertube.pages.channel.ChannelAbout
-import com.arubr.smsvcodes.innertube.pages.channel.ChannelHeader
-import com.arubr.smsvcodes.innertube.pages.channel.ChannelPage
-import com.arubr.smsvcodes.innertube.pages.channel.ChannelShortsPage
-import com.arubr.smsvcodes.innertube.pages.channel.ChannelSortOption
-import com.arubr.smsvcodes.innertube.pages.channel.ChannelTabContent
-import com.arubr.smsvcodes.innertube.pages.channel.ChannelTabKind
-import com.arubr.smsvcodes.innertube.pages.channel.channelAboutContinuation
-import com.arubr.smsvcodes.innertube.pages.channel.channelSortOptions
-import com.arubr.smsvcodes.innertube.pages.channel.toChannelAbout
-import com.arubr.smsvcodes.innertube.pages.channel.toChannelHeader
-import com.arubr.smsvcodes.innertube.pages.channel.toChannelShortsPage
-import com.arubr.smsvcodes.innertube.pages.channel.toChannelTabContent
-import com.arubr.smsvcodes.innertube.pages.channel.toChannelTabs
-import com.arubr.smsvcodes.innertube.pages.explore.ExploreDestinationPage
-import com.arubr.smsvcodes.innertube.pages.explore.MusicVideoChart
-import com.arubr.smsvcodes.innertube.pages.explore.exploreShelves
-import com.arubr.smsvcodes.innertube.pages.explore.ranked
-import com.arubr.smsvcodes.innertube.pages.explore.toExploreDestinationShell
-import com.arubr.smsvcodes.innertube.pages.explore.trendingVideoChart
-import com.arubr.smsvcodes.innertube.pages.parseYouTubeViewCount
-import com.arubr.smsvcodes.innertube.pages.reel.ReelLockup
-import com.arubr.smsvcodes.innertube.pages.reel.ReelOverlay
-import com.arubr.smsvcodes.innertube.pages.reel.ReelParams
-import com.arubr.smsvcodes.innertube.pages.reel.ReelSequencePage
-import com.arubr.smsvcodes.innertube.pages.reel.toReelLockups
-import com.arubr.smsvcodes.innertube.pages.reel.toReelOverlay
-import com.arubr.smsvcodes.innertube.pages.reel.toReelSequencePage
-import com.arubr.smsvcodes.innertube.pages.renderer.CommunityCommentsPage
-import com.arubr.smsvcodes.innertube.pages.renderer.CommunityPostsPage
-import com.arubr.smsvcodes.innertube.pages.renderer.FeedItemOwner
-import com.arubr.smsvcodes.innertube.pages.renderer.FeedShelf
-import com.arubr.smsvcodes.innertube.pages.renderer.collaboratorDialog
-import com.arubr.smsvcodes.innertube.pages.renderer.lockupDateAndViews
-import com.arubr.smsvcodes.innertube.pages.renderer.toCommunityCommentsPage
-import com.arubr.smsvcodes.innertube.pages.renderer.toCommunityPostsPage
-import com.arubr.smsvcodes.innertube.pages.search.SearchResultsPage
-import com.arubr.smsvcodes.innertube.pages.search.SearchSuggestion
-import com.arubr.smsvcodes.innertube.pages.search.parseSearchSuggestions
-import com.arubr.smsvcodes.innertube.pages.search.toSearchResultsPage
-import com.arubr.smsvcodes.innertube.pages.toCommentRepliesPage
-import com.arubr.smsvcodes.innertube.pages.toVideoCommentsPage
-import com.arubr.smsvcodes.innertube.pages.toVideoDescriptionPage
-import com.arubr.smsvcodes.innertube.pages.toVideoPlaylistPage
-import com.arubr.smsvcodes.innertube.pages.videoCommentsContinuation
-import com.arubr.smsvcodes.utils.PerformanceDispatcher
-import com.arubr.smsvcodes.utils.avatarImageIdentityKey
-import com.arubr.smsvcodes.utils.relativedate.RelativeUploadDateParser
+import io.github.aedev.flow.data.model.VideoCollaborator
+import io.github.aedev.flow.innertube.models.AccountInfo
+import io.github.aedev.flow.innertube.models.AlbumItem
+import io.github.aedev.flow.innertube.models.Artist
+import io.github.aedev.flow.innertube.models.ArtistItem
+import io.github.aedev.flow.innertube.models.BrowseEndpoint
+import io.github.aedev.flow.innertube.models.GridRenderer
+import io.github.aedev.flow.innertube.models.MediaInfo
+import io.github.aedev.flow.innertube.models.MusicCarouselShelfRenderer
+import io.github.aedev.flow.innertube.models.MusicResponsiveHeaderRenderer
+import io.github.aedev.flow.innertube.models.MusicShelfRenderer
+import io.github.aedev.flow.innertube.models.PlaylistItem
+import io.github.aedev.flow.innertube.models.ReturnYouTubeDislikeResponse
+import io.github.aedev.flow.innertube.models.Run
+import io.github.aedev.flow.innertube.models.Runs
+import io.github.aedev.flow.innertube.models.SearchSuggestions
+import io.github.aedev.flow.innertube.models.SongItem
+import io.github.aedev.flow.innertube.models.WatchEndpoint
+import io.github.aedev.flow.innertube.models.WatchEndpoint.WatchEndpointMusicSupportedConfigs.WatchEndpointMusicConfig.Companion.MUSIC_VIDEO_TYPE_ATV
+import io.github.aedev.flow.innertube.models.YouTubeClient
+import io.github.aedev.flow.innertube.models.YouTubeClient.Companion.WEB
+import io.github.aedev.flow.innertube.models.YouTubeClient.Companion.WEB_REMIX
+import io.github.aedev.flow.innertube.models.YouTubeLocale
+import io.github.aedev.flow.innertube.models.body.BrowseBody
+import io.github.aedev.flow.innertube.models.getContinuation
+import io.github.aedev.flow.innertube.models.getItems
+import io.github.aedev.flow.innertube.models.oddElements
+import io.github.aedev.flow.innertube.models.response.AccountMenuResponse
+import io.github.aedev.flow.innertube.models.response.BrowseResponse
+import io.github.aedev.flow.innertube.models.response.ChannelVideosResponse
+import io.github.aedev.flow.innertube.models.response.CreatePlaylistResponse
+import io.github.aedev.flow.innertube.models.response.EditPlaylistResponse
+import io.github.aedev.flow.innertube.models.response.GetQueueResponse
+import io.github.aedev.flow.innertube.models.response.GetSearchSuggestionsResponse
+import io.github.aedev.flow.innertube.models.response.GetTranscriptResponse
+import io.github.aedev.flow.innertube.models.response.ImageUploadResponse
+import io.github.aedev.flow.innertube.models.response.NextResponse
+import io.github.aedev.flow.innertube.models.response.PlayerResponse
+import io.github.aedev.flow.innertube.models.response.ResolveUrlResponse
+import io.github.aedev.flow.innertube.models.response.SearchResponse
+import io.github.aedev.flow.innertube.models.response.channelVideoCountText
+import io.github.aedev.flow.innertube.pages.AlbumPage
+import io.github.aedev.flow.innertube.pages.ArtistItemsContinuationPage
+import io.github.aedev.flow.innertube.pages.ArtistItemsPage
+import io.github.aedev.flow.innertube.pages.ArtistPage
+import io.github.aedev.flow.innertube.pages.BrowseResult
+import io.github.aedev.flow.innertube.pages.ChartsPage
+import io.github.aedev.flow.innertube.pages.ExplorePage
+import io.github.aedev.flow.innertube.pages.HistoryPage
+import io.github.aedev.flow.innertube.pages.HomePage
+import io.github.aedev.flow.innertube.pages.LibraryContinuationPage
+import io.github.aedev.flow.innertube.pages.LibraryPage
+import io.github.aedev.flow.innertube.pages.MoodAndGenres
+import io.github.aedev.flow.innertube.pages.NewReleaseAlbumPage
+import io.github.aedev.flow.innertube.pages.NextPage
+import io.github.aedev.flow.innertube.pages.NextResult
+import io.github.aedev.flow.innertube.pages.PlaylistContinuationPage
+import io.github.aedev.flow.innertube.pages.PlaylistPage
+import io.github.aedev.flow.innertube.pages.RelatedPage
+import io.github.aedev.flow.innertube.pages.SearchPage
+import io.github.aedev.flow.innertube.pages.SearchResult
+import io.github.aedev.flow.innertube.pages.SearchSuggestionPage
+import io.github.aedev.flow.innertube.pages.SearchSummaryPage
+import io.github.aedev.flow.innertube.pages.VideoCommentsPage
+import io.github.aedev.flow.innertube.pages.VideoDescriptionPage
+import io.github.aedev.flow.innertube.pages.VideoPlaylistPage
+import io.github.aedev.flow.innertube.pages.channel.ChannelAbout
+import io.github.aedev.flow.innertube.pages.channel.ChannelHeader
+import io.github.aedev.flow.innertube.pages.channel.ChannelPage
+import io.github.aedev.flow.innertube.pages.channel.ChannelShortsPage
+import io.github.aedev.flow.innertube.pages.channel.ChannelSortOption
+import io.github.aedev.flow.innertube.pages.channel.ChannelTabContent
+import io.github.aedev.flow.innertube.pages.channel.ChannelTabKind
+import io.github.aedev.flow.innertube.pages.channel.channelAboutContinuation
+import io.github.aedev.flow.innertube.pages.channel.channelSortOptions
+import io.github.aedev.flow.innertube.pages.channel.toChannelAbout
+import io.github.aedev.flow.innertube.pages.channel.toChannelHeader
+import io.github.aedev.flow.innertube.pages.channel.toChannelShortsPage
+import io.github.aedev.flow.innertube.pages.channel.toChannelTabContent
+import io.github.aedev.flow.innertube.pages.channel.toChannelTabs
+import io.github.aedev.flow.innertube.pages.explore.ExploreDestinationPage
+import io.github.aedev.flow.innertube.pages.explore.MusicVideoChart
+import io.github.aedev.flow.innertube.pages.explore.exploreShelves
+import io.github.aedev.flow.innertube.pages.explore.ranked
+import io.github.aedev.flow.innertube.pages.explore.toExploreDestinationShell
+import io.github.aedev.flow.innertube.pages.explore.trendingVideoChart
+import io.github.aedev.flow.innertube.pages.parseYouTubeViewCount
+import io.github.aedev.flow.innertube.pages.reel.ReelLockup
+import io.github.aedev.flow.innertube.pages.reel.ReelOverlay
+import io.github.aedev.flow.innertube.pages.reel.ReelParams
+import io.github.aedev.flow.innertube.pages.reel.ReelSequencePage
+import io.github.aedev.flow.innertube.pages.reel.toReelLockups
+import io.github.aedev.flow.innertube.pages.reel.toReelOverlay
+import io.github.aedev.flow.innertube.pages.reel.toReelSequencePage
+import io.github.aedev.flow.innertube.pages.renderer.CommunityCommentsPage
+import io.github.aedev.flow.innertube.pages.renderer.CommunityPostsPage
+import io.github.aedev.flow.innertube.pages.renderer.FeedItemOwner
+import io.github.aedev.flow.innertube.pages.renderer.FeedShelf
+import io.github.aedev.flow.innertube.pages.renderer.collaboratorDialog
+import io.github.aedev.flow.innertube.pages.renderer.lockupDateAndViews
+import io.github.aedev.flow.innertube.pages.renderer.toCommunityCommentsPage
+import io.github.aedev.flow.innertube.pages.renderer.toCommunityPostsPage
+import io.github.aedev.flow.innertube.pages.search.SearchResultsPage
+import io.github.aedev.flow.innertube.pages.search.SearchSuggestion
+import io.github.aedev.flow.innertube.pages.search.parseSearchSuggestions
+import io.github.aedev.flow.innertube.pages.search.toSearchResultsPage
+import io.github.aedev.flow.innertube.pages.toCommentRepliesPage
+import io.github.aedev.flow.innertube.pages.toVideoCommentsPage
+import io.github.aedev.flow.innertube.pages.toVideoDescriptionPage
+import io.github.aedev.flow.innertube.pages.toVideoPlaylistPage
+import io.github.aedev.flow.innertube.pages.videoCommentsContinuation
+import io.github.aedev.flow.utils.PerformanceDispatcher
+import io.github.aedev.flow.utils.avatarImageIdentityKey
+import io.github.aedev.flow.utils.relativedate.RelativeUploadDateParser
 import io.ktor.client.call.body
 import io.ktor.client.statement.bodyAsText
 import kotlinx.coroutines.Dispatchers
@@ -575,7 +575,7 @@ object YouTube {
     // ── Channel-scoped video search (YouTube.com WEB API) ─────────────────────
 
     data class ChannelVideoSearchResult(
-        val videos: List<com.arubr.smsvcodes.data.model.Video>,
+        val videos: List<io.github.aedev.flow.data.model.Video>,
         val continuation: String?,
         val channelVideoCountText: String? = null,
         /** The tab's Latest/Popular/Oldest bar. Empty on a continuation, which carries no header. */
@@ -600,7 +600,7 @@ object YouTube {
                     ignoreUnknownKeys = true
                     explicitNulls = false
                 }
-            val response = lenientJson.decodeFromString<com.arubr.smsvcodes.innertube.models.response.ChannelSearchResponse>(rawBody)
+            val response = lenientJson.decodeFromString<io.github.aedev.flow.innertube.models.response.ChannelSearchResponse>(rawBody)
             parseChannelSearchResponse(response, channelId, channelName, channelThumbnailUrl)
         }
 
@@ -624,9 +624,9 @@ object YouTube {
                     ignoreUnknownKeys = true
                     explicitNulls = false
                 }
-            val response = lenientJson.decodeFromString<com.arubr.smsvcodes.innertube.models.response.ChannelSearchResponse>(rawBody)
+            val response = lenientJson.decodeFromString<io.github.aedev.flow.innertube.models.response.ChannelSearchResponse>(rawBody)
 
-            val videos = mutableListOf<com.arubr.smsvcodes.data.model.Video>()
+            val videos = mutableListOf<io.github.aedev.flow.data.model.Video>()
             var nextContinuation: String? = null
 
             val appendedItems =
@@ -759,7 +759,7 @@ object YouTube {
     /**
      * An explore destination's landing page, emitted as it is mapped: the tabs first, then one more
      * shelf each time. `FEtrending` and `FEexplore` are dead — see
-     * [com.arubr.smsvcodes.innertube.pages.explore.ExploreDestination].
+     * [io.github.aedev.flow.innertube.pages.explore.ExploreDestination].
      *
      * The whole page arrives in a single browse response, so this cannot paint before the body
      * lands; what it takes off first paint is the mapping of every shelf after the first, which on
@@ -968,7 +968,7 @@ object YouTube {
             ?.contents
             ?.let { richItems += it }
 
-        val videos = mutableListOf<com.arubr.smsvcodes.data.model.Video>()
+        val videos = mutableListOf<io.github.aedev.flow.data.model.Video>()
         var nextContinuation: String? = null
         richItems.forEach { richItem ->
             val content = richItem.richItemRenderer?.content
@@ -1000,7 +1000,7 @@ object YouTube {
         channelName: String,
         channelThumbnailUrl: String,
         isLive: Boolean,
-    ): com.arubr.smsvcodes.data.model.Video? {
+    ): io.github.aedev.flow.data.model.Video? {
         val videoId = lockup.contentId ?: return null
         val metadata = lockup.metadata?.lockupMetadataViewModel
         val title = metadata?.title?.content?.takeIf { it.isNotBlank() } ?: return null
@@ -1032,7 +1032,7 @@ object YouTube {
                 .orEmpty()
         val (viewsText, uploadText, uploadTimestamp) = lockupDateAndViews(parts, locale.hl)
 
-        return com.arubr.smsvcodes.data.model.Video(
+        return io.github.aedev.flow.data.model.Video(
             id = videoId,
             title = title,
             channelName = channelName,
@@ -1053,7 +1053,7 @@ object YouTube {
         channelName: String,
         channelThumbnailUrl: String,
         isLive: Boolean,
-    ): com.arubr.smsvcodes.data.model.Video? {
+    ): io.github.aedev.flow.data.model.Video? {
         val videoId = r.videoId ?: return null
         val title = r.title?.textValue()?.takeIf { it.isNotBlank() } ?: return null
         val thumbnail =
@@ -1065,7 +1065,7 @@ object YouTube {
         val uploadText = r.publishedTimeText?.textValue().orEmpty()
         val viewsText = r.viewCountText?.textValue()
         val avatarUrls = r.channelAvatarUrls(channelThumbnailUrl)
-        return com.arubr.smsvcodes.data.model.Video(
+        return io.github.aedev.flow.data.model.Video(
             id = videoId,
             title = title,
             channelName = channelName,
@@ -1115,7 +1115,7 @@ object YouTube {
     }
 
     private fun parseChannelSearchResponse(
-        response: com.arubr.smsvcodes.innertube.models.response.ChannelSearchResponse,
+        response: io.github.aedev.flow.innertube.models.response.ChannelSearchResponse,
         channelId: String,
         channelName: String,
         channelThumbnailUrl: String,
@@ -1162,7 +1162,7 @@ object YouTube {
                 "hasRichGrid=${tabContent?.richGridRenderer != null}",
         )
 
-        val videos = mutableListOf<com.arubr.smsvcodes.data.model.Video>()
+        val videos = mutableListOf<io.github.aedev.flow.data.model.Video>()
         var continuation: String? = null
 
         tabContent?.richGridRenderer?.contents?.forEach { richItem ->
@@ -1202,11 +1202,11 @@ object YouTube {
     }
 
     private fun parseVideoRenderer(
-        r: com.arubr.smsvcodes.innertube.models.response.ChannelSearchResponse.VideoRenderer,
+        r: io.github.aedev.flow.innertube.models.response.ChannelSearchResponse.VideoRenderer,
         channelId: String,
         channelName: String,
         channelThumbnailUrl: String,
-    ): com.arubr.smsvcodes.data.model.Video? {
+    ): io.github.aedev.flow.data.model.Video? {
         val videoId = r.videoId ?: return null
         val title =
             r.title
@@ -1222,7 +1222,7 @@ object YouTube {
         val duration = parseLengthText(r.lengthText?.simpleText)
         val viewCount = parseYouTubeViewCount(r.viewCountText?.simpleText)
         val avatarUrls = r.channelAvatarUrls(channelThumbnailUrl)
-        return com.arubr.smsvcodes.data.model.Video(
+        return io.github.aedev.flow.data.model.Video(
             id = videoId,
             title = title,
             channelName = channelName,
@@ -1236,7 +1236,7 @@ object YouTube {
         )
     }
 
-    private fun com.arubr.smsvcodes.innertube.models.response.ChannelSearchResponse.VideoRenderer.channelAvatarUrls(
+    private fun io.github.aedev.flow.innertube.models.response.ChannelSearchResponse.VideoRenderer.channelAvatarUrls(
         fallback: String,
     ): List<String> {
         val supported = channelThumbnailSupportedRenderers
@@ -2464,26 +2464,26 @@ object YouTube {
         runCatching {
             innerTube
                 .nextForLiveChat(videoId)
-                .body<com.arubr.smsvcodes.innertube.models.response.LiveChatSeedResponse>()
+                .body<io.github.aedev.flow.innertube.models.response.LiveChatSeedResponse>()
                 .seedContinuation()
         }
 
     suspend fun liveChat(
         continuation: String,
         offsetMs: Long? = null,
-    ): Result<com.arubr.smsvcodes.innertube.models.response.GetLiveChatResponse> =
+    ): Result<io.github.aedev.flow.innertube.models.response.GetLiveChatResponse> =
         runCatching {
             innerTube
                 .getLiveChat(continuation, offsetMs)
-                .body<com.arubr.smsvcodes.innertube.models.response.GetLiveChatResponse>()
+                .body<io.github.aedev.flow.innertube.models.response.GetLiveChatResponse>()
         }
 
-    suspend fun watchMetadata(videoId: String): Result<com.arubr.smsvcodes.innertube.models.response.WatchMetadataResponse> =
+    suspend fun watchMetadata(videoId: String): Result<io.github.aedev.flow.innertube.models.response.WatchMetadataResponse> =
         runCatching {
             val primary =
                 innerTube
                     .next(WEB, videoId, null, null, null, null, null)
-                    .body<com.arubr.smsvcodes.innertube.models.response.WatchMetadataResponse>()
+                    .body<io.github.aedev.flow.innertube.models.response.WatchMetadataResponse>()
             if (primary.relatedVideos().isNotEmpty()) {
                 primary
             } else {
@@ -2491,7 +2491,7 @@ object YouTube {
                     runCatching {
                         innerTube
                             .nextForLiveChat(videoId)
-                            .body<com.arubr.smsvcodes.innertube.models.response.WatchMetadataResponse>()
+                            .body<io.github.aedev.flow.innertube.models.response.WatchMetadataResponse>()
                     }.getOrNull()
                 if (webWatch != null && webWatch.relatedVideos().size > primary.relatedVideos().size) {
                     webWatch
@@ -2501,11 +2501,11 @@ object YouTube {
             }
         }
 
-    suspend fun watchMetadataLite(videoId: String): Result<com.arubr.smsvcodes.innertube.models.response.WatchMetadataResponse> =
+    suspend fun watchMetadataLite(videoId: String): Result<io.github.aedev.flow.innertube.models.response.WatchMetadataResponse> =
         runCatching {
             innerTube
                 .next(WEB, videoId, null, null, null, null, null)
-                .body<com.arubr.smsvcodes.innertube.models.response.WatchMetadataResponse>()
+                .body<io.github.aedev.flow.innertube.models.response.WatchMetadataResponse>()
         }
 
     suspend fun registerPlayback(

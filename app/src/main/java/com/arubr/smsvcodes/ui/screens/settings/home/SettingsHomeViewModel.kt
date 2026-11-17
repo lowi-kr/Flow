@@ -1,18 +1,18 @@
-package com.arubr.smsvcodes.ui.screens.settings.home
+package io.github.aedev.flow.ui.screens.settings.home
 
 import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
-import com.arubr.smsvcodes.BuildConfig
-import com.arubr.smsvcodes.data.local.PlayerPreferences
-import com.arubr.smsvcodes.data.recommendation.FlowNeuroEngine
-import com.arubr.smsvcodes.data.recommendation.FlowPersona
-import com.arubr.smsvcodes.data.update.AppRelease
-import com.arubr.smsvcodes.data.update.UpdateRepository
-import com.arubr.smsvcodes.player.DeepFlowManager
-import com.arubr.smsvcodes.ui.components.shared.DeepFlowState
+import io.github.aedev.flow.BuildConfig
+import io.github.aedev.flow.data.local.PlayerPreferences
+import io.github.aedev.flow.data.recommendation.FlowNeuroEngine
+import io.github.aedev.flow.data.recommendation.FlowPersona
+import io.github.aedev.flow.data.update.AppRelease
+import io.github.aedev.flow.data.update.UpdateRepository
+import io.github.aedev.flow.player.DeepFlowManager
+import io.github.aedev.flow.ui.components.shared.DeepFlowState
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow

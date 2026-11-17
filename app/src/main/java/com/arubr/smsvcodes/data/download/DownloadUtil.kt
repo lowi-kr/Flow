@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.data.download
+package io.github.aedev.flow.data.download
 
 import android.content.Context
 import android.net.Uri
@@ -12,18 +12,18 @@ import androidx.media3.datasource.cache.CacheDataSource
 import androidx.media3.datasource.cache.SimpleCache
 import androidx.media3.datasource.okhttp.OkHttpDataSource
 import dagger.hilt.android.qualifiers.ApplicationContext
-import com.arubr.smsvcodes.data.local.dao.DownloadDao
-import com.arubr.smsvcodes.data.video.storage.DownloadFiles
-import com.arubr.smsvcodes.di.DownloadCache
-import com.arubr.smsvcodes.di.MusicCache
-import com.arubr.smsvcodes.network.AppProxyManager
-import com.arubr.smsvcodes.player.datasource.GoogleVideoRequestPolicy
-import com.arubr.smsvcodes.player.datasource.RefusedStreamRetryDataSource
-import com.arubr.smsvcodes.player.error.StreamDenialClassifier
-import com.arubr.smsvcodes.player.error.StreamDenialKind
-import com.arubr.smsvcodes.player.stream.ClientGateTracker
-import com.arubr.smsvcodes.utils.MusicPlayerUtils
-import com.arubr.smsvcodes.utils.potoken.WebPoTokenSession
+import io.github.aedev.flow.data.local.dao.DownloadDao
+import io.github.aedev.flow.data.video.storage.DownloadFiles
+import io.github.aedev.flow.di.DownloadCache
+import io.github.aedev.flow.di.MusicCache
+import io.github.aedev.flow.network.AppProxyManager
+import io.github.aedev.flow.player.datasource.GoogleVideoRequestPolicy
+import io.github.aedev.flow.player.datasource.RefusedStreamRetryDataSource
+import io.github.aedev.flow.player.error.StreamDenialClassifier
+import io.github.aedev.flow.player.error.StreamDenialKind
+import io.github.aedev.flow.player.stream.ClientGateTracker
+import io.github.aedev.flow.utils.MusicPlayerUtils
+import io.github.aedev.flow.utils.potoken.WebPoTokenSession
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.runBlocking
 import okhttp3.OkHttpClient

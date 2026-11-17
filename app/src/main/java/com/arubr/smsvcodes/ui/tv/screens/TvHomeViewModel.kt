@@ -1,9 +1,9 @@
-package com.arubr.smsvcodes.ui.tv.screens
+package io.github.aedev.flow.ui.tv.screens
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
-import com.arubr.smsvcodes.data.local.PlayerPreferences
+import io.github.aedev.flow.data.local.PlayerPreferences
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.stateIn

@@ -1,7 +1,7 @@
-package com.arubr.smsvcodes.player
+package io.github.aedev.flow.player
 
 import androidx.media3.common.MediaItem
-import com.arubr.smsvcodes.data.music.model.MusicTrack
+import io.github.aedev.flow.data.music.model.MusicTrack
 
 /**
  * The queue as the player holds it, for playback the app did not start itself: a list picked in the

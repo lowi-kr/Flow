@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.notification
+package io.github.aedev.flow.notification
 
 internal object SubscriptionNotificationPolicy {
     fun shouldAnnounce(

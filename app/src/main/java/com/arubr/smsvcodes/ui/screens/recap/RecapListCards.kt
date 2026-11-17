@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.screens.recap
+package io.github.aedev.flow.ui.screens.recap
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -14,26 +14,26 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.data.local.dao.ChannelVideoCount
-import com.arubr.smsvcodes.data.stats.LedgerAction
-import com.arubr.smsvcodes.data.stats.MusicRecap
-import com.arubr.smsvcodes.data.stats.RankedItem
-import com.arubr.smsvcodes.data.stats.RankedKind
-import com.arubr.smsvcodes.data.stats.VideoRecap
-import com.arubr.smsvcodes.data.stats.ViewFormat
-import com.arubr.smsvcodes.ui.components.layout.navigation.LocalMediaNavigator
-import com.arubr.smsvcodes.ui.components.shared.FlowSegmentedGap
-import com.arubr.smsvcodes.ui.components.shared.flowArtistShape
-import com.arubr.smsvcodes.ui.components.shared.flowRowGroupShape
-import com.arubr.smsvcodes.ui.components.stats.StatBigNumber
-import com.arubr.smsvcodes.ui.components.stats.StatCard
-import com.arubr.smsvcodes.ui.components.stats.StatLegendItem
-import com.arubr.smsvcodes.ui.components.stats.StatRankRow
-import com.arubr.smsvcodes.ui.components.stats.StatSplitRing
-import com.arubr.smsvcodes.ui.components.stats.rememberStatEntrance
-import com.arubr.smsvcodes.ui.components.stats.spentTimeLabel
-import com.arubr.smsvcodes.utils.sponsorCategoryLabelRes
+import io.github.aedev.flow.R
+import io.github.aedev.flow.data.local.dao.ChannelVideoCount
+import io.github.aedev.flow.data.stats.LedgerAction
+import io.github.aedev.flow.data.stats.MusicRecap
+import io.github.aedev.flow.data.stats.RankedItem
+import io.github.aedev.flow.data.stats.RankedKind
+import io.github.aedev.flow.data.stats.VideoRecap
+import io.github.aedev.flow.data.stats.ViewFormat
+import io.github.aedev.flow.ui.components.layout.navigation.LocalMediaNavigator
+import io.github.aedev.flow.ui.components.shared.FlowSegmentedGap
+import io.github.aedev.flow.ui.components.shared.flowArtistShape
+import io.github.aedev.flow.ui.components.shared.flowRowGroupShape
+import io.github.aedev.flow.ui.components.stats.StatBigNumber
+import io.github.aedev.flow.ui.components.stats.StatCard
+import io.github.aedev.flow.ui.components.stats.StatLegendItem
+import io.github.aedev.flow.ui.components.stats.StatRankRow
+import io.github.aedev.flow.ui.components.stats.StatSplitRing
+import io.github.aedev.flow.ui.components.stats.rememberStatEntrance
+import io.github.aedev.flow.ui.components.stats.spentTimeLabel
+import io.github.aedev.flow.utils.sponsorCategoryLabelRes
 
 private val ChipSpacing = 8.dp
 private val SectionSpacing = 16.dp

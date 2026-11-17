@@ -5,26 +5,26 @@
  * Test-source-set only — never shipped in the APK.
  */
 
-package com.arubr.smsvcodes.data.recommendation.eval
+package io.github.aedev.flow.data.recommendation.eval
 
-import com.arubr.smsvcodes.data.model.Video
-import com.arubr.smsvcodes.data.recommendation.ContentVector
-import com.arubr.smsvcodes.data.recommendation.FlowNeuroEngine
-import com.arubr.smsvcodes.data.recommendation.GraphSeedInput
-import com.arubr.smsvcodes.data.recommendation.GraphSeedSelector
-import com.arubr.smsvcodes.data.recommendation.GraphSeedSource
-import com.arubr.smsvcodes.data.recommendation.IdfSnapshot
-import com.arubr.smsvcodes.data.recommendation.NeuroClusters
-import com.arubr.smsvcodes.data.recommendation.NeuroContentStore
-import com.arubr.smsvcodes.data.recommendation.NeuroMaintenance
-import com.arubr.smsvcodes.data.recommendation.NeuroPhrases
-import com.arubr.smsvcodes.data.recommendation.NeuroScoring
-import com.arubr.smsvcodes.data.recommendation.NeuroStorage
-import com.arubr.smsvcodes.data.recommendation.NeuroTokenizer
-import com.arubr.smsvcodes.data.recommendation.NeuroTopicCatalog
-import com.arubr.smsvcodes.data.recommendation.NeuroVectorMath
-import com.arubr.smsvcodes.data.recommendation.UserBrain
-import com.arubr.smsvcodes.data.recommendation.eval.NeuroLearningBenchmark.Family
+import io.github.aedev.flow.data.model.Video
+import io.github.aedev.flow.data.recommendation.ContentVector
+import io.github.aedev.flow.data.recommendation.FlowNeuroEngine
+import io.github.aedev.flow.data.recommendation.GraphSeedInput
+import io.github.aedev.flow.data.recommendation.GraphSeedSelector
+import io.github.aedev.flow.data.recommendation.GraphSeedSource
+import io.github.aedev.flow.data.recommendation.IdfSnapshot
+import io.github.aedev.flow.data.recommendation.NeuroClusters
+import io.github.aedev.flow.data.recommendation.NeuroContentStore
+import io.github.aedev.flow.data.recommendation.NeuroMaintenance
+import io.github.aedev.flow.data.recommendation.NeuroPhrases
+import io.github.aedev.flow.data.recommendation.NeuroScoring
+import io.github.aedev.flow.data.recommendation.NeuroStorage
+import io.github.aedev.flow.data.recommendation.NeuroTokenizer
+import io.github.aedev.flow.data.recommendation.NeuroTopicCatalog
+import io.github.aedev.flow.data.recommendation.NeuroVectorMath
+import io.github.aedev.flow.data.recommendation.UserBrain
+import io.github.aedev.flow.data.recommendation.eval.NeuroLearningBenchmark.Family
 import io.mockk.coEvery
 import io.mockk.mockk
 import kotlinx.coroutines.runBlocking

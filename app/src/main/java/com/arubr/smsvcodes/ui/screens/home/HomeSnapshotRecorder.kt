@@ -1,19 +1,19 @@
-package com.arubr.smsvcodes.ui.screens.home
+package io.github.aedev.flow.ui.screens.home
 
-import com.arubr.smsvcodes.BuildConfig
-import com.arubr.smsvcodes.data.local.PlayerPreferences
-import com.arubr.smsvcodes.data.model.Video
-import com.arubr.smsvcodes.data.recommendation.FlowNeuroEngine
-import com.arubr.smsvcodes.data.recommendation.NeuroKeySpec
-import com.arubr.smsvcodes.data.recommendation.RankTrace
-import com.arubr.smsvcodes.data.recommendation.snapshot.HomeSnapshot
-import com.arubr.smsvcodes.data.recommendation.snapshot.HomeSnapshotStore
-import com.arubr.smsvcodes.data.recommendation.snapshot.SnapshotCard
-import com.arubr.smsvcodes.data.recommendation.snapshot.SnapshotRelated
-import com.arubr.smsvcodes.data.recommendation.snapshot.SnapshotSearch
-import com.arubr.smsvcodes.data.recommendation.snapshot.SnapshotSeed
-import com.arubr.smsvcodes.data.recommendation.snapshot.SnapshotShown
-import com.arubr.smsvcodes.data.recommendation.snapshot.SnapshotVideo
+import io.github.aedev.flow.BuildConfig
+import io.github.aedev.flow.data.local.PlayerPreferences
+import io.github.aedev.flow.data.model.Video
+import io.github.aedev.flow.data.recommendation.FlowNeuroEngine
+import io.github.aedev.flow.data.recommendation.NeuroKeySpec
+import io.github.aedev.flow.data.recommendation.RankTrace
+import io.github.aedev.flow.data.recommendation.snapshot.HomeSnapshot
+import io.github.aedev.flow.data.recommendation.snapshot.HomeSnapshotStore
+import io.github.aedev.flow.data.recommendation.snapshot.SnapshotCard
+import io.github.aedev.flow.data.recommendation.snapshot.SnapshotRelated
+import io.github.aedev.flow.data.recommendation.snapshot.SnapshotSearch
+import io.github.aedev.flow.data.recommendation.snapshot.SnapshotSeed
+import io.github.aedev.flow.data.recommendation.snapshot.SnapshotShown
+import io.github.aedev.flow.data.recommendation.snapshot.SnapshotVideo
 import kotlinx.coroutines.flow.first
 import javax.inject.Inject
 

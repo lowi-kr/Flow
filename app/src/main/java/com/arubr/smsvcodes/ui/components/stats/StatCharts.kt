@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.stats
+package io.github.aedev.flow.ui.components.stats
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement

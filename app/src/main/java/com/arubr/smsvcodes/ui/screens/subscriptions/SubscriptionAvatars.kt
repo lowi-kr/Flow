@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.screens.subscriptions
+package io.github.aedev.flow.ui.screens.subscriptions
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -31,13 +31,13 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.data.model.Channel
-import com.arubr.smsvcodes.ui.components.shared.ChannelAvatarImage
-import com.arubr.smsvcodes.ui.components.shared.ChannelGroupBadge
-import com.arubr.smsvcodes.ui.components.shared.flowArtistShape
-import com.arubr.smsvcodes.ui.components.shared.focusLift
-import com.arubr.smsvcodes.ui.components.shared.titleMarquee
+import io.github.aedev.flow.R
+import io.github.aedev.flow.data.model.Channel
+import io.github.aedev.flow.ui.components.shared.ChannelAvatarImage
+import io.github.aedev.flow.ui.components.shared.ChannelGroupBadge
+import io.github.aedev.flow.ui.components.shared.flowArtistShape
+import io.github.aedev.flow.ui.components.shared.focusLift
+import io.github.aedev.flow.ui.components.shared.titleMarquee
 
 private val AvatarItemWidth = 64.dp
 private val AvatarSize = 56.dp

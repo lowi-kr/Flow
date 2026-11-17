@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.screens.player.content
+package io.github.aedev.flow.ui.screens.player.content
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
@@ -8,12 +8,12 @@ import androidx.compose.foundation.lazy.LazyListScope
 import androidx.compose.foundation.lazy.items
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.arubr.smsvcodes.data.local.PlayerRelatedCardStyle
-import com.arubr.smsvcodes.data.model.Video
-import com.arubr.smsvcodes.ui.components.FeedGridLayout
-import com.arubr.smsvcodes.ui.components.partialRowIndices
-import com.arubr.smsvcodes.ui.components.shared.card.MediaVideoCard
-import com.arubr.smsvcodes.ui.components.shared.card.VideoCardLayout
+import io.github.aedev.flow.data.local.PlayerRelatedCardStyle
+import io.github.aedev.flow.data.model.Video
+import io.github.aedev.flow.ui.components.FeedGridLayout
+import io.github.aedev.flow.ui.components.partialRowIndices
+import io.github.aedev.flow.ui.components.shared.card.MediaVideoCard
+import io.github.aedev.flow.ui.components.shared.card.VideoCardLayout
 
 /**
  * Related videos content for LazyListScope.

@@ -1,7 +1,7 @@
-package com.arubr.smsvcodes.data.subscriptions
+package io.github.aedev.flow.data.subscriptions
 
-import com.arubr.smsvcodes.data.model.Video
-import com.arubr.smsvcodes.data.subscriptions.SubscriptionFeedMerger.preservingEnrichedMetadata
+import io.github.aedev.flow.data.model.Video
+import io.github.aedev.flow.data.subscriptions.SubscriptionFeedMerger.preservingEnrichedMetadata
 
 /**
  * What one write of a refresh puts back in the feed cache: [rows] replace the rows of the channels

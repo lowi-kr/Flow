@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.innertube
+package io.github.aedev.flow.innertube
 
 object YouTubeConstants {
     const val DEFAULT_TOP_RESULT = "Top result"

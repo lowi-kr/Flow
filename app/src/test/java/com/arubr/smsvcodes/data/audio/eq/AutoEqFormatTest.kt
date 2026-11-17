@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.data.audio.eq
+package io.github.aedev.flow.data.audio.eq
 
 import com.google.common.truth.Truth.assertThat
 import org.junit.Test

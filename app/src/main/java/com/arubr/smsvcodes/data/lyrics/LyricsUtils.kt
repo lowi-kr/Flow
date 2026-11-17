@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.data.lyrics
+package io.github.aedev.flow.data.lyrics
 
 /**
  * Utility functions for parsing lyrics in various formats.

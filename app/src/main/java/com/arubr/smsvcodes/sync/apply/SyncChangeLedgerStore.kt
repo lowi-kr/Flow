@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.sync.apply
+package io.github.aedev.flow.sync.apply
 
 import android.content.Context
 import android.util.Log

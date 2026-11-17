@@ -1,7 +1,7 @@
-package com.arubr.smsvcodes.data.shorts
+package io.github.aedev.flow.data.shorts
 
-import com.arubr.smsvcodes.innertube.models.response.PlayerResponse.StreamingData.Format
-import com.arubr.smsvcodes.innertube.models.response.PlayerResponse.StreamingData.Format.Range
+import io.github.aedev.flow.innertube.models.response.PlayerResponse.StreamingData.Format
+import io.github.aedev.flow.innertube.models.response.PlayerResponse.StreamingData.Format.Range
 import org.junit.Assert.assertNotNull
 import org.junit.Assert.assertNull
 import org.junit.Assert.assertTrue

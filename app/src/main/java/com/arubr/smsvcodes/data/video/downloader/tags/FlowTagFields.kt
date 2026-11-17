@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.data.video.downloader.tags
+package io.github.aedev.flow.data.video.downloader.tags
 
 import kotlinx.serialization.builtins.ListSerializer
 import kotlinx.serialization.builtins.serializer
@@ -6,11 +6,11 @@ import kotlinx.serialization.json.Json
 
 /**
  * The flat key/value form of [DownloadTags] that is written twice into a file: as MP4 `mdta`
- * entries keyed `com.arubr.smsvcodes.<field>` and as iTunes `----` atoms with mean
+ * entries keyed `io.github.aedev.flow.<field>` and as iTunes `----` atoms with mean
  * [NAMESPACE] and name `<field>`. Lyrics are left out; they travel in the `©lyr` atom.
  */
 object FlowTagFields {
-    const val NAMESPACE = "com.arubr.smsvcodes"
+    const val NAMESPACE = "io.github.aedev.flow"
     const val DESCRIPTION_MAX_CHARS = 2_000
 
     const val SCHEMA = "schema"

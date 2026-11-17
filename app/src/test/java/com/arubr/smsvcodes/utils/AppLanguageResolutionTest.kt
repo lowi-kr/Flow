@@ -1,7 +1,7 @@
-package com.arubr.smsvcodes.utils
+package io.github.aedev.flow.utils
 
-import com.arubr.smsvcodes.utils.AppLanguageManager.LanguageResolution
-import com.arubr.smsvcodes.utils.AppLanguageManager.SYSTEM_DEFAULT
+import io.github.aedev.flow.utils.AppLanguageManager.LanguageResolution
+import io.github.aedev.flow.utils.AppLanguageManager.SYSTEM_DEFAULT
 import org.junit.Assert.assertEquals
 import org.junit.Test
 

@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.player.dlna
+package io.github.aedev.flow.player.dlna
 
 import android.content.Context
 import android.net.wifi.WifiManager

@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.videoplayer
+package io.github.aedev.flow.ui.components.videoplayer
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -31,10 +31,10 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.ui.theme.PlayerScrimContent
-import com.arubr.smsvcodes.ui.theme.PlayerScrimContentSecondary
-import com.arubr.smsvcodes.ui.theme.PlayerScrimPanel
+import io.github.aedev.flow.R
+import io.github.aedev.flow.ui.theme.PlayerScrimContent
+import io.github.aedev.flow.ui.theme.PlayerScrimContentSecondary
+import io.github.aedev.flow.ui.theme.PlayerScrimPanel
 import kotlinx.coroutines.delay
 import java.util.Locale
 

@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.player.musicvideo
+package io.github.aedev.flow.player.musicvideo
 
 import android.net.Uri
 import androidx.media3.common.MediaItem

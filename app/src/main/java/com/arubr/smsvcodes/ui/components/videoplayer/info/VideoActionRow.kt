@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.videoplayer.info
+package io.github.aedev.flow.ui.components.videoplayer.info
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.PaddingValues
@@ -40,8 +40,8 @@ import androidx.compose.ui.hapticfeedback.HapticFeedbackType
 import androidx.compose.ui.platform.LocalHapticFeedback
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.utils.formatViewCount
+import io.github.aedev.flow.R
+import io.github.aedev.flow.utils.formatViewCount
 
 private val ActionSpacing = 8.dp
 private val ActionIconSize = 18.dp

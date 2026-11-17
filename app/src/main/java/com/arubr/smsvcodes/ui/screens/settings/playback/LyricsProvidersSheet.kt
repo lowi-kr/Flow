@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.screens.settings.playback
+package io.github.aedev.flow.ui.screens.settings.playback
 
 import androidx.annotation.StringRes
 import androidx.compose.foundation.layout.Box
@@ -36,11 +36,11 @@ import androidx.compose.ui.semantics.customActions
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.ui.components.shared.FlowSheetHeader
-import com.arubr.smsvcodes.ui.components.shared.FlowSwitch
-import com.arubr.smsvcodes.ui.components.shared.ReorderHandle
-import com.arubr.smsvcodes.ui.components.shared.rememberFlowSheetState
+import io.github.aedev.flow.R
+import io.github.aedev.flow.ui.components.shared.FlowSheetHeader
+import io.github.aedev.flow.ui.components.shared.FlowSwitch
+import io.github.aedev.flow.ui.components.shared.ReorderHandle
+import io.github.aedev.flow.ui.components.shared.rememberFlowSheetState
 import sh.calvin.reorderable.ReorderableColumn
 
 private val RowPadding = 24.dp

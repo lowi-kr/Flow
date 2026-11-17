@@ -1,10 +1,10 @@
-package com.arubr.smsvcodes.ui.components.donation
+package io.github.aedev.flow.ui.components.donation
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
-import com.arubr.smsvcodes.data.local.PlayerPreferences
-import com.arubr.smsvcodes.ui.startup.LaunchPrompts
+import io.github.aedev.flow.data.local.PlayerPreferences
+import io.github.aedev.flow.ui.startup.LaunchPrompts
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow

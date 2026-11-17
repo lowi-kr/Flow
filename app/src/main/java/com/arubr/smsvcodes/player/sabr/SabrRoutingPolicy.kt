@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.player.sabr
+package io.github.aedev.flow.player.sabr
 
 /**
  * Decides when the native SABR path should be engaged and preferred over direct-URL playback.

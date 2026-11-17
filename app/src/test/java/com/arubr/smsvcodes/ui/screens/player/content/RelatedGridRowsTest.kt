@@ -1,10 +1,10 @@
-package com.arubr.smsvcodes.ui.screens.player.content
+package io.github.aedev.flow.ui.screens.player.content
 
 import androidx.compose.ui.unit.dp
 import com.google.common.truth.Truth.assertThat
-import com.arubr.smsvcodes.data.local.HomeFeedColumns
-import com.arubr.smsvcodes.data.local.PlayerRelatedCardStyle
-import com.arubr.smsvcodes.ui.components.feedGridLayoutFor
+import io.github.aedev.flow.data.local.HomeFeedColumns
+import io.github.aedev.flow.data.local.PlayerRelatedCardStyle
+import io.github.aedev.flow.ui.components.feedGridLayoutFor
 import org.junit.Test
 
 class RelatedGridRowsTest {

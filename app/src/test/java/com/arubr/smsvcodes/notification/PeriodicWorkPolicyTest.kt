@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.notification
+package io.github.aedev.flow.notification
 
 import androidx.work.ExistingPeriodicWorkPolicy
 import org.junit.Assert.assertEquals

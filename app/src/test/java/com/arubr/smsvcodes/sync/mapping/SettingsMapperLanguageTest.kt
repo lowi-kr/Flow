@@ -1,8 +1,8 @@
-package com.arubr.smsvcodes.sync.mapping
+package io.github.aedev.flow.sync.mapping
 
 import com.google.common.truth.Truth.assertThat
-import com.arubr.smsvcodes.data.local.SettingsBackup
-import com.arubr.smsvcodes.sync.canonical.CanonicalSetting
+import io.github.aedev.flow.data.local.SettingsBackup
+import io.github.aedev.flow.sync.canonical.CanonicalSetting
 import kotlinx.serialization.json.JsonPrimitive
 import org.junit.Test
 

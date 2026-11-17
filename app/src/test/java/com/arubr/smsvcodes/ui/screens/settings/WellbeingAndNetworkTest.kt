@@ -1,10 +1,10 @@
-package com.arubr.smsvcodes.ui.screens.settings
+package io.github.aedev.flow.ui.screens.settings
 
-import com.arubr.smsvcodes.network.AppProxyConfig
-import com.arubr.smsvcodes.network.AppProxyType
-import com.arubr.smsvcodes.ui.screens.settings.network.ProxyDraft
-import com.arubr.smsvcodes.ui.screens.settings.wellbeing.WatchRecord
-import com.arubr.smsvcodes.ui.screens.settings.wellbeing.summarizeWatchTime
+import io.github.aedev.flow.network.AppProxyConfig
+import io.github.aedev.flow.network.AppProxyType
+import io.github.aedev.flow.ui.screens.settings.network.ProxyDraft
+import io.github.aedev.flow.ui.screens.settings.wellbeing.WatchRecord
+import io.github.aedev.flow.ui.screens.settings.wellbeing.summarizeWatchTime
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue

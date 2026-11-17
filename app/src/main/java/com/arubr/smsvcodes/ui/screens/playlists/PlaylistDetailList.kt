@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.screens.playlists
+package io.github.aedev.flow.ui.screens.playlists
 
 import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.foundation.layout.PaddingValues
@@ -17,15 +17,15 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.data.model.Video
-import com.arubr.smsvcodes.ui.components.layout.flowBottomContentPadding
-import com.arubr.smsvcodes.ui.components.library.PlaylistVideoRow
-import com.arubr.smsvcodes.ui.components.library.libraryListThumbnailWidth
-import com.arubr.smsvcodes.ui.components.shared.FlowEmptyState
-import com.arubr.smsvcodes.ui.components.shared.FlowLoadingIndicator
-import com.arubr.smsvcodes.ui.components.shared.ReorderableLazyListState
-import com.arubr.smsvcodes.ui.components.shared.animateMediaListItem
+import io.github.aedev.flow.R
+import io.github.aedev.flow.data.model.Video
+import io.github.aedev.flow.ui.components.layout.flowBottomContentPadding
+import io.github.aedev.flow.ui.components.library.PlaylistVideoRow
+import io.github.aedev.flow.ui.components.library.libraryListThumbnailWidth
+import io.github.aedev.flow.ui.components.shared.FlowEmptyState
+import io.github.aedev.flow.ui.components.shared.FlowLoadingIndicator
+import io.github.aedev.flow.ui.components.shared.ReorderableLazyListState
+import io.github.aedev.flow.ui.components.shared.animateMediaListItem
 
 /** How the list lets the viewer act on its videos. */
 internal class PlaylistListMode(

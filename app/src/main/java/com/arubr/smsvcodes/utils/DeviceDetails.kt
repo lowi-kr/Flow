@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.utils
+package io.github.aedev.flow.utils
 
 import android.app.ActivityManager
 import android.content.Context
@@ -12,9 +12,9 @@ import android.text.format.Formatter
 import android.view.Display
 import androidx.annotation.StringRes
 import androidx.compose.runtime.Immutable
-import com.arubr.smsvcodes.BuildConfig
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.data.local.VideoCodec
+import io.github.aedev.flow.BuildConfig
+import io.github.aedev.flow.R
+import io.github.aedev.flow.data.local.VideoCodec
 import kotlin.math.roundToInt
 
 /** One labelled fact about the device. */

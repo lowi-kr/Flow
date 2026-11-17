@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.screens.sync
+package io.github.aedev.flow.ui.screens.sync
 
 import android.graphics.Bitmap
 import android.graphics.Color
@@ -27,7 +27,7 @@ import com.google.zxing.NotFoundException
 import com.google.zxing.PlanarYUVLuminanceSource
 import com.google.zxing.common.HybridBinarizer
 import com.google.zxing.qrcode.QRCodeWriter
-import com.arubr.smsvcodes.R
+import io.github.aedev.flow.R
 import java.util.concurrent.Executors
 import java.util.concurrent.atomic.AtomicBoolean
 

@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.videoplayer.overlay
+package io.github.aedev.flow.ui.components.videoplayer.overlay
 
 import androidx.compose.animation.*
 import androidx.compose.animation.core.*
@@ -19,9 +19,9 @@ import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.data.local.DoubleTapSeekZone
-import com.arubr.smsvcodes.ui.theme.PlayerScrimContent
+import io.github.aedev.flow.R
+import io.github.aedev.flow.data.local.DoubleTapSeekZone
+import io.github.aedev.flow.ui.theme.PlayerScrimContent
 
 private const val SEEK_RIPPLE_ALPHA = 0.15f
 private const val SEEK_RIPPLE_PULSE_ALPHA = 0.28f

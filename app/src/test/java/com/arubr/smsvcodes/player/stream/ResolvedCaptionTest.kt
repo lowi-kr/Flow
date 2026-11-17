@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.player.stream
+package io.github.aedev.flow.player.stream
 
 import androidx.media3.common.MimeTypes
 import org.junit.Assert.assertEquals

@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.videoplayer.settings
+package io.github.aedev.flow.ui.components.videoplayer.settings
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
@@ -18,17 +18,17 @@ import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.player.EnhancedPlayerState
-import com.arubr.smsvcodes.player.QualityOption
-import com.arubr.smsvcodes.ui.components.equalizer.EqQuickPanel
-import com.arubr.smsvcodes.ui.components.layout.navigation.LocalMediaNavigator
-import com.arubr.smsvcodes.ui.components.shared.FlowBottomSheet
-import com.arubr.smsvcodes.ui.components.shared.FlowSheetHeader
-import com.arubr.smsvcodes.ui.components.shared.defaultSheetExpandedHeight
-import com.arubr.smsvcodes.ui.components.shared.rememberFlowBottomSheetState
-import com.arubr.smsvcodes.ui.components.videoplayer.subtitle.SubtitleCustomizer
-import com.arubr.smsvcodes.ui.components.videoplayer.subtitle.SubtitleStyle
+import io.github.aedev.flow.R
+import io.github.aedev.flow.player.EnhancedPlayerState
+import io.github.aedev.flow.player.QualityOption
+import io.github.aedev.flow.ui.components.equalizer.EqQuickPanel
+import io.github.aedev.flow.ui.components.layout.navigation.LocalMediaNavigator
+import io.github.aedev.flow.ui.components.shared.FlowBottomSheet
+import io.github.aedev.flow.ui.components.shared.FlowSheetHeader
+import io.github.aedev.flow.ui.components.shared.defaultSheetExpandedHeight
+import io.github.aedev.flow.ui.components.shared.rememberFlowBottomSheetState
+import io.github.aedev.flow.ui.components.videoplayer.subtitle.SubtitleCustomizer
+import io.github.aedev.flow.ui.components.videoplayer.subtitle.SubtitleStyle
 
 @Composable
 fun SettingsMenuDialog(

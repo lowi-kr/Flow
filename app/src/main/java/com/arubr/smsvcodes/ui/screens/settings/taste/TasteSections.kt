@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.screens.settings.taste
+package io.github.aedev.flow.ui.screens.settings.taste
 
 import androidx.annotation.StringRes
 import androidx.compose.foundation.layout.Box
@@ -24,13 +24,13 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.ui.components.settings.SettingsDestination
-import com.arubr.smsvcodes.ui.components.settings.SettingsListScope
-import com.arubr.smsvcodes.ui.components.settings.info
-import com.arubr.smsvcodes.ui.components.settings.nav
-import com.arubr.smsvcodes.ui.screens.settings.index.DestinationIndex
-import com.arubr.smsvcodes.ui.screens.settings.index.TasteIndex
+import io.github.aedev.flow.R
+import io.github.aedev.flow.ui.components.settings.SettingsDestination
+import io.github.aedev.flow.ui.components.settings.SettingsListScope
+import io.github.aedev.flow.ui.components.settings.info
+import io.github.aedev.flow.ui.components.settings.nav
+import io.github.aedev.flow.ui.screens.settings.index.DestinationIndex
+import io.github.aedev.flow.ui.screens.settings.index.TasteIndex
 
 private const val STRONG_CHANNEL = 0.65f
 private const val BALANCED_CHANNEL = 0.4f

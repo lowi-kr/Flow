@@ -1,15 +1,15 @@
-package com.arubr.smsvcodes.ui.screens.categories
+package io.github.aedev.flow.ui.screens.categories
 
 import android.content.Context
 import com.google.common.truth.Truth.assertThat
-import com.arubr.smsvcodes.data.local.PlayerPreferences
-import com.arubr.smsvcodes.data.repository.YouTubeRepository
-import com.arubr.smsvcodes.innertube.YouTube
-import com.arubr.smsvcodes.innertube.pages.explore.ExploreDestination
-import com.arubr.smsvcodes.innertube.pages.explore.ExploreDestinationPage
-import com.arubr.smsvcodes.innertube.pages.explore.ExploreSectionKind
-import com.arubr.smsvcodes.innertube.pages.explore.MusicVideoChart
-import com.arubr.smsvcodes.innertube.pages.renderer.FeedShelf
+import io.github.aedev.flow.data.local.PlayerPreferences
+import io.github.aedev.flow.data.repository.YouTubeRepository
+import io.github.aedev.flow.innertube.YouTube
+import io.github.aedev.flow.innertube.pages.explore.ExploreDestination
+import io.github.aedev.flow.innertube.pages.explore.ExploreDestinationPage
+import io.github.aedev.flow.innertube.pages.explore.ExploreSectionKind
+import io.github.aedev.flow.innertube.pages.explore.MusicVideoChart
+import io.github.aedev.flow.innertube.pages.renderer.FeedShelf
 import io.mockk.coEvery
 import io.mockk.every
 import io.mockk.mockk

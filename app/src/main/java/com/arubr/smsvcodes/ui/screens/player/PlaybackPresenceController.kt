@@ -1,14 +1,14 @@
-package com.arubr.smsvcodes.ui.screens.player
+package io.github.aedev.flow.ui.screens.player
 
-import com.arubr.smsvcodes.data.local.PlayerPreferences
-import com.arubr.smsvcodes.data.local.ViewHistory
-import com.arubr.smsvcodes.data.model.Video
-import com.arubr.smsvcodes.data.video.SavedVideoQueue
-import com.arubr.smsvcodes.player.EnhancedMusicPlayerManager
-import com.arubr.smsvcodes.player.EnhancedPlayerManager
-import com.arubr.smsvcodes.player.GlobalPlayerState
-import com.arubr.smsvcodes.service.MusicServiceState
-import com.arubr.smsvcodes.ui.screens.player.state.VideoPlayerUiState
+import io.github.aedev.flow.data.local.PlayerPreferences
+import io.github.aedev.flow.data.local.ViewHistory
+import io.github.aedev.flow.data.model.Video
+import io.github.aedev.flow.data.video.SavedVideoQueue
+import io.github.aedev.flow.player.EnhancedMusicPlayerManager
+import io.github.aedev.flow.player.EnhancedPlayerManager
+import io.github.aedev.flow.player.GlobalPlayerState
+import io.github.aedev.flow.service.MusicServiceState
+import io.github.aedev.flow.ui.screens.player.state.VideoPlayerUiState
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.MutableStateFlow

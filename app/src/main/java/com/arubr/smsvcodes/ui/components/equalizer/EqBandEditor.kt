@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.equalizer
+package io.github.aedev.flow.ui.components.equalizer
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -26,13 +26,13 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.dp
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.data.audio.eq.EqBand
-import com.arubr.smsvcodes.data.audio.eq.EqFilterMath
-import com.arubr.smsvcodes.data.audio.eq.EqFilterType
-import com.arubr.smsvcodes.data.audio.eq.EqLimits
-import com.arubr.smsvcodes.data.audio.eq.roundToDecimals
-import com.arubr.smsvcodes.ui.components.shared.connectedButtonShapes
+import io.github.aedev.flow.R
+import io.github.aedev.flow.data.audio.eq.EqBand
+import io.github.aedev.flow.data.audio.eq.EqFilterMath
+import io.github.aedev.flow.data.audio.eq.EqFilterType
+import io.github.aedev.flow.data.audio.eq.EqLimits
+import io.github.aedev.flow.data.audio.eq.roundToDecimals
+import io.github.aedev.flow.ui.components.shared.connectedButtonShapes
 import java.util.Locale
 import kotlin.math.ln
 import kotlin.math.pow

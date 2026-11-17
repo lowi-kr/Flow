@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.widget.quickactions
+package io.github.aedev.flow.widget.quickactions
 
 import android.content.Context
 import androidx.datastore.preferences.core.Preferences

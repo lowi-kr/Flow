@@ -1,24 +1,24 @@
-package com.arubr.smsvcodes.service.auto
+package io.github.aedev.flow.service.auto
 
-import com.arubr.smsvcodes.data.local.LikedVideosRepository
-import com.arubr.smsvcodes.data.local.PlaylistRepository
-import com.arubr.smsvcodes.data.model.PlaylistInfo
-import com.arubr.smsvcodes.data.model.toMusicTrack
-import com.arubr.smsvcodes.data.music.DownloadManager
-import com.arubr.smsvcodes.data.music.model.MusicTrack
-import com.arubr.smsvcodes.data.music.model.audioMusicOnly
-import com.arubr.smsvcodes.data.music.model.toMusicTrack
-import com.arubr.smsvcodes.data.newmusic.InnertubeMusicService
-import com.arubr.smsvcodes.data.recommendation.music.MusicBrainEngine
-import com.arubr.smsvcodes.data.recommendation.music.onRepeatShelf
-import com.arubr.smsvcodes.data.music.zemer.ZemerFilter
-import com.arubr.smsvcodes.player.EnhancedMusicPlayerManager
+import io.github.aedev.flow.data.local.LikedVideosRepository
+import io.github.aedev.flow.data.local.PlaylistRepository
+import io.github.aedev.flow.data.model.PlaylistInfo
+import io.github.aedev.flow.data.model.toMusicTrack
+import io.github.aedev.flow.data.music.DownloadManager
+import io.github.aedev.flow.data.music.model.MusicTrack
+import io.github.aedev.flow.data.music.model.audioMusicOnly
+import io.github.aedev.flow.data.music.model.toMusicTrack
+import io.github.aedev.flow.data.newmusic.InnertubeMusicService
+import io.github.aedev.flow.data.recommendation.music.MusicBrainEngine
+import io.github.aedev.flow.data.recommendation.music.onRepeatShelf
+import io.github.aedev.flow.data.music.zemer.ZemerFilter
+import io.github.aedev.flow.player.EnhancedMusicPlayerManager
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
 import javax.inject.Inject
 import javax.inject.Singleton
-import com.arubr.smsvcodes.data.music.PlaylistRepository as MusicHistoryRepository
+import io.github.aedev.flow.data.music.PlaylistRepository as MusicHistoryRepository
 
 /**
  * What the car lists, read from what the app already stores. Browsing makes no network call; only a
@@ -48,7 +48,7 @@ class AutoLibrary
          * The songs under [parentId], or null when it is not a list of songs. When the Zemer
          * filter is on, this blocks every source here - including liked songs, downloads, and
          * recent history - not just catalog browsing, per the hard "nothing outside the
-         * whitelist plays" rule; [com.arubr.smsvcodes.player.EnhancedMusicPlayerManager] and
+         * whitelist plays" rule; [io.github.aedev.flow.player.EnhancedMusicPlayerManager] and
          * [AutoLibraryBrowser] enforce the same rule again at the actual playback step, so this
          * is belt-and-suspenders for the car's browse UI, not the only gate.
          */

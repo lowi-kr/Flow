@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.player.resolver
+package io.github.aedev.flow.player.resolver
 
 import android.util.Log
 import org.schabi.newpipe.extractor.services.youtube.dashmanifestcreators.YoutubeOtfDashManifestCreator

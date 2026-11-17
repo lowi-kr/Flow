@@ -5,22 +5,22 @@
  * Test-source-set only — never shipped in the APK.
  */
 
-package com.arubr.smsvcodes.data.recommendation.eval
+package io.github.aedev.flow.data.recommendation.eval
 
-import com.arubr.smsvcodes.data.model.Video
-import com.arubr.smsvcodes.data.recommendation.FeedExclusions
-import com.arubr.smsvcodes.data.recommendation.FlowNeuroEngine
-import com.arubr.smsvcodes.data.recommendation.GraphSeedInput
-import com.arubr.smsvcodes.data.recommendation.GraphSeedSelector
-import com.arubr.smsvcodes.data.recommendation.GraphSeedSource
-import com.arubr.smsvcodes.data.recommendation.NeuroScoring
-import com.arubr.smsvcodes.data.recommendation.UserBrain
-import com.arubr.smsvcodes.data.recommendation.eval.NeuroLearningBenchmark.Family
-import com.arubr.smsvcodes.ui.screens.home.DURATION_COMFORT_DEFAULT_SEC
-import com.arubr.smsvcodes.ui.screens.home.FeedTasteProfile
-import com.arubr.smsvcodes.ui.screens.home.GraphCandidate
-import com.arubr.smsvcodes.ui.screens.home.assembleHomeFeed
-import com.arubr.smsvcodes.ui.screens.home.buildHomeFeedLanes
+import io.github.aedev.flow.data.model.Video
+import io.github.aedev.flow.data.recommendation.FeedExclusions
+import io.github.aedev.flow.data.recommendation.FlowNeuroEngine
+import io.github.aedev.flow.data.recommendation.GraphSeedInput
+import io.github.aedev.flow.data.recommendation.GraphSeedSelector
+import io.github.aedev.flow.data.recommendation.GraphSeedSource
+import io.github.aedev.flow.data.recommendation.NeuroScoring
+import io.github.aedev.flow.data.recommendation.UserBrain
+import io.github.aedev.flow.data.recommendation.eval.NeuroLearningBenchmark.Family
+import io.github.aedev.flow.ui.screens.home.DURATION_COMFORT_DEFAULT_SEC
+import io.github.aedev.flow.ui.screens.home.FeedTasteProfile
+import io.github.aedev.flow.ui.screens.home.GraphCandidate
+import io.github.aedev.flow.ui.screens.home.assembleHomeFeed
+import io.github.aedev.flow.ui.screens.home.buildHomeFeedLanes
 import kotlinx.coroutines.runBlocking
 
 /**

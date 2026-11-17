@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.library
+package io.github.aedev.flow.ui.components.library
 
 import android.text.format.Formatter
 import androidx.compose.foundation.layout.Box
@@ -37,25 +37,25 @@ import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.data.local.entity.DownloadItemStatus
-import com.arubr.smsvcodes.data.local.entity.DownloadWithItems
-import com.arubr.smsvcodes.data.music.DownloadedTrack
-import com.arubr.smsvcodes.data.video.DownloadProgressUpdate
-import com.arubr.smsvcodes.data.video.DownloadedVideo
-import com.arubr.smsvcodes.ui.components.music.sheet.LocalMusicMenus
-import com.arubr.smsvcodes.ui.components.shared.ArtworkThumbnail
-import com.arubr.smsvcodes.ui.components.shared.ExplicitBadge
-import com.arubr.smsvcodes.ui.components.shared.FlowEmptyState
-import com.arubr.smsvcodes.ui.components.shared.MediaKind
-import com.arubr.smsvcodes.ui.components.shared.MediaRow
-import com.arubr.smsvcodes.ui.components.shared.MediaRowAction
-import com.arubr.smsvcodes.ui.components.shared.MediaRowDefaults
-import com.arubr.smsvcodes.ui.components.shared.MediaThumbnail
-import com.arubr.smsvcodes.ui.components.shared.MediaThumbnailDefaults
-import com.arubr.smsvcodes.ui.components.shared.card.LocalVideoCardPreferences
-import com.arubr.smsvcodes.ui.components.shared.quickactions.VideoQuickActionsBottomSheet
-import com.arubr.smsvcodes.utils.formatYouTubeRelativeTime
+import io.github.aedev.flow.R
+import io.github.aedev.flow.data.local.entity.DownloadItemStatus
+import io.github.aedev.flow.data.local.entity.DownloadWithItems
+import io.github.aedev.flow.data.music.DownloadedTrack
+import io.github.aedev.flow.data.video.DownloadProgressUpdate
+import io.github.aedev.flow.data.video.DownloadedVideo
+import io.github.aedev.flow.ui.components.music.sheet.LocalMusicMenus
+import io.github.aedev.flow.ui.components.shared.ArtworkThumbnail
+import io.github.aedev.flow.ui.components.shared.ExplicitBadge
+import io.github.aedev.flow.ui.components.shared.FlowEmptyState
+import io.github.aedev.flow.ui.components.shared.MediaKind
+import io.github.aedev.flow.ui.components.shared.MediaRow
+import io.github.aedev.flow.ui.components.shared.MediaRowAction
+import io.github.aedev.flow.ui.components.shared.MediaRowDefaults
+import io.github.aedev.flow.ui.components.shared.MediaThumbnail
+import io.github.aedev.flow.ui.components.shared.MediaThumbnailDefaults
+import io.github.aedev.flow.ui.components.shared.card.LocalVideoCardPreferences
+import io.github.aedev.flow.ui.components.shared.quickactions.VideoQuickActionsBottomSheet
+import io.github.aedev.flow.utils.formatYouTubeRelativeTime
 
 private val ProgressBarHeight: Dp = 3.dp
 private const val UNKNOWN_QUALITY = "Unknown"

@@ -1,8 +1,8 @@
-package com.arubr.smsvcodes.ui.screens.music.collection
+package io.github.aedev.flow.ui.screens.music.collection
 
-import com.arubr.smsvcodes.data.local.LikedVideoInfo
-import com.arubr.smsvcodes.data.model.toMusicTrack
-import com.arubr.smsvcodes.data.music.model.MusicTrack
+import io.github.aedev.flow.data.local.LikedVideoInfo
+import io.github.aedev.flow.data.model.toMusicTrack
+import io.github.aedev.flow.data.music.model.MusicTrack
 
 /**
  * Liked songs in the order they were liked. A song also kept in the music favorites comes with the

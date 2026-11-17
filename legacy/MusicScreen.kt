@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.screens.music
+package io.github.aedev.flow.ui.screens.music
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable

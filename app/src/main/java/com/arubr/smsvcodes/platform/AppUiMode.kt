@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.platform
+package io.github.aedev.flow.platform
 
 /** User-selected interface mode for the shared Flow APK. */
 enum class AppUiMode {
@@ -18,7 +18,7 @@ enum class AppUiMode {
     }
 }
 
-/** The UI root rendered by [com.arubr.smsvcodes.MainActivity]. */
+/** The UI root rendered by [io.github.aedev.flow.MainActivity]. */
 enum class AppUiRoot {
     MOBILE,
     TV,

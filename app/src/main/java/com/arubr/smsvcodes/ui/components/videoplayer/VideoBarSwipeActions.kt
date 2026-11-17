@@ -1,14 +1,14 @@
-package com.arubr.smsvcodes.ui.components.videoplayer
+package io.github.aedev.flow.ui.components.videoplayer
 
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.data.local.MiniBarSwipeAction
-import com.arubr.smsvcodes.data.model.Video
-import com.arubr.smsvcodes.player.EnhancedPlayerManager
-import com.arubr.smsvcodes.ui.components.shared.MiniBarSwipeCommit
-import com.arubr.smsvcodes.ui.components.shared.MiniBarSwipeMotion
-import com.arubr.smsvcodes.ui.components.shared.quickactions.QuickActionUndo
-import com.arubr.smsvcodes.ui.components.shared.quickactions.QuickActionsViewModel
-import com.arubr.smsvcodes.ui.screens.player.VideoPlayerViewModel
+import io.github.aedev.flow.R
+import io.github.aedev.flow.data.local.MiniBarSwipeAction
+import io.github.aedev.flow.data.model.Video
+import io.github.aedev.flow.player.EnhancedPlayerManager
+import io.github.aedev.flow.ui.components.shared.MiniBarSwipeCommit
+import io.github.aedev.flow.ui.components.shared.MiniBarSwipeMotion
+import io.github.aedev.flow.ui.components.shared.quickactions.QuickActionUndo
+import io.github.aedev.flow.ui.components.shared.quickactions.QuickActionsViewModel
+import io.github.aedev.flow.ui.screens.player.VideoPlayerViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch

@@ -1,6 +1,6 @@
-package com.arubr.smsvcodes.player.datasource
+package io.github.aedev.flow.player.datasource
 
-import com.arubr.smsvcodes.innertube.models.YouTubeClient
+import io.github.aedev.flow.innertube.models.YouTubeClient
 
 /**
  * How a `googlevideo` request must look for the client that minted its URL (the URL's `c=`

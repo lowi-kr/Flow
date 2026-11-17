@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.screens.player.effects
+package io.github.aedev.flow.ui.screens.player.effects
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
@@ -13,17 +13,17 @@ import androidx.compose.runtime.setValue
 import androidx.compose.runtime.snapshotFlow
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.compose.LocalLifecycleOwner
-import com.arubr.smsvcodes.player.EnhancedPlayerManager
-import com.arubr.smsvcodes.player.state.EnhancedPlayerState
-import com.arubr.smsvcodes.ui.components.videoplayer.PlayerDraggableState
-import com.arubr.smsvcodes.ui.components.videoplayer.PlayerSheetValue
-import com.arubr.smsvcodes.ui.components.videoplayer.motion.EXPANDED_SURFACES_MOUNT_FRACTION
-import com.arubr.smsvcodes.ui.components.videoplayer.motion.EXPANDED_SURFACES_UNMOUNT_FRACTION
-import com.arubr.smsvcodes.ui.screens.player.VideoPlayerViewModel
-import com.arubr.smsvcodes.ui.screens.player.state.PlayerLayoutMode
-import com.arubr.smsvcodes.ui.screens.player.state.PlayerScreenState
-import com.arubr.smsvcodes.ui.screens.player.state.PlayerSheet
-import com.arubr.smsvcodes.ui.screens.player.state.VideoPlayerUiState
+import io.github.aedev.flow.player.EnhancedPlayerManager
+import io.github.aedev.flow.player.state.EnhancedPlayerState
+import io.github.aedev.flow.ui.components.videoplayer.PlayerDraggableState
+import io.github.aedev.flow.ui.components.videoplayer.PlayerSheetValue
+import io.github.aedev.flow.ui.components.videoplayer.motion.EXPANDED_SURFACES_MOUNT_FRACTION
+import io.github.aedev.flow.ui.components.videoplayer.motion.EXPANDED_SURFACES_UNMOUNT_FRACTION
+import io.github.aedev.flow.ui.screens.player.VideoPlayerViewModel
+import io.github.aedev.flow.ui.screens.player.state.PlayerLayoutMode
+import io.github.aedev.flow.ui.screens.player.state.PlayerScreenState
+import io.github.aedev.flow.ui.screens.player.state.PlayerSheet
+import io.github.aedev.flow.ui.screens.player.state.VideoPlayerUiState
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.first
 

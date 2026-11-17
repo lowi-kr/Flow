@@ -1,7 +1,7 @@
-package com.arubr.smsvcodes.ui.screens.home
+package io.github.aedev.flow.ui.screens.home
 
-import com.arubr.smsvcodes.data.local.VideoHistoryEntry
-import com.arubr.smsvcodes.data.model.Video
+import io.github.aedev.flow.data.local.VideoHistoryEntry
+import io.github.aedev.flow.data.model.Video
 
 data class HomeUiState(
     val videos: List<Video> = emptyList(),

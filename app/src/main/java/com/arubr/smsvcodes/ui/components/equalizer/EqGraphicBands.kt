@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.equalizer
+package io.github.aedev.flow.ui.components.equalizer
 
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Arrangement
@@ -24,7 +24,7 @@ import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.DpSize
 import androidx.compose.ui.unit.dp
-import com.arubr.smsvcodes.data.audio.eq.GraphicEq
+import io.github.aedev.flow.data.audio.eq.GraphicEq
 import kotlin.math.roundToInt
 
 private val SliderHeight = 200.dp

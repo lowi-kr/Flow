@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.screens.widgets
+package io.github.aedev.flow.ui.screens.widgets
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -13,11 +13,11 @@ import androidx.compose.ui.res.stringResource
 import androidx.glance.GlanceId
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.ui.components.settings.SettingsPage
-import com.arubr.smsvcodes.ui.components.shared.FlowSelectionRow
-import com.arubr.smsvcodes.widget.playlist.PlaylistWidgetConfig
-import com.arubr.smsvcodes.widget.playlist.PlaylistWidgetSource
+import io.github.aedev.flow.R
+import io.github.aedev.flow.ui.components.settings.SettingsPage
+import io.github.aedev.flow.ui.components.shared.FlowSelectionRow
+import io.github.aedev.flow.widget.playlist.PlaylistWidgetConfig
+import io.github.aedev.flow.widget.playlist.PlaylistWidgetSource
 import kotlinx.coroutines.launch
 
 /** Picks the playlist one Playlist widget shows; choosing one saves it and closes. */

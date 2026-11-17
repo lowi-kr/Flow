@@ -1,7 +1,7 @@
-package com.arubr.smsvcodes.data.recommendation.music.graph
+package io.github.aedev.flow.data.recommendation.music.graph
 
-import com.arubr.smsvcodes.data.music.model.MusicArtist
-import com.arubr.smsvcodes.data.music.model.MusicTrack
+import io.github.aedev.flow.data.music.model.MusicArtist
+import io.github.aedev.flow.data.music.model.MusicTrack
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNotEquals
 import org.junit.Test

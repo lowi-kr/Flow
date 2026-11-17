@@ -1,6 +1,6 @@
 @file:Suppress("ktlint:standard:backing-property-naming")
 
-package com.arubr.smsvcodes.ui.screens.search
+package io.github.aedev.flow.ui.screens.search
 
 import android.content.Context
 import androidx.lifecycle.ViewModel
@@ -11,23 +11,23 @@ import androidx.paging.PagingData
 import androidx.paging.cachedIn
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
-import com.arubr.smsvcodes.data.local.PlayerPreferences
-import com.arubr.smsvcodes.data.local.SearchFilter
-import com.arubr.smsvcodes.data.local.SearchHistoryRepository
-import com.arubr.smsvcodes.data.local.dao.WatchHistoryDao
-import com.arubr.smsvcodes.data.model.Video
-import com.arubr.smsvcodes.data.paging.SearchPagingSource
-import com.arubr.smsvcodes.data.paging.SearchResultItem
-import com.arubr.smsvcodes.data.paging.WatchedVideoLookup
-import com.arubr.smsvcodes.data.paging.watchedVideoIds
-import com.arubr.smsvcodes.data.recommendation.FlowNeuroEngine
-import com.arubr.smsvcodes.data.search.SearchSuggestionsRepository
-import com.arubr.smsvcodes.data.shorts.ShortsContentFilter
-import com.arubr.smsvcodes.data.shorts.queue.ShortsQueueHandoff
-import com.arubr.smsvcodes.data.shorts.queue.ShortsQueueSource
-import com.arubr.smsvcodes.data.stats.VideoStatsRecorder
-import com.arubr.smsvcodes.innertube.pages.search.SearchHeader
-import com.arubr.smsvcodes.innertube.pages.search.SearchSuggestion
+import io.github.aedev.flow.data.local.PlayerPreferences
+import io.github.aedev.flow.data.local.SearchFilter
+import io.github.aedev.flow.data.local.SearchHistoryRepository
+import io.github.aedev.flow.data.local.dao.WatchHistoryDao
+import io.github.aedev.flow.data.model.Video
+import io.github.aedev.flow.data.paging.SearchPagingSource
+import io.github.aedev.flow.data.paging.SearchResultItem
+import io.github.aedev.flow.data.paging.WatchedVideoLookup
+import io.github.aedev.flow.data.paging.watchedVideoIds
+import io.github.aedev.flow.data.recommendation.FlowNeuroEngine
+import io.github.aedev.flow.data.search.SearchSuggestionsRepository
+import io.github.aedev.flow.data.shorts.ShortsContentFilter
+import io.github.aedev.flow.data.shorts.queue.ShortsQueueHandoff
+import io.github.aedev.flow.data.shorts.queue.ShortsQueueSource
+import io.github.aedev.flow.data.stats.VideoStatsRecorder
+import io.github.aedev.flow.innertube.pages.search.SearchHeader
+import io.github.aedev.flow.innertube.pages.search.SearchSuggestion
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow

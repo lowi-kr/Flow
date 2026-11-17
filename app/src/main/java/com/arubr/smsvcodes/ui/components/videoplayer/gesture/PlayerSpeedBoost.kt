@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.videoplayer.gesture
+package io.github.aedev.flow.ui.components.videoplayer.gesture
 
 /**
  * The speed a press-and-hold on the video applies.

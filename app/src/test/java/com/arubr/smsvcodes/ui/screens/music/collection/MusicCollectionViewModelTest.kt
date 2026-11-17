@@ -1,26 +1,26 @@
-package com.arubr.smsvcodes.ui.screens.music.collection
+package io.github.aedev.flow.ui.screens.music.collection
 
 import android.content.Context
 import androidx.lifecycle.SavedStateHandle
 import com.google.common.truth.Truth.assertThat
-import com.arubr.smsvcodes.data.engagement.LikedMediaUseCase
-import com.arubr.smsvcodes.data.local.LikedVideoInfo
-import com.arubr.smsvcodes.data.local.LikedVideosRepository
-import com.arubr.smsvcodes.data.local.PlaylistRepository
-import com.arubr.smsvcodes.data.local.SavedPlaylistSyncStore
-import com.arubr.smsvcodes.data.local.entity.DownloadCollectionKind
-import com.arubr.smsvcodes.data.local.entity.PlaylistEntity
-import com.arubr.smsvcodes.data.local.entity.PlaylistVideoCrossRef
-import com.arubr.smsvcodes.data.model.PlaylistInfo
-import com.arubr.smsvcodes.data.model.Video
-import com.arubr.smsvcodes.data.music.YouTubeMusicService
-import com.arubr.smsvcodes.data.music.model.MusicTrack
-import com.arubr.smsvcodes.data.music.model.PlaylistDetails
-import com.arubr.smsvcodes.data.recommendation.MusicSection
-import com.arubr.smsvcodes.data.recommendation.music.DailyMixStore
-import com.arubr.smsvcodes.data.video.BackgroundDownloadQueuer
-import com.arubr.smsvcodes.data.video.downloader.collection.DownloadedCollections
-import com.arubr.smsvcodes.ui.components.shared.quickactions.QuickActionUndo
+import io.github.aedev.flow.data.engagement.LikedMediaUseCase
+import io.github.aedev.flow.data.local.LikedVideoInfo
+import io.github.aedev.flow.data.local.LikedVideosRepository
+import io.github.aedev.flow.data.local.PlaylistRepository
+import io.github.aedev.flow.data.local.SavedPlaylistSyncStore
+import io.github.aedev.flow.data.local.entity.DownloadCollectionKind
+import io.github.aedev.flow.data.local.entity.PlaylistEntity
+import io.github.aedev.flow.data.local.entity.PlaylistVideoCrossRef
+import io.github.aedev.flow.data.model.PlaylistInfo
+import io.github.aedev.flow.data.model.Video
+import io.github.aedev.flow.data.music.YouTubeMusicService
+import io.github.aedev.flow.data.music.model.MusicTrack
+import io.github.aedev.flow.data.music.model.PlaylistDetails
+import io.github.aedev.flow.data.recommendation.MusicSection
+import io.github.aedev.flow.data.recommendation.music.DailyMixStore
+import io.github.aedev.flow.data.video.BackgroundDownloadQueuer
+import io.github.aedev.flow.data.video.downloader.collection.DownloadedCollections
+import io.github.aedev.flow.ui.components.shared.quickactions.QuickActionUndo
 import io.mockk.coEvery
 import io.mockk.coVerify
 import io.mockk.every
@@ -42,7 +42,7 @@ import kotlinx.coroutines.withTimeout
 import org.junit.After
 import org.junit.Before
 import org.junit.Test
-import com.arubr.smsvcodes.data.music.PlaylistRepository as MusicLibrary
+import io.github.aedev.flow.data.music.PlaylistRepository as MusicLibrary
 
 @OptIn(ExperimentalCoroutinesApi::class)
 class MusicCollectionViewModelTest {
@@ -392,7 +392,7 @@ class MusicCollectionViewModelTest {
             playlists.addVideosToPlaylist(any(), match { it.map(Video::id) == listOf("a", "b") })
         }
         val message = runBlocking { withTimeout(2_000) { viewModel.messages.first() } }
-        assertThat(message.pluralRes).isEqualTo(com.arubr.smsvcodes.R.plurals.merge_playlist_success)
+        assertThat(message.pluralRes).isEqualTo(io.github.aedev.flow.R.plurals.merge_playlist_success)
         assertThat(message.args).contains("Fresh")
     }
 }

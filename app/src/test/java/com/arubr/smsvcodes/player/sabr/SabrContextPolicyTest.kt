@@ -1,10 +1,10 @@
-package com.arubr.smsvcodes.player.sabr
+package io.github.aedev.flow.player.sabr
 
 import com.google.common.truth.Truth.assertThat
-import com.arubr.smsvcodes.player.sabr.core.SabrSessionState
-import com.arubr.smsvcodes.player.sabr.proto.SabrContextSendingPolicy
-import com.arubr.smsvcodes.player.sabr.proto.SabrContextUpdate
-import com.arubr.smsvcodes.utils.protobuf.ProtobufWriter
+import io.github.aedev.flow.player.sabr.core.SabrSessionState
+import io.github.aedev.flow.player.sabr.proto.SabrContextSendingPolicy
+import io.github.aedev.flow.player.sabr.proto.SabrContextUpdate
+import io.github.aedev.flow.utils.protobuf.ProtobufWriter
 import org.junit.Test
 
 class SabrContextPolicyTest {

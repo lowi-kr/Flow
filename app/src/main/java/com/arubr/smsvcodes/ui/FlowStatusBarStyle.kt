@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui
+package io.github.aedev.flow.ui
 
 import android.app.Activity
 import androidx.compose.foundation.isSystemInDarkTheme
@@ -14,9 +14,9 @@ import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
 import androidx.core.view.WindowCompat
-import com.arubr.smsvcodes.ui.theme.ThemeMode
-import com.arubr.smsvcodes.ui.theme.ThemeVariant
-import com.arubr.smsvcodes.ui.theme.isEffectivelyDark
+import io.github.aedev.flow.ui.theme.ThemeMode
+import io.github.aedev.flow.ui.theme.ThemeVariant
+import io.github.aedev.flow.ui.theme.isEffectivelyDark
 
 @Composable
 internal fun ApplyStatusBarStyle(

@@ -1,6 +1,6 @@
-package com.arubr.smsvcodes.innertube.pages
+package io.github.aedev.flow.innertube.pages
 
-import com.arubr.smsvcodes.innertube.models.YTItem
+import io.github.aedev.flow.innertube.models.YTItem
 
 data class LibraryContinuationPage(
     val items: List<YTItem>,

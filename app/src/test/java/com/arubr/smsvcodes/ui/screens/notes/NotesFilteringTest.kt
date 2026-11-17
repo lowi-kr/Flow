@@ -1,9 +1,9 @@
-package com.arubr.smsvcodes.ui.screens.notes
+package io.github.aedev.flow.ui.screens.notes
 
 import com.google.common.truth.Truth.assertThat
-import com.arubr.smsvcodes.data.notes.Note
-import com.arubr.smsvcodes.data.notes.NoteKind
-import com.arubr.smsvcodes.data.notes.NoteSubject
+import io.github.aedev.flow.data.notes.Note
+import io.github.aedev.flow.data.notes.NoteKind
+import io.github.aedev.flow.data.notes.NoteSubject
 import org.junit.Test
 
 class NotesFilteringTest {

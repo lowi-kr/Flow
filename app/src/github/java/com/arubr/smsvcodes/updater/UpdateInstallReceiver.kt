@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.updater
+package io.github.aedev.flow.updater
 
 import android.content.BroadcastReceiver
 import android.content.Context

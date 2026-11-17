@@ -1,6 +1,6 @@
-package com.arubr.smsvcodes.ui.screens.settings.index
+package io.github.aedev.flow.ui.screens.settings.index
 
-import com.arubr.smsvcodes.ui.components.settings.SettingEntry
+import io.github.aedev.flow.ui.components.settings.SettingEntry
 
 /** Every option in Settings, in the order the pages show them. */
 internal object SettingsIndex {

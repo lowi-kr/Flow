@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.widget.core.component
+package io.github.aedev.flow.widget.core.component
 
 import android.os.Build
 import android.util.TypedValue
@@ -14,7 +14,7 @@ import androidx.glance.appwidget.AndroidRemoteViews
 import androidx.glance.appwidget.LinearProgressIndicator
 import androidx.glance.layout.height
 import androidx.glance.layout.width
-import com.arubr.smsvcodes.R
+import io.github.aedev.flow.R
 
 /** Steps across the bar; fine enough that one step is under a pixel on any widget. */
 internal const val WIDGET_PROGRESS_MAX = 1000

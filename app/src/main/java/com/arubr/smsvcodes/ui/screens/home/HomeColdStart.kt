@@ -1,7 +1,7 @@
-package com.arubr.smsvcodes.ui.screens.home
+package io.github.aedev.flow.ui.screens.home
 
 import androidx.compose.runtime.Immutable
-import com.arubr.smsvcodes.data.model.Video
+import io.github.aedev.flow.data.model.Video
 
 /** Fewer cached cards than this is not worth showing at launch: the skeleton waits for the new feed. */
 internal const val MIN_CACHED_CARDS = 6

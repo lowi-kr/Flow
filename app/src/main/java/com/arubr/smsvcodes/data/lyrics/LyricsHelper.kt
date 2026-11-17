@@ -2,13 +2,13 @@
 // This implementation was based on metrolist's (https://github.com/MetrolistGroup/Metrolist)
 // ==================================================================================================
 
-package com.arubr.smsvcodes.data.lyrics
+package io.github.aedev.flow.data.lyrics
 
 import android.content.Context
 import android.util.Log
 import dagger.hilt.android.qualifiers.ApplicationContext
-import com.arubr.smsvcodes.data.local.PlayerPreferences
-import com.arubr.smsvcodes.di.MetadataClient
+import io.github.aedev.flow.data.local.PlayerPreferences
+import io.github.aedev.flow.di.MetadataClient
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers

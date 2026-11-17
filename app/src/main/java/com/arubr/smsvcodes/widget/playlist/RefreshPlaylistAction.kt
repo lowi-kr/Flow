@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.widget.playlist
+package io.github.aedev.flow.widget.playlist
 
 import android.content.Context
 import android.util.Log
@@ -6,7 +6,7 @@ import androidx.glance.GlanceId
 import androidx.glance.action.ActionParameters
 import androidx.glance.appwidget.action.ActionCallback
 import androidx.glance.appwidget.state.updateAppWidgetState
-import com.arubr.smsvcodes.widget.core.widgetEntryPoint
+import io.github.aedev.flow.widget.core.widgetEntryPoint
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.NonCancellable
 import kotlinx.coroutines.withContext

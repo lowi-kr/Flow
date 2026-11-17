@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.screens.widgets
+package io.github.aedev.flow.ui.screens.widgets
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -11,11 +11,11 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.glance.GlanceId
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.ui.components.settings.SettingsPage
-import com.arubr.smsvcodes.ui.components.shared.FlowSwitchRow
-import com.arubr.smsvcodes.widget.quickactions.QuickActionsConfig
-import com.arubr.smsvcodes.widget.quickactions.QuickShortcut
+import io.github.aedev.flow.R
+import io.github.aedev.flow.ui.components.settings.SettingsPage
+import io.github.aedev.flow.ui.components.shared.FlowSwitchRow
+import io.github.aedev.flow.widget.quickactions.QuickActionsConfig
+import io.github.aedev.flow.widget.quickactions.QuickShortcut
 import kotlinx.coroutines.launch
 
 /** Picks the shortcuts one Quick Actions widget shows; every change lands on the widget at once. */

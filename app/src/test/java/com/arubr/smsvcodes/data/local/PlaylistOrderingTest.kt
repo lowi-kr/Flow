@@ -1,10 +1,10 @@
-package com.arubr.smsvcodes.data.local
+package io.github.aedev.flow.data.local
 
 import com.google.common.truth.Truth.assertThat
-import com.arubr.smsvcodes.data.local.dao.PlaylistDao
-import com.arubr.smsvcodes.data.local.dao.VideoDao
-import com.arubr.smsvcodes.data.local.entity.PlaylistVideoCrossRef
-import com.arubr.smsvcodes.data.model.Video
+import io.github.aedev.flow.data.local.dao.PlaylistDao
+import io.github.aedev.flow.data.local.dao.VideoDao
+import io.github.aedev.flow.data.local.entity.PlaylistVideoCrossRef
+import io.github.aedev.flow.data.model.Video
 import io.mockk.coEvery
 import io.mockk.mockk
 import io.mockk.slot

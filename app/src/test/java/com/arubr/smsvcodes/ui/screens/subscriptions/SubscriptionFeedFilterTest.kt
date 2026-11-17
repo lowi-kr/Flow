@@ -1,9 +1,9 @@
-package com.arubr.smsvcodes.ui.screens.subscriptions
+package io.github.aedev.flow.ui.screens.subscriptions
 
 import com.google.common.truth.Truth.assertThat
-import com.arubr.smsvcodes.data.model.Video
-import com.arubr.smsvcodes.data.recommendation.FeedExclusions
-import com.arubr.smsvcodes.utils.formatYouTubeRelativeTime
+import io.github.aedev.flow.data.model.Video
+import io.github.aedev.flow.data.recommendation.FeedExclusions
+import io.github.aedev.flow.utils.formatYouTubeRelativeTime
 import io.mockk.every
 import io.mockk.mockkStatic
 import io.mockk.unmockkStatic
@@ -139,7 +139,7 @@ class SubscriptionFeedFilterTest {
     }
 
     private companion object {
-        const val FORMAT_UTILS = "com.arubr.smsvcodes.utils.FormatUtilsKt"
+        const val FORMAT_UTILS = "io.github.aedev.flow.utils.FormatUtilsKt"
     }
 
     @Test
@@ -148,9 +148,9 @@ class SubscriptionFeedFilterTest {
             video("collab", channelId = "UCother").copy(
                 collaborators =
                     listOf(
-                        com.arubr.smsvcodes.data.model
+                        io.github.aedev.flow.data.model
                             .VideoCollaborator(name = "Other", channelId = "UCother"),
-                        com.arubr.smsvcodes.data.model
+                        io.github.aedev.flow.data.model
                             .VideoCollaborator(name = "A", channelId = "UCa"),
                     ),
             )

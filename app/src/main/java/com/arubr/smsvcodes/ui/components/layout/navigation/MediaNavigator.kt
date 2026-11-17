@@ -1,9 +1,9 @@
-package com.arubr.smsvcodes.ui.components.layout.navigation
+package io.github.aedev.flow.ui.components.layout.navigation
 
 import androidx.compose.runtime.Stable
 import androidx.compose.runtime.staticCompositionLocalOf
-import com.arubr.smsvcodes.ui.components.settings.SettingsTarget
-import com.arubr.smsvcodes.utils.YouTubeLink
+import io.github.aedev.flow.ui.components.settings.SettingsTarget
+import io.github.aedev.flow.utils.YouTubeLink
 
 /**
  * The app-wide way to open the page behind a piece of media: its channel, artist, album or playlist,

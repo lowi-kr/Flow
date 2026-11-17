@@ -1,7 +1,7 @@
-package com.arubr.smsvcodes.data.recommendation.music.graph
+package io.github.aedev.flow.data.recommendation.music.graph
 
-import com.arubr.smsvcodes.data.local.entity.MusicGraphArtistEntity
-import com.arubr.smsvcodes.data.local.entity.MusicGraphTrackEntity
+import io.github.aedev.flow.data.local.entity.MusicGraphArtistEntity
+import io.github.aedev.flow.data.local.entity.MusicGraphTrackEntity
 
 object MusicGraphSections {
     const val DEEP_CUTS_PER_ALBUM = 2

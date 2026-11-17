@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.data.recognition.audio
+package io.github.aedev.flow.data.recognition.audio
 
 import android.annotation.SuppressLint
 import android.media.AudioFormat

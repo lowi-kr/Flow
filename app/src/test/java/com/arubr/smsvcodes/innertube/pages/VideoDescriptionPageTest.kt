@@ -1,6 +1,6 @@
-package com.arubr.smsvcodes.innertube.pages
+package io.github.aedev.flow.innertube.pages
 
-import com.arubr.smsvcodes.data.model.RichTextTarget
+import io.github.aedev.flow.data.model.RichTextTarget
 import kotlinx.serialization.json.Json
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNull

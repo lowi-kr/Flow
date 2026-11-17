@@ -1,11 +1,11 @@
-package com.arubr.smsvcodes.ui.screens.crash
+package io.github.aedev.flow.ui.screens.crash
 
 import java.net.URLEncoder
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
 private const val NEW_ISSUE_URL = "https://github.com/Flow-Tube/Flow/issues/new"
-private const val APP_PACKAGE = "com.arubr.smsvcodes"
+private const val APP_PACKAGE = "io.github.aedev.flow"
 private const val MAX_URL_LOG_CHARS = 1_500
 private const val MAX_URL_ACTUAL_CHARS = 300
 private const val UNKNOWN_STEPS = "Not known. Flow crashed during normal use; the stack trace is under Logs."

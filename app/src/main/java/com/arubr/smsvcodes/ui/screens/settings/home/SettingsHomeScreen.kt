@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.screens.settings.home
+package io.github.aedev.flow.ui.screens.settings.home
 
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -27,18 +27,18 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.LifecycleResumeEffect
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.ui.components.settings.SettingEntry
-import com.arubr.smsvcodes.ui.components.settings.SettingsDestination
-import com.arubr.smsvcodes.ui.components.settings.SettingsPage
-import com.arubr.smsvcodes.ui.components.settings.SettingsTarget
-import com.arubr.smsvcodes.ui.components.shared.FlowAlertDialog
-import com.arubr.smsvcodes.ui.components.shared.FlowChoice
-import com.arubr.smsvcodes.ui.components.shared.FlowChoiceDialog
-import com.arubr.smsvcodes.ui.components.shared.FlowSearchField
-import com.arubr.smsvcodes.ui.screens.settings.index.DestinationIndex
-import com.arubr.smsvcodes.ui.screens.settings.index.HomeIndex
-import com.arubr.smsvcodes.ui.screens.settings.index.SettingsSearch
+import io.github.aedev.flow.R
+import io.github.aedev.flow.ui.components.settings.SettingEntry
+import io.github.aedev.flow.ui.components.settings.SettingsDestination
+import io.github.aedev.flow.ui.components.settings.SettingsPage
+import io.github.aedev.flow.ui.components.settings.SettingsTarget
+import io.github.aedev.flow.ui.components.shared.FlowAlertDialog
+import io.github.aedev.flow.ui.components.shared.FlowChoice
+import io.github.aedev.flow.ui.components.shared.FlowChoiceDialog
+import io.github.aedev.flow.ui.components.shared.FlowSearchField
+import io.github.aedev.flow.ui.screens.settings.index.DestinationIndex
+import io.github.aedev.flow.ui.screens.settings.index.HomeIndex
+import io.github.aedev.flow.ui.screens.settings.index.SettingsSearch
 
 private val SearchFieldBottomPadding = 8.dp
 

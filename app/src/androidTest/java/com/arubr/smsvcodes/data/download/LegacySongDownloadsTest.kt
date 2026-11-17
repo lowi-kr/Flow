@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.data.download
+package io.github.aedev.flow.data.download
 
 import android.database.sqlite.SQLiteDatabase
 import android.net.Uri

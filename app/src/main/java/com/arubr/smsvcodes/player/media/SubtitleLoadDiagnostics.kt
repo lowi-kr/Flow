@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.player.media
+package io.github.aedev.flow.player.media
 
 import android.util.Log
 import androidx.media3.common.util.UnstableApi
@@ -7,7 +7,7 @@ import androidx.media3.exoplayer.source.LoadEventInfo
 import androidx.media3.exoplayer.source.MediaLoadData
 import androidx.media3.exoplayer.source.MediaSource
 import androidx.media3.exoplayer.source.MediaSourceEventListener
-import com.arubr.smsvcodes.player.error.StreamDenialClassifier
+import io.github.aedev.flow.player.error.StreamDenialClassifier
 import java.io.IOException
 
 /** Kept as MediaLoader's tag: a user's diagnostics dump is searched for it. */

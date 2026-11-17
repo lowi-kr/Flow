@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.shared.card
+package io.github.aedev.flow.ui.components.shared.card
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.combinedClickable
@@ -32,17 +32,17 @@ import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.data.model.Video
-import com.arubr.smsvcodes.data.model.VideoCollaborator
-import com.arubr.smsvcodes.ui.components.layout.navigation.LocalMediaNavigator
-import com.arubr.smsvcodes.ui.components.shared.LocalDpadNavigation
-import com.arubr.smsvcodes.ui.components.shared.focusLift
-import com.arubr.smsvcodes.ui.components.shared.onMenuKey
-import com.arubr.smsvcodes.ui.components.shared.pressScale
-import com.arubr.smsvcodes.ui.components.shared.skipDpadFocus
-import com.arubr.smsvcodes.ui.theme.extendedColors
-import com.arubr.smsvcodes.utils.avatarImageIdentityKey
+import io.github.aedev.flow.R
+import io.github.aedev.flow.data.model.Video
+import io.github.aedev.flow.data.model.VideoCollaborator
+import io.github.aedev.flow.ui.components.layout.navigation.LocalMediaNavigator
+import io.github.aedev.flow.ui.components.shared.LocalDpadNavigation
+import io.github.aedev.flow.ui.components.shared.focusLift
+import io.github.aedev.flow.ui.components.shared.onMenuKey
+import io.github.aedev.flow.ui.components.shared.pressScale
+import io.github.aedev.flow.ui.components.shared.skipDpadFocus
+import io.github.aedev.flow.ui.theme.extendedColors
+import io.github.aedev.flow.utils.avatarImageIdentityKey
 
 internal fun Video.channelAvatarUrls(collaborators: List<VideoCollaborator> = emptyList()): List<String> {
     if (collaborators.size <= 1) {

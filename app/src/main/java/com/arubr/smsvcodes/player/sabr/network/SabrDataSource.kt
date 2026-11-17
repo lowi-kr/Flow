@@ -1,7 +1,7 @@
-package com.arubr.smsvcodes.player.sabr.network
+package io.github.aedev.flow.player.sabr.network
 
 import android.util.Log
-import com.arubr.smsvcodes.network.AppProxyManager
+import io.github.aedev.flow.network.AppProxyManager
 import okhttp3.Call
 import okhttp3.OkHttpClient
 import okhttp3.Request

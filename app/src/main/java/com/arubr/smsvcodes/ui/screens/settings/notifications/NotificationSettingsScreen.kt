@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.screens.settings.notifications
+package io.github.aedev.flow.ui.screens.settings.notifications
 
 import android.content.Intent
 import android.provider.Settings
@@ -23,16 +23,16 @@ import androidx.compose.ui.res.stringResource
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.LifecycleResumeEffect
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.arubr.smsvcodes.BuildConfig
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.notification.BackgroundWorkPolicy
-import com.arubr.smsvcodes.ui.components.settings.SettingsPage
-import com.arubr.smsvcodes.ui.components.settings.nav
-import com.arubr.smsvcodes.ui.components.settings.switch
-import com.arubr.smsvcodes.ui.components.shared.FlowChoice
-import com.arubr.smsvcodes.ui.components.shared.FlowChoiceDialog
-import com.arubr.smsvcodes.ui.components.shared.FlowNavRow
-import com.arubr.smsvcodes.ui.screens.settings.index.NotificationsIndex
+import io.github.aedev.flow.BuildConfig
+import io.github.aedev.flow.R
+import io.github.aedev.flow.notification.BackgroundWorkPolicy
+import io.github.aedev.flow.ui.components.settings.SettingsPage
+import io.github.aedev.flow.ui.components.settings.nav
+import io.github.aedev.flow.ui.components.settings.switch
+import io.github.aedev.flow.ui.components.shared.FlowChoice
+import io.github.aedev.flow.ui.components.shared.FlowChoiceDialog
+import io.github.aedev.flow.ui.components.shared.FlowNavRow
+import io.github.aedev.flow.ui.screens.settings.index.NotificationsIndex
 
 private val IntervalOptions =
     listOf(

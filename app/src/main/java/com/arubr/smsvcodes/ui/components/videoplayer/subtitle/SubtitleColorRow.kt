@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.videoplayer.subtitle
+package io.github.aedev.flow.ui.components.videoplayer.subtitle
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -26,7 +26,7 @@ import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.unit.dp
-import com.arubr.smsvcodes.R
+import io.github.aedev.flow.R
 
 /**
  * A labelled row of colour swatches ending in a custom one. The custom swatch wears the chosen

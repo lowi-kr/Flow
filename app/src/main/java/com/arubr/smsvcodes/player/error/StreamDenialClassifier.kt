@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.player.error
+package io.github.aedev.flow.player.error
 
 import java.net.URLDecoder
 

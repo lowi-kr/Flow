@@ -1,10 +1,10 @@
-package com.arubr.smsvcodes.sync
+package io.github.aedev.flow.sync
 
 import android.content.Context
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.sync.protocol.SyncPeerException
-import com.arubr.smsvcodes.sync.protocol.SyncProtocol
-import com.arubr.smsvcodes.sync.protocol.SyncProtocolException
+import io.github.aedev.flow.R
+import io.github.aedev.flow.sync.protocol.SyncPeerException
+import io.github.aedev.flow.sync.protocol.SyncProtocol
+import io.github.aedev.flow.sync.protocol.SyncProtocolException
 import java.io.IOException
 
 /** Turns a failed session into a message that says what went wrong and what to try. */

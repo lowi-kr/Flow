@@ -1,8 +1,8 @@
-package com.arubr.smsvcodes.utils.cipher
+package io.github.aedev.flow.utils.cipher
 
 import android.content.Context
 import android.util.Log
-import com.arubr.smsvcodes.network.AppProxyManager
+import io.github.aedev.flow.network.AppProxyManager
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.suspendCancellableCoroutine

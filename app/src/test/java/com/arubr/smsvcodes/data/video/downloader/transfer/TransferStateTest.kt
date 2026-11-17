@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.data.video.downloader.transfer
+package io.github.aedev.flow.data.video.downloader.transfer
 
 import com.google.common.truth.Truth.assertThat
 import org.junit.Rule

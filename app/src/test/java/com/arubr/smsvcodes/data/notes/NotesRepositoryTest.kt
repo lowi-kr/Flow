@@ -1,7 +1,7 @@
-package com.arubr.smsvcodes.data.notes
+package io.github.aedev.flow.data.notes
 
-import com.arubr.smsvcodes.data.local.dao.NoteDao
-import com.arubr.smsvcodes.data.local.entity.NoteEntity
+import io.github.aedev.flow.data.local.dao.NoteDao
+import io.github.aedev.flow.data.local.entity.NoteEntity
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.first

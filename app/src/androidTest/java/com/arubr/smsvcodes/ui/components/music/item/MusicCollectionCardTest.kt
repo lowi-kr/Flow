@@ -4,7 +4,7 @@
  * This file is part of Flow (https://github.com/Flow-Tube/Flow).
  */
 
-package com.arubr.smsvcodes.ui.components.music.item
+package io.github.aedev.flow.ui.components.music.item
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -23,7 +23,7 @@ import androidx.compose.ui.test.performClick
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.width
 import androidx.test.platform.app.InstrumentationRegistry
-import com.arubr.smsvcodes.R
+import io.github.aedev.flow.R
 import org.junit.Assert.assertEquals
 import org.junit.Rule
 import org.junit.Test

@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.player.renderer.subtitle
+package io.github.aedev.flow.player.renderer.subtitle
 
 import org.xmlpull.v1.XmlPullParser
 import org.xmlpull.v1.XmlPullParserFactory

@@ -1,11 +1,11 @@
-package com.arubr.smsvcodes.ui.screens.recap.story
+package io.github.aedev.flow.ui.screens.recap.story
 
 import android.content.Context
 import android.content.Intent
 import android.graphics.Bitmap
 import androidx.compose.ui.graphics.ImageBitmap
 import androidx.compose.ui.graphics.asAndroidBitmap
-import com.arubr.smsvcodes.utils.sharedFileUri
+import io.github.aedev.flow.utils.sharedFileUri
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import java.io.File

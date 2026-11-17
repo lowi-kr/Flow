@@ -1,6 +1,6 @@
-package com.arubr.smsvcodes.ui.components.shorts
+package io.github.aedev.flow.ui.components.shorts
 
-import com.arubr.smsvcodes.data.local.ShortsPlayerUiMode
+import io.github.aedev.flow.data.local.ShortsPlayerUiMode
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue

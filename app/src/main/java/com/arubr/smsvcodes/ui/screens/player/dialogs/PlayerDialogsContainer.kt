@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.screens.player.dialogs
+package io.github.aedev.flow.ui.screens.player.dialogs
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -6,16 +6,16 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.arubr.smsvcodes.data.model.Video
-import com.arubr.smsvcodes.player.EnhancedPlayerManager
-import com.arubr.smsvcodes.player.dlna.DlnaCastManager
-import com.arubr.smsvcodes.player.state.EnhancedPlayerState
-import com.arubr.smsvcodes.ui.components.videoplayer.DlnaDevicePickerDialog
-import com.arubr.smsvcodes.ui.screens.player.VideoPlayerViewModel
-import com.arubr.smsvcodes.ui.screens.player.state.PlayerScreenState
-import com.arubr.smsvcodes.ui.screens.player.state.PlayerSheet
-import com.arubr.smsvcodes.ui.screens.player.state.VideoPlayerPreferencesState
-import com.arubr.smsvcodes.ui.screens.player.state.VideoPlayerUiState
+import io.github.aedev.flow.data.model.Video
+import io.github.aedev.flow.player.EnhancedPlayerManager
+import io.github.aedev.flow.player.dlna.DlnaCastManager
+import io.github.aedev.flow.player.state.EnhancedPlayerState
+import io.github.aedev.flow.ui.components.videoplayer.DlnaDevicePickerDialog
+import io.github.aedev.flow.ui.screens.player.VideoPlayerViewModel
+import io.github.aedev.flow.ui.screens.player.state.PlayerScreenState
+import io.github.aedev.flow.ui.screens.player.state.PlayerSheet
+import io.github.aedev.flow.ui.screens.player.state.VideoPlayerPreferencesState
+import io.github.aedev.flow.ui.screens.player.state.VideoPlayerUiState
 import kotlinx.coroutines.launch
 
 @Composable

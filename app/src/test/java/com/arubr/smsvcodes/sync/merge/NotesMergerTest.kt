@@ -1,6 +1,6 @@
-package com.arubr.smsvcodes.sync.merge
+package io.github.aedev.flow.sync.merge
 
-import com.arubr.smsvcodes.sync.canonical.CanonicalNote
+import io.github.aedev.flow.sync.canonical.CanonicalNote
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertTrue
 import org.junit.Test

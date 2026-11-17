@@ -1,7 +1,7 @@
-package com.arubr.smsvcodes.player.shorts
+package io.github.aedev.flow.player.shorts
 
 import android.util.Log
-import com.arubr.smsvcodes.player.error.PlayerDiagnostics
+import io.github.aedev.flow.player.error.PlayerDiagnostics
 import java.util.concurrent.ConcurrentHashMap
 
 /**

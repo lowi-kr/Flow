@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.di
+package io.github.aedev.flow.di
 
 import dagger.Module
 import dagger.Provides

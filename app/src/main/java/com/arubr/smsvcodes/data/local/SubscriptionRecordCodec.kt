@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.data.local
+package io.github.aedev.flow.data.local
 
 /**
  * The stored form of a subscription:

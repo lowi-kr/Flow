@@ -1,14 +1,14 @@
-package com.arubr.smsvcodes.ui.components.music.section
+package io.github.aedev.flow.ui.components.music.section
 
 import androidx.compose.foundation.lazy.LazyListScope
 import androidx.compose.runtime.Immutable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.res.stringResource
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.data.music.model.ArtistDetails
-import com.arubr.smsvcodes.data.music.model.MusicPlaylist
-import com.arubr.smsvcodes.data.music.model.MusicTrack
-import com.arubr.smsvcodes.ui.components.music.header.MusicSectionAction
+import io.github.aedev.flow.R
+import io.github.aedev.flow.data.music.model.ArtistDetails
+import io.github.aedev.flow.data.music.model.MusicPlaylist
+import io.github.aedev.flow.data.music.model.MusicTrack
+import io.github.aedev.flow.ui.components.music.header.MusicSectionAction
 
 /** The viewer's own playlists and music subscriptions, and the sections they chose to hide. */
 @Immutable

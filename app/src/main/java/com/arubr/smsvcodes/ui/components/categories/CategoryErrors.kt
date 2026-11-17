@@ -1,7 +1,7 @@
-package com.arubr.smsvcodes.ui.components.categories
+package io.github.aedev.flow.ui.components.categories
 
 import androidx.annotation.StringRes
-import com.arubr.smsvcodes.R
+import io.github.aedev.flow.R
 import io.ktor.client.plugins.ResponseException
 import io.ktor.http.HttpStatusCode
 

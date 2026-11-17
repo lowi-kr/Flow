@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.player.error
+package io.github.aedev.flow.player.error
 
 internal data class StreamFailureContext(
     val reason: String,

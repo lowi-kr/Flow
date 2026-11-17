@@ -1,11 +1,11 @@
-package com.arubr.smsvcodes.data.engagement
+package io.github.aedev.flow.data.engagement
 
 import android.content.Context
 import dagger.hilt.android.qualifiers.ApplicationContext
-import com.arubr.smsvcodes.data.model.Video
-import com.arubr.smsvcodes.data.recommendation.FlowNeuroEngine
-import com.arubr.smsvcodes.data.recommendation.InteractionType
-import com.arubr.smsvcodes.data.repository.YouTubeRepository
+import io.github.aedev.flow.data.model.Video
+import io.github.aedev.flow.data.recommendation.FlowNeuroEngine
+import io.github.aedev.flow.data.recommendation.InteractionType
+import io.github.aedev.flow.data.repository.YouTubeRepository
 import javax.inject.Inject
 
 /**

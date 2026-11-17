@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui
+package io.github.aedev.flow.ui
 
 import android.content.Context
 import android.net.Uri
@@ -13,11 +13,11 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberUpdatedState
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavController
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.data.shorts.queue.ShortsQueueSource
-import com.arubr.smsvcodes.ui.components.layout.navigation.DOWNLOADS_ROUTE
-import com.arubr.smsvcodes.ui.components.layout.navigation.DOWNLOADS_TAB_ROUTE
-import com.arubr.smsvcodes.utils.NetworkConnectivityObserver
+import io.github.aedev.flow.R
+import io.github.aedev.flow.data.shorts.queue.ShortsQueueSource
+import io.github.aedev.flow.ui.components.layout.navigation.DOWNLOADS_ROUTE
+import io.github.aedev.flow.ui.components.layout.navigation.DOWNLOADS_TAB_ROUTE
+import io.github.aedev.flow.utils.NetworkConnectivityObserver
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.first
 

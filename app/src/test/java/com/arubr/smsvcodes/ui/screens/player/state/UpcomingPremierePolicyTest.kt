@@ -1,9 +1,9 @@
-package com.arubr.smsvcodes.ui.screens.player.state
+package io.github.aedev.flow.ui.screens.player.state
 
 import com.google.common.truth.Truth.assertThat
-import com.arubr.smsvcodes.data.model.Video
-import com.arubr.smsvcodes.player.stream.UpcomingDetails
-import com.arubr.smsvcodes.player.stream.UpcomingPremiere
+import io.github.aedev.flow.data.model.Video
+import io.github.aedev.flow.player.stream.UpcomingDetails
+import io.github.aedev.flow.player.stream.UpcomingPremiere
 import org.junit.Test
 
 class UpcomingPremierePolicyTest {

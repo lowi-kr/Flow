@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.screens.onboarding
+package io.github.aedev.flow.ui.screens.onboarding
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.PaddingValues
@@ -21,15 +21,15 @@ import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.data.recommendation.music.FavouriteArtist
-import com.arubr.smsvcodes.data.recommendation.music.FavouriteArtistPicker
-import com.arubr.smsvcodes.ui.components.shared.FlowSearchField
-import com.arubr.smsvcodes.ui.components.shared.FlowSectionHeader
-import com.arubr.smsvcodes.ui.components.shared.FlowSegmentedGap
-import com.arubr.smsvcodes.ui.components.shared.MediaArtistToggleRow
-import com.arubr.smsvcodes.ui.components.shared.dismissKeyboardOnPress
-import com.arubr.smsvcodes.ui.components.shared.flowSegmentShape
+import io.github.aedev.flow.R
+import io.github.aedev.flow.data.recommendation.music.FavouriteArtist
+import io.github.aedev.flow.data.recommendation.music.FavouriteArtistPicker
+import io.github.aedev.flow.ui.components.shared.FlowSearchField
+import io.github.aedev.flow.ui.components.shared.FlowSectionHeader
+import io.github.aedev.flow.ui.components.shared.FlowSegmentedGap
+import io.github.aedev.flow.ui.components.shared.MediaArtistToggleRow
+import io.github.aedev.flow.ui.components.shared.dismissKeyboardOnPress
+import io.github.aedev.flow.ui.components.shared.flowSegmentShape
 
 private val SectionTopPadding = 16.dp
 

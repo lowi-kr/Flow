@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.data.local.dao
+package io.github.aedev.flow.data.local.dao
 
 import com.google.common.truth.Truth.assertThat
 import kotlinx.coroutines.test.runTest

@@ -1,12 +1,12 @@
-package com.arubr.smsvcodes.ui.screens.settings.region
+package io.github.aedev.flow.ui.screens.settings.region
 
 import android.content.Context
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
-import com.arubr.smsvcodes.data.local.CONTENT_LANGUAGE_FOLLOW_APP
-import com.arubr.smsvcodes.data.local.PlayerPreferences
-import com.arubr.smsvcodes.ui.screens.settings.SettingsViewModel
-import com.arubr.smsvcodes.utils.AppLanguageManager
+import io.github.aedev.flow.data.local.CONTENT_LANGUAGE_FOLLOW_APP
+import io.github.aedev.flow.data.local.PlayerPreferences
+import io.github.aedev.flow.ui.screens.settings.SettingsViewModel
+import io.github.aedev.flow.utils.AppLanguageManager
 import org.schabi.newpipe.extractor.ServiceList
 import java.util.Locale
 import javax.inject.Inject

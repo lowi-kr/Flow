@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.videoplayer.subtitle
+package io.github.aedev.flow.ui.components.videoplayer.subtitle
 
 import com.google.common.truth.Truth.assertThat
 import org.junit.Test

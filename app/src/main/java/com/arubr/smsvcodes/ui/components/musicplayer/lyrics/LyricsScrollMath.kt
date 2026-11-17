@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.musicplayer.lyrics
+package io.github.aedev.flow.ui.components.musicplayer.lyrics
 
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.height

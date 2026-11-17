@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.sync.crypto
+package io.github.aedev.flow.sync.crypto
 
 import java.io.ByteArrayOutputStream
 

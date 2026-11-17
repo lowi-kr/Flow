@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.innertube.pages.renderer
+package io.github.aedev.flow.innertube.pages.renderer
 
 import kotlinx.serialization.json.Json
 import org.junit.Assert.assertEquals

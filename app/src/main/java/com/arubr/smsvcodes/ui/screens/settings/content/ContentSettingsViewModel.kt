@@ -1,10 +1,10 @@
-package com.arubr.smsvcodes.ui.screens.settings.content
+package io.github.aedev.flow.ui.screens.settings.content
 
 import dagger.hilt.android.lifecycle.HiltViewModel
-import com.arubr.smsvcodes.data.local.PlayerPreferences
-import com.arubr.smsvcodes.data.local.SharedLinkAction
-import com.arubr.smsvcodes.data.local.WatchedThreshold
-import com.arubr.smsvcodes.ui.screens.settings.SettingsViewModel
+import io.github.aedev.flow.data.local.PlayerPreferences
+import io.github.aedev.flow.data.local.SharedLinkAction
+import io.github.aedev.flow.data.local.WatchedThreshold
+import io.github.aedev.flow.ui.screens.settings.SettingsViewModel
 import javax.inject.Inject
 
 /** What shows up in the feeds: Home, Subscriptions, Shorts, Watch later, watched filtering, notes and sharing. */

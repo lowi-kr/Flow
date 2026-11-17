@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.player.shorts
+package io.github.aedev.flow.player.shorts
 
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse

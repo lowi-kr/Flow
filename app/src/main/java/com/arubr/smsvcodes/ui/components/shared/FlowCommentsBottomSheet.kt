@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.shared
+package io.github.aedev.flow.ui.components.shared
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -27,11 +27,11 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.data.model.Comment
-import com.arubr.smsvcodes.ui.components.shared.FlowBottomSheet
-import com.arubr.smsvcodes.ui.components.shared.defaultSheetExpandedHeight
-import com.arubr.smsvcodes.ui.components.shared.rememberFlowBottomSheetState
+import io.github.aedev.flow.R
+import io.github.aedev.flow.data.model.Comment
+import io.github.aedev.flow.ui.components.shared.FlowBottomSheet
+import io.github.aedev.flow.ui.components.shared.defaultSheetExpandedHeight
+import io.github.aedev.flow.ui.components.shared.rememberFlowBottomSheetState
 
 @Composable
 fun FlowCommentsBottomSheet(

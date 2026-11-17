@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.data.local
+package io.github.aedev.flow.data.local
 
 /**
  * How much of a video counts as watched. [isWatched] is the only definition: every watched video

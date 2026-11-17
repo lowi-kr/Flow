@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.player.recovery
+package io.github.aedev.flow.player.recovery
 
 import com.google.common.truth.Truth.assertThat
 import org.junit.Test

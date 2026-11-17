@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.screens.channel
+package io.github.aedev.flow.ui.screens.channel
 
 import android.content.Intent
 import android.util.Log
@@ -87,30 +87,30 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.paging.compose.LazyPagingItems
 import androidx.paging.compose.collectAsLazyPagingItems
 import coil3.compose.AsyncImage
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.data.model.SubscriptionGroup
-import com.arubr.smsvcodes.data.model.Video
-import com.arubr.smsvcodes.innertube.pages.channel.ChannelHeader
-import com.arubr.smsvcodes.innertube.pages.channel.ChannelTabKind
-import com.arubr.smsvcodes.innertube.pages.renderer.CommunityPost
-import com.arubr.smsvcodes.ui.components.channel.ChannelBanner
-import com.arubr.smsvcodes.ui.components.layout.topbar.FlowTopBar
-import com.arubr.smsvcodes.ui.components.shared.ChannelAvatarImage
-import com.arubr.smsvcodes.ui.components.shared.CollectionEditDialog
-import com.arubr.smsvcodes.ui.components.shared.CollectionSheetEntry
-import com.arubr.smsvcodes.ui.components.shared.CommentSortFilter
-import com.arubr.smsvcodes.ui.components.shared.FlowCommentsBottomSheet
-import com.arubr.smsvcodes.ui.components.shared.FlowEmptyState
-import com.arubr.smsvcodes.ui.components.shared.FlowErrorState
-import com.arubr.smsvcodes.ui.components.shared.FlowLoadingIndicator
-import com.arubr.smsvcodes.ui.components.shared.FlowNoteEditorDialog
-import com.arubr.smsvcodes.ui.components.shared.FlowSubscribeButton
-import com.arubr.smsvcodes.ui.components.shared.FullSizeImageDialog
-import com.arubr.smsvcodes.ui.components.shared.SaveToCollectionSheet
-import com.arubr.smsvcodes.ui.components.shared.sortCommentsByFilter
-import com.arubr.smsvcodes.ui.theme.extendedColors
-import com.arubr.smsvcodes.ui.youtubeChannelUrl
-import com.arubr.smsvcodes.utils.ThumbnailUrlResolver
+import io.github.aedev.flow.R
+import io.github.aedev.flow.data.model.SubscriptionGroup
+import io.github.aedev.flow.data.model.Video
+import io.github.aedev.flow.innertube.pages.channel.ChannelHeader
+import io.github.aedev.flow.innertube.pages.channel.ChannelTabKind
+import io.github.aedev.flow.innertube.pages.renderer.CommunityPost
+import io.github.aedev.flow.ui.components.channel.ChannelBanner
+import io.github.aedev.flow.ui.components.layout.topbar.FlowTopBar
+import io.github.aedev.flow.ui.components.shared.ChannelAvatarImage
+import io.github.aedev.flow.ui.components.shared.CollectionEditDialog
+import io.github.aedev.flow.ui.components.shared.CollectionSheetEntry
+import io.github.aedev.flow.ui.components.shared.CommentSortFilter
+import io.github.aedev.flow.ui.components.shared.FlowCommentsBottomSheet
+import io.github.aedev.flow.ui.components.shared.FlowEmptyState
+import io.github.aedev.flow.ui.components.shared.FlowErrorState
+import io.github.aedev.flow.ui.components.shared.FlowLoadingIndicator
+import io.github.aedev.flow.ui.components.shared.FlowNoteEditorDialog
+import io.github.aedev.flow.ui.components.shared.FlowSubscribeButton
+import io.github.aedev.flow.ui.components.shared.FullSizeImageDialog
+import io.github.aedev.flow.ui.components.shared.SaveToCollectionSheet
+import io.github.aedev.flow.ui.components.shared.sortCommentsByFilter
+import io.github.aedev.flow.ui.theme.extendedColors
+import io.github.aedev.flow.ui.youtubeChannelUrl
+import io.github.aedev.flow.utils.ThumbnailUrlResolver
 import kotlinx.coroutines.launch
 import kotlin.math.roundToInt
 
@@ -131,7 +131,7 @@ fun ChannelScreen(
     val coroutineScope = rememberCoroutineScope()
     val preferences =
         remember(context) {
-            com.arubr.smsvcodes.data.local
+            io.github.aedev.flow.data.local
                 .PlayerPreferences(context)
         }
     val isGridView by preferences.channelIsGridView.collectAsState(initial = false)

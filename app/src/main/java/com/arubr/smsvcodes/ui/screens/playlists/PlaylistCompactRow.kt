@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.screens.playlists
+package io.github.aedev.flow.ui.screens.playlists
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.RowScope
@@ -14,14 +14,14 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.data.model.PlaylistInfo
-import com.arubr.smsvcodes.ui.components.library.PlaylistActionsMenu
-import com.arubr.smsvcodes.ui.components.shared.ArtworkThumbnail
-import com.arubr.smsvcodes.ui.components.shared.MediaRow
-import com.arubr.smsvcodes.ui.components.shared.MediaRowAction
-import com.arubr.smsvcodes.ui.components.shared.MediaThumbnail
-import com.arubr.smsvcodes.ui.components.shared.MediaThumbnailDefaults
+import io.github.aedev.flow.R
+import io.github.aedev.flow.data.model.PlaylistInfo
+import io.github.aedev.flow.ui.components.library.PlaylistActionsMenu
+import io.github.aedev.flow.ui.components.shared.ArtworkThumbnail
+import io.github.aedev.flow.ui.components.shared.MediaRow
+import io.github.aedev.flow.ui.components.shared.MediaRowAction
+import io.github.aedev.flow.ui.components.shared.MediaThumbnail
+import io.github.aedev.flow.ui.components.shared.MediaThumbnailDefaults
 
 private val CompactVideoWidth = MediaThumbnailDefaults.ArtworkSize * MediaThumbnailDefaults.VideoAspectRatio
 

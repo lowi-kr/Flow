@@ -1,7 +1,7 @@
-package com.arubr.smsvcodes.player.sabr
+package io.github.aedev.flow.player.sabr
 
 import com.google.common.truth.Truth.assertThat
-import com.arubr.smsvcodes.player.sabr.ump.SabrMediaPayload
+import io.github.aedev.flow.player.sabr.ump.SabrMediaPayload
 import org.junit.Test
 
 class SabrMediaPayloadTest {

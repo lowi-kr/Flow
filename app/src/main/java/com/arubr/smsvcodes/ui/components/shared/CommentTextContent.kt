@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.shared
+package io.github.aedev.flow.ui.components.shared
 
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.text.InlineTextContent
@@ -14,15 +14,15 @@ import androidx.compose.ui.text.Placeholder
 import androidx.compose.ui.text.PlaceholderVerticalAlign
 import androidx.compose.ui.unit.em
 import coil3.compose.AsyncImage
-import com.arubr.smsvcodes.data.model.Comment
-import com.arubr.smsvcodes.data.model.RichText
-import com.arubr.smsvcodes.utils.RICH_TEXT_CHANNEL
-import com.arubr.smsvcodes.utils.RICH_TEXT_EMOJI_PREFIX
-import com.arubr.smsvcodes.utils.RICH_TEXT_SEEK
-import com.arubr.smsvcodes.utils.RICH_TEXT_URL
-import com.arubr.smsvcodes.utils.RICH_TEXT_VIDEO
-import com.arubr.smsvcodes.utils.formatRichText
-import com.arubr.smsvcodes.utils.toAnnotatedString
+import io.github.aedev.flow.data.model.Comment
+import io.github.aedev.flow.data.model.RichText
+import io.github.aedev.flow.utils.RICH_TEXT_CHANNEL
+import io.github.aedev.flow.utils.RICH_TEXT_EMOJI_PREFIX
+import io.github.aedev.flow.utils.RICH_TEXT_SEEK
+import io.github.aedev.flow.utils.RICH_TEXT_URL
+import io.github.aedev.flow.utils.RICH_TEXT_VIDEO
+import io.github.aedev.flow.utils.formatRichText
+import io.github.aedev.flow.utils.toAnnotatedString
 
 private val EmojiSize = 1.2.em
 

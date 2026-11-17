@@ -4,7 +4,7 @@
  * This file is part of Flow (https://github.com/Flow-Tube/Flow).
  */
 
-package com.arubr.smsvcodes.data.recommendation.music.eval
+package io.github.aedev.flow.data.recommendation.music.eval
 
 import com.google.common.truth.Truth.assertThat
 import org.junit.Test

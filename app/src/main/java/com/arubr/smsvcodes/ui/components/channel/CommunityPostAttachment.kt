@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.channel
+package io.github.aedev.flow.ui.components.channel
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -36,15 +36,15 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.data.model.Video
-import com.arubr.smsvcodes.innertube.pages.renderer.PostAttachment
-import com.arubr.smsvcodes.ui.components.shared.FullSizeImageDialog
-import com.arubr.smsvcodes.ui.components.shared.VideoThumbnailImage
-import com.arubr.smsvcodes.ui.theme.extendedColors
-import com.arubr.smsvcodes.utils.ThumbnailUrlResolver
-import com.arubr.smsvcodes.utils.formatDuration
-import com.arubr.smsvcodes.utils.formatViewCount
+import io.github.aedev.flow.R
+import io.github.aedev.flow.data.model.Video
+import io.github.aedev.flow.innertube.pages.renderer.PostAttachment
+import io.github.aedev.flow.ui.components.shared.FullSizeImageDialog
+import io.github.aedev.flow.ui.components.shared.VideoThumbnailImage
+import io.github.aedev.flow.ui.theme.extendedColors
+import io.github.aedev.flow.utils.ThumbnailUrlResolver
+import io.github.aedev.flow.utils.formatDuration
+import io.github.aedev.flow.utils.formatViewCount
 
 @Composable
 internal fun CommunityPostAttachment(

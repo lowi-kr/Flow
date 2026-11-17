@@ -1,9 +1,9 @@
-package com.arubr.smsvcodes.ui.screens.player.state
+package io.github.aedev.flow.ui.screens.player.state
 
 import androidx.window.core.layout.WindowSizeClass
-import com.arubr.smsvcodes.ui.utils.isExpandedWidth
-import com.arubr.smsvcodes.ui.utils.isMediumHeight
-import com.arubr.smsvcodes.ui.utils.isMediumWidth
+import io.github.aedev.flow.ui.utils.isExpandedWidth
+import io.github.aedev.flow.ui.utils.isMediumHeight
+import io.github.aedev.flow.ui.utils.isMediumWidth
 
 /** Which of the player detail layouts the current window can host. */
 internal enum class PlayerLayoutMode {

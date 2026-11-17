@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.tv.components
+package io.github.aedev.flow.ui.tv.components
 
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Box
@@ -17,8 +17,8 @@ import androidx.compose.ui.focus.focusRequester
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.unit.dp
-import com.arubr.smsvcodes.ui.components.shared.FocusLiftDefaults
-import com.arubr.smsvcodes.ui.components.shared.focusLift
+import io.github.aedev.flow.ui.components.shared.FocusLiftDefaults
+import io.github.aedev.flow.ui.components.shared.focusLift
 
 /** Color set for [TvIconButton]; defaults come from the active theme. */
 @Immutable

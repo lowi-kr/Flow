@@ -1,10 +1,10 @@
-package com.arubr.smsvcodes.ui.components.videoplayer.controls
+package io.github.aedev.flow.ui.components.videoplayer.controls
 
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.drawWithCache
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
-import com.arubr.smsvcodes.ui.theme.PlayerScrim
+import io.github.aedev.flow.ui.theme.PlayerScrim
 
 /** Which end of the node the scrim is opaque at; it fades to transparent towards the other. */
 internal enum class ScrimEdge {

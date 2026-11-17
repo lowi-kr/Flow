@@ -1,11 +1,11 @@
-package com.arubr.smsvcodes.ui.screens.player.state
+package io.github.aedev.flow.ui.screens.player.state
 
 import com.google.common.truth.Truth.assertThat
-import com.arubr.smsvcodes.data.model.SponsorBlockSegment
-import com.arubr.smsvcodes.data.model.Video
-import com.arubr.smsvcodes.innertube.models.response.VideoHeatmap
-import com.arubr.smsvcodes.player.state.EnhancedPlayerState
-import com.arubr.smsvcodes.player.stream.StoryboardLevel
+import io.github.aedev.flow.data.model.SponsorBlockSegment
+import io.github.aedev.flow.data.model.Video
+import io.github.aedev.flow.innertube.models.response.VideoHeatmap
+import io.github.aedev.flow.player.state.EnhancedPlayerState
+import io.github.aedev.flow.player.stream.StoryboardLevel
 import io.mockk.mockk
 import io.mockk.unmockkAll
 import org.junit.After

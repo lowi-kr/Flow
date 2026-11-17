@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.data.audio.eq
+package io.github.aedev.flow.data.audio.eq
 
 /**
  * Every change the equalizer supports, as pure functions of [EqState]. The repository applies them

@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.library
+package io.github.aedev.flow.ui.components.library
 
 import androidx.compose.material3.Checkbox
 import androidx.compose.material3.MaterialTheme
@@ -11,16 +11,16 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.Dp
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.data.model.Video
-import com.arubr.smsvcodes.ui.components.shared.MediaRow
-import com.arubr.smsvcodes.ui.components.shared.MediaThumbnail
-import com.arubr.smsvcodes.ui.components.shared.MediaThumbnailDefaults
-import com.arubr.smsvcodes.ui.components.shared.ReorderHandle
-import com.arubr.smsvcodes.ui.components.shared.card.LocalVideoCardPreferences
-import com.arubr.smsvcodes.ui.components.shared.quickactions.VideoQuickActionsBottomSheet
-import com.arubr.smsvcodes.ui.components.shared.videoMetadataLine
-import com.arubr.smsvcodes.utils.formatYouTubeRelativeTime
+import io.github.aedev.flow.R
+import io.github.aedev.flow.data.model.Video
+import io.github.aedev.flow.ui.components.shared.MediaRow
+import io.github.aedev.flow.ui.components.shared.MediaThumbnail
+import io.github.aedev.flow.ui.components.shared.MediaThumbnailDefaults
+import io.github.aedev.flow.ui.components.shared.ReorderHandle
+import io.github.aedev.flow.ui.components.shared.card.LocalVideoCardPreferences
+import io.github.aedev.flow.ui.components.shared.quickactions.VideoQuickActionsBottomSheet
+import io.github.aedev.flow.ui.components.shared.videoMetadataLine
+import io.github.aedev.flow.utils.formatYouTubeRelativeTime
 
 /** A video in a playlist. Long press opens its menu, with the playlist's own remove when it has one. */
 @Composable

@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.theme
+package io.github.aedev.flow.ui.theme
 
 import androidx.compose.runtime.Immutable
 

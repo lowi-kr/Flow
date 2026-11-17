@@ -1,6 +1,6 @@
-package com.arubr.smsvcodes.ui.screens.player.state
+package io.github.aedev.flow.ui.screens.player.state
 
-import com.arubr.smsvcodes.ui.components.videoplayer.settings.PlayerSettingsPage
+import io.github.aedev.flow.ui.components.videoplayer.settings.PlayerSettingsPage
 
 /**
  * The one sheet, panel or dialog the video player has raised over the stage. The player can only

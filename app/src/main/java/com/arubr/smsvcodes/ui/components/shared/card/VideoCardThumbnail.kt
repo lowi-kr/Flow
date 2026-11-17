@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.shared.card
+package io.github.aedev.flow.ui.components.shared.card
 
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
@@ -14,11 +14,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.Dp
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.ui.components.shared.MediaIconBadge
-import com.arubr.smsvcodes.ui.components.shared.MediaThumbnail
-import com.arubr.smsvcodes.ui.components.shared.MediaThumbnailDefaults
-import com.arubr.smsvcodes.ui.components.shared.VideoStatusBadge
+import io.github.aedev.flow.R
+import io.github.aedev.flow.ui.components.shared.MediaIconBadge
+import io.github.aedev.flow.ui.components.shared.MediaThumbnail
+import io.github.aedev.flow.ui.components.shared.MediaThumbnailDefaults
+import io.github.aedev.flow.ui.components.shared.VideoStatusBadge
 
 /**
  * A card's thumbnail: the shared [MediaThumbnail] with the status, reminder and DeArrow badges on it.

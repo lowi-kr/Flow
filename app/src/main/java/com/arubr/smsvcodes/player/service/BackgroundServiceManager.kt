@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.player.service
+package io.github.aedev.flow.player.service
 
 import android.content.ComponentName
 import android.content.Context
@@ -7,7 +7,7 @@ import androidx.core.content.ContextCompat
 import androidx.media3.session.MediaController
 import androidx.media3.session.SessionToken
 import com.google.common.util.concurrent.ListenableFuture
-import com.arubr.smsvcodes.service.VideoPlayerService
+import io.github.aedev.flow.service.VideoPlayerService
 
 
 class BackgroundServiceManager {

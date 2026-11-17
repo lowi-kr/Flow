@@ -1,33 +1,33 @@
-package com.arubr.smsvcodes.data.repository
+package io.github.aedev.flow.data.repository
 
 import android.util.Log
 import android.util.LruCache
-import com.arubr.smsvcodes.data.comments.CommentsPageResult
-import com.arubr.smsvcodes.data.local.PlayerPreferences
-import com.arubr.smsvcodes.data.model.Comment
-import com.arubr.smsvcodes.data.model.Video
-import com.arubr.smsvcodes.data.model.VideoCollaborator
-import com.arubr.smsvcodes.data.model.needsCollaboratorResolution
-import com.arubr.smsvcodes.data.shorts.ShortsClassifier
-import com.arubr.smsvcodes.innertube.YouTube
-import com.arubr.smsvcodes.innertube.models.response.VideoChapter
-import com.arubr.smsvcodes.innertube.models.response.VideoChaptersParser
-import com.arubr.smsvcodes.innertube.models.response.VideoHeatmap
-import com.arubr.smsvcodes.innertube.models.response.VideoHeatmapParser
-import com.arubr.smsvcodes.innertube.models.response.WatchMetadataResponse
-import com.arubr.smsvcodes.innertube.pages.VideoDescriptionPage
-import com.arubr.smsvcodes.innertube.pages.YouTubeCountParser
-import com.arubr.smsvcodes.innertube.pages.parseYouTubeViewCount
-import com.arubr.smsvcodes.innertube.pages.search.resultVideos
-import com.arubr.smsvcodes.player.stream.InFlightRequestCoalescer
-import com.arubr.smsvcodes.utils.PerformanceDispatcher
-import com.arubr.smsvcodes.utils.ThumbnailUrlResolver
-import com.arubr.smsvcodes.utils.avatarImageIdentityKey
-import com.arubr.smsvcodes.utils.bestImageUrl
-import com.arubr.smsvcodes.utils.distinctBestImageUrls
-import com.arubr.smsvcodes.utils.newPipeLocalization
-import com.arubr.smsvcodes.utils.parseToTimestamp
-import com.arubr.smsvcodes.utils.relativedate.RelativeUploadDateParser
+import io.github.aedev.flow.data.comments.CommentsPageResult
+import io.github.aedev.flow.data.local.PlayerPreferences
+import io.github.aedev.flow.data.model.Comment
+import io.github.aedev.flow.data.model.Video
+import io.github.aedev.flow.data.model.VideoCollaborator
+import io.github.aedev.flow.data.model.needsCollaboratorResolution
+import io.github.aedev.flow.data.shorts.ShortsClassifier
+import io.github.aedev.flow.innertube.YouTube
+import io.github.aedev.flow.innertube.models.response.VideoChapter
+import io.github.aedev.flow.innertube.models.response.VideoChaptersParser
+import io.github.aedev.flow.innertube.models.response.VideoHeatmap
+import io.github.aedev.flow.innertube.models.response.VideoHeatmapParser
+import io.github.aedev.flow.innertube.models.response.WatchMetadataResponse
+import io.github.aedev.flow.innertube.pages.VideoDescriptionPage
+import io.github.aedev.flow.innertube.pages.YouTubeCountParser
+import io.github.aedev.flow.innertube.pages.parseYouTubeViewCount
+import io.github.aedev.flow.innertube.pages.search.resultVideos
+import io.github.aedev.flow.player.stream.InFlightRequestCoalescer
+import io.github.aedev.flow.utils.PerformanceDispatcher
+import io.github.aedev.flow.utils.ThumbnailUrlResolver
+import io.github.aedev.flow.utils.avatarImageIdentityKey
+import io.github.aedev.flow.utils.bestImageUrl
+import io.github.aedev.flow.utils.distinctBestImageUrls
+import io.github.aedev.flow.utils.newPipeLocalization
+import io.github.aedev.flow.utils.parseToTimestamp
+import io.github.aedev.flow.utils.relativedate.RelativeUploadDateParser
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Deferred
 import kotlinx.coroutines.Dispatchers
@@ -531,7 +531,7 @@ class YouTubeRepository
             val info = getChannelInfo(channelId) ?: return
             val tags = info.tags.orEmpty()
             if (tags.isEmpty() && info.description.isNullOrBlank()) return
-            com.arubr.smsvcodes.data.recommendation.FlowNeuroEngine
+            io.github.aedev.flow.data.recommendation.FlowNeuroEngine
                 .onChannelTagsLearned(context, channelId, tags, info.description)
         }
 
@@ -1099,7 +1099,7 @@ class YouTubeRepository
             @Volatile
             private var instance: YouTubeRepository? = null
 
-            fun getInstance(playerPreferences: com.arubr.smsvcodes.data.local.PlayerPreferences): YouTubeRepository =
+            fun getInstance(playerPreferences: io.github.aedev.flow.data.local.PlayerPreferences): YouTubeRepository =
                 instance ?: synchronized(this) {
                     instance ?: YouTubeRepository(playerPreferences).also { instance = it }
                 }

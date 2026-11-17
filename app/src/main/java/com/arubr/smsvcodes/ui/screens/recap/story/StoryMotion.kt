@@ -1,6 +1,6 @@
 @file:OptIn(ExperimentalMaterial3ExpressiveApi::class)
 
-package com.arubr.smsvcodes.ui.screens.recap.story
+package io.github.aedev.flow.ui.screens.recap.story
 
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.AnimationVector1D
@@ -17,7 +17,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Path
 import androidx.graphics.shapes.Morph
 import androidx.graphics.shapes.RoundedPolygon
-import com.arubr.smsvcodes.ui.components.shared.drawMorph
+import io.github.aedev.flow.ui.components.shared.drawMorph
 
 private const val BACKDROP_ALPHA_NEAR = 0.16f
 private const val BACKDROP_ALPHA_FAR = 0.10f

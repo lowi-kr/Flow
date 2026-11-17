@@ -1,8 +1,8 @@
-package com.arubr.smsvcodes.notification
+package io.github.aedev.flow.notification
 
 import android.content.Context
-import com.arubr.smsvcodes.BuildConfig
-import com.arubr.smsvcodes.data.local.PlayerPreferences
+import io.github.aedev.flow.BuildConfig
+import io.github.aedev.flow.data.local.PlayerPreferences
 import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.flow.collectIndexed
 import kotlinx.coroutines.flow.combine

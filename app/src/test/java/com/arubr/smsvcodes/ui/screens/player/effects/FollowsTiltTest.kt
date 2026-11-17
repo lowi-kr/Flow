@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.screens.player.effects
+package io.github.aedev.flow.ui.screens.player.effects
 
 import com.google.common.truth.Truth.assertThat
 import org.junit.Test

@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.shared
+package io.github.aedev.flow.ui.components.shared
 
 import android.graphics.Outline
 import android.os.Build
@@ -6,8 +6,8 @@ import android.view.View
 import android.view.ViewOutlineProvider
 import androidx.annotation.LayoutRes
 import androidx.media3.ui.PlayerView
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.player.surface.VideoSurfacePolicy
+import io.github.aedev.flow.R
+import io.github.aedev.flow.player.surface.VideoSurfacePolicy
 
 /** The controller-less PlayerView layout on the surface type this device plays smoothest with. */
 @LayoutRes

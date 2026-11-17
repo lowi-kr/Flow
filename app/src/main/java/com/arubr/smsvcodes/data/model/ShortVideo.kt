@@ -1,11 +1,11 @@
-package com.arubr.smsvcodes.data.model
+package io.github.aedev.flow.data.model
 
-import com.arubr.smsvcodes.innertube.pages.parseYouTubeViewCount
-import com.arubr.smsvcodes.innertube.pages.reel.ReelEntry
-import com.arubr.smsvcodes.innertube.pages.reel.ReelLockup
-import com.arubr.smsvcodes.innertube.pages.reel.reelPosterUrl
-import com.arubr.smsvcodes.utils.ThumbnailUrlResolver
-import com.arubr.smsvcodes.utils.formatViewCount
+import io.github.aedev.flow.innertube.pages.parseYouTubeViewCount
+import io.github.aedev.flow.innertube.pages.reel.ReelEntry
+import io.github.aedev.flow.innertube.pages.reel.ReelLockup
+import io.github.aedev.flow.innertube.pages.reel.reelPosterUrl
+import io.github.aedev.flow.utils.ThumbnailUrlResolver
+import io.github.aedev.flow.utils.formatViewCount
 
 /**
  * One reel in a Shorts queue. A reel arrives from the sequence as an id and a poster; everything

@@ -1,8 +1,8 @@
-package com.arubr.smsvcodes.ui.screens.music.collection
+package io.github.aedev.flow.ui.screens.music.collection
 
 import com.google.common.truth.Truth.assertThat
-import com.arubr.smsvcodes.data.music.model.MusicTrack
-import com.arubr.smsvcodes.data.music.model.PlaylistDetails
+import io.github.aedev.flow.data.music.model.MusicTrack
+import io.github.aedev.flow.data.music.model.PlaylistDetails
 import org.junit.Test
 
 class SavedCollectionRefreshTest {

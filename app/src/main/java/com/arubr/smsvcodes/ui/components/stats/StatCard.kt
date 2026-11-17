@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.stats
+package io.github.aedev.flow.ui.components.stats
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -27,7 +27,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
-import com.arubr.smsvcodes.R
+import io.github.aedev.flow.R
 
 private val CardPadding = 20.dp
 private val CardSpacing = 16.dp

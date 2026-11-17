@@ -1,7 +1,7 @@
-package com.arubr.smsvcodes.ui.screens.recap.story
+package io.github.aedev.flow.ui.screens.recap.story
 
-import com.arubr.smsvcodes.data.stats.RankedItem
-import com.arubr.smsvcodes.data.stats.RecapSummary
+import io.github.aedev.flow.data.stats.RankedItem
+import io.github.aedev.flow.data.stats.RecapSummary
 
 /** One card of the recap story. Each exists only when its period has the data to fill it. */
 internal sealed interface StoryPage {

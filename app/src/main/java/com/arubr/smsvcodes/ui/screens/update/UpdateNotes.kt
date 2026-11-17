@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.screens.update
+package io.github.aedev.flow.ui.screens.update
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
@@ -25,12 +25,12 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.withLink
 import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
-import com.arubr.smsvcodes.data.update.NoteSpan
-import com.arubr.smsvcodes.data.update.NoteText
-import com.arubr.smsvcodes.data.update.ReleaseNotes
-import com.arubr.smsvcodes.ui.components.shared.FlowSectionHeader
-import com.arubr.smsvcodes.ui.components.shared.FlowSegmentedGap
-import com.arubr.smsvcodes.ui.components.shared.flowSegmentShape
+import io.github.aedev.flow.data.update.NoteSpan
+import io.github.aedev.flow.data.update.NoteText
+import io.github.aedev.flow.data.update.ReleaseNotes
+import io.github.aedev.flow.ui.components.shared.FlowSectionHeader
+import io.github.aedev.flow.ui.components.shared.FlowSegmentedGap
+import io.github.aedev.flow.ui.components.shared.flowSegmentShape
 
 private val LinePadding = 16.dp
 private val LineVerticalPadding = 12.dp

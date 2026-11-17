@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.videoplayer.gesture
+package io.github.aedev.flow.ui.components.videoplayer.gesture
 
 import androidx.compose.foundation.gestures.awaitEachGesture
 import androidx.compose.foundation.gestures.awaitFirstDown

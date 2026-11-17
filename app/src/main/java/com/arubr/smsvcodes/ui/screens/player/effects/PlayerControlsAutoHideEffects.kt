@@ -1,8 +1,8 @@
-package com.arubr.smsvcodes.ui.screens.player.effects
+package io.github.aedev.flow.ui.screens.player.effects
 
 import androidx.compose.runtime.*
-import com.arubr.smsvcodes.ui.components.videoplayer.gesture.DOUBLE_TAP_SEEK_WINDOW_MS
-import com.arubr.smsvcodes.ui.screens.player.state.PlayerScreenState
+import io.github.aedev.flow.ui.components.videoplayer.gesture.DOUBLE_TAP_SEEK_WINDOW_MS
+import io.github.aedev.flow.ui.screens.player.state.PlayerScreenState
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.collectLatest
 

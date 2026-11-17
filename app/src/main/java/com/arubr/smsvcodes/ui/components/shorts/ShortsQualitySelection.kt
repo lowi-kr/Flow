@@ -1,8 +1,8 @@
-package com.arubr.smsvcodes.ui.components.shorts
+package io.github.aedev.flow.ui.components.shorts
 
-import com.arubr.smsvcodes.data.shorts.ShortVideoQuality
-import com.arubr.smsvcodes.player.QualityOption
-import com.arubr.smsvcodes.player.stream.VideoCodecUtils
+import io.github.aedev.flow.data.shorts.ShortVideoQuality
+import io.github.aedev.flow.player.QualityOption
+import io.github.aedev.flow.player.stream.VideoCodecUtils
 
 internal fun findActiveShortQuality(
     qualities: List<ShortVideoQuality>,

@@ -1,13 +1,13 @@
-package com.arubr.smsvcodes.ui.components.library
+package io.github.aedev.flow.ui.components.library
 
-import com.arubr.smsvcodes.data.local.LikedVideoInfo
-import com.arubr.smsvcodes.data.local.VideoHistoryEntry
-import com.arubr.smsvcodes.data.model.Video
-import com.arubr.smsvcodes.data.model.toMusicTrack
-import com.arubr.smsvcodes.data.model.toVideo
-import com.arubr.smsvcodes.data.music.DownloadedTrack
-import com.arubr.smsvcodes.data.music.model.MusicTrack
-import com.arubr.smsvcodes.data.video.DownloadedVideo
+import io.github.aedev.flow.data.local.LikedVideoInfo
+import io.github.aedev.flow.data.local.VideoHistoryEntry
+import io.github.aedev.flow.data.model.Video
+import io.github.aedev.flow.data.model.toMusicTrack
+import io.github.aedev.flow.data.model.toVideo
+import io.github.aedev.flow.data.music.DownloadedTrack
+import io.github.aedev.flow.data.music.model.MusicTrack
+import io.github.aedev.flow.data.video.DownloadedVideo
 
 internal const val LIBRARY_SHELF_ITEM_LIMIT = 20
 

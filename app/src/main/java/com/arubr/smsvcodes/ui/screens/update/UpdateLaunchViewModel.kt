@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.screens.update
+package io.github.aedev.flow.ui.screens.update
 
 import androidx.activity.ComponentActivity
 import androidx.compose.runtime.Composable
@@ -10,10 +10,10 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
-import com.arubr.smsvcodes.BuildConfig
-import com.arubr.smsvcodes.data.update.UpdateAnnouncement
-import com.arubr.smsvcodes.data.update.UpdateRepository
-import com.arubr.smsvcodes.ui.startup.LaunchPrompts
+import io.github.aedev.flow.BuildConfig
+import io.github.aedev.flow.data.update.UpdateAnnouncement
+import io.github.aedev.flow.data.update.UpdateRepository
+import io.github.aedev.flow.ui.startup.LaunchPrompts
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow

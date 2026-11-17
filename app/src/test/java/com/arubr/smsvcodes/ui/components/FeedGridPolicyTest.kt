@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components
+package io.github.aedev.flow.ui.components
 
 import com.google.common.truth.Truth.assertThat
 import org.junit.Test

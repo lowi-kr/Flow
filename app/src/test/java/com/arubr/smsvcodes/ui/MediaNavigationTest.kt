@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui
+package io.github.aedev.flow.ui
 
 import android.app.Application
 import androidx.test.ext.junit.runners.AndroidJUnit4

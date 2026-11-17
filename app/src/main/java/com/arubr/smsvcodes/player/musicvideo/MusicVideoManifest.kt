@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.player.musicvideo
+package io.github.aedev.flow.player.musicvideo
 
 import androidx.media3.common.C
 import androidx.media3.common.Format
@@ -15,8 +15,8 @@ import androidx.media3.exoplayer.dash.manifest.RangedUri
 import androidx.media3.exoplayer.dash.manifest.Representation
 import androidx.media3.exoplayer.dash.manifest.SegmentBase
 import androidx.media3.exoplayer.source.MediaSource
-import com.arubr.smsvcodes.innertube.models.response.PlayerResponse
-import com.arubr.smsvcodes.player.stream.VideoCodecUtils
+import io.github.aedev.flow.innertube.models.response.PlayerResponse
+import io.github.aedev.flow.player.stream.VideoCodecUtils
 
 /**
  * A one-file video stream described to Media3 as a single-segment DASH representation, so it is

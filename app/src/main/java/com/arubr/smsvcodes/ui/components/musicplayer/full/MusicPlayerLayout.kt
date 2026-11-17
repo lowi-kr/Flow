@@ -1,9 +1,9 @@
-package com.arubr.smsvcodes.ui.components.musicplayer.full
+package io.github.aedev.flow.ui.components.musicplayer.full
 
 import androidx.window.core.layout.WindowSizeClass
-import com.arubr.smsvcodes.ui.utils.isExpandedWidth
-import com.arubr.smsvcodes.ui.utils.isMediumHeight
-import com.arubr.smsvcodes.ui.utils.isMediumWidth
+import io.github.aedev.flow.ui.utils.isExpandedWidth
+import io.github.aedev.flow.ui.utils.isMediumHeight
+import io.github.aedev.flow.ui.utils.isMediumWidth
 
 /** How the expanded music player arranges itself in the current window. */
 internal enum class MusicPlayerLayout {

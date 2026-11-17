@@ -1,12 +1,12 @@
-package com.arubr.smsvcodes.data.recommendation.music.graph
+package io.github.aedev.flow.data.recommendation.music.graph
 
-import com.arubr.smsvcodes.data.local.dao.MusicGraphDao
-import com.arubr.smsvcodes.data.local.dao.MusicGraphTrackEdgeRow
-import com.arubr.smsvcodes.data.local.entity.MusicGraphAlbumEntity
-import com.arubr.smsvcodes.data.local.entity.MusicGraphArtistEntity
-import com.arubr.smsvcodes.data.local.entity.MusicGraphEdgeEntity
-import com.arubr.smsvcodes.data.local.entity.MusicGraphPlaylistEntity
-import com.arubr.smsvcodes.data.local.entity.MusicGraphTrackEntity
+import io.github.aedev.flow.data.local.dao.MusicGraphDao
+import io.github.aedev.flow.data.local.dao.MusicGraphTrackEdgeRow
+import io.github.aedev.flow.data.local.entity.MusicGraphAlbumEntity
+import io.github.aedev.flow.data.local.entity.MusicGraphArtistEntity
+import io.github.aedev.flow.data.local.entity.MusicGraphEdgeEntity
+import io.github.aedev.flow.data.local.entity.MusicGraphPlaylistEntity
+import io.github.aedev.flow.data.local.entity.MusicGraphTrackEntity
 
 class FakeMusicGraphDao : MusicGraphDao {
     val tracks = LinkedHashMap<String, MusicGraphTrackEntity>()

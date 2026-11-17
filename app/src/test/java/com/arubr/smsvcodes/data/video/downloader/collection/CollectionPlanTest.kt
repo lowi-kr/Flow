@@ -1,8 +1,8 @@
-package com.arubr.smsvcodes.data.video.downloader.collection
+package io.github.aedev.flow.data.video.downloader.collection
 
 import com.google.common.truth.Truth.assertThat
-import com.arubr.smsvcodes.data.local.entity.CollectionItemState
-import com.arubr.smsvcodes.data.local.entity.DownloadCollectionItemEntity
+import io.github.aedev.flow.data.local.entity.CollectionItemState
+import io.github.aedev.flow.data.local.entity.DownloadCollectionItemEntity
 import org.junit.Test
 
 class CollectionPlanTest {

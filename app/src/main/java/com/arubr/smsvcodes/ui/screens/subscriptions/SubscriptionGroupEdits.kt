@@ -1,7 +1,7 @@
-package com.arubr.smsvcodes.ui.screens.subscriptions
+package io.github.aedev.flow.ui.screens.subscriptions
 
-import com.arubr.smsvcodes.data.local.dao.SubscriptionGroupDao
-import com.arubr.smsvcodes.data.local.entity.SubscriptionGroupEntity
+import io.github.aedev.flow.data.local.dao.SubscriptionGroupDao
+import io.github.aedev.flow.data.local.entity.SubscriptionGroupEntity
 
 internal suspend fun SubscriptionGroupDao.appendGroup(
     name: String,

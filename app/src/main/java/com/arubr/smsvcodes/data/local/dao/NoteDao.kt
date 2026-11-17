@@ -1,11 +1,11 @@
-package com.arubr.smsvcodes.data.local.dao
+package io.github.aedev.flow.data.local.dao
 
 import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Query
 import androidx.room.Transaction
 import androidx.room.Upsert
-import com.arubr.smsvcodes.data.local.entity.NoteEntity
+import io.github.aedev.flow.data.local.entity.NoteEntity
 import kotlinx.coroutines.flow.Flow
 
 @Dao

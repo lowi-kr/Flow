@@ -1,15 +1,15 @@
-package com.arubr.smsvcodes.ui.startup
+package io.github.aedev.flow.ui.startup
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.Immutable
 import androidx.compose.ui.text.font.FontFamily
-import com.arubr.smsvcodes.data.local.AppFontPreferences
-import com.arubr.smsvcodes.data.local.LocalDataManager
-import com.arubr.smsvcodes.ui.theme.CustomTheme
-import com.arubr.smsvcodes.ui.theme.FlowFontFamily
-import com.arubr.smsvcodes.ui.theme.FlowTheme
-import com.arubr.smsvcodes.ui.theme.ThemeMode
-import com.arubr.smsvcodes.ui.theme.ThemeVariant
+import io.github.aedev.flow.data.local.AppFontPreferences
+import io.github.aedev.flow.data.local.LocalDataManager
+import io.github.aedev.flow.ui.theme.CustomTheme
+import io.github.aedev.flow.ui.theme.FlowFontFamily
+import io.github.aedev.flow.ui.theme.FlowTheme
+import io.github.aedev.flow.ui.theme.ThemeMode
+import io.github.aedev.flow.ui.theme.ThemeVariant
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.combine
 

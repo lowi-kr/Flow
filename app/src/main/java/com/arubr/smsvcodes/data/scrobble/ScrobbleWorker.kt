@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.data.scrobble
+package io.github.aedev.flow.data.scrobble
 
 import android.content.Context
 import androidx.work.BackoffPolicy

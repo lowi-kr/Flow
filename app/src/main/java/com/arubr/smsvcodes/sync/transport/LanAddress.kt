@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.sync.transport
+package io.github.aedev.flow.sync.transport
 
 import android.util.Log
 import java.net.Inet4Address

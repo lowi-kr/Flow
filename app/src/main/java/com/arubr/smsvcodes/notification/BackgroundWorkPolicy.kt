@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.notification
+package io.github.aedev.flow.notification
 
 import android.annotation.SuppressLint
 import android.app.Activity

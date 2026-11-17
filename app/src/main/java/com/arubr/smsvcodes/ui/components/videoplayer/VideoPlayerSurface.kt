@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.videoplayer
+package io.github.aedev.flow.ui.components.videoplayer
 
 import android.content.Context
 import android.os.Build
@@ -35,14 +35,14 @@ import androidx.lifecycle.compose.LocalLifecycleOwner
 import androidx.media3.common.Player
 import androidx.media3.common.VideoSize
 import androidx.media3.ui.PlayerView
-import com.arubr.smsvcodes.data.model.Video
-import com.arubr.smsvcodes.player.EnhancedPlayerManager
-import com.arubr.smsvcodes.player.PictureInPictureHelper
-import com.arubr.smsvcodes.player.toDisplayAspectRatioOrNull
-import com.arubr.smsvcodes.ui.components.shared.clipToCornerRadius
-import com.arubr.smsvcodes.ui.components.shared.flowPlayerViewLayout
-import com.arubr.smsvcodes.ui.components.videoplayer.ambient.VideoAmbientBackground
-import com.arubr.smsvcodes.ui.components.videoplayer.ambient.rememberAmbientFrame
+import io.github.aedev.flow.data.model.Video
+import io.github.aedev.flow.player.EnhancedPlayerManager
+import io.github.aedev.flow.player.PictureInPictureHelper
+import io.github.aedev.flow.player.toDisplayAspectRatioOrNull
+import io.github.aedev.flow.ui.components.shared.clipToCornerRadius
+import io.github.aedev.flow.ui.components.shared.flowPlayerViewLayout
+import io.github.aedev.flow.ui.components.videoplayer.ambient.VideoAmbientBackground
+import io.github.aedev.flow.ui.components.videoplayer.ambient.rememberAmbientFrame
 
 @androidx.annotation.OptIn(androidx.media3.common.util.UnstableApi::class)
 @Composable

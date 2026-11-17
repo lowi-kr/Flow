@@ -1,6 +1,6 @@
-package com.arubr.smsvcodes.data.playlist
+package io.github.aedev.flow.data.playlist
 
-import com.arubr.smsvcodes.data.model.PlaylistInfo
+import io.github.aedev.flow.data.model.PlaylistInfo
 import java.text.Collator
 
 /** How a list of playlists is ordered; [CUSTOM] follows the order the viewer dragged them into. */

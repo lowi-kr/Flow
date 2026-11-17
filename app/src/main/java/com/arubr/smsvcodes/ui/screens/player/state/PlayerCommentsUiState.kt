@@ -1,16 +1,16 @@
-package com.arubr.smsvcodes.ui.screens.player.state
+package io.github.aedev.flow.ui.screens.player.state
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.Immutable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.arubr.smsvcodes.data.model.Comment
-import com.arubr.smsvcodes.innertube.pages.VideoCommentSort
-import com.arubr.smsvcodes.ui.components.shared.CommentSortFilter
-import com.arubr.smsvcodes.ui.components.shared.applyVideoCommentFilters
-import com.arubr.smsvcodes.ui.components.shared.videoCommentSortFor
-import com.arubr.smsvcodes.ui.screens.player.VideoPlayerViewModel
+import io.github.aedev.flow.data.model.Comment
+import io.github.aedev.flow.innertube.pages.VideoCommentSort
+import io.github.aedev.flow.ui.components.shared.CommentSortFilter
+import io.github.aedev.flow.ui.components.shared.applyVideoCommentFilters
+import io.github.aedev.flow.ui.components.shared.videoCommentSortFor
+import io.github.aedev.flow.ui.screens.player.VideoPlayerViewModel
 
 /**
  * Everything the three comment surfaces read: the loaded list, its paging flags, the section's own

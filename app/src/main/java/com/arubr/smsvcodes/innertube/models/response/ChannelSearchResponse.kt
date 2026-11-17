@@ -1,6 +1,6 @@
-package com.arubr.smsvcodes.innertube.models.response
+package io.github.aedev.flow.innertube.models.response
 
-import com.arubr.smsvcodes.innertube.models.Thumbnail
+import io.github.aedev.flow.innertube.models.Thumbnail
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 

@@ -1,11 +1,11 @@
-package com.arubr.smsvcodes.ui.components.search
+package io.github.aedev.flow.ui.components.search
 
 import com.google.common.truth.Truth.assertThat
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.data.local.ContentType
-import com.arubr.smsvcodes.data.local.Duration
-import com.arubr.smsvcodes.data.local.SearchFilter
-import com.arubr.smsvcodes.data.local.UploadDate
+import io.github.aedev.flow.R
+import io.github.aedev.flow.data.local.ContentType
+import io.github.aedev.flow.data.local.Duration
+import io.github.aedev.flow.data.local.SearchFilter
+import io.github.aedev.flow.data.local.UploadDate
 import org.junit.Test
 
 class SearchFilterSummaryTest {

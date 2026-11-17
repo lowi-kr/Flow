@@ -1,7 +1,7 @@
-package com.arubr.smsvcodes.widget.nowplaying
+package io.github.aedev.flow.widget.nowplaying
 
-import com.arubr.smsvcodes.widget.core.component.WIDGET_PROGRESS_MAX
-import com.arubr.smsvcodes.widget.core.component.widgetProgressAt
+import io.github.aedev.flow.widget.core.component.WIDGET_PROGRESS_MAX
+import io.github.aedev.flow.widget.core.component.widgetProgressAt
 import org.junit.Assert.assertEquals
 import org.junit.Test
 

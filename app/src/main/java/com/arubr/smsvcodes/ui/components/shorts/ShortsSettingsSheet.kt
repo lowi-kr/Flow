@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.shorts
+package io.github.aedev.flow.ui.components.shorts
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -32,28 +32,28 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.data.local.PlayerPreferences
-import com.arubr.smsvcodes.data.model.ShortVideo
-import com.arubr.smsvcodes.data.shorts.ShortVideoQuality
-import com.arubr.smsvcodes.player.shorts.ShortsPlayerPool
-import com.arubr.smsvcodes.player.stream.VideoCodecUtils
-import com.arubr.smsvcodes.ui.components.shared.FlowBottomSheet
-import com.arubr.smsvcodes.ui.components.shared.FlowNavRow
-import com.arubr.smsvcodes.ui.components.shared.FlowRowGroup
-import com.arubr.smsvcodes.ui.components.shared.FlowSectionHeader
-import com.arubr.smsvcodes.ui.components.shared.FlowSheetHeader
-import com.arubr.smsvcodes.ui.components.shared.FlowSwitchRow
-import com.arubr.smsvcodes.ui.components.shared.MediaAudioTrackRow
-import com.arubr.smsvcodes.ui.components.shared.MediaPlaybackSpeedPicker
-import com.arubr.smsvcodes.ui.components.shared.audioTrackBitrateLabel
-import com.arubr.smsvcodes.ui.components.shared.audioTrackFallbackLabel
-import com.arubr.smsvcodes.ui.components.shared.defaultSheetExpandedHeight
-import com.arubr.smsvcodes.ui.components.shared.flowRowGroupShape
-import com.arubr.smsvcodes.ui.components.shared.playbackSpeedLabel
-import com.arubr.smsvcodes.ui.components.shared.rememberFlowBottomSheetState
-import com.arubr.smsvcodes.ui.components.videoplayer.settings.PlayerSettingsQualityPage
-import com.arubr.smsvcodes.ui.screens.shorts.ShortsViewModel
+import io.github.aedev.flow.R
+import io.github.aedev.flow.data.local.PlayerPreferences
+import io.github.aedev.flow.data.model.ShortVideo
+import io.github.aedev.flow.data.shorts.ShortVideoQuality
+import io.github.aedev.flow.player.shorts.ShortsPlayerPool
+import io.github.aedev.flow.player.stream.VideoCodecUtils
+import io.github.aedev.flow.ui.components.shared.FlowBottomSheet
+import io.github.aedev.flow.ui.components.shared.FlowNavRow
+import io.github.aedev.flow.ui.components.shared.FlowRowGroup
+import io.github.aedev.flow.ui.components.shared.FlowSectionHeader
+import io.github.aedev.flow.ui.components.shared.FlowSheetHeader
+import io.github.aedev.flow.ui.components.shared.FlowSwitchRow
+import io.github.aedev.flow.ui.components.shared.MediaAudioTrackRow
+import io.github.aedev.flow.ui.components.shared.MediaPlaybackSpeedPicker
+import io.github.aedev.flow.ui.components.shared.audioTrackBitrateLabel
+import io.github.aedev.flow.ui.components.shared.audioTrackFallbackLabel
+import io.github.aedev.flow.ui.components.shared.defaultSheetExpandedHeight
+import io.github.aedev.flow.ui.components.shared.flowRowGroupShape
+import io.github.aedev.flow.ui.components.shared.playbackSpeedLabel
+import io.github.aedev.flow.ui.components.shared.rememberFlowBottomSheetState
+import io.github.aedev.flow.ui.components.videoplayer.settings.PlayerSettingsQualityPage
+import io.github.aedev.flow.ui.screens.shorts.ShortsViewModel
 import kotlinx.coroutines.launch
 
 private val SheetContentVerticalPadding = 12.dp

@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.screens.settings.diagnostics
+package io.github.aedev.flow.ui.screens.settings.diagnostics
 
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding

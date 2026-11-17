@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.player.audio
+package io.github.aedev.flow.player.audio
 
 import androidx.media3.common.Player
 import androidx.media3.exoplayer.ExoPlayer

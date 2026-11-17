@@ -1,6 +1,6 @@
-package com.arubr.smsvcodes.ui.screens.player.state
+package io.github.aedev.flow.ui.screens.player.state
 
-import com.arubr.smsvcodes.data.model.Video
+import io.github.aedev.flow.data.model.Video
 
 /** Where the player shows what plays next: floating under the details, atop the side pane, or not at all. */
 internal enum class QueueDockPlacement {

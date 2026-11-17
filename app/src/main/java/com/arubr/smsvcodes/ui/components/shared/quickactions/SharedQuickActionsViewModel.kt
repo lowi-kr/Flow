@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.shared.quickactions
+package io.github.aedev.flow.ui.components.shared.quickactions
 
 import androidx.activity.ComponentActivity
 import androidx.compose.runtime.Composable

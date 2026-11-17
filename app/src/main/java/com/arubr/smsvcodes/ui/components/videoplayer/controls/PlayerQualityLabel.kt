@@ -1,10 +1,10 @@
-package com.arubr.smsvcodes.ui.components.videoplayer.controls
+package io.github.aedev.flow.ui.components.videoplayer.controls
 
 import androidx.annotation.StringRes
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.res.stringResource
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.player.quality.QualityManager
+import io.github.aedev.flow.R
+import io.github.aedev.flow.player.quality.QualityManager
 
 internal fun resolvePlayerQualityLabel(
     currentQuality: Int,

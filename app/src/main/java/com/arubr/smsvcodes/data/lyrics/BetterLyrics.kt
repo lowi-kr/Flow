@@ -2,7 +2,7 @@
 // THIS IMPLEMENTATION WAS INSPIRED BY METROLIST
 // ============================================================================
 
-package com.arubr.smsvcodes.data.lyrics
+package io.github.aedev.flow.data.lyrics
 
 import android.util.Log
 import com.google.gson.Gson

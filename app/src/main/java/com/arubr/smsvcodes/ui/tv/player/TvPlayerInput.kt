@@ -1,10 +1,10 @@
-package com.arubr.smsvcodes.ui.tv.player
+package io.github.aedev.flow.ui.tv.player
 
 import android.view.KeyEvent
 import androidx.compose.ui.input.key.KeyEventType
-import com.arubr.smsvcodes.ui.tv.input.TvPlayerAction
-import com.arubr.smsvcodes.ui.tv.input.TvPlayerKeyMapper
-import com.arubr.smsvcodes.ui.tv.player.state.TvOverlayMode
+import io.github.aedev.flow.ui.tv.input.TvPlayerAction
+import io.github.aedev.flow.ui.tv.input.TvPlayerKeyMapper
+import io.github.aedev.flow.ui.tv.player.state.TvOverlayMode
 
 /**
  * Routes the remote's keys for the TV player: media keys always, the D-pad to playback while the

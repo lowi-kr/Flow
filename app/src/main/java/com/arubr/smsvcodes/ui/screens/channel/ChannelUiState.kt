@@ -1,9 +1,9 @@
-package com.arubr.smsvcodes.ui.screens.channel
+package io.github.aedev.flow.ui.screens.channel
 
-import com.arubr.smsvcodes.data.model.Video
-import com.arubr.smsvcodes.innertube.pages.channel.ChannelHeader
-import com.arubr.smsvcodes.innertube.pages.channel.ChannelTabDescriptor
-import com.arubr.smsvcodes.innertube.pages.channel.ChannelTabKind
+import io.github.aedev.flow.data.model.Video
+import io.github.aedev.flow.innertube.pages.channel.ChannelHeader
+import io.github.aedev.flow.innertube.pages.channel.ChannelTabDescriptor
+import io.github.aedev.flow.innertube.pages.channel.ChannelTabKind
 
 data class ChannelUiState(
     val channelId: String? = null,

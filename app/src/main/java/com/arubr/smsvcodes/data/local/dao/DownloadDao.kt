@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.data.local.dao
+package io.github.aedev.flow.data.local.dao
 
 import androidx.room.Dao
 import androidx.room.Insert
@@ -7,10 +7,10 @@ import androidx.room.Query
 import androidx.room.Transaction
 import androidx.room.Update
 import androidx.room.Upsert
-import com.arubr.smsvcodes.data.local.entity.DownloadEntity
-import com.arubr.smsvcodes.data.local.entity.DownloadItemEntity
-import com.arubr.smsvcodes.data.local.entity.DownloadItemStatus
-import com.arubr.smsvcodes.data.local.entity.DownloadWithItems
+import io.github.aedev.flow.data.local.entity.DownloadEntity
+import io.github.aedev.flow.data.local.entity.DownloadItemEntity
+import io.github.aedev.flow.data.local.entity.DownloadItemStatus
+import io.github.aedev.flow.data.local.entity.DownloadWithItems
 import kotlinx.coroutines.flow.Flow
 
 /** One row of the download queue. */
@@ -259,7 +259,7 @@ interface DownloadDao {
     )
     suspend fun updateMusicMetadata(
         videoId: String,
-        kind: com.arubr.smsvcodes.data.video.downloader.tags.DownloadKind,
+        kind: io.github.aedev.flow.data.video.downloader.tags.DownloadKind,
         album: String?,
         albumId: String?,
         artistsJson: String?,

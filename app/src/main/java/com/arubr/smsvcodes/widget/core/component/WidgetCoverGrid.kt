@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.widget.core.component
+package io.github.aedev.flow.widget.core.component
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.unit.Dp
@@ -12,8 +12,8 @@ import androidx.glance.layout.padding
 import androidx.glance.layout.size
 import androidx.glance.layout.width
 import androidx.glance.text.Text
-import com.arubr.smsvcodes.widget.core.theme.WidgetDimens
-import com.arubr.smsvcodes.widget.core.theme.WidgetText
+import io.github.aedev.flow.widget.core.theme.WidgetDimens
+import io.github.aedev.flow.widget.core.theme.WidgetText
 
 /** Square covers in [columns], each [coverSize] wide, optionally captioned. */
 @Composable

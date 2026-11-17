@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.data.update
+package io.github.aedev.flow.data.update
 
 import java.time.Instant
 

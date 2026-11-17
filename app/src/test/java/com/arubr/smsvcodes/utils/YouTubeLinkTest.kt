@@ -1,14 +1,14 @@
-package com.arubr.smsvcodes.utils
+package io.github.aedev.flow.utils
 
 import com.google.common.truth.Truth.assertThat
-import com.arubr.smsvcodes.utils.YouTubeLink.Album
-import com.arubr.smsvcodes.utils.YouTubeLink.Channel
-import com.arubr.smsvcodes.utils.YouTubeLink.ChannelHandle
-import com.arubr.smsvcodes.utils.YouTubeLink.LegacyChannel
-import com.arubr.smsvcodes.utils.YouTubeLink.Playlist
-import com.arubr.smsvcodes.utils.YouTubeLink.Search
-import com.arubr.smsvcodes.utils.YouTubeLink.Short
-import com.arubr.smsvcodes.utils.YouTubeLink.Video
+import io.github.aedev.flow.utils.YouTubeLink.Album
+import io.github.aedev.flow.utils.YouTubeLink.Channel
+import io.github.aedev.flow.utils.YouTubeLink.ChannelHandle
+import io.github.aedev.flow.utils.YouTubeLink.LegacyChannel
+import io.github.aedev.flow.utils.YouTubeLink.Playlist
+import io.github.aedev.flow.utils.YouTubeLink.Search
+import io.github.aedev.flow.utils.YouTubeLink.Short
+import io.github.aedev.flow.utils.YouTubeLink.Video
 import org.junit.Test
 
 class YouTubeLinkTest {

@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.shared.card
+package io.github.aedev.flow.ui.components.shared.card
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.BoxWithConstraints
@@ -41,7 +41,7 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.unit.dp
-import com.arubr.smsvcodes.R
+import io.github.aedev.flow.R
 
 private val FeedbackHeight = ButtonDefaults.ExtraSmallContainerHeight
 private val WatchedToggleWidth = 48.dp

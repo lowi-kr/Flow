@@ -1,13 +1,13 @@
-package com.arubr.smsvcodes.data.local.dao
+package io.github.aedev.flow.data.local.dao
 
 import androidx.room.Dao
 import androidx.room.Embedded
 import androidx.room.Query
 import androidx.room.Transaction
 import androidx.room.Upsert
-import com.arubr.smsvcodes.data.local.entity.CollectionItemState
-import com.arubr.smsvcodes.data.local.entity.DownloadCollectionEntity
-import com.arubr.smsvcodes.data.local.entity.DownloadCollectionItemEntity
+import io.github.aedev.flow.data.local.entity.CollectionItemState
+import io.github.aedev.flow.data.local.entity.DownloadCollectionEntity
+import io.github.aedev.flow.data.local.entity.DownloadCollectionItemEntity
 import kotlinx.coroutines.flow.Flow
 
 /** A downloaded collection with how much of it is on disk. */

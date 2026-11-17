@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.player
+package io.github.aedev.flow.player
 
 import android.app.PendingIntent
 import android.content.Context
@@ -27,65 +27,65 @@ import androidx.media3.exoplayer.trackselection.DefaultTrackSelector
 import androidx.media3.exoplayer.upstream.DefaultBandwidthMeter
 import androidx.media3.session.MediaSession
 import dagger.hilt.android.EntryPointAccessors
-import com.arubr.smsvcodes.data.local.PlayerPreferences
-import com.arubr.smsvcodes.data.local.SponsorBlockAction
-import com.arubr.smsvcodes.data.local.VideoQuality
-import com.arubr.smsvcodes.data.localmedia.LocalMediaIds
-import com.arubr.smsvcodes.data.model.SponsorBlockCategories
-import com.arubr.smsvcodes.data.model.SponsorBlockSegment
-import com.arubr.smsvcodes.data.model.Video
-import com.arubr.smsvcodes.data.repository.YouTubeRepository
-import com.arubr.smsvcodes.innertube.YouTube
-import com.arubr.smsvcodes.innertube.models.YouTubeClient
-import com.arubr.smsvcodes.innertube.models.response.PlayerResponse
-import com.arubr.smsvcodes.player.analytics.PlaybackAnalyticsLogger
-import com.arubr.smsvcodes.player.analytics.RenderedFirstFrameListener
-import com.arubr.smsvcodes.player.audio.AudioEffectsEntryPoint
-import com.arubr.smsvcodes.player.audio.AudioFeaturesManager
-import com.arubr.smsvcodes.player.audio.AudioSessionAnnouncer
-import com.arubr.smsvcodes.player.audio.eq.EqualizerAudioProcessor
-import com.arubr.smsvcodes.player.cache.PlayerCacheManager
-import com.arubr.smsvcodes.player.config.PlayerConfig
-import com.arubr.smsvcodes.player.config.VideoSizeCap
-import com.arubr.smsvcodes.player.config.resetVideoSizeTo
-import com.arubr.smsvcodes.player.error.PlayerDiagnostics
-import com.arubr.smsvcodes.player.error.PlayerErrorHandler
-import com.arubr.smsvcodes.player.factory.PlayerFactory
-import com.arubr.smsvcodes.player.media.MediaLoader
-import com.arubr.smsvcodes.player.preload.GaplessPreloadController
-import com.arubr.smsvcodes.player.preload.PreloadTarget
-import com.arubr.smsvcodes.player.quality.AdaptiveLadder
-import com.arubr.smsvcodes.player.quality.LiveQualityPick
-import com.arubr.smsvcodes.player.quality.LiveQualitySelection
-import com.arubr.smsvcodes.player.quality.QualityManager
-import com.arubr.smsvcodes.player.recovery.ClearedMediaRecoveryState
-import com.arubr.smsvcodes.player.recovery.StreamDenialReloader
-import com.arubr.smsvcodes.player.resolver.AdaptiveDashManifest
-import com.arubr.smsvcodes.player.sabr.integration.SabrStreamInfo
-import com.arubr.smsvcodes.player.sabr.integration.SabrUrlResolver
-import com.arubr.smsvcodes.player.service.BackgroundServiceManager
-import com.arubr.smsvcodes.player.sponsorblock.SponsorBlockHandler
-import com.arubr.smsvcodes.player.state.EnhancedPlayerState
-import com.arubr.smsvcodes.player.state.PlaybackCompletion
-import com.arubr.smsvcodes.player.state.QualityOption
-import com.arubr.smsvcodes.player.state.SubtitleLoadFailure
-import com.arubr.smsvcodes.player.state.queuePresence
-import com.arubr.smsvcodes.player.stream.CaptionTrackResolver
-import com.arubr.smsvcodes.player.stream.InnerTubeVideoMapper
-import com.arubr.smsvcodes.player.stream.InnerTubeVideoStreamExtractor
-import com.arubr.smsvcodes.player.stream.ResolvedCaption
-import com.arubr.smsvcodes.player.stream.ResolvedStreamData
-import com.arubr.smsvcodes.player.stream.ServicePlaybackStreamSelector
-import com.arubr.smsvcodes.player.stream.StreamProcessor
-import com.arubr.smsvcodes.player.stream.VideoCodecUtils
-import com.arubr.smsvcodes.player.subtitle.SubtitleAutoPolicy
-import com.arubr.smsvcodes.player.subtitle.SubtitleDelay
-import com.arubr.smsvcodes.player.subtitle.SubtitleTracks
-import com.arubr.smsvcodes.player.surface.SurfaceManager
-import com.arubr.smsvcodes.player.surface.VideoSurfacePolicy
-import com.arubr.smsvcodes.player.tracker.PlaybackTracker
-import com.arubr.smsvcodes.utils.NetworkState
-import com.arubr.smsvcodes.utils.ThumbnailUrlResolver
+import io.github.aedev.flow.data.local.PlayerPreferences
+import io.github.aedev.flow.data.local.SponsorBlockAction
+import io.github.aedev.flow.data.local.VideoQuality
+import io.github.aedev.flow.data.localmedia.LocalMediaIds
+import io.github.aedev.flow.data.model.SponsorBlockCategories
+import io.github.aedev.flow.data.model.SponsorBlockSegment
+import io.github.aedev.flow.data.model.Video
+import io.github.aedev.flow.data.repository.YouTubeRepository
+import io.github.aedev.flow.innertube.YouTube
+import io.github.aedev.flow.innertube.models.YouTubeClient
+import io.github.aedev.flow.innertube.models.response.PlayerResponse
+import io.github.aedev.flow.player.analytics.PlaybackAnalyticsLogger
+import io.github.aedev.flow.player.analytics.RenderedFirstFrameListener
+import io.github.aedev.flow.player.audio.AudioEffectsEntryPoint
+import io.github.aedev.flow.player.audio.AudioFeaturesManager
+import io.github.aedev.flow.player.audio.AudioSessionAnnouncer
+import io.github.aedev.flow.player.audio.eq.EqualizerAudioProcessor
+import io.github.aedev.flow.player.cache.PlayerCacheManager
+import io.github.aedev.flow.player.config.PlayerConfig
+import io.github.aedev.flow.player.config.VideoSizeCap
+import io.github.aedev.flow.player.config.resetVideoSizeTo
+import io.github.aedev.flow.player.error.PlayerDiagnostics
+import io.github.aedev.flow.player.error.PlayerErrorHandler
+import io.github.aedev.flow.player.factory.PlayerFactory
+import io.github.aedev.flow.player.media.MediaLoader
+import io.github.aedev.flow.player.preload.GaplessPreloadController
+import io.github.aedev.flow.player.preload.PreloadTarget
+import io.github.aedev.flow.player.quality.AdaptiveLadder
+import io.github.aedev.flow.player.quality.LiveQualityPick
+import io.github.aedev.flow.player.quality.LiveQualitySelection
+import io.github.aedev.flow.player.quality.QualityManager
+import io.github.aedev.flow.player.recovery.ClearedMediaRecoveryState
+import io.github.aedev.flow.player.recovery.StreamDenialReloader
+import io.github.aedev.flow.player.resolver.AdaptiveDashManifest
+import io.github.aedev.flow.player.sabr.integration.SabrStreamInfo
+import io.github.aedev.flow.player.sabr.integration.SabrUrlResolver
+import io.github.aedev.flow.player.service.BackgroundServiceManager
+import io.github.aedev.flow.player.sponsorblock.SponsorBlockHandler
+import io.github.aedev.flow.player.state.EnhancedPlayerState
+import io.github.aedev.flow.player.state.PlaybackCompletion
+import io.github.aedev.flow.player.state.QualityOption
+import io.github.aedev.flow.player.state.SubtitleLoadFailure
+import io.github.aedev.flow.player.state.queuePresence
+import io.github.aedev.flow.player.stream.CaptionTrackResolver
+import io.github.aedev.flow.player.stream.InnerTubeVideoMapper
+import io.github.aedev.flow.player.stream.InnerTubeVideoStreamExtractor
+import io.github.aedev.flow.player.stream.ResolvedCaption
+import io.github.aedev.flow.player.stream.ResolvedStreamData
+import io.github.aedev.flow.player.stream.ServicePlaybackStreamSelector
+import io.github.aedev.flow.player.stream.StreamProcessor
+import io.github.aedev.flow.player.stream.VideoCodecUtils
+import io.github.aedev.flow.player.subtitle.SubtitleAutoPolicy
+import io.github.aedev.flow.player.subtitle.SubtitleDelay
+import io.github.aedev.flow.player.subtitle.SubtitleTracks
+import io.github.aedev.flow.player.surface.SurfaceManager
+import io.github.aedev.flow.player.surface.VideoSurfacePolicy
+import io.github.aedev.flow.player.tracker.PlaybackTracker
+import io.github.aedev.flow.utils.NetworkState
+import io.github.aedev.flow.utils.ThumbnailUrlResolver
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -1101,8 +1101,8 @@ class EnhancedPlayerManager private constructor() {
         streamType: StreamType? = null,
         startPosition: Long = 0L,
         sabrInfo: SabrStreamInfo? = null,
-        itVideoFormats: List<com.arubr.smsvcodes.innertube.models.response.PlayerResponse.StreamingData.Format> = emptyList(),
-        itAudioFormats: List<com.arubr.smsvcodes.innertube.models.response.PlayerResponse.StreamingData.Format> = emptyList(),
+        itVideoFormats: List<io.github.aedev.flow.innertube.models.response.PlayerResponse.StreamingData.Format> = emptyList(),
+        itAudioFormats: List<io.github.aedev.flow.innertube.models.response.PlayerResponse.StreamingData.Format> = emptyList(),
         preferredVideoCodec: String = "auto",
         keepAudioOnly: Boolean = false,
         preferSabr: Boolean = false,
@@ -2001,7 +2001,7 @@ class EnhancedPlayerManager private constructor() {
                         async(Dispatchers.IO) {
                             try {
                                 withTimeoutOrNull(25000L) {
-                                    com.arubr.smsvcodes.player.stream.InnerTubeVideoStreamExtractor
+                                    io.github.aedev.flow.player.stream.InnerTubeVideoStreamExtractor
                                         .extract(video.id)
                                 }
                             } catch (e: kotlinx.coroutines.CancellationException) {
@@ -2014,7 +2014,7 @@ class EnhancedPlayerManager private constructor() {
                     val extraction =
                         extractionDeferred.await() ?: run {
                             autoNextLog("playVideoFromServiceLayer extraction failed video=${video.id}")
-                            if (com.arubr.smsvcodes.player.stream.InnerTubeVideoStreamExtractor
+                            if (io.github.aedev.flow.player.stream.InnerTubeVideoStreamExtractor
                                     .isGone(video.id) && hasNext()
                             ) {
                                 // Posted so this job has finished and cleared itself before the next one starts.
@@ -2024,7 +2024,7 @@ class EnhancedPlayerManager private constructor() {
                             _playerState.value =
                                 _playerState.value.copy(
                                     isBuffering = false,
-                                    error = appContext?.getString(com.arubr.smsvcodes.R.string.error_unable_to_load_next_video).orEmpty(),
+                                    error = appContext?.getString(io.github.aedev.flow.R.string.error_unable_to_load_next_video).orEmpty(),
                                 )
                             releaseAdvanceWakeLock()
                             return@launch
@@ -2072,7 +2072,7 @@ class EnhancedPlayerManager private constructor() {
                         _playerState.value.copy(
                             isBuffering = false,
                             error =
-                                e.message ?: appContext?.getString(com.arubr.smsvcodes.R.string.error_unable_to_load_next_video).orEmpty(),
+                                e.message ?: appContext?.getString(io.github.aedev.flow.R.string.error_unable_to_load_next_video).orEmpty(),
                         )
                     releaseAdvanceWakeLock()
                 } finally {
@@ -2105,10 +2105,10 @@ class EnhancedPlayerManager private constructor() {
         val preferredSubtitleLanguage = prefs.preferredSubtitleLanguage.first()
         val preferredCodecKey = prefs.videoCodecPriority.first()
         val mergedVideoStreams =
-            com.arubr.smsvcodes.player.stream.InnerTubeStreamBridge
+            io.github.aedev.flow.player.stream.InnerTubeStreamBridge
                 .convertVideoFormats(extraction.videoFormats)
         val mergedAudioStreams =
-            com.arubr.smsvcodes.player.stream.InnerTubeStreamBridge
+            io.github.aedev.flow.player.stream.InnerTubeStreamBridge
                 .convertAudioFormats(extraction.audioFormats)
         Log.d(
             TAG,
@@ -2197,7 +2197,7 @@ class EnhancedPlayerManager private constructor() {
                 async(Dispatchers.IO) {
                     try {
                         withTimeoutOrNull(25000L) {
-                            com.arubr.smsvcodes.player.stream.InnerTubeVideoStreamExtractor
+                            io.github.aedev.flow.player.stream.InnerTubeVideoStreamExtractor
                                 .extract(video.id)
                         }
                     } catch (e: CancellationException) {
@@ -2222,10 +2222,10 @@ class EnhancedPlayerManager private constructor() {
             val preferredSubtitleLanguage = prefs.preferredSubtitleLanguage.first()
             val preferredCodecKey = prefs.videoCodecPriority.first()
             val mergedVideoStreams =
-                com.arubr.smsvcodes.player.stream.InnerTubeStreamBridge
+                io.github.aedev.flow.player.stream.InnerTubeStreamBridge
                     .convertVideoFormats(extraction.videoFormats)
             val mergedAudioStreams =
-                com.arubr.smsvcodes.player.stream.InnerTubeStreamBridge
+                io.github.aedev.flow.player.stream.InnerTubeStreamBridge
                     .convertAudioFormats(extraction.audioFormats)
             val selected =
                 ServicePlaybackStreamSelector.selectStreams(
@@ -3436,7 +3436,7 @@ class EnhancedPlayerManager private constructor() {
                 _playerState.value.copy(
                     error =
                         appContext
-                            ?.getString(com.arubr.smsvcodes.R.string.error_unable_to_play_quality_options)
+                            ?.getString(io.github.aedev.flow.R.string.error_unable_to_play_quality_options)
                             .orEmpty(),
                     isPlaying = false,
                     isBuffering = false,
@@ -3467,10 +3467,10 @@ class EnhancedPlayerManager private constructor() {
 }
 
 // Backward compatibility type aliases
-typealias EnhancedPlayerState = com.arubr.smsvcodes.player.state.EnhancedPlayerState
-typealias QualityOption = com.arubr.smsvcodes.player.state.QualityOption
-typealias AudioTrackOption = com.arubr.smsvcodes.player.state.AudioTrackOption
-typealias SubtitleOption = com.arubr.smsvcodes.player.state.SubtitleOption
+typealias EnhancedPlayerState = io.github.aedev.flow.player.state.EnhancedPlayerState
+typealias QualityOption = io.github.aedev.flow.player.state.QualityOption
+typealias AudioTrackOption = io.github.aedev.flow.player.state.AudioTrackOption
+typealias SubtitleOption = io.github.aedev.flow.player.state.SubtitleOption
 
 /**
  * How long a re-attached surface may stay blank before it is treated as stuck rather than slow. A

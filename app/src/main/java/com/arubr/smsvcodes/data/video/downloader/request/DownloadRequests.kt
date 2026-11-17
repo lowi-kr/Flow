@@ -1,10 +1,10 @@
-package com.arubr.smsvcodes.data.video.downloader.request
+package io.github.aedev.flow.data.video.downloader.request
 
-import com.arubr.smsvcodes.data.model.Video
-import com.arubr.smsvcodes.data.music.model.MusicArtist
-import com.arubr.smsvcodes.data.music.model.MusicTrack
-import com.arubr.smsvcodes.data.video.downloader.tags.DownloadKind
-import com.arubr.smsvcodes.data.video.downloader.tags.DownloadTags
+import io.github.aedev.flow.data.model.Video
+import io.github.aedev.flow.data.music.model.MusicArtist
+import io.github.aedev.flow.data.music.model.MusicTrack
+import io.github.aedev.flow.data.video.downloader.tags.DownloadKind
+import io.github.aedev.flow.data.video.downloader.tags.DownloadTags
 
 /** The request for a video, from what the card or player already knows about it. */
 fun Video.toDownloadRequest(

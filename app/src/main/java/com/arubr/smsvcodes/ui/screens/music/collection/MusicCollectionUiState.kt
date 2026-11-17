@@ -1,9 +1,9 @@
-package com.arubr.smsvcodes.ui.screens.music.collection
+package io.github.aedev.flow.ui.screens.music.collection
 
-import com.arubr.smsvcodes.data.local.entity.PlaylistEntity
-import com.arubr.smsvcodes.data.model.Video
-import com.arubr.smsvcodes.data.music.model.MusicTrack
-import com.arubr.smsvcodes.data.music.model.PlaylistDetails
+import io.github.aedev.flow.data.local.entity.PlaylistEntity
+import io.github.aedev.flow.data.model.Video
+import io.github.aedev.flow.data.music.model.MusicTrack
+import io.github.aedev.flow.data.music.model.PlaylistDetails
 
 /** What kind of collection a page shows, which decides what it can do. */
 enum class MusicCollectionKind {

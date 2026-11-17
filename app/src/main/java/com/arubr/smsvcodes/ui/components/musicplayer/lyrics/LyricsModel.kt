@@ -1,7 +1,7 @@
-package com.arubr.smsvcodes.ui.components.musicplayer.lyrics
+package io.github.aedev.flow.ui.components.musicplayer.lyrics
 
-import com.arubr.smsvcodes.data.lyrics.LyricsEntry
-import com.arubr.smsvcodes.data.lyrics.WordTimestamp
+import io.github.aedev.flow.data.lyrics.LyricsEntry
+import io.github.aedev.flow.data.lyrics.WordTimestamp
 
 internal sealed class LyricsListItem {
     data class Line(

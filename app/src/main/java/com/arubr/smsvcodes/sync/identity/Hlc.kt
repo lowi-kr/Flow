@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.sync.identity
+package io.github.aedev.flow.sync.identity
 
 /**
  * Hybrid Logical Clock (Kulkarni et al.) — the timestamp used for every last-write-wins

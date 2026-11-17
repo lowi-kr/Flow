@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes
+package io.github.aedev.flow
 
 import android.content.ContentResolver
 import android.content.Context
@@ -30,50 +30,50 @@ import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import dagger.hilt.android.AndroidEntryPoint
-import com.arubr.smsvcodes.data.local.AppFontPreferences
-import com.arubr.smsvcodes.data.local.AppUiModePreferences
-import com.arubr.smsvcodes.data.local.LocalDataManager
-import com.arubr.smsvcodes.data.playlist.PlaylistImport
-import com.arubr.smsvcodes.data.playlist.PlaylistTransfer
-import com.arubr.smsvcodes.data.recommendation.FlowNeuroEngine
-import com.arubr.smsvcodes.data.repository.DeArrowRepository
-import com.arubr.smsvcodes.data.repository.OriginalTitleRepository
-import com.arubr.smsvcodes.discord.DiscordPresenceRuntime
-import com.arubr.smsvcodes.notification.NotificationHelper
-import com.arubr.smsvcodes.platform.AppIconController
-import com.arubr.smsvcodes.platform.AppUiMode
-import com.arubr.smsvcodes.platform.AppUiRoot
-import com.arubr.smsvcodes.platform.DeviceFormFactorDetector
-import com.arubr.smsvcodes.platform.PlayerKeyboardShortcutHelp
-import com.arubr.smsvcodes.player.BackgroundPlaybackPolicy
-import com.arubr.smsvcodes.player.EnhancedPlayerManager
-import com.arubr.smsvcodes.player.GlobalPlayerState
-import com.arubr.smsvcodes.player.LifecyclePlaybackPreferences
-import com.arubr.smsvcodes.player.MemoryPressurePolicy
-import com.arubr.smsvcodes.player.PictureInPictureHelper
-import com.arubr.smsvcodes.player.PipQueueNavigation
-import com.arubr.smsvcodes.ui.FlowApp
-import com.arubr.smsvcodes.ui.IncomingLinks
-import com.arubr.smsvcodes.ui.components.library.message
-import com.arubr.smsvcodes.ui.components.shared.ProvideChannelGroupLabels
-import com.arubr.smsvcodes.ui.components.shared.ProvideDateDisplaySettings
-import com.arubr.smsvcodes.ui.components.shared.card.ProvideVideoCardState
-import com.arubr.smsvcodes.ui.linkTextOf
-import com.arubr.smsvcodes.ui.musicCollectionRoute
-import com.arubr.smsvcodes.ui.screens.crash.CrashReportScreen
-import com.arubr.smsvcodes.ui.screens.update.UPDATE_ROUTE
-import com.arubr.smsvcodes.ui.startup.FlowTheme
-import com.arubr.smsvcodes.ui.startup.SplashController
-import com.arubr.smsvcodes.ui.startup.ThemeSettings
-import com.arubr.smsvcodes.ui.startup.splashTone
-import com.arubr.smsvcodes.ui.startup.themeSettings
-import com.arubr.smsvcodes.ui.theme.FlowFontFamily
-import com.arubr.smsvcodes.ui.theme.FlowTheme
-import com.arubr.smsvcodes.ui.tv.FlowTvApp
-import com.arubr.smsvcodes.ui.utils.ProvideWindowSizeClass
-import com.arubr.smsvcodes.utils.AppLanguageManager
-import com.arubr.smsvcodes.utils.FlowCrashHandler
-import com.arubr.smsvcodes.utils.PLAYLIST_FILE_MIME_TYPE
+import io.github.aedev.flow.data.local.AppFontPreferences
+import io.github.aedev.flow.data.local.AppUiModePreferences
+import io.github.aedev.flow.data.local.LocalDataManager
+import io.github.aedev.flow.data.playlist.PlaylistImport
+import io.github.aedev.flow.data.playlist.PlaylistTransfer
+import io.github.aedev.flow.data.recommendation.FlowNeuroEngine
+import io.github.aedev.flow.data.repository.DeArrowRepository
+import io.github.aedev.flow.data.repository.OriginalTitleRepository
+import io.github.aedev.flow.discord.DiscordPresenceRuntime
+import io.github.aedev.flow.notification.NotificationHelper
+import io.github.aedev.flow.platform.AppIconController
+import io.github.aedev.flow.platform.AppUiMode
+import io.github.aedev.flow.platform.AppUiRoot
+import io.github.aedev.flow.platform.DeviceFormFactorDetector
+import io.github.aedev.flow.platform.PlayerKeyboardShortcutHelp
+import io.github.aedev.flow.player.BackgroundPlaybackPolicy
+import io.github.aedev.flow.player.EnhancedPlayerManager
+import io.github.aedev.flow.player.GlobalPlayerState
+import io.github.aedev.flow.player.LifecyclePlaybackPreferences
+import io.github.aedev.flow.player.MemoryPressurePolicy
+import io.github.aedev.flow.player.PictureInPictureHelper
+import io.github.aedev.flow.player.PipQueueNavigation
+import io.github.aedev.flow.ui.FlowApp
+import io.github.aedev.flow.ui.IncomingLinks
+import io.github.aedev.flow.ui.components.library.message
+import io.github.aedev.flow.ui.components.shared.ProvideChannelGroupLabels
+import io.github.aedev.flow.ui.components.shared.ProvideDateDisplaySettings
+import io.github.aedev.flow.ui.components.shared.card.ProvideVideoCardState
+import io.github.aedev.flow.ui.linkTextOf
+import io.github.aedev.flow.ui.musicCollectionRoute
+import io.github.aedev.flow.ui.screens.crash.CrashReportScreen
+import io.github.aedev.flow.ui.screens.update.UPDATE_ROUTE
+import io.github.aedev.flow.ui.startup.FlowTheme
+import io.github.aedev.flow.ui.startup.SplashController
+import io.github.aedev.flow.ui.startup.ThemeSettings
+import io.github.aedev.flow.ui.startup.splashTone
+import io.github.aedev.flow.ui.startup.themeSettings
+import io.github.aedev.flow.ui.theme.FlowFontFamily
+import io.github.aedev.flow.ui.theme.FlowTheme
+import io.github.aedev.flow.ui.tv.FlowTvApp
+import io.github.aedev.flow.ui.utils.ProvideWindowSizeClass
+import io.github.aedev.flow.utils.AppLanguageManager
+import io.github.aedev.flow.utils.FlowCrashHandler
+import io.github.aedev.flow.utils.PLAYLIST_FILE_MIME_TYPE
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
@@ -110,10 +110,10 @@ class MainActivity : ComponentActivity() {
     lateinit var videoPlayerManager: dagger.Lazy<EnhancedPlayerManager>
 
     @Inject
-    lateinit var widgetContentSync: dagger.Lazy<com.arubr.smsvcodes.widget.core.refresh.WidgetContentSync>
+    lateinit var widgetContentSync: dagger.Lazy<io.github.aedev.flow.widget.core.refresh.WidgetContentSync>
 
     @Inject
-    lateinit var nowPlayingWidgetPublisher: dagger.Lazy<com.arubr.smsvcodes.widget.nowplaying.NowPlayingWidgetPublisher>
+    lateinit var nowPlayingWidgetPublisher: dagger.Lazy<io.github.aedev.flow.widget.nowplaying.NowPlayingWidgetPublisher>
 
     // A recreated activity gets its launch intent again; a playlist file in it was already imported.
     private var isRestoringState = false
@@ -137,7 +137,7 @@ class MainActivity : ComponentActivity() {
     private fun lifecyclePlaybackSnapshot(): String {
         val powerManager = getSystemService(Context.POWER_SERVICE) as? PowerManager
         val playerManager =
-            com.arubr.smsvcodes.player.EnhancedPlayerManager
+            io.github.aedev.flow.player.EnhancedPlayerManager
                 .getInstance()
         val playerState = playerManager.playerState.value
         val player = playerManager.getPlayer()
@@ -200,7 +200,7 @@ class MainActivity : ComponentActivity() {
         val dataManager = LocalDataManager(applicationContext)
 
         lifecycleScope.launch {
-            com.arubr.smsvcodes.widget.core.FlowWidgets
+            io.github.aedev.flow.widget.core.FlowWidgets
                 .observeThemeChanges(applicationContext)
         }
         lifecycleScope.launch(Dispatchers.Default) {
@@ -256,7 +256,7 @@ class MainActivity : ComponentActivity() {
 
             // Initialize Flow Neuro Engine
             LaunchedEffect(Unit) {
-                com.arubr.smsvcodes.data.recommendation.FlowNeuroEngine
+                io.github.aedev.flow.data.recommendation.FlowNeuroEngine
                     .initialize(applicationContext)
             }
 
@@ -333,7 +333,7 @@ class MainActivity : ComponentActivity() {
         videoLifecycleLog("onDestroy")
         DiscordPresenceRuntime.detachActivity(this)
         val playerManager =
-            com.arubr.smsvcodes.player.EnhancedPlayerManager
+            io.github.aedev.flow.player.EnhancedPlayerManager
                 .getInstance()
         val playerState = playerManager.playerState.value
         val hasActiveVideo =
@@ -395,10 +395,10 @@ class MainActivity : ComponentActivity() {
 
         val widgetRoute =
             intent.getStringExtra(
-                com.arubr.smsvcodes.widget.core.action.WidgetDeepLink.EXTRA_WIDGET_ROUTE,
+                io.github.aedev.flow.widget.core.action.WidgetDeepLink.EXTRA_WIDGET_ROUTE,
             )
         if (widgetRoute != null) {
-            intent.removeExtra(com.arubr.smsvcodes.widget.core.action.WidgetDeepLink.EXTRA_WIDGET_ROUTE)
+            intent.removeExtra(io.github.aedev.flow.widget.core.action.WidgetDeepLink.EXTRA_WIDGET_ROUTE)
             links.openRoute(widgetRoute)
             return
         }
@@ -466,7 +466,7 @@ class MainActivity : ComponentActivity() {
     }
 
     private fun pauseShortsPlayers() {
-        com.arubr.smsvcodes.player.shorts.ShortsPlayerPool
+        io.github.aedev.flow.player.shorts.ShortsPlayerPool
             .getInstance()
             .pauseAll()
     }
@@ -519,8 +519,8 @@ class MainActivity : ComponentActivity() {
     ): Boolean {
         if (
             (keyCode == KeyEvent.KEYCODE_VOLUME_UP || keyCode == KeyEvent.KEYCODE_VOLUME_DOWN) &&
-            com.arubr.smsvcodes.player.PlayerHardwareController.fullscreenVideoActive.value &&
-            com.arubr.smsvcodes.player.PlayerHardwareController
+            io.github.aedev.flow.player.PlayerHardwareController.fullscreenVideoActive.value &&
+            io.github.aedev.flow.player.PlayerHardwareController
                 .adjustVolume(this, raise = keyCode == KeyEvent.KEYCODE_VOLUME_UP)
         ) {
             return true
@@ -543,7 +543,7 @@ class MainActivity : ComponentActivity() {
     ): Boolean {
         if (
             (keyCode == KeyEvent.KEYCODE_VOLUME_UP || keyCode == KeyEvent.KEYCODE_VOLUME_DOWN) &&
-            com.arubr.smsvcodes.player.PlayerHardwareController.fullscreenVideoActive.value
+            io.github.aedev.flow.player.PlayerHardwareController.fullscreenVideoActive.value
         ) {
             return true
         }
@@ -600,9 +600,9 @@ class MainActivity : ComponentActivity() {
         // Only enter PiP mode if video is playing and has progressed
         // We use the EnhancedPlayerManager directly to get the immediate state
         val playerManager =
-            com.arubr.smsvcodes.player.EnhancedPlayerManager
+            io.github.aedev.flow.player.EnhancedPlayerManager
                 .getInstance()
-        val musicManager = com.arubr.smsvcodes.player.EnhancedMusicPlayerManager
+        val musicManager = io.github.aedev.flow.player.EnhancedMusicPlayerManager
 
         val isVideoPlaying =
             playerManager.playerState.value.isPlaying &&
@@ -627,7 +627,7 @@ class MainActivity : ComponentActivity() {
 
         if (!lifecyclePlaybackPreferences.settings.shortsPipEnabled || isMusicPlaying) return
         val shortsPool =
-            com.arubr.smsvcodes.player.shorts.ShortsPlayerPool
+            io.github.aedev.flow.player.shorts.ShortsPlayerPool
                 .getInstance()
         if (!shortsPool.isPlaying()) return
         enterPlayerPictureInPictureMode(
@@ -680,7 +680,7 @@ class MainActivity : ComponentActivity() {
         FlowCrashHandler.recordPhase("background-handoff", "handOffVideoPlaybackToBackground")
         videoLifecycleLog("handOffVideoPlaybackToBackground")
         val playerManager =
-            com.arubr.smsvcodes.player.EnhancedPlayerManager
+            io.github.aedev.flow.player.EnhancedPlayerManager
                 .getInstance()
         val playerState = playerManager.playerState.value
         if (
@@ -702,7 +702,7 @@ class MainActivity : ComponentActivity() {
         FlowCrashHandler.recordPhase("background-handoff", "handleBackgroundPlaybackOnStop")
         videoLifecycleLog("handleBackgroundPlaybackOnStop")
         val playerManager =
-            com.arubr.smsvcodes.player.EnhancedPlayerManager
+            io.github.aedev.flow.player.EnhancedPlayerManager
                 .getInstance()
         val playerState = playerManager.playerState.value
         val hasActiveVideo =
@@ -729,7 +729,7 @@ class MainActivity : ComponentActivity() {
 
     private fun pauseVideoForBackground() {
         val playerManager =
-            com.arubr.smsvcodes.player.EnhancedPlayerManager
+            io.github.aedev.flow.player.EnhancedPlayerManager
                 .getInstance()
         playerManager.pause()
         playerManager.parkVideoForBackground()
@@ -737,7 +737,7 @@ class MainActivity : ComponentActivity() {
     }
 
     companion object {
-        const val EXTRA_BENCHMARK_BYPASS_ONBOARDING = "com.arubr.smsvcodes.extra.BENCHMARK_BYPASS_ONBOARDING"
+        const val EXTRA_BENCHMARK_BYPASS_ONBOARDING = "io.github.aedev.flow.extra.BENCHMARK_BYPASS_ONBOARDING"
 
         /** The share-menu entry Download with Flow: an activity-alias of this activity in the manifest. */
         private const val DOWNLOAD_SHARE_ALIAS = ".DownloadShareAlias"

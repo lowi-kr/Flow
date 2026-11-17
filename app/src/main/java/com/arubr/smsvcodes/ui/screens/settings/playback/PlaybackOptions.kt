@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.screens.settings.playback
+package io.github.aedev.flow.ui.screens.settings.playback
 
 private const val MIN_SPEED = 0.1f
 private const val MAX_SPEED = 10f

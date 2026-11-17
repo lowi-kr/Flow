@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.musicplayer.full
+package io.github.aedev.flow.ui.components.musicplayer.full
 
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.animation.core.tween
@@ -24,8 +24,8 @@ import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
-import com.arubr.smsvcodes.data.local.MusicPlayerBackgroundStyle
-import com.arubr.smsvcodes.ui.components.musicplayer.common.PlayerBackdropColors
+import io.github.aedev.flow.data.local.MusicPlayerBackgroundStyle
+import io.github.aedev.flow.ui.components.musicplayer.common.PlayerBackdropColors
 
 @Composable
 fun PlayerBackground(

@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.screens.settings.about
+package io.github.aedev.flow.ui.screens.settings.about
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -24,12 +24,12 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.ui.components.shared.FlowAlertDialog
-import com.arubr.smsvcodes.ui.components.shared.FlowLoadingIndicator
-import com.arubr.smsvcodes.utils.DeviceDetails
-import com.arubr.smsvcodes.utils.DeviceFactGroup
-import com.arubr.smsvcodes.utils.copyPlainText
+import io.github.aedev.flow.R
+import io.github.aedev.flow.ui.components.shared.FlowAlertDialog
+import io.github.aedev.flow.ui.components.shared.FlowLoadingIndicator
+import io.github.aedev.flow.utils.DeviceDetails
+import io.github.aedev.flow.utils.DeviceFactGroup
+import io.github.aedev.flow.utils.copyPlainText
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext

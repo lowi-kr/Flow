@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.widget.nowplaying
+package io.github.aedev.flow.widget.nowplaying
 
 import android.app.ActivityManager
 import android.content.BroadcastReceiver
@@ -10,9 +10,9 @@ import android.os.SystemClock
 import androidx.core.content.ContextCompat
 import androidx.glance.appwidget.GlanceAppWidgetManager
 import androidx.glance.appwidget.updateAll
-import com.arubr.smsvcodes.widget.core.component.WIDGET_PROGRESS_MAX
-import com.arubr.smsvcodes.widget.core.component.widgetProgressAt
-import com.arubr.smsvcodes.widget.core.state.NowPlayingSnapshot
+import io.github.aedev.flow.widget.core.component.WIDGET_PROGRESS_MAX
+import io.github.aedev.flow.widget.core.component.widgetProgressAt
+import io.github.aedev.flow.widget.core.state.NowPlayingSnapshot
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay

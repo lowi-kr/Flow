@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui
+package io.github.aedev.flow.ui
 
 import android.app.Activity
 import androidx.compose.animation.*
@@ -25,48 +25,48 @@ import androidx.media3.common.util.UnstableApi
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
-import com.arubr.smsvcodes.MainActivity
-import com.arubr.smsvcodes.data.local.PlayerPreferences
-import com.arubr.smsvcodes.data.recommendation.FlowNeuroEngine
-import com.arubr.smsvcodes.player.DeepFlowManager
-import com.arubr.smsvcodes.player.EnhancedMusicPlayerManager
-import com.arubr.smsvcodes.player.EnhancedPlayerManager
-import com.arubr.smsvcodes.player.GlobalPlayerState
-import com.arubr.smsvcodes.player.SleepTimerManager
-import com.arubr.smsvcodes.ui.components.donation.DonationPromptHost
-import com.arubr.smsvcodes.ui.components.equalizer.LocalEqualizerState
-import com.arubr.smsvcodes.ui.components.layout.FlowBottomInsets
-import com.arubr.smsvcodes.ui.components.layout.LocalFlowBottomInsets
-import com.arubr.smsvcodes.ui.components.layout.LocalFlowSnackbarHostState
-import com.arubr.smsvcodes.ui.components.layout.navigation.FlowNavigationChrome
-import com.arubr.smsvcodes.ui.components.layout.navigation.FlowNavigationDefaults
-import com.arubr.smsvcodes.ui.components.layout.navigation.NavigationVisibility
-import com.arubr.smsvcodes.ui.components.layout.navigation.flowUsesNavigationRail
-import com.arubr.smsvcodes.ui.components.layout.navigation.rememberFlowNavigationScrollState
-import com.arubr.smsvcodes.ui.components.layout.navigation.resolveDefaultFlowTab
-import com.arubr.smsvcodes.ui.components.layout.navigation.visibleFlowTabs
-import com.arubr.smsvcodes.ui.components.layout.topbar.ProvideFlowGlobalActions
-import com.arubr.smsvcodes.ui.components.music.common.ProvideMusicPlaybackState
-import com.arubr.smsvcodes.ui.components.music.sheet.LocalMusicMenus
-import com.arubr.smsvcodes.ui.components.music.sheet.rememberMusicMenus
-import com.arubr.smsvcodes.ui.components.musicplayer.common.canTurnLight
-import com.arubr.smsvcodes.ui.components.musicplayer.sheet.rememberMusicPlayerSheetState
-import com.arubr.smsvcodes.ui.components.shared.LocalMediaOpenOrigins
-import com.arubr.smsvcodes.ui.components.shared.MediaMiniBarDefaults
-import com.arubr.smsvcodes.ui.components.shared.MediaOpenOrigins
-import com.arubr.smsvcodes.ui.components.shared.mediaMiniBarBounds
-import com.arubr.smsvcodes.ui.components.videoplayer.PlayerSheetValue
-import com.arubr.smsvcodes.ui.components.videoplayer.rememberPlayerDraggableState
-import com.arubr.smsvcodes.ui.screens.equalizer.EqualizerViewModel
-import com.arubr.smsvcodes.ui.screens.home.HomeViewModel
-import com.arubr.smsvcodes.ui.screens.notifications.NotificationViewModel
-import com.arubr.smsvcodes.ui.screens.player.VideoPlayerViewModel
-import com.arubr.smsvcodes.ui.screens.update.UPDATE_ROUTE
-import com.arubr.smsvcodes.ui.screens.update.UpdateLaunchEffect
-import com.arubr.smsvcodes.ui.theme.ThemeMode
-import com.arubr.smsvcodes.ui.theme.ThemeVariant
-import com.arubr.smsvcodes.ui.utils.LocalWindowSizeClass
-import com.arubr.smsvcodes.ui.utils.isMediumWidth
+import io.github.aedev.flow.MainActivity
+import io.github.aedev.flow.data.local.PlayerPreferences
+import io.github.aedev.flow.data.recommendation.FlowNeuroEngine
+import io.github.aedev.flow.player.DeepFlowManager
+import io.github.aedev.flow.player.EnhancedMusicPlayerManager
+import io.github.aedev.flow.player.EnhancedPlayerManager
+import io.github.aedev.flow.player.GlobalPlayerState
+import io.github.aedev.flow.player.SleepTimerManager
+import io.github.aedev.flow.ui.components.donation.DonationPromptHost
+import io.github.aedev.flow.ui.components.equalizer.LocalEqualizerState
+import io.github.aedev.flow.ui.components.layout.FlowBottomInsets
+import io.github.aedev.flow.ui.components.layout.LocalFlowBottomInsets
+import io.github.aedev.flow.ui.components.layout.LocalFlowSnackbarHostState
+import io.github.aedev.flow.ui.components.layout.navigation.FlowNavigationChrome
+import io.github.aedev.flow.ui.components.layout.navigation.FlowNavigationDefaults
+import io.github.aedev.flow.ui.components.layout.navigation.NavigationVisibility
+import io.github.aedev.flow.ui.components.layout.navigation.flowUsesNavigationRail
+import io.github.aedev.flow.ui.components.layout.navigation.rememberFlowNavigationScrollState
+import io.github.aedev.flow.ui.components.layout.navigation.resolveDefaultFlowTab
+import io.github.aedev.flow.ui.components.layout.navigation.visibleFlowTabs
+import io.github.aedev.flow.ui.components.layout.topbar.ProvideFlowGlobalActions
+import io.github.aedev.flow.ui.components.music.common.ProvideMusicPlaybackState
+import io.github.aedev.flow.ui.components.music.sheet.LocalMusicMenus
+import io.github.aedev.flow.ui.components.music.sheet.rememberMusicMenus
+import io.github.aedev.flow.ui.components.musicplayer.common.canTurnLight
+import io.github.aedev.flow.ui.components.musicplayer.sheet.rememberMusicPlayerSheetState
+import io.github.aedev.flow.ui.components.shared.LocalMediaOpenOrigins
+import io.github.aedev.flow.ui.components.shared.MediaMiniBarDefaults
+import io.github.aedev.flow.ui.components.shared.MediaOpenOrigins
+import io.github.aedev.flow.ui.components.shared.mediaMiniBarBounds
+import io.github.aedev.flow.ui.components.videoplayer.PlayerSheetValue
+import io.github.aedev.flow.ui.components.videoplayer.rememberPlayerDraggableState
+import io.github.aedev.flow.ui.screens.equalizer.EqualizerViewModel
+import io.github.aedev.flow.ui.screens.home.HomeViewModel
+import io.github.aedev.flow.ui.screens.notifications.NotificationViewModel
+import io.github.aedev.flow.ui.screens.player.VideoPlayerViewModel
+import io.github.aedev.flow.ui.screens.update.UPDATE_ROUTE
+import io.github.aedev.flow.ui.screens.update.UpdateLaunchEffect
+import io.github.aedev.flow.ui.theme.ThemeMode
+import io.github.aedev.flow.ui.theme.ThemeVariant
+import io.github.aedev.flow.ui.utils.LocalWindowSizeClass
+import io.github.aedev.flow.ui.utils.isMediumWidth
 import kotlinx.coroutines.flow.first
 import kotlin.math.roundToInt
 
@@ -109,10 +109,10 @@ fun FlowApp(
     val isDownloadsNavigationEnabled by preferences.downloadsNavigationEnabled.collectAsState(initial = false)
     val disableShortsPlayer by preferences.effectiveDisableShortsPlayer.collectAsState(initial = false)
     val musicPlayerBackgroundStyle by preferences.musicPlayerBackgroundStyle.collectAsState(
-        initial = com.arubr.smsvcodes.data.local.MusicPlayerBackgroundStyle.BLUR_GRADIENT,
+        initial = io.github.aedev.flow.data.local.MusicPlayerBackgroundStyle.BLUR_GRADIENT,
     )
     val musicPlayerFollowLightTheme by preferences.musicPlayerFollowLightTheme.collectAsState(initial = false)
-    val navTabOrder by preferences.navTabOrder.collectAsState(initial = com.arubr.smsvcodes.data.local.DEFAULT_NAV_TAB_ORDER)
+    val navTabOrder by preferences.navTabOrder.collectAsState(initial = io.github.aedev.flow.data.local.DEFAULT_NAV_TAB_ORDER)
     val defaultNavTabIndex by preferences.defaultNavTabIndex.collectAsState(initial = 0)
     val subscriptionRefreshOnStartup by preferences.subscriptionRefreshOnStartup.collectAsState(initial = false)
     val bottomNavHideOnScroll by preferences.bottomNavHideOnScroll.collectAsState(initial = true)
@@ -336,7 +336,7 @@ fun FlowApp(
             isFullscreen = false,
             isMusicPlayerImmersive = currentMusicTrack != null && musicPlayerSheetState.isImmersive,
             musicPlayerFollowsTheme =
-                musicPlayerBackgroundStyle == com.arubr.smsvcodes.data.local.MusicPlayerBackgroundStyle.DEFAULT ||
+                musicPlayerBackgroundStyle == io.github.aedev.flow.data.local.MusicPlayerBackgroundStyle.DEFAULT ||
                     (musicPlayerFollowLightTheme && musicPlayerBackgroundStyle.canTurnLight),
             isShortsPlayer = isShortsPlayerRoute,
             videoPlayerExpanded = playerVisible && playerSheetState.currentValue == PlayerSheetValue.Expanded,

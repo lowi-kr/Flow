@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.shared
+package io.github.aedev.flow.ui.components.shared
 
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.lazy.grid.GridCells
@@ -8,9 +8,9 @@ import androidx.compose.runtime.Immutable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import com.arubr.smsvcodes.ui.components.FeedGridLayout
-import com.arubr.smsvcodes.ui.components.partialRowIndices
-import com.arubr.smsvcodes.ui.components.shared.card.VideoCardDefaults
+import io.github.aedev.flow.ui.components.FeedGridLayout
+import io.github.aedev.flow.ui.components.partialRowIndices
+import io.github.aedev.flow.ui.components.shared.card.VideoCardDefaults
 
 /**
  * The per-index decisions a vertical feed grid makes once its [FeedGridLayout] and its item list are

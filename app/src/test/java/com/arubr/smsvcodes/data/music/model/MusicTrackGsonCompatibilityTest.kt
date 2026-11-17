@@ -4,7 +4,7 @@
  * This file is part of Flow (https://github.com/Flow-Tube/Flow).
  */
 
-package com.arubr.smsvcodes.data.music.model
+package io.github.aedev.flow.data.music.model
 
 import com.google.common.truth.Truth.assertThat
 import com.google.gson.Gson
@@ -12,7 +12,7 @@ import com.google.gson.reflect.TypeToken
 import org.junit.Test
 
 /**
- * MusicTrack moved from com.arubr.smsvcodes.ui.screens.music to this package. Queues saved by
+ * MusicTrack moved from io.github.aedev.flow.ui.screens.music to this package. Queues saved by
  * earlier installs live in DataStore as Gson JSON written by QueuePersistence, so the payload
  * emitted before the move must still deserialize here or every upgrading user loses their queue.
  */
@@ -97,7 +97,7 @@ class MusicTrackGsonCompatibilityTest {
         val reparsed: List<MusicTrack> = gson.fromJson(gson.toJson(original), listType)
 
         assertThat(reparsed).isEqualTo(original)
-        assertThat(gson.toJson(original)).doesNotContain("com.arubr.smsvcodes")
+        assertThat(gson.toJson(original)).doesNotContain("io.github.aedev.flow")
     }
 
     @Test

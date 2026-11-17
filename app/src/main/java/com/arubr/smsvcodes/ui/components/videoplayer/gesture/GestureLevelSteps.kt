@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.videoplayer.gesture
+package io.github.aedev.flow.ui.components.videoplayer.gesture
 
 /** Level travel between two haptic ticks of a brightness or boost swipe: twenty steps per 100%. */
 private const val GESTURE_TICK_STEP = 0.05f

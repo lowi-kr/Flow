@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.search
+package io.github.aedev.flow.ui.components.search
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -32,17 +32,17 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.data.model.Channel
-import com.arubr.smsvcodes.data.model.Video
-import com.arubr.smsvcodes.ui.components.shared.ChannelAvatarImage
-import com.arubr.smsvcodes.ui.components.shared.FlowSubscribeButton
-import com.arubr.smsvcodes.ui.components.shared.FlowSubscribeButtonSize
-import com.arubr.smsvcodes.ui.components.shared.MediaArtworkTint
-import com.arubr.smsvcodes.ui.components.shared.card.MediaVideoCard
-import com.arubr.smsvcodes.ui.components.shared.feedStripCardWidth
-import com.arubr.smsvcodes.ui.components.shared.rememberMediaArtworkTint
-import com.arubr.smsvcodes.utils.formatSubscriberCount
+import io.github.aedev.flow.R
+import io.github.aedev.flow.data.model.Channel
+import io.github.aedev.flow.data.model.Video
+import io.github.aedev.flow.ui.components.shared.ChannelAvatarImage
+import io.github.aedev.flow.ui.components.shared.FlowSubscribeButton
+import io.github.aedev.flow.ui.components.shared.FlowSubscribeButtonSize
+import io.github.aedev.flow.ui.components.shared.MediaArtworkTint
+import io.github.aedev.flow.ui.components.shared.card.MediaVideoCard
+import io.github.aedev.flow.ui.components.shared.feedStripCardWidth
+import io.github.aedev.flow.ui.components.shared.rememberMediaArtworkTint
+import io.github.aedev.flow.utils.formatSubscriberCount
 
 /**
  * The creator block search puts above the results for a channel-name query: the card and the

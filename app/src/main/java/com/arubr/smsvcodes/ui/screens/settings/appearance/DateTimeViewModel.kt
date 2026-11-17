@@ -1,11 +1,11 @@
-package com.arubr.smsvcodes.ui.screens.settings.appearance
+package io.github.aedev.flow.ui.screens.settings.appearance
 
 import dagger.hilt.android.lifecycle.HiltViewModel
-import com.arubr.smsvcodes.data.local.PlayerPreferences
-import com.arubr.smsvcodes.ui.screens.settings.SettingsViewModel
-import com.arubr.smsvcodes.utils.DateContextMode
-import com.arubr.smsvcodes.utils.DateDisplayMode
-import com.arubr.smsvcodes.utils.DateFormatStyle
+import io.github.aedev.flow.data.local.PlayerPreferences
+import io.github.aedev.flow.ui.screens.settings.SettingsViewModel
+import io.github.aedev.flow.utils.DateContextMode
+import io.github.aedev.flow.utils.DateDisplayMode
+import io.github.aedev.flow.utils.DateFormatStyle
 import javax.inject.Inject
 
 @HiltViewModel

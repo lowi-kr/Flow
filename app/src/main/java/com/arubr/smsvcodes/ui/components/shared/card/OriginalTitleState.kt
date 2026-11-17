@@ -1,12 +1,12 @@
-package com.arubr.smsvcodes.ui.components.shared.card
+package io.github.aedev.flow.ui.components.shared.card
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.key
 import androidx.compose.runtime.produceState
 import androidx.compose.runtime.staticCompositionLocalOf
-import com.arubr.smsvcodes.data.localmedia.LocalMediaIds
-import com.arubr.smsvcodes.data.model.Video
-import com.arubr.smsvcodes.data.repository.OriginalTitleRepository
+import io.github.aedev.flow.data.localmedia.LocalMediaIds
+import io.github.aedev.flow.data.model.Video
+import io.github.aedev.flow.data.repository.OriginalTitleRepository
 
 /** The activity's title lookup, installed by [ProvideVideoCardState]; null in previews and tests. */
 val LocalOriginalTitles = staticCompositionLocalOf<OriginalTitleRepository?> { null }

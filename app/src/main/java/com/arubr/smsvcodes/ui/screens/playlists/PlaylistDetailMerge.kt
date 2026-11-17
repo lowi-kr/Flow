@@ -1,8 +1,8 @@
-package com.arubr.smsvcodes.ui.screens.playlists
+package io.github.aedev.flow.ui.screens.playlists
 
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.data.local.PlaylistRepository
-import com.arubr.smsvcodes.data.model.Video
+import io.github.aedev.flow.R
+import io.github.aedev.flow.data.local.PlaylistRepository
+import io.github.aedev.flow.data.model.Video
 
 internal suspend fun mergeVideosIntoPlaylist(
     repository: PlaylistRepository,

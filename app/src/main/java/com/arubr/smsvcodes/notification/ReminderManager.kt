@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.notification
+package io.github.aedev.flow.notification
 
 import android.app.AlarmManager
 import android.app.PendingIntent

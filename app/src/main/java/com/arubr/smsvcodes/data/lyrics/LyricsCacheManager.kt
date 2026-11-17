@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.data.lyrics
+package io.github.aedev.flow.data.lyrics
 
 import android.content.Context
 import android.util.Log

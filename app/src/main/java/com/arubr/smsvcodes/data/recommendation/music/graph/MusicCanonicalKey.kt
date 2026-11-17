@@ -1,7 +1,7 @@
-package com.arubr.smsvcodes.data.recommendation.music.graph
+package io.github.aedev.flow.data.recommendation.music.graph
 
-import com.arubr.smsvcodes.data.music.model.MusicTrack
-import com.arubr.smsvcodes.data.recommendation.music.musicArtistKey
+import io.github.aedev.flow.data.music.model.MusicTrack
+import io.github.aedev.flow.data.recommendation.music.musicArtistKey
 
 private val BRACKETED = Regex("""\s*[\(\[][^\)\]]*[\)\]]""")
 private val TRAILING_QUALIFIER = Regex("""\s+-\s+.*$""")

@@ -1,14 +1,14 @@
-package com.arubr.smsvcodes.data.local
+package io.github.aedev.flow.data.local
 
 import android.content.Context
 import android.net.Uri
 import androidx.room.withTransaction
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.data.local.entity.PlaylistEntity
-import com.arubr.smsvcodes.data.local.entity.PlaylistVideoCrossRef
-import com.arubr.smsvcodes.data.local.entity.VideoEntity
-import com.arubr.smsvcodes.data.recommendation.FlowNeuroEngine
-import com.arubr.smsvcodes.utils.ThumbnailUrlResolver
+import io.github.aedev.flow.R
+import io.github.aedev.flow.data.local.entity.PlaylistEntity
+import io.github.aedev.flow.data.local.entity.PlaylistVideoCrossRef
+import io.github.aedev.flow.data.local.entity.VideoEntity
+import io.github.aedev.flow.data.recommendation.FlowNeuroEngine
+import io.github.aedev.flow.utils.ThumbnailUrlResolver
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
 import kotlinx.coroutines.awaitAll

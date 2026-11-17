@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.innertube.models
+package io.github.aedev.flow.innertube.models
 
 import kotlinx.serialization.Serializable
 import java.util.Locale

@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.screens.player.stage
+package io.github.aedev.flow.ui.screens.player.stage
 
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.tween
@@ -24,19 +24,19 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.zIndex
 import androidx.media3.common.util.UnstableApi
-import com.arubr.smsvcodes.data.model.Comment
-import com.arubr.smsvcodes.ui.screens.player.dialogs.PlayerChaptersSheetHost
-import com.arubr.smsvcodes.ui.screens.player.dialogs.PlayerCommentsPanelHost
-import com.arubr.smsvcodes.ui.screens.player.dialogs.PlayerDescriptionSheetHost
-import com.arubr.smsvcodes.ui.screens.player.dialogs.PlayerLiveChatColumn
-import com.arubr.smsvcodes.ui.screens.player.dialogs.PlayerQueueSheetHost
-import com.arubr.smsvcodes.ui.screens.player.dialogs.PlayerSettingsSheetHost
-import com.arubr.smsvcodes.ui.screens.player.dialogs.PlayerSleepTimerSheetHost
-import com.arubr.smsvcodes.ui.screens.player.state.PlayerCommentsUiState
-import com.arubr.smsvcodes.ui.screens.player.state.PlayerScreenState
-import com.arubr.smsvcodes.ui.screens.player.state.PlayerSheet
-import com.arubr.smsvcodes.ui.screens.player.state.VideoPlayerUiState
-import com.arubr.smsvcodes.ui.screens.player.state.transcriptTrackUrl
+import io.github.aedev.flow.data.model.Comment
+import io.github.aedev.flow.ui.screens.player.dialogs.PlayerChaptersSheetHost
+import io.github.aedev.flow.ui.screens.player.dialogs.PlayerCommentsPanelHost
+import io.github.aedev.flow.ui.screens.player.dialogs.PlayerDescriptionSheetHost
+import io.github.aedev.flow.ui.screens.player.dialogs.PlayerLiveChatColumn
+import io.github.aedev.flow.ui.screens.player.dialogs.PlayerQueueSheetHost
+import io.github.aedev.flow.ui.screens.player.dialogs.PlayerSettingsSheetHost
+import io.github.aedev.flow.ui.screens.player.dialogs.PlayerSleepTimerSheetHost
+import io.github.aedev.flow.ui.screens.player.state.PlayerCommentsUiState
+import io.github.aedev.flow.ui.screens.player.state.PlayerScreenState
+import io.github.aedev.flow.ui.screens.player.state.PlayerSheet
+import io.github.aedev.flow.ui.screens.player.state.VideoPlayerUiState
+import io.github.aedev.flow.ui.screens.player.state.transcriptTrackUrl
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 

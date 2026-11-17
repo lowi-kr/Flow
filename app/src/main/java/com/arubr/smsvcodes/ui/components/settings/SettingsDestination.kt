@@ -1,8 +1,8 @@
-package com.arubr.smsvcodes.ui.components.settings
+package io.github.aedev.flow.ui.components.settings
 
 import androidx.annotation.StringRes
 import androidx.compose.runtime.Immutable
-import com.arubr.smsvcodes.R
+import io.github.aedev.flow.R
 
 /**
  * Every page inside Settings. A destination with a [parent] is a sub-page: on a phone it pushes over

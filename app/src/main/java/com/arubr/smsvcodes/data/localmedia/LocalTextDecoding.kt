@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.data.localmedia
+package io.github.aedev.flow.data.localmedia
 
 import java.nio.ByteBuffer
 import java.nio.charset.CharacterCodingException

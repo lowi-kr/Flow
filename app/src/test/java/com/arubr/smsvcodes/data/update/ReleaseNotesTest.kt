@@ -1,9 +1,9 @@
-package com.arubr.smsvcodes.data.update
+package io.github.aedev.flow.data.update
 
 import com.google.common.truth.Truth.assertThat
-import com.arubr.smsvcodes.data.update.NoteSpan.Link
-import com.arubr.smsvcodes.data.update.NoteSpan.Plain
-import com.arubr.smsvcodes.data.update.NoteSpan.Strong
+import io.github.aedev.flow.data.update.NoteSpan.Link
+import io.github.aedev.flow.data.update.NoteSpan.Plain
+import io.github.aedev.flow.data.update.NoteSpan.Strong
 import org.junit.Test
 
 class ReleaseNotesTest {

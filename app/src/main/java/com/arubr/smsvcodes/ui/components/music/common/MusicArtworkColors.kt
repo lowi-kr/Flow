@@ -4,7 +4,7 @@
  * This file is part of Flow (https://github.com/Flow-Tube/Flow).
  */
 
-package com.arubr.smsvcodes.ui.components.music.common
+package io.github.aedev.flow.ui.components.music.common
 
 import androidx.compose.material3.ColorScheme
 import androidx.compose.material3.MaterialTheme
@@ -13,11 +13,11 @@ import androidx.compose.runtime.Immutable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.lerp
-import com.arubr.smsvcodes.ui.components.shared.MediaPalette
-import com.arubr.smsvcodes.ui.components.shared.rememberMediaPalette
-import com.arubr.smsvcodes.ui.theme.ensureContrastOn
-import com.arubr.smsvcodes.ui.theme.tone
-import com.arubr.smsvcodes.ui.theme.withTone
+import io.github.aedev.flow.ui.components.shared.MediaPalette
+import io.github.aedev.flow.ui.components.shared.rememberMediaPalette
+import io.github.aedev.flow.ui.theme.ensureContrastOn
+import io.github.aedev.flow.ui.theme.tone
+import io.github.aedev.flow.ui.theme.withTone
 
 private const val TEXT_CONTRAST = 4.5f
 private const val GRAPHIC_CONTRAST = 3f

@@ -1,12 +1,12 @@
-package com.arubr.smsvcodes.data.localmedia
+package io.github.aedev.flow.data.localmedia
 
 import android.content.Context
 import android.net.Uri
 import dagger.hilt.android.qualifiers.ApplicationContext
-import com.arubr.smsvcodes.data.model.Video
-import com.arubr.smsvcodes.data.video.downloader.tags.DownloadTagReader
-import com.arubr.smsvcodes.data.video.downloader.tags.Mp4TextAtoms
-import com.arubr.smsvcodes.utils.PerformanceDispatcher
+import io.github.aedev.flow.data.model.Video
+import io.github.aedev.flow.data.video.downloader.tags.DownloadTagReader
+import io.github.aedev.flow.data.video.downloader.tags.Mp4TextAtoms
+import io.github.aedev.flow.utils.PerformanceDispatcher
 import kotlinx.coroutines.withContext
 import java.io.FileInputStream
 import javax.inject.Inject

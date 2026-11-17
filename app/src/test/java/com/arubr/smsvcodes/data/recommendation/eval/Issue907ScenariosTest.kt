@@ -4,13 +4,13 @@
  * This file is part of Flow (https://github.com/Flow-Tube/Flow).
  */
 
-package com.arubr.smsvcodes.data.recommendation.eval
+package io.github.aedev.flow.data.recommendation.eval
 
 import com.google.common.truth.Truth.assertThat
 import com.google.common.truth.Truth.assertWithMessage
-import com.arubr.smsvcodes.data.recommendation.InterestChips
-import com.arubr.smsvcodes.data.recommendation.NeuroDiscovery
-import com.arubr.smsvcodes.data.recommendation.NeuroTokenizer
+import io.github.aedev.flow.data.recommendation.InterestChips
+import io.github.aedev.flow.data.recommendation.NeuroDiscovery
+import io.github.aedev.flow.data.recommendation.NeuroTokenizer
 import org.junit.AfterClass
 import org.junit.Test
 import java.io.File

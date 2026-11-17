@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.service.auto
+package io.github.aedev.flow.service.auto
 
 import android.content.ContentProvider
 import android.content.ContentValues

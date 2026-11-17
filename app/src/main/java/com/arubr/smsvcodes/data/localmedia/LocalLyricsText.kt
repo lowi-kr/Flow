@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.data.localmedia
+package io.github.aedev.flow.data.localmedia
 
 private val OffsetTag = Regex("""^\s*\[offset:\s*([+-]?\d+)\s*]\s*$""", setOf(RegexOption.IGNORE_CASE, RegexOption.MULTILINE))
 private val HeaderTag = Regex("""^\s*\[[a-zA-Z#]+:[^\]]*]\s*$""")

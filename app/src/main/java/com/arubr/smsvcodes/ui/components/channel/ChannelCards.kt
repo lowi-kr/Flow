@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.channel
+package io.github.aedev.flow.ui.components.channel
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -24,14 +24,14 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
-import com.arubr.smsvcodes.data.model.Channel
-import com.arubr.smsvcodes.data.model.Video
-import com.arubr.smsvcodes.ui.components.shared.FlowSubscribeButton
-import com.arubr.smsvcodes.ui.components.shared.FlowSubscribeButtonSize
-import com.arubr.smsvcodes.ui.components.shared.ShortWatchedIndicator
-import com.arubr.smsvcodes.ui.theme.extendedColors
-import com.arubr.smsvcodes.utils.formatSubscriberCount
-import com.arubr.smsvcodes.utils.formatViewCount
+import io.github.aedev.flow.data.model.Channel
+import io.github.aedev.flow.data.model.Video
+import io.github.aedev.flow.ui.components.shared.FlowSubscribeButton
+import io.github.aedev.flow.ui.components.shared.FlowSubscribeButtonSize
+import io.github.aedev.flow.ui.components.shared.ShortWatchedIndicator
+import io.github.aedev.flow.ui.theme.extendedColors
+import io.github.aedev.flow.utils.formatSubscriberCount
+import io.github.aedev.flow.utils.formatViewCount
 
 /** Sister channels arrive as items on a channel's own tabs, so the grid has to be able to show one. */
 @Composable

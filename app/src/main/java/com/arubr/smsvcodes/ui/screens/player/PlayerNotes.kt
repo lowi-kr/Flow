@@ -1,11 +1,11 @@
-package com.arubr.smsvcodes.ui.screens.player
+package io.github.aedev.flow.ui.screens.player
 
-import com.arubr.smsvcodes.data.local.PlayerPreferences
-import com.arubr.smsvcodes.data.model.Video
-import com.arubr.smsvcodes.data.notes.NoteKind
-import com.arubr.smsvcodes.data.notes.NotesRepository
-import com.arubr.smsvcodes.data.notes.toNoteSubject
-import com.arubr.smsvcodes.utils.PerformanceDispatcher
+import io.github.aedev.flow.data.local.PlayerPreferences
+import io.github.aedev.flow.data.model.Video
+import io.github.aedev.flow.data.notes.NoteKind
+import io.github.aedev.flow.data.notes.NotesRepository
+import io.github.aedev.flow.data.notes.toNoteSubject
+import io.github.aedev.flow.utils.PerformanceDispatcher
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.MutableStateFlow

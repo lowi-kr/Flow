@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.shared
+package io.github.aedev.flow.ui.components.shared
 
 import android.widget.Toast
 import androidx.compose.foundation.layout.Column
@@ -33,16 +33,16 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.media3.common.util.UnstableApi
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.data.local.PlayerPreferences
-import com.arubr.smsvcodes.data.local.VideoCodec
-import com.arubr.smsvcodes.data.model.Video
-import com.arubr.smsvcodes.data.video.DownloadStreamPolicy
-import com.arubr.smsvcodes.data.video.downloader.request.DownloadSubtitle
-import com.arubr.smsvcodes.innertube.models.response.PlayerResponse
-import com.arubr.smsvcodes.player.EnhancedPlayerManager
-import com.arubr.smsvcodes.player.state.SubtitleOption
-import com.arubr.smsvcodes.player.stream.VideoCodecUtils
+import io.github.aedev.flow.R
+import io.github.aedev.flow.data.local.PlayerPreferences
+import io.github.aedev.flow.data.local.VideoCodec
+import io.github.aedev.flow.data.model.Video
+import io.github.aedev.flow.data.video.DownloadStreamPolicy
+import io.github.aedev.flow.data.video.downloader.request.DownloadSubtitle
+import io.github.aedev.flow.innertube.models.response.PlayerResponse
+import io.github.aedev.flow.player.EnhancedPlayerManager
+import io.github.aedev.flow.player.state.SubtitleOption
+import io.github.aedev.flow.player.stream.VideoCodecUtils
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob

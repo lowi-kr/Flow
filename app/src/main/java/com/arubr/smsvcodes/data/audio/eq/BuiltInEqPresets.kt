@@ -1,10 +1,10 @@
-package com.arubr.smsvcodes.data.audio.eq
+package io.github.aedev.flow.data.audio.eq
 
 import androidx.annotation.StringRes
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.data.audio.eq.EqFilterType.HIGH_SHELF
-import com.arubr.smsvcodes.data.audio.eq.EqFilterType.LOW_SHELF
-import com.arubr.smsvcodes.data.audio.eq.EqFilterType.PEAK
+import io.github.aedev.flow.R
+import io.github.aedev.flow.data.audio.eq.EqFilterType.HIGH_SHELF
+import io.github.aedev.flow.data.audio.eq.EqFilterType.LOW_SHELF
+import io.github.aedev.flow.data.audio.eq.EqFilterType.PEAK
 
 data class BuiltInEqPreset(
     val id: String,

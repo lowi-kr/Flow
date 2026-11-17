@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.layout.navigation
+package io.github.aedev.flow.ui.components.layout.navigation
 
 import android.app.Application
 import androidx.compose.material3.MaterialTheme
@@ -15,7 +15,7 @@ import androidx.compose.ui.test.performClick
 import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.google.common.truth.Truth.assertThat
-import com.arubr.smsvcodes.R
+import io.github.aedev.flow.R
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith

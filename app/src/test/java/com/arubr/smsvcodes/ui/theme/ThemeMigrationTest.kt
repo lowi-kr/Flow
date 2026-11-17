@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.theme
+package io.github.aedev.flow.ui.theme
 
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNotNull

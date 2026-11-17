@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.data.recognition.signature
+package io.github.aedev.flow.data.recognition.signature
 
 /** Entry point for generating a Shazam-compatible fingerprint from PCM audio. */
 object VibraSignature {

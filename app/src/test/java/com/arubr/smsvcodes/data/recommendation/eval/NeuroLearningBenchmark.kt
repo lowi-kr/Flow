@@ -5,20 +5,20 @@
  * Test-source-set only — never shipped in the APK.
  */
 
-package com.arubr.smsvcodes.data.recommendation.eval
+package io.github.aedev.flow.data.recommendation.eval
 
-import com.arubr.smsvcodes.data.model.Video
-import com.arubr.smsvcodes.data.recommendation.FlowNeuroEngine
-import com.arubr.smsvcodes.data.recommendation.IdfSnapshot
-import com.arubr.smsvcodes.data.recommendation.InteractionType
-import com.arubr.smsvcodes.data.recommendation.NeuroCategoryStore
-import com.arubr.smsvcodes.data.recommendation.NeuroCoWatchStore
-import com.arubr.smsvcodes.data.recommendation.NeuroContentStore
-import com.arubr.smsvcodes.data.recommendation.NeuroMaintenance
-import com.arubr.smsvcodes.data.recommendation.NeuroStorage
-import com.arubr.smsvcodes.data.recommendation.NeuroTokenizer
-import com.arubr.smsvcodes.data.recommendation.NeuroVectorMath
-import com.arubr.smsvcodes.data.recommendation.UserBrain
+import io.github.aedev.flow.data.model.Video
+import io.github.aedev.flow.data.recommendation.FlowNeuroEngine
+import io.github.aedev.flow.data.recommendation.IdfSnapshot
+import io.github.aedev.flow.data.recommendation.InteractionType
+import io.github.aedev.flow.data.recommendation.NeuroCategoryStore
+import io.github.aedev.flow.data.recommendation.NeuroCoWatchStore
+import io.github.aedev.flow.data.recommendation.NeuroContentStore
+import io.github.aedev.flow.data.recommendation.NeuroMaintenance
+import io.github.aedev.flow.data.recommendation.NeuroStorage
+import io.github.aedev.flow.data.recommendation.NeuroTokenizer
+import io.github.aedev.flow.data.recommendation.NeuroVectorMath
+import io.github.aedev.flow.data.recommendation.UserBrain
 import io.mockk.coEvery
 import io.mockk.every
 import io.mockk.mockk

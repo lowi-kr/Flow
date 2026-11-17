@@ -1,7 +1,7 @@
-package com.arubr.smsvcodes.player.stream
+package io.github.aedev.flow.player.stream
 
-import com.arubr.smsvcodes.data.local.VideoQuality
-import com.arubr.smsvcodes.player.quality.QualityManager
+import io.github.aedev.flow.data.local.VideoQuality
+import io.github.aedev.flow.player.quality.QualityManager
 import org.schabi.newpipe.extractor.stream.AudioStream
 import org.schabi.newpipe.extractor.stream.VideoStream
 import kotlin.math.abs

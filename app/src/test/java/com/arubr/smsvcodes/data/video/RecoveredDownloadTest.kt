@@ -1,11 +1,11 @@
-package com.arubr.smsvcodes.data.video
+package io.github.aedev.flow.data.video
 
 import com.google.common.truth.Truth.assertThat
-import com.arubr.smsvcodes.data.local.entity.DownloadFileType
-import com.arubr.smsvcodes.data.local.entity.DownloadItemStatus
-import com.arubr.smsvcodes.data.video.downloader.request.StoredArtist
-import com.arubr.smsvcodes.data.video.downloader.tags.DownloadKind
-import com.arubr.smsvcodes.data.video.downloader.tags.DownloadTags
+import io.github.aedev.flow.data.local.entity.DownloadFileType
+import io.github.aedev.flow.data.local.entity.DownloadItemStatus
+import io.github.aedev.flow.data.video.downloader.request.StoredArtist
+import io.github.aedev.flow.data.video.downloader.tags.DownloadKind
+import io.github.aedev.flow.data.video.downloader.tags.DownloadTags
 import org.junit.Test
 
 class RecoveredDownloadTest {

@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.data.shorts.queue
+package io.github.aedev.flow.data.shorts.queue
 
 sealed interface ShortsQueueSource {
     fun encode(): String

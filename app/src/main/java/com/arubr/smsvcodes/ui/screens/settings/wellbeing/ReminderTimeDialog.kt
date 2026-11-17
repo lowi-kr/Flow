@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.screens.settings.wellbeing
+package io.github.aedev.flow.ui.screens.settings.wellbeing
 
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Text
@@ -15,7 +15,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.res.stringResource
-import com.arubr.smsvcodes.R
+import io.github.aedev.flow.R
 import java.time.LocalTime
 
 /** The Material time picker for a reminder, with its dial and keyboard modes. */

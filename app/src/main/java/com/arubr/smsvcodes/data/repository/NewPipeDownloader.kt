@@ -1,7 +1,7 @@
-package com.arubr.smsvcodes.data.repository
+package io.github.aedev.flow.data.repository
 
 import android.content.Context
-import com.arubr.smsvcodes.network.AppProxyManager
+import io.github.aedev.flow.network.AppProxyManager
 import okhttp3.OkHttpClient
 import org.schabi.newpipe.extractor.downloader.Downloader
 import org.schabi.newpipe.extractor.downloader.Request

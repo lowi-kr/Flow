@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.widget.nowplaying
+package io.github.aedev.flow.widget.nowplaying
 
 import android.graphics.Bitmap
 import android.os.SystemClock
@@ -28,24 +28,24 @@ import androidx.glance.layout.size
 import androidx.glance.layout.width
 import androidx.glance.text.Text
 import androidx.glance.text.TextStyle
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.utils.formatDurationMillis
-import com.arubr.smsvcodes.widget.core.action.WidgetDeepLink
-import com.arubr.smsvcodes.widget.core.component.ConnectedPlaybackControls
-import com.arubr.smsvcodes.widget.core.component.LikeButton
-import com.arubr.smsvcodes.widget.core.component.NextButton
-import com.arubr.smsvcodes.widget.core.component.PreviousButton
-import com.arubr.smsvcodes.widget.core.component.SquarePlayPauseButton
-import com.arubr.smsvcodes.widget.core.component.WidePlayPauseButton
-import com.arubr.smsvcodes.widget.core.component.WidgetArtwork
-import com.arubr.smsvcodes.widget.core.component.WidgetElapsedTime
-import com.arubr.smsvcodes.widget.core.component.WidgetEmptyState
-import com.arubr.smsvcodes.widget.core.component.WidgetWavyProgress
-import com.arubr.smsvcodes.widget.core.component.widgetProgressAt
-import com.arubr.smsvcodes.widget.core.state.NowPlayingSnapshot
-import com.arubr.smsvcodes.widget.core.theme.WidgetDimens
-import com.arubr.smsvcodes.widget.core.theme.WidgetText
-import com.arubr.smsvcodes.widget.core.theme.widgetSurface
+import io.github.aedev.flow.R
+import io.github.aedev.flow.utils.formatDurationMillis
+import io.github.aedev.flow.widget.core.action.WidgetDeepLink
+import io.github.aedev.flow.widget.core.component.ConnectedPlaybackControls
+import io.github.aedev.flow.widget.core.component.LikeButton
+import io.github.aedev.flow.widget.core.component.NextButton
+import io.github.aedev.flow.widget.core.component.PreviousButton
+import io.github.aedev.flow.widget.core.component.SquarePlayPauseButton
+import io.github.aedev.flow.widget.core.component.WidePlayPauseButton
+import io.github.aedev.flow.widget.core.component.WidgetArtwork
+import io.github.aedev.flow.widget.core.component.WidgetElapsedTime
+import io.github.aedev.flow.widget.core.component.WidgetEmptyState
+import io.github.aedev.flow.widget.core.component.WidgetWavyProgress
+import io.github.aedev.flow.widget.core.component.widgetProgressAt
+import io.github.aedev.flow.widget.core.state.NowPlayingSnapshot
+import io.github.aedev.flow.widget.core.theme.WidgetDimens
+import io.github.aedev.flow.widget.core.theme.WidgetText
+import io.github.aedev.flow.widget.core.theme.widgetSurface
 
 /**
  * The music player on the home screen, laid out for whichever [NowPlayingLayout] fits. [nowElapsedMs]

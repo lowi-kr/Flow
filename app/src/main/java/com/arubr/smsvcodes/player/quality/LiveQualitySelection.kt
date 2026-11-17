@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.player.quality
+package io.github.aedev.flow.player.quality
 
 /** A quality the viewer chose by hand on one livestream; a [height] of 0 means they chose Auto. */
 data class LiveQualityPick(

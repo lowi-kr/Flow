@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.videoplayer.controls
+package io.github.aedev.flow.ui.components.videoplayer.controls
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.fadeIn
@@ -26,10 +26,10 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.ui.components.shared.MediaSeekBar
-import com.arubr.smsvcodes.ui.theme.PlayerLiveIndicator
-import com.arubr.smsvcodes.ui.theme.PlayerScrim
+import io.github.aedev.flow.R
+import io.github.aedev.flow.ui.components.shared.MediaSeekBar
+import io.github.aedev.flow.ui.theme.PlayerLiveIndicator
+import io.github.aedev.flow.ui.theme.PlayerScrim
 
 /** Backdrop for the unlock button, a shade darker than a normal affordance so it reads as modal. */
 private const val UNLOCK_AFFORDANCE_ALPHA = 0.42f

@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.videoplayer.controls
+package io.github.aedev.flow.ui.components.videoplayer.controls
 
 import androidx.compose.animation.core.LinearEasing
 import androidx.compose.animation.core.RepeatMode
@@ -31,12 +31,12 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.ui.theme.PlayerLiveIndicator
-import com.arubr.smsvcodes.ui.theme.PlayerScrimAffordance
-import com.arubr.smsvcodes.ui.theme.PlayerScrimContent
-import com.arubr.smsvcodes.ui.theme.PlayerScrimContentSecondary
-import com.arubr.smsvcodes.utils.formatDuration
+import io.github.aedev.flow.R
+import io.github.aedev.flow.ui.theme.PlayerLiveIndicator
+import io.github.aedev.flow.ui.theme.PlayerScrimAffordance
+import io.github.aedev.flow.ui.theme.PlayerScrimContent
+import io.github.aedev.flow.ui.theme.PlayerScrimContentSecondary
+import io.github.aedev.flow.utils.formatDuration
 
 private val LiveDotSize = 8.dp
 

@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.shared.card
+package io.github.aedev.flow.ui.components.shared.card
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -14,8 +14,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import com.arubr.smsvcodes.data.model.Video
-import com.arubr.smsvcodes.ui.components.shared.videoMetadataLine
+import io.github.aedev.flow.data.model.Video
+import io.github.aedev.flow.ui.components.shared.videoMetadataLine
 
 /** Thumbnail on the left, details on the right: lists, side panes and search rows. */
 @Composable

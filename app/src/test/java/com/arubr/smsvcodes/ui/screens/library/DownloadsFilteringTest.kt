@@ -1,8 +1,8 @@
-package com.arubr.smsvcodes.ui.screens.library
+package io.github.aedev.flow.ui.screens.library
 
 import com.google.common.truth.Truth.assertThat
-import com.arubr.smsvcodes.data.model.Video
-import com.arubr.smsvcodes.data.video.DownloadedVideo
+import io.github.aedev.flow.data.model.Video
+import io.github.aedev.flow.data.video.DownloadedVideo
 import org.junit.Test
 
 class DownloadsFilteringTest {

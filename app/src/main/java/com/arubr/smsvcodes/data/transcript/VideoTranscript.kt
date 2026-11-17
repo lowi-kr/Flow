@@ -1,6 +1,6 @@
-package com.arubr.smsvcodes.data.transcript
+package io.github.aedev.flow.data.transcript
 
-import com.arubr.smsvcodes.player.renderer.subtitle.parseSrv3Document
+import io.github.aedev.flow.player.renderer.subtitle.parseSrv3Document
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonObject
 import kotlinx.serialization.json.contentOrNull

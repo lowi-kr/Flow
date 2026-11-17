@@ -1,12 +1,12 @@
-package com.arubr.smsvcodes.ui
+package io.github.aedev.flow.ui
 
 import android.net.Uri
 import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import androidx.navigation.NavOptionsBuilder
-import com.arubr.smsvcodes.data.model.Video
-import com.arubr.smsvcodes.data.shorts.queue.ShortsQueueSource
-import com.arubr.smsvcodes.data.shorts.queue.openAtVideoId
+import io.github.aedev.flow.data.model.Video
+import io.github.aedev.flow.data.shorts.queue.ShortsQueueSource
+import io.github.aedev.flow.data.shorts.queue.openAtVideoId
 
 const val SHORTS_ROUTE_PATTERN = "shorts?src={src}"
 

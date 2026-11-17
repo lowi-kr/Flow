@@ -1,7 +1,7 @@
-package com.arubr.smsvcodes.innertube.pages
+package io.github.aedev.flow.innertube.pages
 
-import com.arubr.smsvcodes.innertube.models.Run
-import com.arubr.smsvcodes.innertube.models.Runs
+import io.github.aedev.flow.innertube.models.Run
+import io.github.aedev.flow.innertube.models.Runs
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNull
 import org.junit.Test

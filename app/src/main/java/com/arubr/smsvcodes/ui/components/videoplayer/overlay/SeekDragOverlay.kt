@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.videoplayer.overlay
+package io.github.aedev.flow.ui.components.videoplayer.overlay
 
 import androidx.compose.animation.*
 import androidx.compose.foundation.background
@@ -12,11 +12,11 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.ui.theme.PlayerScrim
-import com.arubr.smsvcodes.ui.theme.PlayerScrimContent
-import com.arubr.smsvcodes.ui.theme.PlayerScrimPanel
-import com.arubr.smsvcodes.utils.formatDurationMillis
+import io.github.aedev.flow.R
+import io.github.aedev.flow.ui.theme.PlayerScrim
+import io.github.aedev.flow.ui.theme.PlayerScrimContent
+import io.github.aedev.flow.ui.theme.PlayerScrimPanel
+import io.github.aedev.flow.utils.formatDurationMillis
 import kotlin.math.abs
 
 /**

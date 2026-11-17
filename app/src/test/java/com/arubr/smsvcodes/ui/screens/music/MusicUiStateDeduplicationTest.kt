@@ -1,8 +1,8 @@
-package com.arubr.smsvcodes.ui.screens.music
+package io.github.aedev.flow.ui.screens.music
 
-import com.arubr.smsvcodes.data.music.model.MusicPlaylist
-import com.arubr.smsvcodes.data.music.model.MusicTrack
-import com.arubr.smsvcodes.data.recommendation.MusicSection
+import io.github.aedev.flow.data.music.model.MusicPlaylist
+import io.github.aedev.flow.data.music.model.MusicTrack
+import io.github.aedev.flow.data.recommendation.MusicSection
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertSame
 import org.junit.Test

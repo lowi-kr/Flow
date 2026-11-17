@@ -1,8 +1,8 @@
-package com.arubr.smsvcodes.data.shorts
+package io.github.aedev.flow.data.shorts
 
-import com.arubr.smsvcodes.data.local.ViewHistory
-import com.arubr.smsvcodes.data.local.dao.WatchProgress
-import com.arubr.smsvcodes.data.model.ShortVideo
+import io.github.aedev.flow.data.local.ViewHistory
+import io.github.aedev.flow.data.local.dao.WatchProgress
+import io.github.aedev.flow.data.model.ShortVideo
 import javax.inject.Inject
 
 /** Past this fraction a Short is finished, and history records it as played to the end. */

@@ -1,12 +1,12 @@
-package com.arubr.smsvcodes.ui
+package io.github.aedev.flow.ui
 
 import android.net.Uri
 import androidx.navigation.NavController
 import androidx.navigation.NavHostController
-import com.arubr.smsvcodes.data.shorts.queue.ShortsQueueSource
-import com.arubr.smsvcodes.ui.components.layout.navigation.MediaNavigator
-import com.arubr.smsvcodes.ui.components.settings.SettingsTarget
-import com.arubr.smsvcodes.utils.YouTubeLink
+import io.github.aedev.flow.data.shorts.queue.ShortsQueueSource
+import io.github.aedev.flow.ui.components.layout.navigation.MediaNavigator
+import io.github.aedev.flow.ui.components.settings.SettingsTarget
+import io.github.aedev.flow.utils.YouTubeLink
 
 internal const val MUSIC_ARTIST_ROUTE_PATTERN = "artist/{channelId}"
 internal const val MUSIC_PLAYLIST_ROUTE_PATTERN = "musicPlaylist/{playlistId}"

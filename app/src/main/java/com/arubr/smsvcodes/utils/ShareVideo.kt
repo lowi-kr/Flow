@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.utils
+package io.github.aedev.flow.utils
 
 import android.content.ActivityNotFoundException
 import android.content.ClipData
@@ -7,8 +7,8 @@ import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.widget.Toast
-import com.arubr.smsvcodes.MainActivity
-import com.arubr.smsvcodes.R
+import io.github.aedev.flow.MainActivity
+import io.github.aedev.flow.R
 
 /**
  * The canonical watch link for a video, optionally seeked to [positionSeconds].

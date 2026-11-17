@@ -1,6 +1,6 @@
-package com.arubr.smsvcodes.data.model
+package io.github.aedev.flow.data.model
 
-import com.arubr.smsvcodes.data.local.SponsorBlockAction
+import io.github.aedev.flow.data.local.SponsorBlockAction
 
 /**
  * The SponsorBlock categories Flow fetches, configures and submits, in the order settings list them.

@@ -1,8 +1,8 @@
-package com.arubr.smsvcodes.player
+package io.github.aedev.flow.player
 
 import android.app.ActivityManager
 import android.content.Context
-import com.arubr.smsvcodes.service.HeadphoneResume
+import io.github.aedev.flow.service.HeadphoneResume
 
 /**
  * The sleep timer's Close app. It ends both players the way closing them yourself does, so their

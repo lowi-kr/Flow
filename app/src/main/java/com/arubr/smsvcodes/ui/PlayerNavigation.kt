@@ -1,7 +1,7 @@
-package com.arubr.smsvcodes.ui
+package io.github.aedev.flow.ui
 
 import androidx.navigation.NavHostController
-import com.arubr.smsvcodes.player.stream.PlaybackPrefetcher
+import io.github.aedev.flow.player.stream.PlaybackPrefetcher
 
 /**
  * Opens the player for [videoId], warming stream extraction before navigating.

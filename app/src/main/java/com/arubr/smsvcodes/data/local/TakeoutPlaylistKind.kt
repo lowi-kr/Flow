@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.data.local
+package io.github.aedev.flow.data.local
 
 /** The share of a playlist's videos that must be known songs for the playlist to count as music. */
 private const val MUSIC_SHARE = 0.6

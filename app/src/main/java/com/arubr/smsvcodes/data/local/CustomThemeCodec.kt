@@ -1,12 +1,12 @@
-package com.arubr.smsvcodes.data.local
+package io.github.aedev.flow.data.local
 
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.toArgb
-import com.arubr.smsvcodes.ui.theme.CustomTheme
-import com.arubr.smsvcodes.ui.theme.FlowPalettes
-import com.arubr.smsvcodes.ui.theme.PaletteColors
-import com.arubr.smsvcodes.ui.theme.ThemeVariant
-import com.arubr.smsvcodes.ui.theme.mixColors
+import io.github.aedev.flow.ui.theme.CustomTheme
+import io.github.aedev.flow.ui.theme.FlowPalettes
+import io.github.aedev.flow.ui.theme.PaletteColors
+import io.github.aedev.flow.ui.theme.ThemeVariant
+import io.github.aedev.flow.ui.theme.mixColors
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonArray

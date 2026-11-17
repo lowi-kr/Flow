@@ -1,7 +1,7 @@
-package com.arubr.smsvcodes.ui.screens.settings.index
+package io.github.aedev.flow.ui.screens.settings.index
 
-import com.arubr.smsvcodes.ui.components.settings.SettingEntry
-import com.arubr.smsvcodes.utils.foldForSearch
+import io.github.aedev.flow.ui.components.settings.SettingEntry
+import io.github.aedev.flow.utils.foldForSearch
 
 /** A [SettingEntry] with its strings resolved for the current locale, ready to be searched. */
 internal data class SearchableSetting(

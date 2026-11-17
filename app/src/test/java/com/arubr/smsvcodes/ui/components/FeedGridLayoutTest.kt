@@ -1,11 +1,11 @@
-package com.arubr.smsvcodes.ui.components
+package io.github.aedev.flow.ui.components
 
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.google.common.truth.Truth.assertThat
-import com.arubr.smsvcodes.data.local.HomeFeedColumns
-import com.arubr.smsvcodes.ui.components.shared.card.VideoCardDefaults
+import io.github.aedev.flow.data.local.HomeFeedColumns
+import io.github.aedev.flow.ui.components.shared.card.VideoCardDefaults
 import org.junit.Test
 
 /**

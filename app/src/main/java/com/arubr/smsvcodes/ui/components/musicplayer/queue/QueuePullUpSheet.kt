@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.musicplayer.queue
+package io.github.aedev.flow.ui.components.musicplayer.queue
 
 import androidx.activity.compose.BackHandler
 import androidx.compose.animation.core.Animatable

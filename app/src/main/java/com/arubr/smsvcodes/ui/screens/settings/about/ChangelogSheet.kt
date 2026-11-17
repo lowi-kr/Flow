@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.screens.settings.about
+package io.github.aedev.flow.ui.screens.settings.about
 
 import android.content.Context
 import android.util.Log
@@ -53,14 +53,14 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.unit.dp
-import com.arubr.smsvcodes.BuildConfig
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.ui.components.shared.FlowEmptyState
-import com.arubr.smsvcodes.ui.components.shared.FlowLoadingIndicator
-import com.arubr.smsvcodes.ui.components.shared.FlowSegmentedGap
-import com.arubr.smsvcodes.ui.components.shared.FlowSheetHeader
-import com.arubr.smsvcodes.ui.components.shared.flowSegmentShape
-import com.arubr.smsvcodes.ui.components.shared.rememberFlowSheetState
+import io.github.aedev.flow.BuildConfig
+import io.github.aedev.flow.R
+import io.github.aedev.flow.ui.components.shared.FlowEmptyState
+import io.github.aedev.flow.ui.components.shared.FlowLoadingIndicator
+import io.github.aedev.flow.ui.components.shared.FlowSegmentedGap
+import io.github.aedev.flow.ui.components.shared.FlowSheetHeader
+import io.github.aedev.flow.ui.components.shared.flowSegmentShape
+import io.github.aedev.flow.ui.components.shared.rememberFlowSheetState
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import java.time.format.DateTimeFormatter

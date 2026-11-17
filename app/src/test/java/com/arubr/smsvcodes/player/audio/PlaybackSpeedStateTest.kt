@@ -1,8 +1,8 @@
-package com.arubr.smsvcodes.player.audio
+package io.github.aedev.flow.player.audio
 
 import androidx.media3.exoplayer.ExoPlayer
 import com.google.common.truth.Truth.assertThat
-import com.arubr.smsvcodes.player.state.EnhancedPlayerState
+import io.github.aedev.flow.player.state.EnhancedPlayerState
 import io.mockk.every
 import io.mockk.mockk
 import io.mockk.verify

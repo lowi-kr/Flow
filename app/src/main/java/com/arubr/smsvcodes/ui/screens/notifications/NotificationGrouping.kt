@@ -1,6 +1,6 @@
-package com.arubr.smsvcodes.ui.screens.notifications
+package io.github.aedev.flow.ui.screens.notifications
 
-import com.arubr.smsvcodes.data.local.entity.NotificationEntity
+import io.github.aedev.flow.data.local.entity.NotificationEntity
 import java.time.DayOfWeek
 import java.time.Instant
 import java.time.LocalDate

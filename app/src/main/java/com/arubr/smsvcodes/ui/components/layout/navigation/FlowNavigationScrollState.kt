@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.layout.navigation
+package io.github.aedev.flow.ui.components.layout.navigation
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect

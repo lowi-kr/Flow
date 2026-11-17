@@ -1,13 +1,13 @@
-package com.arubr.smsvcodes.data.local
+package io.github.aedev.flow.data.local
 
 import android.app.Application
 import androidx.compose.ui.graphics.Color
 import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.google.common.truth.Truth.assertThat
-import com.arubr.smsvcodes.ui.theme.CustomTheme
-import com.arubr.smsvcodes.ui.theme.ThemeMode
-import com.arubr.smsvcodes.ui.theme.ThemeVariant
+import io.github.aedev.flow.ui.theme.CustomTheme
+import io.github.aedev.flow.ui.theme.ThemeMode
+import io.github.aedev.flow.ui.theme.ThemeVariant
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.runBlocking
 import org.junit.Test

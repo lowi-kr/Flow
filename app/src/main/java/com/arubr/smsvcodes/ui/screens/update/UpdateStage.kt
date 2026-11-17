@@ -1,7 +1,7 @@
-package com.arubr.smsvcodes.ui.screens.update
+package io.github.aedev.flow.ui.screens.update
 
-import com.arubr.smsvcodes.data.update.UpdateDownload
-import com.arubr.smsvcodes.data.update.UpdateFailure
+import io.github.aedev.flow.data.update.UpdateDownload
+import io.github.aedev.flow.data.update.UpdateFailure
 
 const val UPDATE_ROUTE = "update"
 

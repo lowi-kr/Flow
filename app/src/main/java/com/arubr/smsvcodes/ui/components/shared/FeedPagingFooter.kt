@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.shared
+package io.github.aedev.flow.ui.components.shared
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -19,7 +19,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.paging.LoadState
-import com.arubr.smsvcodes.R
+import io.github.aedev.flow.R
 
 /** The tail of any paged feed: loading, a retry, or the end of the results. */
 @OptIn(ExperimentalMaterial3ExpressiveApi::class)

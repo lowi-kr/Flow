@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.videoplayer
+package io.github.aedev.flow.ui.components.videoplayer
 
 import android.content.res.Configuration
 import androidx.compose.foundation.layout.Box
@@ -38,27 +38,27 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.offset
-import com.arubr.smsvcodes.ui.components.videoplayer.motion.BODY_CONTENT_MAX_EXPAND_FRACTION
-import com.arubr.smsvcodes.ui.components.videoplayer.motion.BODY_SLIDE_PX
-import com.arubr.smsvcodes.ui.components.videoplayer.motion.DraggablePlayerGestureHandler
-import com.arubr.smsvcodes.ui.components.videoplayer.motion.DraggablePlayerGestureMetrics
-import com.arubr.smsvcodes.ui.components.videoplayer.motion.MiniPlayerPinchGestureHandler
-import com.arubr.smsvcodes.ui.components.videoplayer.motion.PlayerBodyNestedScrollConnection
-import com.arubr.smsvcodes.ui.components.videoplayer.motion.RoundRectClipShape
-import com.arubr.smsvcodes.ui.components.videoplayer.motion.computeDraggablePlayerGeometry
-import com.arubr.smsvcodes.ui.components.videoplayer.motion.draggablePlayerGestures
-import com.arubr.smsvcodes.ui.components.videoplayer.motion.keyboardSafeMiniY
-import com.arubr.smsvcodes.ui.components.videoplayer.motion.lerpClamped
-import com.arubr.smsvcodes.ui.components.videoplayer.motion.miniPlayerPinchGesture
-import com.arubr.smsvcodes.ui.components.videoplayer.motion.morphCornerRadiusPx
-import com.arubr.smsvcodes.ui.components.videoplayer.motion.openBodyAlpha
-import com.arubr.smsvcodes.ui.components.videoplayer.motion.openGroundCornerRadius
-import com.arubr.smsvcodes.ui.components.videoplayer.motion.openGroundRect
-import com.arubr.smsvcodes.ui.components.videoplayer.motion.resnapTargets
-import com.arubr.smsvcodes.ui.components.videoplayer.motion.resolveOpenOriginRect
-import com.arubr.smsvcodes.ui.components.videoplayer.motion.tallVideoMaxHeight
-import com.arubr.smsvcodes.ui.components.videoplayer.motion.update
-import com.arubr.smsvcodes.ui.theme.PlayerGround
+import io.github.aedev.flow.ui.components.videoplayer.motion.BODY_CONTENT_MAX_EXPAND_FRACTION
+import io.github.aedev.flow.ui.components.videoplayer.motion.BODY_SLIDE_PX
+import io.github.aedev.flow.ui.components.videoplayer.motion.DraggablePlayerGestureHandler
+import io.github.aedev.flow.ui.components.videoplayer.motion.DraggablePlayerGestureMetrics
+import io.github.aedev.flow.ui.components.videoplayer.motion.MiniPlayerPinchGestureHandler
+import io.github.aedev.flow.ui.components.videoplayer.motion.PlayerBodyNestedScrollConnection
+import io.github.aedev.flow.ui.components.videoplayer.motion.RoundRectClipShape
+import io.github.aedev.flow.ui.components.videoplayer.motion.computeDraggablePlayerGeometry
+import io.github.aedev.flow.ui.components.videoplayer.motion.draggablePlayerGestures
+import io.github.aedev.flow.ui.components.videoplayer.motion.keyboardSafeMiniY
+import io.github.aedev.flow.ui.components.videoplayer.motion.lerpClamped
+import io.github.aedev.flow.ui.components.videoplayer.motion.miniPlayerPinchGesture
+import io.github.aedev.flow.ui.components.videoplayer.motion.morphCornerRadiusPx
+import io.github.aedev.flow.ui.components.videoplayer.motion.openBodyAlpha
+import io.github.aedev.flow.ui.components.videoplayer.motion.openGroundCornerRadius
+import io.github.aedev.flow.ui.components.videoplayer.motion.openGroundRect
+import io.github.aedev.flow.ui.components.videoplayer.motion.resnapTargets
+import io.github.aedev.flow.ui.components.videoplayer.motion.resolveOpenOriginRect
+import io.github.aedev.flow.ui.components.videoplayer.motion.tallVideoMaxHeight
+import io.github.aedev.flow.ui.components.videoplayer.motion.update
+import io.github.aedev.flow.ui.theme.PlayerGround
 import kotlin.math.roundToInt
 
 /**

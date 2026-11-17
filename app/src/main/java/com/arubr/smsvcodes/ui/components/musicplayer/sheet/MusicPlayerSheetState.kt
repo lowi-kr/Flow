@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.musicplayer.sheet
+package io.github.aedev.flow.ui.components.musicplayer.sheet
 
 import androidx.compose.animation.core.Animatable
 import androidx.compose.foundation.MutatorMutex

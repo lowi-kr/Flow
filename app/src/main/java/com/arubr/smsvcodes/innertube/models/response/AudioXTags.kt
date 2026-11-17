@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.innertube.models.response
+package io.github.aedev.flow.innertube.models.response
 
 import java.util.Base64
 

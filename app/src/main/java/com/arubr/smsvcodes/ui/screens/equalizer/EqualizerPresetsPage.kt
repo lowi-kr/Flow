@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.screens.equalizer
+package io.github.aedev.flow.ui.screens.equalizer
 
 import androidx.annotation.StringRes
 import androidx.compose.foundation.layout.Arrangement
@@ -32,18 +32,18 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.data.audio.eq.BuiltInEqPresets
-import com.arubr.smsvcodes.data.audio.eq.EqMode
-import com.arubr.smsvcodes.data.audio.eq.EqPreset
-import com.arubr.smsvcodes.data.audio.eq.EqState
-import com.arubr.smsvcodes.ui.components.layout.flowBottomContentPadding
-import com.arubr.smsvcodes.ui.components.shared.FlowNavRow
-import com.arubr.smsvcodes.ui.components.shared.FlowRowGroup
-import com.arubr.smsvcodes.ui.components.shared.FlowSectionHeader
-import com.arubr.smsvcodes.ui.components.shared.FlowSegmentedGap
-import com.arubr.smsvcodes.ui.components.shared.FlowSelectionRow
-import com.arubr.smsvcodes.ui.components.shared.flowRowGroupShape
+import io.github.aedev.flow.R
+import io.github.aedev.flow.data.audio.eq.BuiltInEqPresets
+import io.github.aedev.flow.data.audio.eq.EqMode
+import io.github.aedev.flow.data.audio.eq.EqPreset
+import io.github.aedev.flow.data.audio.eq.EqState
+import io.github.aedev.flow.ui.components.layout.flowBottomContentPadding
+import io.github.aedev.flow.ui.components.shared.FlowNavRow
+import io.github.aedev.flow.ui.components.shared.FlowRowGroup
+import io.github.aedev.flow.ui.components.shared.FlowSectionHeader
+import io.github.aedev.flow.ui.components.shared.FlowSegmentedGap
+import io.github.aedev.flow.ui.components.shared.FlowSelectionRow
+import io.github.aedev.flow.ui.components.shared.flowRowGroupShape
 
 private val ItemInset = 12.dp
 

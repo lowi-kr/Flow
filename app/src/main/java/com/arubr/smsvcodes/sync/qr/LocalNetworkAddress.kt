@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.sync.qr
+package io.github.aedev.flow.sync.qr
 
 import java.net.Inet4Address
 import java.net.Inet6Address

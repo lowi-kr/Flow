@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.screens.playlists
+package io.github.aedev.flow.ui.screens.playlists
 
 import androidx.activity.compose.BackHandler
 import androidx.activity.compose.rememberLauncherForActivityResult
@@ -37,24 +37,24 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.data.model.PlaylistInfo
-import com.arubr.smsvcodes.data.playlist.PlaylistImport
-import com.arubr.smsvcodes.data.playlist.PlaylistListOrder
-import com.arubr.smsvcodes.ui.components.layout.LocalFlowBottomInsets
-import com.arubr.smsvcodes.ui.components.layout.floatAboveBottomChrome
-import com.arubr.smsvcodes.ui.components.layout.topbar.FlowTopBar
-import com.arubr.smsvcodes.ui.components.library.PlaylistCreationFabMenu
-import com.arubr.smsvcodes.ui.components.library.PlaylistCreationTarget
-import com.arubr.smsvcodes.ui.components.library.PlaylistLibraryFilterRow
-import com.arubr.smsvcodes.ui.components.library.PlaylistOwnershipFilter
-import com.arubr.smsvcodes.ui.components.library.message
-import com.arubr.smsvcodes.ui.components.shared.CollectionEditDialog
-import com.arubr.smsvcodes.ui.components.shared.DeleteCollectionDialog
-import com.arubr.smsvcodes.ui.components.shared.MediaKind
-import com.arubr.smsvcodes.ui.components.shared.quickactions.sharedQuickActionsViewModel
-import com.arubr.smsvcodes.ui.screens.music.MusicPlaylistsViewModel
-import com.arubr.smsvcodes.utils.PLAYLIST_FILE_MIME_TYPE
+import io.github.aedev.flow.R
+import io.github.aedev.flow.data.model.PlaylistInfo
+import io.github.aedev.flow.data.playlist.PlaylistImport
+import io.github.aedev.flow.data.playlist.PlaylistListOrder
+import io.github.aedev.flow.ui.components.layout.LocalFlowBottomInsets
+import io.github.aedev.flow.ui.components.layout.floatAboveBottomChrome
+import io.github.aedev.flow.ui.components.layout.topbar.FlowTopBar
+import io.github.aedev.flow.ui.components.library.PlaylistCreationFabMenu
+import io.github.aedev.flow.ui.components.library.PlaylistCreationTarget
+import io.github.aedev.flow.ui.components.library.PlaylistLibraryFilterRow
+import io.github.aedev.flow.ui.components.library.PlaylistOwnershipFilter
+import io.github.aedev.flow.ui.components.library.message
+import io.github.aedev.flow.ui.components.shared.CollectionEditDialog
+import io.github.aedev.flow.ui.components.shared.DeleteCollectionDialog
+import io.github.aedev.flow.ui.components.shared.MediaKind
+import io.github.aedev.flow.ui.components.shared.quickactions.sharedQuickActionsViewModel
+import io.github.aedev.flow.ui.screens.music.MusicPlaylistsViewModel
+import io.github.aedev.flow.utils.PLAYLIST_FILE_MIME_TYPE
 import kotlinx.coroutines.launch
 
 private val FabMenuPadding = 16.dp

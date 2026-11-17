@@ -1,6 +1,6 @@
-package com.arubr.smsvcodes.innertube.models.response
+package io.github.aedev.flow.innertube.models.response
 
-import com.arubr.smsvcodes.innertube.models.SearchSuggestionsSectionRenderer
+import io.github.aedev.flow.innertube.models.SearchSuggestionsSectionRenderer
 import kotlinx.serialization.Serializable
 
 @Serializable

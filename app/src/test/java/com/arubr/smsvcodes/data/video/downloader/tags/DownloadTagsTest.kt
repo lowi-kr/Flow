@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.data.video.downloader.tags
+package io.github.aedev.flow.data.video.downloader.tags
 
 import com.google.common.truth.Truth.assertThat
 import kotlinx.serialization.json.Json
@@ -74,8 +74,8 @@ class DownloadTagsTest {
 
     @Test
     fun `mdta keys are namespaced`() {
-        assertThat(FlowTagFields.mdtaKey("videoId")).isEqualTo("com.arubr.smsvcodes.videoId")
-        assertThat(FlowTagFields.fieldFromMdtaKey("com.arubr.smsvcodes.videoId")).isEqualTo("videoId")
+        assertThat(FlowTagFields.mdtaKey("videoId")).isEqualTo("io.github.aedev.flow.videoId")
+        assertThat(FlowTagFields.fieldFromMdtaKey("io.github.aedev.flow.videoId")).isEqualTo("videoId")
         assertThat(FlowTagFields.fieldFromMdtaKey("com.android.capture.fps")).isNull()
     }
 

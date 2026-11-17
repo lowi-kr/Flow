@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.musicplayer.lyrics
+package io.github.aedev.flow.ui.components.musicplayer.lyrics
 
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.Spring
@@ -36,8 +36,8 @@ import androidx.compose.ui.text.style.ResolvedTextDirection
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.Constraints
 import androidx.compose.ui.unit.dp
-import com.arubr.smsvcodes.data.lyrics.WordTimestamp
-import com.arubr.smsvcodes.player.EnhancedMusicPlayerManager
+import io.github.aedev.flow.data.lyrics.WordTimestamp
+import io.github.aedev.flow.player.EnhancedMusicPlayerManager
 import kotlinx.coroutines.isActive
 import kotlin.math.PI
 import kotlin.math.cos

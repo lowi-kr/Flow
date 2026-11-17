@@ -1,6 +1,6 @@
-package com.arubr.smsvcodes.player.config
+package io.github.aedev.flow.player.config
 
-import com.arubr.smsvcodes.player.stream.VideoCodecUtils
+import io.github.aedev.flow.player.stream.VideoCodecUtils
 
 object PlayerConfig {
     const val TAG = "EnhancedPlayerManager"

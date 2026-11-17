@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.screens.settings.appearance.theme
+package io.github.aedev.flow.ui.screens.settings.appearance.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Arrangement
@@ -24,23 +24,23 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.ui.components.settings.SettingsDestination
-import com.arubr.smsvcodes.ui.components.settings.SettingsPage
-import com.arubr.smsvcodes.ui.components.settings.SettingsTarget
-import com.arubr.smsvcodes.ui.components.settings.nav
-import com.arubr.smsvcodes.ui.components.settings.switch
-import com.arubr.smsvcodes.ui.components.settings.toggleGroup
-import com.arubr.smsvcodes.ui.components.shared.FlowAlertDialog
-import com.arubr.smsvcodes.ui.components.shared.FlowToggleOption
-import com.arubr.smsvcodes.ui.screens.settings.appearance.themeVariantLabel
-import com.arubr.smsvcodes.ui.screens.settings.index.DestinationIndex
-import com.arubr.smsvcodes.ui.screens.settings.index.ThemeIndex
-import com.arubr.smsvcodes.ui.theme.CustomTheme
-import com.arubr.smsvcodes.ui.theme.ThemeCatalog
-import com.arubr.smsvcodes.ui.theme.ThemeCatalogEntry
-import com.arubr.smsvcodes.ui.theme.ThemeMode
-import com.arubr.smsvcodes.ui.theme.ThemeVariant
+import io.github.aedev.flow.R
+import io.github.aedev.flow.ui.components.settings.SettingsDestination
+import io.github.aedev.flow.ui.components.settings.SettingsPage
+import io.github.aedev.flow.ui.components.settings.SettingsTarget
+import io.github.aedev.flow.ui.components.settings.nav
+import io.github.aedev.flow.ui.components.settings.switch
+import io.github.aedev.flow.ui.components.settings.toggleGroup
+import io.github.aedev.flow.ui.components.shared.FlowAlertDialog
+import io.github.aedev.flow.ui.components.shared.FlowToggleOption
+import io.github.aedev.flow.ui.screens.settings.appearance.themeVariantLabel
+import io.github.aedev.flow.ui.screens.settings.index.DestinationIndex
+import io.github.aedev.flow.ui.screens.settings.index.ThemeIndex
+import io.github.aedev.flow.ui.theme.CustomTheme
+import io.github.aedev.flow.ui.theme.ThemeCatalog
+import io.github.aedev.flow.ui.theme.ThemeCatalogEntry
+import io.github.aedev.flow.ui.theme.ThemeMode
+import io.github.aedev.flow.ui.theme.ThemeVariant
 
 private val PaletteDialogMaxHeight = 440.dp
 private val PaletteDialogSpacing = 8.dp

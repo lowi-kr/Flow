@@ -1,15 +1,15 @@
-package com.arubr.smsvcodes.ui.components.shared.card
+package io.github.aedev.flow.ui.components.shared.card
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.produceState
 import androidx.compose.runtime.remember
 import androidx.compose.ui.res.stringResource
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.data.model.Video
-import com.arubr.smsvcodes.data.model.VideoCollaborator
-import com.arubr.smsvcodes.data.model.needsCollaboratorResolution
-import com.arubr.smsvcodes.data.repository.VideoCollaboratorResolver
+import io.github.aedev.flow.R
+import io.github.aedev.flow.data.model.Video
+import io.github.aedev.flow.data.model.VideoCollaborator
+import io.github.aedev.flow.data.model.needsCollaboratorResolution
+import io.github.aedev.flow.data.repository.VideoCollaboratorResolver
 
 internal fun Video.collaboratorItems(resolvedCollaborators: List<VideoCollaborator> = emptyList()): List<VideoCollaborator> =
     (collaborators + resolvedCollaborators)

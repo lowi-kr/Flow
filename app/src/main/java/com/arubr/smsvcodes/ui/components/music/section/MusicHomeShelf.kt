@@ -1,7 +1,7 @@
-package com.arubr.smsvcodes.ui.components.music.section
+package io.github.aedev.flow.ui.components.music.section
 
 import androidx.annotation.StringRes
-import com.arubr.smsvcodes.R
+import io.github.aedev.flow.R
 
 /**
  * Every music home section the viewer can hide. The names are stored, so they must never be

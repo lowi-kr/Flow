@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.screens.player.state
+package io.github.aedev.flow.ui.screens.player.state
 
 import androidx.compose.ui.unit.Density
 import androidx.compose.ui.unit.dp

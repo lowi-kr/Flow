@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.data.model
+package io.github.aedev.flow.data.model
 
 import kotlinx.serialization.Serializable
 import org.schabi.newpipe.extractor.Page

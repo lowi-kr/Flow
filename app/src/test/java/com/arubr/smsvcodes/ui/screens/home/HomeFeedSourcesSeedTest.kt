@@ -4,12 +4,12 @@
  * This file is part of Flow (https://github.com/Flow-Tube/Flow).
  */
 
-package com.arubr.smsvcodes.ui.screens.home
+package io.github.aedev.flow.ui.screens.home
 
 import com.google.common.truth.Truth.assertThat
-import com.arubr.smsvcodes.data.local.LikedVideosRepository
-import com.arubr.smsvcodes.data.local.VideoHistoryEntry
-import com.arubr.smsvcodes.data.local.ViewHistory
+import io.github.aedev.flow.data.local.LikedVideosRepository
+import io.github.aedev.flow.data.local.VideoHistoryEntry
+import io.github.aedev.flow.data.local.ViewHistory
 import io.mockk.coEvery
 import io.mockk.mockk
 import kotlinx.coroutines.test.runTest

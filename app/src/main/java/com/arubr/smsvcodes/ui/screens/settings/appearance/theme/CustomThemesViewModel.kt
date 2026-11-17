@@ -1,17 +1,17 @@
-package com.arubr.smsvcodes.ui.screens.settings.appearance.theme
+package io.github.aedev.flow.ui.screens.settings.appearance.theme
 
 import android.content.Context
 import android.net.Uri
 import android.util.Log
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
-import com.arubr.smsvcodes.data.local.CustomThemeCodec
-import com.arubr.smsvcodes.data.local.LocalDataManager
-import com.arubr.smsvcodes.ui.screens.settings.SettingsViewModel
-import com.arubr.smsvcodes.ui.theme.CustomTheme
-import com.arubr.smsvcodes.ui.theme.FlowPalettes
-import com.arubr.smsvcodes.ui.theme.ThemeMode
-import com.arubr.smsvcodes.ui.theme.ThemeVariant
+import io.github.aedev.flow.data.local.CustomThemeCodec
+import io.github.aedev.flow.data.local.LocalDataManager
+import io.github.aedev.flow.ui.screens.settings.SettingsViewModel
+import io.github.aedev.flow.ui.theme.CustomTheme
+import io.github.aedev.flow.ui.theme.FlowPalettes
+import io.github.aedev.flow.ui.theme.ThemeMode
+import io.github.aedev.flow.ui.theme.ThemeVariant
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow

@@ -1,6 +1,6 @@
-package com.arubr.smsvcodes.ui.components.videoplayer.sheet
+package io.github.aedev.flow.ui.components.videoplayer.sheet
 
-import com.arubr.smsvcodes.data.model.Video
+import io.github.aedev.flow.data.model.Video
 
 /**
  * One key per queue row that survives removals and moves: the video id, plus how many times the

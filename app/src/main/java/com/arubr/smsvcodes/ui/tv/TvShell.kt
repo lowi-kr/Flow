@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.tv
+package io.github.aedev.flow.ui.tv
 
 import androidx.activity.compose.BackHandler
 import androidx.compose.animation.AnimatedVisibility
@@ -40,22 +40,22 @@ import androidx.media3.common.util.UnstableApi
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
-import com.arubr.smsvcodes.data.model.Video
-import com.arubr.smsvcodes.data.music.model.MusicTrack
-import com.arubr.smsvcodes.ui.TabScrollEventBus
-import com.arubr.smsvcodes.ui.components.layout.FlowBottomInsets
-import com.arubr.smsvcodes.ui.components.layout.LocalFlowBottomInsets
-import com.arubr.smsvcodes.ui.components.shared.MediaMiniBarDefaults
-import com.arubr.smsvcodes.ui.screens.home.HomeViewModel
-import com.arubr.smsvcodes.ui.screens.music.MusicPlayerViewModel
-import com.arubr.smsvcodes.ui.screens.music.MusicViewModel
-import com.arubr.smsvcodes.ui.screens.search.SearchViewModel
-import com.arubr.smsvcodes.ui.screens.subscriptions.SubscriptionsViewModel
-import com.arubr.smsvcodes.ui.tv.components.TvNavRail
-import com.arubr.smsvcodes.ui.tv.music.TvMiniPlayer
-import com.arubr.smsvcodes.ui.tv.navigation.TvNavHost
-import com.arubr.smsvcodes.ui.tv.navigation.TvNavigation
-import com.arubr.smsvcodes.ui.tv.theme.LocalTvDimens
+import io.github.aedev.flow.data.model.Video
+import io.github.aedev.flow.data.music.model.MusicTrack
+import io.github.aedev.flow.ui.TabScrollEventBus
+import io.github.aedev.flow.ui.components.layout.FlowBottomInsets
+import io.github.aedev.flow.ui.components.layout.LocalFlowBottomInsets
+import io.github.aedev.flow.ui.components.shared.MediaMiniBarDefaults
+import io.github.aedev.flow.ui.screens.home.HomeViewModel
+import io.github.aedev.flow.ui.screens.music.MusicPlayerViewModel
+import io.github.aedev.flow.ui.screens.music.MusicViewModel
+import io.github.aedev.flow.ui.screens.search.SearchViewModel
+import io.github.aedev.flow.ui.screens.subscriptions.SubscriptionsViewModel
+import io.github.aedev.flow.ui.tv.components.TvNavRail
+import io.github.aedev.flow.ui.tv.music.TvMiniPlayer
+import io.github.aedev.flow.ui.tv.navigation.TvNavHost
+import io.github.aedev.flow.ui.tv.navigation.TvNavigation
+import io.github.aedev.flow.ui.tv.theme.LocalTvDimens
 
 /**
  * TV browse shell: content laid out against the collapsed rail width, with the mini player floating

@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.layout.topbar
+package io.github.aedev.flow.ui.components.layout.topbar
 
 import androidx.compose.foundation.layout.RowScope
 import androidx.compose.foundation.layout.WindowInsets
@@ -8,7 +8,7 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.focus.FocusRequester
-import com.arubr.smsvcodes.ui.components.shared.FlowSearchField
+import io.github.aedev.flow.ui.components.shared.FlowSearchField
 
 /**
  * Search variant of [FlowTopBar]: back button, inline field, optional trailing actions.

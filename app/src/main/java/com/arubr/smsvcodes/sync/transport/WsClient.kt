@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.sync.transport
+package io.github.aedev.flow.sync.transport
 
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.suspendCancellableCoroutine

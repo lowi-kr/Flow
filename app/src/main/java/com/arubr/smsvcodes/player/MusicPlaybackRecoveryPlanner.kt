@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.player
+package io.github.aedev.flow.player
 
 /**
  * Works out which playlist item a playback error belongs to.

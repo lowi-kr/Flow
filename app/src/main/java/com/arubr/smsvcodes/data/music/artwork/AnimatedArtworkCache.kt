@@ -1,9 +1,9 @@
-package com.arubr.smsvcodes.data.music.artwork
+package io.github.aedev.flow.data.music.artwork
 
 import android.content.Context
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.stringPreferencesKey
-import com.arubr.smsvcodes.data.local.safePreferencesDataStore
+import io.github.aedev.flow.data.local.safePreferencesDataStore
 import kotlinx.coroutines.flow.first
 
 /** A lookup answered before: the loop, or null when the album has none, and when it was asked. */

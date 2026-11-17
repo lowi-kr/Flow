@@ -4,7 +4,7 @@
 // THIS IMPLEMENTATION WAS INSPIRED BY METROLIST
 // ============================================================================
 
-package com.arubr.smsvcodes.ui.components.musicplayer.controls
+package io.github.aedev.flow.ui.components.musicplayer.controls
 
 import androidx.compose.animation.core.*
 import androidx.compose.foundation.Canvas
@@ -26,7 +26,7 @@ import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.DpSize
 import androidx.compose.ui.unit.dp
-import com.arubr.smsvcodes.data.local.SliderStyle
+import io.github.aedev.flow.data.local.SliderStyle
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.isActive
 import kotlinx.coroutines.launch

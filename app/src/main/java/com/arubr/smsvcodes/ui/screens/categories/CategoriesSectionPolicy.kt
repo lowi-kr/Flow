@@ -1,7 +1,7 @@
-package com.arubr.smsvcodes.ui.screens.categories
+package io.github.aedev.flow.ui.screens.categories
 
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.innertube.pages.explore.ExploreDestination
+import io.github.aedev.flow.R
+import io.github.aedev.flow.innertube.pages.explore.ExploreDestination
 
 /** One tab of the Explore screen, and everything the ViewModel needs to load it. */
 data class CategoryTab(

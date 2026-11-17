@@ -1,7 +1,7 @@
-package com.arubr.smsvcodes.player.quality
+package io.github.aedev.flow.player.quality
 
-import com.arubr.smsvcodes.player.config.PlayerConfig
-import com.arubr.smsvcodes.player.stream.VideoCodecUtils
+import io.github.aedev.flow.player.config.PlayerConfig
+import io.github.aedev.flow.player.stream.VideoCodecUtils
 import org.schabi.newpipe.extractor.stream.VideoStream
 
 /**

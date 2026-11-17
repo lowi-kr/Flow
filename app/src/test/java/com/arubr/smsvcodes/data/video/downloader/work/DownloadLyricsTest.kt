@@ -1,12 +1,12 @@
-package com.arubr.smsvcodes.data.video.downloader.work
+package io.github.aedev.flow.data.video.downloader.work
 
 import com.google.common.truth.Truth.assertThat
-import com.arubr.smsvcodes.data.local.dao.DownloadDao
-import com.arubr.smsvcodes.data.lyrics.LyricsEntry
-import com.arubr.smsvcodes.data.lyrics.LyricsHelper
-import com.arubr.smsvcodes.data.video.downloader.request.DownloadRequest
-import com.arubr.smsvcodes.data.video.downloader.tags.DownloadKind
-import com.arubr.smsvcodes.data.video.downloader.tags.DownloadTags
+import io.github.aedev.flow.data.local.dao.DownloadDao
+import io.github.aedev.flow.data.lyrics.LyricsEntry
+import io.github.aedev.flow.data.lyrics.LyricsHelper
+import io.github.aedev.flow.data.video.downloader.request.DownloadRequest
+import io.github.aedev.flow.data.video.downloader.tags.DownloadKind
+import io.github.aedev.flow.data.video.downloader.tags.DownloadTags
 import io.mockk.coEvery
 import io.mockk.coVerify
 import io.mockk.every

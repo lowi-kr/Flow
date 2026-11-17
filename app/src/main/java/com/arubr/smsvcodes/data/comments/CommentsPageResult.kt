@@ -1,7 +1,7 @@
-package com.arubr.smsvcodes.data.comments
+package io.github.aedev.flow.data.comments
 
-import com.arubr.smsvcodes.data.model.Comment
-import com.arubr.smsvcodes.innertube.pages.VideoCommentSort
+import io.github.aedev.flow.data.model.Comment
+import io.github.aedev.flow.innertube.pages.VideoCommentSort
 import org.schabi.newpipe.extractor.Page
 
 /**

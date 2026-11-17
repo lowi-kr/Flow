@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components
+package io.github.aedev.flow.ui.components
 
 import androidx.compose.animation.core.FastOutSlowInEasing
 import androidx.compose.animation.core.RepeatMode

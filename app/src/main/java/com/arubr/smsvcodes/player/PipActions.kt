@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.player
+package io.github.aedev.flow.player
 
 /** Whether the queue behind a PiP window can step back or forward. */
 data class PipQueueNavigation(

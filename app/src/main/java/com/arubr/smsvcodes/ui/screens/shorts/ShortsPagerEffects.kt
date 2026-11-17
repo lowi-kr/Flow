@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.screens.shorts
+package io.github.aedev.flow.ui.screens.shorts
 
 import android.util.Log
 import androidx.compose.foundation.pager.PagerState
@@ -8,9 +8,9 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.snapshotFlow
 import androidx.compose.ui.platform.LocalContext
-import com.arubr.smsvcodes.data.local.PlayerPreferences
-import com.arubr.smsvcodes.data.model.ShortVideo
-import com.arubr.smsvcodes.player.shorts.ShortsPlayerPool
+import io.github.aedev.flow.data.local.PlayerPreferences
+import io.github.aedev.flow.data.model.ShortVideo
+import io.github.aedev.flow.player.shorts.ShortsPlayerPool
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch

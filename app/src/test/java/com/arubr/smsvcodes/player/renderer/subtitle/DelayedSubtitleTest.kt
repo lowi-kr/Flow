@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.player.renderer.subtitle
+package io.github.aedev.flow.player.renderer.subtitle
 
 import androidx.media3.common.text.Cue
 import androidx.media3.extractor.text.Subtitle

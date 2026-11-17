@@ -1,6 +1,6 @@
-package com.arubr.smsvcodes.innertube.models.response
+package io.github.aedev.flow.innertube.models.response
 
-import com.arubr.smsvcodes.innertube.models.PlaylistPanelRenderer
+import io.github.aedev.flow.innertube.models.PlaylistPanelRenderer
 import kotlinx.serialization.Serializable
 
 @Serializable

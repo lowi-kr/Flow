@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.player.dlna
+package io.github.aedev.flow.player.dlna
 
 import com.google.common.truth.Truth.assertThat
 import org.junit.Test

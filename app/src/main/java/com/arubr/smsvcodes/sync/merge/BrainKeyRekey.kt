@@ -1,12 +1,12 @@
-package com.arubr.smsvcodes.sync.merge
+package io.github.aedev.flow.sync.merge
 
-import com.arubr.smsvcodes.data.recommendation.NeuroScoring
-import com.arubr.smsvcodes.sync.canonical.CanonicalBrain
-import com.arubr.smsvcodes.sync.canonical.CanonicalBrainVectors
-import com.arubr.smsvcodes.sync.canonical.CanonicalVector
-import com.arubr.smsvcodes.sync.canonical.GCounter
-import com.arubr.smsvcodes.sync.canonical.Lww
-import com.arubr.smsvcodes.sync.identity.Hlc
+import io.github.aedev.flow.data.recommendation.NeuroScoring
+import io.github.aedev.flow.sync.canonical.CanonicalBrain
+import io.github.aedev.flow.sync.canonical.CanonicalBrainVectors
+import io.github.aedev.flow.sync.canonical.CanonicalVector
+import io.github.aedev.flow.sync.canonical.GCounter
+import io.github.aedev.flow.sync.canonical.Lww
+import io.github.aedev.flow.sync.identity.Hlc
 
 /**
  * Topic keys read again by this device's key spec (#907). A peer on an older spec, or the sidecar

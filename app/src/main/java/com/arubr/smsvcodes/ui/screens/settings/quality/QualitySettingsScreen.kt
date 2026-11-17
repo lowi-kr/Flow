@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.screens.settings.quality
+package io.github.aedev.flow.ui.screens.settings.quality
 
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
@@ -16,21 +16,21 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.data.local.MusicAudioQuality
-import com.arubr.smsvcodes.data.local.ThumbnailQuality
-import com.arubr.smsvcodes.data.local.VideoCodec
-import com.arubr.smsvcodes.data.local.VideoQuality
-import com.arubr.smsvcodes.ui.components.settings.SettingsPage
-import com.arubr.smsvcodes.ui.components.settings.SettingsTabs
-import com.arubr.smsvcodes.ui.components.settings.nav
-import com.arubr.smsvcodes.ui.components.settings.notice
-import com.arubr.smsvcodes.ui.components.settings.option
-import com.arubr.smsvcodes.ui.components.shared.FlowChoice
-import com.arubr.smsvcodes.ui.components.shared.FlowChoiceDialog
-import com.arubr.smsvcodes.ui.components.shared.FlowConnectedToggleGroup
-import com.arubr.smsvcodes.ui.components.shared.FlowToggleOption
-import com.arubr.smsvcodes.ui.screens.settings.index.QualityIndex
+import io.github.aedev.flow.R
+import io.github.aedev.flow.data.local.MusicAudioQuality
+import io.github.aedev.flow.data.local.ThumbnailQuality
+import io.github.aedev.flow.data.local.VideoCodec
+import io.github.aedev.flow.data.local.VideoQuality
+import io.github.aedev.flow.ui.components.settings.SettingsPage
+import io.github.aedev.flow.ui.components.settings.SettingsTabs
+import io.github.aedev.flow.ui.components.settings.nav
+import io.github.aedev.flow.ui.components.settings.notice
+import io.github.aedev.flow.ui.components.settings.option
+import io.github.aedev.flow.ui.components.shared.FlowChoice
+import io.github.aedev.flow.ui.components.shared.FlowChoiceDialog
+import io.github.aedev.flow.ui.components.shared.FlowConnectedToggleGroup
+import io.github.aedev.flow.ui.components.shared.FlowToggleOption
+import io.github.aedev.flow.ui.screens.settings.index.QualityIndex
 
 private val TabsBottomPadding = 8.dp
 

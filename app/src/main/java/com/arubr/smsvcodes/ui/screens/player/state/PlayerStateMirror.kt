@@ -1,8 +1,8 @@
-package com.arubr.smsvcodes.ui.screens.player.state
+package io.github.aedev.flow.ui.screens.player.state
 
-import com.arubr.smsvcodes.data.engagement.FeedInvalidationBus
-import com.arubr.smsvcodes.data.model.LiveChatMessage
-import com.arubr.smsvcodes.player.state.EnhancedPlayerState
+import io.github.aedev.flow.data.engagement.FeedInvalidationBus
+import io.github.aedev.flow.data.model.LiveChatMessage
+import io.github.aedev.flow.player.state.EnhancedPlayerState
 
 /*
  * What the player screen mirrors from outside itself: the player's own state, the live chat drip,

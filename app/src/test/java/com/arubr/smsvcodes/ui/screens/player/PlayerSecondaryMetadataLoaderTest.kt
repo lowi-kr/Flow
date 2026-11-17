@@ -1,13 +1,13 @@
-package com.arubr.smsvcodes.ui.screens.player
+package io.github.aedev.flow.ui.screens.player
 
 import com.google.common.truth.Truth.assertThat
-import com.arubr.smsvcodes.data.local.PlayerPreferences
-import com.arubr.smsvcodes.data.model.Video
-import com.arubr.smsvcodes.data.recommendation.FeedExclusions
-import com.arubr.smsvcodes.data.repository.YouTubeRepository
-import com.arubr.smsvcodes.player.EnhancedPlayerManager
-import com.arubr.smsvcodes.player.state.EnhancedPlayerState
-import com.arubr.smsvcodes.ui.screens.player.state.VideoPlayerUiState
+import io.github.aedev.flow.data.local.PlayerPreferences
+import io.github.aedev.flow.data.model.Video
+import io.github.aedev.flow.data.recommendation.FeedExclusions
+import io.github.aedev.flow.data.repository.YouTubeRepository
+import io.github.aedev.flow.player.EnhancedPlayerManager
+import io.github.aedev.flow.player.state.EnhancedPlayerState
+import io.github.aedev.flow.ui.screens.player.state.VideoPlayerUiState
 import io.mockk.coEvery
 import io.mockk.coVerify
 import io.mockk.every
@@ -34,7 +34,7 @@ import org.schabi.newpipe.extractor.channel.ChannelInfo
 /**
  * Pins the fetch economy of [PlayerSecondaryMetadataLoader]: one request per concern per load,
  * a repeat while that request is in flight dropped, a new video cancelling the old one, and every
- * related list leaving through [com.arubr.smsvcodes.player.PlayerRelatedVideosPolicy].
+ * related list leaving through [io.github.aedev.flow.player.PlayerRelatedVideosPolicy].
  */
 @OptIn(ExperimentalCoroutinesApi::class)
 class PlayerSecondaryMetadataLoaderTest {

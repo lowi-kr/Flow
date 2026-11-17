@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.screens.music
+package io.github.aedev.flow.ui.screens.music
 
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
@@ -15,31 +15,31 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.data.music.model.MusicTrack
-import com.arubr.smsvcodes.innertube.models.AlbumItem
-import com.arubr.smsvcodes.innertube.models.ArtistItem
-import com.arubr.smsvcodes.innertube.models.PlaylistItem
-import com.arubr.smsvcodes.innertube.models.SongItem
-import com.arubr.smsvcodes.innertube.models.YTItem
-import com.arubr.smsvcodes.innertube.pages.MoodAndGenres
-import com.arubr.smsvcodes.innertube.pages.SearchSummaryKind
-import com.arubr.smsvcodes.ui.components.layout.flowBottomContentPadding
-import com.arubr.smsvcodes.ui.components.music.card.TopResultCard
-import com.arubr.smsvcodes.ui.components.music.header.MusicSectionHeader
-import com.arubr.smsvcodes.ui.components.music.item.MusicCollectionRow
-import com.arubr.smsvcodes.ui.components.music.search.SearchFilterChips
-import com.arubr.smsvcodes.ui.components.music.search.SearchSuggestionRow
-import com.arubr.smsvcodes.ui.components.music.search.musicSearchFilters
-import com.arubr.smsvcodes.ui.components.music.search.searchSummaryTitle
-import com.arubr.smsvcodes.ui.components.music.section.MusicMoodsShelf
-import com.arubr.smsvcodes.ui.components.music.sheet.LocalMusicMenus
-import com.arubr.smsvcodes.ui.components.music.sheet.toCollectionActionItem
-import com.arubr.smsvcodes.ui.components.search.searchHistoryItems
-import com.arubr.smsvcodes.ui.components.shared.FlowEmptyState
-import com.arubr.smsvcodes.ui.components.shared.FlowErrorState
-import com.arubr.smsvcodes.ui.components.shared.FlowFeedProgress
-import com.arubr.smsvcodes.ui.components.shared.FlowLoadingIndicator
+import io.github.aedev.flow.R
+import io.github.aedev.flow.data.music.model.MusicTrack
+import io.github.aedev.flow.innertube.models.AlbumItem
+import io.github.aedev.flow.innertube.models.ArtistItem
+import io.github.aedev.flow.innertube.models.PlaylistItem
+import io.github.aedev.flow.innertube.models.SongItem
+import io.github.aedev.flow.innertube.models.YTItem
+import io.github.aedev.flow.innertube.pages.MoodAndGenres
+import io.github.aedev.flow.innertube.pages.SearchSummaryKind
+import io.github.aedev.flow.ui.components.layout.flowBottomContentPadding
+import io.github.aedev.flow.ui.components.music.card.TopResultCard
+import io.github.aedev.flow.ui.components.music.header.MusicSectionHeader
+import io.github.aedev.flow.ui.components.music.item.MusicCollectionRow
+import io.github.aedev.flow.ui.components.music.search.SearchFilterChips
+import io.github.aedev.flow.ui.components.music.search.SearchSuggestionRow
+import io.github.aedev.flow.ui.components.music.search.musicSearchFilters
+import io.github.aedev.flow.ui.components.music.search.searchSummaryTitle
+import io.github.aedev.flow.ui.components.music.section.MusicMoodsShelf
+import io.github.aedev.flow.ui.components.music.sheet.LocalMusicMenus
+import io.github.aedev.flow.ui.components.music.sheet.toCollectionActionItem
+import io.github.aedev.flow.ui.components.search.searchHistoryItems
+import io.github.aedev.flow.ui.components.shared.FlowEmptyState
+import io.github.aedev.flow.ui.components.shared.FlowErrorState
+import io.github.aedev.flow.ui.components.shared.FlowFeedProgress
+import io.github.aedev.flow.ui.components.shared.FlowLoadingIndicator
 
 private const val RECOMMENDED_SOURCE = "Recommended"
 

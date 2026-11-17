@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.screens.search
+package io.github.aedev.flow.ui.screens.search
 
 import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.foundation.layout.ColumnScope
@@ -17,31 +17,31 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.paging.LoadState
 import androidx.paging.compose.LazyPagingItems
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.data.local.ContentType
-import com.arubr.smsvcodes.data.local.HomeFeedColumns
-import com.arubr.smsvcodes.data.local.SearchFilter
-import com.arubr.smsvcodes.data.local.WatchState
-import com.arubr.smsvcodes.data.model.Channel
-import com.arubr.smsvcodes.data.model.Playlist
-import com.arubr.smsvcodes.data.model.Video
-import com.arubr.smsvcodes.data.paging.SearchResultItem
-import com.arubr.smsvcodes.data.paging.supportsVideoFilters
-import com.arubr.smsvcodes.data.shorts.queue.ShortsQueueSource
-import com.arubr.smsvcodes.ui.components.FEED_MAX_AUTO_COLUMNS
-import com.arubr.smsvcodes.ui.components.FeedCardMinWidth
-import com.arubr.smsvcodes.ui.components.layout.navigation.LocalMediaNavigator
-import com.arubr.smsvcodes.ui.components.rememberFeedGridLayout
-import com.arubr.smsvcodes.ui.components.search.SearchFilterBar
-import com.arubr.smsvcodes.ui.components.search.SearchResultActions
-import com.arubr.smsvcodes.ui.components.search.SearchResults
-import com.arubr.smsvcodes.ui.components.search.SearchShortsGrid
-import com.arubr.smsvcodes.ui.components.shared.FeedGridSkeleton
-import com.arubr.smsvcodes.ui.components.shared.FlowEmptyState
-import com.arubr.smsvcodes.ui.components.shared.FlowErrorState
-import com.arubr.smsvcodes.ui.components.shared.quickactions.QuickActionsViewModel
-import com.arubr.smsvcodes.utils.YouTubeLink
-import com.arubr.smsvcodes.utils.parseYouTubeLink
+import io.github.aedev.flow.R
+import io.github.aedev.flow.data.local.ContentType
+import io.github.aedev.flow.data.local.HomeFeedColumns
+import io.github.aedev.flow.data.local.SearchFilter
+import io.github.aedev.flow.data.local.WatchState
+import io.github.aedev.flow.data.model.Channel
+import io.github.aedev.flow.data.model.Playlist
+import io.github.aedev.flow.data.model.Video
+import io.github.aedev.flow.data.paging.SearchResultItem
+import io.github.aedev.flow.data.paging.supportsVideoFilters
+import io.github.aedev.flow.data.shorts.queue.ShortsQueueSource
+import io.github.aedev.flow.ui.components.FEED_MAX_AUTO_COLUMNS
+import io.github.aedev.flow.ui.components.FeedCardMinWidth
+import io.github.aedev.flow.ui.components.layout.navigation.LocalMediaNavigator
+import io.github.aedev.flow.ui.components.rememberFeedGridLayout
+import io.github.aedev.flow.ui.components.search.SearchFilterBar
+import io.github.aedev.flow.ui.components.search.SearchResultActions
+import io.github.aedev.flow.ui.components.search.SearchResults
+import io.github.aedev.flow.ui.components.search.SearchShortsGrid
+import io.github.aedev.flow.ui.components.shared.FeedGridSkeleton
+import io.github.aedev.flow.ui.components.shared.FlowEmptyState
+import io.github.aedev.flow.ui.components.shared.FlowErrorState
+import io.github.aedev.flow.ui.components.shared.quickactions.QuickActionsViewModel
+import io.github.aedev.flow.utils.YouTubeLink
+import io.github.aedev.flow.utils.parseYouTubeLink
 
 private val FilterBarVerticalPadding = 4.dp
 

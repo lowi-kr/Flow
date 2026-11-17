@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.tv.player.state
+package io.github.aedev.flow.ui.tv.player.state
 
 /**
  * D-pad scrubbing with hold-to-accelerate. Android's key-repeat drives cadence —

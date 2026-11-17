@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.innertube.models
+package io.github.aedev.flow.innertube.models
 
 data class AccountInfo(
     val name: String,

@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.discord
+package io.github.aedev.flow.discord
 
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow

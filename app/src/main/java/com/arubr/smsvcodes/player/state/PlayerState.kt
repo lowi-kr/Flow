@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.player.state
+package io.github.aedev.flow.player.state
 
 data class EnhancedPlayerState(
     val currentVideoId: String? = null,

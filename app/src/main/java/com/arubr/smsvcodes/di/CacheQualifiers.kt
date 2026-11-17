@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.di
+package io.github.aedev.flow.di
 
 import javax.inject.Qualifier
 

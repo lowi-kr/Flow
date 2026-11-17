@@ -1,11 +1,11 @@
-package com.arubr.smsvcodes.player
+package io.github.aedev.flow.player
 
 import android.net.Uri
 import androidx.media3.common.MediaItem
 import androidx.media3.common.MediaMetadata
-import com.arubr.smsvcodes.data.localmedia.LocalMediaIds
-import com.arubr.smsvcodes.data.music.model.MusicTrack
-import com.arubr.smsvcodes.player.musicvideo.MusicVideoItems
+import io.github.aedev.flow.data.localmedia.LocalMediaIds
+import io.github.aedev.flow.data.music.model.MusicTrack
+import io.github.aedev.flow.player.musicvideo.MusicVideoItems
 
 /**
  * The media item every music queue is built from, by the app and by playback resumption alike. A

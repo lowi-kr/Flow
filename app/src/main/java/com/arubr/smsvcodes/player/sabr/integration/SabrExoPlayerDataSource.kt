@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.player.sabr.integration
+package io.github.aedev.flow.player.sabr.integration
 
 import android.net.Uri
 import androidx.media3.common.C

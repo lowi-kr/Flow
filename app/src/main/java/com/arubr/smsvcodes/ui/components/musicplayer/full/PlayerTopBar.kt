@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.musicplayer.full
+package io.github.aedev.flow.ui.components.musicplayer.full
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -18,9 +18,9 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.ui.components.shared.FlowConnectedToggleGroup
-import com.arubr.smsvcodes.ui.components.shared.FlowToggleOption
+import io.github.aedev.flow.R
+import io.github.aedev.flow.ui.components.shared.FlowConnectedToggleGroup
+import io.github.aedev.flow.ui.components.shared.FlowToggleOption
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.settings
+package io.github.aedev.flow.ui.components.settings
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -20,8 +20,8 @@ import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.unit.dp
-import com.arubr.smsvcodes.ui.components.shared.FlowConnectedToggleGroup
-import com.arubr.smsvcodes.ui.components.shared.FlowToggleOption
+import io.github.aedev.flow.ui.components.shared.FlowConnectedToggleGroup
+import io.github.aedev.flow.ui.components.shared.FlowToggleOption
 
 private val ControlRowHorizontalPadding = 16.dp
 private val ControlRowVerticalPadding = 14.dp

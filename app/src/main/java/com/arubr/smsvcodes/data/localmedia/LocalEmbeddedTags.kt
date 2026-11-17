@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.data.localmedia
+package io.github.aedev.flow.data.localmedia
 
 import android.content.Context
 import android.media.MediaMetadataRetriever
@@ -8,9 +8,9 @@ import androidx.annotation.OptIn
 import androidx.media3.common.MediaMetadata
 import androidx.media3.common.util.UnstableApi
 import dagger.hilt.android.qualifiers.ApplicationContext
-import com.arubr.smsvcodes.data.video.downloader.tags.DownloadTagReader
-import com.arubr.smsvcodes.data.video.downloader.tags.MatroskaTextTags
-import com.arubr.smsvcodes.utils.PerformanceDispatcher
+import io.github.aedev.flow.data.video.downloader.tags.DownloadTagReader
+import io.github.aedev.flow.data.video.downloader.tags.MatroskaTextTags
+import io.github.aedev.flow.utils.PerformanceDispatcher
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.NonCancellable
 import kotlinx.coroutines.async

@@ -1,13 +1,13 @@
-package com.arubr.smsvcodes.player
+package io.github.aedev.flow.player
 
 import androidx.media3.common.C
 import androidx.media3.common.util.UnstableApi
 import androidx.media3.exoplayer.upstream.DefaultLoadErrorHandlingPolicy
 import androidx.media3.exoplayer.upstream.LoadErrorHandlingPolicy
-import com.arubr.smsvcodes.player.stream.PlaybackBlock
-import com.arubr.smsvcodes.player.stream.PlaybackBlockedException
-import com.arubr.smsvcodes.player.stream.VideoUnavailableException
-import com.arubr.smsvcodes.utils.MusicResolveTimeoutException
+import io.github.aedev.flow.player.stream.PlaybackBlock
+import io.github.aedev.flow.player.stream.PlaybackBlockedException
+import io.github.aedev.flow.player.stream.VideoUnavailableException
+import io.github.aedev.flow.utils.MusicResolveTimeoutException
 import java.io.IOException
 import java.net.ConnectException
 import java.net.NoRouteToHostException

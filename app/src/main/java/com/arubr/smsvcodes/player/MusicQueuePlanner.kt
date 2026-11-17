@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.player
+package io.github.aedev.flow.player
 
 internal object MusicQueuePlanner {
     const val INDEX_UNSET = -1

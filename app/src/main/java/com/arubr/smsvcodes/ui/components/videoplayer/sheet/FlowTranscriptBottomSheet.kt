@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.videoplayer.sheet
+package io.github.aedev.flow.ui.components.videoplayer.sheet
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.fadeIn
@@ -65,19 +65,19 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.data.transcript.TranscriptCue
-import com.arubr.smsvcodes.player.state.SubtitleOption
-import com.arubr.smsvcodes.ui.components.shared.FlowBottomSheet
-import com.arubr.smsvcodes.ui.components.shared.FlowDropdownFilterChip
-import com.arubr.smsvcodes.ui.components.shared.FlowLoadingIndicator
-import com.arubr.smsvcodes.ui.components.shared.FlowSearchField
-import com.arubr.smsvcodes.ui.components.shared.FlowSheetHeader
-import com.arubr.smsvcodes.ui.components.shared.MediaArtworkTint
-import com.arubr.smsvcodes.ui.components.shared.defaultSheetExpandedHeight
-import com.arubr.smsvcodes.ui.components.shared.rememberFlowBottomSheetState
-import com.arubr.smsvcodes.ui.components.shared.rememberMediaArtworkTint
-import com.arubr.smsvcodes.utils.formatDurationMillis
+import io.github.aedev.flow.R
+import io.github.aedev.flow.data.transcript.TranscriptCue
+import io.github.aedev.flow.player.state.SubtitleOption
+import io.github.aedev.flow.ui.components.shared.FlowBottomSheet
+import io.github.aedev.flow.ui.components.shared.FlowDropdownFilterChip
+import io.github.aedev.flow.ui.components.shared.FlowLoadingIndicator
+import io.github.aedev.flow.ui.components.shared.FlowSearchField
+import io.github.aedev.flow.ui.components.shared.FlowSheetHeader
+import io.github.aedev.flow.ui.components.shared.MediaArtworkTint
+import io.github.aedev.flow.ui.components.shared.defaultSheetExpandedHeight
+import io.github.aedev.flow.ui.components.shared.rememberFlowBottomSheetState
+import io.github.aedev.flow.ui.components.shared.rememberMediaArtworkTint
+import io.github.aedev.flow.utils.formatDurationMillis
 
 private val RowVerticalPadding = 12.dp
 private val ListHorizontalPadding = 16.dp

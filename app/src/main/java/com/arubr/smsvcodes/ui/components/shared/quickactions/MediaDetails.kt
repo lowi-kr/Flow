@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.shared.quickactions
+package io.github.aedev.flow.ui.components.shared.quickactions
 
 import android.content.ClipData
 import android.os.Build
@@ -25,14 +25,14 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.data.newmusic.InnertubeMusicService
-import com.arubr.smsvcodes.innertube.models.MediaInfo
-import com.arubr.smsvcodes.ui.components.shared.FlowLoadingIndicator
-import com.arubr.smsvcodes.ui.components.shared.FlowNavRow
-import com.arubr.smsvcodes.ui.components.shared.rememberDateDisplaySettings
-import com.arubr.smsvcodes.utils.DateContext
-import com.arubr.smsvcodes.utils.formatDuration
+import io.github.aedev.flow.R
+import io.github.aedev.flow.data.newmusic.InnertubeMusicService
+import io.github.aedev.flow.innertube.models.MediaInfo
+import io.github.aedev.flow.ui.components.shared.FlowLoadingIndicator
+import io.github.aedev.flow.ui.components.shared.FlowNavRow
+import io.github.aedev.flow.ui.components.shared.rememberDateDisplaySettings
+import io.github.aedev.flow.utils.DateContext
+import io.github.aedev.flow.utils.formatDuration
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow

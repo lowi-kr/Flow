@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.player.subtitle
+package io.github.aedev.flow.player.subtitle
 
 import androidx.annotation.OptIn
 import androidx.media3.common.C
@@ -7,11 +7,11 @@ import androidx.media3.common.TrackSelectionOverride
 import androidx.media3.common.Tracks
 import androidx.media3.common.util.UnstableApi
 import androidx.media3.exoplayer.trackselection.DefaultTrackSelector
-import com.arubr.smsvcodes.player.media.MediaLoader
-import com.arubr.smsvcodes.player.state.SubtitleOption
-import com.arubr.smsvcodes.player.state.SubtitleOrigin
-import com.arubr.smsvcodes.player.stream.ResolvedCaption
-import com.arubr.smsvcodes.player.stream.StreamProcessor
+import io.github.aedev.flow.player.media.MediaLoader
+import io.github.aedev.flow.player.state.SubtitleOption
+import io.github.aedev.flow.player.state.SubtitleOrigin
+import io.github.aedev.flow.player.stream.ResolvedCaption
+import io.github.aedev.flow.player.stream.StreamProcessor
 
 /**
  * The one owner of which caption track plays. The screens only read [options] and [selected] and

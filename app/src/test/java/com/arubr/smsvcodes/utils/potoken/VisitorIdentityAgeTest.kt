@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.utils.potoken
+package io.github.aedev.flow.utils.potoken
 
 import com.google.common.truth.Truth.assertThat
 import org.junit.Test

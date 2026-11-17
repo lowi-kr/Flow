@@ -1,6 +1,6 @@
-package com.arubr.smsvcodes.sync.qr
+package io.github.aedev.flow.sync.qr
 
-import com.arubr.smsvcodes.sync.crypto.SyncBytes
+import io.github.aedev.flow.sync.crypto.SyncBytes
 import kotlinx.serialization.EncodeDefault
 import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.SerialName

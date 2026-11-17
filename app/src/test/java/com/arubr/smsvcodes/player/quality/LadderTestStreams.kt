@@ -1,8 +1,8 @@
-package com.arubr.smsvcodes.player.quality
+package io.github.aedev.flow.player.quality
 
-import com.arubr.smsvcodes.innertube.models.response.PlayerResponse.StreamingData.Format
-import com.arubr.smsvcodes.innertube.models.response.PlayerResponse.StreamingData.Format.Range
-import com.arubr.smsvcodes.player.stream.InnerTubeStreamBridge
+import io.github.aedev.flow.innertube.models.response.PlayerResponse.StreamingData.Format
+import io.github.aedev.flow.innertube.models.response.PlayerResponse.StreamingData.Format.Range
+import io.github.aedev.flow.player.stream.InnerTubeStreamBridge
 import org.schabi.newpipe.extractor.stream.VideoStream
 
 internal object LadderTestStreams {

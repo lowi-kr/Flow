@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.data.recommendation
+package io.github.aedev.flow.data.recommendation
 
 import com.google.common.truth.Truth.assertThat
 import org.junit.Test

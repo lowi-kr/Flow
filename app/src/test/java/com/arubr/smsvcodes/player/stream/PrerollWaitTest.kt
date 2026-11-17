@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.player.stream
+package io.github.aedev.flow.player.stream
 
 import com.google.common.truth.Truth.assertThat
 import kotlinx.serialization.json.Json

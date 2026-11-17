@@ -1,7 +1,7 @@
-package com.arubr.smsvcodes.ui.screens.music
+package io.github.aedev.flow.ui.screens.music
 
 import com.google.common.truth.Truth.assertThat
-import com.arubr.smsvcodes.data.local.PlayerPreferences
+import io.github.aedev.flow.data.local.PlayerPreferences
 import io.mockk.coEvery
 import io.mockk.every
 import io.mockk.mockk

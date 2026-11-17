@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.shared
+package io.github.aedev.flow.ui.components.shared
 
 import android.content.Context
 import android.text.format.Formatter
@@ -32,21 +32,21 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.data.local.PlayerPreferences
-import com.arubr.smsvcodes.data.local.VideoCodec
-import com.arubr.smsvcodes.data.local.VideoQuality
-import com.arubr.smsvcodes.data.model.Video
-import com.arubr.smsvcodes.data.video.DownloadStreamPolicy
-import com.arubr.smsvcodes.data.video.downloader.request.DownloadSubtitle
-import com.arubr.smsvcodes.innertube.models.response.PlayerResponse.StreamingData.Format
-import com.arubr.smsvcodes.player.state.SubtitleOption
-import com.arubr.smsvcodes.player.stream.VideoCodecUtils
-import com.arubr.smsvcodes.ui.components.layout.navigation.LocalMediaNavigator
-import com.arubr.smsvcodes.ui.components.settings.SettingsDestination
-import com.arubr.smsvcodes.ui.components.settings.SettingsTarget
-import com.arubr.smsvcodes.ui.components.shared.quickactions.QuickActionsDefaults
-import com.arubr.smsvcodes.ui.components.shared.quickactions.QuickActionsHeader
+import io.github.aedev.flow.R
+import io.github.aedev.flow.data.local.PlayerPreferences
+import io.github.aedev.flow.data.local.VideoCodec
+import io.github.aedev.flow.data.local.VideoQuality
+import io.github.aedev.flow.data.model.Video
+import io.github.aedev.flow.data.video.DownloadStreamPolicy
+import io.github.aedev.flow.data.video.downloader.request.DownloadSubtitle
+import io.github.aedev.flow.innertube.models.response.PlayerResponse.StreamingData.Format
+import io.github.aedev.flow.player.state.SubtitleOption
+import io.github.aedev.flow.player.stream.VideoCodecUtils
+import io.github.aedev.flow.ui.components.layout.navigation.LocalMediaNavigator
+import io.github.aedev.flow.ui.components.settings.SettingsDestination
+import io.github.aedev.flow.ui.components.settings.SettingsTarget
+import io.github.aedev.flow.ui.components.shared.quickactions.QuickActionsDefaults
+import io.github.aedev.flow.ui.components.shared.quickactions.QuickActionsHeader
 
 private val SectionGap = 12.dp
 private const val VIDEO_COLUMNS = 3

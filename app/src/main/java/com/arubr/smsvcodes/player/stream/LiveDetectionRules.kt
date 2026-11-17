@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.player.stream
+package io.github.aedev.flow.player.stream
 
 /**
  * Decides whether a player response should be played as a live stream rather than as a VOD ladder.

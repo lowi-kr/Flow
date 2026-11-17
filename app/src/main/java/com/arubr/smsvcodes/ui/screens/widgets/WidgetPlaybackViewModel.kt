@@ -1,10 +1,10 @@
-package com.arubr.smsvcodes.ui.screens.widgets
+package io.github.aedev.flow.ui.screens.widgets
 
 import androidx.lifecycle.ViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
-import com.arubr.smsvcodes.data.local.PlaylistRepository
-import com.arubr.smsvcodes.data.local.entity.PlaylistEntity
-import com.arubr.smsvcodes.data.model.Video
+import io.github.aedev.flow.data.local.PlaylistRepository
+import io.github.aedev.flow.data.local.entity.PlaylistEntity
+import io.github.aedev.flow.data.model.Video
 import kotlinx.coroutines.flow.first
 import javax.inject.Inject
 

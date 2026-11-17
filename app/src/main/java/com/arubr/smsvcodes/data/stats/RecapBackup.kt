@@ -1,6 +1,6 @@
-package com.arubr.smsvcodes.data.stats
+package io.github.aedev.flow.data.stats
 
-import com.arubr.smsvcodes.data.recommendation.music.MusicStatsStorage
+import io.github.aedev.flow.data.recommendation.music.MusicStatsStorage
 import kotlinx.serialization.Serializable
 
 /**

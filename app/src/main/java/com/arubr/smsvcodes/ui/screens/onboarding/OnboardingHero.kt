@@ -1,6 +1,6 @@
 @file:OptIn(ExperimentalMaterial3ExpressiveApi::class)
 
-package com.arubr.smsvcodes.ui.screens.onboarding
+package io.github.aedev.flow.ui.screens.onboarding
 
 import androidx.compose.animation.core.Animatable
 import androidx.compose.foundation.layout.Box
@@ -33,8 +33,8 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.graphics.shapes.Morph
 import androidx.graphics.shapes.RoundedPolygon
-import com.arubr.smsvcodes.ui.components.shared.FlowLogo
-import com.arubr.smsvcodes.ui.components.shared.drawMorph
+import io.github.aedev.flow.ui.components.shared.FlowLogo
+import io.github.aedev.flow.ui.components.shared.drawMorph
 import kotlinx.coroutines.flow.first
 
 private const val HERO_TURN = -45f

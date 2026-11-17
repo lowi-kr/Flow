@@ -1,6 +1,6 @@
-package com.arubr.smsvcodes.data.repository
+package io.github.aedev.flow.data.repository
 
-import com.arubr.smsvcodes.data.model.VideoCollaborator
+import io.github.aedev.flow.data.model.VideoCollaborator
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.async
 import kotlinx.coroutines.delay

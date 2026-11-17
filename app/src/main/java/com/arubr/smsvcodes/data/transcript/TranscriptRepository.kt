@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.data.transcript
+package io.github.aedev.flow.data.transcript
 
 import android.util.Log
 import android.util.LruCache

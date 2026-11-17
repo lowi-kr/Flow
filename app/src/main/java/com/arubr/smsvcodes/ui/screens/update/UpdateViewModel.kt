@@ -1,16 +1,16 @@
-package com.arubr.smsvcodes.ui.screens.update
+package io.github.aedev.flow.ui.screens.update
 
 import android.content.Intent
 import androidx.compose.runtime.Immutable
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
-import com.arubr.smsvcodes.data.update.AppRelease
-import com.arubr.smsvcodes.data.update.ReleaseNotes
-import com.arubr.smsvcodes.data.update.UpdateFailure
-import com.arubr.smsvcodes.data.update.UpdateRepository
-import com.arubr.smsvcodes.data.update.parseReleaseNotes
-import com.arubr.smsvcodes.updater.AppUpdateInstaller
+import io.github.aedev.flow.data.update.AppRelease
+import io.github.aedev.flow.data.update.ReleaseNotes
+import io.github.aedev.flow.data.update.UpdateFailure
+import io.github.aedev.flow.data.update.UpdateRepository
+import io.github.aedev.flow.data.update.parseReleaseNotes
+import io.github.aedev.flow.updater.AppUpdateInstaller
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted

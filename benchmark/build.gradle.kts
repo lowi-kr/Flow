@@ -6,7 +6,7 @@ plugins {
 }
 
 android {
-    namespace = "com.arubr.smsvcodes.benchmark"
+    namespace = "io.github.aedev.flow.benchmark"
     compileSdk = 37
 
     compileOptions {

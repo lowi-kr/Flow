@@ -1,6 +1,6 @@
-package com.arubr.smsvcodes.ui
+package io.github.aedev.flow.ui
 
-import com.arubr.smsvcodes.ui.components.layout.navigation.FlowTab
+import io.github.aedev.flow.ui.components.layout.navigation.FlowTab
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertNull

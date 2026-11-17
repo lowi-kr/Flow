@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.screens.settings.appearance
+package io.github.aedev.flow.ui.screens.settings.appearance
 
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
@@ -23,16 +23,16 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.data.local.CustomFontStore
-import com.arubr.smsvcodes.data.local.FontImportError
-import com.arubr.smsvcodes.data.local.FontImportResult
-import com.arubr.smsvcodes.ui.components.settings.SettingsPage
-import com.arubr.smsvcodes.ui.components.settings.nav
-import com.arubr.smsvcodes.ui.components.settings.notice
-import com.arubr.smsvcodes.ui.components.settings.option
-import com.arubr.smsvcodes.ui.screens.settings.index.FontIndex
-import com.arubr.smsvcodes.ui.theme.AppFont
+import io.github.aedev.flow.R
+import io.github.aedev.flow.data.local.CustomFontStore
+import io.github.aedev.flow.data.local.FontImportError
+import io.github.aedev.flow.data.local.FontImportResult
+import io.github.aedev.flow.ui.components.settings.SettingsPage
+import io.github.aedev.flow.ui.components.settings.nav
+import io.github.aedev.flow.ui.components.settings.notice
+import io.github.aedev.flow.ui.components.settings.option
+import io.github.aedev.flow.ui.screens.settings.index.FontIndex
+import io.github.aedev.flow.ui.theme.AppFont
 
 private const val BYTES_PER_MB = 1024 * 1024
 private const val ANY_FILE = "*/*"

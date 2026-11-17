@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.data.local.entity
+package io.github.aedev.flow.data.local.entity
 
 import androidx.room.Entity
 import androidx.room.ForeignKey

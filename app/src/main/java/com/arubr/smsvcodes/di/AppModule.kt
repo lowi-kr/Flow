@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.di
+package io.github.aedev.flow.di
 
 import android.content.Context
 import coil3.ImageLoader
@@ -13,12 +13,12 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
-import com.arubr.smsvcodes.BuildConfig
-import com.arubr.smsvcodes.data.localmedia.MediaRetrieverDecoderFactory
-import com.arubr.smsvcodes.data.localmedia.MediaStoreThumbnailFetcher
-import com.arubr.smsvcodes.data.recommendation.FlowNeuroEngine
-import com.arubr.smsvcodes.innertube.YouTube
-import com.arubr.smsvcodes.player.cache.PlayerCacheManager
+import io.github.aedev.flow.BuildConfig
+import io.github.aedev.flow.data.localmedia.MediaRetrieverDecoderFactory
+import io.github.aedev.flow.data.localmedia.MediaStoreThumbnailFetcher
+import io.github.aedev.flow.data.recommendation.FlowNeuroEngine
+import io.github.aedev.flow.innertube.YouTube
+import io.github.aedev.flow.player.cache.PlayerCacheManager
 import okhttp3.OkHttpClient
 import okio.Path.Companion.toOkioPath
 import javax.inject.Singleton

@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.screens.channel
+package io.github.aedev.flow.ui.screens.channel
 
 import android.content.Context
 import android.util.Log
@@ -6,27 +6,27 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.data.local.ChannelSubscription
-import com.arubr.smsvcodes.data.local.PlayerPreferences
-import com.arubr.smsvcodes.data.local.SubscriptionRepository
-import com.arubr.smsvcodes.data.local.dao.SubscriptionGroupDao
-import com.arubr.smsvcodes.data.local.entity.SubscriptionGroupEntity
-import com.arubr.smsvcodes.data.model.Comment
-import com.arubr.smsvcodes.data.model.SubscriptionGroup
-import com.arubr.smsvcodes.data.model.Video
-import com.arubr.smsvcodes.data.model.distinctByNonBlankKey
-import com.arubr.smsvcodes.data.model.toUiModel
-import com.arubr.smsvcodes.data.notes.NoteKind
-import com.arubr.smsvcodes.data.notes.NoteSubject
-import com.arubr.smsvcodes.data.notes.NotesRepository
-import com.arubr.smsvcodes.innertube.YouTube
-import com.arubr.smsvcodes.innertube.pages.channel.ChannelTabKind
-import com.arubr.smsvcodes.innertube.pages.renderer.CommunityPost
-import com.arubr.smsvcodes.innertube.pages.renderer.FeedItemOwner
-import com.arubr.smsvcodes.ui.youtubeChannelBrowseId
-import com.arubr.smsvcodes.ui.youtubeChannelUrl
-import com.arubr.smsvcodes.utils.PerformanceDispatcher
+import io.github.aedev.flow.R
+import io.github.aedev.flow.data.local.ChannelSubscription
+import io.github.aedev.flow.data.local.PlayerPreferences
+import io.github.aedev.flow.data.local.SubscriptionRepository
+import io.github.aedev.flow.data.local.dao.SubscriptionGroupDao
+import io.github.aedev.flow.data.local.entity.SubscriptionGroupEntity
+import io.github.aedev.flow.data.model.Comment
+import io.github.aedev.flow.data.model.SubscriptionGroup
+import io.github.aedev.flow.data.model.Video
+import io.github.aedev.flow.data.model.distinctByNonBlankKey
+import io.github.aedev.flow.data.model.toUiModel
+import io.github.aedev.flow.data.notes.NoteKind
+import io.github.aedev.flow.data.notes.NoteSubject
+import io.github.aedev.flow.data.notes.NotesRepository
+import io.github.aedev.flow.innertube.YouTube
+import io.github.aedev.flow.innertube.pages.channel.ChannelTabKind
+import io.github.aedev.flow.innertube.pages.renderer.CommunityPost
+import io.github.aedev.flow.innertube.pages.renderer.FeedItemOwner
+import io.github.aedev.flow.ui.youtubeChannelBrowseId
+import io.github.aedev.flow.ui.youtubeChannelUrl
+import io.github.aedev.flow.utils.PerformanceDispatcher
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
@@ -90,7 +90,7 @@ class ChannelViewModel
                 .stateIn(viewModelScope, SharingStarted.WhileSubscribed(GROUPS_SUBSCRIPTION_TIMEOUT_MS), emptySet())
 
         fun setChannelSubscription(
-            channel: com.arubr.smsvcodes.data.model.Channel,
+            channel: io.github.aedev.flow.data.model.Channel,
             subscribed: Boolean,
         ) {
             viewModelScope.launch(PerformanceDispatcher.diskIO) {

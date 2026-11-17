@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.videoplayer.ambient
+package io.github.aedev.flow.ui.components.videoplayer.ambient
 
 import android.graphics.Bitmap
 import android.os.Build

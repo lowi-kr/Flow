@@ -1,11 +1,11 @@
-package com.arubr.smsvcodes.data.playlist
+package io.github.aedev.flow.data.playlist
 
 import android.content.Context
 import android.net.Uri
 import dagger.hilt.android.qualifiers.ApplicationContext
-import com.arubr.smsvcodes.data.local.PlaylistRepository
-import com.arubr.smsvcodes.data.model.Video
-import com.arubr.smsvcodes.utils.sharedFileUri
+import io.github.aedev.flow.data.local.PlaylistRepository
+import io.github.aedev.flow.data.model.Video
+import io.github.aedev.flow.utils.sharedFileUri
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import java.io.ByteArrayOutputStream

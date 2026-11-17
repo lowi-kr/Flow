@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.musicplayer.mini
+package io.github.aedev.flow.ui.components.musicplayer.mini
 
 import androidx.compose.animation.core.LinearEasing
 import androidx.compose.animation.core.animateDpAsState
@@ -55,13 +55,13 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import coil3.compose.AsyncImage
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.data.music.model.MusicTrack
-import com.arubr.smsvcodes.player.EnhancedMusicPlayerManager
-import com.arubr.smsvcodes.ui.components.PlayingWaveform
-import com.arubr.smsvcodes.ui.components.shared.MediaPlayPauseButton
-import com.arubr.smsvcodes.ui.theme.ArtworkScrimContent
-import com.arubr.smsvcodes.ui.theme.ArtworkScrimNowPlaying
+import io.github.aedev.flow.R
+import io.github.aedev.flow.data.music.model.MusicTrack
+import io.github.aedev.flow.player.EnhancedMusicPlayerManager
+import io.github.aedev.flow.ui.components.PlayingWaveform
+import io.github.aedev.flow.ui.components.shared.MediaPlayPauseButton
+import io.github.aedev.flow.ui.theme.ArtworkScrimContent
+import io.github.aedev.flow.ui.theme.ArtworkScrimNowPlaying
 
 private val ArtworkRingSize = 52.dp
 private val ArtworkSize = 43.dp

@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.widget.core.refresh
+package io.github.aedev.flow.widget.core.refresh
 
 import androidx.glance.appwidget.GlanceAppWidget
 import kotlinx.coroutines.flow.Flow

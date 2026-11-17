@@ -1,11 +1,11 @@
-package com.arubr.smsvcodes.widget.core.theme
+package io.github.aedev.flow.widget.core.theme
 
 import android.content.Context
 import androidx.glance.color.ColorProviders
-import com.arubr.smsvcodes.data.local.MusicPlayerBackgroundStyle
-import com.arubr.smsvcodes.ui.components.musicplayer.common.paletteColorScheme
-import com.arubr.smsvcodes.ui.components.shared.mediaPaletteOf
-import com.arubr.smsvcodes.widget.core.image.WidgetImageLoader
+import io.github.aedev.flow.data.local.MusicPlayerBackgroundStyle
+import io.github.aedev.flow.ui.components.musicplayer.common.paletteColorScheme
+import io.github.aedev.flow.ui.components.shared.mediaPaletteOf
+import io.github.aedev.flow.widget.core.image.WidgetImageLoader
 
 /**
  * The music player's own artwork scheme, for player widgets while the player is set to take its

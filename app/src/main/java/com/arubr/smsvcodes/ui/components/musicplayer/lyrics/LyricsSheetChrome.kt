@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.musicplayer.lyrics
+package io.github.aedev.flow.ui.components.musicplayer.lyrics
 
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.animation.AnimatedVisibility
@@ -64,10 +64,10 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.data.local.LYRICS_ALIGN_LEFT
-import com.arubr.smsvcodes.data.local.LYRICS_ALIGN_RIGHT
-import com.arubr.smsvcodes.ui.components.PlayingWaveform
+import io.github.aedev.flow.R
+import io.github.aedev.flow.data.local.LYRICS_ALIGN_LEFT
+import io.github.aedev.flow.data.local.LYRICS_ALIGN_RIGHT
+import io.github.aedev.flow.ui.components.PlayingWaveform
 import kotlinx.coroutines.delay
 
 internal fun lyricsTextAlignFor(pref: String): TextAlign =

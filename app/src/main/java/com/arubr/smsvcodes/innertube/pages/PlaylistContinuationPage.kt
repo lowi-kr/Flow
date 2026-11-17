@@ -1,6 +1,6 @@
-package com.arubr.smsvcodes.innertube.pages
+package io.github.aedev.flow.innertube.pages
 
-import com.arubr.smsvcodes.innertube.models.SongItem
+import io.github.aedev.flow.innertube.models.SongItem
 
 data class PlaylistContinuationPage(
     val songs: List<SongItem>,

@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.music.section
+package io.github.aedev.flow.ui.components.music.section
 
 import com.google.common.truth.Truth.assertThat
 import org.junit.Test

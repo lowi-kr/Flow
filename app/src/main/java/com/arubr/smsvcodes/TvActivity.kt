@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes
+package io.github.aedev.flow
 
 import android.content.Intent
 import android.os.Bundle

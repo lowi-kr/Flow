@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.data.music.model
+package io.github.aedev.flow.data.music.model
 
 import com.google.common.truth.Truth.assertThat
 import org.junit.Test

@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.widget.nowplaying
+package io.github.aedev.flow.widget.nowplaying
 
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.DpSize

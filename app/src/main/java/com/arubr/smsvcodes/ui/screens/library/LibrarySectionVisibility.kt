@@ -1,6 +1,6 @@
-package com.arubr.smsvcodes.ui.screens.library
+package io.github.aedev.flow.ui.screens.library
 
-import com.arubr.smsvcodes.ui.components.library.LibrarySection
+import io.github.aedev.flow.ui.components.library.LibrarySection
 
 /** Saved Shorts goes with the Shorts content switch as well as its own. */
 internal fun visibleContentSections(

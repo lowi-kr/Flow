@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.library
+package io.github.aedev.flow.ui.components.library
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ThumbUp
@@ -10,14 +10,14 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.data.local.LikedVideoInfo
-import com.arubr.smsvcodes.data.model.toMusicTrack
-import com.arubr.smsvcodes.data.model.toVideo
-import com.arubr.smsvcodes.data.music.model.MusicTrack
-import com.arubr.smsvcodes.ui.components.library.LibraryMediaListRow
-import com.arubr.smsvcodes.ui.components.shared.MediaKind
-import com.arubr.smsvcodes.ui.components.shared.MediaRowAction
+import io.github.aedev.flow.R
+import io.github.aedev.flow.data.local.LikedVideoInfo
+import io.github.aedev.flow.data.model.toMusicTrack
+import io.github.aedev.flow.data.model.toVideo
+import io.github.aedev.flow.data.music.model.MusicTrack
+import io.github.aedev.flow.ui.components.library.LibraryMediaListRow
+import io.github.aedev.flow.ui.components.shared.MediaKind
+import io.github.aedev.flow.ui.components.shared.MediaRowAction
 
 @Composable
 internal fun LikedRow(

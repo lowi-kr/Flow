@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.music.section
+package io.github.aedev.flow.ui.components.music.section
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
@@ -36,17 +36,17 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.data.music.model.MusicTrack
-import com.arubr.smsvcodes.ui.components.music.common.MusicNowPlayingOverlay
-import com.arubr.smsvcodes.ui.components.music.common.isTrackPlaying
-import com.arubr.smsvcodes.ui.components.music.common.rememberMusicArtworkColors
-import com.arubr.smsvcodes.ui.components.music.header.MusicSectionHeader
-import com.arubr.smsvcodes.ui.components.shared.DownloadedBadge
-import com.arubr.smsvcodes.ui.components.shared.flowGridCellWidth
-import com.arubr.smsvcodes.ui.components.shared.flowGridColumns
-import com.arubr.smsvcodes.ui.components.shared.titleMarquee
-import com.arubr.smsvcodes.ui.theme.Dimensions
+import io.github.aedev.flow.R
+import io.github.aedev.flow.data.music.model.MusicTrack
+import io.github.aedev.flow.ui.components.music.common.MusicNowPlayingOverlay
+import io.github.aedev.flow.ui.components.music.common.isTrackPlaying
+import io.github.aedev.flow.ui.components.music.common.rememberMusicArtworkColors
+import io.github.aedev.flow.ui.components.music.header.MusicSectionHeader
+import io.github.aedev.flow.ui.components.shared.DownloadedBadge
+import io.github.aedev.flow.ui.components.shared.flowGridCellWidth
+import io.github.aedev.flow.ui.components.shared.flowGridColumns
+import io.github.aedev.flow.ui.components.shared.titleMarquee
+import io.github.aedev.flow.ui.theme.Dimensions
 
 private val SpeedDialRowHeight = 64.dp
 private val SpeedDialGap = 8.dp

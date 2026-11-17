@@ -1,13 +1,13 @@
-package com.arubr.smsvcodes.player.preload
+package io.github.aedev.flow.player.preload
 
 import android.content.Context
 import android.util.Log
 import androidx.media3.common.util.UnstableApi
 import androidx.media3.exoplayer.ExoPlayer
 import androidx.media3.exoplayer.source.MediaSource
-import com.arubr.smsvcodes.data.model.Video
-import com.arubr.smsvcodes.player.stream.InnerTubeVideoStreamExtractor
-import com.arubr.smsvcodes.player.stream.ResolvedStreamData
+import io.github.aedev.flow.data.model.Video
+import io.github.aedev.flow.player.stream.InnerTubeVideoStreamExtractor
+import io.github.aedev.flow.player.stream.ResolvedStreamData
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Job

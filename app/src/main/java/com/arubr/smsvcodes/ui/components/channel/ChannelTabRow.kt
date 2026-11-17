@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.channel
+package io.github.aedev.flow.ui.components.channel
 
 import androidx.compose.foundation.focusGroup
 import androidx.compose.foundation.layout.Column
@@ -19,8 +19,8 @@ import androidx.compose.ui.focus.focusProperties
 import androidx.compose.ui.focus.focusRequester
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import com.arubr.smsvcodes.ui.components.shared.LocalDpadNavigation
-import com.arubr.smsvcodes.ui.theme.extendedColors
+import io.github.aedev.flow.ui.components.shared.LocalDpadNavigation
+import io.github.aedev.flow.ui.theme.extendedColors
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

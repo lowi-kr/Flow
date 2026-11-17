@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.data.localmedia
+package io.github.aedev.flow.data.localmedia
 
 /**
  * The title with its accented letters back, when [title] is the damaged form some media scanners

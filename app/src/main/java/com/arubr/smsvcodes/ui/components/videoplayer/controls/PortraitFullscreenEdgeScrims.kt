@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.videoplayer.controls
+package io.github.aedev.flow.ui.components.videoplayer.controls
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxHeight
@@ -6,7 +6,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import com.arubr.smsvcodes.ui.theme.PlayerScrimEdgeGradient
+import io.github.aedev.flow.ui.theme.PlayerScrimEdgeGradient
 
 @Composable
 internal fun PortraitFullscreenEdgeScrims(modifier: Modifier = Modifier) {

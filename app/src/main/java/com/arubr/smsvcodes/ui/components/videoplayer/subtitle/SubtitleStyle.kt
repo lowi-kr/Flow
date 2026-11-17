@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.videoplayer.subtitle
+package io.github.aedev.flow.ui.components.videoplayer.subtitle
 
 import androidx.compose.ui.graphics.Color
 

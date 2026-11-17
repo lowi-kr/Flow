@@ -1,8 +1,8 @@
-package com.arubr.smsvcodes.ui
+package io.github.aedev.flow.ui
 
 import androidx.compose.ui.platform.UriHandler
-import com.arubr.smsvcodes.ui.components.layout.navigation.MediaNavigator
-import com.arubr.smsvcodes.utils.YouTubeLink
+import io.github.aedev.flow.ui.components.layout.navigation.MediaNavigator
+import io.github.aedev.flow.utils.YouTubeLink
 import org.junit.Assert.assertEquals
 import org.junit.Test
 

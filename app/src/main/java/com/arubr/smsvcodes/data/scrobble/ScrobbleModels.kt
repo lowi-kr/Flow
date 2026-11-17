@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.data.scrobble
+package io.github.aedev.flow.data.scrobble
 
 import kotlinx.serialization.Serializable
 

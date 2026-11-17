@@ -2,7 +2,7 @@
 //This implementation was based on metrolist's (https://github.com/MetrolistGroup/Metrolist)
 //==================================================================================================
 
-package com.arubr.smsvcodes.data.lyrics
+package io.github.aedev.flow.data.lyrics
 
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -18,7 +18,7 @@ class YouTubeSubtitleLyricsProvider : LyricsProvider {
         album: String?
     ): Result<List<LyricsEntry>> = withContext(Dispatchers.IO) {
         runCatching {
-            val lrc = com.arubr.smsvcodes.innertube.YouTube.transcript(id).getOrThrow()
+            val lrc = io.github.aedev.flow.innertube.YouTube.transcript(id).getOrThrow()
             LyricsUtils.parseLyrics(lrc)
         }
     }

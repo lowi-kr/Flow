@@ -1,7 +1,7 @@
-package com.arubr.smsvcodes.ui.components.shorts
+package io.github.aedev.flow.ui.components.shorts
 
 import androidx.compose.runtime.Immutable
-import com.arubr.smsvcodes.data.local.ShortsPlayerUiMode
+import io.github.aedev.flow.data.local.ShortsPlayerUiMode
 
 /**
  * How a reel's chrome is drawn for one [ShortsPlayerUiMode]. The composables read these facts,

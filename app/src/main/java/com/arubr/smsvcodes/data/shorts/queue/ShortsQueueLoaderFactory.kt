@@ -1,12 +1,12 @@
-package com.arubr.smsvcodes.data.shorts.queue
+package io.github.aedev.flow.data.shorts.queue
 
-import com.arubr.smsvcodes.data.local.PlayerPreferences
-import com.arubr.smsvcodes.data.local.PlaylistRepository
-import com.arubr.smsvcodes.data.local.SubscriptionRepository
-import com.arubr.smsvcodes.data.recommendation.FlowNeuroEngine
-import com.arubr.smsvcodes.data.shorts.ShortsFeedRepository
-import com.arubr.smsvcodes.data.subscriptions.SubscriptionFeedRepository
-import com.arubr.smsvcodes.data.subscriptions.SubscriptionWatchedVideos
+import io.github.aedev.flow.data.local.PlayerPreferences
+import io.github.aedev.flow.data.local.PlaylistRepository
+import io.github.aedev.flow.data.local.SubscriptionRepository
+import io.github.aedev.flow.data.recommendation.FlowNeuroEngine
+import io.github.aedev.flow.data.shorts.ShortsFeedRepository
+import io.github.aedev.flow.data.subscriptions.SubscriptionFeedRepository
+import io.github.aedev.flow.data.subscriptions.SubscriptionWatchedVideos
 import kotlinx.coroutines.flow.first
 import javax.inject.Inject
 import javax.inject.Singleton

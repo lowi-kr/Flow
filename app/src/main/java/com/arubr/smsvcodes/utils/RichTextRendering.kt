@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.utils
+package io.github.aedev.flow.utils
 
 import androidx.compose.foundation.text.appendInlineContent
 import androidx.compose.ui.graphics.Color
@@ -7,8 +7,8 @@ import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextDecoration
-import com.arubr.smsvcodes.data.model.RichText
-import com.arubr.smsvcodes.data.model.RichTextTarget
+import io.github.aedev.flow.data.model.RichText
+import io.github.aedev.flow.data.model.RichTextTarget
 
 const val RICH_TEXT_SEEK = "SEEK_SECONDS"
 const val RICH_TEXT_URL = "URL"

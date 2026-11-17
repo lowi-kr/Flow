@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.data.lyrics
+package io.github.aedev.flow.data.lyrics
 
 import com.google.gson.Gson
 import kotlinx.coroutines.Dispatchers

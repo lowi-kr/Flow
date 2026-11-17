@@ -1,7 +1,7 @@
-package com.arubr.smsvcodes.sync
+package io.github.aedev.flow.sync
 
-import com.arubr.smsvcodes.sync.crypto.SyncBytes
-import com.arubr.smsvcodes.sync.crypto.SyncCrypto
+import io.github.aedev.flow.sync.crypto.SyncBytes
+import io.github.aedev.flow.sync.crypto.SyncCrypto
 import org.junit.Assert.assertArrayEquals
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNotEquals

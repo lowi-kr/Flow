@@ -1,10 +1,10 @@
-package com.arubr.smsvcodes.sync
+package io.github.aedev.flow.sync
 
-import com.arubr.smsvcodes.data.local.LikedVideoInfo
-import com.arubr.smsvcodes.sync.canonical.CanonicalLike
-import com.arubr.smsvcodes.sync.canonical.CanonicalLikeMeta
-import com.arubr.smsvcodes.sync.mapping.LikesMapper
-import com.arubr.smsvcodes.sync.protocol.SyncSerialization
+import io.github.aedev.flow.data.local.LikedVideoInfo
+import io.github.aedev.flow.sync.canonical.CanonicalLike
+import io.github.aedev.flow.sync.canonical.CanonicalLikeMeta
+import io.github.aedev.flow.sync.mapping.LikesMapper
+import io.github.aedev.flow.sync.protocol.SyncSerialization
 import org.junit.Assert.assertEquals
 import org.junit.Test
 

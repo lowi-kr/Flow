@@ -1,6 +1,6 @@
-package com.arubr.smsvcodes.ui.components.videoplayer.controls
+package io.github.aedev.flow.ui.components.videoplayer.controls
 
-import com.arubr.smsvcodes.R
+import io.github.aedev.flow.R
 import org.junit.Assert.assertEquals
 import org.junit.Test
 

@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.videoplayer.info
+package io.github.aedev.flow.ui.components.videoplayer.info
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -16,8 +16,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.utils.formatRichText
+import io.github.aedev.flow.R
+import io.github.aedev.flow.utils.formatRichText
 
 @Composable
 internal fun CommentsPreview(

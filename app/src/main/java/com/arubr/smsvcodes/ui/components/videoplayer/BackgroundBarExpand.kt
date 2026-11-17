@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.videoplayer
+package io.github.aedev.flow.ui.components.videoplayer
 
 import androidx.compose.runtime.Immutable
 import androidx.compose.ui.geometry.Rect

@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.screens.player.effects
+package io.github.aedev.flow.ui.screens.player.effects
 
 import androidx.activity.compose.BackHandler
 import androidx.activity.compose.PredictiveBackHandler
@@ -7,9 +7,9 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
-import com.arubr.smsvcodes.ui.components.videoplayer.PlayerDraggableState
-import com.arubr.smsvcodes.ui.components.videoplayer.PlayerSheetValue
-import com.arubr.smsvcodes.ui.screens.player.state.PlayerScreenState
+import io.github.aedev.flow.ui.components.videoplayer.PlayerDraggableState
+import io.github.aedev.flow.ui.components.videoplayer.PlayerSheetValue
+import io.github.aedev.flow.ui.screens.player.state.PlayerScreenState
 import kotlin.coroutines.cancellation.CancellationException
 
 /**

@@ -1,11 +1,11 @@
-package com.arubr.smsvcodes.data.subscriptions
+package io.github.aedev.flow.data.subscriptions
 
 import com.google.common.truth.Truth.assertThat
-import com.arubr.smsvcodes.data.local.AppDatabase
-import com.arubr.smsvcodes.data.local.PlayerPreferences
-import com.arubr.smsvcodes.data.local.ViewHistory
-import com.arubr.smsvcodes.data.local.WatchedThreshold
-import com.arubr.smsvcodes.data.local.dao.WatchProgress
+import io.github.aedev.flow.data.local.AppDatabase
+import io.github.aedev.flow.data.local.PlayerPreferences
+import io.github.aedev.flow.data.local.ViewHistory
+import io.github.aedev.flow.data.local.WatchedThreshold
+import io.github.aedev.flow.data.local.dao.WatchProgress
 import io.mockk.every
 import io.mockk.mockk
 import kotlinx.coroutines.flow.first

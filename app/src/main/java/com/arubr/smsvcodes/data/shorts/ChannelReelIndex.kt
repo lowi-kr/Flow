@@ -1,8 +1,8 @@
-package com.arubr.smsvcodes.data.shorts
+package io.github.aedev.flow.data.shorts
 
 import android.util.Log
-import com.arubr.smsvcodes.data.model.Video
-import com.arubr.smsvcodes.innertube.YouTube
+import io.github.aedev.flow.data.model.Video
+import io.github.aedev.flow.innertube.YouTube
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.Semaphore
 import kotlinx.coroutines.sync.withLock

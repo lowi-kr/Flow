@@ -1,7 +1,7 @@
-package com.arubr.smsvcodes.data.lyrics
+package io.github.aedev.flow.data.lyrics
 
 import com.google.common.truth.Truth.assertThat
-import com.arubr.smsvcodes.data.lyrics.paxsenix.Paxsenix
+import io.github.aedev.flow.data.lyrics.paxsenix.Paxsenix
 import org.junit.Test
 
 class PaxsenixItunesSearchTest {

@@ -1,18 +1,18 @@
-package com.arubr.smsvcodes.ui.screens.notes
+package io.github.aedev.flow.ui.screens.notes
 
 import android.util.Log
-import com.arubr.smsvcodes.data.local.SubscriptionRepository
-import com.arubr.smsvcodes.data.local.ViewHistory
-import com.arubr.smsvcodes.data.local.dao.VideoDao
-import com.arubr.smsvcodes.data.notes.Note
-import com.arubr.smsvcodes.data.notes.NoteKind
-import com.arubr.smsvcodes.data.notes.NoteSubject
-import com.arubr.smsvcodes.data.notes.NotesRepository
-import com.arubr.smsvcodes.di.NetworkIoDispatcher
-import com.arubr.smsvcodes.innertube.YouTube
-import com.arubr.smsvcodes.innertube.models.YouTubeClient
-import com.arubr.smsvcodes.innertube.pages.channel.ChannelHeader
-import com.arubr.smsvcodes.utils.ThumbnailUrlResolver
+import io.github.aedev.flow.data.local.SubscriptionRepository
+import io.github.aedev.flow.data.local.ViewHistory
+import io.github.aedev.flow.data.local.dao.VideoDao
+import io.github.aedev.flow.data.notes.Note
+import io.github.aedev.flow.data.notes.NoteKind
+import io.github.aedev.flow.data.notes.NoteSubject
+import io.github.aedev.flow.data.notes.NotesRepository
+import io.github.aedev.flow.di.NetworkIoDispatcher
+import io.github.aedev.flow.innertube.YouTube
+import io.github.aedev.flow.innertube.models.YouTubeClient
+import io.github.aedev.flow.innertube.pages.channel.ChannelHeader
+import io.github.aedev.flow.utils.ThumbnailUrlResolver
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.async
 import kotlinx.coroutines.awaitAll
@@ -62,7 +62,7 @@ internal class NoteBackfill
 
         private suspend fun localSubject(
             note: Note,
-            saved: com.arubr.smsvcodes.data.local.entity.VideoEntity?,
+            saved: io.github.aedev.flow.data.local.entity.VideoEntity?,
         ): NoteSubject? {
             val known = note.subject
             return when (note.kind) {

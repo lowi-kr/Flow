@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.screens.music.collection
+package io.github.aedev.flow.ui.screens.music.collection
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -30,19 +30,19 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.data.music.model.MusicPlaylist
-import com.arubr.smsvcodes.data.music.model.MusicTrack
-import com.arubr.smsvcodes.ui.components.layout.flowBottomContentPadding
-import com.arubr.smsvcodes.ui.components.music.item.MusicItemDensity
-import com.arubr.smsvcodes.ui.components.music.item.MusicTrackItem
-import com.arubr.smsvcodes.ui.components.music.section.MusicCollectionShelf
-import com.arubr.smsvcodes.ui.components.shared.FlowEmptyState
-import com.arubr.smsvcodes.ui.components.shared.FlowSegmentedGap
-import com.arubr.smsvcodes.ui.components.shared.ReorderHandle
-import com.arubr.smsvcodes.ui.components.shared.ReorderableLazyListState
-import com.arubr.smsvcodes.ui.components.shared.flowSegmentShape
-import com.arubr.smsvcodes.ui.theme.Dimensions
+import io.github.aedev.flow.R
+import io.github.aedev.flow.data.music.model.MusicPlaylist
+import io.github.aedev.flow.data.music.model.MusicTrack
+import io.github.aedev.flow.ui.components.layout.flowBottomContentPadding
+import io.github.aedev.flow.ui.components.music.item.MusicItemDensity
+import io.github.aedev.flow.ui.components.music.item.MusicTrackItem
+import io.github.aedev.flow.ui.components.music.section.MusicCollectionShelf
+import io.github.aedev.flow.ui.components.shared.FlowEmptyState
+import io.github.aedev.flow.ui.components.shared.FlowSegmentedGap
+import io.github.aedev.flow.ui.components.shared.ReorderHandle
+import io.github.aedev.flow.ui.components.shared.ReorderableLazyListState
+import io.github.aedev.flow.ui.components.shared.flowSegmentShape
+import io.github.aedev.flow.ui.theme.Dimensions
 
 // Room for the selection toolbar to float over the last row.
 private val ListEndPadding = 96.dp

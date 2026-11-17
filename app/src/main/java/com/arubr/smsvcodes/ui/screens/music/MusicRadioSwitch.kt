@@ -1,7 +1,7 @@
-package com.arubr.smsvcodes.ui.screens.music
+package io.github.aedev.flow.ui.screens.music
 
-import com.arubr.smsvcodes.data.local.PlayerPreferences
-import com.arubr.smsvcodes.player.EnhancedMusicPlayerManager
+import io.github.aedev.flow.data.local.PlayerPreferences
+import io.github.aedev.flow.player.EnhancedMusicPlayerManager
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow

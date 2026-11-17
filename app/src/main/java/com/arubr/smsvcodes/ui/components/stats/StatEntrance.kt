@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.stats
+package io.github.aedev.flow.ui.components.stats
 
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.AnimationVector1D

@@ -1,11 +1,11 @@
-package com.arubr.smsvcodes.ui.components.shared
+package io.github.aedev.flow.ui.components.shared
 
 import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.buildAnnotatedString
-import com.arubr.smsvcodes.utils.RICH_TEXT_CHANNEL
-import com.arubr.smsvcodes.utils.RICH_TEXT_SEEK
-import com.arubr.smsvcodes.utils.RICH_TEXT_URL
-import com.arubr.smsvcodes.utils.RICH_TEXT_VIDEO
+import io.github.aedev.flow.utils.RICH_TEXT_CHANNEL
+import io.github.aedev.flow.utils.RICH_TEXT_SEEK
+import io.github.aedev.flow.utils.RICH_TEXT_URL
+import io.github.aedev.flow.utils.RICH_TEXT_VIDEO
 import org.junit.Assert.assertEquals
 import org.junit.Test
 

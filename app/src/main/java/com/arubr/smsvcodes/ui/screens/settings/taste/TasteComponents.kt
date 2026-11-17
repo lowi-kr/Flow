@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.screens.settings.taste
+package io.github.aedev.flow.ui.screens.settings.taste
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -32,9 +32,9 @@ import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.data.recommendation.FlowPersona
-import com.arubr.smsvcodes.ui.components.shared.flowArtistShape
+import io.github.aedev.flow.R
+import io.github.aedev.flow.data.recommendation.FlowPersona
+import io.github.aedev.flow.ui.components.shared.flowArtistShape
 import kotlin.math.PI
 import kotlin.math.cos
 import kotlin.math.roundToInt

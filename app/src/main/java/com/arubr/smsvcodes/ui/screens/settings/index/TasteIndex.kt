@@ -1,8 +1,8 @@
-package com.arubr.smsvcodes.ui.screens.settings.index
+package io.github.aedev.flow.ui.screens.settings.index
 
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.ui.components.settings.SettingEntry
-import com.arubr.smsvcodes.ui.components.settings.SettingsDestination
+import io.github.aedev.flow.R
+import io.github.aedev.flow.ui.components.settings.SettingEntry
+import io.github.aedev.flow.ui.components.settings.SettingsDestination
 
 internal object TasteIndex {
     private val page = SettingsDestination.TASTE

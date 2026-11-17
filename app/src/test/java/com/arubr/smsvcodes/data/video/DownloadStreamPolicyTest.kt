@@ -1,7 +1,7 @@
-package com.arubr.smsvcodes.data.video
+package io.github.aedev.flow.data.video
 
 import com.google.common.truth.Truth.assertThat
-import com.arubr.smsvcodes.innertube.models.response.PlayerResponse.StreamingData.Format
+import io.github.aedev.flow.innertube.models.response.PlayerResponse.StreamingData.Format
 import org.junit.Test
 import java.util.Locale
 

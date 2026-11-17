@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.screens.home.chips
+package io.github.aedev.flow.ui.screens.home.chips
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.PaddingValues
@@ -12,19 +12,19 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.data.model.PlaylistInfo
-import com.arubr.smsvcodes.data.model.Video
-import com.arubr.smsvcodes.ui.components.FeedGridLayout
-import com.arubr.smsvcodes.ui.components.PlaylistCard
-import com.arubr.smsvcodes.ui.components.PlaylistCardLayout
-import com.arubr.smsvcodes.ui.components.layout.flowBottomContentPadding
-import com.arubr.smsvcodes.ui.components.shared.FeedGridSkeleton
-import com.arubr.smsvcodes.ui.components.shared.FlowEmptyState
-import com.arubr.smsvcodes.ui.components.shared.FlowErrorState
-import com.arubr.smsvcodes.ui.components.shared.dpadFocusGroup
-import com.arubr.smsvcodes.ui.screens.home.HomeFeedGrid
-import com.arubr.smsvcodes.ui.screens.home.HomeUiState
+import io.github.aedev.flow.R
+import io.github.aedev.flow.data.model.PlaylistInfo
+import io.github.aedev.flow.data.model.Video
+import io.github.aedev.flow.ui.components.FeedGridLayout
+import io.github.aedev.flow.ui.components.PlaylistCard
+import io.github.aedev.flow.ui.components.PlaylistCardLayout
+import io.github.aedev.flow.ui.components.layout.flowBottomContentPadding
+import io.github.aedev.flow.ui.components.shared.FeedGridSkeleton
+import io.github.aedev.flow.ui.components.shared.FlowEmptyState
+import io.github.aedev.flow.ui.components.shared.FlowErrorState
+import io.github.aedev.flow.ui.components.shared.dpadFocusGroup
+import io.github.aedev.flow.ui.screens.home.HomeFeedGrid
+import io.github.aedev.flow.ui.screens.home.HomeUiState
 
 private const val SKELETON_CARDS = 6
 private val MixGridTopPadding = 4.dp

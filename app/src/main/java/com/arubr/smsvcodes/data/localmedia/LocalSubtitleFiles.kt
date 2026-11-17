@@ -1,6 +1,6 @@
-package com.arubr.smsvcodes.data.localmedia
+package io.github.aedev.flow.data.localmedia
 
-import com.arubr.smsvcodes.player.stream.CaptionFormat
+import io.github.aedev.flow.player.stream.CaptionFormat
 import java.util.Locale
 
 /**

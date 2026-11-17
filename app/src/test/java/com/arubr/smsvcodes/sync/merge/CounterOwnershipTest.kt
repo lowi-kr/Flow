@@ -1,10 +1,10 @@
-package com.arubr.smsvcodes.sync.merge
+package io.github.aedev.flow.sync.merge
 
-import com.arubr.smsvcodes.sync.canonical.BrainCounters
-import com.arubr.smsvcodes.sync.canonical.CanonicalBrain
-import com.arubr.smsvcodes.sync.canonical.CanonicalMusicAffinity
-import com.arubr.smsvcodes.sync.canonical.CanonicalMusicBrain
-import com.arubr.smsvcodes.sync.canonical.GCounter
+import io.github.aedev.flow.sync.canonical.BrainCounters
+import io.github.aedev.flow.sync.canonical.CanonicalBrain
+import io.github.aedev.flow.sync.canonical.CanonicalMusicAffinity
+import io.github.aedev.flow.sync.canonical.CanonicalMusicBrain
+import io.github.aedev.flow.sync.canonical.GCounter
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Test

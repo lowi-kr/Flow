@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.layout.navigation
+package io.github.aedev.flow.ui.components.layout.navigation
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.fadeIn
@@ -24,9 +24,9 @@ import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import com.arubr.smsvcodes.ui.utils.LocalWindowSizeClass
-import com.arubr.smsvcodes.ui.utils.isExpandedWidth
-import com.arubr.smsvcodes.ui.utils.isMediumHeight
+import io.github.aedev.flow.ui.utils.LocalWindowSizeClass
+import io.github.aedev.flow.ui.utils.isExpandedWidth
+import io.github.aedev.flow.ui.utils.isMediumHeight
 
 const val FLOW_NAV_BAR_TAG = "flow_nav_bar"
 const val FLOW_NAV_RAIL_TAG = "flow_nav_rail"

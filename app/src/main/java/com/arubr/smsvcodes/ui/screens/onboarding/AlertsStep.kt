@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.screens.onboarding
+package io.github.aedev.flow.ui.screens.onboarding
 
 import android.Manifest
 import android.content.Context
@@ -34,12 +34,12 @@ import androidx.compose.ui.unit.dp
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.compose.LifecycleEventEffect
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.notification.BackgroundWorkPolicy
-import com.arubr.smsvcodes.ui.components.shared.FlowNavRow
-import com.arubr.smsvcodes.ui.components.shared.FlowSegmentedGap
-import com.arubr.smsvcodes.ui.components.shared.FlowSwitchRow
-import com.arubr.smsvcodes.ui.components.shared.flowRowGroupShape
+import io.github.aedev.flow.R
+import io.github.aedev.flow.notification.BackgroundWorkPolicy
+import io.github.aedev.flow.ui.components.shared.FlowNavRow
+import io.github.aedev.flow.ui.components.shared.FlowSegmentedGap
+import io.github.aedev.flow.ui.components.shared.FlowSwitchRow
+import io.github.aedev.flow.ui.components.shared.flowRowGroupShape
 
 private val FootnotePadding = 16.dp
 

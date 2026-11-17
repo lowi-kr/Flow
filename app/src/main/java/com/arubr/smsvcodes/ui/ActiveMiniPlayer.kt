@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui
+package io.github.aedev.flow.ui
 
 /** The one mini player the shell shows. Never more than one: they are not stacked. */
 internal enum class ActiveMiniPlayer { None, Video, VideoBar, Music }

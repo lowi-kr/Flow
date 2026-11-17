@@ -1,12 +1,12 @@
-package com.arubr.smsvcodes.ui.components.shared
+package io.github.aedev.flow.ui.components.shared
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.State
 import androidx.compose.runtime.remember
 import androidx.compose.ui.platform.LocalContext
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.arubr.smsvcodes.data.local.PlayerPreferences
-import com.arubr.smsvcodes.utils.shareVideo
+import io.github.aedev.flow.data.local.PlayerPreferences
+import io.github.aedev.flow.utils.shareVideo
 
 /** The user's "share links without text" preference, for every share affordance to honour. */
 @Composable

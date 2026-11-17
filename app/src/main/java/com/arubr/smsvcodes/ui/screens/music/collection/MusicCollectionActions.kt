@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.screens.music.collection
+package io.github.aedev.flow.ui.screens.music.collection
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.rounded.PlaylistAdd
@@ -15,8 +15,8 @@ import androidx.compose.material.icons.rounded.SaveAs
 import androidx.compose.material.icons.rounded.VideoLibrary
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.res.stringResource
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.ui.components.shared.FlowSelectionAction
+import io.github.aedev.flow.R
+import io.github.aedev.flow.ui.components.shared.FlowSelectionAction
 
 /**
  * The header's ⋮ menu: add songs, edit or delete your own playlist, or add all of these to one of yours.

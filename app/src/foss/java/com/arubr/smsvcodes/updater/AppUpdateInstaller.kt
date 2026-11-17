@@ -1,8 +1,8 @@
-package com.arubr.smsvcodes.updater
+package io.github.aedev.flow.updater
 
 import android.content.Intent
-import com.arubr.smsvcodes.data.update.AppRelease
-import com.arubr.smsvcodes.data.update.UpdateDownload
+import io.github.aedev.flow.data.update.AppRelease
+import io.github.aedev.flow.data.update.UpdateDownload
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow

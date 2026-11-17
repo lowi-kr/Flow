@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.layout.navigation
+package io.github.aedev.flow.ui.components.layout.navigation
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.fillMaxHeight
@@ -28,9 +28,9 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.semantics.stateDescription
 import androidx.compose.ui.unit.dp
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.ui.utils.LocalWindowSizeClass
-import com.arubr.smsvcodes.ui.utils.isLargeWidth
+import io.github.aedev.flow.R
+import io.github.aedev.flow.ui.utils.LocalWindowSizeClass
+import io.github.aedev.flow.ui.utils.isLargeWidth
 import kotlinx.coroutines.launch
 
 // Centres the 48 dp header button over the 96 dp collapsed rail's item column.

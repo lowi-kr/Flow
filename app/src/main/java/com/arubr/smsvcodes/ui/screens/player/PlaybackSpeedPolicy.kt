@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.screens.player
+package io.github.aedev.flow.ui.screens.player
 
 /** What the player knows about a video when it picks a starting speed. */
 internal data class PlaybackSpeedContext(

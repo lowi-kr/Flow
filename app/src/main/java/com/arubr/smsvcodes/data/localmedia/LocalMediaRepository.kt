@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.data.localmedia
+package io.github.aedev.flow.data.localmedia
 
 import android.content.Context
 import android.database.ContentObserver
@@ -7,7 +7,7 @@ import android.os.Handler
 import android.os.Looper
 import android.provider.MediaStore
 import dagger.hilt.android.qualifiers.ApplicationContext
-import com.arubr.smsvcodes.utils.PerformanceDispatcher
+import io.github.aedev.flow.utils.PerformanceDispatcher
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.channels.awaitClose

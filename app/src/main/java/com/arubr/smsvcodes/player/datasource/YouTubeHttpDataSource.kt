@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.player.datasource
+package io.github.aedev.flow.player.datasource
 
 import android.net.Uri
 import android.util.Log
@@ -9,9 +9,9 @@ import androidx.media3.datasource.DataSource
 import androidx.media3.datasource.DataSpec
 import androidx.media3.datasource.HttpDataSource
 import androidx.media3.datasource.okhttp.OkHttpDataSource
-import com.arubr.smsvcodes.network.AppProxyManager
-import com.arubr.smsvcodes.player.error.PlayerDiagnostics
-import com.arubr.smsvcodes.player.error.StreamDenialClassifier
+import io.github.aedev.flow.network.AppProxyManager
+import io.github.aedev.flow.player.error.PlayerDiagnostics
+import io.github.aedev.flow.player.error.StreamDenialClassifier
 import okhttp3.OkHttpClient
 import java.util.concurrent.TimeUnit
 

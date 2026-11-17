@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.innertube.pages.renderer
+package io.github.aedev.flow.innertube.pages.renderer
 
 import com.google.common.truth.Truth.assertThat
 import org.junit.Test

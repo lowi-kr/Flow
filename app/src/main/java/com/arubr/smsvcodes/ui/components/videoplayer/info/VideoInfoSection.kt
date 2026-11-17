@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.videoplayer.info
+package io.github.aedev.flow.ui.components.videoplayer.info
 
 import android.content.ClipData
 import android.content.ClipboardManager
@@ -19,21 +19,21 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.data.local.PlayerPreferences
-import com.arubr.smsvcodes.data.model.Video
-import com.arubr.smsvcodes.data.model.VideoCollaborator
-import com.arubr.smsvcodes.ui.components.shared.ChannelAvatarStack
-import com.arubr.smsvcodes.ui.components.shared.CollaboratorsBottomSheet
-import com.arubr.smsvcodes.ui.components.shared.FlowSubscribeButton
-import com.arubr.smsvcodes.ui.components.shared.FlowSubscribeButtonSize
-import com.arubr.smsvcodes.ui.components.shared.card.rememberCollaboratorChannelDisplayName
-import com.arubr.smsvcodes.ui.components.shared.rememberDateDisplaySettings
-import com.arubr.smsvcodes.ui.theme.extendedColors
-import com.arubr.smsvcodes.utils.DateContext
-import com.arubr.smsvcodes.utils.avatarImageIdentityKey
-import com.arubr.smsvcodes.utils.formatSubscriberCount
-import com.arubr.smsvcodes.utils.formatViewCount
+import io.github.aedev.flow.R
+import io.github.aedev.flow.data.local.PlayerPreferences
+import io.github.aedev.flow.data.model.Video
+import io.github.aedev.flow.data.model.VideoCollaborator
+import io.github.aedev.flow.ui.components.shared.ChannelAvatarStack
+import io.github.aedev.flow.ui.components.shared.CollaboratorsBottomSheet
+import io.github.aedev.flow.ui.components.shared.FlowSubscribeButton
+import io.github.aedev.flow.ui.components.shared.FlowSubscribeButtonSize
+import io.github.aedev.flow.ui.components.shared.card.rememberCollaboratorChannelDisplayName
+import io.github.aedev.flow.ui.components.shared.rememberDateDisplaySettings
+import io.github.aedev.flow.ui.theme.extendedColors
+import io.github.aedev.flow.utils.DateContext
+import io.github.aedev.flow.utils.avatarImageIdentityKey
+import io.github.aedev.flow.utils.formatSubscriberCount
+import io.github.aedev.flow.utils.formatViewCount
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable

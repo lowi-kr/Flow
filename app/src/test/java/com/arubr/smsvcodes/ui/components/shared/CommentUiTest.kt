@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.shared
+package io.github.aedev.flow.ui.components.shared
 
 import android.app.Application
 import android.content.Context
@@ -13,11 +13,11 @@ import androidx.compose.ui.test.performClick
 import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.google.common.truth.Truth.assertThat
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.data.model.Comment
-import com.arubr.smsvcodes.data.model.RichText
-import com.arubr.smsvcodes.data.model.RichTextSpan
-import com.arubr.smsvcodes.data.model.RichTextTarget
+import io.github.aedev.flow.R
+import io.github.aedev.flow.data.model.Comment
+import io.github.aedev.flow.data.model.RichText
+import io.github.aedev.flow.data.model.RichTextSpan
+import io.github.aedev.flow.data.model.RichTextTarget
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith

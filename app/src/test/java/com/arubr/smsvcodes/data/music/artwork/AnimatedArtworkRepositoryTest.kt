@@ -1,8 +1,8 @@
-package com.arubr.smsvcodes.data.music.artwork
+package io.github.aedev.flow.data.music.artwork
 
 import com.google.common.truth.Truth.assertThat
-import com.arubr.smsvcodes.data.music.model.MusicArtist
-import com.arubr.smsvcodes.data.music.model.MusicTrack
+import io.github.aedev.flow.data.music.model.MusicArtist
+import io.github.aedev.flow.data.music.model.MusicTrack
 import kotlinx.coroutines.test.runTest
 import org.junit.Test
 import java.io.IOException

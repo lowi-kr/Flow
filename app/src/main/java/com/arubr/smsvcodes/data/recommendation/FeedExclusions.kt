@@ -1,6 +1,6 @@
-package com.arubr.smsvcodes.data.recommendation
+package io.github.aedev.flow.data.recommendation
 
-import com.arubr.smsvcodes.data.model.Video
+import io.github.aedev.flow.data.model.Video
 
 /**
  * What the viewer asked not to see, read from the brain in one snapshot for the surfaces that never

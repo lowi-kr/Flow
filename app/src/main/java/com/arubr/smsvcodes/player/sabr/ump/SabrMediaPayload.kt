@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.player.sabr.ump
+package io.github.aedev.flow.player.sabr.ump
 
 /**
  * MEDIA and MEDIA_END payloads address their MEDIA_HEADER with one unsigned byte.

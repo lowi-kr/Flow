@@ -1,20 +1,20 @@
-package com.arubr.smsvcodes.ui.screens.settings.appearance.player
+package io.github.aedev.flow.ui.screens.settings.appearance.player
 
 import dagger.hilt.android.lifecycle.HiltViewModel
-import com.arubr.smsvcodes.data.local.DEFAULT_FULLSCREEN_SEEKBAR_PADDING_DP
-import com.arubr.smsvcodes.data.local.DEFAULT_PORTRAIT_SEEKBAR_PADDING_DP
-import com.arubr.smsvcodes.data.local.GestureOverlayStyle
-import com.arubr.smsvcodes.data.local.MiniBarSwipeAction
-import com.arubr.smsvcodes.data.local.MusicPlainControlColors
-import com.arubr.smsvcodes.data.local.MusicPlayerBackgroundStyle
-import com.arubr.smsvcodes.data.local.PlayerOverlayPreferences
-import com.arubr.smsvcodes.data.local.PlayerPreferences
-import com.arubr.smsvcodes.data.local.QueueSwipeAction
-import com.arubr.smsvcodes.data.local.ScrubPreviewStyle
-import com.arubr.smsvcodes.data.local.SeekbarPaddingMode
-import com.arubr.smsvcodes.data.local.ShortsPlayerUiMode
-import com.arubr.smsvcodes.data.local.SliderStyle
-import com.arubr.smsvcodes.ui.screens.settings.SettingsViewModel
+import io.github.aedev.flow.data.local.DEFAULT_FULLSCREEN_SEEKBAR_PADDING_DP
+import io.github.aedev.flow.data.local.DEFAULT_PORTRAIT_SEEKBAR_PADDING_DP
+import io.github.aedev.flow.data.local.GestureOverlayStyle
+import io.github.aedev.flow.data.local.MiniBarSwipeAction
+import io.github.aedev.flow.data.local.MusicPlainControlColors
+import io.github.aedev.flow.data.local.MusicPlayerBackgroundStyle
+import io.github.aedev.flow.data.local.PlayerOverlayPreferences
+import io.github.aedev.flow.data.local.PlayerPreferences
+import io.github.aedev.flow.data.local.QueueSwipeAction
+import io.github.aedev.flow.data.local.ScrubPreviewStyle
+import io.github.aedev.flow.data.local.SeekbarPaddingMode
+import io.github.aedev.flow.data.local.ShortsPlayerUiMode
+import io.github.aedev.flow.data.local.SliderStyle
+import io.github.aedev.flow.ui.screens.settings.SettingsViewModel
 import javax.inject.Inject
 
 @HiltViewModel

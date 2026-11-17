@@ -1,8 +1,8 @@
-package com.arubr.smsvcodes.innertube.utils
+package io.github.aedev.flow.innertube.utils
 
-import com.arubr.smsvcodes.innertube.YouTube
-import com.arubr.smsvcodes.innertube.pages.LibraryPage
-import com.arubr.smsvcodes.innertube.pages.PlaylistPage
+import io.github.aedev.flow.innertube.YouTube
+import io.github.aedev.flow.innertube.pages.LibraryPage
+import io.github.aedev.flow.innertube.pages.PlaylistPage
 import java.security.MessageDigest
 
 @JvmName("completedLibrary")

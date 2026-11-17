@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.screens.settings.about
+package io.github.aedev.flow.ui.screens.settings.about
 
 import android.os.Build
 import androidx.compose.foundation.background
@@ -41,13 +41,13 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.ui.components.settings.SettingsDestination
-import com.arubr.smsvcodes.ui.components.settings.SettingsPage
-import com.arubr.smsvcodes.ui.components.settings.SettingsTarget
-import com.arubr.smsvcodes.ui.components.settings.nav
-import com.arubr.smsvcodes.ui.screens.settings.index.AboutIndex
-import com.arubr.smsvcodes.ui.screens.settings.index.DestinationIndex
+import io.github.aedev.flow.R
+import io.github.aedev.flow.ui.components.settings.SettingsDestination
+import io.github.aedev.flow.ui.components.settings.SettingsPage
+import io.github.aedev.flow.ui.components.settings.SettingsTarget
+import io.github.aedev.flow.ui.components.settings.nav
+import io.github.aedev.flow.ui.screens.settings.index.AboutIndex
+import io.github.aedev.flow.ui.screens.settings.index.DestinationIndex
 
 private enum class AboutDialog { CHANGELOG, DEVICE, NOTICES }
 

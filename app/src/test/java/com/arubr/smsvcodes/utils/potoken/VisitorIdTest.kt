@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.utils.potoken
+package io.github.aedev.flow.utils.potoken
 
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNull

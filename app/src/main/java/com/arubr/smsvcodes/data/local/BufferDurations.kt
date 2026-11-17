@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.data.local
+package io.github.aedev.flow.data.local
 
 /**
  * Buffer durations for Media3's `DefaultLoadControl`, already reconciled with each other.

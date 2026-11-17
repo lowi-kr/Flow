@@ -1,13 +1,13 @@
-package com.arubr.smsvcodes.player.sabr.core
+package io.github.aedev.flow.player.sabr.core
 
-import com.arubr.smsvcodes.player.sabr.proto.FormatBufferedRange
-import com.arubr.smsvcodes.player.sabr.proto.FormatId
-import com.arubr.smsvcodes.player.sabr.proto.FormatInitializationMetadata
-import com.arubr.smsvcodes.player.sabr.proto.NextRequestPolicy
-import com.arubr.smsvcodes.player.sabr.proto.SabrContext
-import com.arubr.smsvcodes.player.sabr.proto.SabrContextSendingPolicy
-import com.arubr.smsvcodes.player.sabr.proto.SabrContextUpdate
-import com.arubr.smsvcodes.player.sabr.proto.SabrRedirect
+import io.github.aedev.flow.player.sabr.proto.FormatBufferedRange
+import io.github.aedev.flow.player.sabr.proto.FormatId
+import io.github.aedev.flow.player.sabr.proto.FormatInitializationMetadata
+import io.github.aedev.flow.player.sabr.proto.NextRequestPolicy
+import io.github.aedev.flow.player.sabr.proto.SabrContext
+import io.github.aedev.flow.player.sabr.proto.SabrContextSendingPolicy
+import io.github.aedev.flow.player.sabr.proto.SabrContextUpdate
+import io.github.aedev.flow.player.sabr.proto.SabrRedirect
 
 class SabrSessionState {
     var streamingUrl: String = ""

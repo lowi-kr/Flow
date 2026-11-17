@@ -1,7 +1,7 @@
-package com.arubr.smsvcodes.data.scrobble
+package io.github.aedev.flow.data.scrobble
 
 import android.util.Log
-import com.arubr.smsvcodes.BuildConfig
+import io.github.aedev.flow.BuildConfig
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import kotlinx.serialization.json.Json

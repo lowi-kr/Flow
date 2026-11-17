@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.data.local
+package io.github.aedev.flow.data.local
 
 import com.google.common.truth.Truth.assertThat
 import com.google.gson.Gson

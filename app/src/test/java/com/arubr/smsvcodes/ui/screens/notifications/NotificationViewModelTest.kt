@@ -1,12 +1,12 @@
-package com.arubr.smsvcodes.ui.screens.notifications
+package io.github.aedev.flow.ui.screens.notifications
 
 import com.google.common.truth.Truth.assertThat
 import dagger.Lazy
-import com.arubr.smsvcodes.data.engagement.VideoFeedbackUseCase
-import com.arubr.smsvcodes.data.local.NotificationRepository
-import com.arubr.smsvcodes.data.local.entity.NotificationEntity
-import com.arubr.smsvcodes.data.model.Video
-import com.arubr.smsvcodes.data.subscriptions.SubscriptionFeedRepository
+import io.github.aedev.flow.data.engagement.VideoFeedbackUseCase
+import io.github.aedev.flow.data.local.NotificationRepository
+import io.github.aedev.flow.data.local.entity.NotificationEntity
+import io.github.aedev.flow.data.model.Video
+import io.github.aedev.flow.data.subscriptions.SubscriptionFeedRepository
 import io.mockk.coEvery
 import io.mockk.coVerify
 import io.mockk.every

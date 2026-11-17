@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.player
+package io.github.aedev.flow.player
 
 import android.annotation.SuppressLint
 import android.content.Context

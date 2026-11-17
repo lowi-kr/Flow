@@ -1,6 +1,6 @@
-package com.arubr.smsvcodes.ui.screens.home
+package io.github.aedev.flow.ui.screens.home
 
-import com.arubr.smsvcodes.data.local.HomeFeedCacheRepository
+import io.github.aedev.flow.data.local.HomeFeedCacheRepository
 import javax.inject.Inject
 import javax.inject.Singleton
 

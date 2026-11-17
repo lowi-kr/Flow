@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.screens.notifications
+package io.github.aedev.flow.ui.screens.notifications
 
 import android.text.format.DateFormat
 import androidx.annotation.StringRes
@@ -12,8 +12,8 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.core.os.ConfigurationCompat
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.compose.LifecycleEventEffect
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.utils.formatYouTubeRelativeTime
+import io.github.aedev.flow.R
+import io.github.aedev.flow.utils.formatYouTubeRelativeTime
 import java.time.LocalDate
 import java.time.ZoneId
 import java.time.format.DateTimeFormatter

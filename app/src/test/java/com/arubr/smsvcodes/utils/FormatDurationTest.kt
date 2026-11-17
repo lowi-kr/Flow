@@ -4,7 +4,7 @@
  * This file is part of Flow (https://github.com/Flow-Tube/Flow).
  */
 
-package com.arubr.smsvcodes.utils
+package io.github.aedev.flow.utils
 
 import com.google.common.truth.Truth.assertThat
 import org.junit.Test

@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.videoplayer.gesture
+package io.github.aedev.flow.ui.components.videoplayer.gesture
 
 import android.app.Activity
 import android.media.AudioManager
@@ -14,11 +14,11 @@ import androidx.compose.ui.hapticfeedback.HapticFeedbackType
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.input.pointer.util.VelocityTracker
 import androidx.compose.ui.unit.dp
-import com.arubr.smsvcodes.data.local.SpeedSwipeSide
-import com.arubr.smsvcodes.player.EnhancedPlayerManager
-import com.arubr.smsvcodes.ui.components.shared.PlayerSpeedSwipe
-import com.arubr.smsvcodes.ui.components.shared.SpeedSwipeDrag
-import com.arubr.smsvcodes.ui.components.shared.SpeedSwipeStepTravel
+import io.github.aedev.flow.data.local.SpeedSwipeSide
+import io.github.aedev.flow.player.EnhancedPlayerManager
+import io.github.aedev.flow.ui.components.shared.PlayerSpeedSwipe
+import io.github.aedev.flow.ui.components.shared.SpeedSwipeDrag
+import io.github.aedev.flow.ui.components.shared.SpeedSwipeStepTravel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay

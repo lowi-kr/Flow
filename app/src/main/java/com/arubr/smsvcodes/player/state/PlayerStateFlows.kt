@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.player.state
+package io.github.aedev.flow.player.state
 
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.distinctUntilChanged

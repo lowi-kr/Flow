@@ -1,6 +1,6 @@
-package com.arubr.smsvcodes.player.audio
+package io.github.aedev.flow.player.audio
 
-import com.arubr.smsvcodes.innertube.models.response.PlayerResponse
+import io.github.aedev.flow.innertube.models.response.PlayerResponse
 import kotlin.math.pow
 
 /** YouTube's loudness metadata as a playback gain: loud tracks are turned down, quiet ones stay as they are. */

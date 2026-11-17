@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.shared
+package io.github.aedev.flow.ui.components.shared
 
 import androidx.compose.ui.geometry.CornerRadius
 import androidx.compose.ui.geometry.Offset
@@ -11,9 +11,9 @@ import androidx.compose.ui.graphics.drawscope.DrawScope
 import androidx.compose.ui.graphics.drawscope.clipPath
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.util.lerp
-import com.arubr.smsvcodes.data.model.SponsorBlockSegment
-import com.arubr.smsvcodes.ui.theme.SPONSOR_BLOCK_SEGMENT_ALPHA
-import com.arubr.smsvcodes.ui.theme.defaultSponsorBlockColor
+import io.github.aedev.flow.data.model.SponsorBlockSegment
+import io.github.aedev.flow.ui.theme.SPONSOR_BLOCK_SEGMENT_ALPHA
+import io.github.aedev.flow.ui.theme.defaultSponsorBlockColor
 import org.schabi.newpipe.extractor.stream.StreamSegment
 
 internal val RestTrackHeight = 5.dp

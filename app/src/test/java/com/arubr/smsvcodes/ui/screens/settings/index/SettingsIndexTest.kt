@@ -1,8 +1,8 @@
-package com.arubr.smsvcodes.ui.screens.settings.index
+package io.github.aedev.flow.ui.screens.settings.index
 
-import com.arubr.smsvcodes.ui.components.settings.SettingAvailability
-import com.arubr.smsvcodes.ui.components.settings.SettingsDestination
-import com.arubr.smsvcodes.ui.components.settings.SettingsTarget
+import io.github.aedev.flow.ui.components.settings.SettingAvailability
+import io.github.aedev.flow.ui.components.settings.SettingsDestination
+import io.github.aedev.flow.ui.components.settings.SettingsTarget
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertNull

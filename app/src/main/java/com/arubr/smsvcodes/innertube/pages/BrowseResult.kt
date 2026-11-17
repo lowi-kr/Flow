@@ -1,8 +1,8 @@
-package com.arubr.smsvcodes.innertube.pages
+package io.github.aedev.flow.innertube.pages
 
-import com.arubr.smsvcodes.innertube.models.YTItem
-import com.arubr.smsvcodes.innertube.models.filterExplicit
-import com.arubr.smsvcodes.innertube.models.filterVideoSongs
+import io.github.aedev.flow.innertube.models.YTItem
+import io.github.aedev.flow.innertube.models.filterExplicit
+import io.github.aedev.flow.innertube.models.filterVideoSongs
 
 data class BrowseResult(
     val title: String?,

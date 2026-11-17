@@ -1,8 +1,8 @@
 @file:Suppress("ktlint:standard:value-parameter-comment")
 
-package com.arubr.smsvcodes.player.sabr.proto
+package io.github.aedev.flow.player.sabr.proto
 
-import com.arubr.smsvcodes.utils.protobuf.ProtobufWriter
+import io.github.aedev.flow.utils.protobuf.ProtobufWriter
 
 data class FormatId(
     val itag: Int = 0,

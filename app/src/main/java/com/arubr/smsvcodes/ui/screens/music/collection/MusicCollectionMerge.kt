@@ -1,9 +1,9 @@
-package com.arubr.smsvcodes.ui.screens.music.collection
+package io.github.aedev.flow.ui.screens.music.collection
 
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.data.local.PlaylistRepository
-import com.arubr.smsvcodes.data.model.PlaylistInfo
-import com.arubr.smsvcodes.data.music.model.MusicTrack
+import io.github.aedev.flow.R
+import io.github.aedev.flow.data.local.PlaylistRepository
+import io.github.aedev.flow.data.model.PlaylistInfo
+import io.github.aedev.flow.data.music.model.MusicTrack
 
 internal suspend fun createMusicPlaylist(
     playlists: PlaylistRepository,

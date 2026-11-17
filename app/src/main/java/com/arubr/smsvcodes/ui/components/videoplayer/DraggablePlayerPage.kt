@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.components.videoplayer
+package io.github.aedev.flow.ui.components.videoplayer
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
@@ -14,13 +14,13 @@ import androidx.compose.ui.layout.layout
 import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.unit.offset
-import com.arubr.smsvcodes.ui.components.videoplayer.motion.BODY_CONTENT_MAX_EXPAND_FRACTION
-import com.arubr.smsvcodes.ui.components.videoplayer.motion.BODY_SLIDE_PX
-import com.arubr.smsvcodes.ui.components.videoplayer.motion.OpenOriginRect
-import com.arubr.smsvcodes.ui.components.videoplayer.motion.RoundRectClipShape
-import com.arubr.smsvcodes.ui.components.videoplayer.motion.openBodyAlpha
-import com.arubr.smsvcodes.ui.components.videoplayer.motion.openGroundCornerRadius
-import com.arubr.smsvcodes.ui.components.videoplayer.motion.openGroundRect
+import io.github.aedev.flow.ui.components.videoplayer.motion.BODY_CONTENT_MAX_EXPAND_FRACTION
+import io.github.aedev.flow.ui.components.videoplayer.motion.BODY_SLIDE_PX
+import io.github.aedev.flow.ui.components.videoplayer.motion.OpenOriginRect
+import io.github.aedev.flow.ui.components.videoplayer.motion.RoundRectClipShape
+import io.github.aedev.flow.ui.components.videoplayer.motion.openBodyAlpha
+import io.github.aedev.flow.ui.components.videoplayer.motion.openGroundCornerRadius
+import io.github.aedev.flow.ui.components.videoplayer.motion.openGroundRect
 import kotlin.math.roundToInt
 
 /**

@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.data.audio.eq
+package io.github.aedev.flow.data.audio.eq
 
 import dagger.Binds
 import dagger.Module

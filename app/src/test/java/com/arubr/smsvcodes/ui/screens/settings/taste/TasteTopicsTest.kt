@@ -1,11 +1,11 @@
-package com.arubr.smsvcodes.ui.screens.settings.taste
+package io.github.aedev.flow.ui.screens.settings.taste
 
 import com.google.common.truth.Truth.assertThat
-import com.arubr.smsvcodes.data.recommendation.ContentVector
-import com.arubr.smsvcodes.data.recommendation.DisplayForm
-import com.arubr.smsvcodes.data.recommendation.NeuroTokenizer
-import com.arubr.smsvcodes.data.recommendation.TopicEvidence
-import com.arubr.smsvcodes.data.recommendation.UserBrain
+import io.github.aedev.flow.data.recommendation.ContentVector
+import io.github.aedev.flow.data.recommendation.DisplayForm
+import io.github.aedev.flow.data.recommendation.NeuroTokenizer
+import io.github.aedev.flow.data.recommendation.TopicEvidence
+import io.github.aedev.flow.data.recommendation.UserBrain
 import org.junit.Test
 
 class TasteTopicsTest {

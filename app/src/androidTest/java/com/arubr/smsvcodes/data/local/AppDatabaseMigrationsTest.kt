@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.data.local
+package io.github.aedev.flow.data.local
 
 import androidx.room.Room
 import androidx.room.testing.MigrationTestHelper

@@ -1,7 +1,7 @@
-package com.arubr.smsvcodes.player.recovery
+package io.github.aedev.flow.player.recovery
 
 import com.google.common.truth.Truth.assertThat
-import com.arubr.smsvcodes.player.stream.InnerTubeVideoStreamExtractor
+import io.github.aedev.flow.player.stream.InnerTubeVideoStreamExtractor
 import io.mockk.mockk
 import kotlinx.coroutines.CompletableDeferred
 import kotlinx.coroutines.ExperimentalCoroutinesApi

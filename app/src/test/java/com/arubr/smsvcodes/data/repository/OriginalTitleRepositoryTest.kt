@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.data.repository
+package io.github.aedev.flow.data.repository
 
 import com.google.common.truth.Truth.assertThat
 import kotlinx.coroutines.Dispatchers

@@ -1,9 +1,9 @@
-package com.arubr.smsvcodes.ui.screens.music.collection
+package io.github.aedev.flow.ui.screens.music.collection
 
 import android.content.Context
 import androidx.annotation.PluralsRes
 import androidx.annotation.StringRes
-import com.arubr.smsvcodes.ui.components.shared.quickactions.QuickActionUndo
+import io.github.aedev.flow.ui.components.shared.quickactions.QuickActionUndo
 
 /** A snackbar line from a music page, with the Undo it offers if any. */
 data class CollectionMessage(

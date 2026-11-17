@@ -1,6 +1,6 @@
 @file:OptIn(ExperimentalMaterial3ExpressiveApi::class)
 
-package com.arubr.smsvcodes.ui.screens.update
+package io.github.aedev.flow.ui.screens.update
 
 import android.text.format.Formatter
 import androidx.compose.foundation.layout.Arrangement
@@ -53,16 +53,16 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.compose.LifecycleEventEffect
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.arubr.smsvcodes.BuildConfig
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.data.update.AppRelease
-import com.arubr.smsvcodes.data.update.AppVersions
-import com.arubr.smsvcodes.data.update.UpdateFailure
-import com.arubr.smsvcodes.ui.components.layout.topbar.FlowTopBar
-import com.arubr.smsvcodes.ui.components.shared.FlowEmptyState
-import com.arubr.smsvcodes.ui.components.shared.FlowLoadingIndicator
-import com.arubr.smsvcodes.ui.components.shared.FlowLogo
-import com.arubr.smsvcodes.ui.components.shared.FlowMaxContentWidth
+import io.github.aedev.flow.BuildConfig
+import io.github.aedev.flow.R
+import io.github.aedev.flow.data.update.AppRelease
+import io.github.aedev.flow.data.update.AppVersions
+import io.github.aedev.flow.data.update.UpdateFailure
+import io.github.aedev.flow.ui.components.layout.topbar.FlowTopBar
+import io.github.aedev.flow.ui.components.shared.FlowEmptyState
+import io.github.aedev.flow.ui.components.shared.FlowLoadingIndicator
+import io.github.aedev.flow.ui.components.shared.FlowLogo
+import io.github.aedev.flow.ui.components.shared.FlowMaxContentWidth
 import java.time.ZoneId
 import java.time.format.DateTimeFormatter
 import java.time.format.FormatStyle

@@ -1,9 +1,9 @@
-package com.arubr.smsvcodes.ui
+package io.github.aedev.flow.ui
 
 import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
-import com.arubr.smsvcodes.utils.parseYouTubeLink
+import io.github.aedev.flow.utils.parseYouTubeLink
 
 /**
  * What an intent from outside asks the app shell to open: a video or short, a page route, or the

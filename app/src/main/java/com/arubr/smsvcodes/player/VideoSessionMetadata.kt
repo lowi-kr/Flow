@@ -1,8 +1,8 @@
-package com.arubr.smsvcodes.player
+package io.github.aedev.flow.player
 
 import android.net.Uri
 import androidx.media3.common.MediaMetadata
-import com.arubr.smsvcodes.data.model.Video
+import io.github.aedev.flow.data.model.Video
 
 internal data class VideoSessionMetadata(
     val mediaId: String,

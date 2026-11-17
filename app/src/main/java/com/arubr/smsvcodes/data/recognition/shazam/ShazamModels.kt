@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.data.recognition.shazam
+package io.github.aedev.flow.data.recognition.shazam
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable

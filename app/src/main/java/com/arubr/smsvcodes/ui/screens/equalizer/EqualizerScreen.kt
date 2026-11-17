@@ -1,4 +1,4 @@
-package com.arubr.smsvcodes.ui.screens.equalizer
+package io.github.aedev.flow.ui.screens.equalizer
 
 import androidx.activity.compose.BackHandler
 import androidx.activity.compose.rememberLauncherForActivityResult
@@ -48,20 +48,20 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.arubr.smsvcodes.R
-import com.arubr.smsvcodes.data.audio.eq.EqMode
-import com.arubr.smsvcodes.data.audio.eq.EqState
-import com.arubr.smsvcodes.ui.components.equalizer.EqBandEditor
-import com.arubr.smsvcodes.ui.components.layout.LocalFlowBottomInsets
-import com.arubr.smsvcodes.ui.components.layout.floatAboveBottomChrome
-import com.arubr.smsvcodes.ui.components.layout.topbar.FlowGlobalActionsMode
-import com.arubr.smsvcodes.ui.components.layout.topbar.FlowTopBar
-import com.arubr.smsvcodes.ui.components.layout.topbar.FlowTopBarMenuItem
-import com.arubr.smsvcodes.ui.components.layout.topbar.FlowTopBarOverflow
-import com.arubr.smsvcodes.ui.components.shared.FlowModalSheetDefaults
-import com.arubr.smsvcodes.ui.components.shared.rememberFlowPaneState
-import com.arubr.smsvcodes.ui.components.shared.rememberFlowSheetState
-import com.arubr.smsvcodes.utils.shareLink
+import io.github.aedev.flow.R
+import io.github.aedev.flow.data.audio.eq.EqMode
+import io.github.aedev.flow.data.audio.eq.EqState
+import io.github.aedev.flow.ui.components.equalizer.EqBandEditor
+import io.github.aedev.flow.ui.components.layout.LocalFlowBottomInsets
+import io.github.aedev.flow.ui.components.layout.floatAboveBottomChrome
+import io.github.aedev.flow.ui.components.layout.topbar.FlowGlobalActionsMode
+import io.github.aedev.flow.ui.components.layout.topbar.FlowTopBar
+import io.github.aedev.flow.ui.components.layout.topbar.FlowTopBarMenuItem
+import io.github.aedev.flow.ui.components.layout.topbar.FlowTopBarOverflow
+import io.github.aedev.flow.ui.components.shared.FlowModalSheetDefaults
+import io.github.aedev.flow.ui.components.shared.rememberFlowPaneState
+import io.github.aedev.flow.ui.components.shared.rememberFlowSheetState
+import io.github.aedev.flow.utils.shareLink
 import kotlinx.coroutines.launch
 
 private val SheetContentPadding = 24.dp

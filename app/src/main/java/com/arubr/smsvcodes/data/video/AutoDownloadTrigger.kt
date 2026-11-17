@@ -1,13 +1,13 @@
-package com.arubr.smsvcodes.data.video
+package io.github.aedev.flow.data.video
 
 import android.content.Context
 import dagger.hilt.android.qualifiers.ApplicationContext
-import com.arubr.smsvcodes.data.local.PlayerPreferences
-import com.arubr.smsvcodes.data.local.dao.DownloadDao
-import com.arubr.smsvcodes.data.localmedia.LocalMediaIds
-import com.arubr.smsvcodes.data.model.Video
-import com.arubr.smsvcodes.data.video.downloader.work.DownloadController
-import com.arubr.smsvcodes.utils.NetworkState
+import io.github.aedev.flow.data.local.PlayerPreferences
+import io.github.aedev.flow.data.local.dao.DownloadDao
+import io.github.aedev.flow.data.localmedia.LocalMediaIds
+import io.github.aedev.flow.data.model.Video
+import io.github.aedev.flow.data.video.downloader.work.DownloadController
+import io.github.aedev.flow.utils.NetworkState
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
