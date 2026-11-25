@@ -6,6 +6,7 @@ import androidx.datastore.preferences.core.*
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import dagger.hilt.android.qualifiers.ApplicationContext
+import io.github.aedev.flow.data.profile.StoreScope
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.map
@@ -13,7 +14,10 @@ import java.util.UUID
 import javax.inject.Inject
 import javax.inject.Singleton
 
-private val Context.searchDataStore: DataStore<Preferences> by safePreferencesDataStore(name = "search_history")
+private val Context.searchDataStore: DataStore<Preferences> by safePreferencesDataStore(
+    name = "search_history",
+    scope = StoreScope.PROFILE_LIBRARY,
+)
 
 data class SearchHistoryItem(
     val id: String = UUID.randomUUID().toString(),
@@ -63,6 +67,16 @@ class SearchHistoryRepository
             private val MAX_HISTORY_SIZE_KEY = intPreferencesKey("max_history_size")
             private val AUTO_DELETE_HISTORY_KEY = booleanPreferencesKey("auto_delete_history")
             private val HISTORY_RETENTION_DAYS_KEY = intPreferencesKey("history_retention_days")
+
+            /** The settings [getSettingsBackup] carries. */
+            internal val SETTING_NAMES: Set<String> =
+                setOf(
+                    SEARCH_HISTORY_ENABLED_KEY.name,
+                    SEARCH_SUGGESTIONS_ENABLED_KEY.name,
+                    AUTO_DELETE_HISTORY_KEY.name,
+                    MAX_HISTORY_SIZE_KEY.name,
+                    HISTORY_RETENTION_DAYS_KEY.name,
+                )
 
             private const val DEFAULT_MAX_HISTORY_SIZE = 50
             private const val DEFAULT_RETENTION_DAYS = 90

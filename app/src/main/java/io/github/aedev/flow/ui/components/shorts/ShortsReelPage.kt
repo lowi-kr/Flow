@@ -51,7 +51,10 @@ import io.github.aedev.flow.data.model.toVideo
 import io.github.aedev.flow.player.GlobalPlayerState
 import io.github.aedev.flow.player.shorts.ShortsPlayerPool
 import io.github.aedev.flow.player.toDisplayAspectRatioOrNull
+import io.github.aedev.flow.ui.components.shared.MediaBufferingIndicator
 import io.github.aedev.flow.ui.components.shared.MediaSeekBar
+import io.github.aedev.flow.ui.components.shared.sharedSubscriptionBellViewModel
+import io.github.aedev.flow.ui.components.shared.toggleHapticType
 import io.github.aedev.flow.ui.components.videoplayer.ambient.VideoAmbientBackground
 import io.github.aedev.flow.ui.components.videoplayer.ambient.rememberAmbientFrame
 import io.github.aedev.flow.ui.components.videoplayer.overlay.SpeedBoostOverlay
@@ -99,6 +102,8 @@ internal fun ShortsReelPage(
 
     val isLiked by remember(short.id) { viewModel.isVideoLikedState(short.id) }.collectAsState()
     val isSubscribed by remember(short.channelId) { viewModel.isChannelSubscribedState(short.channelId) }.collectAsState()
+    val bell = sharedSubscriptionBellViewModel()
+    val notifyingChannelIds by bell.notifyingChannelIds.collectAsState()
     val isSaved by remember(short.id) { viewModel.isShortSavedState(short.id) }.collectAsState()
 
     // In Picture-in-Picture the window is a thumbnail: every overlay drawn at its authored size
@@ -183,12 +188,12 @@ internal fun ShortsReelPage(
         playerPool.togglePlayPause()
         playerPool.ownedPlayer(pageIndex, short.id)?.let { pageState.isPlaying = it.isPlaying }
         pageState.showPauseIndicator = true
-        haptic.performHapticFeedback(HapticFeedbackType.TextHandleMove)
+        haptic.performHapticFeedback(HapticFeedbackType.VirtualKey)
     }
 
     fun toggleSubscription() {
         scope.launch { viewModel.toggleSubscription(short.channelId, short.channelName, short.channelThumbnailUrl) }
-        haptic.performHapticFeedback(HapticFeedbackType.TextHandleMove)
+        haptic.performHapticFeedback(toggleHapticType(nowOn = !isSubscribed))
     }
 
     Box(
@@ -223,7 +228,7 @@ internal fun ShortsReelPage(
                             onTap = { offset ->
                                 if (style.controlsOnDemand && isCentreTap(offset, size) && !sessionState.showOnDemandControls) {
                                     sessionState.showOnDemandControls = true
-                                    haptic.performHapticFeedback(HapticFeedbackType.TextHandleMove)
+                                    haptic.performHapticFeedback(HapticFeedbackType.ContextClick)
                                 } else {
                                     togglePlaybackWithFeedback()
                                 }
@@ -277,7 +282,7 @@ internal fun ShortsReelPage(
                     .padding(top = ShortsOverlayDefaults.AutoScrollBadgeTopPadding, end = AutoScrollBadgeEndPadding),
         )
 
-        ShortsBufferingIndicator(
+        MediaBufferingIndicator(
             visible = pageState.isBuffering,
             modifier = Modifier.align(Alignment.Center),
         )
@@ -322,6 +327,8 @@ internal fun ShortsReelPage(
                     onChannelClick = actions.onChannelClick,
                     onSubscribeToggle = ::toggleSubscription,
                     onDescriptionClick = actions.onDescriptionClick,
+                    isNotificationsEnabled = short.channelId in notifyingChannelIds,
+                    onNotificationChange = { bell.setNotifications(short.channelId, it) },
                     modifier =
                         Modifier
                             .weight(1f)
@@ -332,7 +339,7 @@ internal fun ShortsReelPage(
                     likeLabel = if (style.showRailLabels) likeCount ?: stringResource(R.string.action_like) else likeCount.orEmpty(),
                     onLikeClick = {
                         scope.launch { viewModel.toggleLike(short) }
-                        haptic.performHapticFeedback(HapticFeedbackType.TextHandleMove)
+                        haptic.performHapticFeedback(toggleHapticType(nowOn = !isLiked))
                     },
                     commentLabel =
                         if (style.showRailLabels) {
@@ -351,7 +358,7 @@ internal fun ShortsReelPage(
                             val message = context.getString(if (isSaved) R.string.shorts_unsaved else R.string.shorts_saved)
                             Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
                         }
-                        haptic.performHapticFeedback(HapticFeedbackType.TextHandleMove)
+                        haptic.performHapticFeedback(toggleHapticType(nowOn = !isSaved))
                     },
                     shareLabel = if (style.showRailLabels) stringResource(R.string.action_share) else "",
                     onShareClick = actions.onShareClick,

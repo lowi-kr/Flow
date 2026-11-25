@@ -12,6 +12,7 @@ import io.github.aedev.flow.data.local.dao.WatchHistoryDao
 import io.github.aedev.flow.data.local.dao.WatchProgress
 import io.github.aedev.flow.data.local.entity.WatchHistoryEntity
 import io.github.aedev.flow.data.localmedia.LocalMediaIds
+import io.github.aedev.flow.data.profile.StoreScope
 import io.github.aedev.flow.utils.ThumbnailUrlResolver
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -29,7 +30,10 @@ import kotlinx.coroutines.yield
  * Legacy DataStore kept only for one-time migration of existing user data.
  * After migration it is left empty (cleared).
  */
-private val Context.viewHistoryDataStore: DataStore<Preferences> by safePreferencesDataStore(name = "view_history")
+private val Context.viewHistoryDataStore: DataStore<Preferences> by safePreferencesDataStore(
+    name = "view_history",
+    scope = StoreScope.PROFILE_LIBRARY,
+)
 
 /**
  * Watch-history repository backed by Room SQLite.
@@ -37,13 +41,16 @@ private val Context.viewHistoryDataStore: DataStore<Preferences> by safePreferen
 class ViewHistory private constructor(
     private val context: Context,
 ) {
-    private val database = AppDatabase.getDatabase(context)
+    private val database = AppDatabase.profile(context)
     private val dao = database.watchHistoryDao()
     private val scope = CoroutineScope(SupervisorJob() + Dispatchers.IO)
 
     companion object {
         private const val TAG = "ViewHistory"
         private const val WATCH_HISTORY_TABLE = "watch_history"
+
+        // Below SQLite's bound-variable limit on every Android version.
+        private const val UNPLAYED_DELETE_BATCH = 500
 
         @Volatile
         private var instance: ViewHistory? = null
@@ -239,6 +246,10 @@ class ViewHistory private constructor(
     suspend fun clearVideoHistory(videoId: String) {
         dao.deleteEntry(videoId)
     }
+
+    /** Removes [videoIds] from history where they were only imported, never played; returns how many went. */
+    suspend fun removeUnplayedEntries(videoIds: Collection<String>): Int =
+        videoIds.chunked(UNPLAYED_DELETE_BATCH).sumOf { dao.deleteUnplayed(it) }
 
     /**
      * Marks the given video as fully watched (position = duration) so it no longer

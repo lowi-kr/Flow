@@ -16,6 +16,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -29,6 +30,8 @@ import io.github.aedev.flow.data.model.Video
 import io.github.aedev.flow.ui.components.shared.FlowSubscribeButton
 import io.github.aedev.flow.ui.components.shared.FlowSubscribeButtonSize
 import io.github.aedev.flow.ui.components.shared.ShortWatchedIndicator
+import io.github.aedev.flow.ui.components.shared.rememberChannelOrganizeActions
+import io.github.aedev.flow.ui.components.shared.toOrganizeTarget
 import io.github.aedev.flow.ui.theme.extendedColors
 import io.github.aedev.flow.utils.formatSubscriberCount
 import io.github.aedev.flow.utils.formatViewCount
@@ -41,6 +44,8 @@ internal fun ChannelRow(
     isSubscribed: Boolean? = null,
     onSubscribeClick: () -> Unit = {},
     onUnsubscribeClick: () -> Unit = {},
+    isNotificationsEnabled: Boolean = false,
+    onNotificationChange: ((Boolean) -> Unit)? = null,
 ) {
     Row(
         modifier =
@@ -78,11 +83,20 @@ internal fun ChannelRow(
             }
         }
         if (isSubscribed != null) {
+            val organize =
+                rememberChannelOrganizeActions(
+                    target = remember(channel) { channel.toOrganizeTarget() },
+                    isSubscribed = isSubscribed,
+                )
             FlowSubscribeButton(
                 isSubscribed = isSubscribed,
                 onSubscribeClick = onSubscribeClick,
                 onUnsubscribeClick = onUnsubscribeClick,
+                isNotificationsEnabled = isNotificationsEnabled,
+                onNotificationChange = onNotificationChange,
                 size = FlowSubscribeButtonSize.Compact,
+                onAddNote = organize.onAddNote,
+                onManageGroups = organize.onManageGroups,
             )
         }
     }

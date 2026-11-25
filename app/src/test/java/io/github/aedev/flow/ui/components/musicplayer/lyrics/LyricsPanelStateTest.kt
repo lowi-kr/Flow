@@ -59,6 +59,30 @@ class LyricsPanelStateTest {
     }
 
     @Test
+    fun `a panel opened during a break settles on the line coming up`() {
+        val withBreak =
+            listOf(LyricsEntry(0L, ""), LyricsEntry(1_000L, "sung"), LyricsEntry(70_000L, "after"), LyricsEntry(80_000L, "last"))
+        val state = tracking(30_000L)
+
+        state.advance(withBreak, 30_000L, hasWordTimings = false)
+
+        assertThat(state.activeLineIndices).isEmpty()
+        assertThat(state.scrollTargetIndex).isEqualTo(2)
+    }
+
+    @Test
+    fun `a seek back into a break settles on the line coming up`() {
+        val withBreak =
+            listOf(LyricsEntry(0L, ""), LyricsEntry(1_000L, "sung"), LyricsEntry(70_000L, "after"), LyricsEntry(80_000L, "last"))
+        val state = tracking(0L)
+        state.advance(withBreak, 85_000L, hasWordTimings = false)
+
+        state.advance(withBreak, 30_000L, hasWordTimings = false)
+
+        assertThat(state.scrollTargetIndex).isEqualTo(2)
+    }
+
+    @Test
     fun `a background vocal keeps its main line active`() {
         val withBackground =
             listOf(
@@ -81,9 +105,10 @@ class LyricsPanelStateTest {
                 LyricsListItem.Line(0, LyricsEntry(0L, "a")),
                 LyricsListItem.Indicator(0, 1_000L, 9_000L),
                 LyricsListItem.Line(1, LyricsEntry(9_000L, "b")),
+                LyricsListItem.Line(2, LyricsEntry(10_000L, "(echo)", isBackground = true)),
             )
         val metrics = LyricsRowMetrics(lineHeightPx = 60f, indicatorHeightPx = 72f, constraintLineHeightPx = 120f, gapPx = 16f)
-        val offsets = lyricsRowOffsets(items, heights = mapOf(0 to 100, 1 to 50, 2 to 100), activeIndex = 0, metrics = metrics)
-        assertThat(offsets).containsExactly(0, 0f, 1, 100f, 2, 166f)
+        val offsets = lyricsRowOffsets(items, heights = mapOf(0 to 100, 1 to 50, 2 to 100, 3 to 40), activeIndex = 0, metrics = metrics)
+        assertThat(offsets).containsExactly(0, 0f, 1, 100f, 2, 166f, 3, 266f)
     }
 }

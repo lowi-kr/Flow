@@ -18,6 +18,7 @@ import io.github.aedev.flow.data.model.Playlist
 import io.github.aedev.flow.data.model.Video
 import io.github.aedev.flow.data.paging.SearchResultItem
 import io.github.aedev.flow.data.paging.SearchShelfKind
+import io.github.aedev.flow.innertube.pages.renderer.CommunityPost
 import io.github.aedev.flow.ui.components.FeedGridLayout
 import io.github.aedev.flow.ui.components.PlaylistCard
 import io.github.aedev.flow.ui.components.PlaylistCardLayout
@@ -27,7 +28,6 @@ import io.github.aedev.flow.ui.components.shared.FeedPagingFooter
 import io.github.aedev.flow.ui.components.shared.MediaShortCard
 import io.github.aedev.flow.ui.components.shared.ShortCardDefaults
 import io.github.aedev.flow.ui.components.shared.card.MediaVideoCard
-import io.github.aedev.flow.ui.components.shared.card.VideoCardDefaults
 import io.github.aedev.flow.ui.components.shared.card.VideoCardLayout
 import io.github.aedev.flow.ui.components.shared.dismissKeyboardOnPress
 import io.github.aedev.flow.ui.components.shared.rememberFeedGridPlan
@@ -41,6 +41,9 @@ data class SearchResultActions(
     val dismissKeyboard: () -> Unit,
     val isSubscribed: (String) -> Boolean = { false },
     val onSubscribeToggle: (Channel) -> Unit = {},
+    val isNotifying: (String) -> Boolean = { false },
+    val onNotificationChange: (Channel, Boolean) -> Unit = { _, _ -> },
+    val onPostClick: (CommunityPost) -> Unit = {},
 )
 
 @Composable
@@ -84,6 +87,7 @@ fun SearchResults(
                         layout = if (plan.isListCard(index)) VideoCardLayout.Row else VideoCardLayout.Stacked,
                         onClick = { actions.onVideoClick(item.video) },
                         thumbnailWidth = plan.listThumbnailWidth,
+                        density = plan.cardDensity,
                     )
                 }
 
@@ -92,6 +96,8 @@ fun SearchResults(
                         channel = item.channel,
                         isSubscribed = actions.isSubscribed(item.channel.id),
                         onSubscribeToggle = { actions.onSubscribeToggle(item.channel) },
+                        isNotificationsEnabled = actions.isNotifying(item.channel.id),
+                        onNotificationChange = { actions.onNotificationChange(item.channel, it) },
                         onClick = { actions.onChannelClick(item.channel) },
                         latestTitle = item.latestTitle,
                         latestVideos = item.latestVideos,
@@ -104,7 +110,7 @@ fun SearchResults(
                         playlist = item.playlist,
                         onClick = { actions.onPlaylistClick(item.playlist) },
                         layout = if (plan.isListCard(index)) PlaylistCardLayout.LIST else PlaylistCardLayout.SHELF,
-                        modifier = if (plan.isListCard(index)) Modifier else Modifier.padding(horizontal = VideoCardDefaults.Inset),
+                        modifier = if (plan.isListCard(index)) Modifier else Modifier.padding(horizontal = plan.cardInset),
                     )
                 }
 
@@ -116,6 +122,7 @@ fun SearchResults(
                         onVideoClick = actions.onVideoClick,
                         onShortsClick = actions.onShortsClick,
                         onChannelClick = { actions.onChannelClick(Channel(it, "", "", 0)) },
+                        onPostClick = actions.onPostClick,
                     )
                 }
 

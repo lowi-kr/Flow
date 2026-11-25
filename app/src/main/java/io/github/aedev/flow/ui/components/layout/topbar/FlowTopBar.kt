@@ -40,6 +40,8 @@ enum class FlowGlobalActionsMode {
  *   with a [leading] slot is still treated as a root destination.
  * @param actions screen-specific actions. Keep this to two on a root destination; put the rest in
  *   [FlowTopBarOverflow] so the title keeps its width.
+ * @param crowded set by a root destination with two [actions]: its profile avatar holds Settings by
+ *   default, so the bar ends with three global actions rather than four.
  */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -52,6 +54,7 @@ fun FlowTopBar(
     actions: @Composable RowScope.() -> Unit = {},
     globalActions: FlowGlobalActionsMode = FlowGlobalActionsMode.Auto,
     windowInsets: WindowInsets = FlowTopBarDefaults.WindowInsets,
+    crowded: Boolean = false,
 ) {
     FlowTopBar(
         modifier = modifier,
@@ -63,6 +66,7 @@ fun FlowTopBar(
         actions = actions,
         globalActions = globalActions,
         windowInsets = windowInsets,
+        crowded = crowded,
     )
 }
 
@@ -81,6 +85,7 @@ fun FlowTopBar(
     actions: @Composable RowScope.() -> Unit = {},
     globalActions: FlowGlobalActionsMode = FlowGlobalActionsMode.Auto,
     windowInsets: WindowInsets = FlowTopBarDefaults.WindowInsets,
+    crowded: Boolean = false,
 ) {
     val showGlobalActions =
         when (globalActions) {
@@ -111,7 +116,7 @@ fun FlowTopBar(
         actions = {
             actions()
             if (showGlobalActions) {
-                FlowGlobalActionsRow()
+                FlowGlobalActionsRow(crowded)
             }
         },
         colors = FlowTopBarDefaults.colors(),

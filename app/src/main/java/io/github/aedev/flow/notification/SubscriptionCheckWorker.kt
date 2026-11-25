@@ -5,6 +5,7 @@ import android.util.Log
 import androidx.work.BackoffPolicy
 import androidx.work.Constraints
 import androidx.work.CoroutineWorker
+import androidx.work.ExistingPeriodicWorkPolicy
 import androidx.work.ExistingWorkPolicy
 import androidx.work.NetworkType
 import androidx.work.OneTimeWorkRequestBuilder
@@ -19,10 +20,14 @@ import dagger.hilt.components.SingletonComponent
 import io.github.aedev.flow.data.local.ChannelSubscription
 import io.github.aedev.flow.data.local.PlayerPreferences
 import io.github.aedev.flow.data.local.SubscriptionRepository
+import io.github.aedev.flow.data.model.Video
+import io.github.aedev.flow.data.profile.ProfileWork
 import io.github.aedev.flow.data.shorts.ChannelReelIndex
 import io.github.aedev.flow.data.subscriptions.ChannelRssClient
 import io.github.aedev.flow.data.subscriptions.ChannelRssParser
 import io.github.aedev.flow.data.subscriptions.SubscriptionFeedRepository
+import io.github.aedev.flow.data.subscriptions.fetchSubscriptionPlayerMetadata
+import io.github.aedev.flow.utils.PerformanceDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
 import kotlinx.coroutines.awaitAll
@@ -70,12 +75,24 @@ class SubscriptionCheckWorker(
         /** How many channels are polled concurrently. */
         private const val CHANNEL_CHUNK_SIZE = 10
 
-        /** Schedules the periodic check; [BackgroundCheckScheduler] decides whether it should run at all. */
-        fun schedulePeriodicCheck(
+        /** How long one new video's player lookup may take before it is announced as an upload. */
+        private const val LOOKUP_TIMEOUT_MS = 5_000L
+
+        /**
+         * Schedules the periodic check; [BackgroundCheckScheduler] decides whether it should run at all. A check
+         * another profile left behind is replaced, so it runs with this profile's interval.
+         */
+        suspend fun schedulePeriodicCheck(
             context: Context,
             intervalMinutes: Long,
             reschedule: Boolean,
         ) {
+            val leftByOther =
+                WorkManager
+                    .getInstance(context)
+                    .getWorkInfosForUniqueWorkFlow(WORK_NAME)
+                    .first()
+                    .any { !it.state.isFinished && ProfileWork.queuedByOther(context, it.tags) }
             val constraints =
                 Constraints
                     .Builder()
@@ -91,13 +108,15 @@ class SubscriptionCheckWorker(
                         BackoffPolicy.EXPONENTIAL,
                         WorkRequest.MIN_BACKOFF_MILLIS,
                         TimeUnit.MILLISECONDS,
-                    ).build()
+                    ).setInputData(ProfileWork.data(context))
+                    .addTag(ProfileWork.tag(context))
+                    .build()
 
             WorkManager.getInstance(context).apply {
                 cancelUniqueWork(LEGACY_WORK_NAME)
                 enqueueUniquePeriodicWork(
                     WORK_NAME,
-                    periodicWorkPolicy(reschedule),
+                    if (leftByOther) ExistingPeriodicWorkPolicy.REPLACE else periodicWorkPolicy(reschedule),
                     workRequest,
                 )
             }
@@ -127,7 +146,9 @@ class SubscriptionCheckWorker(
                             .Builder()
                             .setRequiredNetworkType(NetworkType.CONNECTED)
                             .build(),
-                    ).build()
+                    ).setInputData(ProfileWork.data(context))
+                    .addTag(ProfileWork.tag(context))
+                    .build()
 
             WorkManager.getInstance(context).enqueueUniqueWork(
                 IMMEDIATE_WORK_NAME,
@@ -144,6 +165,7 @@ class SubscriptionCheckWorker(
 
     override suspend fun doWork(): Result =
         withContext(Dispatchers.IO) {
+            if (!ProfileWork.belongsHere(this@SubscriptionCheckWorker)) return@withContext Result.success()
             Log.d(TAG, "Starting subscription check via RSS...")
 
             val preferences = dependencies.playerPreferences()
@@ -174,7 +196,7 @@ class SubscriptionCheckWorker(
                 val announceReels = preferences.effectiveSubscriptionShowShorts.first()
                 val notifyShorts = preferences.notifShortsEnabled.first()
 
-                val newVideos = mutableListOf<NotificationHelper.NewVideoEntry>()
+                val newVideos = mutableListOf<SubscriptionNotifications.NewVideoEntry>()
                 subscriptions.chunked(CHANNEL_CHUNK_SIZE).forEach { chunk ->
                     coroutineScope {
                         chunk
@@ -194,9 +216,9 @@ class SubscriptionCheckWorker(
                 }
 
                 // A collaboration two followed channels both list must still notify once.
-                val uniqueVideos = newVideos.distinctBy { it.videoId }
+                val uniqueVideos = classifyNewVideos(newVideos.distinctBy { it.videoId }, PerformanceDispatcher.networkIO, ::lookUp)
                 if (uniqueVideos.isNotEmpty()) {
-                    NotificationHelper.showSubscriptionUpdates(applicationContext, uniqueVideos)
+                    SubscriptionNotifications.showSubscriptionUpdates(applicationContext, uniqueVideos)
                 }
 
                 Log.d(TAG, "Subscription check complete. Found ${newVideos.size} new videos.")
@@ -207,12 +229,29 @@ class SubscriptionCheckWorker(
             }
         }
 
+    /** The player endpoint's view of [entry], which tells a stream or premiere from an upload. */
+    private suspend fun lookUp(entry: SubscriptionNotifications.NewVideoEntry): Video? =
+        fetchSubscriptionPlayerMetadata(
+            Video(
+                id = entry.videoId,
+                title = entry.videoTitle,
+                channelName = entry.channelName,
+                channelId = "",
+                thumbnailUrl = entry.thumbnailUrl.orEmpty(),
+                duration = 0,
+                viewCount = 0,
+                uploadDate = "",
+                timestamp = 0L,
+            ),
+            LOOKUP_TIMEOUT_MS,
+        )?.enriched
+
     private suspend fun checkChannel(
         subscription: ChannelSubscription,
         repository: SubscriptionRepository,
         announceReels: Boolean,
         notifyShorts: Boolean,
-    ): List<NotificationHelper.NewVideoEntry> {
+    ): List<SubscriptionNotifications.NewVideoEntry> {
         val feed =
             dependencies.channelRssClient().fetch(subscription.channelId).getOrElse { error ->
                 Log.w(TAG, "Failed to check RSS for ${subscription.channelName}: ${error.message}")
@@ -257,7 +296,7 @@ class SubscriptionCheckWorker(
                     notifyShorts = notifyShorts,
                 )
             }.map { video ->
-                NotificationHelper.NewVideoEntry(
+                SubscriptionNotifications.NewVideoEntry(
                     channelName = subscription.channelName,
                     videoTitle = video.title,
                     videoId = video.videoId,

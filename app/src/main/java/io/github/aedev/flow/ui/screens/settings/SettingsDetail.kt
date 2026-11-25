@@ -26,9 +26,12 @@ import io.github.aedev.flow.ui.screens.settings.network.NetworkSettingsScreen
 import io.github.aedev.flow.ui.screens.settings.notifications.NotificationSettingsScreen
 import io.github.aedev.flow.ui.screens.settings.playback.BufferSettingsScreen
 import io.github.aedev.flow.ui.screens.settings.playback.PlaybackSettingsScreen
+import io.github.aedev.flow.ui.screens.settings.profiles.ProfileEditScreen
+import io.github.aedev.flow.ui.screens.settings.profiles.ProfilesScreen
 import io.github.aedev.flow.ui.screens.settings.quality.QualitySettingsScreen
 import io.github.aedev.flow.ui.screens.settings.region.LanguageRegionScreen
 import io.github.aedev.flow.ui.screens.settings.scrobbling.ScrobblingScreen
+import io.github.aedev.flow.ui.screens.settings.security.SecurityScreen
 import io.github.aedev.flow.ui.screens.settings.taste.DiscoverChannelsScreen
 import io.github.aedev.flow.ui.screens.settings.taste.FavouriteArtistsScreen
 import io.github.aedev.flow.ui.screens.settings.taste.HiddenContentScreen
@@ -130,11 +133,11 @@ internal fun SettingsDetail(
         }
 
         SettingsDestination.BUFFER -> {
-            BufferSettingsScreen(onBack = onBack, highlight = target.highlight)
+            BufferSettingsScreen(onBack = onBack, highlight = target.highlight, onNavigate = onNavigate)
         }
 
         SettingsDestination.EQUALIZER -> {
-            EqualizerScreen(onBack = onBack, inSettings = true)
+            EqualizerScreen(onBack = onBack, inSettings = true, highlight = target.highlight)
         }
 
         SettingsDestination.QUALITY -> {
@@ -161,6 +164,14 @@ internal fun SettingsDetail(
             SyncScreen(onBack = onBack)
         }
 
+        SettingsDestination.PROFILES -> {
+            ProfilesScreen(onBack = onBack, highlight = target.highlight, onNavigate = onNavigate)
+        }
+
+        SettingsDestination.PROFILE_EDIT -> {
+            ProfileEditScreen(profileId = target.tab, onBack = onBack, highlight = target.highlight)
+        }
+
         SettingsDestination.HISTORY -> {
             HistorySettingsScreen(onBack = onBack, highlight = target.highlight)
         }
@@ -183,6 +194,10 @@ internal fun SettingsDetail(
 
         SettingsDestination.WELLBEING -> {
             WellbeingScreen(onBack = onBack, highlight = target.highlight)
+        }
+
+        SettingsDestination.SECURITY -> {
+            SecurityScreen(onBack = onBack, highlight = target.highlight)
         }
 
         SettingsDestination.WIDGETS -> {

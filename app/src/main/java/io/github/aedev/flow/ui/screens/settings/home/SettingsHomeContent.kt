@@ -121,6 +121,7 @@ internal fun SettingsListScope.homeContent(
         page(SettingsDestination.INTEGRATIONS)
     }
     group(key = "home.data", header = R.string.settings_group_data) {
+        page(SettingsDestination.PROFILES)
         page(SettingsDestination.BACKUP)
         page(SettingsDestination.SYNC)
         page(SettingsDestination.HISTORY)
@@ -130,6 +131,7 @@ internal fun SettingsListScope.homeContent(
         page(SettingsDestination.NOTIFICATIONS)
         page(SettingsDestination.NETWORK)
         page(SettingsDestination.WELLBEING)
+        page(SettingsDestination.SECURITY)
     }
     group(key = "home.about", header = R.string.settings_header_about) {
         page(SettingsDestination.ABOUT)

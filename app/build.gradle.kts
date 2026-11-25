@@ -51,14 +51,16 @@ fun translatedLocaleTags(): List<String> =
 
 android {
     namespace = "io.github.aedev.flow"
-    compileSdk = 37
+    compileSdk {
+        version = release(37) { minorApiLevel = 1 }
+    }
 
     defaultConfig {
         applicationId = "io.github.aedev.flow"
         minSdk = 26
         targetSdk = 36
-        versionCode = 19
-        versionName = "3.0.0"
+        versionCode = 20
+        versionName = "3.0.5"
 
         buildConfigField("int", "NIGHTLY_RUN", "0")
         buildConfigField("String", "APP_LANGUAGE_TAGS", "\"${(listOf("en") + translatedLocaleTags()).joinToString(",")}\"")
@@ -178,7 +180,9 @@ android {
         // because initWith copies release as it stands at this point.
         create("nightly") {
             initWith(getByName("release"))
-            applicationIdSuffix = ".nightly"
+            // PR runs carry the nightly key too, so their own id keeps a test build from installing over a
+            // tester's nightly, which the next nightly would then open with an older schema (#1854).
+            applicationIdSuffix = if (providers.gradleProperty("flow.prBuild").isPresent) ".nightly.pr" else ".nightly"
             versionNameSuffix = "-nightly"
             matchingFallbacks += "release"
             buildConfigField("String", "UPDATE_CHANNEL", "\"nightly\"")
@@ -222,8 +226,15 @@ android {
     }
 }
 
+// JVM tests load Conscrypt's desktop build, which has the same API but native code for the host.
+configurations.matching { it.name.endsWith("UnitTestRuntimeClasspath") }.configureEach {
+    exclude(group = "org.conscrypt", module = "conscrypt-android")
+}
+
 tasks.withType<Test>().configureEach {
     maxParallelForks = (Runtime.getRuntime().availableProcessors() / 2).coerceAtLeast(1)
+    // `-Dflow.fuzz.cases=N` and `-Dflow.fuzz.seed=S` reach the property tests.
+    for (name in listOf("flow.fuzz.cases", "flow.fuzz.seed")) providers.systemProperty(name).orNull?.let { systemProperty(name, it) }
 }
 
 // One profile for every shipped variant: foss, nightly and github run the same startup code, and
@@ -302,6 +313,9 @@ dependencies {
     implementation(libs.androidx.material3.adaptive.layout)
     implementation(libs.androidx.material3.adaptive.navigation)
     implementation(libs.androidx.lifecycle.runtime.ktx)
+    implementation(libs.androidx.lifecycle.process)
+    implementation(libs.androidx.biometric)
+    implementation(libs.androidx.biometric.compose)
 
     // --- Layouts ---
     implementation(libs.androidx.constraintlayout.compose)
@@ -310,6 +324,7 @@ dependencies {
     implementation(libs.coil.compose)
     implementation(libs.compose.reorderable)
     implementation(libs.coil.video)
+    implementation(libs.coil.gif)
     implementation(libs.coil.network.okhttp)
     implementation("androidx.palette:palette-ktx:1.0.0")
 
@@ -347,8 +362,11 @@ dependencies {
     implementation(libs.kotlinx.serialization.json)
     implementation(libs.gson)
 
-    // conscrypt for OkHttp TLS support on older Android versions
+    // conscrypt for OkHttp TLS support on older Android versions, and HPKE for linked devices
     implementation(libs.conscrypt.android)
+    // Linked devices: Ed25519 and X25519 (Conscrypt can't derive a public key from a seed), recovery words
+    implementation(libs.bouncycastle.bcprov)
+    implementation(libs.kotlin.bip39)
 
     // --- Media Playback ---
     implementation(libs.androidx.media3.exoplayer)
@@ -400,6 +418,7 @@ dependencies {
 
     // --- Testing ---
     testImplementation(libs.junit)
+    testImplementation(libs.conscrypt.openjdk.uber)
     testImplementation(libs.kxml2)
     testImplementation(libs.kotlinx.coroutines.test)
     testImplementation(libs.mockk)
