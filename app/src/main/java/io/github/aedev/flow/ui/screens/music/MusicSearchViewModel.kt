@@ -14,6 +14,7 @@ import io.github.aedev.flow.data.local.SearchHistoryScope
 import io.github.aedev.flow.data.local.SearchType
 import io.github.aedev.flow.data.model.distinctByNonBlankKey
 import io.github.aedev.flow.data.music.DownloadManager
+import io.github.aedev.flow.data.music.zemer.ZemerFilter
 import io.github.aedev.flow.data.newmusic.InnertubeMusicService
 import io.github.aedev.flow.innertube.YouTube
 import io.github.aedev.flow.innertube.YouTube.SearchFilter
@@ -111,7 +112,7 @@ class MusicSearchViewModel
                                     suggestions.queries.distinctByNonBlankKey { query ->
                                         query.trim().lowercase()
                                     },
-                                recommendedItems = suggestions.recommendedItems.distinctByStableIdentity(),
+                                recommendedItems = ZemerFilter.filterYTItems(suggestions.recommendedItems).distinctByStableIdentity(),
                             )
                         }
                     }?.onFailure { throwable ->
@@ -151,7 +152,7 @@ class MusicSearchViewModel
                 ?.onSuccess { summaryPage ->
                     _uiState.update { state ->
                         state.copy(
-                            searchSummary = summaryPage.distinctItemsForLazyKeys(),
+                            searchSummary = summaryPage.filteredByZemer().distinctItemsForLazyKeys(),
                             isLoading = false,
                             isSearching = true,
                             continuation = summaryPage.continuation,
@@ -196,7 +197,7 @@ class MusicSearchViewModel
                 ?.onSuccess { searchResult ->
                     _uiState.update { state ->
                         state.copy(
-                            filteredResults = searchResult.items.distinctByStableIdentity(),
+                            filteredResults = ZemerFilter.filterYTItems(searchResult.items).distinctByStableIdentity(),
                             isLoading = false,
                             continuation = searchResult.continuation,
                         )
@@ -242,7 +243,7 @@ class MusicSearchViewModel
                     val songsSection = artistPage.sections.find { it.kind == ArtistSectionKind.TOP_SONGS }
                     val items = songsSection?.items ?: artistPage.sections.firstOrNull()?.items ?: emptyList()
                     withContext(Dispatchers.Main) {
-                        callback(items.distinctByStableIdentity())
+                        callback(ZemerFilter.filterYTItems(items).distinctByStableIdentity())
                     }
                 }
             }
@@ -264,7 +265,7 @@ class MusicSearchViewModel
                                     val newSummary =
                                         io.github.aedev.flow.innertube.pages.SearchSummary(
                                             title = context.getString(R.string.fallback_more_results),
-                                            items = searchResult.items.distinctByStableIdentity(),
+                                            items = ZemerFilter.filterYTItems(searchResult.items).distinctByStableIdentity(),
                                         )
                                     state.copy(
                                         searchSummary =
@@ -279,7 +280,7 @@ class MusicSearchViewModel
                                     state.copy(
                                         filteredResults =
                                             (
-                                                state.filteredResults + searchResult.items
+                                                state.filteredResults + ZemerFilter.filterYTItems(searchResult.items)
                                             ).distinctByStableIdentity(),
                                         continuation = searchResult.continuation,
                                         isMoreLoading = false,

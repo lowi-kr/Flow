@@ -13,7 +13,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          ref: ${{ github.ref }}
+          ref: Feature/zemer-filter
           fetch-depth: 0
 
       - name: Configure git
@@ -86,6 +86,6 @@ jobs:
             echo "No changes to commit."
           else
             git commit -m "refactor: restore upstream io/github/aedev/flow file tree layout"
-            git push origin HEAD:${{ github.ref_name }}
+            git push origin HEAD:Feature/zemer-filter
             echo "Commit: $(git rev-parse HEAD)"
           fi

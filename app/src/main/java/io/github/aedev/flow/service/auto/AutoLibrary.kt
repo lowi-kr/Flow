@@ -12,6 +12,7 @@ import io.github.aedev.flow.data.music.model.toMusicTrack
 import io.github.aedev.flow.data.newmusic.InnertubeMusicService
 import io.github.aedev.flow.data.recommendation.music.MusicBrainEngine
 import io.github.aedev.flow.data.recommendation.music.onRepeatShelf
+import io.github.aedev.flow.data.music.zemer.ZemerFilter
 import io.github.aedev.flow.player.EnhancedMusicPlayerManager
 import io.github.aedev.flow.player.PlaybackResumePolicy
 import kotlinx.coroutines.flow.first
@@ -46,6 +47,31 @@ class AutoLibrary
 
         suspend fun playlists(): List<PlaylistInfo> = playlists.getMusicPlaylistsFlow().first()
 
+        /**
+         * The songs under [parentId], or null when it is not a list of songs. When the Zemer
+         * filter is on, this blocks every source here - including liked songs, downloads, and
+         * recent history - not just catalog browsing, per the hard "nothing outside the
+         * whitelist plays" rule; [io.github.aedev.flow.player.EnhancedMusicPlayerManager] and
+         * [AutoLibraryBrowser] enforce the same rule again at the actual playback step, so this
+         * is belt-and-suspenders for the car's browse UI, not the only gate.
+         */
+        suspend fun tracks(parentId: String): List<MusicTrack>? {
+            AutoBrowseTree.playlistIdOf(parentId)?.let { id ->
+                return ZemerFilter.filterTracks(playlists.getPlaylistVideosFlow(id).first().map { it.toMusicTrack() })
+            }
+            AutoBrowseTree.searchQueryOf(parentId)?.let { return search(it) }
+            val result =
+                when (parentId) {
+                    AutoBrowseTree.ON_REPEAT -> musicBrain.onRepeatShelf()
+                    AutoBrowseTree.RIGHT_NOW -> musicBrain.timeOfDayTracks(MIX_SIZE).audioMusicOnly()
+                    AutoBrowseTree.REDISCOVER -> musicBrain.rediscoverTracks(MIX_SIZE).audioMusicOnly()
+                    AutoBrowseTree.LIKED -> liked.getLikedMusicFlow().first().map { it.toMusicTrack() }
+                    AutoBrowseTree.DOWNLOADS -> downloads.downloadedTracks.first().map { it.track }
+                    AutoBrowseTree.RECENT -> musicHistory.history.first()
+                    AutoBrowseTree.QUEUE -> EnhancedMusicPlayerManager.queue.value
+                    else -> null
+                }
+            return result?.let { ZemerFilter.filterTracks(it) }
         /** The user's own and saved video playlists that hold something to play. */
         suspend fun videoPlaylists(): List<PlaylistInfo> = playlists.getAllPlaylistsFlow().first().filter { it.videoCount > 0 }
 
@@ -83,7 +109,7 @@ class AutoLibrary
             return searchLock.withLock {
                 val now = System.currentTimeMillis()
                 searches[key]?.takeIf { now - it.at < SEARCH_TTL_MS }?.let { return@withLock it.tracks }
-                val tracks = InnertubeMusicService.searchMusic(query.trim())
+                val tracks = ZemerFilter.filterTracks(InnertubeMusicService.searchMusic(query.trim()))
                 searches[key] = CachedSearch(now, tracks)
                 while (searches.size > MAX_CACHED_SEARCHES) searches.remove(searches.keys.first())
                 tracks

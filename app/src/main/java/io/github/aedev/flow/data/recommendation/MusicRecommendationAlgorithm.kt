@@ -5,6 +5,7 @@ import android.util.Log
 import dagger.hilt.android.qualifiers.ApplicationContext
 import io.github.aedev.flow.data.local.LikedVideosRepository
 import io.github.aedev.flow.data.music.PlaylistRepository
+import io.github.aedev.flow.data.music.zemer.ZemerFilter
 import io.github.aedev.flow.data.music.model.MusicArtist
 import io.github.aedev.flow.data.music.model.MusicItemType
 import io.github.aedev.flow.data.music.model.MusicTrack
@@ -268,7 +269,7 @@ class MusicRecommendationAlgorithm
                                     .map { mapSongItem(it) }
                             if (tracks.isNotEmpty()) {
                                 Log.d(TAG, "Using Home Page Quick Picks: ${tracks.size}")
-                                return@withContext tracks.take(limit)
+                                return@withContext ZemerFilter.filterTracks(tracks).take(limit)
                             }
                         }
                     }
@@ -277,7 +278,7 @@ class MusicRecommendationAlgorithm
                 }
 
                 // 2. Fallback: Internal Hybrid Algorithm
-                return@withContext generateFallbackRecommendations(limit)
+                return@withContext ZemerFilter.filterTracks(generateFallbackRecommendations(limit))
             }
 
         private suspend fun generateFallbackRecommendations(limit: Int): List<MusicTrack> =
@@ -358,7 +359,10 @@ class MusicRecommendationAlgorithm
         fun parseHomeSections(homePage: HomePage): List<MusicSection> =
             homePage.sections.mapNotNull { section ->
                 // Broaden filter to include Songs, Albums, Playlists
-                val tracks = section.items.mapNotNull { mapYTItem(it) }
+                // This feeds MusicUiState.dynamicSections, the raw Home feed grid - it goes through
+                // mapYTItem, a separate conversion from InnertubeMusicService's own
+                // convertToMusicTrack, so it needs its own explicit filter rather than inheriting one.
+                val tracks = ZemerFilter.filterTracks(section.items.mapNotNull { mapYTItem(it) })
 
                 if (tracks.isNotEmpty()) {
                     MusicSection(
@@ -449,10 +453,12 @@ class MusicRecommendationAlgorithm
                     // Search for the genre to get relevant songs
                     val searchResults = youTube.search(query = "$genre music", filter = YouTube.SearchFilter.FILTER_SONG).getOrNull()
                     if (searchResults != null) {
-                        return@withContext searchResults.items
-                            .filterIsInstance<SongItem>()
-                            .filterNot { it.isVideoSong }
-                            .map { mapSongItem(it) }
+                        return@withContext ZemerFilter.filterTracks(
+                            searchResults.items
+                                .filterIsInstance<SongItem>()
+                                .filterNot { it.isVideoSong }
+                                .map { mapSongItem(it) },
+                        )
                     }
                 } catch (e: Exception) {
                     Log.e(TAG, "Error fetching genre content for $genre", e)

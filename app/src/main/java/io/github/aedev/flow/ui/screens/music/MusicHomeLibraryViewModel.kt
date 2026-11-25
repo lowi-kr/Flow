@@ -9,6 +9,7 @@ import io.github.aedev.flow.data.local.SubscriptionRepository
 import io.github.aedev.flow.data.music.model.ArtistDetails
 import io.github.aedev.flow.data.music.model.MusicPlaylist
 import io.github.aedev.flow.data.music.model.MusicTrack
+import io.github.aedev.flow.data.music.zemer.ZemerFilter
 import io.github.aedev.flow.data.playlist.sortedFor
 import io.github.aedev.flow.data.scrobble.LastFmDiscovery
 import io.github.aedev.flow.data.scrobble.ScrobbleService
@@ -58,21 +59,20 @@ class MusicHomeLibraryViewModel
             }.stateIn(viewModelScope, sharing, emptyList())
 
         val subscriptions: StateFlow<List<ArtistDetails>> =
-            subscriptionRepository
-                .getAllSubscriptions()
-                .map { subscriptions ->
-                    subscriptions
-                        .filter { it.isMusic }
-                        .sortedByDescending { it.subscribedAt }
-                        .map {
-                            ArtistDetails(
-                                name = it.channelName,
-                                channelId = it.channelId,
-                                thumbnailUrl = it.channelThumbnail,
-                                subscriberCount = 0L,
-                            )
-                        }
-                }.stateIn(viewModelScope, sharing, emptyList())
+            combine(subscriptionRepository.getAllSubscriptions(), ZemerFilter.enabledFlow) { subscriptions, _ ->
+                subscriptions
+                    .filter { it.isMusic }
+                    .sortedByDescending { it.subscribedAt }
+                    .map {
+                        ArtistDetails(
+                            name = it.channelName,
+                            channelId = it.channelId,
+                            thumbnailUrl = it.channelThumbnail,
+                            subscriberCount = 0L,
+                        )
+                    }
+                    .let { ZemerFilter.filterArtists(it) }
+            }.stateIn(viewModelScope, sharing, emptyList())
 
         val lastFmSignedIn: StateFlow<Boolean> =
             scrobbleStore.settings

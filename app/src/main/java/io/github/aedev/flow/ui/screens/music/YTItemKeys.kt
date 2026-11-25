@@ -1,6 +1,7 @@
 package io.github.aedev.flow.ui.screens.music
 
 import io.github.aedev.flow.data.model.distinctByNonBlankKey
+import io.github.aedev.flow.data.music.zemer.ZemerFilter
 import io.github.aedev.flow.innertube.models.AlbumItem
 import io.github.aedev.flow.innertube.models.ArtistItem
 import io.github.aedev.flow.innertube.models.PlaylistItem
@@ -21,6 +22,15 @@ internal fun YTItem.stableIdentityKey(): String {
 internal fun YTItem.stableLazyKey(namespace: String): String = "$namespace:${stableIdentityKey()}"
 
 internal fun Iterable<YTItem>.distinctByStableIdentity(): List<YTItem> = distinctByNonBlankKey(YTItem::stableIdentityKey)
+
+/** Drops every search result not on the Zemer whitelist, section by section, before dedup runs. */
+internal fun SearchSummaryPage.filteredByZemer(): SearchSummaryPage =
+    copy(
+        summaries =
+            summaries.mapNotNull { summary ->
+                summary.copy(items = ZemerFilter.filterYTItems(summary.items)).takeIf { it.items.isNotEmpty() }
+            },
+    )
 
 internal fun SearchSummaryPage.distinctItemsForLazyKeys(): SearchSummaryPage {
     val seenBySection = mutableMapOf<String, MutableSet<String>>()

@@ -31,6 +31,7 @@ import io.github.aedev.flow.data.recommendation.music.MusicBrainEngine
 import io.github.aedev.flow.data.recommendation.music.onRepeatShelf
 import io.github.aedev.flow.data.scrobble.Scrobbler
 import io.github.aedev.flow.player.EnhancedMusicPlayerManager
+import io.github.aedev.flow.data.music.zemer.ZemerFilter
 import io.github.aedev.flow.player.PlaybackTarget
 import io.github.aedev.flow.ui.components.music.sheet.resolveTrackArtists
 import io.github.aedev.flow.ui.components.musicplayer.queue.QueueSwipes
@@ -214,7 +215,7 @@ class MusicPlayerViewModel
 
             viewModelScope.launch {
                 EnhancedMusicPlayerManager.queue.collect { queue ->
-                    _uiState.update { it.copy(queue = queue) }
+                    _uiState.update { it.copy(queue = ZemerFilter.filterTracks(queue)) }
                 }
             }
 
@@ -421,7 +422,7 @@ class MusicPlayerViewModel
 
         /** Plays the On Repeat shelf in a shuffled order, as the widget's Shuffle asks. */
         suspend fun shuffleOnRepeat(sourceName: String) {
-            val tracks = musicBrain.onRepeatShelf().shuffled()
+            val tracks = ZemerFilter.filterTracks(musicBrain.onRepeatShelf()).shuffled()
             loadAndPlayTrack(tracks.firstOrNull() ?: return, tracks, sourceName)
         }
 

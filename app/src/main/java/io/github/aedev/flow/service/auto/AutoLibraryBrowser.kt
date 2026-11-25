@@ -16,6 +16,7 @@ import com.google.common.util.concurrent.ListenableFuture
 import com.google.common.util.concurrent.SettableFuture
 import io.github.aedev.flow.R
 import io.github.aedev.flow.data.music.model.MusicTrack
+import io.github.aedev.flow.data.music.zemer.ZemerFilter
 import io.github.aedev.flow.data.recommendation.music.MusicTimeBucket
 import io.github.aedev.flow.player.EnhancedMusicPlayerManager
 import io.github.aedev.flow.player.musicAudioUri
@@ -128,6 +129,15 @@ internal class AutoLibraryBrowser(
         scope.launch {
             try {
                 val single = mediaItems.singleOrNull()
+                val (rawTracks, rawIndex) =
+                    if (single != null) expand(single) else resolveEach(mediaItems) to startIndex.coerceAtLeast(0)
+                // Hard block for the car, mirroring EnhancedMusicPlayerManager.playTrack: the car
+                // can resolve its own browse/search items straight into media items without ever
+                // going through that in-app path, so the whitelist has to be enforced here too.
+                val targetId = rawTracks.getOrNull(rawIndex)?.videoId
+                val tracks = ZemerFilter.filterTracks(rawTracks)
+                val index = targetId?.let { id -> tracks.indexOfFirst { it.videoId == id } }?.takeIf { it >= 0 } ?: 0
+                if (tracks.isEmpty()) {
                 val picked =
                     if (single != null) {
                         expand(single)
@@ -161,6 +171,8 @@ internal class AutoLibraryBrowser(
         if (mediaItems.all { it.localConfiguration != null }) return null
         val future = SettableFuture.create<List<MediaItem>>()
         scope.launch {
+            runCatching { ZemerFilter.filterTracks(resolveEach(mediaItems)).map(::playable) }
+                .onSuccess { future.set(it) }
             runCatching {
                 mediaItems.mapNotNull { item ->
                     val fromVideoList = AutoBrowseTree.songOf(item.mediaId)?.first?.let(AutoBrowseTree::isVideoList) == true

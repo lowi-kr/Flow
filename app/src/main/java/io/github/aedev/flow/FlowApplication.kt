@@ -152,6 +152,7 @@ class FlowApplication :
         DiscordPresenceRuntime.initialize(this, okHttpClient)
 
         val playerPreferences = PlayerPreferences(this)
+        io.github.aedev.flow.data.music.zemer.ZemerFilter.start(this, playerPreferences)
 
         // Injects modern TLS/SSL certificates so OkHttp and Ktor don't crash
         if (android.os.Build.VERSION.SDK_INT <= android.os.Build.VERSION_CODES.N_MR1) {

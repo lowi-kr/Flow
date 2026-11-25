@@ -15,6 +15,7 @@ import io.github.aedev.flow.data.local.PlayerPreferences
 import io.github.aedev.flow.data.music.DownloadManager
 import io.github.aedev.flow.data.music.MusicCache
 import io.github.aedev.flow.data.music.YouTubeMusicService
+import io.github.aedev.flow.data.music.zemer.ZemerFilter
 import io.github.aedev.flow.data.music.model.ArtistDetails
 import io.github.aedev.flow.data.music.model.CommunityMusicPlaylist
 import io.github.aedev.flow.data.music.model.DailyDiscoverItem
@@ -510,24 +511,33 @@ class MusicViewModel
          */
         private suspend fun refreshLocalShelves() {
             try {
-                val onRepeat = musicBrain.onRepeatShelf()
+                // These shelves are built from the user's own local listening history/graph, not a
+                // live Innertube fetch, so they never pass through InnertubeMusicService's
+                // convertToMusicTrack (where ZemerFilter normally applies) - filter explicitly here.
+                val onRepeat = ZemerFilter.filterTracks(musicBrain.onRepeatShelf())
                 val onRepeatIds = onRepeat.mapTo(HashSet()) { it.videoId }
                 val rotation =
-                    musicBrain
-                        .timeOfDayTracks(20)
-                        .audioMusicOnly()
-                        .filterNot { it.videoId in onRepeatIds }
+                    ZemerFilter.filterTracks(
+                        musicBrain
+                            .timeOfDayTracks(20)
+                            .audioMusicOnly()
+                            .filterNot { it.videoId in onRepeatIds },
+                    )
                 val rediscover =
-                    musicBrain
-                        .rediscoverTracks(12)
-                        .audioMusicOnly()
-                        .filterNot { it.videoId in onRepeatIds }
+                    ZemerFilter.filterTracks(
+                        musicBrain
+                            .rediscoverTracks(12)
+                            .audioMusicOnly()
+                            .filterNot { it.videoId in onRepeatIds },
+                    )
                 val history = playlistRepository.history.firstOrNull().orEmpty()
                 val deepCuts =
-                    musicGraph
-                        .deepCuts(deepCutAlbumIds(history), history, DEEP_CUT_LIMIT)
-                        .audioMusicOnly()
-                        .filterNot { it.videoId in onRepeatIds }
+                    ZemerFilter.filterTracks(
+                        musicGraph
+                            .deepCuts(deepCutAlbumIds(history), history, DEEP_CUT_LIMIT)
+                            .audioMusicOnly()
+                            .filterNot { it.videoId in onRepeatIds },
+                    )
                 val playedArtistKeys = HashSet<String>()
                 history.forEach { track ->
                     playedArtistKeys.add(track.primaryArtistKey())
@@ -540,7 +550,9 @@ class MusicViewModel
                     ).distinct()
                         .take(ARTISTS_FOR_YOU_SEEDS)
                 val artistsForYou =
-                    musicGraph.artistsForYou(seedArtistIds, playedArtistKeys + musicBrain.hiddenArtists.value, ARTISTS_FOR_YOU_LIMIT)
+                    ZemerFilter.filterArtists(
+                        musicGraph.artistsForYou(seedArtistIds, playedArtistKeys + musicBrain.hiddenArtists.value, ARTISTS_FOR_YOU_LIMIT),
+                    )
                 _uiState.update {
                     it.copy(
                         onRepeatTracks = if (onRepeat.size >= 2) onRepeat else it.onRepeatTracks,
@@ -612,7 +624,9 @@ class MusicViewModel
                             }
                         }
 
-                        cachedTrending?.let { trend ->
+                        // MusicCache's trending entry can predate the filter being turned on, same
+                        // as the home-section cache - filter on this read too.
+                        cachedTrending?.let { ZemerFilter.filterTracks(it) }?.let { trend ->
                             _uiState.update {
                                 it.copy(
                                     trendingSongs = trend,
@@ -659,7 +673,7 @@ class MusicViewModel
                                     MusicCache.cacheTrendingMusic(100, charts.songs)
                                     charts.songs
                                 } else {
-                                    val trending = YouTubeMusicService.fetchTrendingMusic(100)
+                                    val trending = ZemerFilter.filterTracks(YouTubeMusicService.fetchTrendingMusic(100))
                                     MusicCache.cacheTrendingMusic(100, trending)
                                     trending
                                 }
@@ -789,7 +803,7 @@ class MusicViewModel
                             _uiState.update { it.copy(topAlbums = albums) }
                         }
 
-                        val newReleases = YouTubeMusicService.fetchNewReleases(40)
+                        val newReleases = ZemerFilter.filterTracks(YouTubeMusicService.fetchNewReleases(40))
                         if (newReleases.isNotEmpty()) {
                             _uiState.update { it.copy(newReleases = newReleases) }
                         }
@@ -849,11 +863,12 @@ class MusicViewModel
                             }
 
                         Log.d("MusicViewModel", "Personalized playlists query: $query")
-                        val playlists = YouTubeMusicService.searchPlaylists(query, 10)
+                        val playlists = ZemerFilter.filterPlaylists(YouTubeMusicService.searchPlaylists(query, 10))
                         if (playlists.isNotEmpty()) {
                             _uiState.update { it.copy(featuredPlaylists = playlists) }
                         } else {
-                            val fallback = YouTubeMusicService.searchPlaylists("curated music playlists 2026", 10)
+                            val fallback =
+                                ZemerFilter.filterPlaylists(YouTubeMusicService.searchPlaylists("curated music playlists 2026", 10))
                             if (fallback.isNotEmpty()) {
                                 _uiState.update { it.copy(featuredPlaylists = fallback) }
                             }
@@ -869,7 +884,7 @@ class MusicViewModel
             viewModelScope.launch(PerformanceDispatcher.networkIO) {
                 withTimeoutOrNull(12_000L) {
                     try {
-                        val tracks = YouTubeMusicService.fetchPopularArtistMusic(50)
+                        val tracks = ZemerFilter.filterTracks(YouTubeMusicService.fetchPopularArtistMusic(50))
                         if (tracks.isNotEmpty()) {
                             MusicCache.cacheGenreTracks("Popular Artists", 50, tracks)
                             val currentGenreTracks = _uiState.value.genreTracks.toMutableMap()
@@ -930,7 +945,14 @@ class MusicViewModel
             viewModelScope.launch(PerformanceDispatcher.networkIO) {
                 val explore = InnertubeMusicService.fetchExplore()
                 if (explore != null) {
-                    _uiState.update { it.copy(explorePage = explore) }
+                    // ExplorePage.newReleaseAlbums is built from raw AlbumItem data, never through
+                    // InnertubeMusicService's convertToMusicTrack - filter by the album's own
+                    // artist ids the same way ZemerFilter.allowsTrack does for a track.
+                    val filteredAlbums =
+                        explore.newReleaseAlbums.filter { album ->
+                            !ZemerFilter.enabled || album.artists.orEmpty().any { artist -> ZemerFilter.allowsArtist(artist.id) }
+                        }
+                    _uiState.update { it.copy(explorePage = explore.copy(newReleaseAlbums = filteredAlbums)) }
                 }
             }
 
@@ -992,6 +1014,7 @@ class MusicViewModel
                             }
                         (fromArtists + fromTracks).awaitAll().flatten()
                     }.filter { it.isCommunityPlaylistCandidate() }
+                        .let { ZemerFilter.filterPlaylists(it) }
                         .distinctBy { it.id }
                         .shuffled()
                         .take(COMMUNITY_PLAYLIST_COUNT)
@@ -1004,13 +1027,18 @@ class MusicViewModel
                         candidates
                             .map { playlist ->
                                 async(PerformanceDispatcher.networkIO) {
+                                    // cachedTracks comes from musicGraph's own cache, which (like the
+                                    // home-section cache) may predate the filter being turned on -
+                                    // filter on read rather than trust it was filtered on write.
                                     val allTracks =
-                                        cachedTracks[playlist.id]
-                                            ?: InnertubeMusicService
-                                                .fetchPlaylistDetails(playlist.id)
-                                                ?.also { musicGraph.recordPlaylist(it) }
-                                                ?.tracks
-                                            ?: return@async null
+                                        ZemerFilter.filterTracks(
+                                            cachedTracks[playlist.id]
+                                                ?: InnertubeMusicService
+                                                    .fetchPlaylistDetails(playlist.id)
+                                                    ?.also { musicGraph.recordPlaylist(it) }
+                                                    ?.tracks
+                                                ?: return@async null,
+                                        )
                                     val tracks = allTracks.audioMusicOnly().take(COMMUNITY_PREVIEW_TRACKS)
                                     if (tracks.isEmpty()) return@async null
                                     CommunityMusicPlaylist(
@@ -1071,7 +1099,7 @@ class MusicViewModel
                 val vibe = vibes.random()
 
                 try {
-                    val playlists = YouTubeMusicService.searchPlaylists("$vibe music playlists", 10)
+                    val playlists = ZemerFilter.filterPlaylists(YouTubeMusicService.searchPlaylists("$vibe music playlists", 10))
                     if (playlists.isNotEmpty()) {
                         val playlistTracks =
                             playlists.map { playlist ->
@@ -1201,7 +1229,18 @@ class MusicViewModel
         }
 
         // Helper to process sections to avoid code duplication
-        private suspend fun processHomeSections(sections: List<MusicSection>) {
+        private suspend fun processHomeSections(rawSections: List<MusicSection>) {
+            // Re-filter here regardless of where these sections came from. parseHomeSections()
+            // already filters on fetch, but this function also receives sections straight out of
+            // the on-disk home cache (Room, up to a 4h TTL) and from chip selection - caches in
+            // particular can predate the filter being turned on, or predate this filter existing
+            // at all, so filtering only at fetch time isn't enough. This is the single funnel every
+            // Home-feed path (fresh fetch, stale cache, chip switch) goes through before the UI
+            // sees it, so it's the right place for a last-line-of-defense filter.
+            val sections =
+                rawSections
+                    .map { it.copy(tracks = ZemerFilter.filterTracks(it.tracks)) }
+                    .filter { it.tracks.isNotEmpty() }
             val quickPicks =
                 sections
                     .find {
@@ -1316,8 +1355,12 @@ class MusicViewModel
                 supervisorScope {
                     val detailsDeferred =
                         async(PerformanceDispatcher.networkIO) {
-                            withTimeoutOrNull(10_000L) {
-                                YouTubeMusicService.fetchArtistDetails(channelId)
+                            if (!ZemerFilter.allowsArtist(channelId)) {
+                                null
+                            } else {
+                                withTimeoutOrNull(10_000L) {
+                                    YouTubeMusicService.fetchArtistDetails(channelId)
+                                }
                             }
                         }
 
